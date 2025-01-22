@@ -1,0 +1,14 @@
+ 
+Abaqus 2023  is now in use 
+ 
+NOTICE.  Abaqus licenses used on CSC's servers are only for 
+students and personnel from Finnish universities and polytechnics. 
+ 
+
+Lmod is automatically replacing "gcc/11.3.0" with
+"intel-oneapi-compilers/2022.1.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) intel-oneapi-mkl/2022.1.0     2) openmpi/4.1.4
+

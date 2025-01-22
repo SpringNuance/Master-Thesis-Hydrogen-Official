@@ -1,0 +1,36 @@
+Processing time = 0 second(s).
+Abaqus Warning: Unknown keyword (current_os) in environment file.
+Abaqus Warning: Please check spelling of the environment variable names.
+                Unknown keyword "keywordname" can be removed using "del keywordname"
+                at the end of environment file.
+CL: Attempting: 14 tokens of standard
+CL: Attempting 14 tokens from 1761@license1.csc.fi
+CL: Number of licenses on 1761@license1.csc.fi: 600
+CL: Number of licenses in use on 1761@license1.csc.fi: 597
+CL: Attempting: 1 tokens of parallel
+CL: Attempting 1 tokens from 1761@license1.csc.fi
+CL: Number of licenses on 1761@license1.csc.fi: 16384
+CL: Number of licenses in use on 1761@license1.csc.fi: 39
+CL: Test checkout: 14 "standard" v62.3
+INFO: ABA_USE_MPI is set.  dmpCT_rcp/dmpCT_rsh tools will be used for remote shell and copy operations.
+Abaqus Warning: MPI_REMSH is not defined.  Setting value to -> ssh
+Analysis initiated from SIMULIA established products
+Abaqus JOB NDBR15_combined_processed
+Abaqus 2023
+> Begin MPI prepare 
+> Begin MPI checkRsh 
+> End MPI checkRsh  -- 00:00:00
+> Begin MPI checkFileSystem 
+> End MPI checkFileSystem  -- 00:00:00
+> Begin MPI checkFileSystem 
+> End MPI checkFileSystem  -- 00:00:00
+platform              : lnx86_64
+cpus                  : 12
+mp_mpi_implementation : PMPI
+mp_mpirun_path        : /appl/soft/eng/simulia/EstProducts/2023/linux_a64/code/bin/SMAExternal/pmpi/bin/mpirun
+mp_host_list          : (('r04c39.bullx', 12),)
+mp_file_system        : (SHARED, SHARED)
+mp_rsh_command        : ssh -n -l nguyenb5 %H %C
+local host            : ('r04c39-mn.bullx', 'r04c39-mn', '10.140.32.225', 'r04c39.bullx', 'r04c39', '10.140.0.233')
+> End MPI prepare  -- 00:00:00
+DriverLM command: /appl/soft/eng/simulia/EstProducts/2023/linux_a64/code/bin/eliT_DriverLM -job NDBR15_combined_processed -indir /scratch/project_2008630/AA_Binh_Master_Thesis/CP1000_fit1/NDBR15_denser_mesh -standard -verbose -cpus 12 -tmpdir /tmp/nguyenb5/24452378/nguyenb5_NDBR15_combined_processed_1530258 -lmlog

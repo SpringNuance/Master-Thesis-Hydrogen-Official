@@ -1,0 +1,2 @@
+Abaqus Error: Detected lock file NDBR15_combined_processed.lck. Please confirm that no other applications are attempting to write to the output database associated with this job before removing the lock file and resubmitting.
+Abaqus/Analysis exited with error(s).
