@@ -1,0 +1,1 @@
+abaqus job=Test_2D input=Test_2D.inp user=Test_2D cpus=2 -verbose 1 interactive

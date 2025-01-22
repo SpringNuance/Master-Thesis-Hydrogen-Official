@@ -1,0 +1,223 @@
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['cube-default-solver']
+mdb.Model(modelType=STANDARD_EXPLICIT, name='Model-2')
+del mdb.models['cube-subroutine']
+mdb.models.changeKey(fromName='Model-2', toName='Model-1')
+mdb.ModelFromInputFile(inputFileName=
+    'C:/LocalUserData/User-data/nguyenb5/4th CP1000 (UMAT + UHARD + UMATHT + UEL damage coupled temp-disp)/Emilion UEL/Job-1.inp'
+    , name='Job-1')
+#* An input file containing User-defined elements and/or super elements cannot 
+#* be imported by the input file reader. 
+#* KeyError: Unknown key FULL
+#* KeyError: Unknown key BOTTOMSIDE
+#* KeyError: Unknown key BOTTOMSIDE
+#* KeyError: Unknown key TOPSIDE
+#* KeyError: Unknown key BOTTOMSIDE
+#* KeyError: Unknown key LEFTSIDE
+#* KeyError: Unknown key RIGHTSIDE
+#* KeyError: Unknown key TOPSIDE
+#* KeyError: Unknown key BOTTOMSIDE
+#* KeyError: Unknown key LEFTSIDE
+#* KeyError: Unknown key RIGHTSIDE
+#* KeyError: Unknown key BOTTOMSIDE
+#* KeyError: Unknown key TOPSIDE
+mdb.ModelFromInputFile(inputFileName=
+    'C:/LocalUserData/User-data/nguyenb5/4th CP1000 (UMAT + UHARD + UMATHT + UEL damage coupled temp-disp)/Emilion UEL/ExtraFiles/Job-1d.inp'
+    , name='Job-1d')
+#* An input file containing User-defined elements and/or super elements cannot 
+#* be imported by the input file reader. 
+#* KeyError: Unknown key FULL
+#* KeyError: Unknown key BOTTOMSIDE
+#* KeyError: Unknown key BOTTOMSIDE
+#* KeyError: Unknown key TOPSIDE
+#* KeyError: Unknown key BOTTOMSIDE
+#* KeyError: Unknown key LEFTSIDE
+#* KeyError: Unknown key RIGHTSIDE
+#* KeyError: Unknown key TOPSIDE
+#* KeyError: Unknown key BOTTOMSIDE
+#* KeyError: Unknown key LEFTSIDE
+#* KeyError: Unknown key RIGHTSIDE
+#* KeyError: Unknown key BOTTOMSIDE
+#* KeyError: Unknown key TOPSIDE
+# Save by nguyenb5 on 2024_08_04-13.45.08; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(10.0, 10.0))
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(10.0, 10.0))
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Part-1', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-1'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+del mdb.models['Job-1d']
+del mdb.models['Job-1']
+del mdb.models['Model-1'].parts['Part-1']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=2.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(1.0, 1.0))
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='plate', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['plate'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].Material(name='user_material')
+mdb.models['Model-1'].materials['user_material'].Density(table=((1.0, ), ))
+mdb.models['Model-1'].materials['user_material'].Depvar(n=11)
+mdb.models['Model-1'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['Model-1'].materials['user_material'].SpecificHeat(table=((1.0, ), 
+    ))
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.07, name='__profile__', 
+    sheetSize=2.82, transform=
+    mdb.models['Model-1'].parts['plate'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['plate'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.5, 0.5, 0.0)))
+mdb.models['Model-1'].parts['plate'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.07, name='__profile__', 
+    sheetSize=2.82, transform=
+    mdb.models['Model-1'].parts['plate'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['plate'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.5, 0.5, 0.0)))
+mdb.models['Model-1'].parts['plate'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.5, 0.0), point2=(
+    -0.5, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2], midpoint=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], midpoint=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5])
+mdb.models['Model-1'].parts['plate'].PartitionFaceBySketch(faces=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ), sketch=mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['plate'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#3c ]', 
+    ), ), size=0.04)
+mdb.models['Model-1'].parts['plate'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end2Edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#42 ]', 
+    ), ), maxSize=0.04, minSize=0.008)
+mdb.models['Model-1'].parts['plate'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#40 ]', 
+    ), ), maxSize=0.04, minSize=0.0005)
+mdb.models['Model-1'].parts['plate'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end2Edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#2 ]', ), 
+    ), maxSize=0.04, minSize=0.0005)
+mdb.models['Model-1'].parts['plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ))
+mdb.models['Model-1'].parts['plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ))
+mdb.models['Model-1'].parts['plate'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#1 ]', ), 
+    ), maxSize=0.04, minSize=0.0005)
+mdb.models['Model-1'].parts['plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#2 ]', ), 
+    ))
+mdb.models['Model-1'].parts['plate'].DatumPointByMidPoint(point1=
+    mdb.models['Model-1'].parts['plate'].vertices[0], point2=
+    mdb.models['Model-1'].parts['plate'].vertices[1])
+mdb.models['Model-1'].parts['plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#2 ]', ), 
+    ))
+mdb.models['Model-1'].parts['plate'].PartitionEdgeByPoint(edge=
+    mdb.models['Model-1'].parts['plate'].edges[0], point=
+    mdb.models['Model-1'].parts['plate'].datums[12])
+mdb.models['Model-1'].parts['plate'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#1 ]', ), 
+    ), size=0.005)
+mdb.models['Model-1'].parts['plate'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#80 ]', 
+    ), ), end2Edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#2 ]', ), 
+    ), maxSize=0.04, minSize=0.005)
+mdb.models['Model-1'].parts['plate'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#10 ]', 
+    ), ), maxSize=0.04, minSize=0.005)
+mdb.models['Model-1'].parts['plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ))
+mdb.models['Model-1'].parts['plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#2 ]', ), 
+    ))
+# Save by nguyenb5 on 2024_08_04-18.05.39; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.jobs['cube_default']
+del mdb.jobs['cube_subroutine']
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='plate-1', part=
+    mdb.models['Model-1'].parts['plate'])
+# Save by nguyenb5 on 2024_08_04-18.19.11; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

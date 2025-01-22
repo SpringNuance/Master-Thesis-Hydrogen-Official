@@ -1,0 +1,1 @@
+abaqus job=Job-1 input=Job-1.inp user=PhaseFieldH cpus=8 -verbose 1 interactive

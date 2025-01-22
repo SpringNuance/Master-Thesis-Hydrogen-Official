@@ -1,0 +1,1 @@
+abaqus job=wedge_elast input=wedge_elast.inp user=uel_elastic cpus=2 -verbose 1 interactive

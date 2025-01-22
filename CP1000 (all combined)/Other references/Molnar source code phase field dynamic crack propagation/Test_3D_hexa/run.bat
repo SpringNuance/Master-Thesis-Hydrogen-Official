@@ -1,0 +1,1 @@
+abaqus job=Test_3D_hexa input=Test_3D_hexa.inp user=Test_3D_hexa cpus=2 -verbose 1 interactive

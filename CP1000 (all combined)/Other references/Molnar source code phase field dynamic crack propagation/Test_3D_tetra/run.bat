@@ -1,0 +1,1 @@
+abaqus job=Test_3D_tetra input=Test_3D_tetra.inp user=Test_3D_tetra cpus=2 -verbose 1 interactive

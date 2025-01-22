@@ -1,0 +1,24 @@
+Analysis initiated from SIMULIA established products
+Abaqus JOB Job-1
+Abaqus 2023.HF4
+USING MEMORY DOUG-LEA ALLOCATOR
+Abaqus License Manager checked out the following licenses:
+Abaqus/Explicit checked out 12 tokens from Flexnet server lic-abaqus.aalto.fi.
+<68 out of 100 licenses remain available>.
+Begin Analysis Input File Processor
+2024-07-05 12:08:25 PM
+Run pre.exe
+2024-07-05 12:08:27 PM
+End Analysis Input File Processor
+Begin Abaqus/Explicit Packager
+2024-07-05 12:08:27 PM
+PAC_NUM_THREADS VALUE: 8
+Run package.exe
+2024-07-05 12:08:29 PM
+End Abaqus/Explicit Packager
+Begin Abaqus/Explicit Analysis
+2024-07-05 12:08:29 PM
+Run explicit.exe
+2024-07-05 12:09:54 PM
+End Abaqus/Explicit Analysis
+Abaqus JOB Job-1 COMPLETED

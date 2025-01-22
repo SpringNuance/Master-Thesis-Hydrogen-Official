@@ -1,0 +1,478 @@
+1
+
+   Abaqus 2023.HF4                                  Date 13-Aug-2024   Time 16:20:58
+   For use by AALTO UNIVERSITY under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes SIMULIA Corp.
+                           1301 Atwood Avenue, Suite 101W
+                              Johnston, RI 02919, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine L23-0203 
+                          you are authorized to run
+                          Abaqus/Standard until 20-Feb-2025
+
+                          Your site id is: 200000000014764 
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      https://www.3ds.com/products-services/simulia/services-support/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                     Abaqus 2023.HF4                     * 
+                *                                                         * 
+                *       BUILD ID: 2023_07_21-20.45.57 RELr425 183702      * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using                         * 
+                *  release Abaqus 2023.HF4 manuals                        * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *   This program may not be used for commercial purposes  * 
+                *           without payment of a commercial fee.          * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *userelement, nodes=4, type=U1, properties=10, variables=52, coordinates=3
+  *userelement, nodes=4, type=U3, properties=3, variables=6, coordinates=3
+  *Heading
+  *Element, type=U1
+  *Element, type=U3
+  *Element, type=C3D4
+  *Elset, elset=ASSEMBLY_BLOCK-1_BLOCK
+  *Elset, elset=ASSEMBLY_BLOCK-1_BLOCK_PH
+  *Elset, elset=ASSEMBLY_BLOCK-1_UMATELEM
+  *Elset, elset=ASSEMBLY_UMATELEM
+  *Elset, elset=ASSEMBLY__BTM_S1
+  *Elset, elset=ASSEMBLY__BTM_S2
+  *Elset, elset=ASSEMBLY__BTM_S3
+  *Elset, elset=ASSEMBLY__BTM_S4
+  *Elset, elset=ASSEMBLY__TOP_S1
+  *Elset, elset=ASSEMBLY__TOP_S2
+  *Elset, elset=ASSEMBLY__TOP_S3
+  *Elset, elset=ASSEMBLY__TOP_S4
+  *material, name=UMATERIAL
+  *density
+  *depvar
+  *usermaterial, constants=2
+  *solidsection, elset=ASSEMBLY_BLOCK-1_UMATELEM, material=UMATERIAL
+  *userelement, nodes=4, type=U1, properties=10, variables=52, coordinates=3
+  *userelement, nodes=4, type=U3, properties=3, variables=6, coordinates=3
+  *solidsection, elset=ASSEMBLY_BLOCK-1_UMATELEM, material=UMATERIAL
+  *surface, type=ELEMENT, name=ASSEMBLY_BTM
+  *surface, type=ELEMENT, name=ASSEMBLY_TOP
+  *surface, type=ELEMENT, name=ASSEMBLY_BTM
+  *surface, type=ELEMENT, name=ASSEMBLY_TOP
+  *uelproperty, elset=ASSEMBLY_BLOCK-1_BLOCK
+  *uelproperty, elset=ASSEMBLY_BLOCK-1_BLOCK_PH
+  *surface, type=ELEMENT, name=ASSEMBLY_BTM
+  *surface, type=ELEMENT, name=ASSEMBLY_TOP
+  *output, field
+  *output, history, variable=PRESELECT
+  *elementoutput, directions=YES
+  *elementoutput, elset=ASSEMBLY_UMATELEM
+  *elementoutput, elset=ASSEMBLY_UMATELEM, position=INTEGRATIONPOINTS
+  *output, field
+  *output, history, variable=PRESELECT
+  *elementoutput, directions=YES
+  *elementoutput, elset=ASSEMBLY_UMATELEM
+  *elementoutput, elset=ASSEMBLY_UMATELEM, position=INTEGRATIONPOINTS
+  *output, field
+  *output, history, variable=PRESELECT
+  *elementoutput, directions=YES
+  *elementoutput, elset=ASSEMBLY_UMATELEM
+  *elementoutput, elset=ASSEMBLY_UMATELEM, position=INTEGRATIONPOINTS
+  
+                               E L E M E N T   Q U A L I T Y  C H E C K S        
+  
+  
+ ***NOTES: DISTORTED ISOPARAMETRIC ELEMENTS: ANGLE BETWEEN ISOPARAMETRIC LINES 
+           IS LESS THAN 45 DEGREES OR GREATER THAN 135 DEGREES.
+  
+           TETRAHEDRAL QUALITY MEASURE: VOLUME OF TETRAHEDRON DIVIDED BY THE 
+           VOLUME OF EQUILATERAL TETRAHEDRON WITH SAME CIRCUMSPHERE RADIUS; 
+           0 FOR DEGENERATE TETRAHEDRON AND 1 FOR EQUILATERIAL TETRAHEDRON. IT 
+           IS RECOMMENDED THAT THE TETRAHEDRAL QUALITY MEASURE BE GREATER THAN 
+           0.02, THE MIN INTERIOR (DIHEDRAL) ANGLE BE GREATER THAN 10 DEGREES, 
+           AND THE MAX INTERIOR (DIHEDRAL) ANGLE BE LESS THAN 160 DEGREES. 
+  
+           MODIFIED TETRAHEDRAL QUALITY MEASURE: ANGLES BETWEEN THE TWO LINE 
+           SEGMENTS ON EACH EDGE; THE EDGES OF MODIFIED TETRAHEDRAL SHOULD BE 
+           AS STRAIGHT AS POSSIBLE. IT IS RECOMMENDED THAT THE ANGLE BETWEEN 
+           THE TWO LINE SEGMENTS ON EACH EDGE IS BETWEEN 160 AND 180 DEGREES. 
+  
+           TRIANGULAR QUALITY MEASURE: AREA OF TRIANGLE DIVIDED BY THE AREA OF 
+           EQUILATERAL TRIANGLE WITH SAME CIRCUMCIRCLE RADIUS; 0 FOR DEGENERATE 
+           TRIANGLE AND 1 FOR EQUILATERAL TRIANGLE. IT IS RECOMMENDED THAT THE
+           TRIANGULAR QUALITY MEASURE BE GREATER THAN 0.01, THE MIN INTERIOR 
+           ANGLE BE GREATER THAN 10 DEGREES, AND THE MAX INTERIOR ANGLE BE LESS 
+           THAN 160 DEGREES. 
+  
+           NODAL ADJUSTMENTS ARISING FROM CONTACT INTERACTIONS AND/OR TIE 
+           CONSTRAINTS CAN CAUSE SEVERE ELEMENT DISTORTION. IT MAY BE NECESSARY 
+           TO REMESH IN ORDER TO REDUCE THE AMOUNT OF ADJUSTMENT. 
+
+ ***WARNING: 116 elements are distorted. Either the isoparametric angles are 
+             out of the suggested limits or the triangular or tetrahedral 
+             quality measure is bad. The elements have been identified in 
+             element set WarnElemDistorted.
+  
+ --------------------------------------------------------------------------------
+ Distorted tetrahedral elements
+  
+      Element      Quality measure     Min angle        Max angle     Adjusted nodes 
+ ----------------- ---------------- ---------------- ---------------- -------------- 
+    BLOCK-1.105956       0.00743791          12.1356          146.907       NO       
+    BLOCK-1.105957       0.00794439          9.84161          132.681       NO       
+    BLOCK-1.105965       0.00604934          27.1358          154.136       NO       
+    BLOCK-1.105967       0.00422296          10.9709          122.981       NO       
+    BLOCK-1.106010        0.0132391          14.6004          131.726       NO       
+    BLOCK-1.106012       0.00625888          50.8243          144.617       NO       
+    BLOCK-1.106051       0.00569906          11.7278          151.774       NO       
+    BLOCK-1.106052        0.0072491          17.2999           148.14       NO       
+    BLOCK-1.106054      0.000188538          9.74251           159.06       NO       
+    BLOCK-1.106055      0.000105189          10.3266          165.767       NO       
+    BLOCK-1.106183        0.0617239          9.66429          138.061       NO       
+    BLOCK-1.106227        0.0124322          17.0951          145.353       NO       
+    BLOCK-1.106230        0.0124524          20.9066          149.575       NO       
+    BLOCK-1.106233      5.15823E-05          10.3931          171.195       NO       
+    BLOCK-1.106240       0.00134884          7.56249          159.089       NO       
+    BLOCK-1.106246      0.000411271          17.5186          108.941       NO       
+    BLOCK-1.106396        0.0139673          8.43343          152.683       NO       
+    BLOCK-1.106411        0.0080879          9.69384          156.176       NO       
+    BLOCK-1.106440       0.00134462          11.5427          166.817       NO       
+    BLOCK-1.106519      0.000262517          24.4039           163.12       NO       
+    BLOCK-1.106574       0.00366996          7.81757          124.052       NO       
+    BLOCK-1.106620      1.53337E-05          23.5427          172.051       NO       
+    BLOCK-1.106624      0.000153787          14.5351           144.87       NO       
+    BLOCK-1.106779         0.012071          52.7816           141.44       NO       
+    BLOCK-1.106904       0.00282239          13.2971          154.304       NO       
+    BLOCK-1.106913      0.000509845          6.35309          141.072       NO       
+    BLOCK-1.106949      0.000630346          3.25374          125.646       NO       
+    BLOCK-1.106952       0.00234761          28.0516          136.018       NO       
+    BLOCK-1.106957       0.00256203          17.3008          157.475       NO       
+    BLOCK-1.106983       0.00216004          40.0284          154.725       NO       
+    BLOCK-1.107013       0.00799914          35.6964          137.486       NO       
+    BLOCK-1.107125      0.000488536          14.2095          160.959       NO       
+    BLOCK-1.107234       0.00196804          35.8384          156.394       NO       
+    BLOCK-1.107242      0.000137567           15.626          160.413       NO       
+    BLOCK-1.107262       0.00583547          17.5474          154.805       NO       
+    BLOCK-1.107329      0.000516924          26.5145          161.221       NO       
+    BLOCK-1.107331         0.071769          8.63417          153.428       NO       
+    BLOCK-1.107410       0.00262645          20.3613          146.194       NO       
+    BLOCK-1.107783        0.0144436          18.4885          144.511       NO       
+    BLOCK-1.107959        0.0080234           15.885          159.676       NO       
+    BLOCK-1.107963      0.000626107          20.0522          164.791       NO       
+    BLOCK-1.109270       0.00377293          9.56811          159.071       NO       
+    BLOCK-1.109318        0.0132824          16.8541          150.087       NO       
+    BLOCK-1.109321      6.78713E-05          9.45561          167.458       NO       
+    BLOCK-1.111618      0.000192135          8.12435          168.188       NO       
+    BLOCK-1.111620      0.000650127          31.3701          161.949       NO       
+    BLOCK-1.111621       0.00287252          23.0976           157.56       NO       
+    BLOCK-1.111811       0.00838182           15.208          138.557       NO       
+    BLOCK-1.112173       0.00961145          25.0459          134.236       NO       
+    BLOCK-1.112176        0.0188346          16.5497           142.31       NO       
+    BLOCK-1.116066        0.0104737          16.2506          122.543       NO       
+    BLOCK-1.119595       0.00377293          14.2287          159.886       NO       
+    BLOCK-1.120503        0.0155395           20.702          148.213       NO       
+    BLOCK-1.120551      0.000393601            3.534          149.104       NO       
+    BLOCK-1.120563       0.00711312          19.4475          153.262       NO       
+    BLOCK-1.124666       0.00245901          18.6066          152.781       NO       
+    BLOCK-1.125001        0.0109273          15.8139          137.634       NO       
+    BLOCK-1.125042       1.6656E-05          10.1914          167.972       NO       
+    BLOCK-1.125050      0.000977525          24.5456          160.279       NO       
+    BLOCK-1.125065       0.00882766          8.46449          149.203       NO       
+    BLOCK-1.125365        0.0102167          10.9313          141.588       NO       
+    BLOCK-1.125700       0.00670301          10.5341          146.922       NO       
+    BLOCK-1.129193       0.00206606          9.20487           153.08       NO       
+    BLOCK-1.129504       0.00249574          17.6101          161.599       NO       
+    BLOCK-1.132332        0.0131269          21.8859          144.605       NO       
+    BLOCK-1.132337       0.00958556          22.5835          147.715       NO       
+    BLOCK-1.132924      0.000377007          2.93662          118.594       NO       
+    BLOCK-1.132931       0.00173801          13.2316           137.71       NO       
+    BLOCK-1.132934       1.5337E-05          9.97688          153.591       NO       
+    BLOCK-1.133150       0.00371966          15.0498          149.373       NO       
+    BLOCK-1.134483       0.00280299          9.68003          132.868       NO       
+    BLOCK-1.136355        0.0188612          9.58396          158.847       NO       
+    BLOCK-1.136356       0.00157446          17.7633          162.905       NO       
+    BLOCK-1.136357       0.00128477          11.6056          154.676       NO       
+    BLOCK-1.136362      8.37193E-05          5.17937          163.896       NO       
+    BLOCK-1.138008       0.00155635          16.8497          162.453       NO       
+    BLOCK-1.145678      0.000261813           9.9893          145.823       NO       
+    BLOCK-1.145684      0.000856063          7.26948          155.225       NO       
+    BLOCK-1.145685      0.000529297          8.08527          123.627       NO       
+    BLOCK-1.150941       0.00105038          17.4572           164.95       NO       
+    BLOCK-1.151029       0.00663915           22.525          147.638       NO       
+    BLOCK-1.151036      8.92435E-05          25.5756            169.2       NO       
+    BLOCK-1.151038      0.000333654          3.33713          130.048       NO       
+    BLOCK-1.151042       0.00742507          17.2866          137.494       NO       
+    BLOCK-1.151045       0.00317683          4.56524           144.39       NO       
+    BLOCK-1.151049      0.000585602          7.82797          128.944       NO       
+    BLOCK-1.151053      0.000276735           11.408           166.79       NO       
+    BLOCK-1.151055        0.0130431          20.0342           157.71       NO       
+    BLOCK-1.151064      0.000942349          17.7347          162.506       NO       
+    BLOCK-1.151147      0.000504697          6.54008          116.103       NO       
+    BLOCK-1.151148      0.000803957          12.4822          161.975       NO       
+    BLOCK-1.151149      0.000291056          14.1536          167.518       NO       
+    BLOCK-1.151153      0.000716039          14.5368          164.374       NO       
+    BLOCK-1.151158        0.0013725          15.3438          160.553       NO       
+    BLOCK-1.151172       0.00753834          15.3228          155.941       NO       
+    BLOCK-1.151177      3.38667E-05          1.94957          169.849       NO       
+    BLOCK-1.151189         0.017909          16.4353          158.188       NO       
+    BLOCK-1.151283      5.73332E-05          16.9939          164.641       NO       
+    BLOCK-1.151285      0.000590636          45.6529          161.696       NO       
+    BLOCK-1.151288      0.000608444          24.1836           107.01       NO       
+    BLOCK-1.151289       0.00234465          15.6264          157.549       NO       
+    BLOCK-1.151290       0.00772319          8.27747          157.361       NO       
+    BLOCK-1.151291       0.00441137          8.86386           132.33       NO       
+    BLOCK-1.151308      3.23083E-05          5.21933          165.796       NO       
+    BLOCK-1.151309       0.00111673          15.8263          122.128       NO       
+    BLOCK-1.151313       0.00755424           22.451          156.653       NO       
+    BLOCK-1.151318      0.000809893          15.5772          152.955       NO       
+    BLOCK-1.152600         0.013392           16.524          157.843       NO       
+    BLOCK-1.152601      0.000930074           31.993          163.085       NO       
+    BLOCK-1.154506       0.00331883          19.4534          151.842       NO       
+    BLOCK-1.157597       0.00156161          18.0247          161.551       NO       
+    BLOCK-1.157709         0.016135          16.4679          149.206       NO       
+    BLOCK-1.157711      0.000832285          13.2103          164.656       NO       
+    BLOCK-1.157727       0.00646147          18.4492           147.57       NO       
+    BLOCK-1.157927       0.00343486           16.701          163.146       NO       
+    BLOCK-1.158080        0.0065368          12.3373          143.901       NO       
+  
+  
+  *Step, name=Step-1, nlgeom=NO, inc=1000
+  *output, field
+  *output, history, variable=PRESELECT
+  *Step, name=Step-1, nlgeom=NO, inc=1000
+  *Step, name=Step-1, nlgeom=NO, inc=1000
+  *dynamic, directusercontrol
+  *dsload
+  *dsload
+  *output, field
+  *nodeoutput
+  *elementoutput, directions=YES
+  *elementoutput, elset=ASSEMBLY_UMATELEM
+  *elementoutput, elset=ASSEMBLY_UMATELEM, position=INTEGRATIONPOINTS
+  *output, history, variable=PRESELECT
+  *endstep
+
+ ***WARNING: THE *ELEMENT OUTPUT OPTION IS NOT SUPPORTED FOR USER ELEMENTS
+
+ ***WARNING: THE *ELEMENT OUTPUT OPTION IS NOT SUPPORTED FOR USER ELEMENTS
+
+ ***WARNING: THE *ELEMENT OUTPUT OPTION IS NOT SUPPORTED FOR USER ELEMENTS
+
+ ***WARNING: THE *ELEMENT OUTPUT OPTION IS NOT SUPPORTED FOR USER ELEMENTS
+  *Step, name=Step-1, nlgeom=NO, inc=1000
+  *dynamic, directusercontrol
+  *endstep
+
+     - (RAMP) OR (STEP) - INDICATE USE OF DEFAULT AMPLITUDES ASSOCIATED WITH THE STEP
+
+     - (RAMP) OR (STEP) - INDICATE USE OF DEFAULT AMPLITUDES ASSOCIATED WITH THE STEP
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                158916
+          NUMBER OF NODES IS                                    12978
+          NUMBER OF NODES DEFINED BY THE USER                   12978
+          TOTAL NUMBER OF VARIABLES IN THE MODEL                51912
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =      2.2    
+       SYSTEM TIME (SEC)    =     0.20    
+       TOTAL CPU TIME (SEC) =      2.4    
+       WALLCLOCK TIME (SEC) =            3
+1
+
+   Abaqus 2023.HF4                                  Date 13-Aug-2024   Time 16:21:06
+   For use by AALTO UNIVERSITY under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    1  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     D Y N A M I C   A N A L Y S I S - I M P L I C I T  I N T E G R A T I O N
+
+
+                                                                                          
+
+          DYNAMIC APPLICATION PACKED SCHEME IS                 TRANSIENT FIDELITY  
+          HILBER-HUGHES-TAYLOR (HHT) TIME INTEGRATOR IS USED
+
+          FIXED TIME INCREMENTS
+          TIME INCREMENT IS                                    1.000E-07
+          TIME PERIOD IS                                       1.000E-04
+
+          HILBER-HUGHES-TAYLOR METHOD PARAMETERS:  ALPHA   IS  -5.000000E-02
+                                                   BETA    IS   0.275625    
+                                                   GAMMA   IS   0.550000    
+          SINGULAR MASS TREATMENT TYPE IS                     ERROR
+          CONSERVATIVE TIME INCREMENTATION IS USED
+          STEP AMPLITUDE IS                                    STEP
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      1.9377735E-02
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                      7.7010872E-05      9.9873620E-08      9.9051933E-04
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                      5.9345534E-03      1.6103870E-05      1.8640990E-05
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                     -8.9990959E-11     -2.7358619E-09     -4.3921152E-11
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                      5.9345344E-03      1.6084743E-05      1.8640875E-05
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                     -8.9841918E-11     -1.2577136E-09     -4.2004175E-11
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          4.50E+09               75                336
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          4.50E+09               75                338
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.

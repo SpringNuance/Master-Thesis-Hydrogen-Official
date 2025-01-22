@@ -1,0 +1,684 @@
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(modelType=STANDARD_EXPLICIT, name='Model-2')
+del mdb.models['Model-Full']
+mdb.models.changeKey(fromName='Model-2', toName='Model-1')
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=2.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(1.0, 1.0))
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='plate', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['plate'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.07, name='__profile__', 
+    sheetSize=2.82, transform=
+    mdb.models['Model-1'].parts['plate'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['plate'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.5, 0.5, 0.0)))
+mdb.models['Model-1'].parts['plate'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.5, 0.0), point2=(
+    0.5, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], midpoint=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2], midpoint=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5])
+mdb.models['Model-1'].parts['plate'].PartitionFaceBySketch(faces=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ), sketch=mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['plate'].PartitionEdgeByPoint(edge=
+    mdb.models['Model-1'].parts['plate'].edges[0], point=
+    mdb.models['Model-1'].parts['plate'].InterestingPoint(
+    mdb.models['Model-1'].parts['plate'].edges[0], MIDDLE))
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='plate-1', part=
+    mdb.models['Model-1'].parts['plate'])
+mdb.models['Model-1'].parts['plate'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#c6 ]', 
+    ), ), size=0.04)
+mdb.models['Model-1'].parts['plate'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end2Edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#1 ]', ), 
+    ), maxSize=0.04, minSize=0.005)
+mdb.models['Model-1'].parts['plate'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#10 ]', 
+    ), ), size=0.005)
+mdb.models['Model-1'].parts['plate'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end2Edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#28 ]', 
+    ), ), maxSize=0.04, minSize=0.005)
+mdb.models['Model-1'].parts['plate'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['Model-1'].parts['plate'].edges.getSequenceFromMask(('[#8 ]', ), 
+    ), maxSize=0.04, minSize=0.005)
+mdb.models['Model-1'].parts['plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#2 ]', ), 
+    ))
+mdb.models['Model-1'].parts['plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ))
+# Save by nguyenb5 on 2024_08_04-18.25.04; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].TabularAmplitude(data=((0.0, 0.0), (10000000.0, 1.0)), 
+    name='Amp-1', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['Model-1'].Material(name='user_material')
+mdb.models['Model-1'].materials['user_material'].Density(table=((1.0, ), ))
+mdb.models['Model-1'].materials['user_material'].Depvar(n=11)
+mdb.models['Model-1'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['Model-1'].materials['user_material'].SpecificHeat(table=((1.0, ), 
+    ))
+mdb.models['Model-1'].CoupledThermalElectricalStructuralStep(cetol=None, 
+    creepIntegration=None, deltmx=None, name='Step-1', nlgeom=ON, previous=
+    'Initial', timeIncrementationMethod=FIXED)
+del mdb.models['Model-1'].steps['Step-1']
+mdb.models['Model-1'].CoupledTempDisplacementStep(cetol=None, creepIntegration=
+    None, deltmx=None, initialInc=10000.0, maxNumInc=1000000, name='Step-1', 
+    previous='Initial', timeIncrementationMethod=FIXED, timePeriod=10000000.0)
+mdb.models['Model-1'].steps['Step-1'].setValues(creepIntegration=None)
+# Save by nguyenb5 on 2024_08_04-18.38.03; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['plate'].regenerate()
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by nguyenb5 on 2024_08_04-18.38.10; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['plate-1'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ), name='bottom_side')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-1', region=mdb.models['Model-1'].rootAssembly.sets['bottom_side'], u1=
+    0.0, u2=0.0, ur3=UNSET)
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['plate-1'].edges.getSequenceFromMask(
+    ('[#ff ]', ), ), faces=
+    mdb.models['Model-1'].rootAssembly.instances['plate-1'].faces.getSequenceFromMask(
+    ('[#3 ]', ), ), name='Set-2', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['plate-1'].vertices.getSequenceFromMask(
+    ('[#7f ]', ), ))
+mdb.models['Model-1'].Temperature(createStepName='Initial', 
+    crossSectionDistribution=CONSTANT_THROUGH_THICKNESS, distributionType=
+    UNIFORM, magnitudes=(0.5, ), name='Predefined Field-1', region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-2'])
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['plate-1'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), name='top_side')
+mdb.models['Model-1'].DisplacementBC(amplitude='Amp-1', createStepName='Step-1'
+    , distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-2', region=mdb.models['Model-1'].rootAssembly.sets['top_side'], u1=
+    UNSET, u2=0.01, ur3=UNSET)
+mdb.models['Model-1'].TemperatureBC(amplitude='Amp-1', createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=0.5, name=
+    'BC-3', region=mdb.models['Model-1'].rootAssembly.sets['bottom_side'])
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['plate-1'].edges.getSequenceFromMask(
+    ('[#82 ]', ), ), name='Set-4')
+mdb.models['Model-1'].TemperatureBC(amplitude='Amp-1', createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=0.5, name=
+    'BC-4', region=mdb.models['Model-1'].rootAssembly.sets['Set-4'])
+del mdb.models['Model-1'].boundaryConditions['BC-4']
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['plate-1'].edges.getSequenceFromMask(
+    ('[#82 ]', ), ), name='left_side')
+mdb.models['Model-1'].TemperatureBC(amplitude='Amp-1', createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=0.5, name=
+    'BC-4', region=mdb.models['Model-1'].rootAssembly.sets['left_side'])
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['plate-1'].edges.getSequenceFromMask(
+    ('[#28 ]', ), ), name='right_side')
+mdb.models['Model-1'].TemperatureBC(amplitude='Amp-1', createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=0.5, name=
+    'BC-5', region=mdb.models['Model-1'].rootAssembly.sets['right_side'])
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(frequency=10, 
+    variables=('CF', 'NT', 'RF', 'RFL', 'U', 'E', 'HFL', 'SDV'))
+mdb.models['Model-1'].historyOutputRequests['H-Output-1'].setValues(frequency=
+    10, rebar=EXCLUDE, region=
+    mdb.models['Model-1'].rootAssembly.sets['bottom_side'], sectionPoints=
+    DEFAULT, variables=('RF2', ))
+mdb.models['Model-1'].HistoryOutputRequest(createStepName='Step-1', frequency=
+    10, name='H-Output-2', rebar=EXCLUDE, region=
+    mdb.models['Model-1'].rootAssembly.sets['top_side'], sectionPoints=DEFAULT, 
+    variables=('U2', ))
+# Save by nguyenb5 on 2024_08_04-18.54.09; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_08_04-18.54.22; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.jobs['mesh_1_subroutine']
+del mdb.jobs['mesh_1_default']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Job-1', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, resultsFormat=
+    ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=0, 
+    waitMinutes=0)
+mdb.jobs.changeKey(fromName='Job-1', toName='phase_field_plate')
+mdb.models['Model-1'].HomogeneousSolidSection(material='user_material', name=
+    'Section-1', thickness=None)
+mdb.models['Model-1'].parts['plate'].Set(faces=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#3 ]', ), 
+    ), name='whole_plate')
+mdb.models['Model-1'].parts['plate'].SectionAssignment(offset=0.0, offsetField=
+    '', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['plate'].sets['whole_plate'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+# Save by nguyenb5 on 2024_08_04-18.55.16; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['plate'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4RT, elemLibrary=STANDARD), ElemType(elemCode=CPE3T, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#3 ]', ), 
+    ), ))
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].steps['Step-1'].setValues(amplitude=RAMP)
+mdb.models['Model-1'].steps['Step-1'].setValues(amplitude=STEP)
+mdb.models['Model-1'].steps['Step-1'].setValues(amplitude=RAMP)
+# Save by nguyenb5 on 2024_08_05-14.29.45; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['plate'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE8R, elemLibrary=STANDARD), ElemType(elemCode=CPE6M, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#3 ]', ), 
+    ), ))
+# Save by nguyenb5 on 2024_08_05-14.38.48; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#3 ]', ), 
+    ))
+mdb.models['Model-1'].parts['plate'].setMeshControls(elemShape=QUAD, regions=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#3 ]', ), 
+    ))
+mdb.models['Model-1'].parts['plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#3 ]', ), 
+    ))
+# Save by nguyenb5 on 2024_08_05-14.39.37; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['plate'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE8R, elemLibrary=STANDARD), ElemType(elemCode=CPE6M, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['plate'].faces.getSequenceFromMask(('[#3 ]', ), 
+    ), ))
+# Save by nguyenb5 on 2024_08_05-14.40.15; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].sections.changeKey(fromName='Section-1', toName=
+    'Visualization')
+mdb.models['Model-1'].boundaryConditions['BC-1'].suppress()
+del mdb.models['Model-1'].boundaryConditions['BC-1']
+mdb.models['Model-1'].EncastreBC(createStepName='Initial', localCsys=None, 
+    name='BC-1', region=mdb.models['Model-1'].rootAssembly.sets['bottom_side'])
+del mdb.models['Model-1'].boundaryConditions['BC-1']
+mdb.models['Model-1'].ZsymmBC(createStepName='Initial', localCsys=None, name=
+    'BC-1', region=mdb.models['Model-1'].rootAssembly.sets['bottom_side'])
+del mdb.models['Model-1'].boundaryConditions['BC-1']
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='BC-1', 
+    region=mdb.models['Model-1'].rootAssembly.sets['bottom_side'], u1=SET, u2=
+    SET, ur3=UNSET)
+mdb.models['Model-1'].sections.changeKey(fromName='Visualization', toName=
+    'Section-1')
+mdb.models['Model-1'].amplitudes['Amp-1'].setValues(data=((0.0, 1.0), (
+    10000000.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['Model-1'].boundaryConditions['BC-2'].setValues(amplitude=UNSET)
+# Save by nguyenb5 on 2024_08_05-22.14.11; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_08_06-12.56.17; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='Model-2', objectToCopy=mdb.models['Model-1'])
+mdb.models['Model-2'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Model-2'].parts['plate'].features['Shell planar-1'].sketch)
+mdb.models['Model-2'].parts['plate'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-2'].sketches['__edit__'], 
+    upToFeature=
+    mdb.models['Model-2'].parts['plate'].features['Shell planar-1'])
+mdb.models['Model-2'].sketches['__edit__'].Line(point1=(0.5, 0.5), point2=(0.0, 
+    1e-06))
+del mdb.models['Model-2'].sketches['__edit__']
+mdb.models['Model-2'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Model-2'].parts['plate'].features['Shell planar-1'].sketch)
+mdb.models['Model-2'].parts['plate'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-2'].sketches['__edit__'], 
+    upToFeature=
+    mdb.models['Model-2'].parts['plate'].features['Shell planar-1'])
+mdb.models['Model-2'].parts.changeKey(fromName='plate', toName='plate_2')
+del mdb.models['Model-2'].sketches['__edit__']
+mdb.models['Model-2'].ConstrainedSketch(name='__profile__', sheetSize=2.0)
+mdb.models['Model-2'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(1.0, 1.0))
+mdb.models['Model-2'].sketches['__profile__'].Line(point1=(0.5, 0.5), point2=(
+    0.0, 0.50001))
+mdb.models['Model-2'].sketches['__profile__'].Line(point1=(0.5, 0.5), point2=(
+    0.0, 0.49999))
+mdb.models['Model-2'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[2], point1=(
+    9.41134203458205e-07, 0.500000953674316))
+del mdb.models['Model-2'].sketches['__profile__']
+mdb.models['Model-2'].ConstrainedSketch(name='__profile__', sheetSize=2.0)
+mdb.models['Model-2'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(1.0, 1.0))
+mdb.models['Model-2'].Part(dimensionality=TWO_D_PLANAR, name='plate', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-2'].parts['plate'].BaseShell(sketch=
+    mdb.models['Model-2'].sketches['__profile__'])
+del mdb.models['Model-2'].sketches['__profile__']
+mdb.models['Model-2'].ConstrainedSketch(gridSpacing=0.07, name='__profile__', 
+    sheetSize=2.82, transform=
+    mdb.models['Model-2'].parts['plate'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-2'].parts['plate'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.5, 0.5, 0.0)))
+mdb.models['Model-2'].parts['plate'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-2'].sketches['__profile__'])
+del mdb.models['Model-2'].sketches['__profile__']
+mdb.models['Model-2'].ConstrainedSketch(gridSpacing=0.07, name='__profile__', 
+    sheetSize=2.82, transform=
+    mdb.models['Model-2'].parts['plate'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-2'].parts['plate'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.5, 0.5, 0.0)))
+mdb.models['Model-2'].parts['plate'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-2'].sketches['__profile__'])
+mdb.models['Model-2'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    -0.5, 0.0))
+mdb.models['Model-2'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[6])
+mdb.models['Model-2'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-2'].sketches['__profile__'].vertices[5], entity2=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[5])
+mdb.models['Model-2'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-2'].sketches['__profile__'].vertices[3], entity2=
+    mdb.models['Model-2'].sketches['__profile__'].vertices[0], midpoint=
+    mdb.models['Model-2'].sketches['__profile__'].vertices[5])
+mdb.models['Model-2'].parts['plate'].PartitionFaceBySketch(faces=
+    mdb.models['Model-2'].parts['plate'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ), sketch=mdb.models['Model-2'].sketches['__profile__'])
+del mdb.models['Model-2'].sketches['__profile__']
+mdb.models['Model-2'].rootAssembly.regenerate()
+del mdb.models['Model-2'].parts['plate']
+mdb.models['Model-2'].ConstrainedSketch(name='__profile__', sheetSize=4.0)
+mdb.models['Model-2'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    -0.5, 0.0005))
+mdb.models['Model-2'].sketches['__profile__'].Line(point1=(-0.5, 0.0005), 
+    point2=(-0.5, 0.5))
+mdb.models['Model-2'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-2'].sketches['__profile__'].geometry[3])
+mdb.models['Model-2'].sketches['__profile__'].Line(point1=(-0.5, 0.5), point2=(
+    0.5, 0.5))
+mdb.models['Model-2'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[4])
+mdb.models['Model-2'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[3], entity2=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[4])
+mdb.models['Model-2'].sketches['__profile__'].Line(point1=(0.5, 0.5), point2=(
+    0.5, -0.5))
+mdb.models['Model-2'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-2'].sketches['__profile__'].geometry[5])
+mdb.models['Model-2'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[4], entity2=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[5])
+mdb.models['Model-2'].sketches['__profile__'].Line(point1=(0.5, -0.5), point2=(
+    -0.5, -0.5))
+mdb.models['Model-2'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[6])
+mdb.models['Model-2'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[5], entity2=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[6])
+mdb.models['Model-2'].sketches['__profile__'].Line(point1=(-0.5, -0.5), point2=
+    (-0.5, -0.0005))
+mdb.models['Model-2'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-2'].sketches['__profile__'].geometry[7])
+mdb.models['Model-2'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[6], entity2=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[7])
+mdb.models['Model-2'].sketches['__profile__'].Line(point1=(-0.5, -0.0005), 
+    point2=(0.0, 0.0))
+mdb.models['Model-2'].Part(dimensionality=TWO_D_PLANAR, name='plate', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-2'].parts['plate'].BaseShell(sketch=
+    mdb.models['Model-2'].sketches['__profile__'])
+del mdb.models['Model-2'].sketches['__profile__']
+del mdb.models['Model-2'].parts['plate_2']
+mdb.models['Model-2'].parts['plate'].Set(faces=
+    mdb.models['Model-2'].parts['plate'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ), name='whole_plate')
+mdb.models['Model-2'].parts['plate'].SectionAssignment(offset=0.0, offsetField=
+    '', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-2'].parts['plate'].sets['whole_plate'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-2'].rootAssembly.regenerate()
+del mdb.models['Model-2'].rootAssembly.features['plate-1']
+del mdb.models['Model-2'].rootAssembly.features['Datum csys-1']
+mdb.models['Model-2'].rootAssembly.deleteSets(setNames=('top_side', 'Set-2', 
+    'Set-4', 'bottom_side', 'left_side', 'right_side'))
+mdb.models['Model-2'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-2'].rootAssembly.Instance(dependent=ON, name='plate-1', part=
+    mdb.models['Model-2'].parts['plate'])
+mdb.models['Model-2'].fieldOutputRequests['F-Output-1'].setValues(frequency=2)
+mdb.models['Model-2'].fieldOutputRequests['F-Output-1'].setValues(frequency=1)
+mdb.models['Model-2'].predefinedFields['Predefined Field-1'].setValues(region=
+    mdb.models['Model-2'].rootAssembly.instances['plate-1'].sets['whole_plate'])
+mdb.models['Model-2'].boundaryConditions.delete(('BC-1', 'BC-2', 'BC-3', 
+    'BC-4', 'BC-5'))
+mdb.models['Model-2'].rootAssembly.Set(edges=
+    mdb.models['Model-2'].rootAssembly.instances['plate-1'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ), name='bottom_side')
+mdb.models['Model-2'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='BC-1', 
+    region=mdb.models['Model-2'].rootAssembly.sets['bottom_side'], u1=SET, u2=
+    SET, ur3=UNSET)
+mdb.models['Model-2'].rootAssembly.Set(edges=
+    mdb.models['Model-2'].rootAssembly.instances['plate-1'].edges.getSequenceFromMask(
+    ('[#10 ]', ), ), name='top_side')
+mdb.models['Model-2'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-2', region=mdb.models['Model-2'].rootAssembly.sets['top_side'], u1=
+    UNSET, u2=0.05, ur3=UNSET)
+mdb.models['Model-2'].TemperatureBC(amplitude='Amp-1', createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=0.5, name=
+    'BC-3', region=mdb.models['Model-2'].rootAssembly.sets['bottom_side'])
+mdb.models['Model-2'].rootAssembly.Set(edges=
+    mdb.models['Model-2'].rootAssembly.instances['plate-1'].edges.getSequenceFromMask(
+    ('[#22 ]', ), ), name='left_side')
+mdb.models['Model-2'].TemperatureBC(amplitude='Amp-1', createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=0.5, name=
+    'BC-4', region=mdb.models['Model-2'].rootAssembly.sets['left_side'])
+mdb.models['Model-2'].rootAssembly.Set(edges=
+    mdb.models['Model-2'].rootAssembly.instances['plate-1'].edges.getSequenceFromMask(
+    ('[#8 ]', ), ), name='right_side')
+mdb.models['Model-2'].TemperatureBC(amplitude='Amp-1', createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=0.5, name=
+    'BC-5', region=mdb.models['Model-2'].rootAssembly.sets['right_side'])
+mdb.models['Model-2'].ConstrainedSketch(gridSpacing=0.07, name='__profile__', 
+    sheetSize=2.82, transform=
+    mdb.models['Model-2'].parts['plate'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-2'].parts['plate'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(8.3e-05, 0.0, 
+    0.0)))
+mdb.models['Model-2'].parts['plate'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-2'].sketches['__profile__'])
+mdb.models['Model-2'].sketches['__profile__'].Line(point1=(-8.3e-05, 0.0), 
+    point2=(0.499917000033244, 0.0))
+mdb.models['Model-2'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[9])
+mdb.models['Model-2'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-2'].sketches['__profile__'].vertices[7], entity2=
+    mdb.models['Model-2'].sketches['__profile__'].geometry[5])
+mdb.models['Model-2'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-2'].sketches['__profile__'].vertices[3], entity2=
+    mdb.models['Model-2'].sketches['__profile__'].vertices[4], midpoint=
+    mdb.models['Model-2'].sketches['__profile__'].vertices[7])
+mdb.models['Model-2'].parts['plate'].PartitionFaceBySketch(faces=
+    mdb.models['Model-2'].parts['plate'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ), sketch=mdb.models['Model-2'].sketches['__profile__'])
+del mdb.models['Model-2'].sketches['__profile__']
+mdb.models['Model-2'].rootAssembly.regenerate()
+mdb.models['Model-2'].parts['plate'].setMeshControls(elemShape=QUAD, regions=
+    mdb.models['Model-2'].parts['plate'].faces.getSequenceFromMask(('[#3 ]', ), 
+    ))
+mdb.models['Model-2'].parts['plate'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-2'].parts['plate'].edges.getSequenceFromMask(('[#cc ]', 
+    ), ), size=0.04)
+mdb.models['Model-2'].parts['plate'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end2Edges=
+    mdb.models['Model-2'].parts['plate'].edges.getSequenceFromMask(('[#20 ]', 
+    ), ), maxSize=0.04, minSize=0.005)
+mdb.models['Model-2'].parts['plate'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-2'].parts['plate'].edges.getSequenceFromMask(('[#1 ]', ), 
+    ), size=0.005)
+mdb.models['Model-2'].parts['plate'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['Model-2'].parts['plate'].edges.getSequenceFromMask(('[#100 ]', 
+    ), ), maxSize=0.04, minSize=0.005)
+mdb.models['Model-2'].parts['plate'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['Model-2'].parts['plate'].edges.getSequenceFromMask(('[#10 ]', 
+    ), ), maxSize=0.04, minSize=0.005)
+mdb.models['Model-2'].parts['plate'].generateMesh(regions=
+    mdb.models['Model-2'].parts['plate'].faces.getSequenceFromMask(('[#2 ]', ), 
+    ))
+mdb.models['Model-2'].parts['plate'].generateMesh(regions=
+    mdb.models['Model-2'].parts['plate'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ))
+mdb.models['Model-2'].parts['plate'].deleteMesh(regions=
+    mdb.models['Model-2'].parts['plate'].faces.getSequenceFromMask(('[#3 ]', ), 
+    ))
+mdb.models['Model-2'].parts['plate'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['Model-2'].parts['plate'].edges.getSequenceFromMask(('[#100 ]', 
+    ), ), end2Edges=
+    mdb.models['Model-2'].parts['plate'].edges.getSequenceFromMask(('[#2 ]', ), 
+    ), maxSize=0.04, minSize=0.005)
+mdb.models['Model-2'].parts['plate'].generateMesh(regions=
+    mdb.models['Model-2'].parts['plate'].faces.getSequenceFromMask(('[#2 ]', ), 
+    ))
+mdb.models['Model-2'].parts['plate'].generateMesh(regions=
+    mdb.models['Model-2'].parts['plate'].faces.getSequenceFromMask(('[#1 ]', ), 
+    ))
+# Save by nguyenb5 on 2024_08_06-14.10.35; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_08_06-14.10.39; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_08_06-14.10.58; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-2'].rootAssembly.regenerate()
+del mdb.jobs['phase_field_plate']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-2', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='phase_field_plate', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.models['Model-2'].parts['plate'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE8R, elemLibrary=STANDARD), ElemType(elemCode=CPE6M, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-2'].parts['plate'].faces.getSequenceFromMask(('[#3 ]', ), 
+    ), ))
+# Save by nguyenb5 on 2024_08_06-14.19.29; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-2'].rootAssembly.regenerate()
+del mdb.models['Model-2'].predefinedFields['Predefined Field-1']
+mdb.models['Model-2'].rootAssembly.Set(edges=
+    mdb.models['Model-2'].rootAssembly.instances['plate-1'].edges.getSequenceFromMask(
+    ('[#1ff ]', ), ), faces=
+    mdb.models['Model-2'].rootAssembly.instances['plate-1'].faces.getSequenceFromMask(
+    ('[#3 ]', ), ), name='whole_plate', vertices=
+    mdb.models['Model-2'].rootAssembly.instances['plate-1'].vertices.getSequenceFromMask(
+    ('[#ff ]', ), ))
+mdb.models['Model-2'].Temperature(createStepName='Initial', 
+    crossSectionDistribution=CONSTANT_THROUGH_THICKNESS, distributionType=
+    UNIFORM, magnitudes=(0.5, ), name='Predefined Field-1', region=
+    mdb.models['Model-2'].rootAssembly.sets['whole_plate'])
+mdb.models['Model-2'].boundaryConditions['BC-2'].setValues(u2=0.01)
+# Save by nguyenb5 on 2024_08_06-14.59.30; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
