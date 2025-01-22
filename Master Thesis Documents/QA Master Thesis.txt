@@ -1,0 +1,77 @@
+Dear MACADAMIA professor Marttinen Pekka/Student Services office,
+
+My name is Xuan Binh (887799), a first year MACADAMIA student. 
+I want to start my thesis at the start of the fourth period, year 2024. 
+My Topic will be supervised by a professor in Mechanical Engineering Department. 
+His topic will involve Machine Learning models in solving engineering problems, 
+so I can guarantee that my Master's thesis topic is related ML/Data Science. 
+Is it possible for me to register my thesis for professors under Mechanical Engineering Department? 
+If yes, where can I contact to register the thesis? Thank you so much in advance.
+
+Best regards, Xuan Binh
+
+
+
+Hello Xuan,
+
+Great to hear that you have found a Master's thesis position! To the best of my knowledge, 
+the thesis should in the end be returned to SCI CS, but the "credits" for supervision can be 
+assigned to the Mechanical Engineering Department. This is at least how it has gone when I have 
+supervised theses to other departments or schools. Hopefully the student services could provide 
+more detailed guidance on what you need to do in practice.
+
+Best regards,
+Pekka
+
+
+
+Hi Xuan!
+
+As Pekka already said, even if you do your thesis for your Minor or for a professor outside of your Major,
+the thesis is still handeled enrirely in your own study program and major. So you apply for thesis topic 
+normaly by following the instructions on SCI Master's Thesis Guide.
+
+Please do check, if the school or department of your supervisor requires you to send in applications 
+or approvals of some sort. The only thing you need to do differentally than if you would write your 
+thesis for your Major, is that students who write their thesis for Minor or a professor outside of 
+their Major are required to send in an approval from the professor in charge of their Major. 
+The approval needs to clearly say, that the professor in charge approves doing the thesis for the Minor. 
+The approval can be either a screen shot or print from an email, or signature in the 206 REQUEST FOR 
+APPROVAL OF MASTER’S THESIS TOPIC -application. So the instructions are same as for getting signature 
+from the supervisor of the thesis. 
+
+The thesis will be registered in Sisu according to the supervisor of the thesis, 
+so please change the code for the thesis (and maturity test if needed) in Sisu to match 
+the school and department of the supervisor. 
+
+Sincerely,
+Meeri Heimo
+Study Secretary
+School of Science
+
+
+
+
+
+Hi!
+
+Thank you for writing to us, I am happy to help you figure out the adminstrative process behind thesis. I strongly suggest to read threw SCI Master's Thesis Guide, it has a lot of information and answers to most of your questions.
+
+Here is a list of things you need to do, in chronological order.
+
+1. If I understood correctly and your supervisor is from Mechanical Engineering Department in School of Engineering, please write a message to either masters-eng@aalto.fi or directly to study coordinator (Helena Suonsilta helena.suonsilta@aalto.fi) or planning officer (Katri Koistinen katri.koistinen@aalto.fi) in Master's programme in Mechanical Engineering. Your message should say the following details: Your name and student number, that you are a student from School of Science, Master's Programme in Computer, Communication and Information Sciences and you are planning to do your thesis to your minor in Mechanical Engineering. Ask them if your thesis needs to be approved by their school and major or is it enough that your own school and programme has approved your thesis. If your minor ask you to submit a thesis topic approval or final thesis to them, follow their instructions. If not, you can follow only the steps below.
+2. Clear your study plan in Sisu and apply for approval for all the parts that do not say "sections done/completed". If your supervisor is from Mechanical Engineering, change the course code for the thesis and maturity essay to match the correct department. An approved study plan is a requirement for applying for thesis topic.
+3. Apply for thesis topic approval in eAGE. 
+     3.1 There is a question in the eAGE form if your thesis is done for the minor: please click it.
+     3.2 Fill in and attach the form 206 to your application in eAGE. Ask your supervosor and the head of your major to sign the 206 form. If for some reason you do not want to fill that form, you can also attach a screen shot from an email conversation with your supervisor and the head of your major. In the conversation your supervisor needs to clearly say that they agree to be your supervisor, and the head of your major should clearly say that they approve that you do your thesis to your minor, and that your supervisor and topic choises are OK.
+    3.3. Important! There are certain deadlines in which the topic approvals are handeled in, please see the dates in MyCo or Student Guide. 
+4. Write your thesis.
+5. Once your thesis is ready, give a thesis presentation and ask for permission from your supervisor to submit it.
+6. Submit your thesis in eAGE. Important! There are certain deadlines in which theses are approved in, please see the dates in MyCo or Student Guide.
+
+If you want, you can book an appointment with me via MyStudies regarding the thesis process. What comes to the academic guidance of the thesis, please contact your supervisor.
+
+Sincerely,
+Meeri Heimo
+Study Secretary
+School of Science

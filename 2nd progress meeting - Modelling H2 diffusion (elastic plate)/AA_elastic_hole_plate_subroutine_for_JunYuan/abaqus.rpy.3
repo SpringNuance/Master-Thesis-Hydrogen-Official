@@ -1,0 +1,409 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/Viewer Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Tue Aug  6 18:19:03 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+#: Warning: Permission was denied for "abaqus.rpy"; "abaqus.rpy.3" will be used for this session's replay file.
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=108.171875, 
+    height=132.6875)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from viewerModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+o2 = session.openOdb(name='Job-1.odb')
+#: Model: C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/2nd progress meeting - Modelling H2 diffusion (elastic plate)/AA_elastic_hole_plate_subroutine_for_JunYuan/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       13
+#: Number of Node Sets:          12
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o2)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.17398, 
+    farPlane=0.278887, width=0.0824956, height=0.0381309, 
+    viewOffsetX=-0.00250798, viewOffsetY=-0.0121937)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+o1 = session.openOdb(
+    name='C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/2nd progress meeting - Modelling H2 diffusion (elastic plate)/AA_elastic_hole_plate_subroutine_for_JunYuan/Job-1.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/2nd progress meeting - Modelling H2 diffusion (elastic plate)/AA_elastic_hole_plate_subroutine_for_JunYuan/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       13
+#: Number of Node Sets:          13
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.164794, 
+    farPlane=0.288073, width=0.0876637, height=0.059251, 
+    viewOffsetX=-0.0014707, viewOffsetY=0.00145934)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.169008, 
+    farPlane=0.283858, width=0.103352, height=0.0476372, 
+    viewOffsetX=-0.00860803, viewOffsetY=0.00538681)
+odb = session.odbs['C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/2nd progress meeting - Modelling H2 diffusion (elastic plate)/AA_elastic_hole_plate_subroutine_for_JunYuan/Job-1.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('SDV5', 
+    INTEGRATION_POINT), ('SDV6', INTEGRATION_POINT), ), nodePick=(('PART-1-1', 
+    160, ('[#c00000 #c000 #c00000c0 #c00000 #c000 #c00000c0 #0:2', 
+    ' #3f #1e0000 #0 #f #78000 #c0000000 #3', 
+    ' #1e000 #f0000000 #92c80860 #8b0b416 #0:11 #ffc00000 #ff', 
+    ' #0:24 #fe000000 #ffffffff:2 #1f ]', )), ), )
+x0 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 23']
+x1 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 24']
+x2 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 47']
+x3 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 48']
+x4 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 71']
+x5 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 72']
+x6 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 95']
+x7 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 96']
+x8 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 119']
+x9 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 120']
+x10 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 143']
+x11 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 144']
+x12 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 167']
+x13 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 168']
+x14 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 191']
+x15 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 192']
+x16 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 257']
+x17 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 258']
+x18 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 259']
+x19 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 260']
+x20 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 261']
+x21 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 262']
+x22 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 306']
+x23 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 307']
+x24 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 308']
+x25 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 309']
+x26 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 353']
+x27 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 354']
+x28 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 355']
+x29 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 356']
+x30 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 400']
+x31 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 401']
+x32 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 402']
+x33 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 403']
+x34 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 447']
+x35 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 448']
+x36 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 449']
+x37 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 450']
+x38 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 494']
+x39 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 495']
+x40 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 496']
+x41 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 497']
+x42 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 541']
+x43 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 542']
+x44 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 543']
+x45 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 544']
+x46 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 550']
+x47 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 551']
+x48 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 556']
+x49 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 564']
+x50 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 567']
+x51 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 568']
+x52 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 570']
+x53 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 573']
+x54 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 576']
+x55 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 578']
+x56 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 579']
+x57 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 581']
+x58 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 587']
+x59 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 589']
+x60 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 590']
+x61 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 592']
+x62 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 597']
+x63 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 598']
+x64 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 600']
+x65 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 604']
+x66 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 983']
+x67 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 984']
+x68 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 985']
+x69 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 986']
+x70 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 987']
+x71 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 988']
+x72 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 989']
+x73 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 990']
+x74 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 991']
+x75 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 992']
+x76 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 993']
+x77 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 994']
+x78 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 995']
+x79 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 996']
+x80 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 997']
+x81 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 998']
+x82 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 999']
+x83 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1000']
+x84 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1818']
+x85 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1819']
+x86 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1820']
+x87 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1821']
+x88 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1822']
+x89 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1823']
+x90 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1824']
+x91 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1825']
+x92 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1826']
+x93 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1827']
+x94 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1828']
+x95 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1829']
+x96 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1830']
+x97 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1831']
+x98 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1832']
+x99 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1833']
+x100 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1834']
+x101 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1835']
+x102 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1836']
+x103 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1837']
+x104 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1838']
+x105 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1839']
+x106 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1840']
+x107 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1841']
+x108 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1842']
+x109 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1843']
+x110 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1844']
+x111 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1845']
+x112 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1846']
+x113 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1847']
+x114 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1848']
+x115 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1849']
+x116 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1850']
+x117 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1851']
+x118 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1852']
+x119 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1853']
+x120 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1854']
+x121 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1855']
+x122 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1856']
+x123 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1857']
+x124 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1858']
+x125 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1859']
+x126 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1860']
+x127 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1861']
+x128 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1862']
+x129 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1863']
+x130 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1864']
+x131 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1865']
+x132 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1866']
+x133 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1867']
+x134 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1868']
+x135 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1869']
+x136 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1870']
+x137 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1871']
+x138 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1872']
+x139 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1873']
+x140 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1874']
+x141 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1875']
+x142 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1876']
+x143 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1877']
+x144 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1878']
+x145 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1879']
+x146 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1880']
+x147 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1881']
+x148 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1882']
+x149 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1883']
+x150 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1884']
+x151 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1885']
+x152 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1886']
+x153 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1887']
+x154 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1888']
+x155 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1889']
+x156 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1890']
+x157 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1891']
+x158 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1892']
+x159 = session.xyDataObjects['SDV5 (Avg: 75%) PI: PART-1-1 N: 1893']
+x160 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 23']
+x161 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 24']
+x162 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 47']
+x163 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 48']
+x164 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 71']
+x165 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 72']
+x166 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 95']
+x167 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 96']
+x168 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 119']
+x169 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 120']
+x170 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 143']
+x171 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 144']
+x172 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 167']
+x173 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 168']
+x174 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 191']
+x175 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 192']
+x176 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 257']
+x177 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 258']
+x178 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 259']
+x179 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 260']
+x180 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 261']
+x181 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 262']
+x182 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 306']
+x183 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 307']
+x184 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 308']
+x185 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 309']
+x186 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 353']
+x187 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 354']
+x188 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 355']
+x189 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 356']
+x190 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 400']
+x191 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 401']
+x192 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 402']
+x193 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 403']
+x194 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 447']
+x195 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 448']
+x196 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 449']
+x197 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 450']
+x198 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 494']
+x199 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 495']
+x200 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 496']
+x201 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 497']
+x202 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 541']
+x203 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 542']
+x204 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 543']
+x205 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 544']
+x206 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 550']
+x207 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 551']
+x208 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 556']
+x209 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 564']
+x210 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 567']
+x211 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 568']
+x212 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 570']
+x213 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 573']
+x214 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 576']
+x215 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 578']
+x216 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 579']
+x217 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 581']
+x218 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 587']
+x219 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 589']
+x220 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 590']
+x221 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 592']
+x222 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 597']
+x223 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 598']
+x224 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 600']
+x225 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 604']
+x226 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 983']
+x227 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 984']
+x228 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 985']
+x229 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 986']
+x230 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 987']
+x231 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 988']
+x232 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 989']
+x233 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 990']
+x234 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 991']
+x235 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 992']
+x236 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 993']
+x237 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 994']
+x238 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 995']
+x239 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 996']
+x240 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 997']
+x241 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 998']
+x242 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 999']
+x243 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1000']
+x244 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1818']
+x245 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1819']
+x246 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1820']
+x247 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1821']
+x248 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1822']
+x249 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1823']
+x250 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1824']
+x251 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1825']
+x252 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1826']
+x253 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1827']
+x254 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1828']
+x255 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1829']
+x256 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1830']
+x257 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1831']
+x258 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1832']
+x259 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1833']
+x260 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1834']
+x261 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1835']
+x262 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1836']
+x263 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1837']
+x264 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1838']
+x265 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1839']
+x266 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1840']
+x267 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1841']
+x268 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1842']
+x269 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1843']
+x270 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1844']
+x271 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1845']
+x272 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1846']
+x273 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1847']
+x274 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1848']
+x275 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1849']
+x276 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1850']
+x277 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1851']
+x278 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1852']
+x279 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1853']
+x280 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1854']
+x281 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1855']
+x282 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1856']
+x283 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1857']
+x284 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1858']
+x285 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1859']
+x286 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1860']
+x287 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1861']
+x288 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1862']
+x289 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1863']
+x290 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1864']
+x291 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1865']
+x292 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1866']
+x293 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1867']
+x294 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1868']
+x295 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1869']
+x296 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1870']
+x297 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1871']
+x298 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1872']
+x299 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1873']
+x300 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1874']
+x301 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1875']
+x302 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1876']
+x303 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1877']
+x304 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1878']
+x305 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1879']
+x306 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1880']
+x307 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1881']
+x308 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1882']
+x309 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1883']
+x310 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1884']
+x311 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1885']
+x312 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1886']
+x313 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1887']
+x314 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1888']
+x315 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1889']
+x316 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1890']
+x317 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1891']
+x318 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1892']
+x319 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 1893']
+session.writeXYReport(fileName='output_part1.csv', xyData=(x0, x1, x2, x3, x4, 
+    x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, 
+    x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31, x32, x33, x34, x35, 
+    x36, x37, x38, x39, x40, x41, x42, x43, x44, x45, x46, x47, x48, x49, x50, 
+    x51, x52, x53, x54, x55, x56, x57, x58, x59, x60, x61, x62, x63, x64, x65, 
+    x66, x67, x68, x69, x70, x71, x72, x73, x74, x75, x76, x77, x78, x79, x80, 
+    x81, x82, x83, x84, x85, x86, x87, x88, x89, x90, x91, x92, x93, x94, x95, 
+    x96, x97, x98, x99, x100, x101, x102, x103, x104, x105, x106, x107, x108, 
+    x109, x110, x111, x112, x113, x114, x115, x116, x117, x118, x119, x120, 
+    x121, x122, x123, x124, x125, x126, x127, x128, x129, x130, x131, x132, 
+    x133, x134, x135, x136, x137, x138, x139, x140, x141, x142, x143, x144, 
+    x145, x146, x147, x148, x149, x150, x151, x152, x153, x154, x155, x156, 
+    x157, x158, x159, x160, x161, x162, x163, x164, x165, x166, x167, x168, 
+    x169, x170, x171, x172, x173, x174, x175, x176, x177, x178, x179, x180, 
+    x181, x182, x183, x184, x185, x186, x187, x188, x189, x190, x191, x192, 
+    x193, x194, x195, x196, x197, x198, x199, x200, x201, x202, x203, x204, 
+    x205, x206, x207, x208, x209, x210, x211, x212, x213, x214, x215, x216, 
+    x217, x218, x219, x220, x221, x222, x223, x224, x225, x226, x227, x228, 
+    x229, x230, x231, x232, x233, x234, x235, x236, x237, x238, x239, x240, 
+    x241, x242, x243, x244, x245, x246, x247, x248, x249, x250, x251, x252, 
+    x253, x254, x255, x256, x257, x258, x259, x260, x261, x262, x263, x264, 
+    x265, x266, x267, x268, x269, x270, x271, x272, x273, x274, x275, x276, 
+    x277, x278, x279, x280, x281, x282, x283, x284, x285, x286, x287, x288, 
+    x289, x290, x291, x292, x293, x294, x295, x296, x297, x298, x299, x300, 
+    x301, x302, x303, x304, x305, x306, x307, x308, x309, x310, x311, x312, 
+    x313, x314, x315, x316, x317, x318, x319))

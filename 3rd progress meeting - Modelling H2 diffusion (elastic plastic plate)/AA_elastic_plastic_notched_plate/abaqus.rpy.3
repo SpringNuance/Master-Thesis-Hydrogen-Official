@@ -1,0 +1,180 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Tue May 21 11:51:22 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=61.5885391235352, 
+    height=161.056716918945)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('elastic_plastic_deep_notch.cae')
+#: The model database "C:\LocalUserData\User-data\nguyenb5\AA_elastic_plastic_notched_plate\elastic_plastic_deep_notch.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['elastic-plastic-plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['Model-1'].parts['elastic-plastic-plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p1 = mdb.models['Model-1'].parts['elastic-plastic-plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+mdb.models['Model-1'].materials['Material-1'].userMaterial.setValues(
+    mechanicalConstants=(200000000000.0, 0.3, 500000000.0, 0.2, 1.0, 3.0))
+mdb.models['Model-1'].materials['Material-1'].userMaterial.setValues(
+    thermalConstants=(8.31446261815324, 293.0, 2e-06, 3.8e-11))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_plastic_notched_plate\elastic_plastic_deep_notch.cae".
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON, optimizationTasks=OFF, 
+    geometricRestrictions=OFF, stopConditions=OFF)
+p1 = mdb.models['Model-1'].parts['elastic-plastic-plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(variables=(
+    'S', 'E', 'LE', 'U', 'RF', 'NT', 'TEMP', 'HFL', 'RFL', 'COORD', 'SDV'))
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p1 = mdb.models['Model-1'].parts['elastic-plastic-plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+del mdb.models['Model-1'].rootAssembly.sets['notch_root_path']
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.156706, 
+    farPlane=0.182705, width=0.0705233, height=0.0426942, 
+    viewOffsetX=0.00392351, viewOffsetY=-0.00753774)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.164302, 
+    farPlane=0.175109, width=0.0292286, height=0.0176948, 
+    viewOffsetX=0.0178351, viewOffsetY=-0.0208226)
+a = mdb.models['Model-1'].rootAssembly
+a.SetFromNodeLabels(name='notch_root_path', nodeLabels=((
+    'elastic-plastic-plate-1', (6, 12304, 264, 11882, 265, 11800, 266, 11797, 
+    267, 10355, 268, 11878, 269, 11792, 270, 8995, 271, 11833, 272, 11877, 273, 
+    11786, 274, 11847, 275, 11876, 276, 11782, 277, 11850, 278, 11875, 279, 
+    11780, 280, 11776, 281, 11853, 282, 11870, 283, 11773, 284, 11856, 285, 
+    11869, 286, 11768, 287, 11859, 288, 11765, 289, 11764, 290, 11760, 291, 
+    11831, 292, 11756, 293, 11755, 294, 9481, 295, 11863, 296, 9489, 297, 
+    11838, 298, 11862, 299, 11750, 300, 11747, 301, 8991, 302, 11742, 7)), ), 
+    unsorted=True)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_plastic_notched_plate\elastic_plastic_deep_notch.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.164577, 
+    farPlane=0.174834, width=0.0275209, height=0.0167294, 
+    viewOffsetX=0.0179838, viewOffsetY=-0.0214458)
+a = mdb.models['Model-1'].rootAssembly
+n1 = a.instances['elastic-plastic-plate-1'].nodes
+nodes1 = n1.getSequenceFromMask(mask=('[#20 ]', ), )
+a.Set(nodes=nodes1, name='notch_root')
+#: The set 'notch_root' has been created (1 node).
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_plastic_notched_plate\elastic_plastic_deep_notch.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_plastic_notched_plate\elastic_plastic_deep_notch.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF, 
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_plastic_notched_plate\elastic_plastic_deep_notch.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+#: Coordinates of vertex 5 :40.E-03,0.,0.
+#: Coordinates of vertex 5 :40.E-03,0.,0.
+#: 
+#: Element 3306: Quadratic quadrilateral, type CPE8HT
+#:    Nodal connectivity: 263, 6, 264, 3083, 12303, 12304, 11883, 11918
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p1 = mdb.models['Model-1'].parts['elastic-plastic-plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['Model-1'].materials['Material-1'].userMaterial.setValues(
+    mechanicalConstants=(200000000000.0, 0.3, 500000000.0, 0.2, 2.0, 3.0))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_plastic_notched_plate\elastic_plastic_deep_notch.cae".
+mdb.models['Model-1'].materials['Material-1'].userMaterial.setValues(
+    mechanicalConstants=(200000000000.0, 0.3, 500000000.0, 0.2, 3.0, 2.0))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_plastic_notched_plate\elastic_plastic_deep_notch.cae".
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-1'].parts['elastic-plastic-plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+elemType1 = mesh.ElemType(elemCode=CPE8HT, elemLibrary=STANDARD)
+elemType2 = mesh.ElemType(elemCode=CPE6MT, elemLibrary=STANDARD)
+p = mdb.models['Model-1'].parts['elastic-plastic-plate']
+f = p.faces
+faces = f.getSequenceFromMask(mask=('[#3 ]', ), )
+pickedRegions =(faces, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_plastic_notched_plate\elastic_plastic_deep_notch.cae".
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_plastic_notched_plate\elastic_plastic_deep_notch.cae".
+p = mdb.models['Model-1'].parts['elastic-plastic-plate']
+p.regenerate()
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_plastic_notched_plate\elastic_plastic_deep_notch.cae".

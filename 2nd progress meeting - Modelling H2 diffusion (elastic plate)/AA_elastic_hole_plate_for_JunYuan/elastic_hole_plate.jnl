@@ -1,0 +1,545 @@
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['Material-1'].setValues(description=
+    'Mechanical props: E (Pa), nu (dimless), element_flag (0 or 1)\nif element_flag = 0, element CPE8RT is used\nif element_flag = 1, element CPE8HT is used\n\nThermal props: R (J / (mol K), T (K), VH (m^3/mol), DL (m^2/s)\n')
+mdb.models['Model-1'].materials['Material-1'].depvar.setValues(n=7)
+mdb.models['Model-1'].materials['Material-1'].userMaterial.setValues(
+    mechanicalConstants=(200000000000.0, 0.3, 0.0), thermalConstants=(
+    8.31446261815324, 293.0, 2e-06, 3.8e-11))
+mdb.models['Model-1'].materials['Material-1'].setValues(description=
+    'Mechanical props: E (Pa), nu (dimless), element_flag (0 or 1)\nif element_flag = 0, element CPE8RT is used\nif element_flag = 1, element CPE8HT is used\n\nThermal props: R (J / (mol K), T (K), VH (m^3/mol), DL (m^2/s)\n\nSTATEV(1): eps_elastic(1)\nSTATEV(2): eps_elastic(2)\nSTATEV(3): eps_elastic(3)\nSTATEV(4): eps_elastic(4)\nSTATEV(5): hydrostatic_stress\nSTATEV(6): Cbar_L\nSTATEV(7): theta_L\n')
+# Save by nguyenb5 on 2024_05_20-16.19.58; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['Material-1'].depvar.setValues(n=6)
+# Save by nguyenb5 on 2024_05_20-16.46.37; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(frequency=
+    100)
+mdb.models['Model-1'].steps['Step-1'].setValues(maxInc=1000.0, timePeriod=
+    10000000.0)
+# Save by nguyenb5 on 2024_05_20-17.08.43; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_05_20-17.09.17; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(variables=(
+    'S', 'NT', 'COORD', 'SDV'))
+# Save by nguyenb5 on 2024_05_20-17.11.02; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_05_20-17.12.27; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].steps['Step-1'].setValues(minInc=30.0, timePeriod=
+    3000000.0)
+# Save by nguyenb5 on 2024_05_20-17.16.38; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].steps['Step-1'].setValues(minInc=100.0, timePeriod=
+    3000000.0)
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(frequency=10)
+# Save by nguyenb5 on 2024_05_20-17.18.04; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].steps['Step-1'].setValues(timePeriod=1000000.0)
+# Save by nguyenb5 on 2024_05_20-17.22.10; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['elastic_hole_plate'].Set(name='Point_A', nodes=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].nodes.getSequenceFromMask(
+    mask=('[#10 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].Set(name='Point_B', nodes=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].nodes.getSequenceFromMask(
+    mask=('[#0:29 #2 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].Set(name='Point_C', nodes=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].nodes.getSequenceFromMask(
+    mask=('[#8 ]', ), ))
+# Save by nguyenb5 on 2024_05_20-18.55.38; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by nguyenb5 on 2024_05_20-19.19.58; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['Material-1'].userMaterial.setValues(
+    mechanicalConstants=(200000000000.0, 0.3, 2.0))
+# Save by nguyenb5 on 2024_05_21-14.25.53; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['elastic_hole_plate'].setElementType(elemTypes=(
+    ElemType(elemCode=CPE8HT, elemLibrary=STANDARD), ElemType(elemCode=CPE6MHT, 
+    elemLibrary=STANDARD, hourglassControl=DEFAULT)), regions=(
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#3 ]', ), ), ))
+# Save by nguyenb5 on 2024_05_21-14.26.10; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_05_21-14.26.16; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by nguyenb5 on 2024_05_21-14.30.47; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['elastic_hole_plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].setMeshControls(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#2 ]', ), ), technique=STRUCTURED)
+mdb.models['Model-1'].parts['elastic_hole_plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#3 ]', ), ), minSizeFactor=0.1, size=0.002)
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].setMeshControls(
+    minTransition=OFF, regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.004, name='__profile__', 
+    sheetSize=0.16, transform=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['elastic_hole_plate'].faces[1], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.02783, 0.031589, 
+    0.0)))
+mdb.models['Model-1'].sketches['__profile__'].sketchOptions.setValues(
+    decimalPlaces=3)
+mdb.models['Model-1'].parts['elastic_hole_plate'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.013232, 
+    -0.017477), point2=(0.0251700000185892, -0.017477))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[13])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[13])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[9], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0251700000185892, 
+    -0.017477), point2=(-0.013232, -0.017477))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[14])
+mdb.models['Model-1'].sketches['__profile__'].ParallelConstraint(addUndoState=
+    False, entity1=mdb.models['Model-1'].sketches['__profile__'].geometry[13], 
+    entity2=mdb.models['Model-1'].sketches['__profile__'].geometry[14])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.013232, 
+    -0.017477), point2=(-0.013232, 0.0284110000178516))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[15])
+mdb.models['Model-1'].sketches['__profile__'].ParallelConstraint(addUndoState=
+    False, entity1=mdb.models['Model-1'].sketches['__profile__'].geometry[2], 
+    entity2=mdb.models['Model-1'].sketches['__profile__'].geometry[15])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[10], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[10])
+mdb.models['Model-1'].parts['elastic_hole_plate'].PartitionFaceBySketch(faces=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#2 ]', ), ), sketch=mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#500 ]', ), ), minSizeFactor=0.1, size=0.0005)
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#200 ]', ), ), minSizeFactor=0.1, size=0.0001)
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ))
+# Save by nguyenb5 on 2024_08_06-17.30.58; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(frequency=10)
+mdb.models['Model-1'].steps['Step-1'].setValues(cetol=None, creepIntegration=
+    None, deltmx=None, initialInc=1000.0, maxNumInc=100000, 
+    timeIncrementationMethod=FIXED)
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(frequency=10)
+# Save by nguyenb5 on 2024_08_06-17.38.06; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['elastic_hole_plate'].setElementType(elemTypes=(
+    ElemType(elemCode=CPE8HT, elemLibrary=STANDARD), ElemType(elemCode=CPE6MHT, 
+    elemLibrary=STANDARD, hourglassControl=DEFAULT)), regions=(
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+# Save by nguyenb5 on 2024_08_06-17.41.03; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['elastic_hole_plate'].setElementType(elemTypes=(
+    ElemType(elemCode=CPE8HT, elemLibrary=STANDARD), ElemType(elemCode=CPE6MHT, 
+    elemLibrary=STANDARD, hourglassControl=DEFAULT)), regions=(
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['elastic_hole_plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#18ff ]', ), ), minSizeFactor=0.1, size=0.0015)
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#500 ]', ), ), minSizeFactor=0.1, size=0.0002)
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#200 ]', ), ), minSizeFactor=0.1, size=5e-05)
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#500 ]', ), ), minSizeFactor=0.1, size=0.0003)
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#200 ]', ), ), minSizeFactor=0.1, size=0.0001)
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].setMeshControls(allowMapped=
+    False, regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeByBias(biasMethod=
+    SINGLE, constraint=FINER, end1Edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), maxSize=0.0015, minSize=0.0003)
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeByBias(biasMethod=
+    SINGLE, constraint=FINER, end1Edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ), maxSize=0.001, minSize=0.0003)
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeByBias(biasMethod=
+    SINGLE, constraint=FINER, end2Edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#400 ]', ), ), maxSize=0.001, minSize=0.0001)
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeByBias(biasMethod=
+    SINGLE, constraint=FINER, end2Edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#400 ]', ), ), maxSize=0.001, minSize=0.0003)
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].setElementType(elemTypes=(
+    ElemType(elemCode=CPE8HT, elemLibrary=STANDARD), ElemType(elemCode=CPE6MHT, 
+    elemLibrary=STANDARD, hourglassControl=DEFAULT)), regions=(
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#f ]', ), ), ))
+# Save by nguyenb5 on 2024_08_06-17.51.48; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['elastic_hole_plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#f ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#18ff ]', ), ), minSizeFactor=0.1, size=0.004)
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].edges.getSequenceFromMask(
+    ('[#18ff ]', ), ), minSizeFactor=0.1, size=0.002)
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].parts['elastic_hole_plate'].generateMesh(regions=
+    mdb.models['Model-1'].parts['elastic_hole_plate'].faces.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.Set(name='whole_plate', nodes=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].nodes.getSequenceFromMask(
+    mask=('[#ffffffff:125 #1 ]', ), ))
+# Save by nguyenb5 on 2024_08_06-18.23.06; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].historyOutputRequests['H-Output-1'].setValues(frequency=
+    10, rebar=EXCLUDE, region=
+    mdb.models['Model-1'].rootAssembly.sets['whole_plate'], sectionPoints=
+    DEFAULT, variables=('SDV', ))
+# Save by nguyenb5 on 2024_08_06-18.23.52; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].historyOutputRequests['H-Output-1'].setValues(variables=(
+    'COOR1', 'COOR2', 'SDV'))
+# Save by nguyenb5 on 2024_08_06-18.24.46; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

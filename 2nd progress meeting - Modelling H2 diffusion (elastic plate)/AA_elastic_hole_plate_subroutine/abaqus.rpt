@@ -1,0 +1,72 @@
+********************************************************************************
+Probe Values Report, written on Thu Dec 26 21:37:28 2024
+
+Source
+-------
+
+   ODB: C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/2nd progress meeting - Modelling H2 diffusion (elastic plate)/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb
+   Step: Step-1
+   Frame: Increment   1002: Step Time =   1.0000E+06
+   Variable: S, S22 (Avg: 75)
+
+Probe values reported at nodes
+
+  Part Instance     Node ID            Orig. Coords                     Def. Coords          
+                                 X          Y          Z          X          Y          Z    
+-------------------------------------------------------------------------------------------
+    PART-1-1           7    53.E-03    60.E-03        0.0    53.E-03    60.E-03        0.0
+
+
+  Part Instance     Node ID  Attached elements     S, S22
+----------------------------------------------------------
+    PART-1-1           7        495   100.E+06
+
+
+********************************************************************************
+Probe Values Report, written on Thu Dec 26 21:39:26 2024
+
+Source
+-------
+
+   ODB: C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/2nd progress meeting - Modelling H2 diffusion (elastic plate)/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb
+   Step: Step-1
+   Frame: Increment   1002: Step Time =   1.0000E+06
+   Variable: S, S22 (Avg: 75)
+
+Probe values reported at nodes
+
+  Part Instance     Node ID            Orig. Coords                     Def. Coords          
+                                 X          Y          Z          X          Y          Z    
+-------------------------------------------------------------------------------------------
+    PART-1-1           7    53.E-03    60.E-03        0.0    53.E-03    60.E-03        0.0
+
+
+  Part Instance     Node ID  Attached elements     S, S22
+----------------------------------------------------------
+    PART-1-1           7        495   100.E+06
+
+
+********************************************************************************
+Probe Values Report, written on Thu Dec 26 21:51:34 2024
+
+Source
+-------
+
+   ODB: C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/2nd progress meeting - Modelling H2 diffusion (elastic plate)/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb
+   Step: Step-1
+   Frame: Increment   1002: Step Time =   1.0000E+06
+   Variable: S, S33 (Avg: 75)
+
+Probe values reported at nodes
+
+  Part Instance     Node ID            Orig. Coords                     Def. Coords          
+                                 X          Y          Z          X          Y          Z    
+-------------------------------------------------------------------------------------------
+    PART-1-1           5     4.E-03        0.0        0.0     4.E-03        0.0        0.0
+
+
+  Part Instance     Node ID  Attached elements     S, S33
+----------------------------------------------------------
+    PART-1-1           5         74    85.E+06
+
+

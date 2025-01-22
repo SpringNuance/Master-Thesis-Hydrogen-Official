@@ -1,0 +1,29 @@
+********************************************************************************
+Probe Values Report, written on Tue May 21 11:41:13 2024
+
+Source
+-------
+
+   ODB: C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb
+   Step: Step-1
+   Frame: Increment   1002: Step Time =   1.0000E+06
+   Variable: SDV5
+
+Probe values reported at nodes
+
+  Part Instance     Node ID            Orig. Coords                     Def. Coords          
+                                 X          Y          Z          X          Y          Z    
+-------------------------------------------------------------------------------------------
+    PART-1-1           5     4.E-03        0.0        0.0     4.E-03        0.0        0.0
+    PART-1-1           4        0.0     4.E-03        0.0        0.0     4.E-03        0.0
+    PART-1-1        3920    37.E-03    54.E-03        0.0    37.E-03    54.E-03        0.0
+
+
+  Part Instance     Node ID  Attached elements       SDV5
+----------------------------------------------------------
+    PART-1-1           5         74   131.E+06
+    PART-1-1           4         77   -44.E+06
+    PART-1-1        3920        969    43.E+06
+    PART-1-1        3920       1130    43.E+06
+
+

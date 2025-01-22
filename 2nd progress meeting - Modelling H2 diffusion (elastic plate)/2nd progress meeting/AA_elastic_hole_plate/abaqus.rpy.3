@@ -1,0 +1,1404 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Mon May 20 15:57:45 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=99.2135391235352, 
+    height=135.591430664062)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('elastic_hole_plate.cae')
+#: The model database "C:\LocalUserData\User-data\nguyenb5\AA_elastic_hole_plate\elastic_hole_plate.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.155483, 
+    farPlane=0.164742, width=0.0292413, height=0.012244, viewOffsetX=-0.017429, 
+    viewOffsetY=-0.0232377)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.models['Model-1'].materials['Material-1'].setValues(
+    description='Mechanical props: E (Pa), nu (dimless), element_flag (0 or 1)\nif element_flag = 0, element CPE8RT is used\nif element_flag = 1, element CPE8HT is used\n\nThermal props: R (J / (mol K), T (K), VH (m^3/mol), DL (m^2/s)\n')
+mdb.models['Model-1'].materials['Material-1'].depvar.setValues(n=7)
+mdb.models['Model-1'].materials['Material-1'].userMaterial.setValues(
+    mechanicalConstants=(200000000000.0, 0.3, 0.0), thermalConstants=(
+    8.31446261815324, 293.0, 2e-06, 3.8e-11))
+mdb.models['Model-1'].materials['Material-1'].setValues(
+    description='Mechanical props: E (Pa), nu (dimless), element_flag (0 or 1)\nif element_flag = 0, element CPE8RT is used\nif element_flag = 1, element CPE8HT is used\n\nThermal props: R (J / (mol K), T (K), VH (m^3/mol), DL (m^2/s)\n\nSTATEV(1): eps_elastic(1)\nSTATEV(2): eps_elastic(2)\nSTATEV(3): eps_elastic(3)\nSTATEV(4): eps_elastic(4)\nSTATEV(5): hydrostatic_stress\nSTATEV(6): Cbar_L\nSTATEV(7): theta_L\n')
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_hole_plate\elastic_hole_plate.cae".
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.152213, 
+    farPlane=0.168012, width=0.0501342, height=0.020919, 
+    viewOffsetX=-0.0174279, viewOffsetY=-0.0217389)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.137666, 
+    farPlane=0.182559, width=0.142772, height=0.0597818, 
+    viewOffsetX=-0.0137401, viewOffsetY=0.000347869)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.models['Model-1'].materials['Material-1'].depvar.setValues(n=6)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_hole_plate\elastic_hole_plate.cae".
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON, optimizationTasks=OFF, 
+    geometricRestrictions=OFF, stopConditions=OFF)
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(
+    frequency=100)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p1 = mdb.models['Model-1'].parts['elastic_hole_plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+#: 
+#: Element 919: Quadratic quadrilateral, type CPE8RT
+#:    Nodal connectivity: 824, 828, 930, 939, 2865, 3816, 3817, 2858
+#: 
+#: Element 74: Quadratic quadrilateral, type CPE8RT
+#:    Nodal connectivity: 531, 75, 5, 76, 2008, 2009, 2010, 1906
+#: 
+#: Element 77: Quadratic quadrilateral, type CPE8RT
+#:    Nodal connectivity: 4, 46, 232, 45, 2016, 1883, 2017, 2018
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.156509, 
+    farPlane=0.163716, width=0.025675, height=0.0107507, 
+    viewOffsetX=-0.0207946, viewOffsetY=-0.0260456)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['Model-1'].steps['Step-1'].setValues(timePeriod=10000000.0, 
+    maxInc=1000.0)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_hole_plate\elastic_hole_plate.cae".
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_hole_plate\elastic_hole_plate.cae".
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(variables=(
+    'S', 'NT', 'COORD', 'SDV'))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_hole_plate\elastic_hole_plate.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_hole_plate\elastic_hole_plate.cae".
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+p1 = mdb.models['Model-1'].parts['elastic_hole_plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.models['Model-1'].steps['Step-1'].setValues(timePeriod=3000000.0, 
+    minInc=30.0)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_hole_plate\elastic_hole_plate.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.models['Model-1'].steps['Step-1'].setValues(timePeriod=3000000.0, 
+    minInc=100.0)
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(frequency=10)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_hole_plate\elastic_hole_plate.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+#: 
+#: Element 74: Quadratic quadrilateral, type CPE8RT
+#:    Nodal connectivity: 531, 75, 5, 76, 2008, 2009, 2010, 1906
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.157975, 
+    farPlane=0.16225, width=0.0152363, height=0.00637977, 
+    viewOffsetX=-0.0194132, viewOffsetY=-0.0270315)
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/Job-1.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       12
+#: Number of Node Sets:          12
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV5', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.169695, 
+    farPlane=0.283171, width=0.119059, height=0.0496784, 
+    viewOffsetX=-0.0389419, viewOffsetY=-0.0138072)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.168818, 
+    farPlane=0.284049, width=0.118443, height=0.0494215, 
+    viewOffsetX=-0.0246721, viewOffsetY=-0.0106405)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.168808, 
+    farPlane=0.284058, width=0.118436, height=0.0494187, 
+    viewOffsetX=-0.0193954, viewOffsetY=-0.010124)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.168808, 
+    farPlane=0.284058, width=0.118436, height=0.0494187, 
+    viewOffsetX=0.00118873, viewOffsetY=-0.00940181)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=59 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=61 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=62 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=63 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=64 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=65 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=66 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=67 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=68 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=69 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=69 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=69 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=69 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=69 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=69 )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV6', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=70 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=71 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=73 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=73 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=73 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=73 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=73 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=73 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=73 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=75 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=75 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=75 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=75 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=75 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=75 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=75 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=75 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=75 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=75 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=75 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=76 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=78 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=82 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=82 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=82 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=82 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=82 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=82 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=82 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=83 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=85 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=85 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=85 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=85 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=85 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=85 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=87 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=89 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=90 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=91 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=92 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=94 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=95 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=101 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=102 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=103 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=104 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=105 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=106 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=107 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=108 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=109 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=110 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=111 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=112 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=113 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=114 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=115 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=116 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=117 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=118 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=119 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=120 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=121 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=122 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=123 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=124 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=125 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=126 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=127 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=128 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=128 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=128 )
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF, 
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.models['Model-1'].steps['Step-1'].setValues(timePeriod=1000000.0)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_hole_plate\elastic_hole_plate.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/Job-1.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+#: Warning: The output database 'C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/Job-1.odb' disk file has changed.
+#: 
+#: The current plot operation has been canceled, re-open the file to view the results
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/Job-1.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       12
+#: Number of Node Sets:          12
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=46 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=46 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=46 )
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV5', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=48 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV6', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=50 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=9 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=10 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=12 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=14 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=16 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=18 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=19 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=25 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=54 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=54 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=55 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=57 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=57 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=57 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=57 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=57 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=57 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=57 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=57 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=57 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=57 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=57 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=57 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=58 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=59 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=59 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=59 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=59 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=59 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=59 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=59 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=59 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=59 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=59 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=59 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=59 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=61 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=62 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=63 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=64 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=65 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=66 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=67 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=68 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=69 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=70 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=71 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=73 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=75 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=76 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=78 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=82 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=83 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=85 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=87 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=89 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=90 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=90 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=90 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=90 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=90 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=90 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=90 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=90 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=90 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=91 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=92 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=94 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=94 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=94 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=94 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=94 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=94 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=94 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=94 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=94 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=94 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=95 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=95 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=95 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=95 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=95 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=95 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=95 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/Job-1.odb'].close(
+    )
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/Job-1.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       13
+#: Number of Node Sets:          12
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV5', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.173005, 
+    farPlane=0.279861, width=0.0851648, height=0.0355358, 
+    viewOffsetX=-0.00600573, viewOffsetY=-0.0113004)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=70 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=70 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=70 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=70 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=71 )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV6', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=82 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=83 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=85 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=87 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=89 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=90 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=91 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=92 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=94 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=95 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=101 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=101 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=101 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=101 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=101 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=101 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=101 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=101 )
+session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/Job-1.odb'].close(
+    )
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p1 = mdb.models['Model-1'].parts['elastic_hole_plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.151737, 
+    farPlane=0.168488, width=0.0529816, height=0.0221846, 
+    viewOffsetX=-0.0122498, viewOffsetY=-0.0179437)
+p1 = mdb.models['Model-1'].parts['elastic_hole_plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.156007, 
+    farPlane=0.164218, width=0.0259247, height=0.0108552, 
+    viewOffsetX=-0.0175611, viewOffsetY=-0.0242793)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+n = p.nodes
+nodes = n.getSequenceFromMask(mask=('[#10 ]', ), )
+p.Set(nodes=nodes, name='Point_A')
+#: The set 'Point_A' has been edited (1 node).
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.14465, 
+    farPlane=0.175575, width=0.0980797, height=0.0410682, 
+    viewOffsetX=0.00860171, viewOffsetY=0.0165027)
+p1 = mdb.models['Model-1'].parts['elastic_hole_plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+n = p.nodes
+nodes = n.getSequenceFromMask(mask=('[#0:29 #2 ]', ), )
+p.Set(nodes=nodes, name='Point_B')
+#: The set 'Point_B' has been edited (1 node).
+p1 = mdb.models['Model-1'].parts['elastic_hole_plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.158178, 
+    farPlane=0.162047, width=0.0122056, height=0.00511077, 
+    viewOffsetX=-0.0263133, viewOffsetY=-0.0267021)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+n = p.nodes
+nodes = n.getSequenceFromMask(mask=('[#8 ]', ), )
+p.Set(nodes=nodes, name='Point_C')
+#: The set 'Point_C' has been edited (1 node).
+p1 = mdb.models['Model-1'].parts['elastic_hole_plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.141909, 
+    farPlane=0.178316, width=0.129118, height=0.0540648, viewOffsetX=0.0042087, 
+    viewOffsetY=-0.0233743)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_hole_plate\elastic_hole_plate.cae".
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       12
+#: Number of Node Sets:          15
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.164577, 
+    farPlane=0.28829, width=0.133304, height=0.0556225, viewOffsetX=0.0292222, 
+    viewOffsetY=-0.00406428)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.166356, 
+    farPlane=0.286511, width=0.134745, height=0.0562237, viewOffsetX=0.0140041, 
+    viewOffsetY=-0.00422558)
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb']
+xyList = xyPlot.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=((
+    'SDV6', INTEGRATION_POINT), ), nodeSets=("PART-1-1.POINT_A", ))
+xyp = session.XYPlot('XYPlot-1')
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+curveList = session.curveSet(xyData=xyList)
+chart.setValues(curvesToPlot=curveList)
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+odbName=session.viewports[session.currentViewportName].odbDisplay.name
+session.odbData[odbName].setValues(activeFrames=(('Step-1', ('2:101', )), ))
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb']
+xyList = xyPlot.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=((
+    'SDV6', INTEGRATION_POINT), ), nodeSets=("PART-1-1.POINT_A", ))
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+curveList = session.curveSet(xyData=xyList)
+chart.setValues(curvesToPlot=curveList)
+session.charts[chartName].autoColor(lines=True, symbols=True)
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb']
+xyList = xyPlot.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=((
+    'SDV6', INTEGRATION_POINT), ), nodeSets=("PART-1-1.POINT_A", ))
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+curveList = session.curveSet(xyData=xyList)
+chart.setValues(curvesToPlot=curveList)
+session.charts[chartName].autoColor(lines=True, symbols=True)
+odbName=session.viewports[session.currentViewportName].odbDisplay.name
+session.odbData[odbName].setValues(activeFrames=(('Step-1', ('1:101', )), ))
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb']
+xyList = xyPlot.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=((
+    'SDV6', INTEGRATION_POINT), ), nodeSets=("PART-1-1.POINT_A", ))
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+curveList = session.curveSet(xyData=xyList)
+chart.setValues(curvesToPlot=curveList)
+session.charts[chartName].autoColor(lines=True, symbols=True)
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('SDV6', 
+    INTEGRATION_POINT), ), nodeSets=("PART-1-1.POINT_A", "PART-1-1.POINT_B", 
+    "PART-1-1.POINT_C", ))
+x0 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+x1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 5']
+x2 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 930']
+session.xyReportOptions.setValues(numDigits=9)
+session.writeXYReport(fileName='Cbar_L.txt', xyData=(x0, x1, x2))
+del session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+del session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 5']
+del session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 930']
+del session.xyDataObjects['_SDV6 (Avg: 75%) PI: PART-1-1 N: 5_1']
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb']
+xyList = xyPlot.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=((
+    'SDV6', INTEGRATION_POINT), ), nodeSets=("PART-1-1.POINT_A", 
+    "PART-1-1.POINT_B", "PART-1-1.POINT_C", ))
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+curveList = session.curveSet(xyData=xyList)
+chart.setValues(curvesToPlot=curveList)
+session.charts[chartName].autoColor(lines=True, symbols=True)
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('SDV6', 
+    INTEGRATION_POINT), ), nodeSets=("PART-1-1.POINT_A", "PART-1-1.POINT_B", 
+    "PART-1-1.POINT_C", ))
+del session.xyDataObjects['_SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+del session.xyDataObjects['_SDV6 (Avg: 75%) PI: PART-1-1 N: 5']
+del session.xyDataObjects['_SDV6 (Avg: 75%) PI: PART-1-1 N: 930']
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 5']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 930']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 930']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 5']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.xyDataObjects.changeKey(fromName='SDV6 (Avg: 75%) PI: PART-1-1 N: 5', 
+    toName='Cbar_L_Point_A')
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 930']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.xyDataObjects.changeKey(fromName='SDV6 (Avg: 75%) PI: PART-1-1 N: 930', 
+    toName='Cbar_L_Point_B')
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['Cbar_L_Point_B']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.xyDataObjects.changeKey(fromName='SDV6 (Avg: 75%) PI: PART-1-1 N: 4', 
+    toName='Cbar_L_Point_C')
+x0 = session.xyDataObjects['Cbar_L_Point_A']
+x1 = session.xyDataObjects['Cbar_L_Point_B']
+x2 = session.xyDataObjects['Cbar_L_Point_C']
+session.writeXYReport(fileName='Cbar_L.txt', xyData=(x0, x1, x2))
+x0 = session.xyDataObjects['Cbar_L_Point_A']
+x1 = session.xyDataObjects['Cbar_L_Point_B']
+x2 = session.xyDataObjects['Cbar_L_Point_C']
+session.writeXYReport(fileName='Cbar_L.txt', xyData=(x0, x1, x2))
+x0 = session.xyDataObjects['Cbar_L_Point_A']
+x1 = session.xyDataObjects['Cbar_L_Point_B']
+x2 = session.xyDataObjects['Cbar_L_Point_C']
+session.writeXYReport(fileName='Cbar_L.txt', appendMode=OFF, xyData=(x0, x1, 
+    x2))
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=odb)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.166264, 
+    farPlane=0.286602, width=0.151775, height=0.0597796, viewOffsetX=0.0155997, 
+    viewOffsetY=-0.00397241)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.165266, 
+    farPlane=0.287601, width=0.150864, height=0.0594204, viewOffsetX=0.026202, 
+    viewOffsetY=-0.00642956)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    visibleEdges=FEATURE)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.167599, 
+    farPlane=0.285267, width=0.143814, height=0.056644, viewOffsetX=0.0242752, 
+    viewOffsetY=-0.00523338)
+session.printOptions.setValues(vpDecorations=OFF, reduceColors=False)
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/S_Mises', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.printOptions.setValues(vpBackground=ON)
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/S_Mises', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.printOptions.setValues(vpBackground=OFF, compass=ON)
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/S_Mises', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.printOptions.setValues(compass=OFF)
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/S_Mises', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.1676, 
+    farPlane=0.285267, width=0.127075, height=0.0619626, viewOffsetX=0.0182715, 
+    viewOffsetY=-0.00539651)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.168583, 
+    farPlane=0.284283, width=0.12782, height=0.0623261, viewOffsetX=0.0190109, 
+    viewOffsetY=-0.00763533)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.168159, 
+    farPlane=0.284708, width=0.154301, height=0.0621692, viewOffsetX=0.0321018, 
+    viewOffsetY=-0.00772095)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.168583, 
+    farPlane=0.284283, width=0.14541, height=0.0585866, viewOffsetX=0.0297727, 
+    viewOffsetY=-0.0072088)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.169554, 
+    farPlane=0.283312, width=0.146247, height=0.0589239, viewOffsetX=0.0289479, 
+    viewOffsetY=-0.00595855)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.169364, 
+    farPlane=0.283502, width=0.155408, height=0.0626149, viewOffsetX=0.0313736, 
+    viewOffsetY=-0.0065379)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.168395, 
+    farPlane=0.284471, width=0.154519, height=0.0622568, viewOffsetX=0.031931, 
+    viewOffsetY=-0.00755037)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.16861, 
+    farPlane=0.284256, width=0.145434, height=0.0585962, viewOffsetX=0.0297894, 
+    viewOffsetY=-0.00705229)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.169551, 
+    farPlane=0.283315, width=0.146245, height=0.0589233, viewOffsetX=0.0293579, 
+    viewOffsetY=-0.00599864)
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/S_Mises', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='S', outputPosition=INTEGRATION_POINT, refinement=(COMPONENT, 
+    'S11'), )
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\AA_elastic_hole_plate\elastic_hole_plate.cae".
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/S_11', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='S', outputPosition=INTEGRATION_POINT, refinement=(COMPONENT, 
+    'S22'), )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/S_22', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='S', outputPosition=INTEGRATION_POINT, refinement=(COMPONENT, 
+    'S33'), )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/S_33', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='S', outputPosition=INTEGRATION_POINT, refinement=(COMPONENT, 
+    'S12'), )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/S_12', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV1', outputPosition=INTEGRATION_POINT, )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/eps_elastic_11', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV2', outputPosition=INTEGRATION_POINT, )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/eps_elastic_22', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV3', outputPosition=INTEGRATION_POINT, )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/eps_elastic_33', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV4', outputPosition=INTEGRATION_POINT, )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/eps_elastic_44', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV5', outputPosition=INTEGRATION_POINT, )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/hydrostatic_stress', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV6', outputPosition=INTEGRATION_POINT, )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/export_figures/Cbar_L', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb'].close(
+    )
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       13
+#: Number of Node Sets:          15
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.168665, 
+    farPlane=0.284201, width=0.141483, height=0.0570045, viewOffsetX=0.0277569, 
+    viewOffsetY=-0.00499871)
+session.viewports['Viewport: 1'].view.setValues(width=0.151713, 
+    height=0.0611264, viewOffsetX=0.0301794, viewOffsetY=-0.00582711)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.168824, 
+    farPlane=0.284043, width=0.150655, height=0.0607001, viewOffsetX=0.0304821, 
+    viewOffsetY=-0.00681008)
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/export_figures/S_Mises', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='S', outputPosition=INTEGRATION_POINT, refinement=(COMPONENT, 
+    'S11'), )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/export_figures/S_11', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='S', outputPosition=INTEGRATION_POINT, refinement=(COMPONENT, 
+    'S22'), )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/export_figures/S_22', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='S', outputPosition=INTEGRATION_POINT, refinement=(COMPONENT, 
+    'S33'), )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/export_figures/S_33', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='S', outputPosition=INTEGRATION_POINT, refinement=(COMPONENT, 
+    'S12'), )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/export_figures/S_12', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV1', outputPosition=INTEGRATION_POINT, )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/export_figures/eps_elastic_11', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV2', outputPosition=INTEGRATION_POINT, )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/export_figures/eps_elastic_12', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV3', outputPosition=INTEGRATION_POINT, )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/export_figures/eps_elastic_33', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV4', outputPosition=INTEGRATION_POINT, )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/export_figures/eps_elastic_12', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV2', outputPosition=INTEGRATION_POINT, )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/export_figures/eps_elastic_22', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV5', outputPosition=INTEGRATION_POINT, )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/export_figures/hydrostatic_stress', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV6', outputPosition=INTEGRATION_POINT, )
+session.printToFile(
+    fileName='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/export_figures/Cbar_L', 
+    format=PNG, canvasObjects=(session.viewports['Viewport: 1'], ))
+del session.xyDataObjects['Cbar_L_Point_A']
+del session.xyDataObjects['Cbar_L_Point_B']
+del session.xyDataObjects['Cbar_L_Point_C']
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('SDV6', 
+    INTEGRATION_POINT), ), nodeSets=("PART-1-1.POINT_A", "PART-1-1.POINT_B", 
+    "PART-1-1.POINT_C", ))
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+del session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+del session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 5']
+del session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 930']
+odbName=session.viewports[session.currentViewportName].odbDisplay.name
+session.odbData[odbName].setValues(activeFrames=(('Step-1', ('2:101', )), ))
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb']
+xyList = xyPlot.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=((
+    'SDV6', INTEGRATION_POINT), ), nodeSets=("PART-1-1.POINT_A", ))
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+curveList = session.curveSet(xyData=xyList)
+chart.setValues(curvesToPlot=curveList)
+session.charts[chartName].autoColor(lines=True, symbols=True)
+odbName=session.viewports[session.currentViewportName].odbDisplay.name
+session.odbData[odbName].setValues(activeFrames=(('Step-1', ('1:101', )), ))
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb']
+xyList = xyPlot.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=((
+    'SDV6', INTEGRATION_POINT), ), nodeSets=("PART-1-1.POINT_A", ))
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+curveList = session.curveSet(xyData=xyList)
+chart.setValues(curvesToPlot=curveList)
+session.charts[chartName].autoColor(lines=True, symbols=True)
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('SDV6', 
+    INTEGRATION_POINT), ), nodeSets=("PART-1-1.POINT_A", "PART-1-1.POINT_B", 
+    "PART-1-1.POINT_C", ))
+del session.xyDataObjects['_SDV6 (Avg: 75%) PI: PART-1-1 N: 5_1']
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 930']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 930']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 5']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 930']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+x0 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+x1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 5']
+x2 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 930']
+session.writeXYReport(fileName='Cbar_L.txt', xyData=(x0, x1, x2))
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=odb)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.16302, 
+    farPlane=0.289846, width=0.141947, height=0.0859337, viewOffsetX=0.0304602, 
+    viewOffsetY=-0.00718778)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.16189, 
+    farPlane=0.290976, width=0.140963, height=0.0853381, 
+    viewOffsetX=0.00168127, viewOffsetY=-0.0108796)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.168849, 
+    farPlane=0.284017, width=0.0953411, height=0.0577187, 
+    viewOffsetX=-0.00127361, viewOffsetY=-0.0055739)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.169804, 
+    farPlane=0.283063, width=0.0958802, height=0.0580451, 
+    viewOffsetX=0.00264468, viewOffsetY=-0.00452869)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.16971, 
+    farPlane=0.283157, width=0.095827, height=0.0580129, 
+    viewOffsetX=0.00391829, viewOffsetY=-0.00511316)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.179822, 
+    farPlane=0.273045, width=0.0401366, height=0.0242984, 
+    viewOffsetX=-0.00972365, viewOffsetY=-0.0176506)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.179416, 
+    farPlane=0.27345, width=0.0400461, height=0.0242436, 
+    viewOffsetX=-0.0128579, viewOffsetY=-0.0199412)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.180472, 
+    farPlane=0.272394, width=0.0361791, height=0.0219025, 
+    viewOffsetX=-0.0209004, viewOffsetY=-0.020395)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.180105, 
+    farPlane=0.272761, width=0.0361056, height=0.021858, 
+    viewOffsetX=-0.0143907, viewOffsetY=-0.0207221)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.180118, 
+    farPlane=0.272748, width=0.0361082, height=0.0218596, 
+    viewOffsetX=-0.0134308, viewOffsetY=-0.0196546)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 4']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+session.xyDataObjects.changeKey(fromName='SDV6 (Avg: 75%) PI: PART-1-1 N: 4', 
+    toName='Cbar_L_Point_C')
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['SDV6 (Avg: 75%) PI: PART-1-1 N: 5']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.xyDataObjects.changeKey(fromName='SDV6 (Avg: 75%) PI: PART-1-1 N: 5', 
+    toName='Cbar_L_Point_A')
+session.xyDataObjects.changeKey(fromName='SDV6 (Avg: 75%) PI: PART-1-1 N: 930', 
+    toName='Cbar_L_Point_B')
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['Cbar_L_Point_B']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+x0 = session.xyDataObjects['Cbar_L_Point_A']
+x1 = session.xyDataObjects['Cbar_L_Point_B']
+x2 = session.xyDataObjects['Cbar_L_Point_C']
+session.writeXYReport(fileName='Cbar_L.txt', xyData=(x0, x1, x2))
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+p1 = mdb.models['Model-1'].parts['elastic_hole_plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.134936, 
+    farPlane=0.185289, width=0.137264, height=0.0830986, viewOffsetX=0.0305949, 
+    viewOffsetY=-0.000102768)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON, loads=OFF, 
+    bcs=OFF, predefinedFields=OFF, connectors=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.140721, 
+    farPlane=0.179504, width=0.118897, height=0.072275, viewOffsetX=0.0225925, 
+    viewOffsetY=-0.00358739)
+x = session.xyPlots['XYPlot-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=x)
+session.odbs['C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb'].close(
+    )
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       13
+#: Number of Node Sets:          15
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV6', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.170225, 
+    farPlane=0.282641, width=0.0878273, height=0.0531699, 
+    viewOffsetX=-0.00753551, viewOffsetY=-0.000753604)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV5', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.185814, 
+    farPlane=0.267052, width=0.00318946, height=0.00193088, 
+    viewOffsetX=-0.0181402, viewOffsetY=-0.0239507)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV6', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.18286, 
+    farPlane=0.270006, width=0.0216844, height=0.0131275, 
+    viewOffsetX=-0.0175276, viewOffsetY=-0.0202752)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV5', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.16847, 
+    farPlane=0.284397, width=0.116441, height=0.0704926, 
+    viewOffsetX=-0.0118406, viewOffsetY=-0.00467995)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate_subroutine/result_CPE8RT/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       12
+#: Number of Node Sets:          15
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV5', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.167068, 
+    farPlane=0.285799, width=0.105053, height=0.0635982, 
+    viewOffsetX=-0.0216443, viewOffsetY=-0.0306607)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.167998, 
+    farPlane=0.284868, width=0.105638, height=0.0639524, viewOffsetX=0.017052, 
+    viewOffsetY=0.00572819)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.168011, 
+    farPlane=0.284856, width=0.105646, height=0.0639573, 
+    viewOffsetX=0.00407733, viewOffsetY=-0.00106616)
+#: The selected probe values were written to file "C:/LocalUserData/User-data/nguyenb5/AA_elastic_hole_plate/abaqus.rpt".

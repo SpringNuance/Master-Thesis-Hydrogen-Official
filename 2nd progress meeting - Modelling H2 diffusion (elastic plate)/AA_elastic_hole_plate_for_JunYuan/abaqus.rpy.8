@@ -1,0 +1,554 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Tue Aug  6 17:27:23 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=108.171875, 
+    height=132.6875)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('elastic_hole_plate.cae')
+#: The model database "C:\Users\nguyenb5\OneDrive - Aalto University\2022 Binh Nguyen\Master-Thesis-Hydrogen-Official\2nd progress meeting - Modelling H2 diffusion (elastic plate)\AA_elastic_hole_plate_for_JunYuan\elastic_hole_plate.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#2 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#2 ]', ), )
+p.setMeshControls(regions=pickedRegions, technique=STRUCTURED)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#1 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#3 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.002, deviationFactor=0.1, 
+    minSizeFactor=0.1, constraint=FINER)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#2 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.138921, 
+    farPlane=0.181304, width=0.125336, height=0.0581506, 
+    viewOffsetX=0.000511133, viewOffsetY=-0.000266705)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#2 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#2 ]', ), )
+p.setMeshControls(regions=pickedRegions, minTransition=OFF)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#2 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.137811, 
+    farPlane=0.182414, width=0.14437, height=0.0669816, viewOffsetX=0.00435822, 
+    viewOffsetY=-0.0027818)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#2 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f, e, d = p.faces, p.edges, p.datums
+t = p.MakeSketchTransform(sketchPlane=f[1], sketchPlaneSide=SIDE1, origin=(
+    0.02783, 0.031589, 0.0))
+s = mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=0.16, 
+    gridSpacing=0.004, transform=t)
+g, v, d1, c = s.geometry, s.vertices, s.dimensions, s.constraints
+s.sketchOptions.setValues(decimalPlaces=3)
+s.setPrimaryObject(option=SUPERIMPOSE)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+p.projectReferencesOntoSketch(sketch=s, filter=COPLANAR_EDGES)
+s.Line(point1=(-0.013232, -0.017477), point2=(0.0251700000185892, -0.017477))
+s.HorizontalConstraint(entity=g[13], addUndoState=False)
+s.PerpendicularConstraint(entity1=g[2], entity2=g[13], addUndoState=False)
+s.CoincidentConstraint(entity1=v[9], entity2=g[9], addUndoState=False)
+s.Line(point1=(0.0251700000185892, -0.017477), point2=(-0.013232, -0.017477))
+s.HorizontalConstraint(entity=g[14], addUndoState=False)
+s.ParallelConstraint(entity1=g[13], entity2=g[14], addUndoState=False)
+s.Line(point1=(-0.013232, -0.017477), point2=(-0.013232, 0.0284110000178516))
+s.VerticalConstraint(entity=g[15], addUndoState=False)
+s.ParallelConstraint(entity1=g[2], entity2=g[15], addUndoState=False)
+s.CoincidentConstraint(entity1=v[10], entity2=g[10], addUndoState=False)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.136972, 
+    farPlane=0.183253, width=0.1363, height=0.063, cameraPosition=(0.0251454, 
+    0.0295702, 0.160112), cameraTarget=(0.0251454, 0.0295702, 0))
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedFaces = f.getSequenceFromMask(mask=('[#2 ]', ), )
+e1, d2 = p.edges, p.datums
+p.PartitionFaceBySketch(faces=pickedFaces, sketch=s)
+s.unsetPrimaryObject()
+del mdb.models['Model-1'].sketches['__profile__']
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#1 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#8 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#2 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#4 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.149479, 
+    farPlane=0.170746, width=0.0626627, height=0.0290729, 
+    viewOffsetX=-0.00906079, viewOffsetY=-0.0218433)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#4 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#500 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.0005, deviationFactor=0.1, 
+    minSizeFactor=0.1, constraint=FINER)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#200 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.0001, deviationFactor=0.1, 
+    minSizeFactor=0.1, constraint=FINER)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#4 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.138937, 
+    farPlane=0.181288, width=0.139481, height=0.0647134, viewOffsetX=0.0111571, 
+    viewOffsetY=-0.00364602)
+mdb.save()
+#: The model database has been saved to "C:\Users\nguyenb5\OneDrive - Aalto University\2022 Binh Nguyen\Master-Thesis-Hydrogen-Official\2nd progress meeting - Modelling H2 diffusion (elastic plate)\AA_elastic_hole_plate_for_JunYuan\elastic_hole_plate.cae".
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.13754, 
+    farPlane=0.182685, width=0.133637, height=0.0620022, viewOffsetX=0.0241331, 
+    viewOffsetY=-0.00174082)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF, 
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(frequency=10)
+mdb.models['Model-1'].steps['Step-1'].setValues(maxNumInc=100000, 
+    timeIncrementationMethod=FIXED, initialInc=1000.0, deltmx=None, cetol=None, 
+    creepIntegration=None)
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(frequency=10)
+mdb.save()
+#: The model database has been saved to "C:\Users\nguyenb5\OneDrive - Aalto University\2022 Binh Nguyen\Master-Thesis-Hydrogen-Official\2nd progress meeting - Modelling H2 diffusion (elastic plate)\AA_elastic_hole_plate_for_JunYuan\elastic_hole_plate.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.135261, 
+    farPlane=0.184963, width=0.163489, height=0.075852, viewOffsetX=0.00653143, 
+    viewOffsetY=-0.00458088)
+elemType1 = mesh.ElemType(elemCode=CPE8HT, elemLibrary=STANDARD)
+elemType2 = mesh.ElemType(elemCode=CPE6MHT, elemLibrary=STANDARD, 
+    hourglassControl=DEFAULT)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+faces = f.getSequenceFromMask(mask=('[#f ]', ), )
+pickedRegions =(faces, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2))
+mdb.save()
+#: The model database has been saved to "C:\Users\nguyenb5\OneDrive - Aalto University\2022 Binh Nguyen\Master-Thesis-Hydrogen-Official\2nd progress meeting - Modelling H2 diffusion (elastic plate)\AA_elastic_hole_plate_for_JunYuan\elastic_hole_plate.cae".
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.133279, 
+    farPlane=0.186946, width=0.159122, height=0.0738257, viewOffsetX=0.0206783, 
+    viewOffsetY=-0.00167315)
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+elemType1 = mesh.ElemType(elemCode=CPE8HT, elemLibrary=STANDARD)
+elemType2 = mesh.ElemType(elemCode=CPE6MHT, elemLibrary=STANDARD, 
+    hourglassControl=DEFAULT)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+faces = f.getSequenceFromMask(mask=('[#f ]', ), )
+pickedRegions =(faces, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2))
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#f ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#18ff ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.0015, deviationFactor=0.1, 
+    minSizeFactor=0.1, constraint=FINER)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#1 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#8 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#2 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.145997, 
+    farPlane=0.174228, width=0.0832951, height=0.0386454, 
+    viewOffsetX=0.00696868, viewOffsetY=-0.012687)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#500 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.0002, deviationFactor=0.1, 
+    minSizeFactor=0.1, constraint=FINER)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#200 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=5e-05, deviationFactor=0.1, 
+    minSizeFactor=0.1, constraint=FINER)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#4 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.153023, 
+    farPlane=0.167202, width=0.0417195, height=0.0193561, 
+    viewOffsetX=-0.0100027, viewOffsetY=-0.0215971)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#4 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#500 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.0003, deviationFactor=0.1, 
+    minSizeFactor=0.1, constraint=FINER)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#200 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.0001, deviationFactor=0.1, 
+    minSizeFactor=0.1, constraint=FINER)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#4 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.152564, 
+    farPlane=0.167661, width=0.0444303, height=0.0206138, 
+    viewOffsetX=-0.00884902, viewOffsetY=-0.0210037)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#4 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#4 ]', ), )
+p.setMeshControls(regions=pickedRegions, allowMapped=False)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#4 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.153236, 
+    farPlane=0.166989, width=0.0455466, height=0.0211317, 
+    viewOffsetX=-0.00991581, viewOffsetY=-0.0227435)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#4 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+e = p.edges
+pickedEdges1 = e.getSequenceFromMask(mask=('[#100 ]', ), )
+p.seedEdgeByBias(biasMethod=SINGLE, end1Edges=pickedEdges1, minSize=0.0003, 
+    maxSize=0.0015, constraint=FINER)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+e = p.edges
+pickedEdges1 = e.getSequenceFromMask(mask=('[#100 ]', ), )
+p.seedEdgeByBias(biasMethod=SINGLE, end1Edges=pickedEdges1, minSize=0.0003, 
+    maxSize=0.001, constraint=FINER)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+e = p.edges
+pickedEdges2 = e.getSequenceFromMask(mask=('[#400 ]', ), )
+p.seedEdgeByBias(biasMethod=SINGLE, end2Edges=pickedEdges2, minSize=0.0001, 
+    maxSize=0.001, constraint=FINER)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+e = p.edges
+pickedEdges2 = e.getSequenceFromMask(mask=('[#400 ]', ), )
+p.seedEdgeByBias(biasMethod=SINGLE, end2Edges=pickedEdges2, minSize=0.0003, 
+    maxSize=0.001, constraint=FINER)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#4 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.13479, 
+    farPlane=0.185435, width=0.149945, height=0.069568, viewOffsetX=0.023044, 
+    viewOffsetY=-0.00288451)
+elemType1 = mesh.ElemType(elemCode=CPE8HT, elemLibrary=STANDARD)
+elemType2 = mesh.ElemType(elemCode=CPE6MHT, elemLibrary=STANDARD, 
+    hourglassControl=DEFAULT)
+p = mdb.models['Model-1'].parts['elastic_hole_plate']
+f = p.faces
+faces = f.getSequenceFromMask(mask=('[#f ]', ), )
+pickedRegions =(faces, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2))
+mdb.save()
+#: The model database has been saved to "C:\Users\nguyenb5\OneDrive - Aalto University\2022 Binh Nguyen\Master-Thesis-Hydrogen-Official\2nd progress meeting - Modelling H2 diffusion (elastic plate)\AA_elastic_hole_plate_for_JunYuan\elastic_hole_plate.cae".
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/2nd progress meeting - Modelling H2 diffusion (elastic plate)/AA_elastic_hole_plate_subroutine_for_JunYuan/Job-1.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/2nd progress meeting - Modelling H2 diffusion (elastic plate)/AA_elastic_hole_plate_subroutine_for_JunYuan/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       13
+#: Number of Node Sets:          12
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV5', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=9 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=10 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.183441, 
+    farPlane=0.269426, width=0.0174793, height=0.00807924, 
+    viewOffsetX=-0.0171914, viewOffsetY=-0.0220718)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=12 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=14 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV6', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=16 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=18 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=19 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=25 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.18429, 
+    farPlane=0.268576, width=0.0124655, height=0.00576178, 
+    viewOffsetX=-0.0181033, viewOffsetY=-0.0225375)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=29 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=31 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.182232, 
+    farPlane=0.270634, width=0.027779, height=0.01284, viewOffsetX=-0.0182482, 
+    viewOffsetY=-0.0225018)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=33 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.180081, 
+    farPlane=0.272785, width=0.041719, height=0.0192832, 
+    viewOffsetX=-0.0151098, viewOffsetY=-0.0216309)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=37 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=37 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=37 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=37 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=37 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=45 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.182927, 
+    farPlane=0.26994, width=0.0205126, height=0.00948126, 
+    viewOffsetX=-0.0161458, viewOffsetY=-0.0216873)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=48 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=66 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=66 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.161678, 
+    farPlane=0.291188, width=0.146792, height=0.0678499, 
+    viewOffsetX=0.00863376, viewOffsetY=-0.00548825)
+odb = session.odbs['C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/2nd progress meeting - Modelling H2 diffusion (elastic plate)/AA_elastic_hole_plate_subroutine_for_JunYuan/Job-1.odb']
+session.xyDataListFromField(odb=odb, outputPosition=NODAL, variable=(('COORD', 
+    NODAL), ('SDV5', INTEGRATION_POINT), ('SDV6', INTEGRATION_POINT), ), 
+    nodePick=(('PART-1-1', 6215, ('[#ffffffff:194 #7f ]', )), ), )
+#: Warning: Requested operation will result in the creation of a very large number of xyDataObjects. Performance can be affected. Please reduce the number of specified entities using Display Group operations before re-performing this operation.
+session.odbs['C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/2nd progress meeting - Modelling H2 diffusion (elastic plate)/AA_elastic_hole_plate_subroutine_for_JunYuan/Job-1.odb'].close(
+    )

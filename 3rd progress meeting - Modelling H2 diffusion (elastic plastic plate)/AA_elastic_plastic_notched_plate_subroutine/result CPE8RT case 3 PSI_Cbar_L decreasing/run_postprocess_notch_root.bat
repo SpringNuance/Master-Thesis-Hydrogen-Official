@@ -1,0 +1,1 @@
+abaqus cae noGUI=postprocess_notch_root.py

@@ -1,0 +1,106 @@
+
+      module ktransfer
+      implicit none
+      real*8 coorT(50000,4,2),grad(50000,8),ShT(50000,4)
+      save
+      end module   
+
+!***********************************************************************
+      subroutine uexternaldb(lop,lrestart,time,dtime,kstep,kinc)
+      use ktransfer
+      include 'aba_param.inc' !implicit real(a-h o-z)
+      dimension time(2)
+      
+      if (lop.eq.0) then ! start of the analysis
+       coorT=0.d0
+       grad=0.d0
+       ShT=0.d0
+      end if
+      
+      return
+      end
+
+!***********************************************************************      
+
+      subroutine umatht(u,dudt,dudg,flux,dfdt,dfdg,statev,temp,dtemp,
+     1 dtemdx,time,dtime,predef,dpred,cmname,ntgrd,nstatv,props,nprops,
+     2 coords,pnewdt,noel,npt,layer,kspt,kstep,kinc)
+
+      use ktransfer
+      include 'aba_param.inc'
+
+      character*80 cmname
+      dimension dudg(ntgrd),flux(ntgrd),dfdt(ntgrd),dfdg(ntgrd,ntgrd),
+     1 statev(nstatv),dtemdx(ntgrd),time(2),predef(1),dpred(1),
+     2 props(nprops),coords(3)
+
+      dimension Wb(nprops/2-1),xK(nprops/2-1),xNt(nprops/2-1),sig(ntgrd)
+
+      ! Step-1: Read input data & Initialize
+      dfdg=0.d0
+      ntens=ntgrd*2
+      cL=temp+dtemp
+
+      D=props(1)
+      kflag=props(2)
+      xNl=5.1d20 ! [sites/mm^3]
+      Vh=2000.d0 ! [mm^3/mol]
+      R=8314.5d0 ! [N*mm/(mol*K)]
+      T=300.d0   ! [K]
+      b=0.2725d-6 ! bcc [mm]
+      sig(1)=grad(noel,2*npt-1)
+      sig(2)=grad(noel,2*npt)
+      ntraps=nprops/2-1
+      
+      do k1=1,ntraps
+       Wb(k1)=props(2+2*k1-1)
+       xNt(k1)=props(2+2*k1)
+       xK(k1)=exp(Wb(k1)/(R*T))
+      end do
+      
+      du2=0.d0
+      if (kflag.eq.0) then ! Lattice H only
+       xNt(1)=0.d0
+      elseif (kflag.eq.1) then ! No dislocations: Wb(1) and xNt(1) irrelevant
+       xNt(1)=0.d0
+      elseif (kflag.eq.2) then ! Kumnick & Johnson / Sofronis & McMeeking (in sites/mm^3)
+       xNt(1)=10.d0**(23.26d0-2.33d0*exp(-5.5d0*statev(1+2*ntens)))/1e9
+      elseif (kflag.eq.3) then ! Kumnick & Johnson / Krom et al. 
+       xNt(1)=10.d0**(23.26d0-2.33d0*exp(-5.5d0*statev(1+2*ntens)))/1e9
+       du2=(xK(1)*cL/(xK(1)*cL+xNl))*29.5d0
+     & *dexp(-5.5d0*statev(1+2*ntens))*xNt(1)*statev(2+2*ntens)
+      elseif (kflag.eq.4) then ! Gilman / Dadfarnia et al.
+        if (statev(1+2*ntens).lt.0.5) then
+         xNt(1)=(1.d10+statev(1+2*ntens)*2.d16)/(b*1e6)
+         du2=(xK(1)*cL/(xK(1)*cL+xNl))*(statev(2+2*ntens)*2e16)/(b*1e6)
+        elseif (statev(1+2*ntens).ge.0.5) then
+         xNt(1)=(1e16)/(b*1e6)
+        endif
+      elseif (kflag.eq.5) then ! Taylor / Fernandez-Sousa et al.
+       xNt(1)=statev(3+2*ntens)/b
+      endif
+      
+      dudt2=0.d0
+      do k1=1,ntraps
+       dudt2=dudt2+xNt(k1)*xK(k1)*xNl/((xK(k1)*cL+xNl)**2.d0)
+      end do 
+      dudt=1.d0+dudt2	   
+      u=u+dudt*dtemp+du2
+      do i=1,ntgrd
+       dudg(i)=0.d0
+       flux(i)=-D*dtemdx(i)+D*cL*Vh*sig(i)/(R*T)
+       dfdt(i)=D*Vh*sig(i)/(R*T)
+       dfdg(i,i)=-D
+      end do
+      
+!     store the concentration in each trap, in all traps and in traps and lattice
+      id=3+2*ntens
+      statev(ntraps+1+id)=0
+      do k1=1,ntraps      
+       statev(k1+id)=xNt(k1)*xK(k1)*cL/(xK(k1)*cL+xNl)
+       statev(ntraps+1+id)=statev(ntraps+1+id)+statev(k1+id)
+      end do
+      statev(ntraps+2+id)=cL+statev(ntraps+1+id)
+	  
+      return
+      end
