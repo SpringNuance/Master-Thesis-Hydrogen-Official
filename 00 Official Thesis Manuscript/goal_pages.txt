@@ -1,0 +1,28 @@
+1. Introduction: 7 (completed)
+2. Literature review: 15 (completed)
+3. Laboratory experiment: 9 (completed)
+4. Development of the optimization program: 4 (completed)
+5. FEM formulation for structural formulation: 7 (completed)
+6. Seq2seq optimization for flow curve: 19 (completed)
+7. FEM formulation for hydrogen diffusion: 15 (completed)
+8. Bayesian optimization of physical conditions: 12 (completed)
+9. FEM formulation for hydrostatic stress gradient: 16 (completed)
+10. Workflow procedure of an Abaqus simulation: 5 (completed)
+11. Abaqus full simulation setup: 10 (completed)
+12. Results and discussions: 29 (completed)
+13. Conclusions: 2 (completed)
+
+Completed: 117 pages + 14 pages figures in results
+Total pages: 141/150 pages
+
+results
+section 1: 4 pages (completed)
+section 2: 4 pages (completed)
+section 3: 5 pages (completed)
+section 4: 5 pages (completed)
+section 5: 4 pages (completed)
+section 6: 3 pages (completed)
+section 7: 4 pages (completed)
+Analysis of the influence of microstructural traps on hydrogen assisted fatigue
+
+
