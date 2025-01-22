@@ -1,0 +1,49 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/Viewer Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Mon Jun  3 12:55:16 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+#: Warning: Permission was denied for "abaqus.rpy"; "abaqus.rpy.3" will be used for this session's replay file.
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=105.260414123535, 
+    height=129.783569335938)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from viewerModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+o2 = session.openOdb(name='Job-1.odb')
+#: Model: C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       5
+#: Number of Node Sets:          9
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o2)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.6483, 
+    farPlane=4.66878, width=0.996762, height=0.408023, viewOffsetX=-0.00896072, 
+    viewOffsetY=-0.398568)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='COORD', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(
+    plotState=CONTOURS_ON_DEF)
+#: The selected probe values were appended to file "C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/abaqus.rpt".
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='COORD', outputPosition=INTEGRATION_POINT, refinement=(
+    COMPONENT, 'COORD1'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='COORD', outputPosition=INTEGRATION_POINT, refinement=(
+    COMPONENT, 'COORD2'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='COORD', outputPosition=INTEGRATION_POINT, refinement=(
+    COMPONENT, 'COORD3'), )

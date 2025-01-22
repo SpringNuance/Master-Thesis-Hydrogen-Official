@@ -1,0 +1,410 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Wed Dec 27 18:50:24 2023
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=114.666664123535, 
+    height=146.090270996094)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('simple_cube_explicit.cae')
+#: The model database "C:\LocalUserData\User-data\nguyenb5\simple_cube_explicit\simple_cube_explicit.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+mdb.Job(name='Job-1', model='Model-1', description='', type=ANALYSIS, 
+    atTime=None, waitMinutes=0, waitHours=0, queue=None, memory=90, 
+    memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numDomains=1, activateLoadBalancing=False, 
+    numThreadsPerMpiProcess=1, multiprocessingMode=DEFAULT, numCpus=1, 
+    numGPUs=0)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+del mdb.jobs['Job-1']
+mdb.Job(name='uniaxial_tension_vumat', model='Model-1', description='', 
+    type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, 
+    memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numDomains=1, activateLoadBalancing=False, 
+    numThreadsPerMpiProcess=1, multiprocessingMode=DEFAULT, numCpus=1, 
+    numGPUs=0)
+mdb.jobs['uniaxial_tension_vumat'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "uniaxial_tension_vumat.inp".
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p1 = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['Model-1'].HomogeneousSolidSection(name='Section-1', 
+    material='Steel', thickness=None)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['uniaxial_tension_vumat'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "uniaxial_tension_vumat.inp".
+p1 = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['cube']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#1 ]', ), )
+region = p.Set(cells=cells, name='Set-1')
+p = mdb.models['Model-1'].parts['cube']
+p.SectionAssignment(region=region, sectionName='Section-1', offset=0.0, 
+    offsetType=MIDDLE_SURFACE, offsetField='', 
+    thicknessAssignment=FROM_SECTION)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['uniaxial_tension_vumat'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "uniaxial_tension_vumat.inp".
+del mdb.jobs['uniaxial_tension_vumat']
+mdb.Job(name='Job-1', model='Model-1', description='', type=ANALYSIS, 
+    atTime=None, waitMinutes=0, waitHours=0, queue=None, memory=90, 
+    memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numDomains=1, activateLoadBalancing=False, 
+    numThreadsPerMpiProcess=1, multiprocessingMode=DEFAULT, numCpus=1, 
+    numGPUs=0)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.37211, 
+    farPlane=4.94497, width=2.94631, height=1.61355, viewOffsetX=0.139405, 
+    viewOffsetY=0.142991)
+p = mdb.models['Model-1'].parts['cube']
+p.queryAttributes()
+#: 
+#: Part: "cube",  Modeling space: 3D,  Type: Deformable
+#: Coordinates of vertex 0 :0.,0.,1.
+#: Coordinates of vertex 6 :1.,0.,1.
+#: Coordinates of vertex 1 :0.,1.,1.
+#: Coordinates of vertex 6 :1.,0.,1.
+#: Coordinates of vertex 0 :0.,0.,1.
+#: Coordinates of vertex 7 :1.,0.,0.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.23794, 
+    farPlane=5.07914, width=3.30139, height=1.34509, viewOffsetX=-0.0251765, 
+    viewOffsetY=0.0892621)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.28306, 
+    farPlane=5.03402, width=3.36796, height=1.37222, viewOffsetX=0.132142, 
+    viewOffsetY=0.0613603)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.60186, 
+    farPlane=5.03197, width=3.83827, height=1.56384, cameraPosition=(4.01418, 
+    1.91369, 0.0165349), cameraUpVector=(-0.611411, 0.392994, -0.686827), 
+    cameraTarget=(0.621282, 0.64791, 0.537049), viewOffsetX=0.150594, 
+    viewOffsetY=0.0699286)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.58892, 
+    farPlane=5.14061, width=3.81918, height=1.55606, cameraPosition=(4.06592, 
+    0.0537812, -0.927309), cameraUpVector=(-0.266665, 0.963784, 0.00334665), 
+    cameraTarget=(0.712934, 0.386443, 0.498075), viewOffsetX=0.149845, 
+    viewOffsetY=0.0695807)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.3665, 
+    farPlane=5.15582, width=3.49107, height=1.42238, cameraPosition=(3.62282, 
+    2.24456, 1.6883), cameraUpVector=(-0.739508, 0.0433385, 0.671751), 
+    cameraTarget=(0.732306, 0.380032, 0.441947), viewOffsetX=0.136972, 
+    viewOffsetY=0.0636029)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.53906, 
+    farPlane=5.07858, width=3.74564, height=1.5261, cameraPosition=(3.54955, 
+    2.76059, 0.107206), cameraUpVector=(-0.530934, 0.221374, 0.817987), 
+    cameraTarget=(0.757871, 0.416793, 0.420373), viewOffsetX=0.14696, 
+    viewOffsetY=0.0682408)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.52283, 
+    farPlane=5.06578, width=3.72169, height=1.51634, cameraPosition=(2.14389, 
+    3.91376, 0.83054), cameraUpVector=(-0.427864, -0.300221, 0.852526), 
+    cameraTarget=(0.76721, 0.553301, 0.386678), viewOffsetX=0.14602, 
+    viewOffsetY=0.0678045)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.5511, 
+    farPlane=5.0041, width=3.76339, height=1.53333, cameraPosition=(0.997377, 
+    4.0858, 1.60883), cameraUpVector=(-0.432138, -0.559351, 0.707378), 
+    cameraTarget=(0.74347, 0.627304, 0.442939), viewOffsetX=0.147656, 
+    viewOffsetY=0.0685643)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.5184, 
+    farPlane=4.96414, width=3.71515, height=1.51368, cameraPosition=(4.11703, 
+    0.563908, 1.50525), cameraUpVector=(-0.520085, -0.691153, 0.501817), 
+    cameraTarget=(0.687733, 0.457663, 0.234976), viewOffsetX=0.145763, 
+    viewOffsetY=0.0676855)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.42664, 
+    farPlane=5.07867, width=3.57979, height=1.45853, cameraPosition=(1.95522, 
+    3.78205, 1.62549), cameraUpVector=(-0.57125, -0.423622, 0.703006), 
+    cameraTarget=(0.780835, 0.525038, 0.443281), viewOffsetX=0.140452, 
+    viewOffsetY=0.0652194)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.5473, 
+    farPlane=5.05099, width=3.75779, height=1.53105, cameraPosition=(4.07452, 
+    1.46335, -0.396577), cameraUpVector=(-0.130846, -0.0863188, 0.987638), 
+    cameraTarget=(0.659781, 0.342609, 0.287849), viewOffsetX=0.147436, 
+    viewOffsetY=0.0684624)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.47688, 
+    farPlane=5.23454, width=3.65391, height=1.48873, cameraPosition=(2.32779, 
+    1.58108, -2.72844), cameraUpVector=(0.501476, 0.276296, 0.819867), 
+    cameraTarget=(0.594131, 0.330792, 0.240765), viewOffsetX=0.14336, 
+    viewOffsetY=0.0665699)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.51265, 
+    farPlane=5.29122, width=3.70668, height=1.51023, cameraPosition=(-1.8071, 
+    1.72229, -2.41166), cameraUpVector=(0.856045, 0.516134, 0.0281602), 
+    cameraTarget=(0.354708, 0.356796, 0.20501), viewOffsetX=0.14543, 
+    viewOffsetY=0.0675313)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.57293, 
+    farPlane=5.24322, width=3.7956, height=1.54646, cameraPosition=(-2.85, 
+    2.43893, 1.10058), cameraUpVector=(0.732945, 0.618133, -0.284083), 
+    cameraTarget=(0.163525, 0.499798, 0.363439), viewOffsetX=0.148919, 
+    viewOffsetY=0.0691513)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.63077, 
+    farPlane=5.18843, width=3.88093, height=1.58123, cameraPosition=(-0.641944, 
+    1.39405, 4.14047), cameraUpVector=(0.347391, 0.80507, -0.480813), 
+    cameraTarget=(0.188783, 0.491814, 0.693614), viewOffsetX=0.152267, 
+    viewOffsetY=0.070706)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.59516, 
+    farPlane=5.20934, width=3.8284, height=1.55983, cameraPosition=(3.97544, 
+    -0.155186, 2.16909), cameraUpVector=(-0.0168823, 0.881353, -0.472157), 
+    cameraTarget=(0.625334, 0.445381, 0.827059), viewOffsetX=0.150206, 
+    viewOffsetY=0.069749)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.65278, 
+    farPlane=5.12924, width=3.9134, height=1.59446, cameraPosition=(4.2178, 
+    1.37002, 1.29081), cameraUpVector=(-0.420778, 0.69679, -0.580887), 
+    cameraTarget=(0.685579, 0.563637, 0.782757), viewOffsetX=0.153541, 
+    viewOffsetY=0.0712976)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.43704, 
+    farPlane=5.33527, width=3.59513, height=1.46479, cameraPosition=(2.98915, 
+    2.47054, 2.75645), cameraUpVector=(-0.578064, 0.619616, -0.53096), 
+    cameraTarget=(0.553235, 0.525219, 0.841512), viewOffsetX=0.141054, 
+    viewOffsetY=0.0654992)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.71673, 
+    farPlane=5.01997, width=4.00772, height=1.6329, cameraPosition=(1.33351, 
+    4.28225, 0.671712), cameraUpVector=(-0.790858, -0.169852, -0.587957), 
+    cameraTarget=(0.500599, 0.720574, 0.746809), viewOffsetX=0.157242, 
+    viewOffsetY=0.0730162)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.44788, 
+    farPlane=5.26662, width=3.61111, height=1.4713, cameraPosition=(-0.674449, 
+    3.72059, -1.28634), cameraUpVector=(-0.588997, -0.774967, -0.229148), 
+    cameraTarget=(0.386229, 0.779165, 0.613105), viewOffsetX=0.141681, 
+    viewOffsetY=0.0657903)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.50456, 
+    farPlane=5.1878, width=3.69473, height=1.50537, cameraPosition=(-1.27326, 
+    -0.640598, -2.72616), cameraUpVector=(0.0114046, -0.731794, 0.68143), 
+    cameraTarget=(0.238046, 0.596998, 0.367251), viewOffsetX=0.144962, 
+    viewOffsetY=0.0673137)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.48086, 
+    farPlane=5.20865, width=3.65977, height=1.49113, cameraPosition=(-0.660217, 
+    -2.08791, -2.1075), cameraUpVector=(0.088495, -0.416749, 0.904704), 
+    cameraTarget=(0.239605, 0.481832, 0.336194), viewOffsetX=0.14359, 
+    viewOffsetY=0.0666767)
+#: Coordinates of vertex 3 :0.,0.,0.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.48495, 
+    farPlane=5.20457, width=3.66585, height=1.49359, viewOffsetX=0.0433479, 
+    viewOffsetY=-0.42461)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.48521, 
+    farPlane=5.2043, width=3.66623, height=1.49374, viewOffsetX=0.292954, 
+    viewOffsetY=0.18319)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.48516, 
+    farPlane=5.20435, width=3.66616, height=1.49371, cameraPosition=(-0.455033, 
+    -1.99081, -2.28516), cameraUpVector=(-0.387005, -0.237248, 0.891033), 
+    cameraTarget=(0.444789, 0.578934, 0.158529), viewOffsetX=0.292948, 
+    viewOffsetY=0.183187)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.35317, 
+    farPlane=4.94135, width=3.47145, height=1.41438, cameraPosition=(-1.97889, 
+    0.464096, -2.19423), cameraUpVector=(-0.0327678, -0.833742, 0.551181), 
+    cameraTarget=(0.352933, 0.762967, 0.609015), viewOffsetX=0.277389, 
+    viewOffsetY=0.173458)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.19155, 
+    farPlane=4.81742, width=3.23302, height=1.31724, cameraPosition=(-0.643873, 
+    3.69491, -0.462089), cameraUpVector=(-0.667958, -0.727059, -0.158801), 
+    cameraTarget=(0.628902, 0.549493, 0.905873), viewOffsetX=0.258337, 
+    viewOffsetY=0.161545)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.28651, 
+    farPlane=4.86881, width=3.37311, height=1.37432, cameraPosition=(1.5727, 
+    2.68603, -2.15448), cameraUpVector=(-0.888045, -0.425507, -0.174128), 
+    cameraTarget=(0.522444, 0.802505, 0.800893), viewOffsetX=0.269531, 
+    viewOffsetY=0.168545)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.2092, 
+    farPlane=4.93542, width=3.25906, height=1.32785, cameraPosition=(3.01072, 
+    2.63809, -0.937128), cameraUpVector=(-0.813614, -0.0972671, -0.573212), 
+    cameraTarget=(0.46885, 0.723701, 0.868126), viewOffsetX=0.260418, 
+    viewOffsetY=0.162846)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.26337, 
+    farPlane=4.8395, width=3.33897, height=1.36041, cameraPosition=(3.19991, 
+    1.32856, 2.70302), cameraUpVector=(-0.267865, 0.739983, -0.616987), 
+    cameraTarget=(0.207485, 0.34277, 0.843308), viewOffsetX=0.266803, 
+    viewOffsetY=0.166839)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.15687, 
+    farPlane=4.89143, width=3.18187, height=1.2964, cameraPosition=(2.49318, 
+    2.30963, 2.82415), cameraUpVector=(-0.503433, 0.573643, -0.646134), 
+    cameraTarget=(0.251698, 0.218771, 0.826905), viewOffsetX=0.254249, 
+    viewOffsetY=0.158989)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.17465, 
+    farPlane=4.87021, width=3.20811, height=1.30709, cameraPosition=(2.304, 
+    2.13151, 3.09326), cameraUpVector=(-0.499241, 0.617537, -0.607788), 
+    cameraTarget=(0.247769, 0.173352, 0.786219), viewOffsetX=0.256345, 
+    viewOffsetY=0.1603)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.17446, 
+    farPlane=4.87102, width=3.20783, height=1.30698, cameraPosition=(2.431, 
+    2.32466, 2.8627), cameraUpVector=(-0.511839, 0.569866, -0.642864), 
+    cameraTarget=(0.254666, 0.207439, 0.821658), viewOffsetX=0.256323, 
+    viewOffsetY=0.160286)
+#: Coordinates of vertex 3 :0.,0.,0.
+#: Coordinates of vertex 1 :0.,1.,1.
+#: Coordinates of vertex 1 :0.,1.,1.
+#: Coordinates of vertex 2 :0.,1.,0.
+#: Coordinates of vertex 5 :1.,1.,0.
+p = mdb.models['Model-1'].parts['cube']
+v = p.vertices
+verts = v.getSequenceFromMask(mask=('[#36 ]', ), )
+p.Set(vertices=verts, name='Top_nodes')
+#: The set 'Top_nodes' has been created (4 vertices).
+p = mdb.models['Model-1'].parts['cube']
+v = p.vertices
+verts = v.getSequenceFromMask(mask=('[#c1 ]', ), )
+p.Set(vertices=verts, name='Bot_nodes')
+#: The set 'Bot_nodes' has been created (3 vertices).
+p1 = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['cube']
+v = p.vertices
+verts = v.getSequenceFromMask(mask=('[#c1 ]', ), )
+p.Set(vertices=verts, name='Bot_nodes')
+#: The set 'Bot_nodes' has been edited (3 vertices).
+p1 = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.17449, 
+    farPlane=4.87099, width=3.20789, height=1.307, viewOffsetX=0.829265, 
+    viewOffsetY=0.0612732)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.17449, 
+    farPlane=4.87099, width=3.20789, height=1.307, viewOffsetX=0.389634, 
+    viewOffsetY=0.109366)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.32168, 
+    farPlane=4.96445, width=3.42504, height=1.39547, cameraPosition=(2.70799, 
+    2.31783, -1.88197), cameraUpVector=(-0.820431, 0.487486, 0.298748), 
+    cameraTarget=(1.15482, 0.506068, 0.89113), viewOffsetX=0.416009, 
+    viewOffsetY=0.116769)
+p = mdb.models['Model-1'].parts['cube']
+v = p.vertices
+verts = v.getSequenceFromMask(mask=('[#c9 ]', ), )
+p.Set(vertices=verts, name='Bot_nodes')
+#: The set 'Bot_nodes' has been edited (4 vertices).
+p1 = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['cube']
+v = p.vertices
+verts = v.getSequenceFromMask(mask=('[#c9 ]', ), )
+p.Set(vertices=verts, name='Bot_nodes')
+#: The set 'Bot_nodes' has been edited (4 vertices).
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.79776, 
+    farPlane=4.8422, width=4.12738, height=1.68163, cameraPosition=(4.30952, 
+    0.0738592, 1.13005), cameraUpVector=(-0.306319, 0.9476, -0.0906785), 
+    cameraTarget=(0.652483, 0.178756, 1.13116), viewOffsetX=0.501316, 
+    viewOffsetY=0.140714)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.25621, 
+    farPlane=5.15573, width=3.32847, height=1.35613, cameraPosition=(3.22846, 
+    1.66893, 2.83407), cameraUpVector=(-0.605917, 0.725405, -0.326576), 
+    cameraTarget=(0.350463, 0.18104, 1.13459), viewOffsetX=0.404279, 
+    viewOffsetY=0.113477)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.36322, 
+    farPlane=5.03954, width=3.48633, height=1.42045, cameraPosition=(3.12955, 
+    1.73304, 2.90623), cameraUpVector=(-0.614325, 0.710375, -0.343472), 
+    cameraTarget=(0.337269, 0.175307, 1.12815), viewOffsetX=0.423453, 
+    viewOffsetY=0.118859)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.34474, 
+    farPlane=5.05802, width=3.45908, height=1.40934, cameraPosition=(3.0987, 
+    1.78796, 2.90655), cameraUpVector=(-0.567921, 0.710138, -0.416136), 
+    cameraTarget=(0.306423, 0.230232, 1.12847), viewOffsetX=0.420142, 
+    viewOffsetY=0.11793)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.38754, 
+    farPlane=5.04628, width=3.52222, height=1.43507, cameraPosition=(3.90654, 
+    1.54171, -0.792397), cameraUpVector=(-0.679374, 0.733591, 0.0172098), 
+    cameraTarget=(0.961914, 0.433303, 1.07456), viewOffsetX=0.427811, 
+    viewOffsetY=0.120083)
+p = mdb.models['Model-1'].parts['cube']
+v = p.vertices
+verts = v.getSequenceFromMask(mask=('[#f ]', ), )
+p.Set(vertices=verts, name='Left_nodes')
+#: The set 'Left_nodes' has been created (4 vertices).
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.3765, 
+    farPlane=5.06317, width=3.50595, height=1.42844, cameraPosition=(3.19856, 
+    1.85044, 2.76908), cameraUpVector=(-0.28724, 0.636359, -0.715919), 
+    cameraTarget=(0.227505, 0.534491, 1.08799), viewOffsetX=0.425833, 
+    viewOffsetY=0.119528)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.31422, 
+    farPlane=5.07849, width=3.41406, height=1.391, cameraPosition=(2.3451, 
+    1.94069, 3.4414), cameraUpVector=(-0.344918, 0.68211, -0.644793), 
+    cameraTarget=(0.110487, 0.325455, 1.03673), viewOffsetX=0.414673, 
+    viewOffsetY=0.116395)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.62923, 
+    farPlane=4.86126, width=3.87879, height=1.58034, cameraPosition=(4.18442, 
+    0.99459, 1.36209), cameraUpVector=(-0.477936, 0.838428, -0.261946), 
+    cameraTarget=(0.58561, 0.35236, 1.21715), viewOffsetX=0.471119, 
+    viewOffsetY=0.132239)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.38829, 
+    farPlane=5.0812, width=3.52335, height=1.43552, cameraPosition=(3.8275, 
+    0.698424, -1.35187), cameraUpVector=(-0.396008, 0.888725, 0.230968), 
+    cameraTarget=(1.04486, 0.225749, 0.97587), viewOffsetX=0.427947, 
+    viewOffsetY=0.120121)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.42989, 
+    farPlane=5.0396, width=3.58473, height=1.46053, cameraPosition=(3.82446, 
+    0.808733, -1.33311), cameraUpVector=(-0.489714, 0.864397, 0.114009), 
+    cameraTarget=(1.04182, 0.336058, 0.994632), viewOffsetX=0.435402, 
+    viewOffsetY=0.122213)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.40358, 
+    farPlane=5.04961, width=3.54592, height=1.44472, cameraPosition=(3.5516, 
+    1.15952, 2.67485), cameraUpVector=(-0.588428, 0.796981, -0.136286), 
+    cameraTarget=(0.398142, 0.10094, 1.1517), viewOffsetX=0.430688, 
+    viewOffsetY=0.12089)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.34746, 
+    farPlane=4.98987, width=3.46312, height=1.41099, cameraPosition=(3.22821, 
+    2.62408, 1.92405), cameraUpVector=(-0.758736, 0.517088, -0.396156), 
+    cameraTarget=(0.449005, 0.355347, 1.20729), viewOffsetX=0.420631, 
+    viewOffsetY=0.118067)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.32131, 
+    farPlane=5.05139, width=3.42454, height=1.39527, cameraPosition=(2.98042, 
+    2.24737, 2.70972), cameraUpVector=(-0.596527, 0.616451, -0.513949), 
+    cameraTarget=(0.28871, 0.321311, 1.15092), viewOffsetX=0.415945, 
+    viewOffsetY=0.116752)
+p = mdb.models['Model-1'].parts['cube']
+v = p.vertices
+verts = v.getSequenceFromMask(mask=('[#ac ]', ), )
+p.Set(vertices=verts, name='Right_nodes')
+#: The set 'Right_nodes' has been created (4 vertices).
+p1 = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['cube']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#1 ]', ), )
+p.Set(cells=cells, name='Set-1')
+#: The set 'Set-1' has been edited (1 cell).
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\simple_cube_explicit\simple_cube_explicit.cae".
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+a = mdb.models['Model-1'].rootAssembly
+a.DatumCsysByDefault(CARTESIAN)
+p = mdb.models['Model-1'].parts['cube']
+a.Instance(name='cube-1', part=p, dependent=ON)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+a = mdb.models['Model-1'].rootAssembly
+del a.features['cube-1']
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)

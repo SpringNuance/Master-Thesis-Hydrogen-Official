@@ -1,0 +1,161 @@
+********************************************************************************
+Probe Values Report, written on Fri May 31 21:53:29 2024
+
+Source
+-------
+
+   ODB: C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb
+   Step: Step-1
+   Frame: Increment      0: Step Time =    0.000
+   Variable: COORD, COORD1 (Not averaged)
+
+Loc 1 : Integration point values
+
+Probe values reported at integration points
+
+  Part Instance  Element ID        Type  Attached nodes
+--------------------------------------------------------------------------------
+      CUBE-1          10       C3D8T         131         132         143         142          10          11          22          21
+
+
+  Part Instance  Element ID        Type   Int. Pt.  COORD, COORD1
+--------------------------------------------------------------------------------
+      CUBE-1          10       C3D8T          1   921.E-03
+      CUBE-1          10       C3D8T          2   921.E-03
+      CUBE-1          10       C3D8T          3   921.E-03
+      CUBE-1          10       C3D8T          4   921.E-03
+      CUBE-1          10       C3D8T          5   979.E-03
+      CUBE-1          10       C3D8T          6   979.E-03
+      CUBE-1          10       C3D8T          7   979.E-03
+      CUBE-1          10       C3D8T          8   979.E-03
+
+
+********************************************************************************
+Probe Values Report, written on Fri May 31 22:01:08 2024
+
+Source
+-------
+
+   ODB: C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb
+   Step: Step-1
+   Frame: Increment      0: Step Time =    0.000
+   Variable: COORD, All direct (Not averaged)
+
+Loc 1 : Integration point values
+
+Probe values reported at integration points
+
+  Part Instance  Element ID        Type  Attached nodes
+--------------------------------------------------------------------------------
+      CUBE-1          10       C3D8T         131         132         143         142          10          11          22          21
+
+
+  Part Instance  Element ID        Type   Int. Pt.  COORD, COOR1  COORD, COOR2  COORD, COOR3
+--------------------------------------------------------------------------------
+      CUBE-1          10       C3D8T          1   921.E-03    79.E-03   979.E-03
+      CUBE-1          10       C3D8T          2   921.E-03    21.E-03   979.E-03
+      CUBE-1          10       C3D8T          3   921.E-03    79.E-03   921.E-03
+      CUBE-1          10       C3D8T          4   921.E-03    21.E-03   921.E-03
+      CUBE-1          10       C3D8T          5   979.E-03    79.E-03   979.E-03
+      CUBE-1          10       C3D8T          6   979.E-03    21.E-03   979.E-03
+      CUBE-1          10       C3D8T          7   979.E-03    79.E-03   921.E-03
+      CUBE-1          10       C3D8T          8   979.E-03    21.E-03   921.E-03
+
+
+********************************************************************************
+Probe Values Report, written on Fri May 31 22:02:25 2024
+
+Source
+-------
+
+   ODB: C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb
+   Step: Step-1
+   Frame: Increment      0: Step Time =    0.000
+   Variable: COORD, All direct (Average-compute)
+
+Probe values reported at nodes
+
+  Part Instance     Node ID            Orig. Coords                     Def. Coords          
+                                 X          Y          Z          X          Y          Z    
+-------------------------------------------------------------------------------------------
+      CUBE-1          11        1.0        0.0        1.0        1.0        0.0        1.0
+      CUBE-1          11        1.0        0.0        1.0        1.0        0.0        1.0
+      CUBE-1        1221        0.0        0.0        1.0        0.0        0.0        1.0
+      CUBE-1         121        1.0        0.0        0.0        1.0        0.0        0.0
+      CUBE-1          11        1.0        0.0        1.0        1.0        0.0        1.0
+
+
+  Part Instance     Node ID  Attached elements  COORD, COOR1  COORD, COOR2  COORD, COOR3
+-----------------------------------------------------------------------------------------
+      CUBE-1          11         10        1.0    -4.E-09        1.0
+      CUBE-1          11         10        1.0    -4.E-09        1.0
+      CUBE-1        1221        910    -3.E-09    -4.E-09        1.0
+      CUBE-1         121        100        1.0    -4.E-09    -4.E-09
+      CUBE-1          11         10        1.0    -4.E-09        1.0
+
+
+********************************************************************************
+Probe Values Report, written on Fri May 31 22:12:17 2024
+
+Source
+-------
+
+   ODB: C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb
+   Step: Step-1
+   Frame: Increment      1: Step Time =    1.000
+   Variable: COORD, All direct (Not averaged)
+
+Loc 1 : Integration point values
+
+Probe values reported at integration points
+
+  Part Instance  Element ID        Type  Attached nodes
+--------------------------------------------------------------------------------
+      CUBE-1          10      C3D8RT         131         132         143         142          10          11          22          21
+
+
+  Part Instance  Element ID        Type   Int. Pt.  COORD, COOR1  COORD, COOR2  COORD, COOR3
+--------------------------------------------------------------------------------
+      CUBE-1          10      C3D8RT          1   950.E-03    55.E-03   950.E-03
+
+
+********************************************************************************
+Probe Values Report, written on Mon Jun  3 12:50:09 2024
+
+Source
+-------
+
+   ODB: C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb
+   Step: Step-1
+   Frame: Increment      1: Step Time =    1.000
+   Variable: COORD, Magnitude
+
+Loc 1 : Integration point values
+
+Probe values reported at integration points
+
+  Part Instance  Element ID        Type  Attached nodes
+--------------------------------------------------------------------------------
+      CUBE-1          10      C3D8RT         131         132         143         142          10          11          22          21
+
+
+********************************************************************************
+Probe Values Report, written on Mon Jun  3 12:56:31 2024
+
+Source
+-------
+
+   ODB: C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb
+   Step: Step-1
+   Frame: Increment      1: Step Time =    1.000
+   Variable: COORD, Magnitude
+
+Loc 1 : Integration point values
+
+Probe values reported at integration points
+
+  Part Instance  Element ID        Type  Attached nodes
+--------------------------------------------------------------------------------
+      CUBE-1          10       C3D8T         131         132         143         142          10          11          22          21
+
+

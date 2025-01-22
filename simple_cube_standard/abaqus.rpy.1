@@ -1,0 +1,452 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Fri May 31 21:37:32 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=87.5677032470703, 
+    height=121.071754455566)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('simple_cube_standard.cae')
+#: The model database "C:\LocalUserData\User-data\nguyenb5\simple_cube_standard\simple_cube_standard.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON, optimizationTasks=OFF, 
+    geometricRestrictions=OFF, stopConditions=OFF)
+mdb.models['Model-1'].CoupledTempDisplacementStep(name='Step-1', 
+    previous='Initial', timeIncrementationMethod=FIXED, deltmx=None, 
+    cetol=None, creepIntegration=None, nlgeom=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+mdb.models['Model-1'].steps['Step-1'].setValues(creepIntegration=None)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Error in job Job-1: THE OPTION *USER MATERIAL,TYPE=MECHANICAL COMPLETELY DEFINES THE MATERIAL BEHAVIOR. IT CAN NOT BE USED WITH AN OPTION THAT DEFINES PART OF A MATERIAL`S BEHAVIOR
+#: Error in job Job-1: THIS MODEL HAS EITHER INCORRECT OR NO ELEMENT DEFINITIONS.
+#: Job Job-1: Analysis Input File Processor aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+#: Error in job Job-1: Analysis Input File Processor exited with an error - Please see the  Job-1.dat file for possible error messages if the file exists.
+#: Job Job-1 aborted due to errors.
+p = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-1'].parts['cube']
+p.seedPart(size=0.1, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['Model-1'].parts['cube']
+p.generateMesh()
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Error in job Job-1: THE OPTION *USER MATERIAL,TYPE=MECHANICAL COMPLETELY DEFINES THE MATERIAL BEHAVIOR. IT CAN NOT BE USED WITH AN OPTION THAT DEFINES PART OF A MATERIAL`S BEHAVIOR
+#: Error in job Job-1: THIS MODEL HAS EITHER INCORRECT OR NO ELEMENT DEFINITIONS.
+#: Job Job-1: Analysis Input File Processor aborted due to errors.
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+p1 = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+#: Error in job Job-1: Analysis Input File Processor exited with an error - Please see the  Job-1.dat file for possible error messages if the file exists.
+#: Job Job-1 aborted due to errors.
+del mdb.models['Model-1'].materials['Steel'].depvar
+del mdb.models['Model-1'].materials['Steel'].plastic
+del mdb.models['Model-1'].materials['Steel'].userMaterial
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Error in job Job-1: THIS MODEL HAS EITHER INCORRECT OR NO ELEMENT DEFINITIONS.
+#: Job Job-1: Analysis Input File Processor aborted due to errors.
+#: Error in job Job-1: Analysis Input File Processor exited with an error - Please see the  Job-1.dat file for possible error messages if the file exists.
+#: Job Job-1 aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON, 
+    adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+a = mdb.models['Model-1'].rootAssembly
+a.DatumCsysByDefault(CARTESIAN)
+p = mdb.models['Model-1'].parts['cube']
+a.Instance(name='cube-1', part=p, dependent=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['Job-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "Job-1.inp".
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Error in job Job-1: SPECIFIC HEAT MUST BE DEFINED IN A TRANSIENT COUPLED TEMPERATURE-DISPLACEMENT ANALYSIS
+#: Error in job Job-1: DEGREE OF FREEDOM 11 AND AT LEAST ONE OF DEGREES OF FREEDOM 1 THRU 6 MUST BE ACTIVE IN THE MODEL FOR *COUPLED TEMP-DISP. CHECK THE PROCEDURE AND ELEMENT TYPES USED IN THIS MODEL.
+#: Job Job-1: Analysis Input File Processor aborted due to errors.
+#: Error in job Job-1: Analysis Input File Processor exited with an error - Please see the  Job-1.dat file for possible error messages if the file exists.
+#: Job Job-1 aborted due to errors.
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+p1 = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['Model-1'].materials['Steel'].SpecificHeat(table=((1.0, ), ))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\simple_cube_standard\simple_cube_standard.cae".
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.48036, 
+    farPlane=4.93426, width=2.88571, height=1.16394, cameraPosition=(2.47836, 
+    -2.60349, 0.945914), cameraUpVector=(0.566296, 0.792039, 0.227996), 
+    cameraTarget=(0.520979, 0.458042, 0.520979))
+a = mdb.models['Model-1'].rootAssembly
+f1 = a.instances['cube-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#8 ]', ), )
+region = a.Set(faces=faces1, name='Set-1')
+mdb.models['Model-1'].EncastreBC(name='BC-1', createStepName='Step-1', 
+    region=region, localCsys=None)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.4813, 
+    farPlane=4.95106, width=2.88681, height=1.16438, cameraPosition=(1.10433, 
+    3.12202, 3.06319), cameraUpVector=(-0.354945, 0.421764, -0.834344), 
+    cameraTarget=(0.502903, 0.533364, 0.548833))
+a = mdb.models['Model-1'].rootAssembly
+f1 = a.instances['cube-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#2 ]', ), )
+region = a.Set(faces=faces1, name='Set-2')
+mdb.models['Model-1'].DisplacementBC(name='BC-2', createStepName='Step-1', 
+    region=region, u1=UNSET, u2=0.1, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET, 
+    amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, fieldName='', 
+    localCsys=None)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.40614, 
+    farPlane=5.02621, width=3.58549, height=1.44619, viewOffsetX=0.0686868, 
+    viewOffsetY=0.00717374)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Error in job Job-1: DEGREE OF FREEDOM 11 AND AT LEAST ONE OF DEGREES OF FREEDOM 1 THRU 6 MUST BE ACTIVE IN THE MODEL FOR *COUPLED TEMP-DISP. CHECK THE PROCEDURE AND ELEMENT TYPES USED IN THIS MODEL.
+#: Job Job-1: Analysis Input File Processor aborted due to errors.
+#: Error in job Job-1: Analysis Input File Processor exited with an error - Please see the  Job-1.dat file for possible error messages if the file exists.
+#: Job Job-1 aborted due to errors.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.4518, 
+    farPlane=4.98055, width=3.24147, height=1.30744, viewOffsetX=0.0965244, 
+    viewOffsetY=-0.0167655)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.41197, 
+    farPlane=5.13931, width=3.18881, height=1.28619, cameraPosition=(2.65028, 
+    2.4572, 2.90867), cameraUpVector=(-0.439356, 0.62742, -0.642892), 
+    cameraTarget=(0.551027, 0.557008, 0.591939), viewOffsetX=0.0949562, 
+    viewOffsetY=-0.0164931)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.32587, 
+    farPlane=5.2254, width=3.48006, height=1.40367, viewOffsetX=0.0912895, 
+    viewOffsetY=-0.00180899)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].view.setValues(session.views['Iso'])
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.23429, 
+    farPlane=5.08279, width=3.76799, height=1.51981, viewOffsetX=0.121973, 
+    viewOffsetY=0.0522175)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.43914, 
+    farPlane=5.26399, width=4.11346, height=1.65915, cameraPosition=(3.4159, 
+    1.91351, -1.58797), cameraUpVector=(-0.858716, 0.451334, -0.242702), 
+    cameraTarget=(0.71977, 0.618884, 0.519098), viewOffsetX=0.133156, 
+    viewOffsetY=0.0570051)
+session.viewports['Viewport: 1'].view.setValues(session.views['Iso'])
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.0647, 
+    farPlane=5.25238, width=4.47805, height=1.80621, viewOffsetX=0.166366, 
+    viewOffsetY=0.0931295)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.41914, 
+    farPlane=5.52215, width=5.24678, height=2.11627, cameraPosition=(3.02704, 
+    2.10034, -2.12826), cameraUpVector=(-0.842121, 0.533457, 0.0790885), 
+    cameraTarget=(0.904051, 0.649209, 0.474048), viewOffsetX=0.194925, 
+    viewOffsetY=0.109117)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.61248, 
+    farPlane=5.41835, width=5.6661, height=2.2854, cameraPosition=(0.734334, 
+    0.863677, -3.51036), cameraUpVector=(0.382533, 0.787615, 0.483044), 
+    cameraTarget=(0.682811, 0.227673, 0.0920995), viewOffsetX=0.210503, 
+    viewOffsetY=0.117838)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.33753, 
+    farPlane=5.70092, width=5.06976, height=2.04487, cameraPosition=(-2.35974, 
+    3.07137, -0.73443), cameraUpVector=(0.854299, 0.458536, 0.244779), 
+    cameraTarget=(0.181813, 0.56596, 0.0707136), viewOffsetX=0.188348, 
+    viewOffsetY=0.105436)
+a = mdb.models['Model-1'].rootAssembly
+f1 = a.instances['cube-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#35 ]', ), )
+region = a.Set(faces=faces1, name='Set-3')
+mdb.models['Model-1'].YasymmBC(name='BC-3', createStepName='Step-1', 
+    region=region, localCsys=None)
+session.viewports['Viewport: 1'].view.setValues(session.views['Iso'])
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.23429, 
+    farPlane=5.08279, width=3.76799, height=1.51981, viewOffsetX=-0.111739, 
+    viewOffsetY=-0.0093328)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Error in job Job-1: DEGREE OF FREEDOM 11 AND AT LEAST ONE OF DEGREES OF FREEDOM 1 THRU 6 MUST BE ACTIVE IN THE MODEL FOR *COUPLED TEMP-DISP. CHECK THE PROCEDURE AND ELEMENT TYPES USED IN THIS MODEL.
+#: Job Job-1: Analysis Input File Processor aborted due to errors.
+#: Error in job Job-1: Analysis Input File Processor exited with an error - Please see the  Job-1.dat file for possible error messages if the file exists.
+#: Job Job-1 aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-1'].parts['cube']
+p.deleteMesh()
+elemType1 = mesh.ElemType(elemCode=C3D8T, elemLibrary=STANDARD)
+elemType2 = mesh.ElemType(elemCode=C3D6T, elemLibrary=STANDARD)
+elemType3 = mesh.ElemType(elemCode=C3D4T, elemLibrary=STANDARD)
+p = mdb.models['Model-1'].parts['cube']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#1 ]', ), )
+pickedRegions =(cells, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2, 
+    elemType3))
+p = mdb.models['Model-1'].parts['cube']
+p.generateMesh()
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\simple_cube_standard\simple_cube_standard.cae".
+elemType1 = mesh.ElemType(elemCode=C3D8T, elemLibrary=STANDARD, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT)
+elemType2 = mesh.ElemType(elemCode=C3D6T, elemLibrary=STANDARD)
+elemType3 = mesh.ElemType(elemCode=C3D4T, elemLibrary=STANDARD)
+p = mdb.models['Model-1'].parts['cube']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#1 ]', ), )
+pickedRegions =(cells, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2, 
+    elemType3))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\simple_cube_standard\simple_cube_standard.cae".
+a1 = mdb.models['Model-1'].rootAssembly
+a1.regenerate()
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Error in job Job-1: ELEMENT 1 INSTANCE CUBE-1 IS AN ELEMENT WITH TEMPERATURE DEGREES OF FREEDOM. IT REQUIRES A THERMAL CONDUCTIVITY PROPERTY DEFINITION
+#: Job Job-1: Analysis Input File Processor aborted due to errors.
+#: Error in job Job-1: Analysis Input File Processor exited with an error - Please see the  Job-1.dat file for possible error messages if the file exists.
+#: Job Job-1 aborted due to errors.
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p1 = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+mdb.models['Model-1'].materials['Steel'].Conductivity(table=((1.0, ), ))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\simple_cube_standard\simple_cube_standard.cae".
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Job Job-1: Analysis Input File Processor completed successfully.
+#: Job Job-1: Abaqus/Standard completed successfully.
+#: Job Job-1 completed successfully. 
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       5
+#: Number of Node Sets:          9
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(variables=(
+    'S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'CSTRESS', 'CDISP', 
+    'NT', 'HFL', 'RFL', 'COORD'))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\simple_cube_standard\simple_cube_standard.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Job Job-1: Analysis Input File Processor completed successfully.
+#: Job Job-1: Abaqus/Standard completed successfully.
+#: Job Job-1 completed successfully. 
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       5
+#: Number of Node Sets:          9
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.17187, 
+    farPlane=5.08748, width=3.44296, height=1.38871, viewOffsetX=0.181823, 
+    viewOffsetY=-0.0228772)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='COORD', outputPosition=INTEGRATION_POINT, refinement=(
+    COMPONENT, 'COORD1'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.54207, 
+    farPlane=4.71728, width=1.16908, height=0.471543, viewOffsetX=-0.325192, 
+    viewOffsetY=0.266408)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.40739, 
+    farPlane=4.90969, width=2.58847, height=1.04405, viewOffsetX=-0.576225, 
+    viewOffsetY=0.370683)
+session.viewports['Viewport: 1'].view.setValues(session.views['Iso'])
+#: The selected probe values were written to file "C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/abaqus.rpt".
+#: The selected probe values were appended to file "C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/abaqus.rpt".
+#: The selected probe values were appended to file "C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/abaqus.rpt".
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.33315, 
+    farPlane=4.98393, width=3.03619, height=1.22464, viewOffsetX=0.0247424, 
+    viewOffsetY=-0.138315)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-1'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+elemType1 = mesh.ElemType(elemCode=C3D8RT, elemLibrary=STANDARD, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT)
+elemType2 = mesh.ElemType(elemCode=C3D6T, elemLibrary=STANDARD)
+elemType3 = mesh.ElemType(elemCode=C3D4T, elemLibrary=STANDARD)
+p = mdb.models['Model-1'].parts['cube']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#1 ]', ), )
+pickedRegions =(cells, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2, 
+    elemType3))
+a1 = mdb.models['Model-1'].rootAssembly
+a1.regenerate()
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Job Job-1: Analysis Input File Processor completed successfully.
+#: Job Job-1: Abaqus/Standard completed successfully.
+#: Job Job-1 completed successfully. 
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       5
+#: Number of Node Sets:          9
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='COORD', outputPosition=INTEGRATION_POINT, refinement=(
+    COMPONENT, 'COORD1'), )
+#: The selected probe values were appended to file "C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/abaqus.rpt".
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\simple_cube_standard\simple_cube_standard.cae".

@@ -1,0 +1,103 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(1.0, 1.0))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='cube', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['cube'].BaseSolidExtrude(depth=1.0, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].Material(name='Steel')
+mdb.models['Model-1'].materials['Steel'].Density(table=((7.8e-09, ), ))
+mdb.models['Model-1'].materials['Steel'].Elastic(table=((200000.0, 0.3), ))
+mdb.models['Model-1'].materials['Steel'].Plastic(scaleStress=None, table=((
+    250.0, 0.0), (450.0, 1.0)))
+mdb.models['Model-1'].materials['Steel'].UserMaterial(mechanicalConstants=(
+    200000.0, 0.3, 250.0, 200.0))
+mdb.models['Model-1'].materials['Steel'].Depvar(n=2)
+# Save by nguyenb5 on 2023_12_27-18.46.13; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2023_12_27-18.48.43; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Job(activateLoadBalancing=False, atTime=None, contactPrint=OFF, 
+    description='', echoPrint=OFF, explicitPrecision=SINGLE, 
+    getMemoryFromAnalysis=True, historyPrint=OFF, memory=90, memoryUnits=
+    PERCENTAGE, model='Model-1', modelPrint=OFF, multiprocessingMode=DEFAULT, 
+    name='Job-1', nodalOutputPrecision=SINGLE, numCpus=1, numDomains=1, 
+    numGPUs=0, numThreadsPerMpiProcess=1, queue=None, resultsFormat=ODB, 
+    scratch='', type=ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+del mdb.jobs['Job-1']
+mdb.Job(activateLoadBalancing=False, atTime=None, contactPrint=OFF, 
+    description='', echoPrint=OFF, explicitPrecision=SINGLE, 
+    getMemoryFromAnalysis=True, historyPrint=OFF, memory=90, memoryUnits=
+    PERCENTAGE, model='Model-1', modelPrint=OFF, multiprocessingMode=DEFAULT, 
+    name='uniaxial_tension_vumat', nodalOutputPrecision=SINGLE, numCpus=1, 
+    numDomains=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.models['Model-1'].HomogeneousSolidSection(material='Steel', name=
+    'Section-1', thickness=None)
+mdb.models['Model-1'].parts['cube'].Set(cells=
+    mdb.models['Model-1'].parts['cube'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), name='Set-1')
+mdb.models['Model-1'].parts['cube'].SectionAssignment(offset=0.0, offsetField=
+    '', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['cube'].sets['Set-1'], sectionName='Section-1', 
+    thicknessAssignment=FROM_SECTION)
+del mdb.jobs['uniaxial_tension_vumat']
+mdb.Job(activateLoadBalancing=False, atTime=None, contactPrint=OFF, 
+    description='', echoPrint=OFF, explicitPrecision=SINGLE, 
+    getMemoryFromAnalysis=True, historyPrint=OFF, memory=90, memoryUnits=
+    PERCENTAGE, model='Model-1', modelPrint=OFF, multiprocessingMode=DEFAULT, 
+    name='Job-1', nodalOutputPrecision=SINGLE, numCpus=1, numDomains=1, 
+    numGPUs=0, numThreadsPerMpiProcess=1, queue=None, resultsFormat=ODB, 
+    scratch='', type=ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.models['Model-1'].parts['cube'].Set(name='Top_nodes', vertices=
+    mdb.models['Model-1'].parts['cube'].vertices.getSequenceFromMask(('[#36 ]', 
+    ), ))
+mdb.models['Model-1'].parts['cube'].Set(name='Bot_nodes', vertices=
+    mdb.models['Model-1'].parts['cube'].vertices.getSequenceFromMask(('[#c1 ]', 
+    ), ))
+mdb.models['Model-1'].parts['cube'].Set(name='Bot_nodes', vertices=
+    mdb.models['Model-1'].parts['cube'].vertices.getSequenceFromMask(('[#c1 ]', 
+    ), ))
+mdb.models['Model-1'].parts['cube'].Set(name='Bot_nodes', vertices=
+    mdb.models['Model-1'].parts['cube'].vertices.getSequenceFromMask(('[#c9 ]', 
+    ), ))
+mdb.models['Model-1'].parts['cube'].Set(name='Bot_nodes', vertices=
+    mdb.models['Model-1'].parts['cube'].vertices.getSequenceFromMask(('[#c9 ]', 
+    ), ))
+mdb.models['Model-1'].parts['cube'].Set(name='Left_nodes', vertices=
+    mdb.models['Model-1'].parts['cube'].vertices.getSequenceFromMask(('[#f ]', 
+    ), ))
+mdb.models['Model-1'].parts['cube'].Set(name='Right_nodes', vertices=
+    mdb.models['Model-1'].parts['cube'].vertices.getSequenceFromMask(('[#ac ]', 
+    ), ))
+mdb.models['Model-1'].parts['cube'].Set(cells=
+    mdb.models['Model-1'].parts['cube'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), name='Set-1')
+# Save by nguyenb5 on 2023_12_27-19.27.23; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

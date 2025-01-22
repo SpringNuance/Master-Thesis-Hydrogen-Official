@@ -1,0 +1,125 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/Viewer Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Mon Jun  3 12:47:46 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=105.260414123535, 
+    height=161.056716918945)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from viewerModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+o2 = session.openOdb(name='Job-1.odb')
+#: Model: C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/Job-1.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       5
+#: Number of Node Sets:          9
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o2)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='COORD', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(
+    plotState=CONTOURS_ON_DEF)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='COORD', outputPosition=INTEGRATION_POINT, refinement=(
+    COMPONENT, 'COORD1'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='COORD', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+#: The selected probe values were appended to file "C:/LocalUserData/User-data/nguyenb5/simple_cube_standard/abaqus.rpt".
+#: 
+#: Node: CUBE-1.132
+#:                                         1             2             3        Magnitude
+#: Base coordinates:                  9.00000e-01,  0.00000e+00,  1.00000e+00,      -      
+#: Scale:                             1.00000e+00,  1.00000e+00,  1.00000e+00,      -      
+#: Deformed coordinates (unscaled):   9.00000e-01,  1.34615e-34,  1.00000e+00,      -      
+#: Deformed coordinates (scaled):     9.00000e-01,  1.34615e-34,  1.00000e+00,      -      
+#: Displacement (unscaled):          -0.00000e+00,  1.34615e-34, -5.76923e-35,  1.46457e-34
+#: 
+#: Node: CUBE-1.131
+#:                                         1             2             3        Magnitude
+#: Base coordinates:                  9.00000e-01,  1.00000e-01,  1.00000e+00,      -      
+#: Scale:                             1.00000e+00,  1.00000e+00,  1.00000e+00,      -      
+#: Deformed coordinates (unscaled):   9.00000e-01,  1.10000e-01,  1.00000e+00,      -      
+#: Deformed coordinates (scaled):     9.00000e-01,  1.10000e-01,  1.00000e+00,      -      
+#: Displacement (unscaled):          -0.00000e+00,  1.00000e-02, -1.15385e-34,  1.00000e-02
+#: 
+#: Node: CUBE-1.10
+#:                                         1             2             3        Magnitude
+#: Base coordinates:                  1.00000e+00,  1.00000e-01,  1.00000e+00,      -      
+#: Scale:                             1.00000e+00,  1.00000e+00,  1.00000e+00,      -      
+#: Deformed coordinates (unscaled):   1.00000e+00,  1.10000e-01,  1.00000e+00,      -      
+#: Deformed coordinates (scaled):     1.00000e+00,  1.10000e-01,  1.00000e+00,      -      
+#: Displacement (unscaled):          -5.76923e-35,  1.00000e-02, -5.76923e-35,  1.00000e-02
+#: 
+#: Node: CUBE-1.21
+#:                                         1             2             3        Magnitude
+#: Base coordinates:                  1.00000e+00,  1.00000e-01,  9.00000e-01,      -      
+#: Scale:                             1.00000e+00,  1.00000e+00,  1.00000e+00,      -      
+#: Deformed coordinates (unscaled):   1.00000e+00,  1.10000e-01,  9.00000e-01,      -      
+#: Deformed coordinates (scaled):     1.00000e+00,  1.10000e-01,  9.00000e-01,      -      
+#: Displacement (unscaled):          -1.15385e-34,  1.00000e-02, -0.00000e+00,  1.00000e-02
+#: 
+#: Node: CUBE-1.22
+#:                                         1             2             3        Magnitude
+#: Base coordinates:                  1.00000e+00,  0.00000e+00,  9.00000e-01,      -      
+#: Scale:                             1.00000e+00,  1.00000e+00,  1.00000e+00,      -      
+#: Deformed coordinates (unscaled):   1.00000e+00,  1.34615e-34,  9.00000e-01,      -      
+#: Deformed coordinates (scaled):     1.00000e+00,  1.34615e-34,  9.00000e-01,      -      
+#: Displacement (unscaled):          -5.76923e-35,  1.34615e-34, -0.00000e+00,  1.46457e-34
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.50919, 
+    farPlane=4.75016, width=1.46855, height=0.596151, viewOffsetX=-0.0273521, 
+    viewOffsetY=-0.266707)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.52056, 
+    farPlane=4.73879, width=1.4752, height=0.598852, viewOffsetX=0.0140613, 
+    viewOffsetY=-0.398483)
+#: 
+#: Node: CUBE-1.11
+#:                                         1             2             3        Magnitude
+#: Base coordinates:                  1.00000e+00,  0.00000e+00,  1.00000e+00,      -      
+#: Scale:                             1.00000e+00,  1.00000e+00,  1.00000e+00,      -      
+#: Deformed coordinates (unscaled):   1.00000e+00,  6.73077e-35,  1.00000e+00,      -      
+#: Deformed coordinates (scaled):     1.00000e+00,  6.73077e-35,  1.00000e+00,      -      
+#: Displacement (unscaled):          -2.88462e-35,  6.73077e-35, -2.88462e-35,  7.87054e-35
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.52064, 
+    farPlane=4.7387, width=1.47525, height=0.598871, viewOffsetX=0.0354605, 
+    viewOffsetY=-0.46127)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3.23208, 
+    farPlane=5.4369, width=1.89164, height=0.7679, cameraPosition=(3.44047, 
+    -1.49223, 2.97542), cameraUpVector=(0.112306, 0.967121, 0.228177), 
+    cameraTarget=(1.02608, 0.496746, 1.07815), viewOffsetX=0.0454691, 
+    viewOffsetY=-0.591462)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3.26134, 
+    farPlane=5.57945, width=1.90876, height=0.774851, cameraPosition=(3.10151, 
+    -2.31296, 2.67724), cameraUpVector=(0.261412, 0.895537, 0.360107), 
+    cameraTarget=(1.05453, 0.279085, 1.10368), viewOffsetX=0.0458807, 
+    viewOffsetY=-0.596816)
+#: 
+#: Node: CUBE-1.143
+#:                                         1             2             3        Magnitude
+#: Base coordinates:                  9.00000e-01,  0.00000e+00,  9.00000e-01,      -      
+#: Scale:                             1.00000e+00,  1.00000e+00,  1.00000e+00,      -      
+#: Deformed coordinates (unscaled):   9.00000e-01,  2.69231e-34,  9.00000e-01,      -      
+#: Deformed coordinates (scaled):     9.00000e-01,  2.69231e-34,  9.00000e-01,      -      
+#: Displacement (unscaled):           0.00000e+00,  2.69231e-34, -0.00000e+00,  2.69231e-34
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3.25906, 
+    farPlane=5.58172, width=1.90743, height=0.77431, viewOffsetX=0.0946735, 
+    viewOffsetY=-0.528221)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3.17653, 
+    farPlane=5.25371, width=1.85913, height=0.754703, cameraPosition=(3.4332, 
+    0.571827, 3.56478), cameraUpVector=(-0.157047, 0.972952, -0.16941), 
+    cameraTarget=(0.874533, 0.962021, 0.97907), viewOffsetX=0.092276, 
+    viewOffsetY=-0.514844)
