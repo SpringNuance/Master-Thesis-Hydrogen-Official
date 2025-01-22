@@ -1,0 +1,1209 @@
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='Model-Full', objectToCopy=
+    mdb.models['Model-Full-Half-Thickness'])
+mdb.models['Model-Full'].parts['CHD4-m'].features['Solid extrude-1'].setValues(
+    depth=0.001)
+mdb.models['Model-Full'].parts['CHD4-m'].regenerate()
+mdb.models['Model-Full'].parts['CHD4-m'].seedEdgeByNumber(constraint=FIXED, 
+    edges=mdb.models['Model-Full'].parts['CHD4-m'].edges.getSequenceFromMask((
+    '[#204905 #0:2 #1818280 ]', ), ), number=4)
+mdb.models['Model-Full'].parts['CHD4-m'].seedEdgeByNumber(constraint=FIXED, 
+    edges=mdb.models['Model-Full'].parts['CHD4-m'].edges.getSequenceFromMask((
+    '[#12080000 #60415811 #8202b400 #1 ]', ), ), number=6)
+mdb.models['Model-Full'].parts['CHD4-m'].generateMesh()
+mdb.models['Model-Full'].parts['CHD4-m'].generateMesh(seedConstraintOverride=
+    ON)
+# Save by nguyenb5 on 2024_06_30-11.33.49; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['Model-Full'].materials['CP1000-m'].density
+del mdb.models['Model-Full'].materials['CP1000-m'].elastic
+del mdb.models['Model-Full'].materials['CP1000-m'].plastic
+mdb.models['Model-Full'].materials['CP1000-m'].Density(table=((1.0, ), ))
+mdb.models['Model-Full'].materials['CP1000-m'].Depvar(n=1)
+mdb.models['Model-Full'].materials['CP1000-m'].UserMaterial(
+    mechanicalConstants=(210000000000.0, 0.3, 839646000.0, 0.0, 880025000.0, 
+    0.0003, 906975000.0, 0.0005, 926275000.0, 0.001, 926275000.0, 0.002, 
+    939393000.0, 0.003, 949756000.0, 0.004, 958495000.0, 0.005, 966134000.0, 
+    0.006, 972960000.0, 0.007, 979150000.0, 0.008, 984823000.0, 0.009, 
+    990061000.0, 0.01, 1027470000.0, 0.02, 1049750000.0, 0.03, 1064310000.0, 
+    0.04, 1074410000.0, 0.05, 1081810000.0, 0.06, 1087490000.0, 0.07, 
+    1092060000.0, 0.08, 1095870000.0, 0.09, 1099140000.0, 0.1, 1111180000.0, 
+    0.15, 1119630000.0, 0.2, 1126250000.0, 0.25, 1131720000.0, 0.3, 
+    1136380000.0, 0.35, 1140440000.0, 0.4, 1144050000.0, 0.45, 1147300000.0, 
+    0.5, 1150250000.0, 0.55, 1152960000.0, 0.6, 1155460000.0, 0.65, 
+    1157790000.0, 0.7, 1159960000.0, 0.75, 1162000000.0, 0.8, 1163920000.0, 
+    0.85, 1165740000.0, 0.9, 1167460000.0, 0.95, 1169110000.0, 1.0, 
+    1170670000.0, 1.05, 1172160000.0, 1.1, 1173600000.0, 1.15, 1174970000.0, 
+    1.2, 1176290000.0, 1.25, 1177560000.0, 1.3, 1178790000.0, 1.35, 
+    1179970000.0, 1.4, 1181120000.0, 1.45, 1182220000.0, 1.5, 1183300000.0, 
+    1.55, 1184340000.0, 1.6, 1185350000.0, 1.65, 1186330000.0, 1.7, 
+    1187280000.0, 1.75, 1188210000.0, 1.8, 1189120000.0, 1.85, 1190000000.0, 
+    1.9, 1190860000.0, 1.95, 1191700000.0, 2.0, 1192520000.0, 2.05, 
+    1193320000.0, 2.1, 1194100000.0, 2.15, 1194870000.0, 2.2, 1195620000.0, 
+    2.25, 1196350000.0, 2.3, 1197070000.0, 2.35, 1197770000.0, 2.4, 
+    1198470000.0, 2.45, 1199140000.0, 2.5, 1199810000.0, 2.55, 1200460000.0, 
+    2.6, 1201100000.0, 2.65, 1201730000.0, 2.7, 1202350000.0, 2.75, 
+    1202960000.0, 2.8, 1203550000.0, 2.85, 1204140000.0, 2.9, 1204720000.0, 
+    2.95, 1205290000.0, 3.0), thermalConstants=(8.31446, 300.0, 2e-06, 3.8e-11)
+    , type=THERMOMECHANICAL)
+del mdb.models['Model-Full'].parts['CHD4-m'].sectionAssignments[0]
+mdb.models['Model-Full'].rootAssembly.regenerate()
+del mdb.models['Model-Full'].steps['Step-1']
+mdb.models['Model-Full'].CoupledTempDisplacementStep(cetol=None, 
+    creepIntegration=None, deltmx=1.0, initialInc=10.0, maxInc=10.0, maxNumInc=
+    100000, minInc=0.01, name='Step-1', nlgeom=ON, previous='Initial', 
+    timePeriod=1000.0)
+mdb.models['Model-Full'].fieldOutputRequests['F-Output-1'].setValues(variables=
+    ('RF', 'U'))
+mdb.models['Model-Full'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=100)
+# Save by nguyenb5 on 2024_06_30-12.28.14; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full'].rootAssembly.Set(cells=
+    mdb.models['Model-Full'].rootAssembly.instances['CHD4-m-1'].cells.getSequenceFromMask(
+    ('[#1000 ]', ), ), edges=
+    mdb.models['Model-Full'].rootAssembly.instances['CHD4-m-1'].edges.getSequenceFromMask(
+    ('[#0:3 #7dc0000 ]', ), ), faces=
+    mdb.models['Model-Full'].rootAssembly.instances['CHD4-m-1'].faces.getSequenceFromMask(
+    ('[#0 #80000000 #21c ]', ), ), name='Set-12', vertices=
+    mdb.models['Model-Full'].rootAssembly.instances['CHD4-m-1'].vertices.getSequenceFromMask(
+    ('[#0 #70000000 ]', ), ))
+mdb.models['Model-Full'].DisplacementBC(amplitude=UNSET, createStepName=
+    'Step-1', distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None
+    , name='top-part-constraint', region=
+    mdb.models['Model-Full'].rootAssembly.sets['Set-12'], u1=0.0, u2=UNSET, u3=
+    0.0, ur1=0.0, ur2=0.0, ur3=0.0)
+del mdb.models['Model-Full'].boundaryConditions['zsymm']
+mdb.models['Model-Full'].rootAssembly.Set(faces=
+    mdb.models['Model-Full'].rootAssembly.instances['CHD4-m-1'].faces.getSequenceFromMask(
+    ('[#0:2 #10 ]', ), ), name='Set-13')
+mdb.models['Model-Full'].DisplacementBC(amplitude='Amp-1', createStepName=
+    'Step-1', distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None
+    , name='top-surface-disp', region=
+    mdb.models['Model-Full'].rootAssembly.sets['Set-13'], u1=UNSET, u2=0.0016, 
+    u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+# Save by nguyenb5 on 2024_06_30-12.38.11; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_30-12.41.53; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='Model-Full-mesh-1-default', objectToCopy=
+    mdb.models['Model-Full'])
+del mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].depvar
+del mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].userMaterial
+mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].density.setValues(
+    table=((7890.0, ), ))
+mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].Elastic(table=((
+    210000000000.0, 0.3), ))
+mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].Plastic(
+    scaleStress=None, table=((839646000.0, 0.0), (880025000.0, 0.0003), (
+    906975000.0, 0.0005), (926275000.0, 0.001), (926275000.0, 0.002), (
+    939393000.0, 0.003), (949756000.0, 0.004), (958495000.0, 0.005), (
+    966134000.0, 0.006), (972960000.0, 0.007), (979150000.0, 0.008), (
+    984823000.0, 0.009), (990061000.0, 0.01), (1027470000.0, 0.02), (
+    1049750000.0, 0.03), (1064310000.0, 0.04), (1074410000.0, 0.05), (
+    1081810000.0, 0.06), (1087490000.0, 0.07), (1092060000.0, 0.08), (
+    1095870000.0, 0.09), (1099140000.0, 0.1), (1111180000.0, 0.15), (
+    1119630000.0, 0.2), (1126250000.0, 0.25), (1131720000.0, 0.3), (
+    1136380000.0, 0.35), (1140440000.0, 0.4), (1144050000.0, 0.45), (
+    1147300000.0, 0.5), (1150250000.0, 0.55), (1152960000.0, 0.6), (
+    1155460000.0, 0.65), (1157790000.0, 0.7), (1159960000.0, 0.75), (
+    1162000000.0, 0.8), (1163920000.0, 0.85), (1165740000.0, 0.9), (
+    1167460000.0, 0.95), (1169110000.0, 1.0), (1170670000.0, 1.05), (
+    1172160000.0, 1.1), (1173600000.0, 1.15), (1174970000.0, 1.2), (
+    1176290000.0, 1.25), (1177560000.0, 1.3), (1178790000.0, 1.35), (
+    1179970000.0, 1.4), (1181120000.0, 1.45), (1182220000.0, 1.5), (
+    1183300000.0, 1.55), (1184340000.0, 1.6), (1185350000.0, 1.65), (
+    1186330000.0, 1.7), (1187280000.0, 1.75), (1188210000.0, 1.8), (
+    1189120000.0, 1.85), (1190000000.0, 1.9), (1190860000.0, 1.95), (
+    1191700000.0, 2.0), (1192520000.0, 2.05), (1193320000.0, 2.1), (
+    1194100000.0, 2.15), (1194870000.0, 2.2), (1195620000.0, 2.25), (
+    1196350000.0, 2.3), (1197070000.0, 2.35), (1197770000.0, 2.4), (
+    1198470000.0, 2.45), (1199140000.0, 2.5), (1199810000.0, 2.55), (
+    1200460000.0, 2.6), (1201100000.0, 2.65), (1201730000.0, 2.7), (
+    1202350000.0, 2.75), (1202960000.0, 2.8), (1203550000.0, 2.85), (
+    1204140000.0, 2.9), (1204720000.0, 2.95), (1205290000.0, 3.0)))
+# Save by nguyenb5 on 2024_06_30-18.46.50; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].deleteMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#ffc ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].seedEdgeByNumber(
+    constraint=FIXED, edges=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].edges.getSequenceFromMask(
+    ('[#12080000 #20014011 #8202a000 #1 ]', ), ), number=8)
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#400 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#800 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].deleteMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].seedEdgeByNumber(
+    constraint=FIXED, edges=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].edges.getSequenceFromMask(
+    ('[#0 #40401800 #1400 ]', ), ), number=8)
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#200 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#100 ]', ), ))
+# Save by nguyenb5 on 2024_06_30-18.49.26; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].deleteMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#984 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].edges.getSequenceFromMask(
+    ('[#80000000 #2 #4400000 ]', ), ), size=0.00012)
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#800 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].deleteMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#984 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].edges.getSequenceFromMask(
+    ('[#80000000 #2 #4400000 ]', ), ), size=0.00014)
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#800 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].deleteMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#984 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].edges.getSequenceFromMask(
+    ('[#80000000 #2 #4400000 ]', ), ), size=0.00013)
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#984 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].deleteMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#984 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].edges.getSequenceFromMask(
+    ('[#80000000 #2 #4400000 ]', ), ), size=0.000135)
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#984 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].deleteMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#984 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].edges.getSequenceFromMask(
+    ('[#80000000 #2 #4400000 ]', ), ), size=0.00013)
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#984 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].deleteMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#984 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].edges.getSequenceFromMask(
+    ('[#80000000 #2 #4400000 ]', ), ), size=0.00014)
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#984 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].deleteMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#180 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].edges.getSequenceFromMask(
+    ('[#0 #68 #1250001 ]', ), ), size=0.00011)
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#180 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].deleteMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#880 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].edges.getSequenceFromMask(
+    ('[#0 #68 #68000001 #400 ]', ), ), size=0.00012)
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#880 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].deleteMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#984 ]', ), ))
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].edges.getSequenceFromMask(
+    ('[#68000000 #200068 #69250001 #400 ]', ), ), size=0.00012)
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].generateMesh(regions=
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#984 ]', ), ))
+# Save by nguyenb5 on 2024_06_30-18.55.40; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-mesh-1-default'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-Full-mesh-1-default', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='mesh_1_default', 
+    nodalOutputPrecision=SINGLE, numCpus=8, numDomains=8, numGPUs=0, 
+    numThreadsPerMpiProcess=1, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['mesh_1_default'].submit(consistencyChecking=OFF)
+mdb.jobs['mesh_1_default']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'L23-0203', 'handle': 0, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '336 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'SPECIFIC HEAT MUST BE DEFINED IN A TRANSIENT COUPLED TEMPERATURE-DISPLACEMENT ANALYSIS', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'DEGREE OF FREEDOM 11 AND AT LEAST ONE OF DEGREES OF FREEDOM 1 THRU 6 MUST BE ACTIVE IN THE MODEL FOR *COUPLED TEMP-DISP. CHECK THE PROCEDURE AND ELEMENT TYPES USED IN THIS MODEL.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. Abaqus MIGHT ADJUST THE TIME INCREMENTATION BUT WILL NOT VIOLATE THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP IN ORDER TO WRITE OUTPUT AT THOSE POINTS. CONSEQUENTLY, IN SOME CASES Abaqus MIGHTWRITE OUTPUT IMMEDIATELY AFTER THE SPECIFIED TIME POINTS, INSTEAD OF AT THE TIME POINTS. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 4 at 585 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof4.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 5 at 585 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof5.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 6 at 585 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof6.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\LocalUserData\\User-data\\nguyenb5\\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\\CP1000 CHD4\\mesh_1_default.odb', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  mesh_1_default.dat file for possible error messages if the file exists.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  mesh_1_default.dat file for possible error messages if the file exists.', 
+    'jobName': 'mesh_1_default'})
+mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].Conductivity(
+    table=((1.0, ), ))
+mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].SpecificHeat(
+    table=((1.0, ), ))
+# Save by nguyenb5 on 2024_06_30-19.13.13; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['mesh_1_default'].submit(consistencyChecking=OFF)
+mdb.jobs['mesh_1_default']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'L23-0203', 'handle': 0, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '336 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'DEGREE OF FREEDOM 11 AND AT LEAST ONE OF DEGREES OF FREEDOM 1 THRU 6 MUST BE ACTIVE IN THE MODEL FOR *COUPLED TEMP-DISP. CHECK THE PROCEDURE AND ELEMENT TYPES USED IN THIS MODEL.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. Abaqus MIGHT ADJUST THE TIME INCREMENTATION BUT WILL NOT VIOLATE THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP IN ORDER TO WRITE OUTPUT AT THOSE POINTS. CONSEQUENTLY, IN SOME CASES Abaqus MIGHTWRITE OUTPUT IMMEDIATELY AFTER THE SPECIFIED TIME POINTS, INSTEAD OF AT THE TIME POINTS. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 4 at 585 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof4.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 5 at 585 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof5.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 6 at 585 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof6.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\LocalUserData\\User-data\\nguyenb5\\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\\CP1000 CHD4\\mesh_1_default.odb', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  mesh_1_default.dat file for possible error messages if the file exists.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  mesh_1_default.dat file for possible error messages if the file exists.', 
+    'jobName': 'mesh_1_default'})
+mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].setElementType(
+    elemTypes=(ElemType(elemCode=C3D8T, elemLibrary=STANDARD, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT), ElemType(
+    elemCode=C3D6T, elemLibrary=STANDARD), ElemType(elemCode=C3D4T, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-Full-mesh-1-default'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#3fff ]', ), ), ))
+# Save by nguyenb5 on 2024_06_30-19.14.57; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-mesh-1-default'].rootAssembly.regenerate()
+mdb.jobs['mesh_1_default'].submit(consistencyChecking=OFF)
+mdb.jobs['mesh_1_default']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'L23-0203', 'handle': 0, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE ABSOLUTE ZERO TEMPERATURE HAS NOT BEEN SPECIFIED FOR COMPUTING INTERNAL THERMAL ENERGY USING THE ABSOLUTE ZERO PARAMETER ON THE *PHYSICAL CONSTANTS OPTION. A DEFAULT VALUE OF 0.0000 WILL BE ASSUMED.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '336 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. Abaqus MIGHT ADJUST THE TIME INCREMENTATION BUT WILL NOT VIOLATE THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP IN ORDER TO WRITE OUTPUT AT THOSE POINTS. CONSEQUENTLY, IN SOME CASES Abaqus MIGHTWRITE OUTPUT IMMEDIATELY AFTER THE SPECIFIED TIME POINTS, INSTEAD OF AT THE TIME POINTS. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 4 at 585 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof4.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 5 at 585 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof5.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 6 at 585 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof6.', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\LocalUserData\\User-data\\nguyenb5\\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\\CP1000 CHD4\\mesh_1_default.odb', 
+    'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'L23-0203', 'handle': 6088, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'mesh_1_default', 'memory': 3805.0})
+mdb.jobs['mesh_1_default']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 16017.0, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(MINIMUM_MEMORY, {'minimum_memory': 228.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 10.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 1, 'stepTime': 10.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 20.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 2, 'stepTime': 20.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 30.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 3, 'stepTime': 30.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 40.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 4, 'stepTime': 40.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 50.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 5, 'stepTime': 50.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 5, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 60.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 6, 'stepTime': 60.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 6, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 70.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 7, 'stepTime': 70.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 7, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 80.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 8, 'stepTime': 80.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 8, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 90.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 9, 'stepTime': 90.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 9, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 100.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 10, 'stepTime': 100.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 10, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 110.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 11, 'stepTime': 110.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 11, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 120.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 12, 'stepTime': 120.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 12, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 130.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 13, 'stepTime': 130.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 13, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 140.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 14, 'stepTime': 140.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 14, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 150.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 15, 'stepTime': 150.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 15, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 160.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 16, 'stepTime': 160.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 16, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 170.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 17, 'stepTime': 170.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 17, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 180.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 18, 'stepTime': 180.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 18, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 190.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 19, 'stepTime': 190.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 19, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 200.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 20, 'stepTime': 200.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 20, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 210.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 21, 'stepTime': 210.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 21, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 220.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 22, 'stepTime': 220.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 22, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 230.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 23, 'stepTime': 230.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 23, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 240.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 24, 'stepTime': 240.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 24, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 250.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 25, 'stepTime': 250.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 25, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 260.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 26, 'stepTime': 260.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 26, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 270.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 27, 'stepTime': 270.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 27, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 280.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 28, 'stepTime': 280.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 28, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 290.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 29, 'stepTime': 290.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 29, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 300.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 30, 'stepTime': 300.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 30, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 310.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 31, 'stepTime': 310.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 31, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 320.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 32, 'stepTime': 320.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 32, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 330.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 33, 'stepTime': 330.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 33, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 340.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 34, 'stepTime': 340.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 34, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 350.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 35, 'stepTime': 350.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 35, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 360.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 36, 'stepTime': 360.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 36, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 370.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 37, 'stepTime': 370.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 37, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 380.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 38, 'stepTime': 380.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 38, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 390.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 39, 'stepTime': 390.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 39, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 400.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 40, 'stepTime': 400.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 40, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 410.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 41, 'stepTime': 410.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 41, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 420.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 42, 'stepTime': 420.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 42, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 430.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 43, 'stepTime': 430.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 43, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 440.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 44, 'stepTime': 440.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 44, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 450.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 45, 'stepTime': 450.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 45, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 460.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 46, 'stepTime': 460.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 46, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 470.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 47, 'stepTime': 470.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 47, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 480.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 48, 'stepTime': 480.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 48, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 490.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 49, 'stepTime': 490.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 49, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 500.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 50, 'stepTime': 500.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 50, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 510.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 51, 'stepTime': 510.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 51, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 520.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 52, 'stepTime': 520.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 52, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 530.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 53, 'stepTime': 530.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 53, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 540.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 54, 'stepTime': 540.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 54, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 550.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 55, 'stepTime': 550.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 55, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 560.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 56, 'stepTime': 560.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 56, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 570.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 57, 'stepTime': 570.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 57, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 580.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 58, 'stepTime': 580.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 58, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 590.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 59, 'stepTime': 590.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 59, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 600.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 60, 'stepTime': 600.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 60, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 610.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 61, 'stepTime': 610.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 61, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 620.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 62, 'stepTime': 620.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 62, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 630.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 63, 'stepTime': 630.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 63, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 640.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 64, 'stepTime': 640.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 64, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 650.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 65, 'stepTime': 650.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 65, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 660.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 66, 'stepTime': 660.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 66, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 670.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 67, 'stepTime': 670.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 67, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 680.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 68, 'stepTime': 680.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 68, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 690.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 69, 'stepTime': 690.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 69, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 700.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 70, 'stepTime': 700.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 70, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 710.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 71, 'stepTime': 710.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 71, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 720.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 72, 'stepTime': 720.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 72, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 730.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 73, 'stepTime': 730.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 73, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 740.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 74, 'stepTime': 740.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 74, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 750.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 75, 'stepTime': 750.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 75, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 760.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 76, 'stepTime': 760.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 76, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 770.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 77, 'stepTime': 770.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 77, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 780.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 78, 'stepTime': 780.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 78, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 790.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 79, 'stepTime': 790.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 79, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 800.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 80, 'stepTime': 800.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 80, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 810.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 81, 'stepTime': 810.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 81, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 820.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 82, 'stepTime': 820.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 82, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 830.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 83, 'stepTime': 830.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 83, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 840.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 84, 'stepTime': 840.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 84, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 850.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 85, 'stepTime': 850.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 85, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 860.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 86, 'stepTime': 860.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 86, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 870.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 87, 'stepTime': 870.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 87, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 880.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 88, 'stepTime': 880.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 88, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 890.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 89, 'stepTime': 890.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 89, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 900.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 90, 'stepTime': 900.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 90, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 910.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 91, 'stepTime': 910.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 91, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 920.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 92, 'stepTime': 920.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 92, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 930.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 93, 'stepTime': 930.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 93, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 940.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 94, 'stepTime': 940.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 94, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 950.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 95, 'stepTime': 950.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 95, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 960.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 96, 'stepTime': 960.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 96, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 970.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 97, 'stepTime': 970.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 97, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 980.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 98, 'stepTime': 980.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 98, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 990.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 99, 'stepTime': 990.0, 'step': 1, 
+    'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 99, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 100, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(STATUS, {'totalTime': 1000.0, 
+    'attempts': 1, 'timeIncrement': 10.0, 'increment': 100, 'stepTime': 1000.0, 
+    'step': 1, 'jobName': 'mesh_1_default', 'severe': 0, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['mesh_1_default']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'mesh_1_default'})
+mdb.jobs['mesh_1_default']._Message(JOB_COMPLETED, {
+    'time': 'Sun Jun 30 19:31:13 2024', 'jobName': 'mesh_1_default'})
+# Save by nguyenb5 on 2024_06_30-19.33.04; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['Model-Truncated-One-Eighth-v1']
+del mdb.models['Model-Truncated-One-Eighth-v2']
+mdb.Model(name='Model-Full-mesh-1-subroutine', objectToCopy=
+    mdb.models['Model-Full-mesh-1-default'])
+del mdb.jobs['geometry']
+del mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].conductivity
+del mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].elastic
+del mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].plastic
+del mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].specificHeat
+mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].density.setValues(
+    table=((1.0, ), ))
+mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].Depvar(n=13)
+mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].UserMaterial(
+    mechanicalConstants=(210000000000.0, 0.3, 839646000.0, 0.0, 880025000.0, 
+    0.0003, 906975000.0, 0.0005, 926275000.0, 0.001, 926275000.0, 0.002, 
+    939393000.0, 0.003, 949756000.0, 0.004, 958495000.0, 0.005, 966134000.0, 
+    0.006, 972960000.0, 0.007, 979150000.0, 0.008, 984823000.0, 0.009, 
+    990061000.0, 0.01, 1027470000.0, 0.02, 1049750000.0, 0.03, 1064310000.0, 
+    0.04, 1074410000.0, 0.05, 1081810000.0, 0.06, 1087490000.0, 0.07, 
+    1092060000.0, 0.08, 1095870000.0, 0.09, 1099140000.0, 0.1, 1111180000.0, 
+    0.15, 1119630000.0, 0.2, 1126250000.0, 0.25, 1131720000.0, 0.3, 
+    1136380000.0, 0.35, 1140440000.0, 0.4, 1144050000.0, 0.45, 1147300000.0, 
+    0.5, 1150250000.0, 0.55, 1152960000.0, 0.6, 1155460000.0, 0.65, 
+    1157790000.0, 0.7, 1159960000.0, 0.75, 1162000000.0, 0.8, 1163920000.0, 
+    0.85, 1165740000.0, 0.9, 1167460000.0, 0.95, 1169110000.0, 1.0, 
+    1170670000.0, 1.05, 1172160000.0, 1.1, 1173600000.0, 1.15, 1174970000.0, 
+    1.2, 1176290000.0, 1.25, 1177560000.0, 1.3, 1178790000.0, 1.35, 
+    1179970000.0, 1.4, 1181120000.0, 1.45, 1182220000.0, 1.5, 1183300000.0, 
+    1.55, 1184340000.0, 1.6, 1185350000.0, 1.65, 1186330000.0, 1.7, 
+    1187280000.0, 1.75, 1188210000.0, 1.8, 1189120000.0, 1.85, 1190000000.0, 
+    1.9, 1190860000.0, 1.95, 1191700000.0, 2.0, 1192520000.0, 2.05, 
+    1193320000.0, 2.1, 1194100000.0, 2.15, 1194870000.0, 2.2, 1195620000.0, 
+    2.25, 1196350000.0, 2.3, 1197070000.0, 2.35, 1197770000.0, 2.4, 
+    1198470000.0, 2.45, 1199140000.0, 2.5, 1199810000.0, 2.55, 1200460000.0, 
+    2.6, 1201100000.0, 2.65, 1201730000.0, 2.7, 1202350000.0, 2.75, 
+    1202960000.0, 2.8, 1203550000.0, 2.85, 1204140000.0, 2.9, 1204720000.0, 
+    2.95, 1205290000.0, 3.0), thermalConstants=(8.31446, 300.0, 2e-06, 3.8e-11)
+    , type=THERMOMECHANICAL)
+# Save by nguyenb5 on 2024_07_01-11.28.56; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-Full-mesh-1-subroutine', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='mesh_1_subroutine', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+# Save by nguyenb5 on 2024_07_01-12.12.58; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

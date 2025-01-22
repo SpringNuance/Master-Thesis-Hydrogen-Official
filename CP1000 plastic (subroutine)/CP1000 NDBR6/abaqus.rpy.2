@@ -1,0 +1,468 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Sun Jun 30 19:17:50 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=119.81770324707, 
+    height=121.741897583008)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('NDBR6_geometry_42101_nodes.cae')
+#: The model database "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 NDBR6\NDBR6_geometry_42101_nodes.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-Full'].parts['NDBR6-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+mdb.Model(name='Model-Full-mesh-1-default', 
+    objectToCopy=mdb.models['Model-Full'])
+#: The model "Model-Full-mesh-1-default" has been created.
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+del mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].depvar
+del mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].userMaterial
+mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].density.setValues(
+    table=((7890.0, ), ))
+mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].Elastic(table=((
+    210000000000.0, 0.3), ))
+mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].Plastic(
+    scaleStress=None, table=((839646000.0, 0.0), (880025000.0, 0.0003), (
+    906975000.0, 0.0005), (926275000.0, 0.001), (926275000.0, 0.002), (
+    939393000.0, 0.003), (949756000.0, 0.004), (958495000.0, 0.005), (
+    966134000.0, 0.006), (972960000.0, 0.007), (979150000.0, 0.008), (
+    984823000.0, 0.009), (990061000.0, 0.01), (1027470000.0, 0.02), (
+    1049750000.0, 0.03), (1064310000.0, 0.04), (1074410000.0, 0.05), (
+    1081810000.0, 0.06), (1087490000.0, 0.07), (1092060000.0, 0.08), (
+    1095870000.0, 0.09), (1099140000.0, 0.1), (1111180000.0, 0.15), (
+    1119630000.0, 0.2), (1126250000.0, 0.25), (1131720000.0, 0.3), (
+    1136380000.0, 0.35), (1140440000.0, 0.4), (1144050000.0, 0.45), (
+    1147300000.0, 0.5), (1150250000.0, 0.55), (1152960000.0, 0.6), (
+    1155460000.0, 0.65), (1157790000.0, 0.7), (1159960000.0, 0.75), (
+    1162000000.0, 0.8), (1163920000.0, 0.85), (1165740000.0, 0.9), (
+    1167460000.0, 0.95), (1169110000.0, 1.0), (1170670000.0, 1.05), (
+    1172160000.0, 1.1), (1173600000.0, 1.15), (1174970000.0, 1.2), (
+    1176290000.0, 1.25), (1177560000.0, 1.3), (1178790000.0, 1.35), (
+    1179970000.0, 1.4), (1181120000.0, 1.45), (1182220000.0, 1.5), (
+    1183300000.0, 1.55), (1184340000.0, 1.6), (1185350000.0, 1.65), (
+    1186330000.0, 1.7), (1187280000.0, 1.75), (1188210000.0, 1.8), (
+    1189120000.0, 1.85), (1190000000.0, 1.9), (1190860000.0, 1.95), (
+    1191700000.0, 2.0), (1192520000.0, 2.05), (1193320000.0, 2.1), (
+    1194100000.0, 2.15), (1194870000.0, 2.2), (1195620000.0, 2.25), (
+    1196350000.0, 2.3), (1197070000.0, 2.35), (1197770000.0, 2.4), (
+    1198470000.0, 2.45), (1199140000.0, 2.5), (1199810000.0, 2.55), (
+    1200460000.0, 2.6), (1201100000.0, 2.65), (1201730000.0, 2.7), (
+    1202350000.0, 2.75), (1202960000.0, 2.8), (1203550000.0, 2.85), (
+    1204140000.0, 2.9), (1204720000.0, 2.95), (1205290000.0, 3.0)))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 NDBR6\NDBR6_geometry_42101_nodes.cae".
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.460625, 
+    farPlane=0.625005, width=0.0304316, height=0.0134599, 
+    viewOffsetX=-0.00573636, viewOffsetY=-0.0726378)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#e43 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#20890a #0 #18000000 #2828 ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=4, constraint=FINER)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#40 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#1 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.390249, 
+    farPlane=0.695381, width=0.468531, height=0.207232, viewOffsetX=-0.0287354, 
+    viewOffsetY=0.00484248)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#800 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#200 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461539, 
+    farPlane=0.624091, width=0.0247972, height=0.0109678, 
+    viewOffsetX=-0.00255062, viewOffsetY=-0.0125812)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#1bc ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#12080000 #844a0c0a #340602 ]', ), 
+    )
+p.seedEdgeByNumber(edges=pickedEdges, number=8, constraint=FIXED)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#2 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461506, 
+    farPlane=0.624123, width=0.0249988, height=0.011057, 
+    viewOffsetX=0.00182582, viewOffsetY=-0.017401)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#2 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#2 ]', ), )
+p.generateMesh(regions=pickedRegions, seedConstraintOverride=ON)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#1 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462757, 
+    farPlane=0.622873, width=0.0172926, height=0.00764855, 
+    viewOffsetX=0.00250767, viewOffsetY=-0.0184743)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#2 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#540000 #20 ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=6, constraint=AS_IS)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#2 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461368, 
+    farPlane=0.624262, width=0.0258508, height=0.0114338, 
+    viewOffsetX=0.000564718, viewOffsetY=-0.0026879)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0:2 #5400000 #200 ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=6, constraint=FIXED)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#400 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.458204, 
+    farPlane=0.627426, width=0.045358, height=0.0200619, 
+    viewOffsetX=0.00367981, viewOffsetY=-0.00736552)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#1bc ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461779, 
+    farPlane=0.623851, width=0.0233188, height=0.0103139, 
+    viewOffsetX=0.00599443, viewOffsetY=-0.0143663)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#4 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#68000000 #1000000 ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=12, constraint=FIXED)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#4 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461852, 
+    farPlane=0.623778, width=0.0258599, height=0.0114379, 
+    viewOffsetX=0.00468726, viewOffsetY=-0.0061893)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#80 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0:2 #40025000 ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=12, constraint=FIXED)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#80 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463792, 
+    farPlane=0.621838, width=0.0109204, height=0.00483009, 
+    viewOffsetX=0.00327146, viewOffsetY=-0.00897022)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#100 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0:2 #188b5 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.00012, deviationFactor=0.1, 
+    constraint=FINER)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461088, 
+    farPlane=0.624542, width=0.0275774, height=0.0121975, 
+    viewOffsetX=0.0079671, viewOffsetY=-0.00978357)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#100 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464635, 
+    farPlane=0.620995, width=0.00572623, height=0.00253272, 
+    viewOffsetX=-0.00261819, viewOffsetY=-0.0110972)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#8 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #e2d4 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.00012, deviationFactor=0.1, 
+    constraint=FINER)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463834, 
+    farPlane=0.621796, width=0.0120603, height=0.00533428, 
+    viewOffsetX=-2.56249e-05, viewOffsetY=-0.0116003)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#8 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462132, 
+    farPlane=0.623498, width=0.0211425, height=0.00935136, 
+    viewOffsetX=0.00229669, viewOffsetY=-0.0104489)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #60001100 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.00012, deviationFactor=0.1)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#100 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#20 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#8 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#10 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.46168, 
+    farPlane=0.62395, width=0.0270533, height=0.0119657, 
+    viewOffsetX=0.00434685, viewOffsetY=-0.01085)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#fff ]', ), )
+p.generateMesh(regions=pickedRegions, seedConstraintOverride=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463439, 
+    farPlane=0.62219, width=0.0148071, height=0.00654919, 
+    viewOffsetX=0.00312734, viewOffsetY=-0.0104975)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #60001100 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.00013, deviationFactor=0.1)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462602, 
+    farPlane=0.623028, width=0.0182469, height=0.00807064, 
+    viewOffsetX=0.00180287, viewOffsetY=-0.00930705)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #60001100 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.00014, deviationFactor=0.1)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464374, 
+    farPlane=0.621255, width=0.00829529, height=0.00366902, 
+    viewOffsetX=0.002078, viewOffsetY=-0.0107417)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#30 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #1a150000 #2000008 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.0001, deviationFactor=0.1, 
+    constraint=FINER)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463059, 
+    farPlane=0.62257, width=0.0174517, height=0.00771893, 
+    viewOffsetX=0.00228768, viewOffsetY=-0.0110803)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#30 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #60001100 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.00015, deviationFactor=0.1)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463211, 
+    farPlane=0.622419, width=0.01641, height=0.00725816, 
+    viewOffsetX=0.00197329, viewOffsetY=-0.0104126)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #60001100 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.000145, deviationFactor=0.1)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.generateMesh(regions=pickedRegions)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 NDBR6\NDBR6_geometry_42101_nodes.cae".
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #60001100 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.00014, deviationFactor=0.1)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #60001100 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.00015, deviationFactor=0.1)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462734, 
+    farPlane=0.622896, width=0.0174384, height=0.00771304, 
+    viewOffsetX=0.00190558, viewOffsetY=-0.0141185)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#108 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #e2d4 #188b5 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.00011, deviationFactor=0.1, 
+    constraint=FINER)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#8 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461679, 
+    farPlane=0.623951, width=0.02705, height=0.0119643, viewOffsetX=0.00244203, 
+    viewOffsetY=-0.0131179)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#100 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.460896, 
+    farPlane=0.624734, width=0.0325122, height=0.0143802, 
+    viewOffsetX=0.00231428, viewOffsetY=-0.0130655)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #60001100 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.000145, deviationFactor=0.1)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463333, 
+    farPlane=0.622297, width=0.0137445, height=0.00607919, 
+    viewOffsetX=0.00205941, viewOffsetY=-0.0109465)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #60001100 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.000147, deviationFactor=0.1)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #60001100 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.000146, deviationFactor=0.1)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#138 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463931, 
+    farPlane=0.621699, width=0.0100642, height=0.0044514, 
+    viewOffsetX=0.00381952, viewOffsetY=-0.00880401)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 NDBR6\NDBR6_geometry_42101_nodes.cae".
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.371804, 
+    farPlane=0.713826, width=0.588719, height=0.260391, viewOffsetX=0.110731, 
+    viewOffsetY=-0.0169014)
+elemType1 = mesh.ElemType(elemCode=C3D8T, elemLibrary=STANDARD, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT)
+elemType2 = mesh.ElemType(elemCode=C3D6T, elemLibrary=STANDARD)
+elemType3 = mesh.ElemType(elemCode=C3D4T, elemLibrary=STANDARD)
+p = mdb.models['Model-Full-mesh-1-default'].parts['NDBR6-m']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#fff ]', ), )
+pickedRegions =(cells, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2, 
+    elemType3))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 NDBR6\NDBR6_geometry_42101_nodes.cae".
+a = mdb.models['Model-Full-mesh-1-default'].rootAssembly
+a.regenerate()
+a = mdb.models['Model-Full-mesh-1-default'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+a = mdb.models['Model-Full-mesh-1-default'].rootAssembly
+a.regenerate()
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 NDBR6\NDBR6_geometry_42101_nodes.cae".

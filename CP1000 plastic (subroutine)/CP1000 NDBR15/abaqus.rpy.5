@@ -1,0 +1,107 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Mon Jul  1 12:58:07 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=118.47395324707, 
+    height=121.741897583008)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('NDBR15_geometry_coarse.cae')
+#: The model database "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 NDBR15\NDBR15_geometry_coarse.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-Full'].parts['NDBR15-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.422062, 
+    farPlane=0.663568, width=0.267909, height=0.119138, viewOffsetX=0.00387183, 
+    viewOffsetY=-0.00671456)
+a = mdb.models['Model-Full'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON, 
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-Full'].parts['NDBR15-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+#: The contents of viewport "Viewport: 1" have been copied to the clipboard.
+p1 = mdb.models['Model-Full-mesh-1-default'].parts['NDBR15-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.Model(name='Model-Full-mesh-1-subroutine', 
+    objectToCopy=mdb.models['Model-Full-mesh-1-default'])
+#: The model "Model-Full-mesh-1-subroutine" has been created.
+p = mdb.models['Model-Full-mesh-1-subroutine'].parts['NDBR15-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+del mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].conductivity
+del mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].density
+del mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].elastic
+del mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].plastic
+del mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].specificHeat
+mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].Density(
+    table=((1.0, ), ))
+mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].Depvar(n=13)
+mdb.models['Model-Full-mesh-1-subroutine'].materials['CP1000-m'].UserMaterial(
+    type=THERMOMECHANICAL, mechanicalConstants=(210000000000.0, 0.3, 
+    839646000.0, 0.0, 880025000.0, 0.0003, 906975000.0, 0.0005, 926275000.0, 
+    0.001, 926275000.0, 0.002, 939393000.0, 0.003, 949756000.0, 0.004, 
+    958495000.0, 0.005, 966134000.0, 0.006, 972960000.0, 0.007, 979150000.0, 
+    0.008, 984823000.0, 0.009, 990061000.0, 0.01, 1027470000.0, 0.02, 
+    1049750000.0, 0.03, 1064310000.0, 0.04, 1074410000.0, 0.05, 1081810000.0, 
+    0.06, 1087490000.0, 0.07, 1092060000.0, 0.08, 1095870000.0, 0.09, 
+    1099140000.0, 0.1, 1111180000.0, 0.15, 1119630000.0, 0.2, 1126250000.0, 
+    0.25, 1131720000.0, 0.3, 1136380000.0, 0.35, 1140440000.0, 0.4, 
+    1144050000.0, 0.45, 1147300000.0, 0.5, 1150250000.0, 0.55, 1152960000.0, 
+    0.6, 1155460000.0, 0.65, 1157790000.0, 0.7, 1159960000.0, 0.75, 
+    1162000000.0, 0.8, 1163920000.0, 0.85, 1165740000.0, 0.9, 1167460000.0, 
+    0.95, 1169110000.0, 1.0, 1170670000.0, 1.05, 1172160000.0, 1.1, 
+    1173600000.0, 1.15, 1174970000.0, 1.2, 1176290000.0, 1.25, 1177560000.0, 
+    1.3, 1178790000.0, 1.35, 1179970000.0, 1.4, 1181120000.0, 1.45, 
+    1182220000.0, 1.5, 1183300000.0, 1.55, 1184340000.0, 1.6, 1185350000.0, 
+    1.65, 1186330000.0, 1.7, 1187280000.0, 1.75, 1188210000.0, 1.8, 
+    1189120000.0, 1.85, 1190000000.0, 1.9, 1190860000.0, 1.95, 1191700000.0, 
+    2.0, 1192520000.0, 2.05, 1193320000.0, 2.1, 1194100000.0, 2.15, 
+    1194870000.0, 2.2, 1195620000.0, 2.25, 1196350000.0, 2.3, 1197070000.0, 
+    2.35, 1197770000.0, 2.4, 1198470000.0, 2.45, 1199140000.0, 2.5, 
+    1199810000.0, 2.55, 1200460000.0, 2.6, 1201100000.0, 2.65, 1201730000.0, 
+    2.7, 1202350000.0, 2.75, 1202960000.0, 2.8, 1203550000.0, 2.85, 
+    1204140000.0, 2.9, 1204720000.0, 2.95, 1205290000.0, 3.0), 
+    thermalConstants=(8.31446, 300.0, 2e-06, 3.8e-11))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 NDBR15\NDBR15_geometry_coarse.cae".
+a = mdb.models['Model-Full-mesh-1-subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+del mdb.jobs['geometry']
+mdb.Job(name='mesh_1_subroutine', model='Model-Full-mesh-1-subroutine', 
+    description='', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, 
+    queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.jobs['mesh_1_subroutine'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "mesh_1_subroutine.inp".
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 NDBR15\NDBR15_geometry_coarse.cae".

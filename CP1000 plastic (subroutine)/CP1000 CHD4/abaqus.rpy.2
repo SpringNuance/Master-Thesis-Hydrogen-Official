@@ -1,0 +1,286 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Sun Jun 30 11:26:49 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=119.81770324707, 
+    height=121.741897583008)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('CHD4_geometry_42039_nodes.cae')
+#: The model database "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD4\CHD4_geometry_42039_nodes.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-Full-Half-Thickness'].parts['CHD4-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.452985, 
+    farPlane=0.632706, width=0.084075, height=0.0370534, 
+    viewOffsetX=-0.000436218, viewOffsetY=-0.00718136)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+#: The contents of viewport "Viewport: 1" have been copied to the clipboard.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.448186, 
+    farPlane=0.637506, width=0.122136, height=0.0540208, 
+    viewOffsetX=-0.00214491, viewOffsetY=-0.0053615)
+mdb.Model(name='Model-Full', 
+    objectToCopy=mdb.models['Model-Full-Half-Thickness'])
+#: The model "Model-Full" has been created.
+p = mdb.models['Model-Full'].parts['CHD4-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.45572, 
+    farPlane=0.629971, width=0.0618534, height=0.0273578, 
+    viewOffsetX=0.00622514, viewOffsetY=-0.012377)
+p = mdb.models['Model-Full'].parts['CHD4-m']
+p.features['Solid extrude-1'].setValues(depth=0.001)
+p = mdb.models['Model-Full'].parts['CHD4-m']
+p.regenerate()
+#: Warning: Failed to attach mesh to part geometry.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461405, 
+    farPlane=0.623998, width=0.0249238, height=0.0110238, 
+    viewOffsetX=0.00842878, viewOffsetY=-0.0769738)
+p = mdb.models['Model-Full'].parts['CHD4-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#204905 #0:2 #1818280 ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=4, constraint=FIXED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462247, 
+    farPlane=0.623155, width=0.0197338, height=0.00872831, 
+    viewOffsetX=0.00182678, viewOffsetY=-0.00915787)
+p = mdb.models['Model-Full'].parts['CHD4-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=(
+    '[#12080000 #60415811 #8202b400 #1 ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=6, constraint=FIXED)
+p = mdb.models['Model-Full'].parts['CHD4-m']
+p.generateMesh()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461814, 
+    farPlane=0.623589, width=0.0224038, height=0.00990923, 
+    viewOffsetX=0.00275579, viewOffsetY=-0.00879758)
+p = mdb.models['Model-Full'].parts['CHD4-m']
+p.generateMesh(seedConstraintOverride=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461358, 
+    farPlane=0.624044, width=0.0285016, height=0.0126063, 
+    viewOffsetX=0.00252857, viewOffsetY=-0.0121418)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD4\CHD4_geometry_42039_nodes.cae".
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+del mdb.models['Model-Full'].materials['CP1000-m'].density
+del mdb.models['Model-Full'].materials['CP1000-m'].elastic
+del mdb.models['Model-Full'].materials['CP1000-m'].plastic
+mdb.models['Model-Full'].materials['CP1000-m'].Density(table=((1.0, ), ))
+mdb.models['Model-Full'].materials['CP1000-m'].Depvar(n=1)
+mdb.models['Model-Full'].materials['CP1000-m'].UserMaterial(
+    type=THERMOMECHANICAL, mechanicalConstants=(210000000000.0, 0.3, 
+    839646000.0, 0.0, 880025000.0, 0.0003, 906975000.0, 0.0005, 926275000.0, 
+    0.001, 926275000.0, 0.002, 939393000.0, 0.003, 949756000.0, 0.004, 
+    958495000.0, 0.005, 966134000.0, 0.006, 972960000.0, 0.007, 979150000.0, 
+    0.008, 984823000.0, 0.009, 990061000.0, 0.01, 1027470000.0, 0.02, 
+    1049750000.0, 0.03, 1064310000.0, 0.04, 1074410000.0, 0.05, 1081810000.0, 
+    0.06, 1087490000.0, 0.07, 1092060000.0, 0.08, 1095870000.0, 0.09, 
+    1099140000.0, 0.1, 1111180000.0, 0.15, 1119630000.0, 0.2, 1126250000.0, 
+    0.25, 1131720000.0, 0.3, 1136380000.0, 0.35, 1140440000.0, 0.4, 
+    1144050000.0, 0.45, 1147300000.0, 0.5, 1150250000.0, 0.55, 1152960000.0, 
+    0.6, 1155460000.0, 0.65, 1157790000.0, 0.7, 1159960000.0, 0.75, 
+    1162000000.0, 0.8, 1163920000.0, 0.85, 1165740000.0, 0.9, 1167460000.0, 
+    0.95, 1169110000.0, 1.0, 1170670000.0, 1.05, 1172160000.0, 1.1, 
+    1173600000.0, 1.15, 1174970000.0, 1.2, 1176290000.0, 1.25, 1177560000.0, 
+    1.3, 1178790000.0, 1.35, 1179970000.0, 1.4, 1181120000.0, 1.45, 
+    1182220000.0, 1.5, 1183300000.0, 1.55, 1184340000.0, 1.6, 1185350000.0, 
+    1.65, 1186330000.0, 1.7, 1187280000.0, 1.75, 1188210000.0, 1.8, 
+    1189120000.0, 1.85, 1190000000.0, 1.9, 1190860000.0, 1.95, 1191700000.0, 
+    2.0, 1192520000.0, 2.05, 1193320000.0, 2.1, 1194100000.0, 2.15, 
+    1194870000.0, 2.2, 1195620000.0, 2.25, 1196350000.0, 2.3, 1197070000.0, 
+    2.35, 1197770000.0, 2.4, 1198470000.0, 2.45, 1199140000.0, 2.5, 
+    1199810000.0, 2.55, 1200460000.0, 2.6, 1201100000.0, 2.65, 1201730000.0, 
+    2.7, 1202350000.0, 2.75, 1202960000.0, 2.8, 1203550000.0, 2.85, 
+    1204140000.0, 2.9, 1204720000.0, 2.95, 1205290000.0, 3.0), 
+    thermalConstants=(8.31446, 300.0, 2e-06, 3.8e-11))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.391994, 
+    farPlane=0.693408, width=0.458289, height=0.201977, viewOffsetX=0.0807999, 
+    viewOffsetY=-0.00456442)
+p1 = mdb.models['Model-Full'].parts['CHD4-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p1 = mdb.models['Model-Full'].parts['CHD4-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p1 = mdb.models['Model-Full'].parts['CHD4-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['Model-Full'].parts['CHD4-m'].sectionAssignments[0]
+p1 = mdb.models['Model-Full'].parts['CHD4-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p1 = mdb.models['Model-Full'].parts['CHD4-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['Model-Full'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON, optimizationTasks=OFF, 
+    geometricRestrictions=OFF, stopConditions=OFF)
+del mdb.models['Model-Full'].steps['Step-1']
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+mdb.models['Model-Full'].CoupledTempDisplacementStep(name='Step-1', 
+    previous='Initial', timePeriod=1000.0, maxNumInc=100000, initialInc=10.0, 
+    minInc=0.01, maxInc=10.0, deltmx=1.0, cetol=None, creepIntegration=None, 
+    nlgeom=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+mdb.models['Model-Full'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U'))
+a = mdb.models['Model-Full-Half-Thickness'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['Model-Full'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['Model-Full'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=100)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.448861, 
+    farPlane=0.636769, width=0.116536, height=0.0513595, 
+    viewOffsetX=0.00213982, viewOffsetY=-0.0605998)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD4\CHD4_geometry_42039_nodes.cae".
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p1 = mdb.models['Model-Full'].parts['CHD4-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p1 = mdb.models['Model-Full'].parts['CHD4-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['Model-Full'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461106, 
+    farPlane=0.624523, width=0.027562, height=0.0121471, 
+    viewOffsetX=0.00364699, viewOffsetY=0.087874)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.457341, 
+    farPlane=0.628289, width=0.0771338, height=0.0339943, 
+    viewOffsetX=0.00832035, viewOffsetY=0.0814526)
+a = mdb.models['Model-Full'].rootAssembly
+c1 = a.instances['CHD4-m-1'].cells
+cells1 = c1.getSequenceFromMask(mask=('[#1000 ]', ), )
+f1 = a.instances['CHD4-m-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#0 #80000000 #21c ]', ), )
+e1 = a.instances['CHD4-m-1'].edges
+edges1 = e1.getSequenceFromMask(mask=('[#0:3 #7dc0000 ]', ), )
+v1 = a.instances['CHD4-m-1'].vertices
+verts1 = v1.getSequenceFromMask(mask=('[#0 #70000000 ]', ), )
+region = a.Set(vertices=verts1, edges=edges1, faces=faces1, cells=cells1, 
+    name='Set-12')
+mdb.models['Model-Full'].DisplacementBC(name='top-part-constraint', 
+    createStepName='Step-1', region=region, u1=0.0, u2=UNSET, u3=0.0, ur1=0.0, 
+    ur2=0.0, ur3=0.0, amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, 
+    fieldName='', localCsys=None)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+del mdb.models['Model-Full'].boundaryConditions['zsymm']
+a = mdb.models['Model-Full-Half-Thickness'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       10
+#: Number of Node Sets:          12
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.457899, 
+    farPlane=0.627403, width=0.0486061, height=0.0214216, 
+    viewOffsetX=-0.000673018, viewOffsetY=0.083472)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=19 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=19 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=19 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=19 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=19 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=19 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=25 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=25 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=25 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=25 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=25 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.459978, 
+    farPlane=0.625258, width=0.0398955, height=0.0175827, 
+    viewOffsetX=-0.000508484, viewOffsetY=-0.00973441)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=25 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461266, 
+    farPlane=0.623958, width=0.0329572, height=0.0145248, 
+    viewOffsetX=0.00453433, viewOffsetY=-0.0106984)
+session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb'].close(
+    )
+p1 = mdb.models['Model-Full'].parts['CHD4-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['Model-Full'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.0275, 
+    farPlane=20.1894, width=0.0230918, height=0.010177, cameraPosition=(
+    11.6047, 11.6196, 11.6051), viewOffsetX=0.00166669, viewOffsetY=0.0895813)
+a = mdb.models['Model-Full'].rootAssembly
+f1 = a.instances['CHD4-m-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#0:2 #10 ]', ), )
+region = a.Set(faces=faces1, name='Set-13')
+mdb.models['Model-Full'].DisplacementBC(name='top-surface-disp', 
+    createStepName='Step-1', region=region, u1=UNSET, u2=0.0016, u3=UNSET, 
+    ur1=UNSET, ur2=UNSET, ur3=UNSET, amplitude='Amp-1', fixed=OFF, 
+    distributionType=UNIFORM, fieldName='', localCsys=None)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD4\CHD4_geometry_42039_nodes.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON, loads=OFF, 
+    bcs=OFF, predefinedFields=OFF, connectors=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.0277, 
+    farPlane=20.1892, width=0.0240947, height=0.0106571, viewOffsetX=0.0017602, 
+    viewOffsetY=-0.0133357)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD4\CHD4_geometry_42039_nodes.cae".

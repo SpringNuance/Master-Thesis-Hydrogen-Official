@@ -1,0 +1,693 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Sun Jun 30 16:13:40 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=119.81770324707, 
+    height=121.741897583008)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('test_one_element.cae')
+#: The model database "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\test_element\test_one_element.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-Full'].parts['CHD2-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+s = mdb.models['Model-Full'].ConstrainedSketch(name='__profile__', 
+    sheetSize=0.2)
+g, v, d, c = s.geometry, s.vertices, s.dimensions, s.constraints
+s.sketchOptions.setValues(decimalPlaces=3)
+s.setPrimaryObject(option=STANDALONE)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.153528, 
+    farPlane=0.223595, width=0.24493, height=0.107945, cameraPosition=(
+    -0.00821133, -0.007616, 0.188562), cameraTarget=(-0.00821133, -0.007616, 
+    0))
+s.rectangle(point1=(0.0, 0.0), point2=(0.02, 0.02))
+p = mdb.models['Model-Full'].Part(name='cube', dimensionality=THREE_D, 
+    type=DEFORMABLE_BODY)
+p = mdb.models['Model-Full'].parts['cube']
+p.BaseSolidExtrude(sketch=s, depth=0.02)
+s.unsetPrimaryObject()
+p = mdb.models['Model-Full'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+del mdb.models['Model-Full'].sketches['__profile__']
+p1 = mdb.models['Model-Full'].parts['CHD2-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['Model-Full'].parts['CHD2-m']
+p = mdb.models['Model-Full'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+mdb.models['Model-Full'].Material(name='CP1000-solver')
+mdb.models['Model-Full'].materials['CP1000-solver'].Density(table=((7890.0, ), 
+    ))
+mdb.models['Model-Full'].materials['CP1000-solver'].Elastic(table=((
+    210000000000.0, 0.3), ))
+mdb.models['Model-Full'].materials['CP1000-solver'].Plastic(scaleStress=None, 
+    table=((839646000.0, 0.0), (880025000.0, 0.0003), (906975000.0, 0.0005), (
+    926275000.0, 0.001), (926275000.0, 0.002), (939393000.0, 0.003), (
+    949756000.0, 0.004), (958495000.0, 0.005), (966134000.0, 0.006), (
+    972960000.0, 0.007), (979150000.0, 0.008), (984823000.0, 0.009), (
+    990061000.0, 0.01), (1027470000.0, 0.02), (1049750000.0, 0.03), (
+    1064310000.0, 0.04), (1074410000.0, 0.05), (1081810000.0, 0.06), (
+    1087490000.0, 0.07), (1092060000.0, 0.08), (1095870000.0, 0.09), (
+    1099140000.0, 0.1), (1111180000.0, 0.15), (1119630000.0, 0.2), (
+    1126250000.0, 0.25), (1131720000.0, 0.3), (1136380000.0, 0.35), (
+    1140440000.0, 0.4), (1144050000.0, 0.45), (1147300000.0, 0.5), (
+    1150250000.0, 0.55), (1152960000.0, 0.6), (1155460000.0, 0.65), (
+    1157790000.0, 0.7), (1159960000.0, 0.75), (1162000000.0, 0.8), (
+    1163920000.0, 0.85), (1165740000.0, 0.9), (1167460000.0, 0.95), (
+    1169110000.0, 1.0), (1170670000.0, 1.05), (1172160000.0, 1.1), (
+    1173600000.0, 1.15), (1174970000.0, 1.2), (1176290000.0, 1.25), (
+    1177560000.0, 1.3), (1178790000.0, 1.35), (1179970000.0, 1.4), (
+    1181120000.0, 1.45), (1182220000.0, 1.5), (1183300000.0, 1.55), (
+    1184340000.0, 1.6), (1185350000.0, 1.65), (1186330000.0, 1.7), (
+    1187280000.0, 1.75), (1188210000.0, 1.8), (1189120000.0, 1.85), (
+    1190000000.0, 1.9), (1190860000.0, 1.95), (1191700000.0, 2.0), (
+    1192520000.0, 2.05), (1193320000.0, 2.1), (1194100000.0, 2.15), (
+    1194870000.0, 2.2), (1195620000.0, 2.25), (1196350000.0, 2.3), (
+    1197070000.0, 2.35), (1197770000.0, 2.4), (1198470000.0, 2.45), (
+    1199140000.0, 2.5), (1199810000.0, 2.55), (1200460000.0, 2.6), (
+    1201100000.0, 2.65), (1201730000.0, 2.7), (1202350000.0, 2.75), (
+    1202960000.0, 2.8), (1203550000.0, 2.85), (1204140000.0, 2.9), (
+    1204720000.0, 2.95), (1205290000.0, 3.0)))
+mdb.models['Model-Full'].HomogeneousSolidSection(
+    name='Section-2-CP1000-solver', material='CP1000-solver', thickness=None)
+a = mdb.models['Model-Full'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+#* FeatureError: Regeneration failed
+a = mdb.models['Model-Full'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+a = mdb.models['Model-Full'].rootAssembly
+del a.features['CHD2-m-1']
+mdb.models['Model-Full'].rootAssembly.deleteSets(setNames=('Set-1', 'Set-2', 
+    'Set-3', 'Set-4', 'Set-5', 'Set-6', 'Set-7', 'Set-8', ))
+a = mdb.models['Model-Full'].rootAssembly
+del a.features['Datum csys-1']
+a1 = mdb.models['Model-Full'].rootAssembly
+a1.DatumCsysByDefault(CARTESIAN)
+p = mdb.models['Model-Full'].parts['cube']
+a1.Instance(name='cube-1', part=p, dependent=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+mdb.models['Model-Full'].boundaryConditions.delete(('top-part-constraint', 
+    'bottom-part-encastre', 'top-surface-disp', ))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+del mdb.models['Model-Full'].predefinedFields['Cbar_L']
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0487415, 
+    farPlane=0.0996215, width=0.0518984, height=0.0228726, cameraPosition=(
+    0.0518614, -0.044257, 0.0384029), cameraUpVector=(0.29253, 0.879806, 
+    0.374657), cameraTarget=(0.0104196, 0.00916085, 0.0104196))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0499445, 
+    farPlane=0.0984587, width=0.0531794, height=0.0234371, cameraPosition=(
+    0.0453503, -0.0503827, 0.0347021), cameraUpVector=(0.394073, 0.815639, 
+    0.423603), cameraTarget=(0.0103309, 0.00907739, 0.0103692))
+a = mdb.models['Model-Full'].rootAssembly
+f1 = a.instances['cube-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#8 ]', ), )
+region = a.Set(faces=faces1, name='Set-1')
+mdb.models['Model-Full'].EncastreBC(name='bottom-part-constraint', 
+    createStepName='Step-1', region=region, localCsys=None)
+session.viewports['Viewport: 1'].view.setValues(session.views['Iso'])
+a = mdb.models['Model-Full'].rootAssembly
+f1 = a.instances['cube-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#2 ]', ), )
+region = a.Set(faces=faces1, name='Set-2')
+mdb.models['Model-Full'].DisplacementBC(name='top-surface-disp', 
+    createStepName='Step-1', region=region, u1=UNSET, u2=0.04, u3=UNSET, 
+    ur1=UNSET, ur2=UNSET, ur3=UNSET, amplitude='Amp-1', fixed=OFF, 
+    distributionType=UNIFORM, fieldName='', localCsys=None)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0468367, 
+    farPlane=0.0995049, width=0.0641361, height=0.028266, 
+    viewOffsetX=0.000508569, viewOffsetY=0.000554731)
+mdb.models.changeKey(fromName='Model-Full', toName='cube-default-solver')
+a = mdb.models['cube-default-solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['reference-Wu-Jiao-Jiao'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+del mdb.models['reference-Wu-Jiao-Jiao']
+del mdb.models['Model-Full-mesh-1']
+del mdb.models['Model-Full-Half-Thickness']
+a = mdb.models['cube-default-solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.Model(name='cube-subroutine', 
+    objectToCopy=mdb.models['cube-default-solver'])
+#: The model "cube-subroutine" has been created.
+a = mdb.models['cube-subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+p1 = mdb.models['cube-default-solver'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['cube-default-solver'].materials['CP1000-m']
+del mdb.models['cube-default-solver'].sections['Section-1-CP1000-m']
+a = mdb.models['cube-default-solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON, loads=OFF, 
+    bcs=OFF, predefinedFields=OFF, connectors=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0466242, 
+    farPlane=0.0997174, width=0.0633575, height=0.0280231, 
+    viewOffsetX=0.0020683, viewOffsetY=0.000702218)
+p = mdb.models['cube-default-solver'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['cube-default-solver'].parts['cube']
+p.seedPart(size=0.002, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['cube-default-solver'].parts['cube']
+p.generateMesh()
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\test_element\test_one_element.cae".
+a = mdb.models['cube-default-solver'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+del mdb.jobs['geometry']
+del mdb.jobs['mesh-1']
+mdb.Job(name='cube_default', model='cube-default-solver', description='', 
+    type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, 
+    memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+p = mdb.models['cube-default-solver'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p = mdb.models['cube-default-solver'].parts['cube']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#1 ]', ), )
+region = p.Set(cells=cells, name='Set-1')
+p = mdb.models['cube-default-solver'].parts['cube']
+p.SectionAssignment(region=region, sectionName='Section-2-CP1000-solver', 
+    offset=0.0, offsetType=MIDDLE_SURFACE, offsetField='', 
+    thicknessAssignment=FROM_SECTION)
+a1 = mdb.models['cube-default-solver'].rootAssembly
+a1.regenerate()
+a = mdb.models['cube-default-solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['cube-default-solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['cube_default'].submit(consistencyChecking=OFF)
+#: The job input file "cube_default.inp" has been submitted for analysis.
+#: Error in job cube_default: SPECIFIC HEAT MUST BE DEFINED IN A TRANSIENT COUPLED TEMPERATURE-DISPLACEMENT ANALYSIS
+#: Error in job cube_default: DEGREE OF FREEDOM 11 AND AT LEAST ONE OF DEGREES OF FREEDOM 1 THRU 6 MUST BE ACTIVE IN THE MODEL FOR *COUPLED TEMP-DISP. CHECK THE PROCEDURE AND ELEMENT TYPES USED IN THIS MODEL.
+#: Job cube_default: Analysis Input File Processor aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+#: Error in job cube_default: Analysis Input File Processor exited with an error - Please see the  cube_default.dat file for possible error messages if the file exists.
+#: Job cube_default aborted due to errors.
+p = mdb.models['cube-default-solver'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+elemType1 = mesh.ElemType(elemCode=C3D8T, elemLibrary=STANDARD, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT)
+elemType2 = mesh.ElemType(elemCode=C3D6T, elemLibrary=STANDARD)
+elemType3 = mesh.ElemType(elemCode=C3D4T, elemLibrary=STANDARD)
+p = mdb.models['cube-default-solver'].parts['cube']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#1 ]', ), )
+pickedRegions =(cells, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2, 
+    elemType3))
+a1 = mdb.models['cube-default-solver'].rootAssembly
+a1.regenerate()
+a = mdb.models['cube-default-solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+a = mdb.models['cube-default-solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['cube_default'].submit(consistencyChecking=OFF)
+#: The job input file "cube_default.inp" has been submitted for analysis.
+#: Error in job cube_default: ELEMENT 1 INSTANCE CUBE-1 IS AN ELEMENT WITH TEMPERATURE DEGREES OF FREEDOM. IT REQUIRES A THERMAL CONDUCTIVITY PROPERTY DEFINITION
+#: Error in job cube_default: SPECIFIC HEAT MUST BE DEFINED IN A TRANSIENT COUPLED TEMPERATURE-DISPLACEMENT ANALYSIS
+#: Job cube_default: Analysis Input File Processor aborted due to errors.
+#: Error in job cube_default: Analysis Input File Processor exited with an error - Please see the  cube_default.dat file for possible error messages if the file exists.
+#: Job cube_default aborted due to errors.
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+p1 = mdb.models['cube-default-solver'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['cube-default-solver'].materials['CP1000-solver'].SpecificHeat(
+    table=((1.0, ), ))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\test_element\test_one_element.cae".
+a = mdb.models['cube-default-solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['cube_default'].submit(consistencyChecking=OFF)
+#: The job input file "cube_default.inp" has been submitted for analysis.
+#: Error in job cube_default: ELEMENT 1 INSTANCE CUBE-1 IS AN ELEMENT WITH TEMPERATURE DEGREES OF FREEDOM. IT REQUIRES A THERMAL CONDUCTIVITY PROPERTY DEFINITION
+#: Job cube_default: Analysis Input File Processor aborted due to errors.
+#: Error in job cube_default: Analysis Input File Processor exited with an error - Please see the  cube_default.dat file for possible error messages if the file exists.
+#: Job cube_default aborted due to errors.
+p1 = mdb.models['cube-default-solver'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['cube-default-solver'].materials['CP1000-solver'].Conductivity(
+    table=((1.0, ), ))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\test_element\test_one_element.cae".
+a = mdb.models['cube-default-solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['cube_default'].submit(consistencyChecking=OFF)
+#: The job input file "cube_default.inp" has been submitted for analysis.
+#: Job cube_default: Analysis Input File Processor completed successfully.
+#: Job cube_default: Abaqus/Standard completed successfully.
+#: Job cube_default completed successfully. 
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\test_element\test_one_element.cae".
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_default.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_default.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       4
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.020975, 
+    farPlane=0.102273, width=0.0805664, height=0.0355071, 
+    viewOffsetX=0.00277515, viewOffsetY=0.00666362)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0268261, 
+    farPlane=0.0964214, width=0.0370527, height=0.0163298, 
+    viewOffsetX=0.00185863, viewOffsetY=0.00220332)
+a = mdb.models['cube-default-solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+mdb.models['cube-default-solver'].boundaryConditions['top-surface-disp'].setValues(
+    u2=0.01)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\test_element\test_one_element.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['cube_default'].submit(consistencyChecking=OFF)
+#: The job input file "cube_default.inp" has been submitted for analysis.
+#: Job cube_default: Analysis Input File Processor completed successfully.
+#: Job cube_default: Abaqus/Standard completed successfully.
+#: Job cube_default completed successfully. 
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_default.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_default.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       4
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0388183, 
+    farPlane=0.10175, width=0.0780019, height=0.0343769, 
+    viewOffsetX=0.00246141, viewOffsetY=0.00169319)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0402082, 
+    farPlane=0.10036, width=0.0681684, height=0.0300431, 
+    viewOffsetX=0.000774662, viewOffsetY=0.00227986)
+p1 = mdb.models['cube-subroutine'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['cube-subroutine'].materials['CP1000-solver']
+mdb.models['cube-subroutine'].materials['CP1000-m'].density.setValues(table=((
+    1.0, ), ))
+del mdb.models['cube-subroutine'].sections['Section-2-CP1000-solver']
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0472969, 
+    farPlane=0.0990446, width=0.0606323, height=0.0267218, 
+    viewOffsetX=0.00194784, viewOffsetY=0.000247433)
+p = mdb.models['cube-subroutine'].parts['cube']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#1 ]', ), )
+region = p.Set(cells=cells, name='Set-1')
+p = mdb.models['cube-subroutine'].parts['cube']
+p.SectionAssignment(region=region, sectionName='Section-1-CP1000-m', 
+    offset=0.0, offsetType=MIDDLE_SURFACE, offsetField='', 
+    thicknessAssignment=FROM_SECTION)
+a = mdb.models['cube-subroutine'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+mdb.models['cube-subroutine'].boundaryConditions['top-surface-disp'].setValues(
+    u2=0.01)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\test_element\test_one_element.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.Job(name='cube_subroutine', model='cube-subroutine', description='', 
+    type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, 
+    memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['cube-subroutine'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['cube-subroutine'].parts['cube']
+p.seedPart(size=0.002, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['cube-subroutine'].parts['cube']
+p.generateMesh()
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\test_element\test_one_element.cae".
+a1 = mdb.models['cube-subroutine'].rootAssembly
+a1.regenerate()
+a = mdb.models['cube-subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+a = mdb.models['cube-subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['cube_subroutine'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "cube_subroutine.inp".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['cube-subroutine'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+elemType1 = mesh.ElemType(elemCode=C3D8T, elemLibrary=STANDARD, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT)
+elemType2 = mesh.ElemType(elemCode=C3D6T, elemLibrary=STANDARD)
+elemType3 = mesh.ElemType(elemCode=C3D4T, elemLibrary=STANDARD)
+p = mdb.models['cube-subroutine'].parts['cube']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#1 ]', ), )
+pickedRegions =(cells, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2, 
+    elemType3))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\test_element\test_one_element.cae".
+a1 = mdb.models['cube-subroutine'].rootAssembly
+a1.regenerate()
+a = mdb.models['cube-subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+a = mdb.models['cube-subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['cube_subroutine'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "cube_subroutine.inp".
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_default.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_subroutine.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_subroutine.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       4
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0423996, 
+    farPlane=0.0981684, width=0.0623085, height=0.0274605, 
+    viewOffsetX=-0.00228576, viewOffsetY=0.00263708)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_default.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0421714, 
+    farPlane=0.0983966, width=0.0493235, height=0.0217378, 
+    viewOffsetX=0.000141999, viewOffsetY=0.00586041)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0443286, 
+    farPlane=0.0962394, width=0.0357674, height=0.0157633, 
+    viewOffsetX=-0.000397257, viewOffsetY=0.00765847)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_subroutine.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(
+    plotState=CONTOURS_ON_DEF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0426916, 
+    farPlane=0.0978764, width=0.0460434, height=0.0202922, 
+    viewOffsetX=-0.00179381, viewOffsetY=0.0055446)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF3'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U1'), )
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_default.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(
+    plotState=CONTOURS_ON_DEF)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U1'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0471352, 
+    farPlane=0.0934329, width=0.0204845, height=0.00902792, 
+    viewOffsetX=-0.000650855, viewOffsetY=0.0109531)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_subroutine.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(
+    plotState=CONTOURS_ON_DEF)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF1'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].view.setValues(session.views['Bottom'])
+session.viewports['Viewport: 1'].view.setValues(session.views['Iso'])
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U1'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0552678, 
+    farPlane=0.113936, width=0.0568503, height=0.025055, 
+    viewOffsetX=0.00264806, viewOffsetY=0.00106695)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_default.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0521657, 
+    farPlane=0.0941758, width=0.0256573, height=0.0113077, 
+    viewOffsetX=-4.55217e-05, viewOffsetY=0.0120379)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0394246, 
+    farPlane=0.101143, width=0.0735095, height=0.032397, 
+    viewOffsetX=0.00667674, viewOffsetY=0.00376264)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF1'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF3'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U1'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U3'), )
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_subroutine.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0535489, 
+    farPlane=0.115655, width=0.0750537, height=0.0330776, 
+    viewOffsetX=0.00629919, viewOffsetY=0.00037452)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF1'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF3'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U1'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U3'), )
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_default.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+p = mdb.models['cube-subroutine'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['cube-default-solver'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p1 = mdb.models['cube-subroutine'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p1 = mdb.models['cube-default-solver'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['cube-subroutine'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_default.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+a = mdb.models['cube-subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+a = mdb.models['cube-default-solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['cube-subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0458316, 
+    farPlane=0.10051, width=0.0625041, height=0.0275467, viewOffsetX=0.0045883, 
+    viewOffsetY=0.00028075)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+p1 = mdb.models['cube-default-solver'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['cube-default-solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+p1 = mdb.models['cube-default-solver'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p1 = mdb.models['cube-subroutine'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['cube-subroutine'].materials['CP1000-m'].depvar.setValues(n=7)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\test_element\test_one_element.cae".
+a = mdb.models['cube-subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['cube_subroutine'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "cube_subroutine.inp".
+p1 = mdb.models['cube-subroutine'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['cube-subroutine'].materials['CP1000-m'].depvar.setValues(n=13)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\test_element\test_one_element.cae".
+a = mdb.models['cube-subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['cube_subroutine'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "cube_subroutine.inp".
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_default.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_subroutine.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/test_element/cube_subroutine.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       4
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF1'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF3'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U1'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U3'), )
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\test_element\test_one_element.cae".

@@ -1,0 +1,1 @@
+ifort -c isotropic_von_mises.f90 -o isotropic_von_mises.obj

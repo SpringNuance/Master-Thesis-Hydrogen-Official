@@ -1,0 +1,41 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Fri Jul  5 18:54:32 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=118.47395324707, 
+    height=115.934028625488)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('NDBR2p5_geometry_41910_nodes.cae')
+#: The model database "C:\LocalUserData\User-data\nguyenb5\4th CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 NDBR2p5\NDBR2p5_geometry_41910_nodes.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-Full'].parts['NDBR2p5-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['reference-Wu-Jiao-Jiao'].parts['PART-1-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=457.338, 
+    farPlane=628.229, width=54.1653, height=22.7373, viewOffsetX=2.67986, 
+    viewOffsetY=-9.59077)
+session.viewports['Viewport: 1'].view.setValues(session.views['Front'])
+#: 
+#: Point 1: -24.317577, 7.207121, 490.E-03  Point 2: -24.317577, 2.207121, 490.E-03
+#:    Distance: 5.  Components: 0., -5., 0.
+#: 
+#: Point 1: -21.819221, 4.797819, 490.E-03  Point 2: -11.815886, 4.799054, 490.E-03
+#:    Distance: 10.003336  Components: 10.003336, 1.235E-03, 0.
+#: 
+#: Point 1: -24.317577, 7.207121, 490.E-03  Point 2: -9.317576, 7.207121, 490.E-03
+#:    Distance: 15.000001  Components: 15.000001, 0., 0.

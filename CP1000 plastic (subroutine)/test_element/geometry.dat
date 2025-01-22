@@ -1,0 +1,351 @@
+1
+
+   Abaqus 2023.HF4                                  Date 30-Jun-2024   Time 21:24:22
+   For use by AALTO UNIVERSITY under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes SIMULIA Corp.
+                           1301 Atwood Avenue, Suite 101W
+                              Johnston, RI 02919, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine L23-0203 
+                          you are authorized to run
+                          Abaqus/Standard until 20-Feb-2025
+
+                          Your site id is: 200000000014764 
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      https://www.3ds.com/products-services/simulia/services-support/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                     Abaqus 2023.HF4                     * 
+                *                                                         * 
+                *       BUILD ID: 2023_07_21-20.45.57 RELr425 183702      * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using                         * 
+                *  release Abaqus 2023.HF4 manuals                        * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *   This program may not be used for commercial purposes  * 
+                *           without payment of a commercial fee.          * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *Heading
+  *Element, type=C3D8T
+  *Elset, elset=ASSEMBLY_CHD2-M-1_SET-42
+  *Elset, elset=ASSEMBLY_SET-1
+  *Elset, elset=ASSEMBLY_SET-2
+  *Elset, elset=ASSEMBLY_SET-3
+  *Elset, elset=ASSEMBLY_SET-4
+  *Elset, elset=ASSEMBLY_SET-5
+  *Elset, elset=ASSEMBLY_SET-6
+  *Elset, elset=ASSEMBLY_SET-7
+  *Elset, elset=ASSEMBLY_SET-8
+  *coupledtemperature-displacement, creep=NONE, deltmx=1
+  *material, name=CP1000-M
+  *density
+  *depvar
+  *usermaterial, constants=4, type=THERMAL
+  *usermaterial, constants=162, type=MECHANICAL
+  *initialconditions, type=TEMPERATURE
+  *solidsection, elset=ASSEMBLY_CHD2-M-1_SET-42, material=CP1000-M
+  *solidsection, elset=ASSEMBLY_CHD2-M-1_SET-42, material=CP1000-M
+  *initialconditions, type=TEMPERATURE
+  *boundary
+  *boundary
+  *boundary, amplitude=AMP-1
+  *boundary
+  *boundary
+  *boundary, amplitude=AMP-1
+  *output, field, numberinterval=100
+  *output, history, variable=PRESELECT
+  *initialconditions, type=TEMPERATURE
+  *output, field, numberinterval=100
+  *output, history, variable=PRESELECT
+  *initialconditions, type=TEMPERATURE
+  *output, field, numberinterval=100
+  *output, history, variable=PRESELECT
+  
+                               E L E M E N T   Q U A L I T Y  C H E C K S        
+  
+  
+ ***NOTES: DISTORTED ISOPARAMETRIC ELEMENTS: ANGLE BETWEEN ISOPARAMETRIC LINES 
+           IS LESS THAN 45 DEGREES OR GREATER THAN 135 DEGREES.
+  
+           TETRAHEDRAL QUALITY MEASURE: VOLUME OF TETRAHEDRON DIVIDED BY THE 
+           VOLUME OF EQUILATERAL TETRAHEDRON WITH SAME CIRCUMSPHERE RADIUS; 
+           0 FOR DEGENERATE TETRAHEDRON AND 1 FOR EQUILATERIAL TETRAHEDRON. IT 
+           IS RECOMMENDED THAT THE TETRAHEDRAL QUALITY MEASURE BE GREATER THAN 
+           0.02, THE MIN INTERIOR (DIHEDRAL) ANGLE BE GREATER THAN 10 DEGREES, 
+           AND THE MAX INTERIOR (DIHEDRAL) ANGLE BE LESS THAN 160 DEGREES. 
+  
+           MODIFIED TETRAHEDRAL QUALITY MEASURE: ANGLES BETWEEN THE TWO LINE 
+           SEGMENTS ON EACH EDGE; THE EDGES OF MODIFIED TETRAHEDRAL SHOULD BE 
+           AS STRAIGHT AS POSSIBLE. IT IS RECOMMENDED THAT THE ANGLE BETWEEN 
+           THE TWO LINE SEGMENTS ON EACH EDGE IS BETWEEN 160 AND 180 DEGREES. 
+  
+           TRIANGULAR QUALITY MEASURE: AREA OF TRIANGLE DIVIDED BY THE AREA OF 
+           EQUILATERAL TRIANGLE WITH SAME CIRCUMCIRCLE RADIUS; 0 FOR DEGENERATE 
+           TRIANGLE AND 1 FOR EQUILATERAL TRIANGLE. IT IS RECOMMENDED THAT THE
+           TRIANGULAR QUALITY MEASURE BE GREATER THAN 0.01, THE MIN INTERIOR 
+           ANGLE BE GREATER THAN 10 DEGREES, AND THE MAX INTERIOR ANGLE BE LESS 
+           THAN 160 DEGREES. 
+  
+           NODAL ADJUSTMENTS ARISING FROM CONTACT INTERACTIONS AND/OR TIE 
+           CONSTRAINTS CAN CAUSE SEVERE ELEMENT DISTORTION. IT MAY BE NECESSARY 
+           TO REMESH IN ORDER TO REDUCE THE AMOUNT OF ADJUSTMENT. 
+
+ ***WARNING: 105 elements are distorted. Either the isoparametric angles are 
+             out of the suggested limits or the triangular or tetrahedral 
+             quality measure is bad. The elements have been identified in 
+             element set WarnElemDistorted.
+  
+ --------------------------------------------------------------------------------
+ Distorted isoparametric elements
+  
+      Element        Min/max angle   Adjusted nodes 
+ ------------------ ---------------- -------------- 
+      CHD2-M-1.3292          25.4114       NO       
+      CHD2-M-1.3363          36.2085       NO       
+      CHD2-M-1.3371          42.7453       NO       
+      CHD2-M-1.3399          16.9638       NO       
+      CHD2-M-1.3400          40.7595       NO       
+      CHD2-M-1.3405          36.5983       NO       
+      CHD2-M-1.3422          34.9297       NO       
+      CHD2-M-1.3423          36.6133       NO       
+      CHD2-M-1.3430           33.914       NO       
+      CHD2-M-1.3432          28.7754       NO       
+      CHD2-M-1.3552          25.4114       NO       
+      CHD2-M-1.3623          36.2085       NO       
+      CHD2-M-1.3631          42.7453       NO       
+      CHD2-M-1.3659          16.9638       NO       
+      CHD2-M-1.3660          40.7595       NO       
+      CHD2-M-1.3665          36.5983       NO       
+      CHD2-M-1.3682          34.9297       NO       
+      CHD2-M-1.3683          36.6133       NO       
+      CHD2-M-1.3690           33.914       NO       
+      CHD2-M-1.3692          28.7754       NO       
+      CHD2-M-1.3812          25.4114       NO       
+      CHD2-M-1.3883          36.2085       NO       
+      CHD2-M-1.3891          42.7453       NO       
+      CHD2-M-1.3919          16.9638       NO       
+      CHD2-M-1.3920          40.7595       NO       
+      CHD2-M-1.3925          36.5983       NO       
+      CHD2-M-1.3942          34.9297       NO       
+      CHD2-M-1.3943          36.6133       NO       
+      CHD2-M-1.3950           33.914       NO       
+      CHD2-M-1.3952          28.7754       NO       
+      CHD2-M-1.4072          25.4114       NO       
+      CHD2-M-1.4143          36.2085       NO       
+      CHD2-M-1.4151          42.7453       NO       
+      CHD2-M-1.4179          16.9638       NO       
+      CHD2-M-1.4180          40.7595       NO       
+      CHD2-M-1.4185          36.5983       NO       
+      CHD2-M-1.4202          34.9297       NO       
+      CHD2-M-1.4203          36.6133       NO       
+      CHD2-M-1.4210           33.914       NO       
+      CHD2-M-1.4212          28.7754       NO       
+      CHD2-M-1.4332          25.4114       NO       
+      CHD2-M-1.4403          36.2085       NO       
+      CHD2-M-1.4411          42.7453       NO       
+      CHD2-M-1.4439          16.9638       NO       
+      CHD2-M-1.4440          40.7595       NO       
+      CHD2-M-1.4445          36.5983       NO       
+      CHD2-M-1.4462          34.9297       NO       
+      CHD2-M-1.4463          36.6133       NO       
+      CHD2-M-1.4470           33.914       NO       
+      CHD2-M-1.4472          28.7754       NO       
+      CHD2-M-1.4572           28.763       NO       
+      CHD2-M-1.4644          41.3775       NO       
+      CHD2-M-1.4663          38.2879       NO       
+      CHD2-M-1.4669          44.1822       NO       
+      CHD2-M-1.4672           39.012       NO       
+      CHD2-M-1.4688          31.8751       NO       
+      CHD2-M-1.4689          38.8614       NO       
+      CHD2-M-1.4691          40.3233       NO       
+      CHD2-M-1.4695          34.8224       NO       
+      CHD2-M-1.4698          42.0333       NO       
+      CHD2-M-1.4706          20.0136       NO       
+      CHD2-M-1.4795           28.763       NO       
+      CHD2-M-1.4867          41.3775       NO       
+      CHD2-M-1.4886          38.2879       NO       
+      CHD2-M-1.4892          44.1822       NO       
+      CHD2-M-1.4895           39.012       NO       
+      CHD2-M-1.4911          31.8751       NO       
+      CHD2-M-1.4912          38.8614       NO       
+      CHD2-M-1.4914          40.3233       NO       
+      CHD2-M-1.4918          34.8224       NO       
+      CHD2-M-1.4921          42.0333       NO       
+      CHD2-M-1.4929          20.0136       NO       
+      CHD2-M-1.5018           28.763       NO       
+      CHD2-M-1.5090          41.3775       NO       
+      CHD2-M-1.5109          38.2879       NO       
+      CHD2-M-1.5115          44.1822       NO       
+      CHD2-M-1.5118           39.012       NO       
+      CHD2-M-1.5134          31.8751       NO       
+      CHD2-M-1.5135          38.8614       NO       
+      CHD2-M-1.5137          40.3233       NO       
+      CHD2-M-1.5141          34.8224       NO       
+      CHD2-M-1.5144          42.0333       NO       
+      CHD2-M-1.5152          20.0136       NO       
+      CHD2-M-1.5241           28.763       NO       
+      CHD2-M-1.5313          41.3775       NO       
+      CHD2-M-1.5332          38.2879       NO       
+      CHD2-M-1.5338          44.1822       NO       
+      CHD2-M-1.5341           39.012       NO       
+      CHD2-M-1.5357          31.8751       NO       
+      CHD2-M-1.5358          38.8614       NO       
+      CHD2-M-1.5360          40.3233       NO       
+      CHD2-M-1.5364          34.8224       NO       
+      CHD2-M-1.5367          42.0333       NO       
+      CHD2-M-1.5375          20.0136       NO       
+      CHD2-M-1.5464           28.763       NO       
+      CHD2-M-1.5536          41.3775       NO       
+      CHD2-M-1.5555          38.2879       NO       
+      CHD2-M-1.5561          44.1822       NO       
+      CHD2-M-1.5564           39.012       NO       
+      CHD2-M-1.5580          31.8751       NO       
+      CHD2-M-1.5581          38.8614       NO       
+      CHD2-M-1.5583          40.3233       NO       
+      CHD2-M-1.5587          34.8224       NO       
+      CHD2-M-1.5590          42.0333       NO       
+      CHD2-M-1.5598          20.0136       NO       
+  
+  
+  *Step, name=Step-1, nlgeom=YES, inc=100000
+  *output, field, numberinterval=100
+  *output, history, variable=PRESELECT
+  *Step, name=Step-1, nlgeom=YES, inc=100000
+  *Step, name=Step-1, nlgeom=YES, inc=100000
+  *coupledtemperature-displacement, creep=NONE, deltmx=1
+  *boundary
+  *boundary, amplitude=AMP-1
+  *output, field, numberinterval=100
+  *nodeoutput
+  *output, history, variable=PRESELECT
+  *endstep
+
+ ***WARNING: OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS 
+             STEP. Abaqus MIGHT ADJUST THE TIME INCREMENTATION BUT WILL NOT 
+             VIOLATE THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP IN ORDER TO 
+             WRITE OUTPUT AT THOSE POINTS. CONSEQUENTLY, IN SOME CASES Abaqus 
+             MIGHTWRITE OUTPUT IMMEDIATELY AFTER THE SPECIFIED TIME POINTS, 
+             INSTEAD OF AT THE TIME POINTS. IN ADDITION, THE NUMBER OF 
+             INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.
+  *boundary
+  *Step, name=Step-1, nlgeom=YES, inc=100000
+  *coupledtemperature-displacement, creep=NONE, deltmx=1
+  *boundary
+  *boundary, amplitude=AMP-1
+  *endstep
+
+ ***WARNING: Boundary conditions are specified on inactive dof 4 at 468 nodes. 
+             The nodes have been identified in node set WarnNodeBCInactiveDof4.
+
+ ***WARNING: Boundary conditions are specified on inactive dof 5 at 468 nodes. 
+             The nodes have been identified in node set WarnNodeBCInactiveDof5.
+
+ ***WARNING: Boundary conditions are specified on inactive dof 6 at 468 nodes. 
+             The nodes have been identified in node set WarnNodeBCInactiveDof6.
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                 18767
+          NUMBER OF NODES IS                                    23886
+          NUMBER OF NODES DEFINED BY THE USER                   23886
+          TOTAL NUMBER OF VARIABLES IN THE MODEL                95544
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =     0.70    
+       SYSTEM TIME (SEC)    =     0.10    
+       TOTAL CPU TIME (SEC) =     0.80    
+       WALLCLOCK TIME (SEC) =            1
+1
+
+   Abaqus 2023.HF4                                  Date 30-Jun-2024   Time 21:24:28
+   For use by AALTO UNIVERSITY under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    1  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     C O U P L E D - T E M P E R A T U R E - D I S P L A C E M E N T   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                 10.0    
+          AND A TOTAL TIME PERIOD OF                           1.000E+03
+          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-02
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                 10.0    
+
+          CREEP AND SWELLING EFFECTS ARE OMITTED IN THIS STEP
+
+     THE SIZE OF THE TIME INCREMENT IS CONTROLLED BY -
+          THE TEMPERATURE CHANGE PER INCREMENT NOT EXCEEDING            1.00    
+          THE RATE DEPENDENCY WILL BE CONSIDERED IN THIS STEP
+
+          CREEP AND SWELLING EFFECTS WILL BE IGNORED.
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED

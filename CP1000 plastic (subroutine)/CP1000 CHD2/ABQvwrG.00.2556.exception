@@ -1,0 +1,46 @@
+<Description>
+   ABQvwrG.exe / rank 0 / thread 0  encountered an unhandled exception
+
+</Description>
+
+<Context>
+   ABQvwrG
+</Context>
+
+<Callstack>
+  1)  KERNELBASE.dll              RaiseException                          
+  2)  VCRUNTIME140.dll            CxxThrowException                       
+  3)  ABQSMAAbuGeom.dll           nex_CmdException<atr_String,2>::Propagate
+  4)  ABQSMAPybPyoModule.dll      pyo_ExceptionBinding::ThrowAbaqusException
+  5)  ABQSMAInbVwrPyUtils.dll     pyt_InterpreterRole::RaiseLastException 
+  6)  ABQSMAInbVwrPyUtils.dll     pyt_InterpreterRole::RunCommand         
+  7)  ABQSMAIngFoxAbq.dll         AFXApp::create                          
+  8)  ABQSMAIngVwrGui.dll         gui_Actor::initialize                   
+  9)  ABQSMAIngFoxAbq.dll         AFXApp::create                          
+ 10)  ABQvwrG.exe               unknown                                 
+</Callstack>
+
+<Memory>
+   <Current>            0 GB </Current>
+   <Resident>           0 GB </Resident>
+   <Physical>          15 GB </Physical>
+   <Limit>              0 GB </Limit>
+   <Accessible>        15 GB </Accessible>
+   <Available>          3 GB </Available>
+   <Allocator>            DL </Allocator>
+</Memory>
+
+<Swap>
+       <Size>          41 GB </Size>
+       <Used>          34 GB </Used>
+       <Free>           7 GB </Free>
+</Swap>
+
+<Directories>
+  <current> C:\LocalUserData\User-data\nguyenb5\4th CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD2 </current> <free>     62 GB </free>   <used>    412 GB </used> 
+     <temp> C:\Users\nguyenb5\AppData\Local\Temp </temp>    <free>     62 GB </free>
+</Directories>
+
+<Installation>
+</Installation>
+

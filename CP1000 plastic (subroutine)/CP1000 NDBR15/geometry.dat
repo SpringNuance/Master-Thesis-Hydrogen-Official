@@ -1,0 +1,458 @@
+1
+
+   Abaqus 2023.HF4                                  Date 09-Jun-2024   Time 16:11:30
+   For use by AALTO UNIVERSITY under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes SIMULIA Corp.
+                           1301 Atwood Avenue, Suite 101W
+                              Johnston, RI 02919, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine L23-0203 
+                          you are authorized to run
+                          Abaqus/Standard until 20-Feb-2025
+
+                          Your site id is: 200000000014764 
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      https://www.3ds.com/products-services/simulia/services-support/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                     Abaqus 2023.HF4                     * 
+                *                                                         * 
+                *       BUILD ID: 2023_07_21-20.45.57 RELr425 183702      * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using                         * 
+                *  release Abaqus 2023.HF4 manuals                        * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *   This program may not be used for commercial purposes  * 
+                *           without payment of a commercial fee.          * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *Heading
+  *Element, type=C3D8
+  *Elset, elset=ASSEMBLY_NDBR15-M-1_SET-1
+  *Elset, elset=ASSEMBLY_SET-1
+  *Elset, elset=ASSEMBLY_SET-2
+  *Elset, elset=ASSEMBLY_SET-3
+  *Elset, elset=ASSEMBLY_SET-4
+  *material, name=CP1000-M
+  *density
+  *elastic
+  *plastic
+  *solidsection, elset=ASSEMBLY_NDBR15-M-1_SET-1, material=CP1000-M
+  *solidsection, elset=ASSEMBLY_NDBR15-M-1_SET-1, material=CP1000-M
+  *boundary
+  *boundary
+  *boundary
+  *boundary, amplitude=AMP-1
+  *boundary
+  *boundary
+  *boundary
+  *boundary, amplitude=AMP-1
+  *output, field, numberinterval=100
+  *output, history, variable=PRESELECT
+  *output, field, numberinterval=100
+  *output, history, variable=PRESELECT
+  *output, field, numberinterval=100
+  *output, history, variable=PRESELECT
+  
+                               E L E M E N T   Q U A L I T Y  C H E C K S        
+  
+  
+ ***NOTES: DISTORTED ISOPARAMETRIC ELEMENTS: ANGLE BETWEEN ISOPARAMETRIC LINES 
+           IS LESS THAN 45 DEGREES OR GREATER THAN 135 DEGREES.
+  
+           TETRAHEDRAL QUALITY MEASURE: VOLUME OF TETRAHEDRON DIVIDED BY THE 
+           VOLUME OF EQUILATERAL TETRAHEDRON WITH SAME CIRCUMSPHERE RADIUS; 
+           0 FOR DEGENERATE TETRAHEDRON AND 1 FOR EQUILATERIAL TETRAHEDRON. IT 
+           IS RECOMMENDED THAT THE TETRAHEDRAL QUALITY MEASURE BE GREATER THAN 
+           0.02, THE MIN INTERIOR (DIHEDRAL) ANGLE BE GREATER THAN 10 DEGREES, 
+           AND THE MAX INTERIOR (DIHEDRAL) ANGLE BE LESS THAN 160 DEGREES. 
+  
+           MODIFIED TETRAHEDRAL QUALITY MEASURE: ANGLES BETWEEN THE TWO LINE 
+           SEGMENTS ON EACH EDGE; THE EDGES OF MODIFIED TETRAHEDRAL SHOULD BE 
+           AS STRAIGHT AS POSSIBLE. IT IS RECOMMENDED THAT THE ANGLE BETWEEN 
+           THE TWO LINE SEGMENTS ON EACH EDGE IS BETWEEN 160 AND 180 DEGREES. 
+  
+           TRIANGULAR QUALITY MEASURE: AREA OF TRIANGLE DIVIDED BY THE AREA OF 
+           EQUILATERAL TRIANGLE WITH SAME CIRCUMCIRCLE RADIUS; 0 FOR DEGENERATE 
+           TRIANGLE AND 1 FOR EQUILATERAL TRIANGLE. IT IS RECOMMENDED THAT THE
+           TRIANGULAR QUALITY MEASURE BE GREATER THAN 0.01, THE MIN INTERIOR 
+           ANGLE BE GREATER THAN 10 DEGREES, AND THE MAX INTERIOR ANGLE BE LESS 
+           THAN 160 DEGREES. 
+  
+           NODAL ADJUSTMENTS ARISING FROM CONTACT INTERACTIONS AND/OR TIE 
+           CONSTRAINTS CAN CAUSE SEVERE ELEMENT DISTORTION. IT MAY BE NECESSARY 
+           TO REMESH IN ORDER TO REDUCE THE AMOUNT OF ADJUSTMENT. 
+
+ ***WARNING: 175 elements are distorted. Either the isoparametric angles are 
+             out of the suggested limits or the triangular or tetrahedral 
+             quality measure is bad. The elements have been identified in 
+             element set WarnElemDistorted.
+  
+ --------------------------------------------------------------------------------
+ Distorted isoparametric elements
+  
+       Element         Min/max angle   Adjusted nodes 
+ -------------------- ---------------- -------------- 
+      NDBR15-M-1.1601          34.4366       NO       
+      NDBR15-M-1.1603           34.021       NO       
+      NDBR15-M-1.1604          19.5385       NO       
+      NDBR15-M-1.1608           19.248       NO       
+      NDBR15-M-1.1609          11.6112       NO       
+      NDBR15-M-1.1611          41.9231       NO       
+      NDBR15-M-1.1612          36.0101       NO       
+      NDBR15-M-1.1613          41.7305       NO       
+      NDBR15-M-1.1615          15.4122       NO       
+      NDBR15-M-1.1618          34.4366       NO       
+      NDBR15-M-1.1620           34.021       NO       
+      NDBR15-M-1.1621          19.5385       NO       
+      NDBR15-M-1.1625           19.248       NO       
+      NDBR15-M-1.1626          11.6112       NO       
+      NDBR15-M-1.1628          41.9231       NO       
+      NDBR15-M-1.1629          36.0101       NO       
+      NDBR15-M-1.1630          41.7305       NO       
+      NDBR15-M-1.1632          15.4122       NO       
+      NDBR15-M-1.1635          34.4366       NO       
+      NDBR15-M-1.1637           34.021       NO       
+      NDBR15-M-1.1638          19.5385       NO       
+      NDBR15-M-1.1642           19.248       NO       
+      NDBR15-M-1.1643          11.6112       NO       
+      NDBR15-M-1.1645          41.9231       NO       
+      NDBR15-M-1.1646          36.0101       NO       
+      NDBR15-M-1.1647          41.7305       NO       
+      NDBR15-M-1.1649          15.4122       NO       
+      NDBR15-M-1.1652          34.4366       NO       
+      NDBR15-M-1.1654           34.021       NO       
+      NDBR15-M-1.1655          19.5385       NO       
+      NDBR15-M-1.1659           19.248       NO       
+      NDBR15-M-1.1660          11.6112       NO       
+      NDBR15-M-1.1662          41.9231       NO       
+      NDBR15-M-1.1663          36.0101       NO       
+      NDBR15-M-1.1664          41.7305       NO       
+      NDBR15-M-1.1666          15.4122       NO       
+      NDBR15-M-1.1669          34.4366       NO       
+      NDBR15-M-1.1671           34.021       NO       
+      NDBR15-M-1.1672          19.5385       NO       
+      NDBR15-M-1.1676           19.248       NO       
+      NDBR15-M-1.1677          11.6112       NO       
+      NDBR15-M-1.1679          41.9231       NO       
+      NDBR15-M-1.1680          36.0101       NO       
+      NDBR15-M-1.1681          41.7305       NO       
+      NDBR15-M-1.1683          15.4122       NO       
+      NDBR15-M-1.1686          34.4366       NO       
+      NDBR15-M-1.1688           34.021       NO       
+      NDBR15-M-1.1689          19.5385       NO       
+      NDBR15-M-1.1693           19.248       NO       
+      NDBR15-M-1.1694          11.6112       NO       
+      NDBR15-M-1.1696          41.9231       NO       
+      NDBR15-M-1.1697          36.0101       NO       
+      NDBR15-M-1.1698          41.7305       NO       
+      NDBR15-M-1.1700          15.4122       NO       
+      NDBR15-M-1.1703          34.4366       NO       
+      NDBR15-M-1.1705           34.021       NO       
+      NDBR15-M-1.1706          19.5385       NO       
+      NDBR15-M-1.1710           19.248       NO       
+      NDBR15-M-1.1711          11.6112       NO       
+      NDBR15-M-1.1713          41.9231       NO       
+      NDBR15-M-1.1714          36.0101       NO       
+      NDBR15-M-1.1715          41.7305       NO       
+      NDBR15-M-1.1717          15.4122       NO       
+      NDBR15-M-1.1720          34.4366       NO       
+      NDBR15-M-1.1722           34.021       NO       
+      NDBR15-M-1.1723          19.5385       NO       
+      NDBR15-M-1.1727           19.248       NO       
+      NDBR15-M-1.1728          11.6112       NO       
+      NDBR15-M-1.1730          41.9231       NO       
+      NDBR15-M-1.1731          36.0101       NO       
+      NDBR15-M-1.1732          41.7305       NO       
+      NDBR15-M-1.1734          15.4122       NO       
+      NDBR15-M-1.1804          37.2233       NO       
+      NDBR15-M-1.2006          37.2233       NO       
+      NDBR15-M-1.2208          37.2233       NO       
+      NDBR15-M-1.2410          37.2233       NO       
+      NDBR15-M-1.2612          37.2233       NO       
+      NDBR15-M-1.2813          39.2825       NO       
+      NDBR15-M-1.2945          34.5527       NO       
+      NDBR15-M-1.3019          39.2825       NO       
+      NDBR15-M-1.3151          34.5527       NO       
+      NDBR15-M-1.3225          39.2825       NO       
+      NDBR15-M-1.3357          34.5527       NO       
+      NDBR15-M-1.3431          39.2825       NO       
+      NDBR15-M-1.3563          34.5527       NO       
+      NDBR15-M-1.3637          39.2825       NO       
+      NDBR15-M-1.3769          34.5527       NO       
+      NDBR15-M-1.3779          40.1378       NO       
+      NDBR15-M-1.3786          28.6872       NO       
+      NDBR15-M-1.3787          31.1668       NO       
+      NDBR15-M-1.3790          44.6987       NO       
+      NDBR15-M-1.3791          30.3813       NO       
+      NDBR15-M-1.3793          28.6974       NO       
+      NDBR15-M-1.3794          31.2386       NO       
+      NDBR15-M-1.3797          26.8617       NO       
+      NDBR15-M-1.3801          33.0418       NO       
+      NDBR15-M-1.3803          23.3689       NO       
+      NDBR15-M-1.3815          30.8357       NO       
+      NDBR15-M-1.3818          40.1378       NO       
+      NDBR15-M-1.3825          28.6872       NO       
+      NDBR15-M-1.3826          31.1668       NO       
+      NDBR15-M-1.3829          44.6987       NO       
+      NDBR15-M-1.3830          30.3813       NO       
+      NDBR15-M-1.3832          28.6974       NO       
+      NDBR15-M-1.3833          31.2386       NO       
+      NDBR15-M-1.3836          26.8617       NO       
+      NDBR15-M-1.3840          33.0418       NO       
+      NDBR15-M-1.3842          23.3689       NO       
+      NDBR15-M-1.3854          30.8357       NO       
+      NDBR15-M-1.3857          40.1378       NO       
+      NDBR15-M-1.3864          28.6872       NO       
+      NDBR15-M-1.3865          31.1668       NO       
+      NDBR15-M-1.3868          44.6987       NO       
+      NDBR15-M-1.3869          30.3813       NO       
+      NDBR15-M-1.3871          28.6974       NO       
+      NDBR15-M-1.3872          31.2386       NO       
+      NDBR15-M-1.3875          26.8617       NO       
+      NDBR15-M-1.3879          33.0418       NO       
+      NDBR15-M-1.3881          23.3689       NO       
+      NDBR15-M-1.3893          30.8357       NO       
+      NDBR15-M-1.3896          40.1378       NO       
+      NDBR15-M-1.3903          28.6872       NO       
+      NDBR15-M-1.3904          31.1668       NO       
+      NDBR15-M-1.3907          44.6987       NO       
+      NDBR15-M-1.3908          30.3813       NO       
+      NDBR15-M-1.3910          28.6974       NO       
+      NDBR15-M-1.3911          31.2386       NO       
+      NDBR15-M-1.3914          26.8617       NO       
+      NDBR15-M-1.3918          33.0418       NO       
+      NDBR15-M-1.3920          23.3689       NO       
+      NDBR15-M-1.3932          30.8357       NO       
+      NDBR15-M-1.3935          40.1378       NO       
+      NDBR15-M-1.3942          28.6872       NO       
+      NDBR15-M-1.3943          31.1668       NO       
+      NDBR15-M-1.3946          44.6987       NO       
+      NDBR15-M-1.3947          30.3813       NO       
+      NDBR15-M-1.3949          28.6974       NO       
+      NDBR15-M-1.3950          31.2386       NO       
+      NDBR15-M-1.3953          26.8617       NO       
+      NDBR15-M-1.3957          33.0418       NO       
+      NDBR15-M-1.3959          23.3689       NO       
+      NDBR15-M-1.3971          30.8357       NO       
+      NDBR15-M-1.3974          40.1378       NO       
+      NDBR15-M-1.3981          28.6872       NO       
+      NDBR15-M-1.3982          31.1668       NO       
+      NDBR15-M-1.3985          44.6987       NO       
+      NDBR15-M-1.3986          30.3813       NO       
+      NDBR15-M-1.3988          28.6974       NO       
+      NDBR15-M-1.3989          31.2386       NO       
+      NDBR15-M-1.3992          26.8617       NO       
+      NDBR15-M-1.3996          33.0418       NO       
+      NDBR15-M-1.3998          23.3689       NO       
+      NDBR15-M-1.4010          30.8357       NO       
+      NDBR15-M-1.4013          40.1378       NO       
+      NDBR15-M-1.4020          28.6872       NO       
+      NDBR15-M-1.4021          31.1668       NO       
+      NDBR15-M-1.4024          44.6987       NO       
+      NDBR15-M-1.4025          30.3813       NO       
+      NDBR15-M-1.4027          28.6974       NO       
+      NDBR15-M-1.4028          31.2386       NO       
+      NDBR15-M-1.4031          26.8617       NO       
+      NDBR15-M-1.4035          33.0418       NO       
+      NDBR15-M-1.4037          23.3689       NO       
+      NDBR15-M-1.4049          30.8357       NO       
+      NDBR15-M-1.4052          40.1378       NO       
+      NDBR15-M-1.4059          28.6872       NO       
+      NDBR15-M-1.4060          31.1668       NO       
+      NDBR15-M-1.4063          44.6987       NO       
+      NDBR15-M-1.4064          30.3813       NO       
+      NDBR15-M-1.4066          28.6974       NO       
+      NDBR15-M-1.4067          31.2386       NO       
+      NDBR15-M-1.4070          26.8617       NO       
+      NDBR15-M-1.4074          33.0418       NO       
+      NDBR15-M-1.4076          23.3689       NO       
+      NDBR15-M-1.4088          30.8357       NO       
+  
+  
+  *Step, name=Step-1, nlgeom=YES, amplitude=STEP, inc=100000
+  *output, field, numberinterval=100
+  *output, history, variable=PRESELECT
+  *Step, name=Step-1, nlgeom=YES, amplitude=STEP, inc=100000
+  *Step, name=Step-1, nlgeom=YES, amplitude=STEP, inc=100000
+  *static
+  *boundary
+  *boundary, amplitude=AMP-1
+  *output, field, numberinterval=100
+  *nodeoutput
+  *output, history, variable=PRESELECT
+  *endstep
+
+ ***WARNING: OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS 
+             STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, 
+             Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME 
+             INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF 
+             INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.
+  *boundary
+  *boundary
+  *Step, name=Step-1, nlgeom=YES, amplitude=STEP, inc=100000
+  *static
+  *boundary
+  *boundary, amplitude=AMP-1
+  *endstep
+
+ ***WARNING: Boundary conditions are specified on inactive dof 4 at 351 nodes. 
+             The nodes have been identified in node set WarnNodeBCInactiveDof4.
+
+ ***WARNING: Boundary conditions are specified on inactive dof 5 at 351 nodes. 
+             The nodes have been identified in node set WarnNodeBCInactiveDof5.
+
+ ***WARNING: Boundary conditions are specified on inactive dof 6 at 351 nodes. 
+             The nodes have been identified in node set WarnNodeBCInactiveDof6.
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                 34453
+          NUMBER OF NODES IS                                    43041
+          NUMBER OF NODES DEFINED BY THE USER                   43041
+          TOTAL NUMBER OF VARIABLES IN THE MODEL               129123
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =      1.0    
+       SYSTEM TIME (SEC)    =     0.10    
+       TOTAL CPU TIME (SEC) =      1.1    
+       WALLCLOCK TIME (SEC) =            1
+1
+
+   Abaqus 2023.HF4                                  Date 09-Jun-2024   Time 16:11:37
+   For use by AALTO UNIVERSITY under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    1  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     S T A T I C   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                 10.0    
+          AND A TOTAL TIME PERIOD OF                           1.000E+03
+          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-05
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                 10.0    
+
+     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          5.70E+10               93                714
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+
+
+          THE ANALYSIS HAS BEEN COMPLETED
+
+
+
+                              ANALYSIS COMPLETE
+                              WITH      5 WARNING MESSAGES ON THE DAT FILE
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =     1.25E+03
+       SYSTEM TIME (SEC)    =      20.    
+       TOTAL CPU TIME (SEC) =     1.27E+03
+       WALLCLOCK TIME (SEC) =          303

@@ -1,0 +1,30 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Mon Jul  1 12:12:43 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+#: Warning: Permission was denied for "abaqus.rpy"; "abaqus.rpy.4" will be used for this session's replay file.
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=119.81770324707, 
+    height=121.741897583008)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('NDBR2p5_geometry_41910_nodes.cae')
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+#* *** Error: File open failed (utl_File: CreateFile in OpenUpdate)
+#* error: The process cannot access the file because it is being used by 
+#* another process.
+#* 
+#* file: C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD 
+#* coupled temp-disp)\CP1000 NDBR2p5\NDBR2p5_geometry_41910_nodes.cae

@@ -1,0 +1,1239 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Sun Jun 30 18:12:37 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=119.81770324707, 
+    height=121.741897583008)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('CHD2_geometry_42957_nodes.cae')
+#: The model database "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD2\CHD2_geometry_42957_nodes.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-Full'].parts['CHD2-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          13
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+#* There is no valid step data available on the database. If the analysis is 
+#* running, the database must be closed and reopened once the results have been 
+#* initialized. The requested operation has been cancelled.
+a = mdb.models['Model-Full'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON, 
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-Full'].parts['CHD2-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+elemType1 = mesh.ElemType(elemCode=C3D8T, elemLibrary=STANDARD, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT)
+elemType2 = mesh.ElemType(elemCode=C3D6T, elemLibrary=STANDARD)
+elemType3 = mesh.ElemType(elemCode=C3D4T, elemLibrary=STANDARD)
+p = mdb.models['Model-Full'].parts['CHD2-m']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#3ff ]', ), )
+pickedRegions =(cells, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2, 
+    elemType3))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD2\CHD2_geometry_42957_nodes.cae".
+session.viewports['Viewport: 1'].view.setValues(width=0.457054, 
+    height=0.202155, viewOffsetX=0.00630192, viewOffsetY=-0.00282363)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+elemType1 = mesh.ElemType(elemCode=C3D8T, elemLibrary=STANDARD, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT)
+elemType2 = mesh.ElemType(elemCode=C3D6T, elemLibrary=STANDARD)
+elemType3 = mesh.ElemType(elemCode=C3D4T, elemLibrary=STANDARD)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#3ff ]', ), )
+pickedRegions =(cells, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2, 
+    elemType3))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD2\CHD2_geometry_42957_nodes.cae".
+a = mdb.models['Model-Full-mesh-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['mesh-1'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "mesh-1.inp".
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+p1 = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['Model-Full-mesh-1'].materials['CP1000-m'].depvar.setValues(n=13)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD2\CHD2_geometry_42957_nodes.cae".
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+#: Warning: The output database 'C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb' disk file has changed.
+#: 
+#: The current plot operation has been canceled, re-open the file to view the results
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          13
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.452979, 
+    farPlane=0.63229, width=0.0788817, height=0.0347646, 
+    viewOffsetX=-0.00056568, viewOffsetY=0.0756308)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=25 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461668, 
+    farPlane=0.623557, width=0.0248117, height=0.010935, 
+    viewOffsetX=-0.00142347, viewOffsetY=0.0867495)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=29 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=31 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=33 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=37 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=38 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=40 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=41 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=42 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=43 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=45 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=46 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=47 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=48 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=50 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462194, 
+    farPlane=0.622768, width=0.0199221, height=0.00878004, 
+    viewOffsetX=-0.000161097, viewOffsetY=-0.00995789)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464037, 
+    farPlane=0.620925, width=0.00853015, height=0.0037594, 
+    viewOffsetX=0.000507469, viewOffsetY=-0.0108108)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=50 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=48 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=47 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=46 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=45 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=43 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=42 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=41 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=40 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=41 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=42 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=43 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=45 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=46 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=47 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=48 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=50 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.459931, 
+    farPlane=0.625031, width=0.0339181, height=0.0149484, 
+    viewOffsetX=0.00167248, viewOffsetY=-0.0104006)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462604, 
+    farPlane=0.623026, width=0.0182356, height=0.0094371, 
+    viewOffsetX=0.00331653, viewOffsetY=-0.00979036)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#fa ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#11080000 #115412 #3 ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=6, constraint=FIXED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462173, 
+    farPlane=0.623457, width=0.0236223, height=0.0122248, 
+    viewOffsetX=0.00494836, viewOffsetY=-0.0114175)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#80000000 #44aaaae9 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.00015, deviationFactor=0.1, 
+    constraint=AS_IS)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463617, 
+    farPlane=0.622013, width=0.0119973, height=0.00620873, 
+    viewOffsetX=0.00259347, viewOffsetY=-0.0107307)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #3400100 #c0 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.00012, deviationFactor=0.1, 
+    constraint=FINER)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462733, 
+    farPlane=0.622897, width=0.0197245, height=0.0102076, 
+    viewOffsetX=0.00273203, viewOffsetY=-0.0111564)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#8 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#10 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#20 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#2 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#80 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#40 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461193, 
+    farPlane=0.624436, width=0.0304394, height=0.0157527, 
+    viewOffsetX=0.00513997, viewOffsetY=-0.00953735)
+p = mdb.models['Model-Full-mesh-1'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#3ff ]', ), )
+p.generateMesh(regions=pickedRegions, seedConstraintOverride=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463828, 
+    farPlane=0.621802, width=0.0121012, height=0.00626249, 
+    viewOffsetX=0.00394724, viewOffsetY=-0.0107814)
+mdb.Model(name='Model-Full-mesh-1-default', 
+    objectToCopy=mdb.models['Model-Full-mesh-1'])
+#: The model "Model-Full-mesh-1-default" has been created.
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+del mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].depvar
+del mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].userMaterial
+mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].Conductivity(
+    table=((1.0, ), ))
+mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].SpecificHeat(
+    table=((1.0, ), ))
+mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].Elastic(table=((
+    210000000000.0, 0.3), ))
+mdb.models['Model-Full-mesh-1-default'].materials['CP1000-m'].Plastic(
+    scaleStress=None, table=((839646000.0, 0.0), (880025000.0, 0.0003), (
+    906975000.0, 0.0005), (926275000.0, 0.001), (926275000.0, 0.002), (
+    939393000.0, 0.003), (949756000.0, 0.004), (958495000.0, 0.005), (
+    966134000.0, 0.006), (972960000.0, 0.007), (979150000.0, 0.008), (
+    984823000.0, 0.009), (990061000.0, 0.01), (1027470000.0, 0.02), (
+    1049750000.0, 0.03), (1064310000.0, 0.04), (1074410000.0, 0.05), (
+    1081810000.0, 0.06), (1087490000.0, 0.07), (1092060000.0, 0.08), (
+    1095870000.0, 0.09), (1099140000.0, 0.1), (1111180000.0, 0.15), (
+    1119630000.0, 0.2), (1126250000.0, 0.25), (1131720000.0, 0.3), (
+    1136380000.0, 0.35), (1140440000.0, 0.4), (1144050000.0, 0.45), (
+    1147300000.0, 0.5), (1150250000.0, 0.55), (1152960000.0, 0.6), (
+    1155460000.0, 0.65), (1157790000.0, 0.7), (1159960000.0, 0.75), (
+    1162000000.0, 0.8), (1163920000.0, 0.85), (1165740000.0, 0.9), (
+    1167460000.0, 0.95), (1169110000.0, 1.0), (1170670000.0, 1.05), (
+    1172160000.0, 1.1), (1173600000.0, 1.15), (1174970000.0, 1.2), (
+    1176290000.0, 1.25), (1177560000.0, 1.3), (1178790000.0, 1.35), (
+    1179970000.0, 1.4), (1181120000.0, 1.45), (1182220000.0, 1.5), (
+    1183300000.0, 1.55), (1184340000.0, 1.6), (1185350000.0, 1.65), (
+    1186330000.0, 1.7), (1187280000.0, 1.75), (1188210000.0, 1.8), (
+    1189120000.0, 1.85), (1190000000.0, 1.9), (1190860000.0, 1.95), (
+    1191700000.0, 2.0), (1192520000.0, 2.05), (1193320000.0, 2.1), (
+    1194100000.0, 2.15), (1194870000.0, 2.2), (1195620000.0, 2.25), (
+    1196350000.0, 2.3), (1197070000.0, 2.35), (1197770000.0, 2.4), (
+    1198470000.0, 2.45), (1199140000.0, 2.5), (1199810000.0, 2.55), (
+    1200460000.0, 2.6), (1201100000.0, 2.65), (1201730000.0, 2.7), (
+    1202350000.0, 2.75), (1202960000.0, 2.8), (1203550000.0, 2.85), (
+    1204140000.0, 2.9), (1204720000.0, 2.95), (1205290000.0, 3.0)))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD2\CHD2_geometry_42957_nodes.cae".
+a = mdb.models['Model-Full-mesh-1-default'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.Job(name='mesh_1_default', model='Model-Full-mesh-1-default', 
+    description='', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, 
+    queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=8, numDomains=8, numGPUs=0)
+mdb.jobs['mesh_1_default'].submit(consistencyChecking=OFF)
+#: The job input file "mesh_1_default.inp" has been submitted for analysis.
+#: Job mesh_1_default: Analysis Input File Processor completed successfully.
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          13
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.452087, 
+    farPlane=0.633314, width=0.0852298, height=0.0288181, 
+    viewOffsetX=-0.00161549, viewOffsetY=-0.0102819)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461756, 
+    farPlane=0.623633, width=0.0285814, height=0.0141518, 
+    viewOffsetX=0.000981172, viewOffsetY=-0.0114898)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=12 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=14 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=16 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=18 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=19 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=25 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=29 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=31 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=33 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.460083, 
+    farPlane=0.625054, width=0.0340691, height=0.016869, 
+    viewOffsetX=0.000648537, viewOffsetY=-0.0126449)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.440108, 
+    farPlane=0.645029, width=0.177529, height=0.0879017, 
+    viewOffsetX=-0.00215331, viewOffsetY=-0.0131229)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=37 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=38 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=39 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.417842, 
+    farPlane=0.66724, width=0.296564, height=0.14684, viewOffsetX=-0.00189731, 
+    viewOffsetY=-0.000897191)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.417842, 
+    farPlane=0.66724, width=0.296564, height=0.14684, viewOffsetX=-0.00100855, 
+    viewOffsetY=-0.0120496)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=40 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=40 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=40 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=40 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=40 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=40 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=41 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=42 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=43 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=44 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=45 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=46 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=46 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=46 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=46 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=46 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461099, 
+    farPlane=0.623907, width=0.0304928, height=0.0150982, 
+    viewOffsetX=-0.00495904, viewOffsetY=-0.0102777)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=47 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=48 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=49 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=50 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=51 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=52 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=53 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=54 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=55 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=56 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=57 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=85 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463595, 
+    farPlane=0.620983, width=0.00889406, height=0.0044038, 
+    viewOffsetX=-0.00189496, viewOffsetY=-0.0103715)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463176, 
+    farPlane=0.622454, width=0.0147158, height=0.00731253, 
+    viewOffsetX=0.00164631, viewOffsetY=-0.00935015)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#fa ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#11080000 #115412 #3 ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=8, constraint=FIXED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462828, 
+    farPlane=0.622802, width=0.0168567, height=0.00837636, 
+    viewOffsetX=0.00310056, viewOffsetY=-0.0103644)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#80000000 #44aaaae9 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.00012, deviationFactor=0.1, 
+    constraint=AS_IS)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463485, 
+    farPlane=0.622145, width=0.0144862, height=0.00719846, 
+    viewOffsetX=0.00338196, viewOffsetY=-0.0105126)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#40 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#80 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#10 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#8 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#20 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#2 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462196, 
+    farPlane=0.623434, width=0.0234632, height=0.0116593, 
+    viewOffsetX=0.00521014, viewOffsetY=-0.00807199)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#340 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0:2 #6060a00 ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=4, constraint=FINER)
+#: Job mesh_1_default: Abaqus/Standard completed successfully.
+#: Job mesh_1_default completed successfully. 
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.458587, 
+    farPlane=0.627042, width=0.0429132, height=0.0213243, 
+    viewOffsetX=0.000360999, viewOffsetY=-0.0782069)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#7 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#208905 ]', ), )
+p.seedEdgeByNumber(edges=pickedEdges, number=4, constraint=FINER)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#1 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.456663, 
+    farPlane=0.628967, width=0.0619438, height=0.030781, 
+    viewOffsetX=-0.000774361, viewOffsetY=-0.0759349)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#4 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.408904, 
+    farPlane=0.676726, width=0.388572, height=0.193088, 
+    viewOffsetX=-0.00352776, viewOffsetY=-0.00633067)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#100 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#200 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.458373, 
+    farPlane=0.627257, width=0.0501553, height=0.024923, 
+    viewOffsetX=0.00155778, viewOffsetY=0.08457)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD2\CHD2_geometry_42957_nodes.cae".
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461459, 
+    farPlane=0.624171, width=0.0285783, height=0.014201, 
+    viewOffsetX=0.00449611, viewOffsetY=-0.00931585)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#40 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#2 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464276, 
+    farPlane=0.621354, width=0.00898313, height=0.00446387, 
+    viewOffsetX=0.00237463, viewOffsetY=-0.0102815)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#18 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#0 #3400100 #c0 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.0001, deviationFactor=0.1, 
+    constraint=FINER)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#10 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-Full-mesh-1-default'].parts['CHD2-m']
+c = p.cells
+pickedRegions = c.getSequenceFromMask(mask=('[#8 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463273, 
+    farPlane=0.622357, width=0.0159663, height=0.00793391, 
+    viewOffsetX=0.00170708, viewOffsetY=-0.0101977)
+session.viewports['Viewport: 1'].view.setValues(session.views['Front'])
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.498323, 
+    farPlane=0.503862, width=0.0154598, height=0.00768222, 
+    viewOffsetX=-9.93962e-05, viewOffsetY=0.000165403)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD2\CHD2_geometry_42957_nodes.cae".
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb'].close(
+    )
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=odb)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          13
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.436603, 
+    farPlane=0.648907, width=0.182126, height=0.0901779, 
+    viewOffsetX=0.00182254, viewOffsetY=0.00477307)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.420502, 
+    farPlane=0.663905, width=0.305934, height=0.15148, viewOffsetX=0.0311043, 
+    viewOffsetY=0.0269304)
+a = mdb.models['Model-Full-mesh-1-default'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.443583, 
+    farPlane=0.642047, width=0.136207, height=0.0674416, viewOffsetX=0.0014979, 
+    viewOffsetY=-0.00962517)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461966, 
+    farPlane=0.623664, width=0.0221652, height=0.0110143, 
+    viewOffsetX=0.000792427, viewOffsetY=-0.00999563)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD2\CHD2_geometry_42957_nodes.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['mesh_1_default'].submit(consistencyChecking=OFF)
+#: The job input file "mesh_1_default.inp" has been submitted for analysis.
+#: Job mesh_1_default: Analysis Input File Processor completed successfully.
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          13
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+a = mdb.models['Model-Full-mesh-1-default'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['Model-Full-mesh-1-default'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461445, 
+    farPlane=0.624185, width=0.0253802, height=0.0126119, 
+    viewOffsetX=-0.00127591, viewOffsetY=-0.00927757)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb'].close(
+    )
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=odb)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          13
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463692, 
+    farPlane=0.621741, width=0.0153649, height=0.00760779, 
+    viewOffsetX=0.000779183, viewOffsetY=-0.00999287)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD2\CHD2_geometry_42957_nodes.cae".
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=12 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.46197, 
+    farPlane=0.623397, width=0.0269346, height=0.0133364, 
+    viewOffsetX=-9.66534e-05, viewOffsetY=-0.00851863)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462776, 
+    farPlane=0.622592, width=0.0188431, height=0.00932998, 
+    viewOffsetX=-0.000647975, viewOffsetY=-0.00921511)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=9 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=10 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=12 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=14 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=14 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=14 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=14 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=63 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=63 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=63 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=63 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=63 )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.458481, 
+    farPlane=0.626338, width=0.0474198, height=0.0234794, 
+    viewOffsetX=2.51771e-06, viewOffsetY=-0.00663582)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+#: 
+#: ODB: mesh_1_default.odb
+#:    Number of nodes: 64386
+#:    Number of elements: 55408
+#:    Element types: C3D8T 
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD2\CHD2_geometry_42957_nodes.cae".
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=65 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=68 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=68 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=68 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=68 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=68 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=68 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462971, 
+    farPlane=0.621793, width=0.0157215, height=0.00778433, 
+    viewOffsetX=-0.000634452, viewOffsetY=-0.00952137)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=69 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=70 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=71 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=72 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=73 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=74 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=75 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=76 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=76 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=76 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=76 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=76 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=76 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=76 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463342, 
+    farPlane=0.621324, width=0.0124429, height=0.00616098, 
+    viewOffsetX=-0.00058468, viewOffsetY=-0.00983567)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464417, 
+    farPlane=0.620248, width=0.00435615, height=0.0021569, 
+    viewOffsetX=0.000101827, viewOffsetY=-0.0101482)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461351, 
+    farPlane=0.623315, width=0.0263534, height=0.0130486, 
+    viewOffsetX=-0.000614717, viewOffsetY=-0.0108202)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=77 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=78 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=82 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=83 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+a = mdb.models['Model-Full-mesh-1-default'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.423225, 
+    farPlane=0.661363, width=0.290775, height=0.143974, viewOffsetX=-0.0157533, 
+    viewOffsetY=0.0178046)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=85 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=86 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=87 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=88 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=89 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=90 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=91 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=92 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+a = mdb.models['Model-Full-mesh-1-default'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+a = mdb.models['Model-Full-mesh-1-default'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462871, 
+    farPlane=0.622758, width=0.0187607, height=0.0093225, 
+    viewOffsetX=0.00322519, viewOffsetY=-0.00972374)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463586, 
+    farPlane=0.622043, width=0.0122284, height=0.00605477, 
+    viewOffsetX=0.00263726, viewOffsetY=-0.0103508)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463165, 
+    farPlane=0.622465, width=0.0167151, height=0.00830603, 
+    viewOffsetX=0.00249557, viewOffsetY=-0.0103486)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463366, 
+    farPlane=0.621126, width=0.0108982, height=0.00539611, 
+    viewOffsetX=0.000101044, viewOffsetY=-0.0101536)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=93 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=94 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=95 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.436249, 
+    farPlane=0.648201, width=0.177431, height=0.0878531, 
+    viewOffsetX=-0.00673823, viewOffsetY=0.0132315)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.45709, 
+    farPlane=0.62736, width=0.0480458, height=0.0237894, 
+    viewOffsetX=-0.00302757, viewOffsetY=0.0884157)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462114, 
+    farPlane=0.622336, width=0.0169659, height=0.00840047, 
+    viewOffsetX=-0.000647528, viewOffsetY=0.0899053)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+a = mdb.models['Model-Full-mesh-1-default'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+a = mdb.models['Model-Full-mesh-1-default'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+#: Job mesh_1_default: Abaqus/Standard completed successfully.
+#: Job mesh_1_default completed successfully. 
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb'].close(
+    )
+odb = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/geometry.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=odb)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          13
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.407634, 
+    farPlane=0.676785, width=0.404358, height=0.200214, viewOffsetX=0.0112402, 
+    viewOffsetY=-0.0049602)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.453044, 
+    farPlane=0.631375, width=0.0818659, height=0.040535, 
+    viewOffsetX=-0.00168399, viewOffsetY=-0.00713543)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)\CP1000 CHD2\CHD2_geometry_42957_nodes.cae".

@@ -1,0 +1,90 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/Viewer Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Tue Jul  2 13:22:30 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# -*- coding: mbcs -*-
+#
+# Abaqus/Viewer Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Tue Jul  2 13:22:30 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=118.47395324707, 
+    height=150.111114501953)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from viewerModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+o2 = session.openOdb(name='mesh_1_default.odb')
+#: Model: C:/LocalUserData/User-data/nguyenb5/4th CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          13
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o2)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.453194, 
+    farPlane=0.631225, width=0.0806335, height=0.0449137, 
+    viewOffsetX=-0.00133598, viewOffsetY=0.0781042)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/4th CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_subroutine.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/4th CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_subroutine.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          13
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.460463, 
+    farPlane=0.623956, width=0.0301943, height=0.0168185, 
+    viewOffsetX=0.00300505, viewOffsetY=-0.0115718)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.459033, 
+    farPlane=0.625386, width=0.0355059, height=0.0197771, 
+    viewOffsetX=0.00371721, viewOffsetY=0.0839199)
+o3 = session.odbs['C:/LocalUserData/User-data/nguyenb5/4th CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_default.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+o3 = session.odbs['C:/LocalUserData/User-data/nguyenb5/4th CP1000 plastic (UMAT UMATHT UHARD coupled temp-disp)/CP1000 CHD2/mesh_1_subroutine.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(COMPONENT, 'RF2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.45898, 
+    farPlane=0.625439, width=0.0358321, height=0.0199588, 
+    viewOffsetX=0.00418243, viewOffsetY=-0.0112985)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
