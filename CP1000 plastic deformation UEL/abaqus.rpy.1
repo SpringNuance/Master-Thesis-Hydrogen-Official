@@ -1,0 +1,1869 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Mon Oct 21 11:22:40 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=103.244789123535, 
+    height=119.284721374512)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('all_geometries.cae')
+#: The model database "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['CHD2_solver'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p1 = mdb.models['CHD2_subroutine'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p1 = mdb.models['Job-PlateWithHole-built-in'].parts['COMPOSITE_PLIES']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['Job-PlateWithHole-built-in']
+del mdb.models['Job-C3D8-built-in']
+p = mdb.models['CHD2_solver'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['cube_C3D8_deformation'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['cube_C3D8_deformation']
+del mdb.models['cube_C3D8_deformation_solver']
+del mdb.models['cube_C3D8_diffusion']
+del mdb.models['cube_C3D20R_deformation']
+del mdb.models['cube_C3D20R_deformation_solver']
+p = mdb.models['CHD2_solver'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['CHD4_von_Mises'].parts['CHD4']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p1 = mdb.models['CHD4_subroutine'].parts['CHD4']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['CHD4_subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON, optimizationTasks=OFF, 
+    geometricRestrictions=OFF, stopConditions=OFF)
+mdb.models['CHD4_subroutine'].steps['step1_tensile'].setValues(initialInc=10.0, 
+    maxInc=10.0)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+p1 = mdb.models['CHD2_solver'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+p1 = mdb.models['SH115_subroutine'].parts['SH115']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+a = mdb.models['CHD2_subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+mdb.models.changeKey(fromName='CHD2_subroutine', toName='CHD2_deformation')
+a = mdb.models['CHD2_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['CHD4_subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+mdb.models.changeKey(fromName='CHD4_subroutine', toName='CHD4_deformation')
+a = mdb.models['CHD4_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+p1 = mdb.models['CHD4_solver'].parts['CHD4']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['CHD4_solver'].materials['user_material2']
+p1 = mdb.models['CHD4_von_Mises_solver'].parts['CHD4']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p1 = mdb.models['CHD4_von_Mises'].parts['CHD4']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['CHD4_von_Mises']
+del mdb.models['CHD4_von_Mises_solver']
+p = mdb.models['CHD2_solver'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+mdb.models.changeKey(fromName='CHD2_solver', toName='CHD2_von_Mises_solver')
+p = mdb.models['CHD2_von_Mises_solver'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['CHD4_solver'].parts['CHD4']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models.changeKey(fromName='CHD4_solver', toName='CHD4_sovon_Mises_lver')
+p = mdb.models['CHD4_sovon_Mises_lver'].parts['CHD4']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+mdb.models.changeKey(fromName='CHD4_sovon_Mises_lver', 
+    toName='CHD4_sovon_Mises_solver')
+p = mdb.models['CHD4_sovon_Mises_solver'].parts['CHD4']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+mdb.models.changeKey(fromName='CHD4_sovon_Mises_solver', 
+    toName='CHD4_von_Mises_solver')
+p = mdb.models['CHD4_von_Mises_solver'].parts['CHD4']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['NDBR2p5_solver'].parts['NDBR2p5']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models.changeKey(fromName='NDBR2p5_solver', 
+    toName='NDBR2p5_von_Mises_solver')
+p = mdb.models['NDBR2p5_von_Mises_solver'].parts['NDBR2p5']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['NDBR6_solver'].parts['NDBR6']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models.changeKey(fromName='NDBR6_solver', toName='NDBR6_von_Mises_solver')
+p = mdb.models['NDBR6_von_Mises_solver'].parts['NDBR6']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['NDBR15_solver'].parts['NDBR15']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models.changeKey(fromName='NDBR15_solver', 
+    toName='NDBR15_von_Mises_solver')
+p = mdb.models['NDBR15_von_Mises_solver'].parts['NDBR15']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['NDBR40_solver'].parts['NDBR40']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models.changeKey(fromName='NDBR40_solver', 
+    toName='NDBR40_von_Mises_solver')
+p = mdb.models['NDBR40_von_Mises_solver'].parts['NDBR40']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['SH115_solver'].parts['SH115']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models.changeKey(fromName='SH115_solver', toName='SH115_von_Mises_solver')
+p = mdb.models['SH115_von_Mises_solver'].parts['SH115']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['NDBR2p5_subroutine'].parts['NDBR2p5']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models.changeKey(fromName='NDBR2p5_subroutine', 
+    toName='NDBR2p5_deformation')
+p = mdb.models['NDBR2p5_deformation'].parts['NDBR2p5']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['NDBR6_subroutine'].parts['NDBR6']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models.changeKey(fromName='NDBR6_subroutine', toName='NDBR6_deformation')
+p = mdb.models['NDBR6_deformation'].parts['NDBR6']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['NDBR15_subroutine'].parts['NDBR15']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models.changeKey(fromName='NDBR15_subroutine', toName='NDBR15_deformation')
+p = mdb.models['NDBR15_deformation'].parts['NDBR15']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['NDBR40_subroutine'].parts['NDBR40']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models.changeKey(fromName='NDBR40_subroutine', toName='NDBR40_deformation')
+p = mdb.models['NDBR40_deformation'].parts['NDBR40']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['NDBR40_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+del mdb.jobs['CHD2_solver']
+del mdb.jobs['CHD2_subroutine']
+del mdb.jobs['CHD4_solver']
+del mdb.jobs['CHD4_subroutine']
+del mdb.jobs['CHD4_von_Mises']
+del mdb.jobs['CHD4_von_Mises_solver']
+del mdb.jobs['NDBR2p5_solver']
+del mdb.jobs['NDBR2p5_subroutine']
+del mdb.jobs['NDBR6_solver']
+del mdb.jobs['NDBR6_subroutine']
+del mdb.jobs['NDBR15_solver']
+del mdb.jobs['NDBR15_subroutine']
+del mdb.jobs['NDBR40_solver']
+del mdb.jobs['NDBR40_subroutine']
+del mdb.jobs['SH115_solver']
+del mdb.jobs['SH115_subroutine']
+del mdb.jobs['cube_C3D8_deformation']
+del mdb.jobs['cube_C3D8_deformation_solver']
+del mdb.jobs['cube_C3D8_diffusion']
+del mdb.jobs['cube_C3D20R_deformation']
+del mdb.jobs['cube_C3D20R_deformation_solver']
+mdb.Job(name='CHD2_deformation', model='CHD2_deformation', description='', 
+    type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, 
+    memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.Job(name='CHD4_deformation', model='NDBR40_deformation', description='', 
+    type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, 
+    memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.Job(name='NDBR2p5_deformation', model='NDBR2p5_deformation', 
+    description='', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, 
+    queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+del mdb.jobs['CHD4_deformation']
+mdb.Job(name='CHD4_deformation', model='CHD4_deformation', description='', 
+    type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, 
+    memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.Job(name='NDBR6_deformation', model='NDBR6_deformation', description='', 
+    type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, 
+    memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.Job(name='NDBR15_deformation', model='NDBR15_deformation', description='', 
+    type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, 
+    memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+a = mdb.models['SH115_subroutine'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models.changeKey(fromName='SH115_subroutine', toName='SH115_deformation')
+a = mdb.models['SH115_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.Job(name='NDBR40_deformation', model='NDBR40_deformation', description='', 
+    type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, 
+    memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.Job(name='SH115_deformation', model='SH115_deformation', description='', 
+    type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, 
+    memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.396027, 
+    farPlane=0.689679, width=0.3425, height=0.183185, viewOffsetX=0.0181236, 
+    viewOffsetY=-0.00310474)
+a = mdb.models['CHD2_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.Job(name='CHD2_von_Mises_solver', model='CHD2_von_Mises_solver', 
+    description='', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, 
+    queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.Job(name='CHD4_von_Mises_solver', model='CHD2_von_Mises_solver', 
+    description='', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, 
+    queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.Job(name='NDBR2p5_von_Mises_solver', model='NDBR2p5_von_Mises_solver', 
+    description='', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, 
+    queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.Job(name='NDBR6_von_Mises_solver', model='NDBR6_von_Mises_solver', 
+    description='', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, 
+    queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.Job(name='NDBR15_von_Mises_solver', model='NDBR15_von_Mises_solver', 
+    description='', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, 
+    queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.Job(name='NDBR40_von_Mises_solver', model='NDBR40_von_Mises_solver', 
+    description='', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, 
+    queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.Job(name='SH115_von_Mises_solver', model='CHD2_von_Mises_solver', 
+    description='', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, 
+    queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.397304, 
+    farPlane=0.688387, width=0.343604, height=0.183775, viewOffsetX=0.0100992, 
+    viewOffsetY=0.000555911)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.models['CHD2_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('E', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+mdb.models['CHD2_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('E', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+mdb.models['CHD2_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['CHD4_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['CHD4_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+a = mdb.models['CHD2_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['CHD2_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U', 'HP'))
+mdb.models['CHD2_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.387999, 
+    farPlane=0.697693, width=0.37976, height=0.204023, viewOffsetX=0.0379067, 
+    viewOffsetY=-0.00555445)
+p = mdb.models['CHD2_von_Mises_solver'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.400841, 
+    farPlane=0.68485, width=0.32441, height=0.174287, viewOffsetX=0.0231498, 
+    viewOffsetY=0.00274303)
+p = mdb.models['CHD2_von_Mises_solver'].parts['CHD2']
+p.generateMesh()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.403475, 
+    farPlane=0.682216, width=0.310732, height=0.166938, viewOffsetX=0.0450922, 
+    viewOffsetY=0.00119717)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['CHD2_von_Mises_solver'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+del mdb.jobs['SH115_von_Mises_solver']
+mdb.Job(name='SH115_von_Mises_solver', model='SH115_von_Mises_solver', 
+    description='', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, 
+    queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+del mdb.jobs['CHD4_von_Mises_solver']
+mdb.Job(name='CHD4_von_Mises_solver', model='CHD4_von_Mises_solver', 
+    description='', type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, 
+    queue=None, memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, numThreadsPerMpiProcess=1, 
+    multiprocessingMode=DEFAULT, numCpus=1, numGPUs=0)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+mdb.jobs['CHD2_von_Mises_solver'].submit(consistencyChecking=OFF)
+#: The job input file "CHD2_von_Mises_solver.inp" has been submitted for analysis.
+#: Job CHD2_von_Mises_solver: Analysis Input File Processor completed successfully.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/CHD2_von_Mises_solver.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/CHD2_von_Mises_solver.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       9
+#: Number of Node Sets:          8
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461187, 
+    farPlane=0.624379, width=0.0245645, height=0.0131382, 
+    viewOffsetX=0.000530907, viewOffsetY=-0.0103433)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+a = mdb.models['CHD2_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['CHD2_von_Mises_solver'].kill()
+#: Error in job CHD2_von_Mises_solver: Process terminated by external request (SIGTERM or SIGINT received).
+#: Job CHD2_von_Mises_solver: Abaqus/Standard was terminated prior to analysis completion.
+mdb.jobs['CHD2_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "CHD2_von_Mises_solver.inp".
+#: Error in job CHD2_von_Mises_solver: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+mdb.jobs['CHD4_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "CHD4_von_Mises_solver.inp".
+mdb.jobs['NDBR2p5_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR2p5_von_Mises_solver.inp".
+mdb.jobs['NDBR6_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR6_von_Mises_solver.inp".
+mdb.jobs['NDBR15_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR15_von_Mises_solver.inp".
+mdb.jobs['NDBR40_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR40_von_Mises_solver.inp".
+a = mdb.models['CHD4_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.models['CHD4_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+a = mdb.models['NDBR2p5_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['NDBR2p5_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+mdb.models['NDBR2p5_von_Mises_solver'].steps['step1_tensile'].setValues(
+    initialInc=10.0, maxInc=10.0)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/CHD2_von_Mises_solver.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/CHD2_von_Mises_solver.odb'].close(
+    )
+a = mdb.models['CHD2_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['CHD4_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['NDBR2p5_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['NDBR2p5_von_Mises_solver'].steps['step1_tensile'].setValues(
+    initialInc=5.0, maxInc=5.0)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['NDBR6_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+p1 = mdb.models['NDBR6_von_Mises_solver'].parts['NDBR6']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['NDBR6_von_Mises_solver'].materials['user_material']
+a = mdb.models['NDBR6_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['NDBR6_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['NDBR15_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+del mdb.models['NDBR15_von_Mises_solver'].historyOutputRequests['H-Output-1']
+mdb.models['NDBR15_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+p1 = mdb.models['NDBR15_von_Mises_solver'].parts['NDBR15']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['NDBR15_von_Mises_solver'].materials['user_material']
+a = mdb.models['NDBR15_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+p1 = mdb.models['CHD2_von_Mises_solver'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['CHD2_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.407353, 
+    farPlane=0.678339, width=0.331157, height=0.201421, viewOffsetX=0.0100127, 
+    viewOffsetY=0.00805984)
+p1 = mdb.models['CHD4_von_Mises_solver'].parts['CHD4']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['CHD4_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+p1 = mdb.models['NDBR2p5_von_Mises_solver'].parts['NDBR2p5']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['NDBR2p5_von_Mises_solver'].materials['user_material2']
+a = mdb.models['NDBR2p5_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+p1 = mdb.models['NDBR6_von_Mises_solver'].parts['NDBR6']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['NDBR6_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+p1 = mdb.models['NDBR15_von_Mises_solver'].parts['NDBR15']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['NDBR15_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['NDBR6_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+p1 = mdb.models['NDBR15_von_Mises_solver'].parts['NDBR15']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['NDBR15_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+p1 = mdb.models['NDBR40_von_Mises_solver'].parts['NDBR40']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['NDBR40_von_Mises_solver'].materials['user_material']
+a = mdb.models['NDBR40_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+mdb.models['NDBR40_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+a = mdb.models['NDBR15_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['NDBR40_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+p1 = mdb.models['SH115_von_Mises_solver'].parts['SH115']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['SH115_von_Mises_solver'].materials['user_material']
+a = mdb.models['SH115_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+mdb.models['SH115_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['CHD2_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "CHD2_von_Mises_solver.inp".
+mdb.jobs['CHD4_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "CHD4_von_Mises_solver.inp".
+mdb.jobs['NDBR2p5_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR2p5_von_Mises_solver.inp".
+mdb.jobs['NDBR6_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR6_von_Mises_solver.inp".
+mdb.jobs['NDBR15_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR15_von_Mises_solver.inp".
+mdb.jobs['NDBR40_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR40_von_Mises_solver.inp".
+mdb.jobs['SH115_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "SH115_von_Mises_solver.inp".
+p1 = mdb.models['CHD4_deformation'].parts['CHD4']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['CHD4_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+p1 = mdb.models['CHD4_deformation'].parts['CHD4']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['CHD4_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+mdb.models['CHD4_deformation'].steps['step1_tensile'].setValues(initialInc=5.0, 
+    maxInc=5.0)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['CHD2_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+mdb.Model(name='CHD2_deformation-Copy', 
+    objectToCopy=mdb.models['CHD2_deformation'])
+#: The model "CHD2_deformation-Copy" has been created.
+a = mdb.models['CHD2_deformation-Copy'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+p1 = mdb.models['CHD2_deformation-Copy'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['CHD2_deformation-Copy']
+del mdb.models['CHD4_deformation']
+del mdb.models['NDBR2p5_deformation']
+del mdb.models['NDBR6_deformation']
+del mdb.models['NDBR15_deformation']
+del mdb.models['NDBR40_deformation']
+del mdb.models['SH115_deformation']
+p = mdb.models['CHD2_deformation'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+del mdb.models['CHD2_deformation']
+p = mdb.models['CHD2_von_Mises_solver'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+mdb.Model(name='CHD2_subroutine', 
+    objectToCopy=mdb.models['CHD2_von_Mises_solver'])
+#: The model "CHD2_subroutine" has been created.
+p = mdb.models['CHD2_subroutine'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+mdb.models.changeKey(fromName='CHD2_subroutine', toName='CHD2_deformation')
+p = mdb.models['CHD2_deformation'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+del mdb.models['CHD2_deformation'].materials['von_Mises']
+import part
+import assembly
+import material
+import section
+import interaction
+mdb.models['CHD2_deformation'].Material(name='user_material')
+mdb.models['CHD2_deformation'].materials['user_material'].Density(table=((
+    7900.0, ), ))
+mdb.models['CHD2_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['CHD2_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['CHD2_deformation'].sections['Section-1'].setValues(
+    material='user_material', thickness=None)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['CHD2_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['CHD2_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "CHD2_deformation.inp".
+a = mdb.models['CHD4_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.Model(name='CHD4_deformation', 
+    objectToCopy=mdb.models['CHD4_von_Mises_solver'])
+#: The model "CHD4_deformation" has been created.
+a = mdb.models['CHD4_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+p1 = mdb.models['CHD4_deformation'].parts['CHD4']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['CHD4_deformation'].materials['von_Mises']
+mdb.models['CHD4_deformation'].Material(name='user_material')
+mdb.models['CHD4_deformation'].materials['user_material'].Density(table=((
+    7900.0, ), ))
+mdb.models['CHD4_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['CHD4_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['CHD4_deformation'].sections['Section-1'].setValues(
+    material='user_material', thickness=None)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['CHD4_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.models['CHD4_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+a = mdb.models['CHD2_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['CHD2_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['NDBR2p5_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+mdb.Model(name='NDBR2p5_deformation', 
+    objectToCopy=mdb.models['NDBR2p5_von_Mises_solver'])
+#: The model "NDBR2p5_deformation" has been created.
+a = mdb.models['NDBR2p5_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+p1 = mdb.models['NDBR2p5_deformation'].parts['NDBR2p5']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['NDBR2p5_deformation'].materials['von_Mises']
+mdb.models['NDBR2p5_deformation'].Material(name='user_material')
+mdb.models['NDBR2p5_deformation'].materials['user_material'].Density(table=((
+    7900.0, ), ))
+mdb.models['NDBR2p5_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['NDBR2p5_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['NDBR2p5_deformation'].sections['Section-1'].setValues(
+    material='user_material', thickness=None)
+a = mdb.models['NDBR2p5_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.models['NDBR2p5_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+a = mdb.models['CHD4_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['CHD2_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['NDBR2p5_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['NDBR6_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+mdb.Model(name='NDBR6_deformation', 
+    objectToCopy=mdb.models['NDBR6_von_Mises_solver'])
+#: The model "NDBR6_deformation" has been created.
+a = mdb.models['NDBR6_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+p1 = mdb.models['NDBR6_deformation'].parts['NDBR6']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['NDBR6_deformation'].materials['von_Mises']
+mdb.models['NDBR6_deformation'].Material(name='user_material')
+mdb.models['NDBR6_deformation'].materials['user_material'].Density(table=((
+    7900.0, ), ))
+mdb.models['NDBR6_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['NDBR6_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['NDBR6_deformation'].sections['Section-1'].setValues(
+    material='user_material', thickness=None)
+a = mdb.models['NDBR6_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.models['NDBR6_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['NDBR15_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+mdb.Model(name='NDBR15_deformation', 
+    objectToCopy=mdb.models['NDBR15_von_Mises_solver'])
+#: The model "NDBR15_deformation" has been created.
+a = mdb.models['NDBR15_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+p1 = mdb.models['NDBR15_deformation'].parts['NDBR15']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['NDBR15_deformation'].materials.changeKey(fromName='von_Mises', 
+    toName='user_material')
+del mdb.models['NDBR15_deformation'].materials['user_material'].elastic
+del mdb.models['NDBR15_deformation'].materials['user_material'].plastic
+mdb.models['NDBR15_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['NDBR15_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+a = mdb.models['NDBR15_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.models['NDBR15_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['NDBR40_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+mdb.Model(name='NDBR40_deformation', 
+    objectToCopy=mdb.models['NDBR40_von_Mises_solver'])
+#: The model "NDBR40_deformation" has been created.
+a = mdb.models['NDBR40_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+p1 = mdb.models['NDBR40_deformation'].parts['NDBR40']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['NDBR40_deformation'].materials.changeKey(fromName='von_Mises', 
+    toName='user_material')
+del mdb.models['NDBR40_deformation'].materials['user_material'].elastic
+del mdb.models['NDBR40_deformation'].materials['user_material'].plastic
+mdb.models['NDBR40_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['NDBR40_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['NDBR40_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.models['NDBR40_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['SH115_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+mdb.Model(name='SH115_deformation', 
+    objectToCopy=mdb.models['SH115_von_Mises_solver'])
+#: The model "SH115_deformation" has been created.
+a = mdb.models['SH115_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['SH115_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.models['SH115_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+p1 = mdb.models['CHD2_von_Mises_solver'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['CHD2_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['SH115_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['CHD2_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "CHD2_deformation.inp".
+mdb.jobs['CHD4_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "CHD4_deformation.inp".
+mdb.jobs['NDBR2p5_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR2p5_deformation.inp".
+mdb.jobs['NDBR6_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR6_deformation.inp".
+mdb.jobs['NDBR15_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR15_deformation.inp".
+mdb.jobs['NDBR40_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR40_deformation.inp".
+mdb.jobs['SH115_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "SH115_deformation.inp".
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/CHD4_deformation/CHD4_deformation_UEL.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/CHD4_deformation/CHD4_deformation_UEL.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          9
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.46271, 
+    farPlane=0.622838, width=0.0169204, height=0.0102916, 
+    viewOffsetX=-0.000981157, viewOffsetY=-0.008869)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].view.setValues(width=0.0159118, 
+    height=0.00967813, viewOffsetX=-0.000954961, viewOffsetY=-0.00903705)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=60 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463987, 
+    farPlane=0.621055, width=0.00913873, height=0.00555849, 
+    viewOffsetX=-0.00107995, viewOffsetY=-0.00918991)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR2_SIG22', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464558, 
+    farPlane=0.620484, width=0.00524289, height=0.00318891, 
+    viewOffsetX=-0.00122295, viewOffsetY=-0.00956765)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR27_SIG_H', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.46449, 
+    farPlane=0.620551, width=0.00723499, height=0.00440057, 
+    viewOffsetX=-0.00170059, viewOffsetY=-0.00962246)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR28_SIG_VONMISES', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464457, 
+    farPlane=0.620584, width=0.00649763, height=0.00395209, 
+    viewOffsetX=-0.00128378, viewOffsetY=-0.00976027)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464806, 
+    farPlane=0.620061, width=0.00314745, height=0.00191439, 
+    viewOffsetX=-0.00217293, viewOffsetY=-0.00919353)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462205, 
+    farPlane=0.622663, width=0.018148, height=0.0110383, 
+    viewOffsetX=-0.00230684, viewOffsetY=-0.010347)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.46467, 
+    farPlane=0.620163, width=0.00413246, height=0.00251351, 
+    viewOffsetX=-0.00258373, viewOffsetY=-0.00934317)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=83 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=82 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=78 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=79 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=80 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=82 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=83 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=84 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462855, 
+    farPlane=0.621977, width=0.0143054, height=0.00870101, 
+    viewOffsetX=-0.00321604, viewOffsetY=-0.0103471)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463611, 
+    farPlane=0.621116, width=0.00837961, height=0.00509677, 
+    viewOffsetX=-0.000929507, viewOffsetY=-0.0102379)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=95 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=96 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.460988, 
+    farPlane=0.623731, width=0.0213507, height=0.0129862, 
+    viewOffsetX=-0.000825403, viewOffsetY=-0.0108187)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=97 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=98 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463762, 
+    farPlane=0.620939, width=0.00750224, height=0.00456312, 
+    viewOffsetX=-0.0032726, viewOffsetY=-0.00906764)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=99 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461724, 
+    farPlane=0.622969, width=0.0198558, height=0.012077, 
+    viewOffsetX=-0.000434597, viewOffsetY=-0.0116044)
+session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/CHD4_deformation/CHD4_deformation_UEL.odb'].close(
+    )
+p1 = mdb.models['SH115_deformation'].parts['SH115']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['SH115_deformation'].materials.changeKey(fromName='von_Mises', 
+    toName='user_material')
+del mdb.models['SH115_deformation'].materials['user_material'].elastic
+del mdb.models['SH115_deformation'].materials['user_material'].plastic
+mdb.models['SH115_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['SH115_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['SH115_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['SH115_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "SH115_deformation.inp".
+mdb.jobs['SH115_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "SH115_deformation.inp".
+mdb.jobs['SH115_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "SH115_deformation.inp".
+p1 = mdb.models['SH115_deformation'].parts['SH115']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['SH115_deformation'].sections['Section-1'].setValues(
+    material='user_material', thickness=None)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['SH115_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.models['SH115_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'SDV', 'U'))
+a = mdb.models['NDBR40_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+mdb.jobs['NDBR40_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR40_deformation.inp".
+mdb.jobs['SH115_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "SH115_deformation.inp".
+a = mdb.models['SH115_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+a = mdb.models['SH115_deformation'].rootAssembly
+region = a.sets['top_surface']
+mdb.models['SH115_deformation'].boundaryConditions['top_part_disp'].setValues(
+    region=region)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.407665, 
+    farPlane=0.678041, width=0.329813, height=0.200604, viewOffsetX=0.00700782, 
+    viewOffsetY=0.00854297)
+mdb.models['SH115_deformation'].boundaryConditions.changeKey(
+    fromName='top_part_disp', toName='top_surface_disp')
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['NDBR40_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['NDBR40_deformation'].rootAssembly
+region = a.sets['top_surface']
+mdb.models['NDBR40_deformation'].boundaryConditions['top_part_disp'].setValues(
+    region=region)
+mdb.models['NDBR40_deformation'].boundaryConditions.changeKey(
+    fromName='top_part_disp', toName='top_surface_disp')
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['CHD2_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['CHD2_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['CHD4_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['NDBR2p5_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['NDBR6_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['NDBR15_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['NDBR15_deformation'].boundaryConditions.changeKey(
+    fromName='top_part_disp', toName='top_surface_disp')
+a = mdb.models['NDBR15_deformation'].rootAssembly
+region = a.sets['top_surface']
+mdb.models['NDBR15_deformation'].boundaryConditions['top_surface_disp'].setValues(
+    region=region)
+a = mdb.models['NDBR15_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['NDBR15_von_Mises_solver'].boundaryConditions.changeKey(
+    fromName='top_part_disp', toName='top_surface_disp')
+a = mdb.models['NDBR15_von_Mises_solver'].rootAssembly
+region = a.sets['top_surface']
+mdb.models['NDBR15_von_Mises_solver'].boundaryConditions['top_surface_disp'].setValues(
+    region=region)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['SH115_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['SH115_von_Mises_solver'].boundaryConditions.changeKey(
+    fromName='top_part_disp', toName='top_surface_disp')
+a = mdb.models['SH115_von_Mises_solver'].rootAssembly
+region = a.sets['top_surface']
+mdb.models['SH115_von_Mises_solver'].boundaryConditions['top_surface_disp'].setValues(
+    region=region)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['NDBR15_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR15_von_Mises_solver.inp".
+mdb.jobs['SH115_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "SH115_von_Mises_solver.inp".
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/SH115_deformation/SH115_deformation_UEL.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/SH115_deformation/SH115_deformation_UEL.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          8
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.456443, 
+    farPlane=0.629088, width=0.0540827, height=0.0328949, 
+    viewOffsetX=0.00041262, viewOffsetY=0.0419886)
+session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/SH115_deformation/SH115_deformation_UEL.odb'].close(
+    )
+a = mdb.models['SH115_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['SH115_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['SH115_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "SH115_deformation.inp".
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/SH115_deformation/SH115_deformation_UEL.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/SH115_deformation/SH115_deformation_UEL.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          8
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.445835, 
+    farPlane=0.639526, width=0.0996917, height=0.0606359, 
+    viewOffsetX=0.000729219, viewOffsetY=0.0602982)
+session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/SH115_deformation/SH115_deformation_UEL.odb'].close(
+    )
+a = mdb.models['SH115_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+a = mdb.models['SH115_deformation'].rootAssembly
+c1 = a.instances['SH115'].cells
+cells1 = c1.getSequenceFromMask(mask=('[#20 ]', ), )
+a.Set(cells=cells1, name='top_part')
+#: The set 'top_part' has been edited (1 cell).
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['SH115_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['SH115_von_Mises_solver'].rootAssembly
+c1 = a.instances['SH115'].cells
+cells1 = c1.getSequenceFromMask(mask=('[#20 ]', ), )
+a.Set(cells=cells1, name='top_part')
+#: The set 'top_part' has been edited (1 cell).
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['NDBR40_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.428288, 
+    farPlane=0.657403, width=0.186629, height=0.113514, 
+    viewOffsetX=-0.00185164, viewOffsetY=-0.0371883)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+a = mdb.models['CHD2_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+del mdb.models['CHD2_deformation'].rootAssembly.sets['top_nodes']
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.423663, 
+    farPlane=0.662028, width=0.209789, height=0.127601, viewOffsetX=0.0145267, 
+    viewOffsetY=-0.0267662)
+a = mdb.models['CHD2_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+del mdb.models['CHD2_von_Mises_solver'].rootAssembly.sets['top_nodes']
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['CHD4_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+a = mdb.models['CHD4_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+a = mdb.models['NDBR2p5_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+a = mdb.models['NDBR2p5_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+a = mdb.models['NDBR6_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+a = mdb.models['NDBR6_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+a = mdb.models['NDBR15_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+a = mdb.models['NDBR15_deformation'].rootAssembly
+c1 = a.instances['NDBR15'].cells
+cells1 = c1.getSequenceFromMask(mask=('[#100 ]', ), )
+a.Set(cells=cells1, name='bottom_part')
+#: The set 'bottom_part' has been edited (1 cell).
+a = mdb.models['NDBR15_deformation'].rootAssembly
+c1 = a.instances['NDBR15'].cells
+cells1 = c1.getSequenceFromMask(mask=('[#2000 ]', ), )
+a.Set(cells=cells1, name='top_part')
+#: The set 'top_part' has been edited (1 cell).
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['NDBR15_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+a = mdb.models['NDBR15_von_Mises_solver'].rootAssembly
+c1 = a.instances['NDBR15'].cells
+cells1 = c1.getSequenceFromMask(mask=('[#100 ]', ), )
+a.Set(cells=cells1, name='bottom_part')
+#: The set 'bottom_part' has been edited (1 cell).
+a = mdb.models['NDBR15_von_Mises_solver'].rootAssembly
+c1 = a.instances['NDBR15'].cells
+cells1 = c1.getSequenceFromMask(mask=('[#2000 ]', ), )
+a.Set(cells=cells1, name='top_part')
+#: The set 'top_part' has been edited (1 cell).
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['NDBR40_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+a = mdb.models['NDBR40_deformation'].rootAssembly
+c1 = a.instances['NDBR40-m-1'].cells
+cells1 = c1.getSequenceFromMask(mask=('[#400 ]', ), )
+a.Set(cells=cells1, name='bottom_part')
+#: The set 'bottom_part' has been edited (1 cell).
+a = mdb.models['NDBR40_deformation'].rootAssembly
+c1 = a.instances['NDBR40-m-1'].cells
+cells1 = c1.getSequenceFromMask(mask=('[#8000 ]', ), )
+a.Set(cells=cells1, name='top_part')
+#: The set 'top_part' has been edited (1 cell).
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.402797, 
+    farPlane=0.682894, width=0.306323, height=0.186316, 
+    viewOffsetX=-0.00482719, viewOffsetY=0.00204184)
+a = mdb.models['NDBR40_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+a = mdb.models['NDBR40_von_Mises_solver'].rootAssembly
+c1 = a.instances['NDBR40-m-1'].cells
+cells1 = c1.getSequenceFromMask(mask=('[#400 ]', ), )
+a.Set(cells=cells1, name='bottom_part')
+#: The set 'bottom_part' has been edited (1 cell).
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.408966, 
+    farPlane=0.676725, width=0.313564, height=0.190721, viewOffsetX=0.0245393, 
+    viewOffsetY=0.00107334)
+a = mdb.models['NDBR40_von_Mises_solver'].rootAssembly
+c1 = a.instances['NDBR40-m-1'].cells
+cells1 = c1.getSequenceFromMask(mask=('[#8000 ]', ), )
+a.Set(cells=cells1, name='top_part')
+#: The set 'top_part' has been edited (1 cell).
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+a = mdb.models['SH115_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+a = mdb.models['SH115_deformation'].rootAssembly
+c1 = a.instances['SH115'].cells
+cells1 = c1.getSequenceFromMask(mask=('[#10 ]', ), )
+a.Set(cells=cells1, name='bottom_part')
+#: The set 'bottom_part' has been edited (1 cell).
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.403211, 
+    farPlane=0.682496, width=0.347032, height=0.211077, viewOffsetX=0.0170072, 
+    viewOffsetY=0.0210243)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['SH115_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+a = mdb.models['SH115_von_Mises_solver'].rootAssembly
+c1 = a.instances['SH115'].cells
+cells1 = c1.getSequenceFromMask(mask=('[#10 ]', ), )
+a.Set(cells=cells1, name='bottom_part')
+#: The set 'bottom_part' has been edited (1 cell).
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    step='step1_tensile')
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['CHD2_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "CHD2_deformation.inp".
+mdb.jobs['CHD2_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "CHD2_von_Mises_solver.inp".
+mdb.jobs['CHD4_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "CHD4_deformation.inp".
+mdb.jobs['CHD4_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "CHD4_von_Mises_solver.inp".
+mdb.jobs['NDBR2p5_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR2p5_deformation.inp".
+mdb.jobs['NDBR2p5_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR2p5_von_Mises_solver.inp".
+mdb.jobs['NDBR6_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR6_deformation.inp".
+mdb.jobs['NDBR6_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR6_von_Mises_solver.inp".
+mdb.jobs['NDBR15_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR15_deformation.inp".
+mdb.jobs['NDBR15_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR15_von_Mises_solver.inp".
+mdb.jobs['NDBR15_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR15_deformation.inp".
+mdb.jobs['NDBR40_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR40_deformation.inp".
+mdb.jobs['NDBR40_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "NDBR40_von_Mises_solver.inp".
+mdb.jobs['SH115_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "SH115_deformation.inp".
+mdb.jobs['SH115_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "SH115_von_Mises_solver.inp".
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/SH115_deformation/SH115_deformation_UEL.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic deformation UEL/SH115_deformation/SH115_deformation_UEL.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          8
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464252, 
+    farPlane=0.621278, width=0.0103485, height=0.00629432, 
+    viewOffsetX=-0.000430664, viewOffsetY=-0.0103886)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR28_SIG_VONMISES', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464564, 
+    farPlane=0.620966, width=0.00759992, height=0.00462254, 
+    viewOffsetX=-0.00042193, viewOffsetY=-0.00997732)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464313, 
+    farPlane=0.621193, width=0.00870739, height=0.00529614, 
+    viewOffsetX=-0.000659744, viewOffsetY=-0.010979)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464299, 
+    farPlane=0.621196, width=0.00870713, height=0.00529598, 
+    viewOffsetX=-0.000659724, viewOffsetY=-0.0109787)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.46427, 
+    farPlane=0.621212, width=0.00877799, height=0.00533908, 
+    viewOffsetX=-0.00125772, viewOffsetY=-0.00874772)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=12 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.461379, 
+    farPlane=0.624044, width=0.0257289, height=0.0156492, 
+    viewOffsetX=-0.000758847, viewOffsetY=-0.00761874)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464389, 
+    farPlane=0.620864, width=0.00683472, height=0.00415711, 
+    viewOffsetX=-0.00116396, viewOffsetY=-0.0106751)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.46317, 
+    farPlane=0.622071, width=0.0128121, height=0.00779276, 
+    viewOffsetX=-0.0036471, viewOffsetY=-0.00989709)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=9 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=10 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=12 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=14 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=16 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=18 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=19 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464555, 
+    farPlane=0.620784, width=0.00650613, height=0.00395726, 
+    viewOffsetX=-0.00165644, viewOffsetY=-0.0100116)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=25 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=26 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=27 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=28 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462407, 
+    farPlane=0.622822, width=0.0186932, height=0.0113698, 
+    viewOffsetX=-0.00233835, viewOffsetY=-0.0100175)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR4_SIG12', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464149, 
+    farPlane=0.621079, width=0.00789054, height=0.0047993, 
+    viewOffsetX=-0.00132498, viewOffsetY=-0.0102193)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR5_SIG13', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR6_SIG23', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464142, 
+    farPlane=0.621087, width=0.00896638, height=0.00545367, 
+    viewOffsetX=-0.00154357, viewOffsetY=-0.0100224)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR4_SIG12', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463519, 
+    farPlane=0.62171, width=0.0124598, height=0.00757847, 
+    viewOffsetX=-0.00228634, viewOffsetY=-0.00963061)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=29 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=30 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464167, 
+    farPlane=0.621037, width=0.00867822, height=0.00527839, 
+    viewOffsetX=-0.00167382, viewOffsetY=-0.0104978)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463414, 
+    farPlane=0.621765, width=0.0112799, height=0.00686084, 
+    viewOffsetX=-0.00263578, viewOffsetY=-0.00949731)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464533, 
+    farPlane=0.620609, width=0.00628207, height=0.00382098, 
+    viewOffsetX=-0.00103167, viewOffsetY=-0.0103221)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR5_SIG13', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR6_SIG23', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464128, 
+    farPlane=0.621014, width=0.00913546, height=0.0055565, 
+    viewOffsetX=-0.00190667, viewOffsetY=-0.0107208)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR4_SIG12', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.464076, 
+    farPlane=0.621066, width=0.00884041, height=0.00537704, 
+    viewOffsetX=-0.00283203, viewOffsetY=-0.00860356)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=33 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR28_SIG_VONMISES', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=33 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=33 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=33 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462729, 
+    farPlane=0.622413, width=0.0163943, height=0.00997157, 
+    viewOffsetX=-0.00308837, viewOffsetY=-0.0123435)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462708, 
+    farPlane=0.622422, width=0.0145446, height=0.00884653, 
+    viewOffsetX=-0.00357224, viewOffsetY=-0.0113771)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.46424, 
+    farPlane=0.62089, width=0.00785988, height=0.00478065, 
+    viewOffsetX=-0.00200725, viewOffsetY=-0.0105913)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=33 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=32 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=33 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=34 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=35 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=36 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462665, 
+    farPlane=0.622464, width=0.0147576, height=0.00897608, 
+    viewOffsetX=-0.00256119, viewOffsetY=-0.0106867)
+a = mdb.models['SH115_von_Mises_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.457213, 
+    farPlane=0.628493, width=0.0422296, height=0.0258006, 
+    viewOffsetX=0.000850715, viewOffsetY=-0.00915768)
+a = mdb.models['CHD2_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.406365, 
+    farPlane=0.679326, width=0.295278, height=0.180403, viewOffsetX=0.0482203, 
+    viewOffsetY=-0.00671612)
+p = mdb.models['CHD2_deformation'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].view.setValues(width=0.330475, 
+    height=0.201907, viewOffsetX=0.00600628, viewOffsetY=-0.000498308)
+elemType1 = mesh.ElemType(elemCode=C3D8, elemLibrary=STANDARD, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT)
+elemType2 = mesh.ElemType(elemCode=C3D6, elemLibrary=STANDARD)
+elemType3 = mesh.ElemType(elemCode=C3D4, elemLibrary=STANDARD)
+p = mdb.models['CHD2_deformation'].parts['CHD2']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#fff ]', ), )
+pickedRegions =(cells, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2, 
+    elemType3))
+p = mdb.models['CHD2_deformation'].parts['CHD2']
+p.deleteMesh()
+p = mdb.models['CHD2_deformation'].parts['CHD2']
+p.generateMesh()
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+p1 = mdb.models['CHD2_von_Mises_solver'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+elemType1 = mesh.ElemType(elemCode=C3D8, elemLibrary=STANDARD, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT)
+elemType2 = mesh.ElemType(elemCode=C3D6, elemLibrary=STANDARD)
+elemType3 = mesh.ElemType(elemCode=C3D4, elemLibrary=STANDARD)
+p = mdb.models['CHD2_von_Mises_solver'].parts['CHD2']
+c = p.cells
+cells = c.getSequenceFromMask(mask=('[#fff ]', ), )
+pickedRegions =(cells, )
+p.setElementType(regions=pickedRegions, elemTypes=(elemType1, elemType2, 
+    elemType3))
+p = mdb.models['CHD2_von_Mises_solver'].parts['CHD2']
+p.deleteMesh()
+p = mdb.models['CHD2_von_Mises_solver'].parts['CHD2']
+p.generateMesh()
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['CHD2_von_Mises_solver'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+a = mdb.models['CHD2_von_Mises_solver'].rootAssembly
+a.regenerate()
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['CHD2_von_Mises_solver'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p = mdb.models['CHD2_von_Mises_solver'].parts['CHD2']
+p.generateMesh()
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['CHD2_von_Mises_solver'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['CHD2_von_Mises_solver'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "CHD2_von_Mises_solver.inp".
+a = mdb.models['CHD2_deformation'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a.regenerate()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['CHD2_deformation'].parts['CHD2']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p = mdb.models['CHD2_deformation'].parts['CHD2']
+p.deleteMesh()
+p = mdb.models['CHD2_deformation'].parts['CHD2']
+p.generateMesh()
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".
+a = mdb.models['CHD2_deformation'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['CHD2_deformation'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "CHD2_deformation.inp".
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic deformation UEL\all_geometries.cae".

@@ -1,0 +1,60 @@
+<Description>
+   ABAQUS/standard rank 0 encountered a SEGMENTATION FAULT
+
+</Description>
+
+<PriorErrors>
+1) An error occurred during a write access to <rank=0,arg_name=C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (final UEL)\CP1000_CHD2_without_HE>CHD2_without_HE_UEL.stt file. Check the disk space on your system.
+</PriorErrors>
+
+<Context>
+   ELEMENT LOOP
+</Context>
+
+<Phase>
+   NodalBulkPkgsDelete
+</Phase>
+
+<Callstack>
+  1)  ABQSMAAspSupport.dll        bcu_ShutdownRequests::Process           
+  2)  ABQSMAAspSupport.dll        bcu_exit                                
+  3)  ABQSMAAspSupport.dll        xitjob                                  
+  4)  ABQSMAAspSupport.dll        abqerr1                                 
+  5)  ABQSMAAspSupport.dll        abqerrC                                 
+  6)  ABQSMAIomCore.dll           admC_Folder_Binary::WriteToDisk         
+  7)  ABQSMAIomCore.dll           admC_Folder_Binary::WriteItem           
+  8)  ABQSMAIomCore.dll           admC_MemoryItem::Flush                  
+  9)  ABQSMAIomCore.dll           admC_BufferManager_New::Flush           
+ 10)  ABQSMAIomCore.dll           admC_Package::~admC_Package             
+</Callstack>
+
+<Memory>
+   <Current>            1 GB </Current>
+   <Resident>           1 GB </Resident>
+   <Physical>          15 GB </Physical>
+   <Limit>             12 GB </Limit>
+   <Accessible>        15 GB </Accessible>
+   <Available>          5 GB </Available>
+   <Allocator>            DL </Allocator>
+</Memory>
+
+<Swap>
+       <Size>          32 GB </Size>
+       <Used>          24 GB </Used>
+       <Free>           8 GB </Free>
+</Swap>
+
+<Directories>
+  <current> C:\Users\nguyenb5\AppData\Local\Temp\nguyenb5_CHD2_without_HE_UEL_15412 </current> <free>      0 GB </free>   <used>    475 GB </used> 
+    <indir> C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (final UEL)\CP1000_CHD2_without_HE </indir>   <free>      0 GB </free>  
+   <outdir> C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (final UEL)\CP1000_CHD2_without_HE </outdir>  <free>      0 GB </free> 
+   <tmpdir> C:\Users\nguyenb5\AppData\Local\Temp\nguyenb5_CHD2_without_HE_UEL_15412 </tmpdir>  <free>      0 GB </free> 
+     <temp> C:\Users\nguyenb5\AppData\Local\Temp </temp>    <free>      0 GB </free>
+</Directories>
+
+<Installation>
+     <Version> 2023.HF4 6.23-5 </Version>
+       <Build> 2023_07_21-20.45.57 RELr425 183702 </Build>
+  <Executable> C:\Users\nguyenb5\AppData\Local\Temp\nguyenb5_CHD2_without_HE_UEL_15412\standard.exe </Executable>
+</Installation>
+

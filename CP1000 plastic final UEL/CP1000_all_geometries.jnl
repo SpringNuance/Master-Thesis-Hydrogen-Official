@@ -1,0 +1,3829 @@
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.openAuxMdb(pathName=
+    'C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (final UEL)/CHD2_geometry_42957_nodes.cae')
+mdb.copyAuxMdbModel(fromName='Model-Full-Half-Thickness', toName=
+    'Model-Full-Half-Thickness')
+mdb.closeAuxMdb()
+mdb.models.changeKey(fromName='Model-Full-Half-Thickness', toName=
+    'CHD2_half_thickness')
+mdb.models.changeKey(fromName='CHD2_half_thickness', toName=
+    'CHD2_geometry_half')
+# Save by nguyenb5 on 2024_09_08-13.56.33; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#305 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#40316fa #0 #3979e000 ]', ), ), size=0.001)
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].DatumPlaneByOffset(flip=SIDE2, 
+    offset=0.05, plane=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].faces[48])
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].DatumPlaneByOffset(flip=SIDE2, 
+    offset=0.2, plane=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].faces[48])
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#143 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#200 ]', ), ), datumPlane=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].datums[99])
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ), datumPlane=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].datums[100])
+mdb.models['CHD4_geometry_half'].parts['CHD4-m'].DatumPlaneByOffset(flip=SIDE2, 
+    offset=0.05, plane=
+    mdb.models['CHD4_geometry_half'].parts['CHD4-m'].faces[68])
+mdb.models['CHD4_geometry_half'].parts['CHD4-m'].DatumPlaneByOffset(flip=SIDE2, 
+    offset=0.2, plane=
+    mdb.models['CHD4_geometry_half'].parts['CHD4-m'].faces[68])
+mdb.models['CHD4_geometry_half'].parts['CHD4-m'].deleteMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#3400 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['CHD4_geometry_half'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#2000 ]', ), ), datumPlane=
+    mdb.models['CHD4_geometry_half'].parts['CHD4-m'].datums[106])
+mdb.models['CHD4_geometry_half'].parts['CHD4-m'].deleteMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#16 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['CHD4_geometry_half'].parts['CHD4-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), datumPlane=
+    mdb.models['CHD4_geometry_half'].parts['CHD4-m'].datums[107])
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].DatumPlaneByOffset(flip=
+    SIDE2, offset=0.05, plane=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].faces[55])
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].DatumPlaneByOffset(flip=
+    SIDE2, offset=0.2, plane=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].faces[55])
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].deleteMesh(regions=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].cells.getSequenceFromMask(
+    ('[#e00 ]', ), ))
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].cells.getSequenceFromMask(
+    ('[#200 ]', ), ), datumPlane=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].datums[117])
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].deleteMesh(regions=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].cells.getSequenceFromMask(
+    ('[#86 ]', ), ))
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), datumPlane=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5-m'].datums[118])
+# Save by nguyenb5 on 2024_09_08-19.16.17; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].DatumPlaneByOffset(flip=
+    SIDE2, offset=0.05, plane=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].faces[55])
+mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].DatumPlaneByOffset(flip=
+    SIDE2, offset=0.2, plane=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].faces[55])
+mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].deleteMesh(regions=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].cells.getSequenceFromMask(
+    ('[#e00 ]', ), ))
+mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].cells.getSequenceFromMask(
+    ('[#200 ]', ), ), datumPlane=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].datums[107])
+mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].deleteMesh(regions=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].cells.getSequenceFromMask(
+    ('[#86 ]', ), ))
+mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), datumPlane=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6-m'].datums[108])
+# Save by nguyenb5 on 2024_09_08-19.18.59; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR15_geometry_half'].parts['NDBR15-m'].DatumPlaneByOffset(flip=
+    SIDE2, offset=0.05, plane=
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15-m'].faces[55])
+mdb.models['NDBR15_geometry_half'].parts['NDBR15-m'].DatumPlaneByOffset(flip=
+    SIDE2, offset=0.2, plane=
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15-m'].faces[55])
+mdb.models['NDBR15_geometry_half'].parts['NDBR15-m'].deleteMesh(regions=
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15-m'].cells.getSequenceFromMask(
+    ('[#e43 ]', ), ))
+mdb.models['NDBR15_geometry_half'].parts['NDBR15-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15-m'].cells.getSequenceFromMask(
+    ('[#200 ]', ), ), datumPlane=
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15-m'].datums[167])
+mdb.models['NDBR15_geometry_half'].parts['NDBR15-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), datumPlane=
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15-m'].datums[168])
+mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].DatumPlaneByOffset(flip=
+    SIDE2, offset=0.05, plane=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].faces[65])
+mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].DatumPlaneByOffset(flip=
+    SIDE2, offset=0.2, plane=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].faces[65])
+mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].deleteMesh(regions=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].cells.getSequenceFromMask(
+    ('[#3800 ]', ), ))
+mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].cells.getSequenceFromMask(
+    ('[#800 ]', ), ), datumPlane=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].datums[197])
+mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].deleteMesh(regions=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].cells.getSequenceFromMask(
+    ('[#20c ]', ), ))
+mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ), datumPlane=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40-m'].datums[198])
+mdb.models['SH115_geometry_half'].parts['SH115-m'].DatumPlaneByOffset(flip=
+    SIDE2, offset=0.05, plane=
+    mdb.models['SH115_geometry_half'].parts['SH115-m'].faces[46])
+mdb.models['SH115_geometry_half'].parts['SH115-m'].DatumPlaneByOffset(flip=
+    SIDE2, offset=0.2, plane=
+    mdb.models['SH115_geometry_half'].parts['SH115-m'].faces[46])
+mdb.models['SH115_geometry_half'].parts['SH115-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['SH115_geometry_half'].parts['SH115-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ), datumPlane=
+    mdb.models['SH115_geometry_half'].parts['SH115-m'].datums[34])
+mdb.models['SH115_geometry_half'].parts['SH115-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['SH115_geometry_half'].parts['SH115-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ), datumPlane=
+    mdb.models['SH115_geometry_half'].parts['SH115-m'].datums[35])
+# Save by nguyenb5 on 2024_09_08-19.21.03; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#2800a ]', ), ), size=0.001)
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#281 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#80000 #14000 #81040000 ]', ), ), size=0.001)
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#200 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#800 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#400 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#fff ]', ), ), seedConstraintOverride=ON)
+mdb.models['CHD4_geometry_half'].parts['CHD4-m'].generateMesh()
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#f9f ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].seedEdgeBySize(constraint=
+    AS_IS, deviationFactor=0.1, edges=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#edbe9fda #141b7 #81040000 #32f6 ]', ), ), size=0.002)
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#388 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#801 ]', ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['CHD2_geometry_half'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#416 ]', ), ))
+# Save by nguyenb5 on 2024_09_08-19.27.36; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_08-19.29.06; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].parts.changeKey(fromName='CHD2-m', toName=
+    'CHD2')
+mdb.models['CHD2_geometry_half'].materials.changeKey(fromName='CP1000-m', 
+    toName='CP1000')
+mdb.models['CHD2_geometry_half'].sections.changeKey(fromName=
+    'Section-1-CP1000-m', toName='Section-1')
+mdb.models['CHD2_geometry_half'].parts['CHD2'].sectionAssignments[0].setValues(
+    sectionName='Section-1')
+del mdb.models['CHD2_geometry_half'].parts['CHD2'].sets['Set-42']
+# Save by nguyenb5 on 2024_09_08-19.30.01; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].rootAssembly.regenerate()
+del mdb.models['CHD2_geometry_half'].rootAssembly.sets['Set-2']
+mdb.models['CHD2_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-1', 
+    toName='bottom_part')
+mdb.models['CHD2_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-4', 
+    toName='top_surface')
+mdb.models['CHD2_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-3', 
+    toName='top_part')
+mdb.models['CHD2_geometry_half'].rootAssembly.Surface(name='hydrogen_surface', 
+    side1Faces=
+    mdb.models['CHD2_geometry_half'].rootAssembly.instances['CHD2-m-1'].faces.getSequenceFromMask(
+    ('[#1dc24150 #28455b5d ]', ), ))
+del mdb.models['CHD2_geometry_half'].steps['Step-1']
+mdb.models['model'].Amplitude(name='diffusion_amp_insitu-Copy', objectToCopy=
+    mdb.models['model'].amplitudes['diffusion_amp_insitu'])
+del mdb.models['model'].amplitudes['diffusion_amp_insitu-Copy']
+mdb.models['model'].amplitudes.changeKey(fromName='diffusion_amp_insitu', 
+    toName='diffusion_insitu')
+mdb.models['model'].amplitudes.changeKey(fromName='diffusion_amp_precharge', 
+    toName='diffusion_precharge')
+mdb.models['model'].amplitudes.changeKey(fromName='loading_amp_insitu', toName=
+    'loading_nsitu')
+mdb.models['model'].amplitudes.changeKey(fromName='loading_nsitu', toName=
+    'loading_insitu')
+mdb.models['model'].fieldOutputRequests['F-Output-2'].setValues(numIntervals=
+    200)
+mdb.models['model'].boundaryConditions['top_surface_disp'].setValues(amplitude=
+    UNSET)
+del mdb.models['CHD2_geometry_half'].materials['CP1000'].density
+del mdb.models['CHD2_geometry_half'].materials['CP1000'].elastic
+del mdb.models['CHD2_geometry_half'].materials['CP1000'].plastic
+mdb.models['CHD2_geometry_half'].materials['CP1000'].Density(table=((7900.0, ), 
+    ))
+mdb.models['CHD2_geometry_half'].materials['CP1000'].Depvar(n=24)
+mdb.models['CHD2_geometry_half'].materials['CP1000'].UserOutputVariables(n=3)
+mdb.models['CHD2_geometry_half'].materials['CP1000'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['CHD2_geometry_half'].materials['CP1000'].SpecificHeat(table=((1.0, 
+    ), ))
+mdb.models['CHD2_geometry_half'].sections['Section-1'].setValues(material=
+    'CP1000', thickness=None)
+mdb.models['CHD2_geometry_half'].rootAssembly.features.changeKey(fromName=
+    'CHD2-m-1', toName='CHD2')
+mdb.models['CHD2_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['CHD2_geometry_half'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#20280a04 #80822082 ]', ), ), name='zsymm')
+# Save by nguyenb5 on 2024_09_08-21.14.10; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].CoupledTempDisplacementStep(cetol=None, 
+    creepIntegration=None, deltmx=None, initialInc=60.0, maxNumInc=1000000, 
+    name='step1_precharging', nlgeom=ON, previous='Initial', 
+    timeIncrementationMethod=FIXED, timePeriod=7200.0)
+mdb.models['CHD2_geometry_half'].CoupledTempDisplacementStep(deltmx=1000.0, 
+    initialInc=0.716, maxInc=0.716, maxNumInc=1000000, minInc=1e-07, name=
+    'step2_insitu', previous='step1_precharging', timePeriod=716.0)
+mdb.models['CHD2_geometry_half'].fieldOutputRequests['F-Output-1'].setValuesInStep(
+    numIntervals=200, stepName='step2_insitu', variables=('SDV', 'UVARM'))
+mdb.models['CHD2_geometry_half'].fieldOutputRequests.changeKey(fromName=
+    'F-Output-1', toName='F-Output-2')
+mdb.models['CHD2_geometry_half'].FieldOutputRequest(createStepName=
+    'step1_precharging', frequency=LAST_INCREMENT, name='F-Output-1', 
+    variables=('SDV', 'UVARM'))
+del mdb.models['CHD2_geometry_half'].historyOutputRequests['H-Output-1']
+del mdb.models['CHD2_geometry_half'].amplitudes['Amp-1']
+mdb.models['CHD2_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (716.0, 
+    1.0)), name='diffusion_insitu', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['CHD2_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (7200.0, 
+    1.0)), name='diffusion_precharging', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['CHD2_geometry_half'].TabularAmplitude(data=((0.0, 0.0), (716.0, 
+    1.0)), name='loading_insitu', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['CHD2_geometry_half'].boundaryConditions['bottom-part-encastre'].setValues(
+    region=mdb.models['CHD2_geometry_half'].rootAssembly.sets['bottom_part'], 
+    typeName=PINNED)
+mdb.models['CHD2_geometry_half'].boundaryConditions['zsymm'].setValues(region=
+    mdb.models['CHD2_geometry_half'].rootAssembly.sets['zsymm'])
+mdb.models['CHD2_geometry_half'].boundaryConditions.changeKey(fromName=
+    'bottom-part-encastre', toName='bottom_part_encastre')
+del mdb.models['CHD2_geometry_half'].boundaryConditions['zsymm']
+mdb.models['CHD2_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='zsymm', region=
+    mdb.models['CHD2_geometry_half'].rootAssembly.sets['zsymm'], u1=UNSET, u2=
+    UNSET, u3=SET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+# Save by nguyenb5 on 2024_09_08-21.23.08; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].DisplacementBC(amplitude='loading_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_part_constraint', region=
+    mdb.models['CHD2_geometry_half'].rootAssembly.sets['top_surface'], u1=UNSET
+    , u2=0.00179, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['CHD2_geometry_half'].boundaryConditions.changeKey(fromName=
+    'top_part_constraint', toName='top_surface_disp')
+mdb.models['CHD2_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_part_constraint', region=
+    mdb.models['CHD2_geometry_half'].rootAssembly.sets['top_part'], u1=0.0, u2=
+    UNSET, u3=0.0, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+del mdb.models['CHD2_geometry_half'].rootAssembly.surfaces['hydrogen_surface']
+mdb.models['CHD2_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['CHD2_geometry_half'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc24150 #28455b5d ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_08-21.32.53; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].TemperatureBC(amplitude=
+    'diffusion_precharging', createStepName='step1_precharging', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=8.725, name=
+    'CL_mol_precharging', region=
+    mdb.models['CHD2_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+mdb.models['CHD2_geometry_half'].TemperatureBC(amplitude='diffusion_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, magnitude=8.725, name='CL_mol_insitu_charging', region=
+    mdb.models['CHD2_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+del mdb.models['CHD2_geometry_half'].boundaryConditions['CL_mol_precharging']
+mdb.models['CHD2_geometry_half'].TemperatureBC(amplitude=
+    'diffusion_precharging', createStepName='step1_precharging', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=8.725, name=
+    'CL_mol_precharging', region=
+    mdb.models['CHD2_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+# Save by nguyenb5 on 2024_09_08-21.35.36; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_08-21.36.09; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].rootAssembly.Set(name='top_nodes', nodes=
+    mdb.models['CHD2_geometry_half'].rootAssembly.instances['CHD2'].nodes.getSequenceFromMask(
+    mask=('[#0:1343 #fe00000 #0:2 #200 #3fff001 #3c00 ]', ), ))
+# Save by nguyenb5 on 2024_09_08-21.36.40; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_geometry_half'].parts.changeKey(fromName='CHD4-m', toName=
+    'CHD4')
+mdb.models['CHD4_geometry_half'].materials.changeKey(fromName='CP1000-m', 
+    toName='CP1000')
+mdb.models['CHD4_geometry_half'].sections.changeKey(fromName='Section-CP1000-m'
+    , toName='Section-1')
+mdb.models['CHD4_geometry_half'].sections['Section-1'].setValues(material=
+    'CP1000', thickness=None)
+mdb.models['CHD4_geometry_half'].parts['CHD4'].sectionAssignments[1].setValues(
+    sectionName='Section-1')
+del mdb.models['CHD4_geometry_half'].parts['CHD4'].sectionAssignments[0]
+# Save by nguyenb5 on 2024_09_08-21.37.34; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['CHD2_geometry_half'].parts['CHD2'].sectionAssignments[0]
+mdb.models['CHD2_geometry_half'].parts['CHD2'].Set(cells=
+    mdb.models['CHD2_geometry_half'].parts['CHD2'].cells.getSequenceFromMask((
+    '[#fff ]', ), ), name='Set-1')
+mdb.models['CHD2_geometry_half'].parts['CHD2'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['CHD2_geometry_half'].parts['CHD2'].sets['Set-1'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['CHD4_geometry_half'].parts['CHD4'].deleteSets(setNames=('Set-1', 
+    'Set-32'))
+del mdb.models['CHD4_geometry_half'].parts['CHD4'].sectionAssignments[0]
+mdb.models['CHD4_geometry_half'].parts['CHD4'].Set(cells=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#ffff ]', ), ), name='Set-1')
+mdb.models['CHD4_geometry_half'].parts['CHD4'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].sets['Set-1'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+# Save by nguyenb5 on 2024_09_08-21.38.29; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['CHD4_geometry_half'].materials['CP1000'].density
+del mdb.models['CHD4_geometry_half'].materials['CP1000'].elastic
+del mdb.models['CHD4_geometry_half'].materials['CP1000'].plastic
+mdb.models['CHD4_geometry_half'].materials['CP1000'].Density(table=((7900.0, ), 
+    ))
+mdb.models['CHD4_geometry_half'].materials['CP1000'].Depvar(n=24)
+mdb.models['CHD4_geometry_half'].materials['CP1000'].UserOutputVariables(n=3)
+mdb.models['CHD4_geometry_half'].materials['CP1000'].SpecificHeat(table=((1.0, 
+    ), ))
+mdb.models['CHD4_geometry_half'].materials['CP1000'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+# Save by nguyenb5 on 2024_09_08-21.39.13; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_geometry_half'].rootAssembly.regenerate()
+mdb.models['CHD4_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-4', 
+    toName='top_surface')
+mdb.models['CHD4_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-8', 
+    toName='top_part')
+mdb.models['CHD4_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-6', 
+    toName='bottom_part')
+mdb.models['CHD4_geometry_half'].rootAssembly.deleteSets(setNames=('Set-11', 
+    'Set-1', 'Set-2', 'Set-3', 'Set-5', 'Set-7', 'Set-9', 'Set-10'))
+mdb.models['CHD4_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['CHD4_geometry_half'].rootAssembly.instances['CHD4-m-1'].faces.getSequenceFromMask(
+    ('[#38ca0154 #b573cc9f #28455 ]', ), ), name='hydrogen_surface')
+mdb.models['CHD4_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['CHD4_geometry_half'].rootAssembly.instances['CHD4-m-1'].faces.getSequenceFromMask(
+    ('[#5014208 #8803060 #80822 ]', ), ), name='zsymm')
+# Save by nguyenb5 on 2024_09_08-21.42.40; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['CHD4_geometry_half'].rootAssembly.instances['CHD4-m-1'].faces.getSequenceFromMask(
+    ('[#5014208 #8803060 #80822 ]', ), ), name='zsymm')
+del mdb.models['CHD4_geometry_half'].steps['Step-1']
+mdb.models['CHD4_geometry_half'].CoupledThermalElectricStep(amplitude=RAMP, 
+    name='step1_precharging', previous='Initial', response=STEADY_STATE, 
+    timeIncrementationMethod=FIXED)
+del mdb.models['CHD4_geometry_half'].steps['step1_precharging']
+mdb.models['CHD4_geometry_half'].CoupledTempDisplacementStep(cetol=None, 
+    creepIntegration=None, deltmx=None, initialInc=60.0, maxNumInc=1000000, 
+    name='step1_precharging', nlgeom=ON, previous='Initial', 
+    timeIncrementationMethod=FIXED, timePeriod=7200.0)
+mdb.models['CHD4_geometry_half'].CoupledTempDisplacementStep(deltmx=1000.0, 
+    initialInc=6.04, maxInc=6.04, maxNumInc=1000000, minInc=1e-07, name=
+    'step2_insitu', previous='step1_precharging', timePeriod=604.0)
+# Save by nguyenb5 on 2024_09_08-21.47.38; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['CHD4_geometry_half'].historyOutputRequests['H-Output-1']
+del mdb.models['CHD4_geometry_half'].fieldOutputRequests['F-Output-1']
+mdb.models['CHD4_geometry_half'].FieldOutputRequest(createStepName=
+    'step1_precharging', frequency=LAST_INCREMENT, name='F-Output-1', 
+    variables=('SDV', 'UVARM'))
+mdb.models['CHD4_geometry_half'].FieldOutputRequest(createStepName=
+    'step2_insitu', name='F-Output-2', numIntervals=200, variables=('SDV', 
+    'UVARM'))
+mdb.models['CHD4_geometry_half'].amplitudes.changeKey(fromName='Amp-1', toName=
+    'loading_insitu')
+mdb.models['CHD4_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (604.0, 
+    1.0)), name='diffusion_insitu', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['CHD4_geometry_half'].amplitudes['loading_insitu'].setValues(data=((
+    0.0, 0.0), (604.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['CHD4_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (7200.0, 
+    1.0)), name='diffusion_precharging', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['CHD4_geometry_half'].boundaryConditions.changeKey(fromName=
+    'bottom-part-encastre', toName='bottom_part_encastre')
+mdb.models['CHD4_geometry_half'].boundaryConditions['bottom_part_encastre'].setValues(
+    region=mdb.models['CHD4_geometry_half'].rootAssembly.sets['bottom_part'], 
+    typeName=PINNED)
+del mdb.models['CHD4_geometry_half'].boundaryConditions['zsymm']
+mdb.models['CHD4_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='zsymm', region=
+    mdb.models['CHD4_geometry_half'].rootAssembly.sets['zsymm'], u1=UNSET, u2=
+    SET, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['CHD4_geometry_half'].boundaryConditions['zsymm'].setValues(u2=UNSET
+    , u3=SET)
+mdb.models['CHD4_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_part_constraint', region=
+    mdb.models['CHD4_geometry_half'].rootAssembly.sets['top_part'], u1=0.0, u2=
+    UNSET, u3=0.0, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['CHD4_geometry_half'].DisplacementBC(amplitude='loading_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_surface_disp', region=
+    mdb.models['CHD4_geometry_half'].rootAssembly.sets['top_surface'], u1=UNSET
+    , u2=0.00151, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['CHD4_geometry_half'].TemperatureBC(amplitude='diffusion_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, magnitude=8.725, name='CL_mol_precharging', region=
+    mdb.models['CHD4_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+mdb.models['CHD4_geometry_half'].boundaryConditions.changeKey(fromName=
+    'CL_mol_precharging', toName='CL_mol_insitu_charging')
+mdb.models['CHD4_geometry_half'].TemperatureBC(amplitude=
+    'diffusion_precharging', createStepName='step1_precharging', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=8.725, name=
+    'CL_mol_precharging', region=
+    mdb.models['CHD4_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+del mdb.models['CHD4_geometry_half'].boundaryConditions['CL_mol_precharging']
+mdb.models['CHD4_geometry_half'].TemperatureBC(amplitude='diffusion_insitu', 
+    createStepName='step1_precharging', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, magnitude=8.725, name='CL_mol_precharging', region=
+    mdb.models['CHD4_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+# Save by nguyenb5 on 2024_09_08-21.55.33; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_geometry_half'].rootAssembly.Set(name='top_nodes', nodes=
+    mdb.models['CHD4_geometry_half'].rootAssembly.instances['CHD4-m-1'].nodes.getSequenceFromMask(
+    mask=('[#f000000 #0:14 #80000000 #400000 #3fffffc #0:121 #f0000000', 
+    ' #ff ]', ), ))
+# Save by nguyenb5 on 2024_09_08-21.56.38; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_geometry_half'].parts['CHD4'].deleteMesh()
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#4002 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].deleteMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#2 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].edges.getSequenceFromMask((
+    '[#20000 ]', ), ), size=0.002)
+mdb.models['CHD4_geometry_half'].parts['CHD4'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].edges.getSequenceFromMask((
+    '[#20028800 ]', ), ), size=0.001)
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#8 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].deleteMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#8 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].edges.getSequenceFromMask((
+    '[#20000000 ]', ), ), size=0.002)
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#8 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].deleteMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#8 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].edges.getSequenceFromMask((
+    '[#800 ]', ), ), size=0.002)
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#8 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].edges.getSequenceFromMask((
+    '[#a ]', ), ), size=0.002)
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#1 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#4 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].deleteMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#4000 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].edges.getSequenceFromMask((
+    '[#8028000 #0:3 #4 ]', ), ), size=0.002)
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#4000 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#2 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#8000 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#4 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#4 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#d ]', ), ), seedConstraintOverride=ON)
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#1000 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#20 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#10 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#2000 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#400 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#200 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#80 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#800 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#100 ]', ), ))
+mdb.models['CHD4_geometry_half'].parts['CHD4'].generateMesh(regions=
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#40 ]', ), ))
+# Save by nguyenb5 on 2024_09_08-22.00.14; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_08-22.02.47; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_08-22.04.53; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_geometry_half'].parts['CHD4'].setElementType(elemTypes=(
+    ElemType(elemCode=C3D8, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['CHD4_geometry_half'].parts['CHD4'].cells.getSequenceFromMask((
+    '[#ffff ]', ), ), ))
+mdb.models['CHD2_geometry_half'].parts['CHD2'].setElementType(elemTypes=(
+    ElemType(elemCode=C3D8, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['CHD2_geometry_half'].parts['CHD2'].cells.getSequenceFromMask((
+    '[#fff ]', ), ), ))
+# Save by nguyenb5 on 2024_09_08-22.06.09; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_08-22.06.40; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR2p5_geometry_half'].parts.changeKey(fromName='NDBR2p5-m', 
+    toName='NDBR2p5')
+mdb.models['NDBR2p5_geometry_half'].materials.changeKey(fromName='CP1000-m', 
+    toName='CP1000')
+mdb.models['NDBR2p5_geometry_half'].sections.changeKey(fromName=
+    'Section-CP1000-m', toName='Section-1')
+mdb.models['NDBR2p5_geometry_half'].sections['Section-1'].setValues(material=
+    'CP1000', thickness=None)
+del mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].sets['Set-35']
+del mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].sectionAssignments[0]
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].Set(cells=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].cells.getSequenceFromMask(
+    ('[#3fff ]', ), ), name='Set-1')
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].SectionAssignment(offset=
+    0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].sets['Set-1'], 
+    sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+# Save by nguyenb5 on 2024_09_08-22.08.11; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR2p5_geometry_half'].rootAssembly.regenerate()
+mdb.models['NDBR2p5_geometry_half'].rootAssembly.features.changeKey(fromName=
+    'NDBR2p5-m-1', toName='NDBR2p5')
+mdb.models['CHD4_geometry_half'].rootAssembly.regenerate()
+mdb.models['CHD4_geometry_half'].rootAssembly.features.changeKey(fromName=
+    'CHD4-m-1', toName='CHD4')
+mdb.models['CHD4_geometry_half'].rootAssembly.Set(name='top_nodes', nodes=
+    mdb.models['CHD4_geometry_half'].rootAssembly.instances['CHD4'].nodes.getSequenceFromMask(
+    mask=('[#c0040400 #7f01f #b0008 #0:5 #3f800 ]', ), ))
+mdb.models['CHD2_geometry_half'].rootAssembly.regenerate()
+# Save by nguyenb5 on 2024_09_08-22.09.35; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR2p5_geometry_half'].rootAssembly.sets.changeKey(fromName=
+    'Set-1', toName='bottom_part')
+mdb.models['NDBR2p5_geometry_half'].rootAssembly.sets.changeKey(fromName=
+    'Set-3', toName='top_part')
+mdb.models['NDBR2p5_geometry_half'].rootAssembly.sets.changeKey(fromName=
+    'Set-4', toName='top_surface')
+del mdb.models['NDBR2p5_geometry_half'].rootAssembly.sets['Set-2']
+mdb.models['NDBR2p5_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['NDBR2p5_geometry_half'].rootAssembly.instances['NDBR2p5'].faces.getSequenceFromMask(
+    ('[#89014048 #24110480 #400 ]', ), ), name='zsymm')
+mdb.models['NDBR2p5_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['NDBR2p5_geometry_half'].rootAssembly.instances['NDBR2p5'].faces.getSequenceFromMask(
+    ('[#34ca0114 #c36ada77 #1d8 ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_08-22.13.06; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR2p5_geometry_half'].steps['Step-1']
+mdb.models['NDBR2p5_geometry_half'].CoupledTempDisplacementStep(cetol=None, 
+    creepIntegration=None, deltmx=None, initialInc=60.0, maxNumInc=1000000, 
+    name='step1_precharging', nlgeom=ON, previous='Initial', 
+    timeIncrementationMethod=FIXED, timePeriod=7200.0)
+mdb.models['NDBR2p5_geometry_half'].CoupledTempDisplacementStep(deltmx=1000.0, 
+    initialInc=0.512, maxInc=0.512, maxNumInc=1000000, minInc=1e-07, name=
+    'step2_insitu', previous='step1_precharging', timePeriod=512.0)
+# Save by nguyenb5 on 2024_09_08-22.14.31; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR2p5_geometry_half'].historyOutputRequests['H-Output-1']
+mdb.models['NDBR2p5_geometry_half'].fieldOutputRequests.changeKey(fromName=
+    'F-Output-1', toName='F-Output-2')
+mdb.models['NDBR2p5_geometry_half'].fieldOutputRequests['F-Output-2'].setValuesInStep(
+    numIntervals=200, stepName='step2_insitu', variables=('SDV', 'UVARM'))
+mdb.models['NDBR2p5_geometry_half'].boundaryConditions.changeKey(fromName=
+    'bottom-part-encastre', toName='bottom_part_encastre')
+mdb.models['CHD2_geometry_half'].boundaryConditions['CL_mol_precharging'].deactivate(
+    'step2_insitu')
+# Save by nguyenb5 on 2024_09_08-22.20.10; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_geometry_half'].boundaryConditions['CL_mol_precharging'].deactivate(
+    'step2_insitu')
+# Save by nguyenb5 on 2024_09_08-22.21.31; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR2p5_geometry_half'].FieldOutputRequest(createStepName=
+    'step1_precharging', frequency=LAST_INCREMENT, name='F-Output-1', 
+    variables=('SDV', 'UVARM'))
+mdb.models['NDBR2p5_geometry_half'].fieldOutputRequests['F-Output-2'].setValues(
+    numIntervals=200, variables=('SDV', 'UVARM'))
+del mdb.models['NDBR2p5_geometry_half'].amplitudes['Amp-1']
+mdb.models['NDBR2p5_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (512.0, 
+    1.0)), name='diffusion_insitu', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR2p5_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (7200.0, 
+    1.0)), name='diffusion_precharging', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR2p5_geometry_half'].TabularAmplitude(data=((0.0, 0.0), (512.0, 
+    1.0)), name='loading_insitu', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR2p5_geometry_half'].boundaryConditions['bottom_part_encastre'].setValues(
+    region=mdb.models['NDBR2p5_geometry_half'].rootAssembly.sets['bottom_part']
+    , typeName=PINNED)
+del mdb.models['NDBR2p5_geometry_half'].boundaryConditions['zsymm']
+mdb.models['NDBR2p5_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='zsymm', region=
+    mdb.models['NDBR2p5_geometry_half'].rootAssembly.sets['zsymm'], u1=UNSET, 
+    u2=UNSET, u3=SET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['NDBR2p5_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_part_constraint', region=
+    mdb.models['NDBR2p5_geometry_half'].rootAssembly.sets['top_part'], u1=0.0, 
+    u2=UNSET, u3=0.0, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['NDBR2p5_geometry_half'].DisplacementBC(amplitude='loading_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_surface_disp', region=
+    mdb.models['NDBR2p5_geometry_half'].rootAssembly.sets['top_surface'], u1=
+    UNSET, u2=0.00128, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['NDBR2p5_geometry_half'].TemperatureBC(amplitude=
+    'diffusion_precharging', createStepName='step1_precharging', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=8.725, name=
+    'CL_mol_precharging', region=
+    mdb.models['NDBR2p5_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+mdb.models['NDBR2p5_geometry_half'].TemperatureBC(amplitude='diffusion_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, magnitude=8.725, name='CL_mol_insitu_charging', region=
+    mdb.models['NDBR2p5_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+del mdb.models['NDBR2p5_geometry_half'].boundaryConditions['CL_mol_precharging']
+mdb.models['NDBR2p5_geometry_half'].TemperatureBC(amplitude=
+    'diffusion_precharging', createStepName='step1_precharging', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=8.725, name=
+    'CL_mol_precharging', region=
+    mdb.models['NDBR2p5_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+mdb.models['CHD4_geometry_half'].steps['step2_insitu'].setValues(initialInc=
+    0.604, maxInc=0.604)
+# Save by nguyenb5 on 2024_09_08-22.35.03; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR2p5_geometry_half'].boundaryConditions['CL_mol_precharging'].deactivate(
+    'step2_insitu')
+# Save by nguyenb5 on 2024_09_08-22.35.40; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR6_geometry_half'].parts.changeKey(fromName='NDBR6-m', toName=
+    'NDBR6')
+mdb.models['NDBR6_geometry_half'].materials.changeKey(fromName='CP1000-m', 
+    toName='CP1000')
+mdb.models['NDBR6_geometry_half'].sections.changeKey(fromName=
+    'Section-CP1000-m', toName='Section-1')
+mdb.models['NDBR6_geometry_half'].rootAssembly.regenerate()
+mdb.models['NDBR6_geometry_half'].rootAssembly.features.changeKey(fromName=
+    'NDBR6-m-1', toName='NDBR6')
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].edges.getSequenceFromMask(
+    ('[#2800a ]', ), ), size=0.002)
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].generateMesh(regions=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].cells.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].generateMesh(regions=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].generateMesh(regions=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].generateMesh(regions=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].cells.getSequenceFromMask(
+    ('[#2000 ]', ), ))
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].generateMesh(regions=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].cells.getSequenceFromMask(
+    ('[#800 ]', ), ))
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].generateMesh(regions=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].generateMesh(regions=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].cells.getSequenceFromMask(
+    ('[#1000 ]', ), ))
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].generateMesh(regions=
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].setElementType(elemTypes=(
+    ElemType(elemCode=C3D8, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['NDBR2p5_geometry_half'].parts['NDBR2p5'].cells.getSequenceFromMask(
+    ('[#3fff ]', ), ), ))
+mdb.models['NDBR2p5_geometry_half'].rootAssembly.regenerate()
+mdb.models['NDBR2p5_geometry_half'].rootAssembly.Set(name='top_nodes', nodes=
+    mdb.models['NDBR2p5_geometry_half'].rootAssembly.instances['NDBR2p5'].nodes.getSequenceFromMask(
+    mask=('[#0:1254 #c0080000 #901 #4001010 #50000 #1c0 #81100380', 
+    ' #0 #2a0400 #4003000 ]', ), ))
+# Save by nguyenb5 on 2024_09_08-22.38.16; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR6_geometry_half'].parts['NDBR6'].sets['Set-36']
+del mdb.models['NDBR6_geometry_half'].parts['NDBR6'].sectionAssignments[0]
+mdb.models['NDBR6_geometry_half'].sections['Section-1'].setValues(material=
+    'CP1000', thickness=None)
+mdb.models['NDBR6_geometry_half'].parts['NDBR6'].Set(cells=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6'].cells.getSequenceFromMask(
+    ('[#3fff ]', ), ), name='Set-1')
+mdb.models['NDBR6_geometry_half'].parts['NDBR6'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6'].sets['Set-1'], 
+    sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['NDBR6_geometry_half'].rootAssembly.regenerate()
+mdb.models['NDBR6_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-1', 
+    toName='bottom_part')
+mdb.models['NDBR6_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-3', 
+    toName='top_part')
+mdb.models['NDBR6_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-4', 
+    toName='top_surface')
+del mdb.models['NDBR6_geometry_half'].rootAssembly.sets['Set-2']
+mdb.models['NDBR6_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['NDBR6_geometry_half'].rootAssembly.instances['NDBR6'].faces.getSequenceFromMask(
+    ('[#89014048 #24110480 #400 ]', ), ), name='zsymm')
+mdb.models['NDBR6_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['NDBR6_geometry_half'].rootAssembly.instances['NDBR6'].faces.getSequenceFromMask(
+    ('[#34ca0114 #c36ada77 #1d8 ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_08-22.41.40; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR6_geometry_half'].steps['Step-1']
+mdb.models['NDBR6_geometry_half'].CoupledTempDisplacementStep(cetol=None, 
+    creepIntegration=None, deltmx=None, initialInc=60.0, maxNumInc=1000000, 
+    name='step1_precharging', nlgeom=ON, previous='Initial', 
+    timeIncrementationMethod=FIXED, timePeriod=7200.0)
+mdb.models['NDBR6_geometry_half'].CoupledTempDisplacementStep(deltmx=1000.0, 
+    initialInc=0.555, maxInc=0.555, maxNumInc=1000000, minInc=1e-07, name=
+    'step2_insitu', previous='step1_precharging', timePeriod=555.0)
+del mdb.models['NDBR6_geometry_half'].fieldOutputRequests['F-Output-1']
+del mdb.models['NDBR6_geometry_half'].historyOutputRequests['H-Output-1']
+# Save by nguyenb5 on 2024_09_08-22.44.02; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR6_geometry_half'].FieldOutputRequest(createStepName=
+    'step1_precharging', frequency=LAST_INCREMENT, name='F-Output-1', 
+    variables=('SDV', 'UVARM'))
+mdb.models['NDBR6_geometry_half'].FieldOutputRequest(createStepName=
+    'step2_insitu', name='F-Output-2', numIntervals=200, variables=('SDV', 
+    'UVARM'))
+del mdb.models['NDBR6_geometry_half'].amplitudes['Amp-1']
+mdb.models['NDBR6_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (555.0, 
+    1.0)), name='diffusion_insitu', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR6_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (7200.0, 
+    1.0)), name='diffusion_precharging', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR6_geometry_half'].TabularAmplitude(data=((0.0, 0.0), (555.0, 
+    1.0)), name='loading_insitu', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+# Save by nguyenb5 on 2024_09_08-22.45.25; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR6_geometry_half'].boundaryConditions.changeKey(fromName=
+    'bottom-part-encastre', toName='bottom_part_encastre')
+mdb.models['NDBR6_geometry_half'].boundaryConditions['bottom_part_encastre'].setValues(
+    region=mdb.models['NDBR6_geometry_half'].rootAssembly.sets['bottom_part'], 
+    typeName=PINNED)
+del mdb.models['NDBR6_geometry_half'].boundaryConditions['zsymm']
+mdb.models['NDBR6_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='zsymm', region=
+    mdb.models['NDBR6_geometry_half'].rootAssembly.sets['zsymm'], u1=UNSET, u2=
+    UNSET, u3=SET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['NDBR6_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_part_constraint', region=
+    mdb.models['NDBR6_geometry_half'].rootAssembly.sets['top_part'], u1=0.0, 
+    u2=UNSET, u3=0.0, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['NDBR6_geometry_half'].DisplacementBC(amplitude='loading_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_surface_disp', region=
+    mdb.models['NDBR6_geometry_half'].rootAssembly.sets['top_surface'], u1=
+    UNSET, u2=0.00139, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['NDBR6_geometry_half'].TemperatureBC(amplitude='diffusion_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, magnitude=8.725, name='CL_mol_insitu_charging', region=
+    mdb.models['NDBR6_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+mdb.models['NDBR6_geometry_half'].TemperatureBC(amplitude=UNSET, 
+    createStepName='step1_precharging', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, magnitude=8.725, name='CL_mol_precharging', region=
+    mdb.models['NDBR6_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+mdb.models['NDBR6_geometry_half'].boundaryConditions['CL_mol_precharging'].deactivate(
+    'step2_insitu')
+mdb.models['NDBR6_geometry_half'].parts['NDBR6'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6'].edges.getSequenceFromMask(
+    ('[#2800a ]', ), ), size=0.002)
+mdb.models['NDBR6_geometry_half'].parts['NDBR6'].generateMesh(regions=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6'].cells.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['NDBR6_geometry_half'].parts['NDBR6'].generateMesh(regions=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDBR6_geometry_half'].parts['NDBR6'].generateMesh(regions=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDBR6_geometry_half'].parts['NDBR6'].generateMesh(regions=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDBR6_geometry_half'].parts['NDBR6'].generateMesh(regions=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6'].cells.getSequenceFromMask(
+    ('[#2000 ]', ), ))
+mdb.models['NDBR6_geometry_half'].parts['NDBR6'].generateMesh(regions=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6'].cells.getSequenceFromMask(
+    ('[#800 ]', ), ))
+mdb.models['NDBR6_geometry_half'].parts['NDBR6'].generateMesh(regions=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDBR6_geometry_half'].parts['NDBR6'].generateMesh(regions=
+    mdb.models['NDBR6_geometry_half'].parts['NDBR6'].cells.getSequenceFromMask(
+    ('[#1000 ]', ), ))
+# Save by nguyenb5 on 2024_09_08-22.48.25; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR6_geometry_half'].rootAssembly.regenerate()
+mdb.models['NDBR6_geometry_half'].rootAssembly.Set(name='top_nodes', nodes=
+    mdb.models['NDBR6_geometry_half'].rootAssembly.instances['NDBR6'].nodes.getSequenceFromMask(
+    mask=('[#0:1265 #103f800 #108100 #1201001 #28041404 #800 #210808', 
+    ' #1000 ]', ), ))
+# Save by nguyenb5 on 2024_09_08-22.48.45; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR15_geometry_half'].parts.changeKey(fromName='NDBR15-m', toName=
+    'NDBR15')
+mdb.models['NDBR15_geometry_half'].materials.changeKey(fromName='CP1000-m', 
+    toName='CP1000')
+mdb.models['NDBR15_geometry_half'].sections.changeKey(fromName=
+    'Section-CP1000-m', toName='Section-1')
+mdb.models['NDBR15_geometry_half'].rootAssembly.regenerate()
+mdb.models['NDBR15_geometry_half'].rootAssembly.features.changeKey(fromName=
+    'NDBR15-m-1', toName='NDBR15')
+mdb.models['NDBR15_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-1'
+    , toName='bottom_part')
+mdb.models['NDBR15_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-4'
+    , toName='top_surface')
+mdb.models['NDBR15_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-3'
+    , toName='top_part')
+del mdb.models['NDBR15_geometry_half'].rootAssembly.sets['Set-2']
+mdb.models['NDBR15_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['NDBR15_geometry_half'].rootAssembly.instances['NDBR15'].faces.getSequenceFromMask(
+    ('[#89014048 #24110480 #400 ]', ), ), name='zsymm')
+mdb.models['NDBR15_geometry_half'].parts['NDBR15'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15'].edges.getSequenceFromMask(
+    ('[#2800a ]', ), ), size=0.002)
+mdb.models['NDBR15_geometry_half'].parts['NDBR15'].generateMesh(regions=
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15'].cells.getSequenceFromMask(
+    ('[#2901 ]', ), ))
+mdb.models['NDBR15_geometry_half'].parts['NDBR15'].generateMesh(regions=
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDBR15_geometry_half'].parts['NDBR15'].generateMesh(regions=
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDBR15_geometry_half'].parts['NDBR15'].generateMesh(regions=
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15'].cells.getSequenceFromMask(
+    ('[#1000 ]', ), ))
+mdb.models['NDBR15_geometry_half'].parts['NDBR15'].generateMesh(regions=
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+# Save by nguyenb5 on 2024_09_09-13.17.00; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR15_geometry_half'].parts['NDBR15'].setElementType(elemTypes=(
+    ElemType(elemCode=C3D8, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['NDBR15_geometry_half'].parts['NDBR15'].cells.getSequenceFromMask(
+    ('[#3fff ]', ), ), ))
+mdb.models['NDBR15_geometry_half'].rootAssembly.regenerate()
+mdb.models['NDBR15_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['NDBR15_geometry_half'].rootAssembly.instances['NDBR15'].faces.getSequenceFromMask(
+    ('[#34ca0114 #c36ada77 #1d8 ]', ), ), name='hydrogen_surface')
+del mdb.models['NDBR15_geometry_half'].steps['Step-1']
+del mdb.models['NDBR15_geometry_half'].amplitudes['Amp-1']
+mdb.models['NDBR15_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (672.0, 
+    1.0)), name='diffusion_insitu', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR15_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (7200.0, 
+    1.0)), name='diffusion_precharging', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR15_geometry_half'].TabularAmplitude(data=((0.0, 0.0), (672.0, 
+    1.0)), name='loading_insitu', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+del mdb.models['NDBR15_geometry_half'].boundaryConditions['zsymm']
+mdb.models['NDBR15_geometry_half'].boundaryConditions.changeKey(fromName=
+    'bottom-part-encastre', toName='bottom_part_encastre')
+mdb.models['NDBR15_geometry_half'].StaticStep(name='step1_precharging', nlgeom=
+    ON, previous='Initial')
+del mdb.models['NDBR15_geometry_half'].steps['step1_precharging']
+mdb.models['NDBR15_geometry_half'].CoupledTempDisplacementStep(cetol=None, 
+    creepIntegration=None, deltmx=None, initialInc=60.0, maxNumInc=1000000, 
+    name='step1_precharging', nlgeom=ON, previous='Initial', 
+    timeIncrementationMethod=FIXED, timePeriod=7200.0)
+mdb.models['NDBR15_geometry_half'].CoupledTempDisplacementStep(cetol=None, 
+    creepIntegration=None, deltmx=1000.0, initialInc=0.672, maxInc=0.672, 
+    maxNumInc=1000000, minInc=1e-07, name='step2_insitu', previous=
+    'step1_precharging', timePeriod=672.0)
+# Save by nguyenb5 on 2024_09_09-13.39.18; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR15_geometry_half'].fieldOutputRequests['F-Output-1']
+del mdb.models['NDBR15_geometry_half'].historyOutputRequests['H-Output-1']
+mdb.models['NDBR15_geometry_half'].FieldOutputRequest(createStepName=
+    'step2_insitu', name='F-Output-2', numIntervals=200, variables=('SDV', 
+    'UVARM'))
+mdb.models['NDBR15_geometry_half'].FieldOutputRequest(createStepName=
+    'step1_precharging', frequency=LAST_INCREMENT, name='F-Output-1', 
+    variables=('SDV', 'UVARM'))
+mdb.models['NDBR15_geometry_half'].boundaryConditions['bottom_part_encastre'].setValues(
+    region=mdb.models['NDBR15_geometry_half'].rootAssembly.sets['bottom_part'], 
+    typeName=PINNED)
+mdb.models['NDBR15_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='zsymm', region=
+    mdb.models['NDBR15_geometry_half'].rootAssembly.sets['zsymm'], u1=UNSET, 
+    u2=UNSET, u3=SET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['NDBR15_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_part_constraint', region=
+    mdb.models['NDBR15_geometry_half'].rootAssembly.sets['top_part'], u1=0.0, 
+    u2=UNSET, u3=0.0, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['NDBR15_geometry_half'].DisplacementBC(amplitude='loading_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_surface_disp', region=
+    mdb.models['NDBR15_geometry_half'].rootAssembly.sets['top_surface'], u1=
+    UNSET, u2=0.00168, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['NDBR15_geometry_half'].TemperatureBC(amplitude='diffusion_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, magnitude=8.725, name='CL_mol_insitu_charging', region=
+    mdb.models['NDBR15_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+mdb.models['NDBR15_geometry_half'].TemperatureBC(amplitude=
+    'diffusion_precharging', createStepName='step1_precharging', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=8.725, name=
+    'CL_mol_precharging', region=
+    mdb.models['NDBR15_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+mdb.models['NDBR15_geometry_half'].rootAssembly.Set(name='top_nodes', nodes=
+    mdb.models['NDBR15_geometry_half'].rootAssembly.instances['NDBR15'].nodes.getSequenceFromMask(
+    mask=('[#0:1250 #fe #0:17 #80000 #ffc00400 #8102040f ]', ), ))
+# Save by nguyenb5 on 2024_09_09-13.53.34; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR40_geometry_half'].rootAssembly.regenerate()
+del mdb.models['NDBR2p5_geometry_half'].materials['CP1000'].density
+del mdb.models['NDBR2p5_geometry_half'].materials['CP1000'].elastic
+del mdb.models['NDBR2p5_geometry_half'].materials['CP1000'].plastic
+mdb.models['NDBR2p5_geometry_half'].materials['CP1000'].Density(table=((7900.0, 
+    ), ))
+mdb.models['NDBR2p5_geometry_half'].materials['CP1000'].Depvar(n=24)
+mdb.models['NDBR2p5_geometry_half'].materials['CP1000'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['NDBR2p5_geometry_half'].materials['CP1000'].UserOutputVariables(n=
+    3)
+mdb.models['NDBR2p5_geometry_half'].materials['CP1000'].SpecificHeat(table=((
+    1.0, ), ))
+# Save by nguyenb5 on 2024_09_09-13.59.44; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR6_geometry_half'].materials['CP1000'].density
+del mdb.models['NDBR6_geometry_half'].materials['CP1000'].elastic
+del mdb.models['NDBR6_geometry_half'].materials['CP1000'].plastic
+mdb.models['NDBR6_geometry_half'].materials['CP1000'].Density(table=((7900.0, 
+    ), ))
+mdb.models['NDBR6_geometry_half'].materials['CP1000'].Depvar(n=24)
+mdb.models['NDBR6_geometry_half'].materials['CP1000'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['NDBR6_geometry_half'].materials['CP1000'].UserOutputVariables(n=3)
+mdb.models['NDBR6_geometry_half'].materials['CP1000'].SpecificHeat(table=((1.0, 
+    ), ))
+# Save by nguyenb5 on 2024_09_09-14.02.46; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR15_geometry_half'].materials['CP1000'].elastic
+del mdb.models['NDBR15_geometry_half'].materials['CP1000'].plastic
+mdb.models['NDBR15_geometry_half'].materials['CP1000'].density.setValues(table=
+    ((7900.0, ), ))
+mdb.models['NDBR15_geometry_half'].materials['CP1000'].Depvar(n=24)
+mdb.models['NDBR15_geometry_half'].materials['CP1000'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['NDBR15_geometry_half'].materials['CP1000'].UserOutputVariables(n=3)
+mdb.models['NDBR15_geometry_half'].materials['CP1000'].SpecificHeat(table=((
+    1.0, ), ))
+# Save by nguyenb5 on 2024_09_09-14.03.14; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR40_geometry_half'].materials.changeKey(fromName='CP1000-m', 
+    toName='CP1000')
+del mdb.models['NDBR40_geometry_half'].materials['CP1000'].elastic
+del mdb.models['NDBR40_geometry_half'].materials['CP1000'].plastic
+mdb.models['NDBR40_geometry_half'].materials['CP1000'].density.setValues(table=
+    ((7900.0, ), ))
+mdb.models['NDBR40_geometry_half'].materials['CP1000'].Depvar(n=24)
+mdb.models['NDBR40_geometry_half'].materials['CP1000'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['NDBR40_geometry_half'].materials['CP1000'].UserOutputVariables(n=3)
+mdb.models['NDBR40_geometry_half'].materials['CP1000'].SpecificHeat(table=((
+    1.0, ), ))
+# Save by nguyenb5 on 2024_09_09-14.05.06; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR40_geometry_half'].parts.changeKey(fromName='NDBR40-m', toName=
+    'NDBR40')
+mdb.models['NDBR40_geometry_half'].sections.changeKey(fromName=
+    'Section-CP1000-m', toName='Section-1')
+mdb.models['NDBR15_geometry_half'].parts['NDBR15'].sectionAssignments[0].setValues(
+    sectionName='Section-1')
+mdb.models['NDBR40_geometry_half'].parts['NDBR40'].deleteSets(setNames=(
+    'Set-106', 'Set-1'))
+del mdb.models['NDBR40_geometry_half'].parts['NDBR40'].sectionAssignments[1]
+del mdb.models['NDBR40_geometry_half'].parts['NDBR40'].sectionAssignments[0]
+mdb.models['NDBR40_geometry_half'].parts['NDBR40'].Set(cells=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40'].cells.getSequenceFromMask(
+    ('[#ffff ]', ), ), name='Set-1')
+mdb.models['NDBR40_geometry_half'].parts['NDBR40'].SectionAssignment(offset=0.0
+    , offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40'].sets['Set-1'], 
+    sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+# Save by nguyenb5 on 2024_09_09-14.13.50; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['SH115_geometry_half'].materials['CP1000-mm']
+mdb.models['SH115_geometry_half'].materials.changeKey(fromName='CP1000-m', 
+    toName='CP1000')
+del mdb.models['SH115_geometry_half'].materials['CP1000'].elastic
+del mdb.models['SH115_geometry_half'].materials['CP1000'].plastic
+mdb.models['SH115_geometry_half'].materials['CP1000'].density.setValues(table=(
+    (7900.0, ), ))
+mdb.models['SH115_geometry_half'].materials['CP1000'].Depvar(n=24)
+mdb.models['SH115_geometry_half'].materials['CP1000'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['SH115_geometry_half'].materials['CP1000'].UserOutputVariables(n=3)
+mdb.models['SH115_geometry_half'].materials['CP1000'].SpecificHeat(table=((1.0, 
+    ), ))
+# Save by nguyenb5 on 2024_09_09-14.14.36; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_geometry_half'].sections.changeKey(fromName=
+    'Section-CP1000-m', toName='Section-1')
+del mdb.models['SH115_geometry_half'].sections['Section-CP1000-mm']
+mdb.models['SH115_geometry_half'].sections['Section-1'].setValues(material=
+    'CP1000', thickness=None)
+del mdb.models['SH115_geometry_half'].parts['SH115-mm']
+mdb.models['SH115_geometry_half'].parts.changeKey(fromName='SH115-m', toName=
+    'SH115')
+mdb.models['SH115_geometry_half'].parts['SH115'].sectionAssignments[0].suppress(
+    )
+del mdb.models['SH115_geometry_half'].parts['SH115'].sectionAssignments[0]
+mdb.models['SH115_geometry_half'].parts['SH115'].deleteSets(setNames=('Set-1', 
+    'Set-2'))
+mdb.models['SH115_geometry_half'].parts['SH115'].Set(cells=
+    mdb.models['SH115_geometry_half'].parts['SH115'].cells.getSequenceFromMask(
+    ('[#7ff ]', ), ), name='Set-1')
+mdb.models['SH115_geometry_half'].parts['SH115'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['SH115_geometry_half'].parts['SH115'].sets['Set-1'], 
+    sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+# Save by nguyenb5 on 2024_09_09-14.15.28; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR40_geometry_half'].sections['Section-1'].setValues(material=
+    'CP1000', thickness=None)
+mdb.models['NDBR40_geometry_half'].rootAssembly.regenerate()
+mdb.models['NDBR40_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-1'
+    , toName='bottom_part')
+mdb.models['NDBR40_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-4'
+    , toName='top_surface')
+mdb.models['NDBR40_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-3'
+    , toName='top_part')
+del mdb.models['NDBR40_geometry_half'].rootAssembly.sets['Set-2']
+mdb.models['NDBR40_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['NDBR40_geometry_half'].rootAssembly.instances['NDBR40-m-1'].faces.getSequenceFromMask(
+    ('[#5011044 #44120284 #100090 ]', ), ), name='zsymm')
+mdb.models['NDBR40_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['NDBR40_geometry_half'].rootAssembly.instances['NDBR40-m-1'].faces.getSequenceFromMask(
+    ('[#b8486910 #ab69dc73 #7630d ]', ), ), name='hydrogen_surface')
+del mdb.models['NDBR40_geometry_half'].steps['Step-1']
+mdb.models['NDBR40_geometry_half'].CoupledTempDisplacementStep(cetol=None, 
+    creepIntegration=None, deltmx=None, initialInc=60.0, maxNumInc=1000000, 
+    name='step1_precharging', nlgeom=ON, previous='Initial', 
+    timeIncrementationMethod=FIXED, timePeriod=7200.0)
+# Save by nguyenb5 on 2024_09_09-14.23.44; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR40_geometry_half'].CoupledTempDisplacementStep(deltmx=1000.0, 
+    initialInc=0.8, maxInc=0.8, maxNumInc=1000000, minInc=1e-07, name=
+    'step2_insitu', previous='step1_precharging', timePeriod=800.0)
+del mdb.models['NDBR40_geometry_half'].historyOutputRequests['H-Output-1']
+del mdb.models['NDBR40_geometry_half'].fieldOutputRequests['F-Output-1']
+mdb.models['NDBR40_geometry_half'].FieldOutputRequest(createStepName=
+    'step2_insitu', name='F-Output-2', numIntervals=100, variables=('SDV', 
+    'UVARM'))
+mdb.models['NDBR40_geometry_half'].FieldOutputRequest(createStepName=
+    'step1_precharging', frequency=LAST_INCREMENT, name='F-Output-1', 
+    variables=('SDV', 'UVARM'))
+# Save by nguyenb5 on 2024_09_09-14.26.39; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR40_geometry_half'].amplitudes['Amp-1']
+mdb.models['NDBR40_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (800.0, 
+    1.0)), name='diffusion_insitu', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR40_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (7200.0, 
+    1.0)), name='diffusion_precharging', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR40_geometry_half'].TabularAmplitude(data=((0.0, 0.0), (800.0, 
+    1.0)), name='loading_insitu', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+# Save by nguyenb5 on 2024_09_09-14.28.47; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR40_geometry_half'].boundaryConditions['zsynm']
+mdb.models['NDBR40_geometry_half'].boundaryConditions.changeKey(fromName=
+    'bottom-part-encastre', toName='bottom_part_encastre')
+mdb.models['NDBR40_geometry_half'].boundaryConditions['bottom_part_encastre'].setValues(
+    region=mdb.models['NDBR40_geometry_half'].rootAssembly.sets['bottom_part'], 
+    typeName=PINNED)
+# Save by nguyenb5 on 2024_09_09-14.29.14; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR40_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='zsymm', region=
+    mdb.models['NDBR40_geometry_half'].rootAssembly.sets['zsymm'], u1=UNSET, 
+    u2=UNSET, u3=SET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['NDBR40_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_part_constraint', region=
+    mdb.models['NDBR40_geometry_half'].rootAssembly.sets['top_part'], u1=0.0, 
+    u2=UNSET, u3=0.0, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['NDBR40_geometry_half'].DisplacementBC(amplitude='loading_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_surface_disp', region=
+    mdb.models['NDBR40_geometry_half'].rootAssembly.sets['top_surface'], u1=
+    UNSET, u2=0.0, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['NDBR40_geometry_half'].TemperatureBC(amplitude='diffusion_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, magnitude=8.725, name='CL_mol_insitu_charging', region=
+    mdb.models['NDBR40_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+mdb.models['NDBR40_geometry_half'].TemperatureBC(amplitude=
+    'diffusion_precharging', createStepName='step1_precharging', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=8.725, name=
+    'CL_mol_precharging', region=
+    mdb.models['NDBR40_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+mdb.models['NDBR40_geometry_half'].boundaryConditions['top_surface_disp'].setValues(
+    u2=0.002)
+# Save by nguyenb5 on 2024_09_09-14.32.45; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-14.33.59; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR40_geometry_half'].fieldOutputRequests['F-Output-1']
+mdb.models['NDBR40_geometry_half'].FieldOutputRequest(createStepName=
+    'step1_precharging', frequency=LAST_INCREMENT, name='F-Output-1', 
+    variables=('SDV', 'UVARM'))
+# Save by nguyenb5 on 2024_09_09-14.34.32; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-14.36.05; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-14.36.22; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR40_geometry_half'].parts['NDBR40'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40'].edges.getSequenceFromMask(
+    ('[#2800a ]', ), ), size=0.002)
+mdb.models['NDBR40_geometry_half'].parts['NDBR40'].generateMesh(regions=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40'].cells.getSequenceFromMask(
+    ('[#409 ]', ), ))
+mdb.models['NDBR40_geometry_half'].parts['NDBR40'].generateMesh(regions=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40'].cells.getSequenceFromMask(
+    ('[#a002 ]', ), ))
+mdb.models['NDBR40_geometry_half'].parts['NDBR40'].generateMesh(regions=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40'].cells.getSequenceFromMask(
+    ('[#4000 ]', ), ))
+mdb.models['NDBR40_geometry_half'].parts['NDBR40'].generateMesh(regions=
+    mdb.models['NDBR40_geometry_half'].parts['NDBR40'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+# Save by nguyenb5 on 2024_09_09-14.37.04; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-14.38.09; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_geometry_half'].rootAssembly.regenerate()
+del mdb.models['SH115_geometry_half'].steps['Step-1']
+mdb.models['SH115_geometry_half'].CoupledTempDisplacementStep(cetol=None, 
+    creepIntegration=None, deltmx=None, initialInc=60.0, maxNumInc=1000000, 
+    name='step1_precharging', nlgeom=ON, previous='Initial', 
+    timeIncrementationMethod=FIXED, timePeriod=7200.0)
+mdb.models['SH115_geometry_half'].CoupledTempDisplacementStep(deltmx=1000.0, 
+    initialInc=0.729, maxInc=0.729, maxNumInc=1000000, minInc=1e-07, name=
+    'step2_insitu', previous='step1_precharging', timePeriod=729.0)
+# Save by nguyenb5 on 2024_09_09-14.40.30; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['SH115_geometry_half'].historyOutputRequests['H-Output-1']
+del mdb.models['SH115_geometry_half'].fieldOutputRequests['F-Output-1']
+mdb.models['SH115_geometry_half'].FieldOutputRequest(createStepName=
+    'step2_insitu', name='F-Output-2', numIntervals=200, variables=('SDV', 
+    'UVARM'))
+mdb.models['SH115_geometry_half'].FieldOutputRequest(createStepName=
+    'step1_precharging', frequency=LAST_INCREMENT, name='F-Output-1', 
+    variables=('SDV', 'UVARM'))
+# Save by nguyenb5 on 2024_09_09-14.41.49; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['SH115_geometry_half'].amplitudes['Amp-1']
+mdb.models['SH115_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-45'
+    , toName='top_surface')
+mdb.models['SH115_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-46'
+    , toName='bottom_part')
+mdb.models['SH115_geometry_half'].rootAssembly.sets.changeKey(fromName='Set-57'
+    , toName='top_part')
+del mdb.models['SH115_geometry_half'].rootAssembly.sets['top_nodes']
+mdb.models['SH115_geometry_half'].rootAssembly.deleteSets(setNames=('Set-67', 
+    'Set-23', 'Set-24', 'Set-25', 'Set-26', 'Set-27', 'Set-28', 'Set-42', 
+    'Set-43', 'Set-44', 'Set-47', 'Set-58', 'Set-59', 'Set-65', 'Set-66'))
+# Save by nguyenb5 on 2024_09_09-14.44.22; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (729.0, 
+    1.0)), name='diffusion_insitu', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['SH115_geometry_half'].TabularAmplitude(data=((0.0, 1.0), (7200.0, 
+    1.0)), name='diffusion_precharging', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['SH115_geometry_half'].TabularAmplitude(data=((0.0, 0.0), (729.0, 
+    1.0)), name='loading_insitu', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+# Save by nguyenb5 on 2024_09_09-14.50.01; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_geometry_half'].boundaryConditions.changeKey(fromName=
+    'bottom-part-encastre', toName='bottom_part_encastre')
+del mdb.models['SH115_geometry_half'].boundaryConditions['zsymm']
+mdb.models['SH115_geometry_half'].boundaryConditions['bottom_part_encastre'].setValues(
+    region=mdb.models['SH115_geometry_half'].rootAssembly.sets['bottom_part'], 
+    typeName=PINNED)
+mdb.models['SH115_geometry_half'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['SH115_geometry_half'].rootAssembly.instances['SH115-m-1'].edges.getSequenceFromMask(
+    ('[#5b696da #20000000 #11 #100 ]', ), ), size=0.002)
+mdb.models['SH115_geometry_half'].rootAssembly.generateMesh(regions=
+    mdb.models['SH115_geometry_half'].rootAssembly.instances['SH115-m-1'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['SH115_geometry_half'].rootAssembly.generateMesh(regions=
+    mdb.models['SH115_geometry_half'].rootAssembly.instances['SH115-m-1'].cells.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['SH115_geometry_half'].rootAssembly.generateMesh(regions=
+    mdb.models['SH115_geometry_half'].rootAssembly.instances['SH115-m-1'].cells.getSequenceFromMask(
+    ('[#200 ]', ), ))
+mdb.models['SH115_geometry_half'].rootAssembly.generateMesh(regions=
+    mdb.models['SH115_geometry_half'].rootAssembly.instances['SH115-m-1'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+# Save by nguyenb5 on 2024_09_09-14.53.14; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-14.55.10; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['SH115_geometry_half'].rootAssembly.instances['SH115-m-1'].faces.getSequenceFromMask(
+    ('[#8503208 #80001048 ]', ), ), name='zsymm')
+mdb.models['SH115_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['SH115_geometry_half'].rootAssembly.instances['SH115-m-1'].faces.getSequenceFromMask(
+    ('[#5100c154 #7e7ec9a5 ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_09-14.58.33; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Initial', distributionType=UNIFORM, fieldName='', 
+    localCsys=None, name='zsymm', region=
+    mdb.models['SH115_geometry_half'].rootAssembly.sets['zsymm'], u1=UNSET, u2=
+    UNSET, u3=SET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['SH115_geometry_half'].DisplacementBC(amplitude=UNSET, 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_part_constraint', region=
+    mdb.models['SH115_geometry_half'].rootAssembly.sets['top_part'], u1=0.0, 
+    u2=UNSET, u3=0.0, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['SH115_geometry_half'].DisplacementBC(amplitude='loading_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, localCsys=None, name='top_surface_disp', region=
+    mdb.models['SH115_geometry_half'].rootAssembly.sets['top_surface'], u1=
+    UNSET, u2=0.00198, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['SH115_geometry_half'].TemperatureBC(amplitude='diffusion_insitu', 
+    createStepName='step2_insitu', distributionType=UNIFORM, fieldName='', 
+    fixed=OFF, magnitude=8.725, name='CL_mol_insitu_charging', region=
+    mdb.models['SH115_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+mdb.models['SH115_geometry_half'].TemperatureBC(amplitude=
+    'diffusion_precharging', createStepName='step1_precharging', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=8.725, name=
+    'CL_mol_precharging', region=
+    mdb.models['SH115_geometry_half'].rootAssembly.sets['hydrogen_surface'])
+# Save by nguyenb5 on 2024_09_09-15.03.40; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['CHD2_geometry_half'].materials['CP1000'].specificHeat
+mdb.models['CHD2_geometry_half'].materials['CP1000'].SpecificHeat(table=((1.0, 
+    ), ))
+del mdb.models['CHD2_geometry_half'].fieldOutputRequests['F-Output-1']
+mdb.models['CHD2_geometry_half'].FieldOutputRequest(createStepName=
+    'step1_precharging', frequency=LAST_INCREMENT, name='F-Output-1', 
+    variables=('SDV', 'UVARM'))
+del mdb.models['CHD2_geometry_half'].fieldOutputRequests['F-Output-2']
+mdb.models['CHD2_geometry_half'].FieldOutputRequest(createStepName=
+    'step2_insitu', name='F-Output-2', numIntervals=200, variables=('SDV', 
+    'UVARM'))
+del mdb.models['CHD2_geometry_half'].fieldOutputRequests['F-Output-1']
+mdb.models['CHD2_geometry_half'].fieldOutputRequests.changeKey(fromName=
+    'F-Output-2', toName='F-Output-1')
+# Save by nguyenb5 on 2024_09_09-15.23.15; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['CHD4_geometry_half'].fieldOutputRequests['F-Output-1']
+mdb.models['CHD4_geometry_half'].fieldOutputRequests.changeKey(fromName=
+    'F-Output-2', toName='F-Output-1')
+del mdb.models['NDBR2p5_geometry_half'].fieldOutputRequests['F-Output-1']
+mdb.models['NDBR2p5_geometry_half'].fieldOutputRequests.changeKey(fromName=
+    'F-Output-2', toName='F-Output-1')
+del mdb.models['NDBR6_geometry_half'].fieldOutputRequests['F-Output-1']
+mdb.models['NDBR6_geometry_half'].fieldOutputRequests.changeKey(fromName=
+    'F-Output-2', toName='F-Output-1')
+# Save by nguyenb5 on 2024_09_09-15.26.23; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR15_geometry_half'].fieldOutputRequests['F-Output-1']
+mdb.models['NDBR15_geometry_half'].fieldOutputRequests.changeKey(fromName=
+    'F-Output-2', toName='F-Output-1')
+mdb.models['NDBR40_geometry_half'].rootAssembly.regenerate()
+del mdb.models['NDBR40_geometry_half'].fieldOutputRequests['F-Output-1']
+mdb.models['NDBR40_geometry_half'].fieldOutputRequests.changeKey(fromName=
+    'F-Output-2', toName='F-Output-1')
+mdb.models['NDBR40_geometry_half'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=200)
+# Save by nguyenb5 on 2024_09_09-15.27.18; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['SH115_geometry_half'].fieldOutputRequests['F-Output-1']
+mdb.models['SH115_geometry_half'].fieldOutputRequests.changeKey(fromName=
+    'F-Output-2', toName='F-Output-1')
+# Save by nguyenb5 on 2024_09_09-15.28.50; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-15.36.05; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-15.37.37; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-15.38.18; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['model'].fieldOutputRequests['F-Output-1']
+mdb.models['model'].fieldOutputRequests.changeKey(fromName='F-Output-2', 
+    toName='F-Output-1')
+# Save by nguyenb5 on 2024_09_09-15.38.42; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_geometry_half'].boundaryConditions['CL_mol_precharging'].deactivate(
+    'step2_insitu')
+mdb.models['NDBR40_geometry_half'].boundaryConditions['CL_mol_precharging'].deactivate(
+    'step2_insitu')
+mdb.models['NDBR15_geometry_half'].boundaryConditions['CL_mol_precharging'].deactivate(
+    'step2_insitu')
+# Save by nguyenb5 on 2024_09_09-15.40.08; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.jobs['CP1000_CHD2']
+mdb.models['CHD4_geometry_half'].boundaryConditions['CL_mol_precharging'].setValues(
+    amplitude='diffusion_precharging')
+# Save by nguyenb5 on 2024_09_09-15.42.25; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-15.43.23; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-15.46.14; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-15.49.34; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-15.51.50; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_geometry_half'].rootAssembly.features.changeKey(fromName=
+    'SH115-m-1', toName='SH115')
+# Save by nguyenb5 on 2024_09_09-16.01.44; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='CHD2_geometry_half', modelPrint=
+    OFF, multiprocessingMode=DEFAULT, name='CHD2_geometry_half', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='CHD4_geometry_half', modelPrint=
+    OFF, multiprocessingMode=DEFAULT, name='CHD4_geometry_half', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR2p5_geometry_half', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='NDBR2p5_geometry_half', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR6_geometry_half', modelPrint=
+    OFF, multiprocessingMode=DEFAULT, name='NDBR6_geometry_half', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR15_geometry_half', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='NDBR15_geometry_half', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR40_geometry_half', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='NDBR40_geometry_half', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='SH115_geometry_half', modelPrint=
+    OFF, multiprocessingMode=DEFAULT, name='SH115_geometry_half', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+# Save by nguyenb5 on 2024_09_09-16.11.18; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-16.12.27; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['model']
+# Save by nguyenb5 on 2024_09_09-16.12.40; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR2p5_geometry_half'].fieldOutputRequests['F-Output-1']
+mdb.models['NDBR2p5_geometry_half'].FieldOutputRequest(createStepName=
+    'step2_insitu', name='F-Output-1', numIntervals=200, variables=('SDV', 
+    'UVARM'))
+# Save by nguyenb5 on 2024_09_09-16.19.14; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-16.21.26; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs.changeKey(fromName='CHD2_geometry_half', toName=
+    'CP1000_CHD2_geometry')
+mdb.jobs.changeKey(fromName='CHD4_geometry_half', toName=
+    'CP1000_CHD4_geometry')
+mdb.jobs.changeKey(fromName='NDBR2p5_geometry_half', toName=
+    'CP1000_NDBR2p5_geometry')
+mdb.jobs.changeKey(fromName='NDBR6_geometry_half', toName=
+    'CP1000_NDBR6_geometry')
+mdb.jobs.changeKey(fromName='NDBR15_geometry_half', toName=
+    'CP1000_NDBR15_geometry')
+mdb.jobs.changeKey(fromName='NDBR40_geometry_half', toName=
+    'CP1000_NDBR40_geometry')
+mdb.jobs.changeKey(fromName='SH115_geometry_half', toName=
+    'CP1000_SH115_geometry')
+# Save by nguyenb5 on 2024_09_09-18.58.07; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs.changeKey(fromName='CP1000_CHD2_geometry', toName='CP1000_CHD2')
+mdb.jobs.changeKey(fromName='CP1000_CHD4_geometry', toName='CP1000_CHD4')
+mdb.jobs.changeKey(fromName='CP1000_NDBR2p5_geometry', toName='CP1000_NDBR2p5')
+mdb.jobs.changeKey(fromName='CP1000_NDBR6_geometry', toName='CP1000_NDBR6')
+mdb.jobs.changeKey(fromName='CP1000_NDBR15_geometry', toName='CP1000_NDBR15')
+mdb.jobs.changeKey(fromName='CP1000_NDBR40_geometry', toName='CP1000_NDBR40')
+mdb.jobs.changeKey(fromName='CP1000_SH115_geometry', toName='CP1000_SH115')
+# Save by nguyenb5 on 2024_09_09-20.13.58; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_09-21.12.10; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['CHD2_geometry_half'].materials['CP1000'].userOutputVariables
+mdb.models['CHD2_geometry_half'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('U', 'RF', 'SDV'))
+# Save by nguyenb5 on 2024_09_14-13.50.54; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_14-13.51.19; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].steps['step1_precharging'].setValues(
+    initialInc=360.0)
+# Save by nguyenb5 on 2024_09_14-13.54.45; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].rootAssembly.Set(faces=
+    mdb.models['CHD2_geometry_half'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1d420000 #20455b5d ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_16-22.16.43; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].FieldOutputRequest(createStepName=
+    'step1_precharging', name='F-Output-2', variables=('SDV', ))
+mdb.models['CHD2_geometry_half'].fieldOutputRequests['F-Output-2'].deactivate(
+    'step2_insitu')
+# Save by nguyenb5 on 2024_09_16-22.19.01; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].rootAssembly.Set(cells=
+    mdb.models['CHD2_geometry_half'].rootAssembly.instances['CHD2'].cells.getSequenceFromMask(
+    ('[#240 ]', ), ), faces=
+    mdb.models['CHD2_geometry_half'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc771da #4b685948 ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_16-22.34.04; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=2000)
+# Save by nguyenb5 on 2024_09_16-22.34.49; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].steps['step2_insitu'].setValues(initialInc=
+    0.358, maxInc=0.358)
+# Save by nguyenb5 on 2024_09_16-22.35.20; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='CHD2_geometry_half_truncated', objectToCopy=
+    mdb.models['CHD2_geometry_half'])
+# Save by nguyenb5 on 2024_09_17-14.37.00; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['CHD2_geometry_half_truncated']
+# Save by nguyenb5 on 2024_09_18-14.29.48; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_geometry_half'].boundaryConditions['zsymm'].suppress()
+mdb.models['CHD2_geometry_half'].boundaryConditions['top_part_constraint'].suppress(
+    )
+mdb.models['CHD2_geometry_half'].boundaryConditions['bottom_part_encastre'].suppress(
+    )
+mdb.models['CHD2_geometry_half'].boundaryConditions['CL_mol_precharging'].suppress(
+    )
+mdb.models['CHD2_geometry_half'].boundaryConditions['CL_mol_insitu_charging'].suppress(
+    )
+mdb.models['CHD2_geometry_half'].boundaryConditions['CL_mol_insitu_charging'].resume(
+    )
+mdb.models['CHD2_geometry_half'].boundaryConditions['top_surface_disp'].suppress(
+    )
+mdb.models['CHD2_geometry_half'].boundaryConditions['zsymm'].resume()
+mdb.models['CHD2_geometry_half'].boundaryConditions['CL_mol_precharging'].resume(
+    )
+mdb.models['CHD2_geometry_half'].boundaryConditions['bottom_part_encastre'].resume(
+    )
+mdb.models['CHD2_geometry_half'].boundaryConditions['top_part_constraint'].resume(
+    )
+mdb.models['CHD2_geometry_half'].boundaryConditions['top_surface_disp'].resume(
+    )
+# Save by nguyenb5 on 2024_09_19-16.27.03; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models.changeKey(fromName='CHD2_geometry_half', toName='CHD2_with_HC')
+mdb.models.changeKey(fromName='CHD2_with_HC', toName='CHD2_with_HE')
+mdb.models.changeKey(fromName='CHD4_geometry_half', toName='CHD4_with_HE')
+mdb.models.changeKey(fromName='NDBR2p5_geometry_half', toName=
+    'NDBR2p5_with_HE')
+mdb.models.changeKey(fromName='NDBR6_geometry_half', toName='NDBR6_with_HE')
+mdb.models.changeKey(fromName='NDBR15_geometry_half', toName='NDBR15_with_HE')
+mdb.models.changeKey(fromName='NDBR40_geometry_half', toName='NDBR40_with_HE')
+mdb.models.changeKey(fromName='SH115_geometry_half', toName='SH115_with_HE')
+mdb.Model(name='CHD2_without_HE', objectToCopy=mdb.models['CHD2_with_HE'])
+mdb.Model(name='CHD4_without_HE', objectToCopy=mdb.models['CHD4_with_HE'])
+mdb.Model(name='NDBR2p5_with\xf3ut_HE', objectToCopy=
+    mdb.models['NDBR2p5_with_HE'])
+mdb.models.changeKey(fromName='NDBR2p5_with\xf3ut_HE', toName=
+    'NDBR2p5_without_HE')
+mdb.Model(name='NDBR6_without_HE', objectToCopy=mdb.models['NDBR6_with_HE'])
+mdb.Model(name='NDBR15_without_HE', objectToCopy=mdb.models['NDBR15_with_HE'])
+mdb.Model(name='NDBR40_without_HE', objectToCopy=mdb.models['NDBR40_with_HE'])
+mdb.Model(name='SH115_without_HE', objectToCopy=mdb.models['SH115_with_HE'])
+mdb.models['CHD2_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['CHD2_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+# Save by nguyenb5 on 2024_09_20-17.51.31; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['CHD4_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+# Save by nguyenb5 on 2024_09_20-17.51.52; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR2p5_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR2p5_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR6_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR6_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+# Save by nguyenb5 on 2024_09_20-17.52.30; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR15_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR15_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR40_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR40_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+# Save by nguyenb5 on 2024_09_20-17.53.05; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['SH115_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+# Save by nguyenb5 on 2024_09_20-17.53.21; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_20-19.36.32; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['CHD2_with_HE'].fieldOutputRequests['F-Output-2']
+mdb.models['CHD2_with_HE'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=100)
+mdb.models['CHD2_with_HE'].steps['step2_insitu'].setValues(initialInc=8.59, 
+    maxInc=8.59, timePeriod=859.0)
+# Save by nguyenb5 on 2024_09_20-20.36.39; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_with_HE'].amplitudes['diffusion_insitu'].setValues(data=((0.0, 
+    1.0), (859.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['CHD2_with_HE'].amplitudes['loading_insitu'].setValues(data=((0.0, 
+    0.0), (859.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['CHD2_with_HE'].boundaryConditions['top_surface_disp'].setValues(u2=
+    0.002148)
+# Save by nguyenb5 on 2024_09_20-20.38.16; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['CHD2_without_HE']
+mdb.models.changeKey(fromName='CHD2_with_HE', toName='CHD2_without_HE')
+mdb.Model(name='CHD2_with_HE', objectToCopy=mdb.models['CHD2_without_HE'])
+mdb.models['CHD2_with_HE'].materials['CP1000'].depvar.setValues(n=30)
+mdb.models['CHD2_without_HE'].materials['CP1000'].depvar.setValues(n=30)
+# Save by nguyenb5 on 2024_09_20-20.39.33; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_with_HE'].steps['step1_precharging'].setValues(initialInc=
+    7200.0)
+mdb.models['CHD2_with_HE'].steps['step1_precharging'].setValues(initialInc=
+    720.0)
+mdb.models['CHD2_with_HE'].steps['step2_insitu'].setValues(initialInc=6.65, 
+    maxInc=6.65, timePeriod=665.0)
+mdb.models['CHD2_with_HE'].amplitudes['diffusion_insitu'].setValues(data=((0.0, 
+    1.0), (665.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['CHD2_with_HE'].amplitudes['loading_insitu'].setValues(data=((0.0, 
+    0.0), (665.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+# Save by nguyenb5 on 2024_09_20-20.41.07; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_with_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['CHD2_with_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+mdb.models['CHD2_with_HE'].boundaryConditions['top_surface_disp'].setValues(u2=
+    0.001662)
+mdb.models['CHD2_with_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=8.725)
+mdb.models['CHD2_with_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=8.725)
+# Save by nguyenb5 on 2024_09_20-20.42.51; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_with_HE'].rootAssembly.Set(cells=
+    mdb.models['CHD2_with_HE'].rootAssembly.instances['CHD2'].cells.getSequenceFromMask(
+    ('[#240 ]', ), ), faces=
+    mdb.models['CHD2_with_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc771da #4b685948 ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_20-20.44.57; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_without_HE'].steps['step1_precharging'].setValues(initialInc=
+    720.0)
+mdb.models['CHD2_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['CHD2_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+mdb.models['CHD2_without_HE'].rootAssembly.Set(cells=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].cells.getSequenceFromMask(
+    ('[#240 ]', ), ), faces=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc771da #4b685948 ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_20-20.46.49; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_without_HE'].rootAssembly.Set(cells=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].cells.getSequenceFromMask(
+    ('[#240 ]', ), ), faces=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc771da #4b685948 ]', ), ), name='hydrogen_surface')
+mdb.models['CHD2_without_HE'].rootAssembly.Set(cells=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].cells.getSequenceFromMask(
+    ('[#240 ]', ), ), faces=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc771da #4b685948 ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_20-20.47.54; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['CHD2_without_HE'].rootAssembly.sets['hydrogen_surface']
+mdb.models['CHD2_without_HE'].rootAssembly.Set(faces=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc771da #6b6d5b5d ]', ), ), name='hydrogen_surface', xEdges=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].edges.getSequenceFromMask(
+    ('[#4220000 #0:2 #10 ]', ), ))
+mdb.models['CHD2_without_HE'].rootAssembly.Set(faces=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc771da #6b6d5b5d ]', ), ), name='hydrogen_surface', xEdges=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].edges.getSequenceFromMask(
+    ('[#4200000 ]', ), ))
+mdb.models['CHD2_without_HE'].rootAssembly.Set(faces=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc771da #6f6d5b5d ]', ), ), name='hydrogen_surface', xEdges=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].edges.getSequenceFromMask(
+    ('[#4200000 ]', ), ))
+mdb.models['CHD2_without_HE'].rootAssembly.Set(faces=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc771da #6f6d5b5d ]', ), ), name='hydrogen_surface', xEdges=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].edges.getSequenceFromMask(
+    ('[#4200000 ]', ), ))
+mdb.models['CHD2_without_HE'].rootAssembly.Set(cells=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), faces=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc7715a #2f655b5d ]', ), ), name='hydrogen_surface', xEdges=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].edges.getSequenceFromMask(
+    ('[#4000000 ]', ), ))
+mdb.models['CHD2_without_HE'].rootAssembly.Set(cells=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), faces=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc7715a #2f655b5d ]', ), ), name='hydrogen_surface', xEdges=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].edges.getSequenceFromMask(
+    ('[#4000000 ]', ), ))
+mdb.models['CHD2_without_HE'].rootAssembly.Set(cells=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), faces=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc7715a #2f655b5d ]', ), ), name='hydrogen_surface', xEdges=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].edges.getSequenceFromMask(
+    ('[#4000000 ]', ), ))
+del mdb.models['CHD2_without_HE'].rootAssembly.sets['hydrogen_surface']
+del mdb.models['CHD2_with_HE'].rootAssembly.sets['hydrogen_surface']
+mdb.models['CHD2_with_HE'].rootAssembly.Set(faces=
+    mdb.models['CHD2_with_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc24150 #28455b5d ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_20-20.54.15; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_with_HE'].rootAssembly.Set(faces=
+    mdb.models['CHD2_with_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc24150 #28455b5d ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_20-20.54.44; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_without_HE'].rootAssembly.Set(faces=
+    mdb.models['CHD2_without_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc24150 #28455b5d ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_20-20.55.51; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_20-20.56.21; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_20-20.56.44; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.jobs['CP1000_CHD2']
+del mdb.jobs['CP1000_CHD4']
+del mdb.jobs['CP1000_NDBR2p5']
+del mdb.jobs['CP1000_NDBR6']
+del mdb.jobs['CP1000_NDBR15']
+del mdb.jobs['CP1000_NDBR40']
+del mdb.jobs['CP1000_SH115']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='CHD2_with_HE', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='CHD2_with_HE', nodalOutputPrecision=
+    SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+# Save by nguyenb5 on 2024_09_20-20.57.23; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='CHD4_with_HE', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='CHD4_with_HE', nodalOutputPrecision=
+    SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR2p5_with_HE', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='NDBR2p5_with_HE', nodalOutputPrecision=
+    SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR6_with_HE', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='NDBR6_with_HE', nodalOutputPrecision=
+    SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR15_with_HE', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='NDBR15_with_HE', nodalOutputPrecision=
+    SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR40_with_HE', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='NDBR40_with_HE', nodalOutputPrecision=
+    SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='SH115_with_HE', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='SH115_with_HE', nodalOutputPrecision=
+    SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='CHD2_without_HE', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='CHD2_without_HE', nodalOutputPrecision=
+    SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='CHD4_without_HE', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='CHD4_without_HE', nodalOutputPrecision=
+    SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR2p5_without_HE', modelPrint=
+    OFF, multiprocessingMode=DEFAULT, name='NDBR2p5_without_HE', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR6_without_HE', modelPrint=OFF
+    , multiprocessingMode=DEFAULT, name='NDBR6_without_HE', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR15_without_HE', modelPrint=
+    OFF, multiprocessingMode=DEFAULT, name='NDBR15_without_HE', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR40_without_HE', modelPrint=
+    OFF, multiprocessingMode=DEFAULT, name='NDBR40_without_HE', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='SH115_without_HE', modelPrint=OFF
+    , multiprocessingMode=DEFAULT, name='SH115_without_HE', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+# Save by nguyenb5 on 2024_09_20-21.00.41; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_with_HE'].steps['step2_insitu'].setValues(initialInc=1.6625, 
+    maxInc=1.6625)
+# Save by nguyenb5 on 2024_09_21-17.31.05; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_with_HE'].rootAssembly.Set(faces=
+    mdb.models['CHD2_with_HE'].rootAssembly.instances['CHD2'].faces.getSequenceFromMask(
+    ('[#1dc771da #6b6d5b5d ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_21-18.10.37; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_21-18.11.36; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_21-21.29.16; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_21-21.29.24; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_21-22.18.07; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-16.50.49; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['CHD4_without_HE']
+del mdb.models['NDBR2p5_without_HE']
+del mdb.models['NDBR6_without_HE']
+del mdb.models['NDBR15_without_HE']
+del mdb.models['NDBR40_without_HE']
+del mdb.models['SH115_without_HE']
+mdb.models['CHD4_with_HE'].materials['CP1000'].depvar.setValues(n=36)
+mdb.models['CHD2_without_HE'].materials['CP1000'].depvar.setValues(n=36)
+mdb.models['CHD2_with_HE'].materials['CP1000'].depvar.setValues(n=36)
+# Save by nguyenb5 on 2024_09_22-17.00.25; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_with_HE'].steps['step1_precharging'].setValues(initialInc=
+    720.0)
+mdb.models['CHD4_with_HE'].steps['step2_insitu'].setValues(timePeriod=665.0)
+mdb.models['CHD4_with_HE'].steps['step2_insitu'].setValues(initialInc=5.37, 
+    maxInc=5.37, timePeriod=537.0)
+# Save by nguyenb5 on 2024_09_22-17.01.40; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_with_HE'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=100, variables=('U', 'RF', 'SDV'))
+# Save by nguyenb5 on 2024_09_22-17.02.07; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_with_HE'].amplitudes['diffusion_insitu'].setValues(data=((0.0, 
+    1.0), (537.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['CHD4_with_HE'].amplitudes['loading_insitu'].setValues(data=((0.0, 
+    0.0), (537.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+# Save by nguyenb5 on 2024_09_22-17.02.42; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_with_HE'].boundaryConditions['top_surface_disp'].setValues(u2=
+    0.00119)
+mdb.models['CHD4_with_HE'].boundaryConditions['top_surface_disp'].setValues(u2=
+    0.001118)
+mdb.models['CHD4_with_HE'].boundaryConditions['top_surface_disp'].setValues(u2=
+    0.001342)
+# Save by nguyenb5 on 2024_09_22-17.04.52; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-17.05.26; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_with_HE'].rootAssembly.Set(faces=
+    mdb.models['CHD4_with_HE'].rootAssembly.instances['CHD4'].faces.getSequenceFromMask(
+    ('[#38ee39d6 #b573cc9f #6b6d5 ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_22-17.06.41; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='CHD4_without_HE', objectToCopy=mdb.models['CHD4_with_HE'])
+mdb.models['CHD4_without_HE'].steps['step2_insitu'].setValues(initialInc=7.24, 
+    maxInc=7.24, timePeriod=724.0)
+mdb.models['CHD4_without_HE'].amplitudes['diffusion_insitu'].setValues(data=((
+    0.0, 1.0), (724.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['CHD4_without_HE'].amplitudes['loading_insitu'].setValues(data=((
+    0.0, 0.0), (724.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['CHD4_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['CHD4_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+mdb.models['CHD4_without_HE'].boundaryConditions['top_surface_disp'].setValues(
+    u2=0.001811)
+# Save by nguyenb5 on 2024_09_22-17.21.23; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR2p5_with_HE'].materials['CP1000'].userOutputVariables
+mdb.models['NDBR2p5_with_HE'].materials['CP1000'].depvar.setValues(n=36)
+del mdb.models['CHD4_with_HE'].materials['CP1000'].userOutputVariables
+del mdb.models['CHD4_without_HE'].materials['CP1000'].userOutputVariables
+# Save by nguyenb5 on 2024_09_22-17.41.11; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR2p5_with_HE'].steps['step1_precharging'].setValues(initialInc=
+    720.0)
+mdb.models['NDBR2p5_with_HE'].steps['step2_insitu'].setValues(initialInc=4.91, 
+    maxInc=4.91, timePeriod=491.0)
+mdb.models['NDBR2p5_with_HE'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=100, variables=('U', 'RF', 'SDV'))
+mdb.models['NDBR2p5_with_HE'].amplitudes['diffusion_insitu'].setValues(data=((
+    0.0, 1.0), (491.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR2p5_with_HE'].amplitudes['loading_insitu'].setValues(data=((
+    0.0, 0.0), (491.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR2p5_with_HE'].rootAssembly.Set(faces=
+    mdb.models['NDBR2p5_with_HE'].rootAssembly.instances['NDBR2p5'].faces.getSequenceFromMask(
+    ('[#34ee3b96 #cb6ada77 #3dd ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_22-17.47.13; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR2p5_with_HE'].boundaryConditions['top_surface_disp'].setValues(
+    u2=0.001228)
+# Save by nguyenb5 on 2024_09_22-17.47.52; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='NDBR2p5_without_HE', objectToCopy=
+    mdb.models['NDBR2p5_with_HE'])
+# Save by nguyenb5 on 2024_09_22-17.49.44; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR2p5_without_HE'].steps['step2_insitu'].setValues(initialInc=
+    6.06, maxInc=6.06, timePeriod=606.0)
+mdb.models['NDBR2p5_without_HE'].amplitudes['diffusion_insitu'].setValues(data=
+    ((0.0, 1.0), (606.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR2p5_without_HE'].amplitudes['loading_insitu'].setValues(data=((
+    0.0, 0.0), (606.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR2p5_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR2p5_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR2p5_without_HE'].boundaryConditions['top_surface_disp'].setValues(
+    u2=0.001515)
+# Save by nguyenb5 on 2024_09_22-18.02.11; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-18.02.21; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR6_with_HE'].materials['CP1000'].userOutputVariables
+mdb.models['NDBR6_with_HE'].materials['CP1000'].depvar.setValues(n=36)
+mdb.models['NDBR6_with_HE'].steps['step2_insitu'].setValues(initialInc=5.45, 
+    maxInc=5.45, timePeriod=545.0)
+mdb.models['NDBR6_with_HE'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=100, variables=('U', 'RF', 'SDV'))
+mdb.models['NDBR6_with_HE'].amplitudes['diffusion_insitu'].setValues(data=((
+    0.0, 1.0), (545.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR6_with_HE'].steps['step1_precharging'].setValues(initialInc=
+    720.0)
+mdb.models['NDBR6_with_HE'].amplitudes['loading_insitu'].setValues(data=((0.0, 
+    0.0), (545.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR6_with_HE'].boundaryConditions['top_surface_disp'].setValues(
+    u2=0.001363)
+# Save by nguyenb5 on 2024_09_22-18.05.02; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR6_with_HE'].rootAssembly.Set(faces=
+    mdb.models['NDBR6_with_HE'].rootAssembly.instances['NDBR6'].faces.getSequenceFromMask(
+    ('[#34ee3b96 #cb6ada77 #3dd ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_22-18.08.06; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='NDBR6_without_HE', objectToCopy=mdb.models['NDBR6_with_HE'])
+mdb.models['NDBR6_without_HE'].steps['step2_insitu'].setValues(initialInc=6.66, 
+    maxInc=6.66, timePeriod=666.0)
+mdb.models['NDBR6_without_HE'].amplitudes['diffusion_insitu'].setValues(data=((
+    0.0, 1.0), (666.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR6_without_HE'].amplitudes['loading_insitu'].setValues(data=((
+    0.0, 0.0), (666.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR6_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR6_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR6_without_HE'].boundaryConditions['top_surface_disp'].setValues(
+    u2=0.001666)
+# Save by nguyenb5 on 2024_09_22-18.13.38; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-18.13.56; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-18.14.27; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR15_with_HE'].materials['CP1000'].userOutputVariables
+mdb.models['NDBR15_with_HE'].steps['step1_precharging'].setValues(initialInc=
+    720.0)
+mdb.models['NDBR15_with_HE'].steps['step2_insitu'].setValues(initialInc=6.79, 
+    maxInc=6.79, timePeriod=679.0)
+# Save by nguyenb5 on 2024_09_22-18.22.13; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR15_with_HE'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=100, variables=('U', 'RF', 'SDV'))
+mdb.models['NDBR15_with_HE'].amplitudes['diffusion_insitu'].setValues(data=((
+    0.0, 1.0), (679.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR15_with_HE'].amplitudes['loading_insitu'].setValues(data=((0.0, 
+    0.0), (679.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR15_with_HE'].boundaryConditions['top_surface_disp'].setValues(
+    u2=0.001697)
+mdb.models['NDBR15_with_HE'].rootAssembly.Set(faces=
+    mdb.models['NDBR15_with_HE'].rootAssembly.instances['NDBR15'].faces.getSequenceFromMask(
+    ('[#34ee3b96 #cb6ada77 #3dd ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_22-18.25.12; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-18.27.07; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='NDBR15_without_HE', objectToCopy=mdb.models['NDBR15_with_HE'])
+mdb.models['NDBR15_without_HE'].steps['step2_insitu'].setValues(initialInc=8.1, 
+    maxInc=8.1, timePeriod=810.0)
+mdb.models['NDBR15_without_HE'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=200)
+mdb.models['NDBR15_without_HE'].amplitudes['diffusion_insitu'].setValues(data=(
+    (0.0, 1.0), (810.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR15_without_HE'].amplitudes['loading_insitu'].setValues(data=((
+    0.0, 0.0), (810.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR15_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR15_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR15_without_HE'].boundaryConditions['top_surface_disp'].setValues(
+    u2=0.002026)
+# Save by nguyenb5 on 2024_09_22-18.34.14; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-18.34.29; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR40_with_HE'].materials['CP1000'].userOutputVariables
+mdb.models['NDBR40_with_HE'].materials['CP1000'].depvar.setValues(n=36)
+mdb.models['NDBR40_with_HE'].steps['step1_precharging'].setValues(initialInc=
+    720.0)
+mdb.models['NDBR40_with_HE'].steps['step2_insitu'].setValues(initialInc=7.72, 
+    maxInc=7.72, timePeriod=772.0)
+# Save by nguyenb5 on 2024_09_22-18.46.16; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR40_with_HE'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=100, variables=('U', 'RF', 'SDV'))
+mdb.models['NDBR40_with_HE'].amplitudes['diffusion_insitu'].setValues(data=((
+    0.0, 1.0), (772.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR40_with_HE'].amplitudes['loading_insitu'].setValues(data=((0.0, 
+    0.0), (772.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR40_with_HE'].boundaryConditions['top_surface_disp'].setValues(
+    u2=0.00193)
+# Save by nguyenb5 on 2024_09_22-18.47.15; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR40_with_HE'].rootAssembly.Set(faces=
+    mdb.models['NDBR40_with_HE'].rootAssembly.instances['NDBR40-m-1'].faces.getSequenceFromMask(
+    ('[#b8ee6b9a #ab69dc73 #f772d ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_22-18.55.11; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-18.55.51; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='NDBR40_without_HE', objectToCopy=mdb.models['NDBR40_with_HE'])
+mdb.models['NDBR40_without_HE'].steps['step2_insitu'].setValues(initialInc=9.6, 
+    maxInc=9.6, timePeriod=960.0)
+mdb.models['NDBR40_without_HE'].amplitudes['diffusion_insitu'].setValues(data=(
+    (0.0, 1.0), (960.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR40_without_HE'].amplitudes['loading_insitu'].setValues(data=((
+    0.0, 0.0), (960.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['NDBR40_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR40_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+mdb.models['NDBR40_without_HE'].boundaryConditions['top_surface_disp'].setValues(
+    u2=0.0024)
+# Save by nguyenb5 on 2024_09_22-19.02.21; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-19.11.53; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['SH115_with_HE'].materials['CP1000'].userOutputVariables
+mdb.models['SH115_with_HE'].materials['CP1000'].depvar.setValues(n=36)
+mdb.models['SH115_with_HE'].rootAssembly.Set(faces=
+    mdb.models['SH115_with_HE'].rootAssembly.instances['SH115'].faces.getSequenceFromMask(
+    ('[#738ec1d6 #7efeeda7 ]', ), ), name='hydrogen_surface')
+mdb.models['SH115_with_HE'].rootAssembly.Set(faces=
+    mdb.models['SH115_with_HE'].rootAssembly.instances['SH115'].faces.getSequenceFromMask(
+    ('[#738ec1d6 #7efeeda7 ]', ), ), name='hydrogen_surface')
+# Save by nguyenb5 on 2024_09_22-19.14.58; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_with_HE'].steps['step1_precharging'].setValues(initialInc=
+    720.0)
+mdb.models['SH115_with_HE'].steps['step2_insitu'].setValues(initialInc=10.62, 
+    maxInc=10.62, timePeriod=1062.0)
+mdb.models['SH115_with_HE'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=100)
+mdb.models['SH115_with_HE'].amplitudes['diffusion_insitu'].setValues(data=((
+    0.0, 1.0), (1062.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['SH115_with_HE'].amplitudes['loading_insitu'].setValues(data=((0.0, 
+    0.0), (1062.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['SH115_with_HE'].boundaryConditions['top_surface_disp'].setValues(
+    u2=0.002656)
+# Save by nguyenb5 on 2024_09_22-19.18.03; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-19.19.25; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='SH115_without_HE', objectToCopy=mdb.models['SH115_with_HE'])
+mdb.models['SH115_without_HE'].steps['step2_insitu'].setValues(initialInc=9.53, 
+    maxInc=9.53, timePeriod=953.0)
+mdb.models['SH115_without_HE'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('U', 'RF', 'SDV'))
+mdb.models['SH115_with_HE'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('U', 'RF', 'SDV'))
+# Save by nguyenb5 on 2024_09_22-19.36.50; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-19.38.29; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_without_HE'].amplitudes['diffusion_insitu'].setValues(data=((
+    0.0, 1.0), (953.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['SH115_without_HE'].amplitudes['loading_insitu'].setValues(data=((
+    0.0, 0.0), (953.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['SH115_without_HE'].boundaryConditions['CL_mol_insitu_charging'].setValues(
+    magnitude=0.0)
+mdb.models['SH115_without_HE'].boundaryConditions['CL_mol_precharging'].setValues(
+    magnitude=0.0)
+mdb.models['SH115_without_HE'].boundaryConditions['top_surface_disp'].setValues(
+    u2=0.002382)
+# Save by nguyenb5 on 2024_09_22-19.39.32; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-19.40.02; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-20.39.03; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR15_with_HE'].sections['Section-1'].setValues(material='CP1000', 
+    thickness=None)
+# Save by nguyenb5 on 2024_09_22-20.56.26; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR15_without_HE'].sections['Section-1'].setValues(material=
+    'CP1000', thickness=None)
+# Save by nguyenb5 on 2024_09_22-20.56.45; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR15_without_HE'].parts['NDBR15'].setElementType(elemTypes=(
+    ElemType(elemCode=C3D8, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['NDBR15_without_HE'].parts['NDBR15'].cells.getSequenceFromMask((
+    '[#3fff ]', ), ), ))
+# Save by nguyenb5 on 2024_09_22-21.34.08; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR15_without_HE'].rootAssembly.regenerate()
+mdb.models['NDBR15_without_HE'].parts['NDBR15'].setElementType(elemTypes=(
+    ElemType(elemCode=C3D8, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['NDBR15_without_HE'].parts['NDBR15'].cells.getSequenceFromMask((
+    '[#3fff ]', ), ), ))
+# Save by nguyenb5 on 2024_09_22-21.34.27; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR15_without_HE'].rootAssembly.regenerate()
+mdb.models['SH115_with_HE'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['SH115_with_HE'].rootAssembly.instances['SH115'].cells.getSequenceFromMask(
+    ('[#7ff ]', ), ), ))
+# Save by nguyenb5 on 2024_09_22-21.35.52; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_without_HE'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=C3D8, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['SH115_without_HE'].rootAssembly.instances['SH115'].cells.getSequenceFromMask(
+    ('[#7ff ]', ), ), ))
+# Save by nguyenb5 on 2024_09_22-21.36.08; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_22-21.37.21; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_09_29-17.14.11; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

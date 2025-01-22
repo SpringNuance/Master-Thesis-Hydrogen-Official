@@ -1,0 +1,563 @@
+1
+
+   Abaqus 2023.HF4                                  Date 22-Sep-2024   Time 16:36:43
+   For use by AALTO UNIVERSITY under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes SIMULIA Corp.
+                           1301 Atwood Avenue, Suite 101W
+                              Johnston, RI 02919, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine L23-0203 
+                          you are authorized to run
+                          Abaqus/Standard until 20-Feb-2025
+
+                          Your site id is: 200000000014764 
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      https://www.3ds.com/products-services/simulia/services-support/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                     Abaqus 2023.HF4                     * 
+                *                                                         * 
+                *       BUILD ID: 2023_07_21-20.45.57 RELr425 183702      * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using                         * 
+                *  release Abaqus 2023.HF4 manuals                        * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *   This program may not be used for commercial purposes  * 
+                *           without payment of a commercial fee.          * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+ ***WARNING: Line #79874 has been truncated.
+
+ ***WARNING: Line #79877 has been truncated.
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *userelement, nodes=8, type=U1, properties=240, variables=288, coordinates=3
+  *Heading
+  *Element, type=U1
+  *Element, type=C3D8
+  *Elset, elset=ASSEMBLY_CHD2_SET-1
+  *Elset, elset=ASSEMBLY_CHD2_SOLID
+  *Elset, elset=ASSEMBLY_CHD2_VISUALIZATION
+  *Elset, elset=ASSEMBLY_BOTTOM_PART
+  *Elset, elset=ASSEMBLY_HYDROGEN_SURFACE
+  *Elset, elset=ASSEMBLY_TOP_PART
+  *Elset, elset=ASSEMBLY_TOP_SURFACE
+  *Elset, elset=ASSEMBLY_ZSYMM
+  *coupledtemperature-displacement, creep=NONE
+  *coupledtemperature-displacement, creep=NONE, deltmx=1000
+  *material, name=CP1000
+  *density
+  *depvar
+  *specificheat
+
+ ***WARNING: THE ABSOLUTE ZERO TEMPERATURE HAS NOT BEEN SPECIFIED FOR COMPUTING 
+             INTERNAL THERMAL ENERGY USING THE ABSOLUTE ZERO PARAMETER ON THE 
+             *PHYSICAL CONSTANTS OPTION. A DEFAULT VALUE OF 0.0000 WILL BE 
+             ASSUMED.
+  *usermaterial, constants=1
+  *solidsection, elset=ASSEMBLY_CHD2_VISUALIZATION, material=CP1000
+  *userelement, nodes=8, type=U1, properties=240, variables=288, coordinates=3
+  *solidsection, elset=ASSEMBLY_CHD2_VISUALIZATION, material=CP1000
+  *boundary
+  *boundary
+  *boundary, amplitude=DIFFUSION_PRECHARGING
+  *boundary, op=NEW, amplitude=DIFFUSION_INSITU
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW, amplitude=LOADING_INSITU
+  *boundary, op=NEW
+  *boundary
+  *boundary
+  *boundary, amplitude=DIFFUSION_PRECHARGING
+  *uelproperty, elset=ASSEMBLY_CHD2_SOLID
+  *output, field, frequency=0
+  *output, history, frequency=0
+  *output, field, numberinterval=100
+  *output, history, frequency=0
+  *elementoutput, directions=YES
+  *output, field, frequency=0
+  *output, history, frequency=0
+  *output, field, numberinterval=100
+  *output, history, frequency=0
+  *elementoutput, directions=YES
+  *output, field, frequency=0
+  *output, history, frequency=0
+  *output, field, numberinterval=100
+  *output, history, frequency=0
+  *elementoutput, directions=YES
+  
+                               E L E M E N T   Q U A L I T Y  C H E C K S        
+  
+  
+ ***NOTES: DISTORTED ISOPARAMETRIC ELEMENTS: ANGLE BETWEEN ISOPARAMETRIC LINES 
+           IS LESS THAN 45 DEGREES OR GREATER THAN 135 DEGREES.
+  
+           TETRAHEDRAL QUALITY MEASURE: VOLUME OF TETRAHEDRON DIVIDED BY THE 
+           VOLUME OF EQUILATERAL TETRAHEDRON WITH SAME CIRCUMSPHERE RADIUS; 
+           0 FOR DEGENERATE TETRAHEDRON AND 1 FOR EQUILATERIAL TETRAHEDRON. IT 
+           IS RECOMMENDED THAT THE TETRAHEDRAL QUALITY MEASURE BE GREATER THAN 
+           0.02, THE MIN INTERIOR (DIHEDRAL) ANGLE BE GREATER THAN 10 DEGREES, 
+           AND THE MAX INTERIOR (DIHEDRAL) ANGLE BE LESS THAN 160 DEGREES. 
+  
+           MODIFIED TETRAHEDRAL QUALITY MEASURE: ANGLES BETWEEN THE TWO LINE 
+           SEGMENTS ON EACH EDGE; THE EDGES OF MODIFIED TETRAHEDRAL SHOULD BE 
+           AS STRAIGHT AS POSSIBLE. IT IS RECOMMENDED THAT THE ANGLE BETWEEN 
+           THE TWO LINE SEGMENTS ON EACH EDGE IS BETWEEN 160 AND 180 DEGREES. 
+  
+           TRIANGULAR QUALITY MEASURE: AREA OF TRIANGLE DIVIDED BY THE AREA OF 
+           EQUILATERAL TRIANGLE WITH SAME CIRCUMCIRCLE RADIUS; 0 FOR DEGENERATE 
+           TRIANGLE AND 1 FOR EQUILATERAL TRIANGLE. IT IS RECOMMENDED THAT THE
+           TRIANGULAR QUALITY MEASURE BE GREATER THAN 0.01, THE MIN INTERIOR 
+           ANGLE BE GREATER THAN 10 DEGREES, AND THE MAX INTERIOR ANGLE BE LESS 
+           THAN 160 DEGREES. 
+  
+           NODAL ADJUSTMENTS ARISING FROM CONTACT INTERACTIONS AND/OR TIE 
+           CONSTRAINTS CAN CAUSE SEVERE ELEMENT DISTORTION. IT MAY BE NECESSARY 
+           TO REMESH IN ORDER TO REDUCE THE AMOUNT OF ADJUSTMENT. 
+
+ ***WARNING: 170 elements are distorted. Either the isoparametric angles are 
+             out of the suggested limits or the triangular or tetrahedral 
+             quality measure is bad. The elements have been identified in 
+             element set WarnElemDistorted.
+  
+ --------------------------------------------------------------------------------
+ Distorted isoparametric elements
+  
+    Element      Min/max angle   Adjusted nodes 
+ -------------- ---------------- -------------- 
+    CHD2.128838          43.3803       NO       
+    CHD2.128957          44.7092       NO       
+    CHD2.129130          41.9126       NO       
+    CHD2.129133          41.4316       NO       
+    CHD2.129146           34.491       NO       
+    CHD2.129148          21.2461       NO       
+    CHD2.129153          42.7116       NO       
+    CHD2.129159          24.4949       NO       
+    CHD2.129160          43.9334       NO       
+    CHD2.129161          36.7991       NO       
+    CHD2.129162          18.8044       NO       
+    CHD2.129175          24.0118       NO       
+    CHD2.129177          21.4013       NO       
+    CHD2.129178          35.6928       NO       
+    CHD2.129183          28.9494       NO       
+    CHD2.129186          42.9475       NO       
+    CHD2.129193            15.02       NO       
+    CHD2.129205          42.7116       NO       
+    CHD2.129251          43.3803       NO       
+    CHD2.129370          44.7092       NO       
+    CHD2.129543          41.9126       NO       
+    CHD2.129546          41.4316       NO       
+    CHD2.129559           34.491       NO       
+    CHD2.129561          21.2461       NO       
+    CHD2.129566          42.7116       NO       
+    CHD2.129572          24.4949       NO       
+    CHD2.129573          43.9334       NO       
+    CHD2.129574          36.7991       NO       
+    CHD2.129575          18.8044       NO       
+    CHD2.129588          24.0118       NO       
+    CHD2.129590          21.4013       NO       
+    CHD2.129591          35.6928       NO       
+    CHD2.129596          28.9494       NO       
+    CHD2.129599          42.9475       NO       
+    CHD2.129606            15.02       NO       
+    CHD2.129618          42.7116       NO       
+    CHD2.129664          43.3803       NO       
+    CHD2.129783          44.7092       NO       
+    CHD2.129956          41.9126       NO       
+    CHD2.129959          41.4316       NO       
+    CHD2.129972           34.491       NO       
+    CHD2.129974          21.2461       NO       
+    CHD2.129979          42.7116       NO       
+    CHD2.129985          24.4949       NO       
+    CHD2.129986          43.9334       NO       
+    CHD2.129987          36.7991       NO       
+    CHD2.129988          18.8044       NO       
+    CHD2.130001          24.0118       NO       
+    CHD2.130003          21.4013       NO       
+    CHD2.130004          35.6928       NO       
+    CHD2.130009          28.9494       NO       
+    CHD2.130012          42.9475       NO       
+    CHD2.130019            15.02       NO       
+    CHD2.130031          42.7116       NO       
+    CHD2.130077          43.3803       NO       
+    CHD2.130196          44.7092       NO       
+    CHD2.130369          41.9126       NO       
+    CHD2.130372          41.4316       NO       
+    CHD2.130385           34.491       NO       
+    CHD2.130387          21.2461       NO       
+    CHD2.130392          42.7116       NO       
+    CHD2.130398          24.4949       NO       
+    CHD2.130399          43.9334       NO       
+    CHD2.130400          36.7991       NO       
+    CHD2.130401          18.8044       NO       
+    CHD2.130414          24.0118       NO       
+    CHD2.130416          21.4013       NO       
+    CHD2.130417          35.6928       NO       
+    CHD2.130422          28.9494       NO       
+    CHD2.130425          42.9475       NO       
+    CHD2.130432            15.02       NO       
+    CHD2.130444          42.7116       NO       
+    CHD2.130490          43.3803       NO       
+    CHD2.130609          44.7092       NO       
+    CHD2.130782          41.9126       NO       
+    CHD2.130785          41.4316       NO       
+    CHD2.130798           34.491       NO       
+    CHD2.130800          21.2461       NO       
+    CHD2.130805          42.7116       NO       
+    CHD2.130811          24.4949       NO       
+    CHD2.130812          43.9334       NO       
+    CHD2.130813          36.7991       NO       
+    CHD2.130814          18.8044       NO       
+    CHD2.130827          24.0118       NO       
+    CHD2.130829          21.4013       NO       
+    CHD2.130830          35.6928       NO       
+    CHD2.130835          28.9494       NO       
+    CHD2.130838          42.9475       NO       
+    CHD2.130845            15.02       NO       
+    CHD2.130857          42.7116       NO       
+    CHD2.131408          44.4125       NO       
+    CHD2.131417          38.5503       NO       
+    CHD2.131420           29.052       NO       
+    CHD2.131427          32.3394       NO       
+    CHD2.131428          44.9561       NO       
+    CHD2.131436          42.1241       NO       
+    CHD2.131437          33.5131       NO       
+    CHD2.131441          29.8261       NO       
+    CHD2.131445           25.159       NO       
+    CHD2.131448          44.8454       NO       
+    CHD2.131451          31.5999       NO       
+    CHD2.131452           41.547       NO       
+    CHD2.131455          26.3466       NO       
+    CHD2.131456          21.6185       NO       
+    CHD2.131458          11.9673       NO       
+    CHD2.131460          43.6588       NO       
+    CHD2.131915          44.4125       NO       
+    CHD2.131924          38.5503       NO       
+    CHD2.131927           29.052       NO       
+    CHD2.131934          32.3394       NO       
+    CHD2.131935          44.9561       NO       
+    CHD2.131943          42.1241       NO       
+    CHD2.131944          33.5131       NO       
+    CHD2.131948          29.8261       NO       
+    CHD2.131952           25.159       NO       
+    CHD2.131955          44.8454       NO       
+    CHD2.131958          31.5999       NO       
+    CHD2.131959           41.547       NO       
+    CHD2.131962          26.3466       NO       
+    CHD2.131963          21.6185       NO       
+    CHD2.131965          11.9673       NO       
+    CHD2.131967          43.6588       NO       
+    CHD2.132422          44.4125       NO       
+    CHD2.132431          38.5503       NO       
+    CHD2.132434           29.052       NO       
+    CHD2.132441          32.3394       NO       
+    CHD2.132442          44.9561       NO       
+    CHD2.132450          42.1241       NO       
+    CHD2.132451          33.5131       NO       
+    CHD2.132455          29.8261       NO       
+    CHD2.132459           25.159       NO       
+    CHD2.132462          44.8454       NO       
+    CHD2.132465          31.5999       NO       
+    CHD2.132466           41.547       NO       
+    CHD2.132469          26.3466       NO       
+    CHD2.132470          21.6185       NO       
+    CHD2.132472          11.9673       NO       
+    CHD2.132474          43.6588       NO       
+    CHD2.132929          44.4125       NO       
+    CHD2.132938          38.5503       NO       
+    CHD2.132941           29.052       NO       
+    CHD2.132948          32.3394       NO       
+    CHD2.132949          44.9561       NO       
+    CHD2.132957          42.1241       NO       
+    CHD2.132958          33.5131       NO       
+    CHD2.132962          29.8261       NO       
+    CHD2.132966           25.159       NO       
+    CHD2.132969          44.8454       NO       
+    CHD2.132972          31.5999       NO       
+    CHD2.132973           41.547       NO       
+    CHD2.132976          26.3466       NO       
+    CHD2.132977          21.6185       NO       
+    CHD2.132979          11.9673       NO       
+    CHD2.132981          43.6588       NO       
+    CHD2.133436          44.4125       NO       
+    CHD2.133445          38.5503       NO       
+    CHD2.133448           29.052       NO       
+    CHD2.133455          32.3394       NO       
+    CHD2.133456          44.9561       NO       
+    CHD2.133464          42.1241       NO       
+    CHD2.133465          33.5131       NO       
+    CHD2.133469          29.8261       NO       
+    CHD2.133473           25.159       NO       
+    CHD2.133476          44.8454       NO       
+    CHD2.133479          31.5999       NO       
+    CHD2.133480           41.547       NO       
+    CHD2.133483          26.3466       NO       
+    CHD2.133484          21.6185       NO       
+    CHD2.133486          11.9673       NO       
+    CHD2.133488          43.6588       NO       
+  
+  
+  *Step, name=step1_precharging, nlgeom=YES, inc=1000000
+  *output, field, frequency=0
+  *output, history, frequency=0
+  *Step, name=step2_insitu, nlgeom=YES, inc=1000000
+  *output, field, numberinterval=100
+  *output, history, frequency=0
+  *Step, name=step1_precharging, nlgeom=YES, inc=1000000
+  *Step, name=step2_insitu, nlgeom=YES, inc=1000000
+  *Step, name=step1_precharging, nlgeom=YES, inc=1000000
+  *coupledtemperature-displacement, creep=NONE
+  *boundary, amplitude=DIFFUSION_PRECHARGING
+  *output, field, frequency=0
+  *output, history, frequency=0
+  *endstep
+
+ ***WARNING: THE *ELEMENT OUTPUT OPTION IS NOT SUPPORTED FOR USER ELEMENTS
+  *Step, name=step2_insitu, nlgeom=YES, inc=1000000
+  *coupledtemperature-displacement, creep=NONE, deltmx=1000
+  *boundary, op=NEW, amplitude=DIFFUSION_INSITU
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW, amplitude=LOADING_INSITU
+  *boundary, op=NEW
+  *output, field, numberinterval=100
+  *nodeoutput
+  *elementoutput, directions=YES
+  *output, history, frequency=0
+  *endstep
+
+ ***WARNING: OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS 
+             STEP. Abaqus MIGHT ADJUST THE TIME INCREMENTATION BUT WILL NOT 
+             VIOLATE THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP IN ORDER TO 
+             WRITE OUTPUT AT THOSE POINTS. CONSEQUENTLY, IN SOME CASES Abaqus 
+             MIGHTWRITE OUTPUT IMMEDIATELY AFTER THE SPECIFIED TIME POINTS, 
+             INSTEAD OF AT THE TIME POINTS. IN ADDITION, THE NUMBER OF 
+             INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.
+
+ ***WARNING: THE *ELEMENT OUTPUT OPTION IS NOT SUPPORTED FOR USER ELEMENTS
+
+ ***WARNING: THE *ELEMENT OUTPUT OPTION IS NOT SUPPORTED FOR USER ELEMENTS
+  *boundary
+  *boundary
+  *Step, name=step1_precharging, nlgeom=YES, inc=1000000
+  *coupledtemperature-displacement, creep=NONE
+  *boundary, amplitude=DIFFUSION_PRECHARGING
+  *endstep
+  *Step, name=step2_insitu, nlgeom=YES, inc=1000000
+  *coupledtemperature-displacement, creep=NONE, deltmx=1000
+  *boundary, op=NEW, amplitude=DIFFUSION_INSITU
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW, amplitude=LOADING_INSITU
+  *boundary, op=NEW
+  *endstep
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                 71090
+          NUMBER OF NODES IS                                    44285
+          NUMBER OF NODES DEFINED BY THE USER                   44285
+          TOTAL NUMBER OF VARIABLES IN THE MODEL               221425
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =      1.9    
+       SYSTEM TIME (SEC)    =     0.30    
+       TOTAL CPU TIME (SEC) =      2.2    
+       WALLCLOCK TIME (SEC) =            3
+1
+
+   Abaqus 2023.HF4                                  Date 22-Sep-2024   Time 16:36:51
+   For use by AALTO UNIVERSITY under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    1  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     C O U P L E D - T E M P E R A T U R E - D I S P L A C E M E N T   A N A L Y S I S
+
+
+                                                                                          
+
+          FIXED TIME INCREMENTS
+          TIME INCREMENT IS                                     720.    
+          TIME PERIOD IS                                       7.200E+03
+
+          CREEP AND SWELLING EFFECTS ARE OMITTED IN THIS STEP
+          THE RATE DEPENDENCY WILL BE CONSIDERED IN THIS STEP
+
+          CREEP AND SWELLING EFFECTS WILL BE IGNORED.
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          4.81E+11              209               3620
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+1
+
+   Abaqus 2023.HF4                                  Date 22-Sep-2024   Time 16:37:35
+   For use by AALTO UNIVERSITY under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    2  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       2     C O U P L E D - T E M P E R A T U R E - D I S P L A C E M E N T   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                 6.65    
+          AND A TOTAL TIME PERIOD OF                            665.    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-07
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                 6.65    
+
+          CREEP AND SWELLING EFFECTS ARE OMITTED IN THIS STEP
+
+     THE SIZE OF THE TIME INCREMENT IS CONTROLLED BY -
+          THE TEMPERATURE CHANGE PER INCREMENT NOT EXCEEDING           1.000E+03
+          THE RATE DEPENDENCY WILL BE CONSIDERED IN THIS STEP
+
+          CREEP AND SWELLING EFFECTS WILL BE IGNORED.
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          4.81E+11              209               3620
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.

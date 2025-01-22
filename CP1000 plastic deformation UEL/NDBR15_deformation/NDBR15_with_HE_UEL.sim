@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- COPYRIGHT DASSAULT SYSTEMES 2009 -->
+<manifest>
+    <focusFile fileBinary="NDBR15_with_HE_UEL.simdir\NDBR15_with_HE_UEL.1.SMAFocus"/>
+    <publishIndex value="1"/>
+    <bulkFile bulkid="1" fileBinary="NDBR15_with_HE_UEL.1.SMABulk"/>
+</manifest>

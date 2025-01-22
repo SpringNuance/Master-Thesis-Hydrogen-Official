@@ -1,0 +1,2 @@
+python autoscript.py --input "NDBR2p5_without_HE" --subroutine "phase_field_3D"
+abaqus job=NDBR2p5_without_HE_UEL input=NDBR2p5_without_HE_UEL.inp user=phase_field_3D cpus=8 mp_mode=threads -verbose 1 interactive

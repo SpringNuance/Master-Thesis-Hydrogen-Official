@@ -1,0 +1,1 @@
+*** Error: Abaqus Error: The following file(s) could not be located: NDBR6_without_HE_UEL.inp*** Error: Abaqus Error: The following file(s) could not be located: phase_field_3D.f, phase_field_3D.for, phase_field_3D.f90, phase_field_3D.F90, phase_field_3D.c, phase_field_3D.C, phase_field_3D.cpp, phase_field_3D.c\+\+, phase_field_3D.obj

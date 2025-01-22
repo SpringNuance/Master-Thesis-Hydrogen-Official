@@ -1,0 +1,1065 @@
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['Job-PlateWithHole-built-in']
+del mdb.models['Job-C3D8-built-in']
+del mdb.models['cube_C3D8_deformation']
+del mdb.models['cube_C3D8_deformation_solver']
+del mdb.models['cube_C3D8_diffusion']
+del mdb.models['cube_C3D20R_deformation']
+del mdb.models['cube_C3D20R_deformation_solver']
+mdb.models['CHD4_subroutine'].steps['step1_tensile'].setValues(initialInc=10.0, 
+    maxInc=10.0)
+# Save by nguyenb5 on 2024_10_21-11.44.11; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models.changeKey(fromName='CHD2_subroutine', toName='CHD2_deformation')
+mdb.models.changeKey(fromName='CHD4_subroutine', toName='CHD4_deformation')
+del mdb.models['CHD4_solver'].materials['user_material2']
+del mdb.models['CHD4_von_Mises']
+del mdb.models['CHD4_von_Mises_solver']
+mdb.models.changeKey(fromName='CHD2_solver', toName='CHD2_von_Mises_solver')
+mdb.models.changeKey(fromName='CHD4_solver', toName='CHD4_sovon_Mises_lver')
+mdb.models.changeKey(fromName='CHD4_sovon_Mises_lver', toName=
+    'CHD4_sovon_Mises_solver')
+mdb.models.changeKey(fromName='CHD4_sovon_Mises_solver', toName=
+    'CHD4_von_Mises_solver')
+mdb.models.changeKey(fromName='NDBR2p5_solver', toName=
+    'NDBR2p5_von_Mises_solver')
+mdb.models.changeKey(fromName='NDBR6_solver', toName='NDBR6_von_Mises_solver')
+mdb.models.changeKey(fromName='NDBR15_solver', toName=
+    'NDBR15_von_Mises_solver')
+mdb.models.changeKey(fromName='NDBR40_solver', toName=
+    'NDBR40_von_Mises_solver')
+mdb.models.changeKey(fromName='SH115_solver', toName='SH115_von_Mises_solver')
+mdb.models.changeKey(fromName='NDBR2p5_subroutine', toName=
+    'NDBR2p5_deformation')
+mdb.models.changeKey(fromName='NDBR6_subroutine', toName='NDBR6_deformation')
+mdb.models.changeKey(fromName='NDBR15_subroutine', toName='NDBR15_deformation')
+mdb.models.changeKey(fromName='NDBR40_subroutine', toName='NDBR40_deformation')
+# Save by nguyenb5 on 2024_10_21-11.55.31; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.jobs['CHD2_solver']
+del mdb.jobs['CHD2_subroutine']
+del mdb.jobs['CHD4_solver']
+del mdb.jobs['CHD4_subroutine']
+del mdb.jobs['CHD4_von_Mises']
+del mdb.jobs['CHD4_von_Mises_solver']
+del mdb.jobs['NDBR2p5_solver']
+del mdb.jobs['NDBR2p5_subroutine']
+del mdb.jobs['NDBR6_solver']
+del mdb.jobs['NDBR6_subroutine']
+del mdb.jobs['NDBR15_solver']
+del mdb.jobs['NDBR15_subroutine']
+del mdb.jobs['NDBR40_solver']
+del mdb.jobs['NDBR40_subroutine']
+del mdb.jobs['SH115_solver']
+del mdb.jobs['SH115_subroutine']
+del mdb.jobs['cube_C3D8_deformation']
+del mdb.jobs['cube_C3D8_deformation_solver']
+del mdb.jobs['cube_C3D8_diffusion']
+del mdb.jobs['cube_C3D20R_deformation']
+del mdb.jobs['cube_C3D20R_deformation_solver']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='CHD2_deformation', modelPrint=OFF
+    , multiprocessingMode=DEFAULT, name='CHD2_deformation', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR40_deformation', modelPrint=
+    OFF, multiprocessingMode=DEFAULT, name='CHD4_deformation', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR2p5_deformation', modelPrint=
+    OFF, multiprocessingMode=DEFAULT, name='NDBR2p5_deformation', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+del mdb.jobs['CHD4_deformation']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='CHD4_deformation', modelPrint=OFF
+    , multiprocessingMode=DEFAULT, name='CHD4_deformation', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR6_deformation', modelPrint=
+    OFF, multiprocessingMode=DEFAULT, name='NDBR6_deformation', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR15_deformation', modelPrint=
+    OFF, multiprocessingMode=DEFAULT, name='NDBR15_deformation', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.models.changeKey(fromName='SH115_subroutine', toName='SH115_deformation')
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR40_deformation', modelPrint=
+    OFF, multiprocessingMode=DEFAULT, name='NDBR40_deformation', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='SH115_deformation', modelPrint=
+    OFF, multiprocessingMode=DEFAULT, name='SH115_deformation', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+# Save by nguyenb5 on 2024_10_21-11.58.10; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='CHD2_von_Mises_solver', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='CHD2_von_Mises_solver', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='CHD2_von_Mises_solver', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='CHD4_von_Mises_solver', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR2p5_von_Mises_solver', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name=
+    'NDBR2p5_von_Mises_solver', nodalOutputPrecision=SINGLE, numCpus=1, 
+    numGPUs=0, numThreadsPerMpiProcess=1, queue=None, resultsFormat=ODB, 
+    scratch='', type=ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR6_von_Mises_solver', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='NDBR6_von_Mises_solver', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR15_von_Mises_solver', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='NDBR15_von_Mises_solver'
+    , nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, 
+    numThreadsPerMpiProcess=1, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDBR40_von_Mises_solver', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='NDBR40_von_Mises_solver'
+    , nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, 
+    numThreadsPerMpiProcess=1, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='CHD2_von_Mises_solver', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='SH115_von_Mises_solver', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.models['CHD2_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('E', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+mdb.models['CHD2_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('E', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+mdb.models['CHD2_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+# Save by nguyenb5 on 2024_10_21-12.05.57; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+mdb.models['CHD2_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U', 'HP'))
+mdb.models['CHD2_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+# Save by nguyenb5 on 2024_10_21-12.07.39; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_von_Mises_solver'].parts['CHD2'].generateMesh()
+# Save by nguyenb5 on 2024_10_21-12.14.56; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_von_Mises_solver'].rootAssembly.regenerate()
+del mdb.jobs['SH115_von_Mises_solver']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='SH115_von_Mises_solver', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='SH115_von_Mises_solver', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+del mdb.jobs['CHD4_von_Mises_solver']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='CHD4_von_Mises_solver', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='CHD4_von_Mises_solver', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+# Save by nguyenb5 on 2024_10_21-12.16.30; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['CHD2_von_Mises_solver'].submit(consistencyChecking=OFF)
+mdb.jobs['CHD2_von_Mises_solver']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'L23-0203', 'handle': 0, 'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '170 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE REQUEST FOR MISES OUTPUT WILL BE REPLACED BY A REQUEST FOR S OUTPUT', 
+    'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\LocalUserData\\User-data\\nguyenb5\\CP1000 plastic deformation UEL\\CHD2_von_Mises_solver.odb', 
+    'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'L23-0203', 'handle': 24960, 
+    'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'CHD2_von_Mises_solver', 
+    'memory': 5224.0})
+mdb.jobs['CHD2_von_Mises_solver']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 16017.0, 
+    'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 620.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Process terminated by external request (SIGTERM or SIGINT received).', 
+    'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(INTERRUPTED, {
+    'phase': STANDARD_PHASE, 
+    'message': 'Analysis interrupted by external signal', 
+    'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'CHD2_von_Mises_solver'})
+mdb.jobs['CHD2_von_Mises_solver']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'CHD2_von_Mises_solver'})
+mdb.models['CHD4_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+mdb.models['NDBR2p5_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+mdb.models['NDBR2p5_von_Mises_solver'].steps['step1_tensile'].setValues(
+    initialInc=10.0, maxInc=10.0)
+# Save by nguyenb5 on 2024_10_21-12.19.15; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR2p5_von_Mises_solver'].steps['step1_tensile'].setValues(
+    initialInc=5.0, maxInc=5.0)
+# Save by nguyenb5 on 2024_10_21-12.21.41; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR6_von_Mises_solver'].materials['user_material']
+mdb.models['NDBR6_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+# Save by nguyenb5 on 2024_10_21-12.23.11; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR15_von_Mises_solver'].historyOutputRequests['H-Output-1']
+mdb.models['NDBR15_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+del mdb.models['NDBR15_von_Mises_solver'].materials['user_material']
+# Save by nguyenb5 on 2024_10_21-12.24.01; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_10_21-12.25.09; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR2p5_von_Mises_solver'].materials['user_material2']
+# Save by nguyenb5 on 2024_10_21-12.28.21; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_10_21-12.28.45; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['NDBR40_von_Mises_solver'].materials['user_material']
+mdb.models['NDBR40_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+del mdb.models['SH115_von_Mises_solver'].materials['user_material']
+mdb.models['SH115_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('LE', 'LODE', 'MISES', 'PEEQ', 'RF', 'S', 'TRIAX', 'U'))
+# Save by nguyenb5 on 2024_10_21-12.31.44; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_deformation'].steps['step1_tensile'].setValues(initialInc=5.0, 
+    maxInc=5.0)
+# Save by nguyenb5 on 2024_10_21-13.20.26; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='CHD2_deformation-Copy', objectToCopy=
+    mdb.models['CHD2_deformation'])
+del mdb.models['CHD2_deformation-Copy']
+del mdb.models['CHD4_deformation']
+del mdb.models['NDBR2p5_deformation']
+del mdb.models['NDBR6_deformation']
+del mdb.models['NDBR15_deformation']
+del mdb.models['NDBR40_deformation']
+del mdb.models['SH115_deformation']
+del mdb.models['CHD2_deformation']
+mdb.Model(name='CHD2_subroutine', objectToCopy=
+    mdb.models['CHD2_von_Mises_solver'])
+mdb.models.changeKey(fromName='CHD2_subroutine', toName='CHD2_deformation')
+del mdb.models['CHD2_deformation'].materials['von_Mises']
+mdb.models['CHD2_deformation'].Material(name='user_material')
+mdb.models['CHD2_deformation'].materials['user_material'].Density(table=((
+    7900.0, ), ))
+mdb.models['CHD2_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['CHD2_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['CHD2_deformation'].sections['Section-1'].setValues(material=
+    'user_material', thickness=None)
+# Save by nguyenb5 on 2024_10_21-13.23.51; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='CHD4_deformation', objectToCopy=
+    mdb.models['CHD4_von_Mises_solver'])
+del mdb.models['CHD4_deformation'].materials['von_Mises']
+mdb.models['CHD4_deformation'].Material(name='user_material')
+mdb.models['CHD4_deformation'].materials['user_material'].Density(table=((
+    7900.0, ), ))
+mdb.models['CHD4_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['CHD4_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['CHD4_deformation'].sections['Section-1'].setValues(material=
+    'user_material', thickness=None)
+# Save by nguyenb5 on 2024_10_21-13.24.50; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD4_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+mdb.models['CHD2_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+# Save by nguyenb5 on 2024_10_21-13.25.20; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='NDBR2p5_deformation', objectToCopy=
+    mdb.models['NDBR2p5_von_Mises_solver'])
+del mdb.models['NDBR2p5_deformation'].materials['von_Mises']
+mdb.models['NDBR2p5_deformation'].Material(name='user_material')
+mdb.models['NDBR2p5_deformation'].materials['user_material'].Density(table=((
+    7900.0, ), ))
+mdb.models['NDBR2p5_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['NDBR2p5_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['NDBR2p5_deformation'].sections['Section-1'].setValues(material=
+    'user_material', thickness=None)
+mdb.models['NDBR2p5_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+# Save by nguyenb5 on 2024_10_21-13.27.03; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='NDBR6_deformation', objectToCopy=
+    mdb.models['NDBR6_von_Mises_solver'])
+del mdb.models['NDBR6_deformation'].materials['von_Mises']
+mdb.models['NDBR6_deformation'].Material(name='user_material')
+mdb.models['NDBR6_deformation'].materials['user_material'].Density(table=((
+    7900.0, ), ))
+mdb.models['NDBR6_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['NDBR6_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['NDBR6_deformation'].sections['Section-1'].setValues(material=
+    'user_material', thickness=None)
+mdb.models['NDBR6_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+# Save by nguyenb5 on 2024_10_21-13.28.10; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='NDBR15_deformation', objectToCopy=
+    mdb.models['NDBR15_von_Mises_solver'])
+mdb.models['NDBR15_deformation'].materials.changeKey(fromName='von_Mises', 
+    toName='user_material')
+del mdb.models['NDBR15_deformation'].materials['user_material'].elastic
+del mdb.models['NDBR15_deformation'].materials['user_material'].plastic
+mdb.models['NDBR15_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['NDBR15_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['NDBR15_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+# Save by nguyenb5 on 2024_10_21-13.29.09; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='NDBR40_deformation', objectToCopy=
+    mdb.models['NDBR40_von_Mises_solver'])
+mdb.models['NDBR40_deformation'].materials.changeKey(fromName='von_Mises', 
+    toName='user_material')
+del mdb.models['NDBR40_deformation'].materials['user_material'].elastic
+del mdb.models['NDBR40_deformation'].materials['user_material'].plastic
+mdb.models['NDBR40_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['NDBR40_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+# Save by nguyenb5 on 2024_10_21-13.29.48; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR40_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+# Save by nguyenb5 on 2024_10_21-13.29.59; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='SH115_deformation', objectToCopy=
+    mdb.models['SH115_von_Mises_solver'])
+mdb.models['SH115_von_Mises_solver'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'U', 'SDV'))
+# Save by nguyenb5 on 2024_10_21-13.31.31; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_deformation'].materials.changeKey(fromName='von_Mises', 
+    toName='user_material')
+del mdb.models['SH115_deformation'].materials['user_material'].elastic
+del mdb.models['SH115_deformation'].materials['user_material'].plastic
+mdb.models['SH115_deformation'].materials['user_material'].Depvar(n=30)
+mdb.models['SH115_deformation'].materials['user_material'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+# Save by nguyenb5 on 2024_10_21-14.44.48; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_deformation'].sections['Section-1'].setValues(material=
+    'user_material', thickness=None)
+# Save by nguyenb5 on 2024_10_21-14.48.06; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_deformation'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('RF', 'SDV', 'U'))
+# Save by nguyenb5 on 2024_10_21-14.48.33; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_deformation'].boundaryConditions['top_part_disp'].setValues(
+    region=mdb.models['SH115_deformation'].rootAssembly.sets['top_surface'])
+mdb.models['SH115_deformation'].boundaryConditions.changeKey(fromName=
+    'top_part_disp', toName='top_surface_disp')
+# Save by nguyenb5 on 2024_10_21-14.50.54; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR40_deformation'].boundaryConditions['top_part_disp'].setValues(
+    region=mdb.models['NDBR40_deformation'].rootAssembly.sets['top_surface'])
+mdb.models['NDBR40_deformation'].boundaryConditions.changeKey(fromName=
+    'top_part_disp', toName='top_surface_disp')
+# Save by nguyenb5 on 2024_10_21-14.51.25; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR15_deformation'].boundaryConditions.changeKey(fromName=
+    'top_part_disp', toName='top_surface_disp')
+mdb.models['NDBR15_deformation'].boundaryConditions['top_surface_disp'].setValues(
+    region=mdb.models['NDBR15_deformation'].rootAssembly.sets['top_surface'])
+mdb.models['NDBR15_von_Mises_solver'].boundaryConditions.changeKey(fromName=
+    'top_part_disp', toName='top_surface_disp')
+mdb.models['NDBR15_von_Mises_solver'].boundaryConditions['top_surface_disp'].setValues(
+    region=
+    mdb.models['NDBR15_von_Mises_solver'].rootAssembly.sets['top_surface'])
+# Save by nguyenb5 on 2024_10_21-14.53.23; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_von_Mises_solver'].boundaryConditions.changeKey(fromName=
+    'top_part_disp', toName='top_surface_disp')
+mdb.models['SH115_von_Mises_solver'].boundaryConditions['top_surface_disp'].setValues(
+    region=
+    mdb.models['SH115_von_Mises_solver'].rootAssembly.sets['top_surface'])
+# Save by nguyenb5 on 2024_10_21-14.54.05; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_deformation'].rootAssembly.Set(cells=
+    mdb.models['SH115_deformation'].rootAssembly.instances['SH115'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ), name='top_part')
+# Save by nguyenb5 on 2024_10_21-15.03.09; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_von_Mises_solver'].rootAssembly.Set(cells=
+    mdb.models['SH115_von_Mises_solver'].rootAssembly.instances['SH115'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ), name='top_part')
+# Save by nguyenb5 on 2024_10_21-15.03.44; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['CHD2_deformation'].rootAssembly.sets['top_nodes']
+del mdb.models['CHD2_von_Mises_solver'].rootAssembly.sets['top_nodes']
+# Save by nguyenb5 on 2024_10_21-15.05.14; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR15_deformation'].rootAssembly.Set(cells=
+    mdb.models['NDBR15_deformation'].rootAssembly.instances['NDBR15'].cells.getSequenceFromMask(
+    ('[#100 ]', ), ), name='bottom_part')
+mdb.models['NDBR15_deformation'].rootAssembly.Set(cells=
+    mdb.models['NDBR15_deformation'].rootAssembly.instances['NDBR15'].cells.getSequenceFromMask(
+    ('[#2000 ]', ), ), name='top_part')
+# Save by nguyenb5 on 2024_10_21-15.10.44; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR15_von_Mises_solver'].rootAssembly.Set(cells=
+    mdb.models['NDBR15_von_Mises_solver'].rootAssembly.instances['NDBR15'].cells.getSequenceFromMask(
+    ('[#100 ]', ), ), name='bottom_part')
+mdb.models['NDBR15_von_Mises_solver'].rootAssembly.Set(cells=
+    mdb.models['NDBR15_von_Mises_solver'].rootAssembly.instances['NDBR15'].cells.getSequenceFromMask(
+    ('[#2000 ]', ), ), name='top_part')
+# Save by nguyenb5 on 2024_10_21-15.11.16; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_10_21-15.13.40; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDBR40_deformation'].rootAssembly.Set(cells=
+    mdb.models['NDBR40_deformation'].rootAssembly.instances['NDBR40-m-1'].cells.getSequenceFromMask(
+    ('[#400 ]', ), ), name='bottom_part')
+mdb.models['NDBR40_deformation'].rootAssembly.Set(cells=
+    mdb.models['NDBR40_deformation'].rootAssembly.instances['NDBR40-m-1'].cells.getSequenceFromMask(
+    ('[#8000 ]', ), ), name='top_part')
+mdb.models['NDBR40_von_Mises_solver'].rootAssembly.Set(cells=
+    mdb.models['NDBR40_von_Mises_solver'].rootAssembly.instances['NDBR40-m-1'].cells.getSequenceFromMask(
+    ('[#400 ]', ), ), name='bottom_part')
+mdb.models['NDBR40_von_Mises_solver'].rootAssembly.Set(cells=
+    mdb.models['NDBR40_von_Mises_solver'].rootAssembly.instances['NDBR40-m-1'].cells.getSequenceFromMask(
+    ('[#8000 ]', ), ), name='top_part')
+# Save by nguyenb5 on 2024_10_21-15.14.50; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_deformation'].rootAssembly.Set(cells=
+    mdb.models['SH115_deformation'].rootAssembly.instances['SH115'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ), name='bottom_part')
+# Save by nguyenb5 on 2024_10_21-15.15.18; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['SH115_von_Mises_solver'].rootAssembly.Set(cells=
+    mdb.models['SH115_von_Mises_solver'].rootAssembly.instances['SH115'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ), name='bottom_part')
+# Save by nguyenb5 on 2024_10_21-15.15.50; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_10_21-15.16.39; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_deformation'].parts['CHD2'].setElementType(elemTypes=(
+    ElemType(elemCode=C3D8, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['CHD2_deformation'].parts['CHD2'].cells.getSequenceFromMask((
+    '[#fff ]', ), ), ))
+mdb.models['CHD2_deformation'].parts['CHD2'].deleteMesh()
+mdb.models['CHD2_deformation'].parts['CHD2'].generateMesh()
+# Save by nguyenb5 on 2024_10_21-16.00.08; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_von_Mises_solver'].parts['CHD2'].setElementType(elemTypes=(
+    ElemType(elemCode=C3D8, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    distortionControl=DEFAULT), ElemType(elemCode=C3D6, elemLibrary=STANDARD), 
+    ElemType(elemCode=C3D4, elemLibrary=STANDARD)), regions=(
+    mdb.models['CHD2_von_Mises_solver'].parts['CHD2'].cells.getSequenceFromMask(
+    ('[#fff ]', ), ), ))
+mdb.models['CHD2_von_Mises_solver'].parts['CHD2'].deleteMesh()
+mdb.models['CHD2_von_Mises_solver'].parts['CHD2'].generateMesh()
+# Save by nguyenb5 on 2024_10_21-16.01.02; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_von_Mises_solver'].rootAssembly.regenerate()
+mdb.models['CHD2_von_Mises_solver'].rootAssembly.regenerate()
+# Save by nguyenb5 on 2024_10_21-16.01.34; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_von_Mises_solver'].parts['CHD2'].generateMesh()
+# Save by nguyenb5 on 2024_10_21-16.01.53; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_von_Mises_solver'].rootAssembly.regenerate()
+mdb.models['CHD2_deformation'].rootAssembly.regenerate()
+mdb.models['CHD2_deformation'].parts['CHD2'].deleteMesh()
+mdb.models['CHD2_deformation'].parts['CHD2'].generateMesh()
+# Save by nguyenb5 on 2024_10_21-16.02.16; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CHD2_deformation'].rootAssembly.regenerate()
+# Save by nguyenb5 on 2024_10_21-18.00.27; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

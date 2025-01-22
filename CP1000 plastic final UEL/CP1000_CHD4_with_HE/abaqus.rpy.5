@@ -1,0 +1,228 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/Viewer Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-19.45.57 RELr425 183702
+# Run by nguyenb5 on Tue Sep 24 21:33:35 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=69.6510391235352, 
+    height=132.6875)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from viewerModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+o2 = session.openOdb(name='CHD4_with_HE_UEL.odb')
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (final UEL)/CP1000_CHD4_with_HE/CHD4_with_HE_UEL.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       10
+#: Number of Node Sets:          8
+#: Number of Steps:              2
+session.viewports['Viewport: 1'].setValues(displayedObject=o2)
+session.viewports['Viewport: 1'].makeCurrent()
+leaf = dgo.LeafFromElementSets(elementSets=("CHD4.SOLID", ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.remove(leaf=leaf)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR27_SIG_H', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.46332, 
+    farPlane=0.621612, width=0.0123064, height=0.00628169, 
+    viewOffsetX=-0.000845776, viewOffsetY=-0.00901449)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=6 )
+session.viewports['Viewport: 1'].view.setValues(session.views['Back'])
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.49695, 
+    farPlane=0.505172, width=0.0217512, height=0.0111027, 
+    viewOffsetX=-0.00158178, viewOffsetY=-0.00151929)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=81 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=9 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=10 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=12 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=14 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=16 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=18 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=19 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=21 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=22 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=23 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=24 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=25 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=1, frame=0 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.492257, 
+    farPlane=0.509865, width=0.0545059, height=0.0278221, 
+    viewOffsetX=0.00297113, viewOffsetY=-0.00237982)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    visibleEdges=FREE)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=NONE)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=SCALE_FACTOR)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.animationOptions.setValues(frameRate=8)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=SCALE_FACTOR)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports[session.currentViewportName].odbDisplay.setFrame(
+    step='step2_insitu', frame=0)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=SCALE_FACTOR)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.animationOptions.setValues(frameRate=25)
+session.animationOptions.setValues(frameRate=100)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.showLastFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.decrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.decrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=SCALE_FACTOR)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=HARMONIC)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.animationOptions.setValues(frameRate=29)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports[session.currentViewportName].odbDisplay.setFrame(
+    step='step2_insitu', frame=0)
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=SCALE_FACTOR)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=NONE)
+session.animationOptions.setValues(mode=PLAY_ONCE)
+session.animationOptions.setValues(mode=LOOP)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR28_SIG_VONMISES', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.490546, 
+    farPlane=0.511576, width=0.0577835, height=0.0294951, 
+    viewOffsetX=0.00128009, viewOffsetY=-0.00257136)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=SCALE_FACTOR)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports[session.currentViewportName].animationController.showFrame(
+    frame=0)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=SCALE_FACTOR)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)

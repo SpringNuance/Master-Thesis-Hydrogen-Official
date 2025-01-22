@@ -1,0 +1,93 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/Viewer Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-19.45.57 RELr425 183702
+# Run by nguyenb5 on Tue Sep 24 22:25:28 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=109.73957824707, 
+    height=161.056716918945)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from viewerModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+o2 = session.openOdb(name='CHD4_with_HE_UEL.odb')
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (final UEL)/CP1000_CHD4_with_HE/CHD4_with_HE_UEL.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       10
+#: Number of Node Sets:          8
+#: Number of Steps:              2
+session.viewports['Viewport: 1'].setValues(displayedObject=o2)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].view.setValues(session.views['Back'])
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.495857, 
+    farPlane=0.505943, width=0.0317723, height=0.0171534, 
+    viewOffsetX=0.00191002, viewOffsetY=-0.00102816)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.animationOptions.setValues(timeHistoryMode=TIME_BASED, 
+    minTimeAutoCompute=True, maxTimeAutoCompute=True)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=NONE)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].view.setValues(width=0.0418297, 
+    height=0.0225832, viewOffsetX=0.0025014, viewOffsetY=-0.00144214)
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+leaf = dgo.LeafFromElementSets(elementSets=("CHD4.SOLID", ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.remove(leaf=leaf)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.495087, 
+    farPlane=0.506714, width=0.0368821, height=0.0199121, 
+    viewOffsetX=0.00212138, viewOffsetY=-0.00183535)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    visibleEdges=FREE)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR25_EQPLAS', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(width=0.0346923, 
+    height=0.0187299, viewOffsetX=0.00100387, viewOffsetY=-0.00378864)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=NONE)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports[session.currentViewportName].animationController.showFrame(
+    value=7480)
+session.animationOptions.setValues(minTimeAutoCompute=False, minTime=7500, 
+    maxTimeAutoCompute=False)
+session.animationOptions.setValues(maxTime=7600)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.animationOptions.setValues(minTime=7400)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR31_PHI', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].odbDisplay.contourOptions.setValues(
+    maxValue=0.0487086, minValue=-5.21273E-08)
+session.viewports[session.currentViewportName].animationController.showFrame(
+    value=7600)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()

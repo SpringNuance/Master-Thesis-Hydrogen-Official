@@ -1,0 +1,2 @@
+python autoscript.py --input "CHD2_deformation" --subroutine "von_Mises_plasticity_UEL"
+abaqus job=CHD2_deformation_UEL input=CHD2_deformation_UEL.inp user=von_Mises_plasticity_UEL cpus=8 mp_mode=threads -verbose 1 interactive
