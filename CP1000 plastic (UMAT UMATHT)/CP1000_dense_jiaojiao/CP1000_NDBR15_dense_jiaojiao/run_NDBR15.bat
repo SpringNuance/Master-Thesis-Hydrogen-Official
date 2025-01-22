@@ -1,0 +1,2 @@
+python autoscript.py --input "NDBR15_combined"
+abaqus job=NDBR15_combined_processed input=NDBR15_combined_processed.inp user=deformation_diffusion double output_precision=full cpus=6 -verbose 1 mp_mode=threads memory=2048 interactive

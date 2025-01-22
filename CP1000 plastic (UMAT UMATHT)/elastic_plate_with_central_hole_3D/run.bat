@@ -1,0 +1,2 @@
+python autoscript.py --input "elastic_plate_3D"
+abaqus job=elastic_plate_3D_processed input=elastic_plate_3D_processed.inp user=deformation_diffusion double output_precision=full cpus=2 -verbose 1 memory=2048 interactive

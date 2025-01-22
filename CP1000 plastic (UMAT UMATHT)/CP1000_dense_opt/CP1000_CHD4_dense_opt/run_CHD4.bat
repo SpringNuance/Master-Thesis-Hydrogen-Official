@@ -1,0 +1,2 @@
+python autoscript.py --input "CHD4_combined"
+abaqus job=CHD4_combined_processed input=CHD4_combined_processed.inp user=deformation_diffusion double output_precision=full cpus=8 -verbose 1 mp_mode=threads memory=2048 interactive

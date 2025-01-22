@@ -1,0 +1,48 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/Viewer Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Sun Oct 27 13:25:50 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+#: Warning: Permission was denied for "abaqus.rpy"; "abaqus.rpy.2" will be used for this session's replay file.
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=103.244789123535, 
+    height=119.284721374512)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from viewerModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+o2 = session.openOdb(name='elastic_plate_3D_aravas_processed.odb')
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT UMATHT)/elastic_plate_with_central_hole_3D_aravas/elastic_plate_3D_aravas_processed.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       7
+#: Number of Node Sets:          7
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o2)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=123 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=124 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=125 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=126 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=127 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=128 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=129 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=130 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=131 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=737 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.121565, 
+    farPlane=0.206705, width=0.0661154, height=0.0282452, 
+    viewOffsetX=-0.00830382, viewOffsetY=-0.00509817)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV_AR3_CL', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(
+    plotState=CONTOURS_ON_DEF)

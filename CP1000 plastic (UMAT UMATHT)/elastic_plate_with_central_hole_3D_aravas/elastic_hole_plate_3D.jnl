@@ -1,0 +1,48 @@
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['elastic_plate_3D'].materials['Material-1'].depvar.setValues(n=29)
+mdb.models['elastic_plate_3D'].materials['Material-1'].userMaterial.setValues(
+    mechanicalConstants=(0.0, ), thermalConstants=(0.0, ))
+mdb.models['elastic_plate_3D'].rootAssembly.sets.changeKey(fromName=
+    'whole_part', toName='alle')
+mdb.models['elastic_plate_3D'].rootAssembly.sets.changeKey(fromName='alle', 
+    toName='ALLE')
+mdb.models['elastic_plate_3D'].predefinedFields['Cbar_L'].setValues(region=
+    mdb.models['elastic_plate_3D'].rootAssembly.sets['ALLE'])
+mdb.models['elastic_plate_3D'].rootAssembly.Set(name='ALLN', nodes=
+    mdb.models['elastic_plate_3D'].rootAssembly.instances['elastic-hold-plate-1'].nodes.getSequenceFromMask(
+    mask=('[#ffffffff:99 #fffffff ]', ), ))
+mdb.models['elastic_plate_3D'].predefinedFields['Cbar_L'].setValues(region=
+    mdb.models['elastic_plate_3D'].rootAssembly.sets['ALLN'])
+mdb.models['elastic_plate_3D'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('COORD', 'LE', 'NT', 'RF', 'S', 'SDV', 'U', 'UVARM', 'HFL'))
+# Save by nguyenb5 on 2024_10_26-22.05.27; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs.changeKey(fromName='elastic_plate_3D', toName=
+    'elastic_plate_3D_aravas')
+mdb.models['elastic_plate_3D'].predefinedFields['Predefined Field-2'].setValues(
+    region=mdb.models['elastic_plate_3D'].rootAssembly.sets['ALLN'])
+# Save by nguyenb5 on 2024_10_26-22.06.15; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

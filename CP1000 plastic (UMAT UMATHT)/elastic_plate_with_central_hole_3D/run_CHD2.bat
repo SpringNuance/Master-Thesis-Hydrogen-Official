@@ -1,0 +1,2 @@
+python autoscript.py --input "CHD2_with_HE"
+abaqus job=CHD2_with_HE_processed input=CHD2_with_HE_processed.inp user=deformation_diffusion double output_precision=full cpus=8 -verbose 1 memory=2048 interactive
