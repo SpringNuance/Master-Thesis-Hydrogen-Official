@@ -1,0 +1,2356 @@
+# Save by daglim1 on 2024_11_06-17.32.58; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['vumat_cube_elastoplastic_solver'].materials['steel'].plastic.setValues(
+    scaleStress=None)
+mdb.models['vumat_cube_elastoplastic_solver'].materials['steel'].Conductivity(
+    table=((45.0, ), ))
+mdb.models['vumat_cube_elastoplastic_solver'].materials['steel'].SpecificHeat(
+    table=((420.0, ), ))
+del mdb.models['vumat_cube_elastoplastic_srt-Copy']
+mdb.Model(name='vumat_cube_elastoplastic_srt-Copy', objectToCopy=
+    mdb.models['vumat_cube_elastoplastic_srt'])
+mdb.models['vumat_cube_elastoplastic_srt-Copy'].materials['steel'].Conductivity(
+    table=((45.0, ), ))
+mdb.models['vumat_cube_elastoplastic_srt-Copy'].materials['steel'].SpecificHeat(
+    table=((420.0, ), ))
+mdb.models['vumat_cube_elastoplastic_srt-Copy'].materials['steel'].Elastic(
+    table=((210000000000.0, 0.3), ))
+del mdb.models['vumat_cube_elastoplastic_srt-Copy'].materials['steel'].depvar
+del mdb.models['vumat_cube_elastoplastic_srt-Copy'].materials['steel'].userMaterial
+mdb.models['vumat_cube_elastoplastic_srt-Copy'].materials['steel'].Plastic(
+    scaleStress=None, table=((839646000.0, 0.0), (880025000.0, 0.0003), (
+    906975000.0, 0.0005), (926275000.0, 0.001), (926275000.0, 0.002), (
+    939393000.0, 0.003), (949756000.0, 0.004), (958495000.0, 0.005), (
+    966134000.0, 0.006), (972960000.0, 0.007), (979150000.0, 0.008), (
+    984823000.0, 0.009), (990061000.0, 0.01), (1027470000.0, 0.02), (
+    1049750000.0, 0.03), (1064310000.0, 0.04), (1074410000.0, 0.05), (
+    1081810000.0, 0.06), (1087490000.0, 0.07), (1092060000.0, 0.08), (
+    1095870000.0, 0.09), (1099140000.0, 0.1), (1111180000.0, 0.15), (
+    1119630000.0, 0.2), (1126250000.0, 0.25), (1131720000.0, 0.3), (
+    1136380000.0, 0.35), (1140440000.0, 0.4), (1144050000.0, 0.45), (
+    1147300000.0, 0.5), (1150250000.0, 0.55), (1152960000.0, 0.6), (
+    1155460000.0, 0.65), (1157790000.0, 0.7), (1159960000.0, 0.75), (
+    1162000000.0, 0.8), (1163920000.0, 0.85), (1165740000.0, 0.9), (
+    1167460000.0, 0.95), (1169110000.0, 1.0), (1170670000.0, 1.05), (
+    1172160000.0, 1.1), (1173600000.0, 1.15), (1174970000.0, 1.2), (
+    1176290000.0, 1.25), (1177560000.0, 1.3), (1178790000.0, 1.35), (
+    1179970000.0, 1.4), (1181120000.0, 1.45), (1182220000.0, 1.5), (
+    1183300000.0, 1.55), (1184340000.0, 1.6), (1185350000.0, 1.65), (
+    1186330000.0, 1.7), (1187280000.0, 1.75), (1188210000.0, 1.8), (
+    1189120000.0, 1.85), (1190000000.0, 1.9), (1190860000.0, 1.95), (
+    1191700000.0, 2.0), (1192520000.0, 2.05), (1193320000.0, 2.1), (
+    1194100000.0, 2.15), (1194870000.0, 2.2), (1195620000.0, 2.25), (
+    1196350000.0, 2.3), (1197070000.0, 2.35), (1197770000.0, 2.4), (
+    1198470000.0, 2.45), (1199140000.0, 2.5), (1199810000.0, 2.55), (
+    1200460000.0, 2.6), (1201100000.0, 2.65), (1201730000.0, 2.7), (
+    1202350000.0, 2.75), (1202960000.0, 2.8), (1203550000.0, 2.85), (
+    1204140000.0, 2.9), (1204720000.0, 2.95), (1205290000.0, 3.0)))
+# Save by daglim1 on 2024_11_06-17.41.26; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Job(activateLoadBalancing=False, atTime=None, contactPrint=OFF, 
+    description='', echoPrint=OFF, explicitPrecision=SINGLE, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model=
+    'vumat_cube_elastoplastic_srt-Copy', modelPrint=OFF, multiprocessingMode=
+    DEFAULT, name='Job-5', nodalOutputPrecision=SINGLE, numCpus=1, numDomains=1
+    , numThreadsPerMpiProcess=1, queue=None, resultsFormat=ODB, scratch='', 
+    type=ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['Job-5'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-5']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D23-0234', 'handle': 0, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE ABSOLUTE ZERO TEMPERATURE HAS NOT BEEN SPECIFIED FOR COMPUTING INTERNAL THERMAL ENERGY USING THE ABSOLUTE ZERO PARAMETER ON THE *PHYSICAL CONSTANTS OPTION. A DEFAULT VALUE OF 0.0000 WILL BE ASSUMED.', 
+    'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT VARIABLE SDV HAS NO COMPONENTS IN THIS ANALYSIS FOR ELEMENT TYPE C3D8T', 
+    'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STARTED, {'phase': PACKAGER_PHASE, 
+    'clientHost': 'D23-0234', 'handle': 1428, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(WARNING, {'phase': PACKAGER_PHASE, 
+    'message': 'There are 2 warning messages in the data (.dat) file.  Please check the data file for possible errors in the input file.', 
+    'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(COMPLETED, {'phase': PACKAGER_PHASE, 
+    'message': 'Phase complete', 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STARTED, {'phase': EXPLICIT_PHASE, 
+    'clientHost': 'D23-0234', 'handle': 23012, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.0, 
+    'stableTimeIncrement': 2.785422168472e-07, 'internalEnergy': 0.0, 
+    'stepTime': 0.0, 'totalEnergy': 0.412125021219254, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 0, 'distortionContrEnergy': 0.0, 'externalWork': 0.0, 
+    'kineticEnergy': 1.96250016237798e-09, 'wallTime': 0.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.0100002530962229, 
+    'stableTimeIncrement': 3.48740655908841e-07, 
+    'internalEnergy': 0.419583290815353, 'stepTime': 0.0100002530962229, 
+    'totalEnergy': 0.41203898191452, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 28674, 'distortionContrEnergy': 0.0, 
+    'externalWork': 0.419583529233932, 'kineticEnergy': 6.33453245413307e-09, 
+    'wallTime': 1.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.0200000181794167, 
+    'stableTimeIncrement': 3.48506290492878e-07, 
+    'internalEnergy': 1.67692816257477, 'stepTime': 0.0200000181794167, 
+    'totalEnergy': 0.411952674388885, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 57383, 'distortionContrEnergy': 0.0, 
+    'externalWork': 1.67692852020264, 'kineticEnergy': 6.46095710266081e-09, 
+    'wallTime': 2.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 2, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.0300001315772533, 
+    'stableTimeIncrement': 3.48282384265985e-07, 
+    'internalEnergy': 3.47150921821594, 'stepTime': 0.0300001315772533, 
+    'totalEnergy': 0.411989986896515, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 86093, 'distortionContrEnergy': 0.0, 
+    'externalWork': 3.4715096950531, 'kineticEnergy': 8.15475953430678e-09, 
+    'wallTime': 4.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 3, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.0400002226233482, 
+    'stableTimeIncrement': 3.48057255905587e-07, 
+    'internalEnergy': 5.33769607543945, 'stepTime': 0.0400002226233482, 
+    'totalEnergy': 0.41202899813652, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 114938, 'distortionContrEnergy': 0.0, 
+    'externalWork': 5.33769750595093, 'kineticEnergy': 7.95837795664056e-09, 
+    'wallTime': 6.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 4, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.0500002130866051, 
+    'stableTimeIncrement': 3.47828546409801e-07, 
+    'internalEnergy': 7.23899173736572, 'stepTime': 0.0500002130866051, 
+    'totalEnergy': 0.412064850330353, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 143802, 'distortionContrEnergy': 0.0, 
+    'externalWork': 7.23899412155151, 'kineticEnergy': 7.85204079534196e-09, 
+    'wallTime': 7.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 5, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.0600002035498619, 
+    'stableTimeIncrement': 3.47596682104268e-07, 
+    'internalEnergy': 9.16520690917969, 'stepTime': 0.0600002035498619, 
+    'totalEnergy': 0.412140727043152, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 172666, 'distortionContrEnergy': 0.0, 
+    'externalWork': 9.1652135848999, 'kineticEnergy': 7.91094301177964e-09, 
+    'wallTime': 9.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 6, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.0700002983212471, 
+    'stableTimeIncrement': 3.47363140917878e-07, 
+    'internalEnergy': 11.0950527191162, 'stepTime': 0.0700002983212471, 
+    'totalEnergy': 0.41212871670723, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 201300, 'distortionContrEnergy': 0.0, 
+    'externalWork': 11.0950593948364, 'kineticEnergy': 7.91881582529186e-09, 
+    'wallTime': 11.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 7, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.0800003111362457, 
+    'stableTimeIncrement': 3.47129571309779e-07, 
+    'internalEnergy': 13.0340232849121, 'stepTime': 0.0800003111362457, 
+    'totalEnergy': 0.412085860967636, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 229857, 'distortionContrEnergy': 0.0, 
+    'externalWork': 13.0340328216553, 'kineticEnergy': 7.93713983426869e-09, 
+    'wallTime': 12.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 8, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.0900003239512444, 
+    'stableTimeIncrement': 3.46893358482703e-07, 
+    'internalEnergy': 14.9824485778809, 'stepTime': 0.0900003239512444, 
+    'totalEnergy': 0.412115037441254, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 258414, 'distortionContrEnergy': 0.0, 
+    'externalWork': 14.9824562072754, 'kineticEnergy': 8.01386601523291e-09, 
+    'wallTime': 14.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 9, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.100000336766243, 
+    'stableTimeIncrement': 3.46654616123487e-07, 
+    'internalEnergy': 16.9397106170654, 'stepTime': 0.100000336766243, 
+    'totalEnergy': 0.412275791168213, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 286971, 'distortionContrEnergy': 0.0, 
+    'externalWork': 16.9397163391113, 'kineticEnergy': 8.00716470905627e-09, 
+    'wallTime': 16.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 10, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.110000148415565, 
+    'stableTimeIncrement': 3.46412775797944e-07, 
+    'internalEnergy': 18.9124660491943, 'stepTime': 0.110000148415565, 
+    'totalEnergy': 0.412475496530533, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 315626, 'distortionContrEnergy': 0.0, 
+    'externalWork': 18.9124755859375, 'kineticEnergy': 8.17711054423853e-09, 
+    'wallTime': 17.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 11, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.120000228285789, 
+    'stableTimeIncrement': 3.46164199527266e-07, 
+    'internalEnergy': 20.9301681518555, 'stepTime': 0.120000228285789, 
+    'totalEnergy': 0.412678688764572, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 344804, 'distortionContrEnergy': 0.0, 
+    'externalWork': 20.9301776885986, 'kineticEnergy': 7.96433852201517e-09, 
+    'wallTime': 19.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 12, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.130000308156013, 
+    'stableTimeIncrement': 3.45911132626497e-07, 
+    'internalEnergy': 22.956298828125, 'stepTime': 0.130000308156013, 
+    'totalEnergy': 0.41293665766716, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 373982, 'distortionContrEnergy': 0.0, 
+    'externalWork': 22.9563064575195, 'kineticEnergy': 7.87168552562889e-09, 
+    'wallTime': 21.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 13, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.14000004529953, 
+    'stableTimeIncrement': 3.45655280398205e-07, 
+    'internalEnergy': 24.9865570068359, 'stepTime': 0.14000004529953, 
+    'totalEnergy': 0.413162708282471, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 403159, 'distortionContrEnergy': 0.0, 
+    'externalWork': 24.9865684509277, 'kineticEnergy': 8.11988076776515e-09, 
+    'wallTime': 22.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 14, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.150000125169754, 
+    'stableTimeIncrement': 3.45402781931625e-07, 
+    'internalEnergy': 27.019926071167, 'stepTime': 0.150000125169754, 
+    'totalEnergy': 0.413332104682922, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 432337, 'distortionContrEnergy': 0.0, 
+    'externalWork': 27.0199356079102, 'kineticEnergy': 8.02157362755906e-09, 
+    'wallTime': 24.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 15, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.160000205039978, 
+    'stableTimeIncrement': 3.45149800295985e-07, 
+    'internalEnergy': 29.0562973022461, 'stepTime': 0.160000205039978, 
+    'totalEnergy': 0.413485378026962, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 461515, 'distortionContrEnergy': 0.0, 
+    'externalWork': 29.0563125610352, 'kineticEnergy': 8.10419198415957e-09, 
+    'wallTime': 26.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 16, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.170000284910202, 
+    'stableTimeIncrement': 3.44895170201198e-07, 
+    'internalEnergy': 31.095630645752, 'stepTime': 0.170000284910202, 
+    'totalEnergy': 0.413602292537689, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 490693, 'distortionContrEnergy': 0.0, 
+    'externalWork': 31.0956420898438, 'kineticEnergy': 8.04798006015517e-09, 
+    'wallTime': 28.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 17, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.180000022053719, 
+    'stableTimeIncrement': 3.44639033755811e-07, 
+    'internalEnergy': 33.1377029418945, 'stepTime': 0.180000022053719, 
+    'totalEnergy': 0.413631349802017, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 519870, 'distortionContrEnergy': 0.0, 
+    'externalWork': 33.1377220153809, 'kineticEnergy': 7.84161802158678e-09, 
+    'wallTime': 29.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 18, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.190000101923943, 
+    'stableTimeIncrement': 3.44381533068372e-07, 
+    'internalEnergy': 35.1807136535645, 'stepTime': 0.190000101923943, 
+    'totalEnergy': 0.413819551467896, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 549048, 'distortionContrEnergy': 0.0, 
+    'externalWork': 35.180736541748, 'kineticEnergy': 8.06358357863246e-09, 
+    'wallTime': 31.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 19, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.200000181794167, 
+    'stableTimeIncrement': 3.44122753404008e-07, 
+    'internalEnergy': 37.223690032959, 'stepTime': 0.200000181794167, 
+    'totalEnergy': 0.413920283317566, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 578226, 'distortionContrEnergy': 0.0, 
+    'externalWork': 37.2237091064453, 'kineticEnergy': 7.94022536609873e-09, 
+    'wallTime': 33.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 20, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.210000261664391, 
+    'stableTimeIncrement': 3.43862723184429e-07, 
+    'internalEnergy': 39.2665901184082, 'stepTime': 0.210000261664391, 
+    'totalEnergy': 0.414276629686356, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 607404, 'distortionContrEnergy': 0.0, 
+    'externalWork': 39.2666091918945, 'kineticEnergy': 8.07231348431969e-09, 
+    'wallTime': 34.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 21, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.219999998807907, 
+    'stableTimeIncrement': 3.43601556096473e-07, 
+    'internalEnergy': 41.3093032836914, 'stepTime': 0.219999998807907, 
+    'totalEnergy': 0.414356529712677, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 636581, 'distortionContrEnergy': 0.0, 
+    'externalWork': 41.3093414306641, 'kineticEnergy': 8.00933186440034e-09, 
+    'wallTime': 36.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 22, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.230000078678131, 
+    'stableTimeIncrement': 3.43339337405268e-07, 
+    'internalEnergy': 43.3519706726074, 'stepTime': 0.230000078678131, 
+    'totalEnergy': 0.414590507745743, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 665759, 'distortionContrEnergy': 0.0, 
+    'externalWork': 43.3520050048828, 'kineticEnergy': 7.68924479643829e-09, 
+    'wallTime': 38.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 23, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.240000158548355, 
+    'stableTimeIncrement': 3.43076180797652e-07, 
+    'internalEnergy': 45.3936767578125, 'stepTime': 0.240000158548355, 
+    'totalEnergy': 0.415055155754089, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 694937, 'distortionContrEnergy': 0.0, 
+    'externalWork': 45.3937149047852, 'kineticEnergy': 8.07550026848958e-09, 
+    'wallTime': 40.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 24, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.250000238418579, 
+    'stableTimeIncrement': 3.42808675668493e-07, 
+    'internalEnergy': 47.4335975646973, 'stepTime': 0.250000238418579, 
+    'totalEnergy': 0.414957642555237, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 724115, 'distortionContrEnergy': 0.0, 
+    'externalWork': 47.4336433410645, 'kineticEnergy': 7.97468402424784e-09, 
+    'wallTime': 41.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 25, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.260000079870224, 
+    'stableTimeIncrement': 3.4253241665283e-07, 
+    'internalEnergy': 49.5082054138184, 'stepTime': 0.260000079870224, 
+    'totalEnergy': 0.415087819099426, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 753816, 'distortionContrEnergy': 0.0, 
+    'externalWork': 49.5082550048828, 'kineticEnergy': 7.86612108782947e-09, 
+    'wallTime': 43.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 26, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.270000070333481, 
+    'stableTimeIncrement': 3.42247915341432e-07, 
+    'internalEnergy': 51.6369209289551, 'stepTime': 0.270000070333481, 
+    'totalEnergy': 0.415473639965057, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 784320, 'distortionContrEnergy': 0.0, 
+    'externalWork': 51.6369667053223, 'kineticEnergy': 8.31739566109491e-09, 
+    'wallTime': 45.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 27, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.280000060796738, 
+    'stableTimeIncrement': 3.41962959282682e-07, 
+    'internalEnergy': 53.7636108398438, 'stepTime': 0.280000060796738, 
+    'totalEnergy': 0.415327310562134, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 814824, 'distortionContrEnergy': 0.0, 
+    'externalWork': 53.7636489868164, 'kineticEnergy': 7.8492563559962e-09, 
+    'wallTime': 47.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 28, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.290000051259995, 
+    'stableTimeIncrement': 3.41690565619501e-07, 
+    'internalEnergy': 55.8879241943359, 'stepTime': 0.290000051259995, 
+    'totalEnergy': 0.415342628955841, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 845328, 'distortionContrEnergy': 0.0, 
+    'externalWork': 55.8879737854004, 'kineticEnergy': 7.88142973107142e-09, 
+    'wallTime': 48.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 29, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.300000041723251, 
+    'stableTimeIncrement': 3.41417518257003e-07, 
+    'internalEnergy': 58.0092658996582, 'stepTime': 0.300000041723251, 
+    'totalEnergy': 0.415679693222046, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 875832, 'distortionContrEnergy': 0.0, 
+    'externalWork': 58.0093154907227, 'kineticEnergy': 7.82799247645016e-09, 
+    'wallTime': 50.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 30, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.310000032186508, 
+    'stableTimeIncrement': 3.41143959303736e-07, 
+    'internalEnergy': 60.1276054382324, 'stepTime': 0.310000032186508, 
+    'totalEnergy': 0.416080981492996, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 906336, 'distortionContrEnergy': 0.0, 
+    'externalWork': 60.1276512145996, 'kineticEnergy': 8.02958943779686e-09, 
+    'wallTime': 52.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 31, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.320000022649765, 
+    'stableTimeIncrement': 3.4086980349457e-07, 
+    'internalEnergy': 62.2429428100586, 'stepTime': 0.320000022649765, 
+    'totalEnergy': 0.41590878367424, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 936840, 'distortionContrEnergy': 0.0, 
+    'externalWork': 62.2429847717285, 'kineticEnergy': 7.87670462187862e-09, 
+    'wallTime': 54.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 32, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.330000013113022, 
+    'stableTimeIncrement': 3.40595192938054e-07, 
+    'internalEnergy': 64.3552703857422, 'stepTime': 0.330000013113022, 
+    'totalEnergy': 0.415931671857834, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 967344, 'distortionContrEnergy': 0.0, 
+    'externalWork': 64.3553085327148, 'kineticEnergy': 7.76208075592422e-09, 
+    'wallTime': 55.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 33, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.340000003576279, 
+    'stableTimeIncrement': 3.40320156055895e-07, 
+    'internalEnergy': 66.4644165039062, 'stepTime': 0.340000003576279, 
+    'totalEnergy': 0.416140079498291, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 997848, 'distortionContrEnergy': 0.0, 
+    'externalWork': 66.4644622802734, 'kineticEnergy': 7.66283836384218e-09, 
+    'wallTime': 57.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 34, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.349999994039536, 
+    'stableTimeIncrement': 3.40044778113224e-07, 
+    'internalEnergy': 68.5699844360352, 'stepTime': 0.349999994039536, 
+    'totalEnergy': 0.416574090719223, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1028352, 'distortionContrEnergy': 0.0, 
+    'externalWork': 68.5699996948242, 'kineticEnergy': 7.58991980376322e-09, 
+    'wallTime': 59.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 35, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.360000312328339, 
+    'stableTimeIncrement': 3.39769002266621e-07, 
+    'internalEnergy': 70.6719665527344, 'stepTime': 0.360000312328339, 
+    'totalEnergy': 0.416640877723694, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1058857, 'distortionContrEnergy': 0.0, 
+    'externalWork': 70.6719512939453, 'kineticEnergy': 7.62555085742633e-09, 
+    'wallTime': 61.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 36, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.370000302791595, 
+    'stableTimeIncrement': 3.39492970624633e-07, 
+    'internalEnergy': 72.7702178955078, 'stepTime': 0.370000302791595, 
+    'totalEnergy': 0.416367083787918, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1089361, 'distortionContrEnergy': 0.0, 
+    'externalWork': 72.7701950073242, 'kineticEnergy': 7.59994467358638e-09, 
+    'wallTime': 63.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 37, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.380000293254852, 
+    'stableTimeIncrement': 3.39216654765551e-07, 
+    'internalEnergy': 74.8648452758789, 'stepTime': 0.380000293254852, 
+    'totalEnergy': 0.416257292032242, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1119865, 'distortionContrEnergy': 0.0, 
+    'externalWork': 74.8647918701172, 'kineticEnergy': 7.58669216338603e-09, 
+    'wallTime': 64.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 38, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.390000283718109, 
+    'stableTimeIncrement': 3.38940139954502e-07, 
+    'internalEnergy': 76.9573593139648, 'stepTime': 0.390000283718109, 
+    'totalEnergy': 0.418067514896393, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1150369, 'distortionContrEnergy': 0.0, 
+    'externalWork': 76.9557037353516, 'kineticEnergy': 7.54234630306883e-09, 
+    'wallTime': 66.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 39, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.400000274181366, 
+    'stableTimeIncrement': 3.38663454613197e-07, 
+    'internalEnergy': 79.0443572998047, 'stepTime': 0.400000274181366, 
+    'totalEnergy': 0.418235898017883, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1180873, 'distortionContrEnergy': 0.0, 
+    'externalWork': 79.0426330566406, 'kineticEnergy': 7.55222817616641e-09, 
+    'wallTime': 68.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 40, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.410000264644623, 
+    'stableTimeIncrement': 3.38386655585055e-07, 
+    'internalEnergy': 81.1273193359375, 'stepTime': 0.410000264644623, 
+    'totalEnergy': 0.418463528156281, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1211377, 'distortionContrEnergy': 0.0, 
+    'externalWork': 81.1255416870117, 'kineticEnergy': 7.53113837959063e-09, 
+    'wallTime': 70.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 41, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.42000025510788, 
+    'stableTimeIncrement': 3.38109686026655e-07, 
+    'internalEnergy': 83.2063598632812, 'stepTime': 0.42000025510788, 
+    'totalEnergy': 0.418105930089951, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1241881, 'distortionContrEnergy': 0.0, 
+    'externalWork': 83.2044525146484, 'kineticEnergy': 7.53193241109784e-09, 
+    'wallTime': 71.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 42, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.430000245571136, 
+    'stableTimeIncrement': 3.37832659624837e-07, 
+    'internalEnergy': 85.2813339233398, 'stepTime': 0.430000245571136, 
+    'totalEnergy': 0.417800545692444, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1272385, 'distortionContrEnergy': 0.0, 
+    'externalWork': 85.2793579101562, 'kineticEnergy': 7.51703943535631e-09, 
+    'wallTime': 73.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 43, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.440000236034393, 
+    'stableTimeIncrement': 3.375555763796e-07, 
+    'internalEnergy': 87.3522872924805, 'stepTime': 0.440000236034393, 
+    'totalEnergy': 0.417585790157318, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1302889, 'distortionContrEnergy': 0.0, 
+    'externalWork': 87.3502731323242, 'kineticEnergy': 7.58535190215071e-09, 
+    'wallTime': 75.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 44, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.45000022649765, 
+    'stableTimeIncrement': 3.37278464712654e-07, 
+    'internalEnergy': 89.4190216064453, 'stepTime': 0.45000022649765, 
+    'totalEnergy': 0.417465507984161, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1333393, 'distortionContrEnergy': 0.0, 
+    'externalWork': 89.4170150756836, 'kineticEnergy': 7.5472641469787e-09, 
+    'wallTime': 77.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 45, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.460000216960907, 
+    'stableTimeIncrement': 3.37001353045707e-07, 
+    'internalEnergy': 91.4815368652344, 'stepTime': 0.460000216960907, 
+    'totalEnergy': 0.417526513338089, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1363897, 'distortionContrEnergy': 0.0, 
+    'externalWork': 91.4795227050781, 'kineticEnergy': 7.58455431792981e-09, 
+    'wallTime': 78.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 46, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.470000207424164, 
+    'stableTimeIncrement': 3.3672426980047e-07, 
+    'internalEnergy': 93.5398025512695, 'stepTime': 0.470000207424164, 
+    'totalEnergy': 0.417677313089371, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1394401, 'distortionContrEnergy': 0.0, 
+    'externalWork': 93.5378112792969, 'kineticEnergy': 7.574166183133e-09, 
+    'wallTime': 80.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 47, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.480000197887421, 
+    'stableTimeIncrement': 3.36447271820361e-07, 
+    'internalEnergy': 95.5939025878906, 'stepTime': 0.480000197887421, 
+    'totalEnergy': 0.417967110872269, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1424905, 'distortionContrEnergy': 0.0, 
+    'externalWork': 95.5918960571289, 'kineticEnergy': 7.56880602637011e-09, 
+    'wallTime': 82.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 48, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.490000188350677, 
+    'stableTimeIncrement': 3.36162571556997e-07, 
+    'internalEnergy': 97.6437454223633, 'stepTime': 0.490000188350677, 
+    'totalEnergy': 0.417840451002121, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1455409, 'distortionContrEnergy': 0.0, 
+    'externalWork': 97.6417770385742, 'kineticEnergy': 7.64160734689767e-09, 
+    'wallTime': 84.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 49, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.500000178813934, 
+    'stableTimeIncrement': 3.35872670120807e-07, 
+    'internalEnergy': 99.6892852783203, 'stepTime': 0.500000178813934, 
+    'totalEnergy': 0.41759118437767, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1485913, 'distortionContrEnergy': 0.0, 
+    'externalWork': 99.6873245239258, 'kineticEnergy': 7.32531324487695e-09, 
+    'wallTime': 85.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 50, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.510000169277191, 
+    'stableTimeIncrement': 3.35606983981052e-07, 
+    'internalEnergy': 101.560501098633, 'stepTime': 0.510000169277191, 
+    'totalEnergy': 0.417463928461075, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1513875, 'distortionContrEnergy': 0.0, 
+    'externalWork': 101.558517456055, 'kineticEnergy': 8.06444599987799e-09, 
+    'wallTime': 87.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 51, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.520000159740448, 
+    'stableTimeIncrement': 3.35341553636681e-07, 
+    'internalEnergy': 103.427978515625, 'stepTime': 0.520000159740448, 
+    'totalEnergy': 0.417142510414124, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1541837, 'distortionContrEnergy': 0.0, 
+    'externalWork': 103.426002502441, 'kineticEnergy': 8.20947398949556e-09, 
+    'wallTime': 89.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 52, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.530000150203705, 
+    'stableTimeIncrement': 3.35076123292311e-07, 
+    'internalEnergy': 105.291770935059, 'stepTime': 0.530000150203705, 
+    'totalEnergy': 0.416864961385727, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1569799, 'distortionContrEnergy': 0.0, 
+    'externalWork': 105.28978729248, 'kineticEnergy': 7.8893140909031e-09, 
+    'wallTime': 91.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 53, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.540000140666962, 
+    'stableTimeIncrement': 3.34810920321615e-07, 
+    'internalEnergy': 107.151870727539, 'stepTime': 0.540000140666962, 
+    'totalEnergy': 0.41668102145195, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1597761, 'distortionContrEnergy': 0.0, 
+    'externalWork': 107.149879455566, 'kineticEnergy': 7.76359510012981e-09, 
+    'wallTime': 92.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 54, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.550000131130219, 
+    'stableTimeIncrement': 3.34559302928028e-07, 
+    'internalEnergy': 109.008316040039, 'stepTime': 0.550000131130219, 
+    'totalEnergy': 0.416685223579407, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1625723, 'distortionContrEnergy': 0.0, 
+    'externalWork': 109.006324768066, 'kineticEnergy': 8.23506507430238e-09, 
+    'wallTime': 94.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 55, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.560000121593475, 
+    'stableTimeIncrement': 3.34318372097187e-07, 
+    'internalEnergy': 110.86109161377, 'stepTime': 0.560000121593475, 
+    'totalEnergy': 0.416790306568146, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1653685, 'distortionContrEnergy': 0.0, 
+    'externalWork': 110.859077453613, 'kineticEnergy': 7.8264612568546e-09, 
+    'wallTime': 95.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 56, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.570000112056732, 
+    'stableTimeIncrement': 3.34077526531473e-07, 
+    'internalEnergy': 112.710075378418, 'stepTime': 0.570000112056732, 
+    'totalEnergy': 0.416946202516556, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1681647, 'distortionContrEnergy': 0.0, 
+    'externalWork': 112.708076477051, 'kineticEnergy': 8.05155320193762e-09, 
+    'wallTime': 97.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 57, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.580000102519989, 
+    'stableTimeIncrement': 3.33836794652598e-07, 
+    'internalEnergy': 114.555328369141, 'stepTime': 0.580000102519989, 
+    'totalEnergy': 0.417184919118881, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1709609, 'distortionContrEnergy': 0.0, 
+    'externalWork': 114.553321838379, 'kineticEnergy': 7.54359064103483e-09, 
+    'wallTime': 99.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 58, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.590000092983246, 
+    'stableTimeIncrement': 3.33596233303979e-07, 
+    'internalEnergy': 116.396850585938, 'stepTime': 0.590000092983246, 
+    'totalEnergy': 0.417716801166534, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1737571, 'distortionContrEnergy': 0.0, 
+    'externalWork': 116.394828796387, 'kineticEnergy': 7.20337745008237e-09, 
+    'wallTime': 101.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 59, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.600000083446503, 
+    'stableTimeIncrement': 3.33355814063907e-07, 
+    'internalEnergy': 118.234634399414, 'stepTime': 0.600000083446503, 
+    'totalEnergy': 0.418357402086258, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1765533, 'distortionContrEnergy': 0.0, 
+    'externalWork': 118.232620239258, 'kineticEnergy': 7.25520621358555e-09, 
+    'wallTime': 102.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 60, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.61000007390976, 
+    'stableTimeIncrement': 3.33115536932382e-07, 
+    'internalEnergy': 120.068710327148, 'stepTime': 0.61000007390976, 
+    'totalEnergy': 0.41908872127533, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1793495, 'distortionContrEnergy': 0.0, 
+    'externalWork': 120.066696166992, 'kineticEnergy': 7.8733899400163e-09, 
+    'wallTime': 104.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 61, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.620000064373016, 
+    'stableTimeIncrement': 3.32875430331114e-07, 
+    'internalEnergy': 121.899078369141, 'stepTime': 0.620000064373016, 
+    'totalEnergy': 0.419883251190186, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1821457, 'distortionContrEnergy': 0.0, 
+    'externalWork': 121.897071838379, 'kineticEnergy': 7.64057261903872e-09, 
+    'wallTime': 105.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 62, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.630000054836273, 
+    'stableTimeIncrement': 3.32635494260103e-07, 
+    'internalEnergy': 123.725791931152, 'stepTime': 0.630000054836273, 
+    'totalEnergy': 0.420776873826981, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1849419, 'distortionContrEnergy': 0.0, 
+    'externalWork': 123.723762512207, 'kineticEnergy': 7.18824022527542e-09, 
+    'wallTime': 107.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 63, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.64000004529953, 
+    'stableTimeIncrement': 3.32395785562767e-07, 
+    'internalEnergy': 125.548789978027, 'stepTime': 0.64000004529953, 
+    'totalEnergy': 0.421702533960342, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1877381, 'distortionContrEnergy': 0.0, 
+    'externalWork': 125.546783447266, 'kineticEnergy': 7.3893451357776e-09, 
+    'wallTime': 109.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 64, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.650000035762787, 
+    'stableTimeIncrement': 3.32156247395687e-07, 
+    'internalEnergy': 127.368156433105, 'stepTime': 0.650000035762787, 
+    'totalEnergy': 0.422718644142151, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1905343, 'distortionContrEnergy': 0.0, 
+    'externalWork': 127.366142272949, 'kineticEnergy': 8.06597455493829e-09, 
+    'wallTime': 110.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 65, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.660000026226044, 
+    'stableTimeIncrement': 3.31916879758865e-07, 
+    'internalEnergy': 129.183883666992, 'stepTime': 0.660000026226044, 
+    'totalEnergy': 0.42287090420723, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1933305, 'distortionContrEnergy': 0.0, 
+    'externalWork': 129.181854248047, 'kineticEnergy': 7.02137770147715e-09, 
+    'wallTime': 112.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 66, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.670000016689301, 
+    'stableTimeIncrement': 3.31677739495717e-07, 
+    'internalEnergy': 130.995971679688, 'stepTime': 0.670000016689301, 
+    'totalEnergy': 0.422302275896072, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1961267, 'distortionContrEnergy': 0.0, 
+    'externalWork': 130.993942260742, 'kineticEnergy': 7.90911602877031e-09, 
+    'wallTime': 113.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 67, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.680000007152557, 
+    'stableTimeIncrement': 3.31438798184536e-07, 
+    'internalEnergy': 132.804428100586, 'stepTime': 0.680000007152557, 
+    'totalEnergy': 0.421662330627441, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 1989229, 'distortionContrEnergy': 0.0, 
+    'externalWork': 132.802398681641, 'kineticEnergy': 8.13978928704273e-09, 
+    'wallTime': 115.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 68, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.689999997615814, 
+    'stableTimeIncrement': 3.31200112668739e-07, 
+    'internalEnergy': 134.609252929688, 'stepTime': 0.689999997615814, 
+    'totalEnergy': 0.421061962842941, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2017191, 'distortionContrEnergy': 0.0, 
+    'externalWork': 134.607238769531, 'kineticEnergy': 7.06325087307391e-09, 
+    'wallTime': 117.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 69, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.699999988079071, 
+    'stableTimeIncrement': 3.30961682948328e-07, 
+    'internalEnergy': 136.410568237305, 'stepTime': 0.699999988079071, 
+    'totalEnergy': 0.42061123251915, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2045153, 'distortionContrEnergy': 0.0, 
+    'externalWork': 136.408493041992, 'kineticEnergy': 7.17370918223992e-09, 
+    'wallTime': 118.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 70, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.709999978542328, 
+    'stableTimeIncrement': 3.30723452179882e-07, 
+    'internalEnergy': 138.208297729492, 'stepTime': 0.709999978542328, 
+    'totalEnergy': 0.420204728841782, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2073115, 'distortionContrEnergy': 0.0, 
+    'externalWork': 138.206161499023, 'kineticEnergy': 7.22626003479832e-09, 
+    'wallTime': 120.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 71, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.720000326633453, 
+    'stableTimeIncrement': 3.3048553405024e-07, 
+    'internalEnergy': 140.002471923828, 'stepTime': 0.720000326633453, 
+    'totalEnergy': 0.419796973466873, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2101078, 'distortionContrEnergy': 0.0, 
+    'externalWork': 140.00032043457, 'kineticEnergy': 7.03695057779896e-09, 
+    'wallTime': 121.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 72, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.73000031709671, 
+    'stableTimeIncrement': 3.30247786450855e-07, 
+    'internalEnergy': 141.793060302734, 'stepTime': 0.73000031709671, 
+    'totalEnergy': 0.419496476650238, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2129040, 'distortionContrEnergy': 0.0, 
+    'externalWork': 141.79084777832, 'kineticEnergy': 7.83193776499047e-09, 
+    'wallTime': 123.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 73, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.740000307559967, 
+    'stableTimeIncrement': 3.30010351490273e-07, 
+    'internalEnergy': 143.580032348633, 'stepTime': 0.740000307559967, 
+    'totalEnergy': 0.41918808221817, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2157002, 'distortionContrEnergy': 0.0, 
+    'externalWork': 143.577835083008, 'kineticEnergy': 7.4974133568162e-09, 
+    'wallTime': 124.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 74, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.750000298023224, 
+    'stableTimeIncrement': 3.29773200746786e-07, 
+    'internalEnergy': 145.36344909668, 'stepTime': 0.750000298023224, 
+    'totalEnergy': 0.418842226266861, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2184964, 'distortionContrEnergy': 0.0, 
+    'externalWork': 145.361297607422, 'kineticEnergy': 7.88855558653268e-09, 
+    'wallTime': 126.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 75, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.760000288486481, 
+    'stableTimeIncrement': 3.29536277376974e-07, 
+    'internalEnergy': 147.143417358398, 'stepTime': 0.760000288486481, 
+    'totalEnergy': 0.41857898235321, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2212926, 'distortionContrEnergy': 0.0, 
+    'externalWork': 147.141220092773, 'kineticEnergy': 7.37573335740649e-09, 
+    'wallTime': 128.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 76, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.770000278949738, 
+    'stableTimeIncrement': 3.29299695067675e-07, 
+    'internalEnergy': 148.919815063477, 'stepTime': 0.770000278949738, 
+    'totalEnergy': 0.41830837726593, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2240888, 'distortionContrEnergy': 0.0, 
+    'externalWork': 148.91764831543, 'kineticEnergy': 7.87222642628649e-09, 
+    'wallTime': 129.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 77, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.780000269412994, 
+    'stableTimeIncrement': 3.29063368553761e-07, 
+    'internalEnergy': 150.692764282227, 'stepTime': 0.780000269412994, 
+    'totalEnergy': 0.418138772249222, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2268850, 'distortionContrEnergy': 0.0, 
+    'externalWork': 150.690567016602, 'kineticEnergy': 8.02215271988871e-09, 
+    'wallTime': 131.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 78, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.790000259876251, 
+    'stableTimeIncrement': 3.28827297835232e-07, 
+    'internalEnergy': 152.462219238281, 'stepTime': 0.790000259876251, 
+    'totalEnergy': 0.417752176523209, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2296812, 'distortionContrEnergy': 0.0, 
+    'externalWork': 152.460006713867, 'kineticEnergy': 8.16979905948756e-09, 
+    'wallTime': 133.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 79, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.800000250339508, 
+    'stableTimeIncrement': 3.28591568177217e-07, 
+    'internalEnergy': 154.228134155273, 'stepTime': 0.800000250339508, 
+    'totalEnergy': 0.417441964149475, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2324774, 'distortionContrEnergy': 0.0, 
+    'externalWork': 154.225982666016, 'kineticEnergy': 8.21407208917435e-09, 
+    'wallTime': 134.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 80, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.810000240802765, 
+    'stableTimeIncrement': 3.28356094314586e-07, 
+    'internalEnergy': 155.990661621094, 'stepTime': 0.810000240802765, 
+    'totalEnergy': 0.417381167411804, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2352736, 'distortionContrEnergy': 0.0, 
+    'externalWork': 155.988494873047, 'kineticEnergy': 7.60919149911388e-09, 
+    'wallTime': 136.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 81, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.820000231266022, 
+    'stableTimeIncrement': 3.28120961512468e-07, 
+    'internalEnergy': 157.749740600586, 'stepTime': 0.820000231266022, 
+    'totalEnergy': 0.417403489351273, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2380698, 'distortionContrEnergy': 0.0, 
+    'externalWork': 157.747543334961, 'kineticEnergy': 6.89599310987887e-09, 
+    'wallTime': 138.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 82, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.830000221729279, 
+    'stableTimeIncrement': 3.27886141349154e-07, 
+    'internalEnergy': 159.505401611328, 'stepTime': 0.830000221729279, 
+    'totalEnergy': 0.417490392923355, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2408660, 'distortionContrEnergy': 0.0, 
+    'externalWork': 159.503173828125, 'kineticEnergy': 7.10075953591627e-09, 
+    'wallTime': 139.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 83, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.839999973773956, 
+    'stableTimeIncrement': 3.2761690249572e-07, 
+    'internalEnergy': 161.517227172852, 'stepTime': 0.839999973773956, 
+    'totalEnergy': 0.417637705802917, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2440769, 'distortionContrEnergy': 0.0, 
+    'externalWork': 161.514953613281, 'kineticEnergy': 8.2647542143377e-09, 
+    'wallTime': 141.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 84, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.850000143051147, 
+    'stableTimeIncrement': 3.27335953898e-07, 
+    'internalEnergy': 163.614776611328, 'stepTime': 0.850000143051147, 
+    'totalEnergy': 0.41746461391449, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2474324, 'distortionContrEnergy': 0.0, 
+    'externalWork': 163.612518310547, 'kineticEnergy': 7.59191998156439e-09, 
+    'wallTime': 143.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 85, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.860000014305115, 
+    'stableTimeIncrement': 3.27055460047632e-07, 
+    'internalEnergy': 165.707336425781, 'stepTime': 0.860000014305115, 
+    'totalEnergy': 0.417030066251755, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2507878, 'distortionContrEnergy': 0.0, 
+    'externalWork': 165.705078125, 'kineticEnergy': 7.36858751793079e-09, 
+    'wallTime': 145.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 86, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.870000183582306, 
+    'stableTimeIncrement': 3.26775420944614e-07, 
+    'internalEnergy': 167.794784545898, 'stepTime': 0.870000183582306, 
+    'totalEnergy': 0.416567832231522, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2541433, 'distortionContrEnergy': 0.0, 
+    'externalWork': 167.792587280273, 'kineticEnergy': 7.16532788658242e-09, 
+    'wallTime': 147.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 87, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.880000054836273, 
+    'stableTimeIncrement': 3.26495921854075e-07, 
+    'internalEnergy': 169.87712097168, 'stepTime': 0.880000054836273, 
+    'totalEnergy': 0.416224241256714, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2574987, 'distortionContrEnergy': 0.0, 
+    'externalWork': 169.874938964844, 'kineticEnergy': 6.78977851720219e-09, 
+    'wallTime': 149.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 88, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.890000224113464, 
+    'stableTimeIncrement': 3.26216877510888e-07, 
+    'internalEnergy': 171.954376220703, 'stepTime': 0.890000224113464, 
+    'totalEnergy': 0.415898680686951, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2608542, 'distortionContrEnergy': 0.0, 
+    'externalWork': 171.952285766602, 'kineticEnergy': 7.02669300522984e-09, 
+    'wallTime': 151.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 89, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.900000095367432, 
+    'stableTimeIncrement': 3.2593831633676e-07, 
+    'internalEnergy': 174.026519775391, 'stepTime': 0.900000095367432, 
+    'totalEnergy': 0.415696412324905, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2642096, 'distortionContrEnergy': 0.0, 
+    'externalWork': 174.024505615234, 'kineticEnergy': 8.22939050237892e-09, 
+    'wallTime': 153.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 90, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.910000264644623, 
+    'stableTimeIncrement': 3.25660238331693e-07, 
+    'internalEnergy': 176.093719482422, 'stepTime': 0.910000264644623, 
+    'totalEnergy': 0.415600717067719, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2675651, 'distortionContrEnergy': 0.0, 
+    'externalWork': 176.091766357422, 'kineticEnergy': 7.42577510592923e-09, 
+    'wallTime': 155.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 91, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.92000013589859, 
+    'stableTimeIncrement': 3.25382643495686e-07, 
+    'internalEnergy': 178.155990600586, 'stepTime': 0.92000013589859, 
+    'totalEnergy': 0.415568113327026, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2709205, 'distortionContrEnergy': 0.0, 
+    'externalWork': 178.153945922852, 'kineticEnergy': 7.80190223537147e-09, 
+    'wallTime': 157.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 92, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.930000007152557, 
+    'stableTimeIncrement': 3.25105617093868e-07, 
+    'internalEnergy': 180.213272094727, 'stepTime': 0.930000007152557, 
+    'totalEnergy': 0.415316998958588, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2742759, 'distortionContrEnergy': 0.0, 
+    'externalWork': 180.211151123047, 'kineticEnergy': 7.48569473074667e-09, 
+    'wallTime': 159.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 93, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.940000176429749, 
+    'stableTimeIncrement': 3.24829017017692e-07, 
+    'internalEnergy': 182.265518188477, 'stepTime': 0.940000176429749, 
+    'totalEnergy': 0.414968252182007, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2776314, 'distortionContrEnergy': 0.0, 
+    'externalWork': 182.263442993164, 'kineticEnergy': 7.92046161990356e-09, 
+    'wallTime': 161.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 94, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.950000047683716, 
+    'stableTimeIncrement': 3.24552956953994e-07, 
+    'internalEnergy': 184.312866210938, 'stepTime': 0.950000047683716, 
+    'totalEnergy': 0.41499599814415, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2809868, 'distortionContrEnergy': 0.0, 
+    'externalWork': 184.310729980469, 'kineticEnergy': 7.00963287414424e-09, 
+    'wallTime': 163.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 95, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.960000216960907, 
+    'stableTimeIncrement': 3.24277408481066e-07, 
+    'internalEnergy': 186.355285644531, 'stepTime': 0.960000216960907, 
+    'totalEnergy': 0.41515177488327, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2843423, 'distortionContrEnergy': 0.0, 
+    'externalWork': 186.353164672852, 'kineticEnergy': 7.68568408915371e-09, 
+    'wallTime': 164.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 96, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.970000088214874, 
+    'stableTimeIncrement': 3.24002371598908e-07, 
+    'internalEnergy': 188.392791748047, 'stepTime': 0.970000088214874, 
+    'totalEnergy': 0.415398269891739, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2876977, 'distortionContrEnergy': 0.0, 
+    'externalWork': 188.390640258789, 'kineticEnergy': 7.52427808947687e-09, 
+    'wallTime': 166.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 97, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.980000257492065, 
+    'stableTimeIncrement': 3.23727903150939e-07, 
+    'internalEnergy': 190.425476074219, 'stepTime': 0.980000257492065, 
+    'totalEnergy': 0.415703684091568, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2910532, 'distortionContrEnergy': 0.0, 
+    'externalWork': 190.423294067383, 'kineticEnergy': 7.53902806849283e-09, 
+    'wallTime': 168.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 98, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 0.990000128746033, 
+    'stableTimeIncrement': 3.2345388945032e-07, 
+    'internalEnergy': 192.453262329102, 'stepTime': 0.990000128746033, 
+    'totalEnergy': 0.416083604097366, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2944086, 'distortionContrEnergy': 0.0, 
+    'externalWork': 192.451034545898, 'kineticEnergy': 8.00688404467564e-09, 
+    'wallTime': 170.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 99, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(STATUS, {'totalTime': 1.0, 
+    'stableTimeIncrement': 3.23171832405933e-07, 
+    'internalEnergy': 194.476196289062, 'stepTime': 1.0, 
+    'totalEnergy': 0.416547209024429, 'jobName': 'Job-5', 
+    'artificialEnergy': 0.0, 'phase': EXPLICIT_PHASE, 'step': 1, 
+    'increment': 2977640, 'distortionContrEnergy': 0.0, 
+    'externalWork': 194.473892211914, 'kineticEnergy': 6.69173738643281e-09, 
+    'wallTime': 172.0})
+mdb.jobs['Job-5']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 100, 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(COMPLETED, {'phase': EXPLICIT_PHASE, 
+    'message': 'Phase complete', 'jobName': 'Job-5'})
+mdb.jobs['Job-5']._Message(JOB_COMPLETED, {'time': 'Wed Nov  6 17:45:06 2024', 
+    'jobName': 'Job-5'})
+# Save by daglim1 on 2024_11_06-17.48.44; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['vumat_cube_elastoplastic_solver'].submit(consistencyChecking=OFF)
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STARTED, {
+    'phase': BATCHPRE_PHASE, 'clientHost': 'D23-0234', 'handle': 0, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(WARNING, {
+    'phase': BATCHPRE_PHASE, 
+    'message': 'THE ABSOLUTE ZERO TEMPERATURE HAS NOT BEEN SPECIFIED FOR COMPUTING INTERNAL THERMAL ENERGY USING THE ABSOLUTE ZERO PARAMETER ON THE *PHYSICAL CONSTANTS OPTION. A DEFAULT VALUE OF 0.0000 WILL BE ASSUMED.', 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(WARNING, {
+    'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT VARIABLE SDV HAS NO COMPONENTS IN THIS ANALYSIS FOR ELEMENT TYPE C3D8T', 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STARTED, {
+    'phase': PACKAGER_PHASE, 'clientHost': 'D23-0234', 'handle': 22892, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(WARNING, {
+    'phase': PACKAGER_PHASE, 
+    'message': 'There are 2 warning messages in the data (.dat) file.  Please check the data file for possible errors in the input file.', 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(COMPLETED, {
+    'phase': PACKAGER_PHASE, 'message': 'Phase complete', 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STARTED, {
+    'phase': EXPLICIT_PHASE, 'clientHost': 'D23-0234', 'handle': 11164, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {'totalTime': 0.0, 
+    'stableTimeIncrement': 2.785422168472e-07, 'internalEnergy': 0.0, 
+    'stepTime': 0.0, 'totalEnergy': 0.412125021219254, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 0, 
+    'distortionContrEnergy': 0.0, 'externalWork': 0.0, 
+    'kineticEnergy': 1.96250016237798e-09, 'wallTime': 1.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.0100002530962229, 
+    'stableTimeIncrement': 3.48740655908841e-07, 
+    'internalEnergy': 0.419583290815353, 'stepTime': 0.0100002530962229, 
+    'totalEnergy': 0.41203898191452, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 28674, 
+    'distortionContrEnergy': 0.0, 'externalWork': 0.419583529233932, 
+    'kineticEnergy': 6.33453245413307e-09, 'wallTime': 2.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 1, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.0200000181794167, 
+    'stableTimeIncrement': 3.48506290492878e-07, 
+    'internalEnergy': 1.67692816257477, 'stepTime': 0.0200000181794167, 
+    'totalEnergy': 0.411952674388885, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 57383, 
+    'distortionContrEnergy': 0.0, 'externalWork': 1.67692852020264, 
+    'kineticEnergy': 6.46095710266081e-09, 'wallTime': 3.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 2, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.0300001315772533, 
+    'stableTimeIncrement': 3.48282384265985e-07, 
+    'internalEnergy': 3.47150921821594, 'stepTime': 0.0300001315772533, 
+    'totalEnergy': 0.411989986896515, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 86093, 
+    'distortionContrEnergy': 0.0, 'externalWork': 3.4715096950531, 
+    'kineticEnergy': 8.15475953430678e-09, 'wallTime': 5.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 3, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.0400002226233482, 
+    'stableTimeIncrement': 3.48057255905587e-07, 
+    'internalEnergy': 5.33769607543945, 'stepTime': 0.0400002226233482, 
+    'totalEnergy': 0.41202899813652, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 114938, 
+    'distortionContrEnergy': 0.0, 'externalWork': 5.33769750595093, 
+    'kineticEnergy': 7.95837795664056e-09, 'wallTime': 7.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 4, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.0500002130866051, 
+    'stableTimeIncrement': 3.47828546409801e-07, 
+    'internalEnergy': 7.23899173736572, 'stepTime': 0.0500002130866051, 
+    'totalEnergy': 0.412064850330353, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 143802, 
+    'distortionContrEnergy': 0.0, 'externalWork': 7.23899412155151, 
+    'kineticEnergy': 7.85204079534196e-09, 'wallTime': 8.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 5, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.0600002035498619, 
+    'stableTimeIncrement': 3.47596682104268e-07, 
+    'internalEnergy': 9.16520690917969, 'stepTime': 0.0600002035498619, 
+    'totalEnergy': 0.412140727043152, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 172666, 
+    'distortionContrEnergy': 0.0, 'externalWork': 9.1652135848999, 
+    'kineticEnergy': 7.91094301177964e-09, 'wallTime': 10.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 6, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.0700002983212471, 
+    'stableTimeIncrement': 3.47363140917878e-07, 
+    'internalEnergy': 11.0950527191162, 'stepTime': 0.0700002983212471, 
+    'totalEnergy': 0.41212871670723, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 201300, 
+    'distortionContrEnergy': 0.0, 'externalWork': 11.0950593948364, 
+    'kineticEnergy': 7.91881582529186e-09, 'wallTime': 12.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 7, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.0800003111362457, 
+    'stableTimeIncrement': 3.47129571309779e-07, 
+    'internalEnergy': 13.0340232849121, 'stepTime': 0.0800003111362457, 
+    'totalEnergy': 0.412085860967636, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 229857, 
+    'distortionContrEnergy': 0.0, 'externalWork': 13.0340328216553, 
+    'kineticEnergy': 7.93713983426869e-09, 'wallTime': 13.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 8, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.0900003239512444, 
+    'stableTimeIncrement': 3.46893358482703e-07, 
+    'internalEnergy': 14.9824485778809, 'stepTime': 0.0900003239512444, 
+    'totalEnergy': 0.412115037441254, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 258414, 
+    'distortionContrEnergy': 0.0, 'externalWork': 14.9824562072754, 
+    'kineticEnergy': 8.01386601523291e-09, 'wallTime': 15.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 9, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.100000336766243, 
+    'stableTimeIncrement': 3.46654616123487e-07, 
+    'internalEnergy': 16.9397106170654, 'stepTime': 0.100000336766243, 
+    'totalEnergy': 0.412275791168213, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 286971, 
+    'distortionContrEnergy': 0.0, 'externalWork': 16.9397163391113, 
+    'kineticEnergy': 8.00716470905627e-09, 'wallTime': 16.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 10, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.110000148415565, 
+    'stableTimeIncrement': 3.46412775797944e-07, 
+    'internalEnergy': 18.9124660491943, 'stepTime': 0.110000148415565, 
+    'totalEnergy': 0.412475496530533, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 315626, 
+    'distortionContrEnergy': 0.0, 'externalWork': 18.9124755859375, 
+    'kineticEnergy': 8.17711054423853e-09, 'wallTime': 18.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 11, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.120000228285789, 
+    'stableTimeIncrement': 3.46164199527266e-07, 
+    'internalEnergy': 20.9301681518555, 'stepTime': 0.120000228285789, 
+    'totalEnergy': 0.412678688764572, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 344804, 
+    'distortionContrEnergy': 0.0, 'externalWork': 20.9301776885986, 
+    'kineticEnergy': 7.96433852201517e-09, 'wallTime': 20.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 12, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.130000308156013, 
+    'stableTimeIncrement': 3.45911132626497e-07, 
+    'internalEnergy': 22.956298828125, 'stepTime': 0.130000308156013, 
+    'totalEnergy': 0.41293665766716, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 373982, 
+    'distortionContrEnergy': 0.0, 'externalWork': 22.9563064575195, 
+    'kineticEnergy': 7.87168552562889e-09, 'wallTime': 21.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 13, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.14000004529953, 'stableTimeIncrement': 3.45655280398205e-07, 
+    'internalEnergy': 24.9865570068359, 'stepTime': 0.14000004529953, 
+    'totalEnergy': 0.413162708282471, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 403159, 
+    'distortionContrEnergy': 0.0, 'externalWork': 24.9865684509277, 
+    'kineticEnergy': 8.11988076776515e-09, 'wallTime': 23.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 14, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.150000125169754, 
+    'stableTimeIncrement': 3.45402781931625e-07, 
+    'internalEnergy': 27.019926071167, 'stepTime': 0.150000125169754, 
+    'totalEnergy': 0.413332104682922, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 432337, 
+    'distortionContrEnergy': 0.0, 'externalWork': 27.0199356079102, 
+    'kineticEnergy': 8.02157362755906e-09, 'wallTime': 25.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 15, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.160000205039978, 
+    'stableTimeIncrement': 3.45149800295985e-07, 
+    'internalEnergy': 29.0562973022461, 'stepTime': 0.160000205039978, 
+    'totalEnergy': 0.413485378026962, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 461515, 
+    'distortionContrEnergy': 0.0, 'externalWork': 29.0563125610352, 
+    'kineticEnergy': 8.10419198415957e-09, 'wallTime': 27.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 16, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.170000284910202, 
+    'stableTimeIncrement': 3.44895170201198e-07, 
+    'internalEnergy': 31.095630645752, 'stepTime': 0.170000284910202, 
+    'totalEnergy': 0.413602292537689, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 490693, 
+    'distortionContrEnergy': 0.0, 'externalWork': 31.0956420898438, 
+    'kineticEnergy': 8.04798006015517e-09, 'wallTime': 28.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 17, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.180000022053719, 
+    'stableTimeIncrement': 3.44639033755811e-07, 
+    'internalEnergy': 33.1377029418945, 'stepTime': 0.180000022053719, 
+    'totalEnergy': 0.413631349802017, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 519870, 
+    'distortionContrEnergy': 0.0, 'externalWork': 33.1377220153809, 
+    'kineticEnergy': 7.84161802158678e-09, 'wallTime': 30.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 18, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.190000101923943, 
+    'stableTimeIncrement': 3.44381533068372e-07, 
+    'internalEnergy': 35.1807136535645, 'stepTime': 0.190000101923943, 
+    'totalEnergy': 0.413819551467896, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 549048, 
+    'distortionContrEnergy': 0.0, 'externalWork': 35.180736541748, 
+    'kineticEnergy': 8.06358357863246e-09, 'wallTime': 32.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 19, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.200000181794167, 
+    'stableTimeIncrement': 3.44122753404008e-07, 
+    'internalEnergy': 37.223690032959, 'stepTime': 0.200000181794167, 
+    'totalEnergy': 0.413920283317566, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 578226, 
+    'distortionContrEnergy': 0.0, 'externalWork': 37.2237091064453, 
+    'kineticEnergy': 7.94022536609873e-09, 'wallTime': 33.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 20, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.210000261664391, 
+    'stableTimeIncrement': 3.43862723184429e-07, 
+    'internalEnergy': 39.2665901184082, 'stepTime': 0.210000261664391, 
+    'totalEnergy': 0.414276629686356, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 607404, 
+    'distortionContrEnergy': 0.0, 'externalWork': 39.2666091918945, 
+    'kineticEnergy': 8.07231348431969e-09, 'wallTime': 35.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 21, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.219999998807907, 
+    'stableTimeIncrement': 3.43601556096473e-07, 
+    'internalEnergy': 41.3093032836914, 'stepTime': 0.219999998807907, 
+    'totalEnergy': 0.414356529712677, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 636581, 
+    'distortionContrEnergy': 0.0, 'externalWork': 41.3093414306641, 
+    'kineticEnergy': 8.00933186440034e-09, 'wallTime': 36.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 22, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.230000078678131, 
+    'stableTimeIncrement': 3.43339337405268e-07, 
+    'internalEnergy': 43.3519706726074, 'stepTime': 0.230000078678131, 
+    'totalEnergy': 0.414590507745743, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 665759, 
+    'distortionContrEnergy': 0.0, 'externalWork': 43.3520050048828, 
+    'kineticEnergy': 7.68924479643829e-09, 'wallTime': 38.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 23, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.240000158548355, 
+    'stableTimeIncrement': 3.43076180797652e-07, 
+    'internalEnergy': 45.3936767578125, 'stepTime': 0.240000158548355, 
+    'totalEnergy': 0.415055155754089, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 694937, 
+    'distortionContrEnergy': 0.0, 'externalWork': 45.3937149047852, 
+    'kineticEnergy': 8.07550026848958e-09, 'wallTime': 40.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 24, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.250000238418579, 
+    'stableTimeIncrement': 3.42808675668493e-07, 
+    'internalEnergy': 47.4335975646973, 'stepTime': 0.250000238418579, 
+    'totalEnergy': 0.414957642555237, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 724115, 
+    'distortionContrEnergy': 0.0, 'externalWork': 47.4336433410645, 
+    'kineticEnergy': 7.97468402424784e-09, 'wallTime': 41.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 25, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.260000079870224, 'stableTimeIncrement': 3.4253241665283e-07, 
+    'internalEnergy': 49.5082054138184, 'stepTime': 0.260000079870224, 
+    'totalEnergy': 0.415087819099426, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 753816, 
+    'distortionContrEnergy': 0.0, 'externalWork': 49.5082550048828, 
+    'kineticEnergy': 7.86612108782947e-09, 'wallTime': 43.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 26, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.270000070333481, 
+    'stableTimeIncrement': 3.42247915341432e-07, 
+    'internalEnergy': 51.6369209289551, 'stepTime': 0.270000070333481, 
+    'totalEnergy': 0.415473639965057, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 784320, 
+    'distortionContrEnergy': 0.0, 'externalWork': 51.6369667053223, 
+    'kineticEnergy': 8.31739566109491e-09, 'wallTime': 45.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 27, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.280000060796738, 
+    'stableTimeIncrement': 3.41962959282682e-07, 
+    'internalEnergy': 53.7636108398438, 'stepTime': 0.280000060796738, 
+    'totalEnergy': 0.415327310562134, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 814824, 
+    'distortionContrEnergy': 0.0, 'externalWork': 53.7636489868164, 
+    'kineticEnergy': 7.8492563559962e-09, 'wallTime': 46.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 28, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.290000051259995, 
+    'stableTimeIncrement': 3.41690565619501e-07, 
+    'internalEnergy': 55.8879241943359, 'stepTime': 0.290000051259995, 
+    'totalEnergy': 0.415342628955841, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 845328, 
+    'distortionContrEnergy': 0.0, 'externalWork': 55.8879737854004, 
+    'kineticEnergy': 7.88142973107142e-09, 'wallTime': 48.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 29, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.300000041723251, 
+    'stableTimeIncrement': 3.41417518257003e-07, 
+    'internalEnergy': 58.0092658996582, 'stepTime': 0.300000041723251, 
+    'totalEnergy': 0.415679693222046, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 875832, 
+    'distortionContrEnergy': 0.0, 'externalWork': 58.0093154907227, 
+    'kineticEnergy': 7.82799247645016e-09, 'wallTime': 50.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 30, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.310000032186508, 
+    'stableTimeIncrement': 3.41143959303736e-07, 
+    'internalEnergy': 60.1276054382324, 'stepTime': 0.310000032186508, 
+    'totalEnergy': 0.416080981492996, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 906336, 
+    'distortionContrEnergy': 0.0, 'externalWork': 60.1276512145996, 
+    'kineticEnergy': 8.02958943779686e-09, 'wallTime': 52.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 31, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.320000022649765, 'stableTimeIncrement': 3.4086980349457e-07, 
+    'internalEnergy': 62.2429428100586, 'stepTime': 0.320000022649765, 
+    'totalEnergy': 0.41590878367424, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 936840, 
+    'distortionContrEnergy': 0.0, 'externalWork': 62.2429847717285, 
+    'kineticEnergy': 7.87670462187862e-09, 'wallTime': 53.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 32, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.330000013113022, 
+    'stableTimeIncrement': 3.40595192938054e-07, 
+    'internalEnergy': 64.3552703857422, 'stepTime': 0.330000013113022, 
+    'totalEnergy': 0.415931671857834, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 967344, 
+    'distortionContrEnergy': 0.0, 'externalWork': 64.3553085327148, 
+    'kineticEnergy': 7.76208075592422e-09, 'wallTime': 55.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 33, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.340000003576279, 
+    'stableTimeIncrement': 3.40320156055895e-07, 
+    'internalEnergy': 66.4644165039062, 'stepTime': 0.340000003576279, 
+    'totalEnergy': 0.416140079498291, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 997848, 
+    'distortionContrEnergy': 0.0, 'externalWork': 66.4644622802734, 
+    'kineticEnergy': 7.66283836384218e-09, 'wallTime': 57.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 34, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.349999994039536, 
+    'stableTimeIncrement': 3.40044778113224e-07, 
+    'internalEnergy': 68.5699844360352, 'stepTime': 0.349999994039536, 
+    'totalEnergy': 0.416574090719223, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1028352, 
+    'distortionContrEnergy': 0.0, 'externalWork': 68.5699996948242, 
+    'kineticEnergy': 7.58991980376322e-09, 'wallTime': 58.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 35, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.360000312328339, 
+    'stableTimeIncrement': 3.39769002266621e-07, 
+    'internalEnergy': 70.6719665527344, 'stepTime': 0.360000312328339, 
+    'totalEnergy': 0.416640877723694, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1058857, 
+    'distortionContrEnergy': 0.0, 'externalWork': 70.6719512939453, 
+    'kineticEnergy': 7.62555085742633e-09, 'wallTime': 60.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 36, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.370000302791595, 
+    'stableTimeIncrement': 3.39492970624633e-07, 
+    'internalEnergy': 72.7702178955078, 'stepTime': 0.370000302791595, 
+    'totalEnergy': 0.416367083787918, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1089361, 
+    'distortionContrEnergy': 0.0, 'externalWork': 72.7701950073242, 
+    'kineticEnergy': 7.59994467358638e-09, 'wallTime': 62.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 37, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.380000293254852, 
+    'stableTimeIncrement': 3.39216654765551e-07, 
+    'internalEnergy': 74.8648452758789, 'stepTime': 0.380000293254852, 
+    'totalEnergy': 0.416257292032242, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1119865, 
+    'distortionContrEnergy': 0.0, 'externalWork': 74.8647918701172, 
+    'kineticEnergy': 7.58669216338603e-09, 'wallTime': 64.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 38, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.390000283718109, 
+    'stableTimeIncrement': 3.38940139954502e-07, 
+    'internalEnergy': 76.9573593139648, 'stepTime': 0.390000283718109, 
+    'totalEnergy': 0.418067514896393, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1150369, 
+    'distortionContrEnergy': 0.0, 'externalWork': 76.9557037353516, 
+    'kineticEnergy': 7.54234630306883e-09, 'wallTime': 66.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 39, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.400000274181366, 
+    'stableTimeIncrement': 3.38663454613197e-07, 
+    'internalEnergy': 79.0443572998047, 'stepTime': 0.400000274181366, 
+    'totalEnergy': 0.418235898017883, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1180873, 
+    'distortionContrEnergy': 0.0, 'externalWork': 79.0426330566406, 
+    'kineticEnergy': 7.55222817616641e-09, 'wallTime': 68.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 40, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.410000264644623, 
+    'stableTimeIncrement': 3.38386655585055e-07, 
+    'internalEnergy': 81.1273193359375, 'stepTime': 0.410000264644623, 
+    'totalEnergy': 0.418463528156281, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1211377, 
+    'distortionContrEnergy': 0.0, 'externalWork': 81.1255416870117, 
+    'kineticEnergy': 7.53113837959063e-09, 'wallTime': 69.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 41, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.42000025510788, 'stableTimeIncrement': 3.38109686026655e-07, 
+    'internalEnergy': 83.2063598632812, 'stepTime': 0.42000025510788, 
+    'totalEnergy': 0.418105930089951, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1241881, 
+    'distortionContrEnergy': 0.0, 'externalWork': 83.2044525146484, 
+    'kineticEnergy': 7.53193241109784e-09, 'wallTime': 71.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 42, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.430000245571136, 
+    'stableTimeIncrement': 3.37832659624837e-07, 
+    'internalEnergy': 85.2813339233398, 'stepTime': 0.430000245571136, 
+    'totalEnergy': 0.417800545692444, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1272385, 
+    'distortionContrEnergy': 0.0, 'externalWork': 85.2793579101562, 
+    'kineticEnergy': 7.51703943535631e-09, 'wallTime': 73.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 43, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.440000236034393, 'stableTimeIncrement': 3.375555763796e-07, 
+    'internalEnergy': 87.3522872924805, 'stepTime': 0.440000236034393, 
+    'totalEnergy': 0.417585790157318, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1302889, 
+    'distortionContrEnergy': 0.0, 'externalWork': 87.3502731323242, 
+    'kineticEnergy': 7.58535190215071e-09, 'wallTime': 74.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 44, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.45000022649765, 'stableTimeIncrement': 3.37278464712654e-07, 
+    'internalEnergy': 89.4190216064453, 'stepTime': 0.45000022649765, 
+    'totalEnergy': 0.417465507984161, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1333393, 
+    'distortionContrEnergy': 0.0, 'externalWork': 89.4170150756836, 
+    'kineticEnergy': 7.5472641469787e-09, 'wallTime': 76.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 45, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.460000216960907, 
+    'stableTimeIncrement': 3.37001353045707e-07, 
+    'internalEnergy': 91.4815368652344, 'stepTime': 0.460000216960907, 
+    'totalEnergy': 0.417526513338089, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1363897, 
+    'distortionContrEnergy': 0.0, 'externalWork': 91.4795227050781, 
+    'kineticEnergy': 7.58455431792981e-09, 'wallTime': 78.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 46, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.470000207424164, 'stableTimeIncrement': 3.3672426980047e-07, 
+    'internalEnergy': 93.5398025512695, 'stepTime': 0.470000207424164, 
+    'totalEnergy': 0.417677313089371, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1394401, 
+    'distortionContrEnergy': 0.0, 'externalWork': 93.5378112792969, 
+    'kineticEnergy': 7.574166183133e-09, 'wallTime': 79.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 47, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.480000197887421, 
+    'stableTimeIncrement': 3.36447271820361e-07, 
+    'internalEnergy': 95.5939025878906, 'stepTime': 0.480000197887421, 
+    'totalEnergy': 0.417967110872269, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1424905, 
+    'distortionContrEnergy': 0.0, 'externalWork': 95.5918960571289, 
+    'kineticEnergy': 7.56880602637011e-09, 'wallTime': 81.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 48, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.490000188350677, 
+    'stableTimeIncrement': 3.36162571556997e-07, 
+    'internalEnergy': 97.6437454223633, 'stepTime': 0.490000188350677, 
+    'totalEnergy': 0.417840451002121, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1455409, 
+    'distortionContrEnergy': 0.0, 'externalWork': 97.6417770385742, 
+    'kineticEnergy': 7.64160734689767e-09, 'wallTime': 83.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 49, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.500000178813934, 
+    'stableTimeIncrement': 3.35872670120807e-07, 
+    'internalEnergy': 99.6892852783203, 'stepTime': 0.500000178813934, 
+    'totalEnergy': 0.41759118437767, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1485913, 
+    'distortionContrEnergy': 0.0, 'externalWork': 99.6873245239258, 
+    'kineticEnergy': 7.32531324487695e-09, 'wallTime': 85.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 50, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.510000169277191, 
+    'stableTimeIncrement': 3.35606983981052e-07, 
+    'internalEnergy': 101.560501098633, 'stepTime': 0.510000169277191, 
+    'totalEnergy': 0.417463928461075, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1513875, 
+    'distortionContrEnergy': 0.0, 'externalWork': 101.558517456055, 
+    'kineticEnergy': 8.06444599987799e-09, 'wallTime': 86.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 51, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.520000159740448, 
+    'stableTimeIncrement': 3.35341553636681e-07, 
+    'internalEnergy': 103.427978515625, 'stepTime': 0.520000159740448, 
+    'totalEnergy': 0.417142510414124, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1541837, 
+    'distortionContrEnergy': 0.0, 'externalWork': 103.426002502441, 
+    'kineticEnergy': 8.20947398949556e-09, 'wallTime': 88.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 52, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.530000150203705, 
+    'stableTimeIncrement': 3.35076123292311e-07, 
+    'internalEnergy': 105.291770935059, 'stepTime': 0.530000150203705, 
+    'totalEnergy': 0.416864961385727, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1569799, 
+    'distortionContrEnergy': 0.0, 'externalWork': 105.28978729248, 
+    'kineticEnergy': 7.8893140909031e-09, 'wallTime': 90.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 53, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.540000140666962, 
+    'stableTimeIncrement': 3.34810920321615e-07, 
+    'internalEnergy': 107.151870727539, 'stepTime': 0.540000140666962, 
+    'totalEnergy': 0.41668102145195, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1597761, 
+    'distortionContrEnergy': 0.0, 'externalWork': 107.149879455566, 
+    'kineticEnergy': 7.76359510012981e-09, 'wallTime': 91.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 54, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.550000131130219, 
+    'stableTimeIncrement': 3.34559302928028e-07, 
+    'internalEnergy': 109.008316040039, 'stepTime': 0.550000131130219, 
+    'totalEnergy': 0.416685223579407, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1625723, 
+    'distortionContrEnergy': 0.0, 'externalWork': 109.006324768066, 
+    'kineticEnergy': 8.23506507430238e-09, 'wallTime': 93.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 55, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.560000121593475, 
+    'stableTimeIncrement': 3.34318372097187e-07, 
+    'internalEnergy': 110.86109161377, 'stepTime': 0.560000121593475, 
+    'totalEnergy': 0.416790306568146, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1653685, 
+    'distortionContrEnergy': 0.0, 'externalWork': 110.859077453613, 
+    'kineticEnergy': 7.8264612568546e-09, 'wallTime': 94.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 56, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.570000112056732, 
+    'stableTimeIncrement': 3.34077526531473e-07, 
+    'internalEnergy': 112.710075378418, 'stepTime': 0.570000112056732, 
+    'totalEnergy': 0.416946202516556, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1681647, 
+    'distortionContrEnergy': 0.0, 'externalWork': 112.708076477051, 
+    'kineticEnergy': 8.05155320193762e-09, 'wallTime': 96.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 57, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.580000102519989, 
+    'stableTimeIncrement': 3.33836794652598e-07, 
+    'internalEnergy': 114.555328369141, 'stepTime': 0.580000102519989, 
+    'totalEnergy': 0.417184919118881, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1709609, 
+    'distortionContrEnergy': 0.0, 'externalWork': 114.553321838379, 
+    'kineticEnergy': 7.54359064103483e-09, 'wallTime': 97.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 58, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.590000092983246, 
+    'stableTimeIncrement': 3.33596233303979e-07, 
+    'internalEnergy': 116.396850585938, 'stepTime': 0.590000092983246, 
+    'totalEnergy': 0.417716801166534, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1737571, 
+    'distortionContrEnergy': 0.0, 'externalWork': 116.394828796387, 
+    'kineticEnergy': 7.20337745008237e-09, 'wallTime': 99.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 59, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.600000083446503, 
+    'stableTimeIncrement': 3.33355814063907e-07, 
+    'internalEnergy': 118.234634399414, 'stepTime': 0.600000083446503, 
+    'totalEnergy': 0.418357402086258, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1765533, 
+    'distortionContrEnergy': 0.0, 'externalWork': 118.232620239258, 
+    'kineticEnergy': 7.25520621358555e-09, 'wallTime': 100.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 60, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.61000007390976, 'stableTimeIncrement': 3.33115536932382e-07, 
+    'internalEnergy': 120.068710327148, 'stepTime': 0.61000007390976, 
+    'totalEnergy': 0.41908872127533, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1793495, 
+    'distortionContrEnergy': 0.0, 'externalWork': 120.066696166992, 
+    'kineticEnergy': 7.8733899400163e-09, 'wallTime': 102.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 61, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.620000064373016, 
+    'stableTimeIncrement': 3.32875430331114e-07, 
+    'internalEnergy': 121.899078369141, 'stepTime': 0.620000064373016, 
+    'totalEnergy': 0.419883251190186, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1821457, 
+    'distortionContrEnergy': 0.0, 'externalWork': 121.897071838379, 
+    'kineticEnergy': 7.64057261903872e-09, 'wallTime': 104.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 62, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.630000054836273, 
+    'stableTimeIncrement': 3.32635494260103e-07, 
+    'internalEnergy': 123.725791931152, 'stepTime': 0.630000054836273, 
+    'totalEnergy': 0.420776873826981, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1849419, 
+    'distortionContrEnergy': 0.0, 'externalWork': 123.723762512207, 
+    'kineticEnergy': 7.18824022527542e-09, 'wallTime': 105.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 63, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.64000004529953, 'stableTimeIncrement': 3.32395785562767e-07, 
+    'internalEnergy': 125.548789978027, 'stepTime': 0.64000004529953, 
+    'totalEnergy': 0.421702533960342, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1877381, 
+    'distortionContrEnergy': 0.0, 'externalWork': 125.546783447266, 
+    'kineticEnergy': 7.3893451357776e-09, 'wallTime': 107.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 64, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.650000035762787, 
+    'stableTimeIncrement': 3.32156247395687e-07, 
+    'internalEnergy': 127.368156433105, 'stepTime': 0.650000035762787, 
+    'totalEnergy': 0.422718644142151, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1905343, 
+    'distortionContrEnergy': 0.0, 'externalWork': 127.366142272949, 
+    'kineticEnergy': 8.06597455493829e-09, 'wallTime': 108.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 65, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.660000026226044, 
+    'stableTimeIncrement': 3.31916879758865e-07, 
+    'internalEnergy': 129.183883666992, 'stepTime': 0.660000026226044, 
+    'totalEnergy': 0.42287090420723, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1933305, 
+    'distortionContrEnergy': 0.0, 'externalWork': 129.181854248047, 
+    'kineticEnergy': 7.02137770147715e-09, 'wallTime': 110.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 66, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.670000016689301, 
+    'stableTimeIncrement': 3.31677739495717e-07, 
+    'internalEnergy': 130.995971679688, 'stepTime': 0.670000016689301, 
+    'totalEnergy': 0.422302275896072, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1961267, 
+    'distortionContrEnergy': 0.0, 'externalWork': 130.993942260742, 
+    'kineticEnergy': 7.90911602877031e-09, 'wallTime': 111.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 67, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.680000007152557, 
+    'stableTimeIncrement': 3.31438798184536e-07, 
+    'internalEnergy': 132.804428100586, 'stepTime': 0.680000007152557, 
+    'totalEnergy': 0.421662330627441, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 1989229, 
+    'distortionContrEnergy': 0.0, 'externalWork': 132.802398681641, 
+    'kineticEnergy': 8.13978928704273e-09, 'wallTime': 113.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 68, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.689999997615814, 
+    'stableTimeIncrement': 3.31200112668739e-07, 
+    'internalEnergy': 134.609252929688, 'stepTime': 0.689999997615814, 
+    'totalEnergy': 0.421061962842941, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2017191, 
+    'distortionContrEnergy': 0.0, 'externalWork': 134.607238769531, 
+    'kineticEnergy': 7.06325087307391e-09, 'wallTime': 114.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 69, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.699999988079071, 
+    'stableTimeIncrement': 3.30961682948328e-07, 
+    'internalEnergy': 136.410568237305, 'stepTime': 0.699999988079071, 
+    'totalEnergy': 0.42061123251915, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2045153, 
+    'distortionContrEnergy': 0.0, 'externalWork': 136.408493041992, 
+    'kineticEnergy': 7.17370918223992e-09, 'wallTime': 116.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 70, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.709999978542328, 
+    'stableTimeIncrement': 3.30723452179882e-07, 
+    'internalEnergy': 138.208297729492, 'stepTime': 0.709999978542328, 
+    'totalEnergy': 0.420204728841782, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2073115, 
+    'distortionContrEnergy': 0.0, 'externalWork': 138.206161499023, 
+    'kineticEnergy': 7.22626003479832e-09, 'wallTime': 118.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 71, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.720000326633453, 'stableTimeIncrement': 3.3048553405024e-07, 
+    'internalEnergy': 140.002471923828, 'stepTime': 0.720000326633453, 
+    'totalEnergy': 0.419796973466873, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2101078, 
+    'distortionContrEnergy': 0.0, 'externalWork': 140.00032043457, 
+    'kineticEnergy': 7.03695057779896e-09, 'wallTime': 119.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 72, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.73000031709671, 'stableTimeIncrement': 3.30247786450855e-07, 
+    'internalEnergy': 141.793060302734, 'stepTime': 0.73000031709671, 
+    'totalEnergy': 0.419496476650238, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2129040, 
+    'distortionContrEnergy': 0.0, 'externalWork': 141.79084777832, 
+    'kineticEnergy': 7.83193776499047e-09, 'wallTime': 121.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 73, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.740000307559967, 
+    'stableTimeIncrement': 3.30010351490273e-07, 
+    'internalEnergy': 143.580032348633, 'stepTime': 0.740000307559967, 
+    'totalEnergy': 0.41918808221817, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2157002, 
+    'distortionContrEnergy': 0.0, 'externalWork': 143.577835083008, 
+    'kineticEnergy': 7.4974133568162e-09, 'wallTime': 122.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 74, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.750000298023224, 
+    'stableTimeIncrement': 3.29773200746786e-07, 
+    'internalEnergy': 145.36344909668, 'stepTime': 0.750000298023224, 
+    'totalEnergy': 0.418842226266861, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2184964, 
+    'distortionContrEnergy': 0.0, 'externalWork': 145.361297607422, 
+    'kineticEnergy': 7.88855558653268e-09, 'wallTime': 124.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 75, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.760000288486481, 
+    'stableTimeIncrement': 3.29536277376974e-07, 
+    'internalEnergy': 147.143417358398, 'stepTime': 0.760000288486481, 
+    'totalEnergy': 0.41857898235321, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2212926, 
+    'distortionContrEnergy': 0.0, 'externalWork': 147.141220092773, 
+    'kineticEnergy': 7.37573335740649e-09, 'wallTime': 126.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 76, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.770000278949738, 
+    'stableTimeIncrement': 3.29299695067675e-07, 
+    'internalEnergy': 148.919815063477, 'stepTime': 0.770000278949738, 
+    'totalEnergy': 0.41830837726593, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2240888, 
+    'distortionContrEnergy': 0.0, 'externalWork': 148.91764831543, 
+    'kineticEnergy': 7.87222642628649e-09, 'wallTime': 127.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 77, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.780000269412994, 
+    'stableTimeIncrement': 3.29063368553761e-07, 
+    'internalEnergy': 150.692764282227, 'stepTime': 0.780000269412994, 
+    'totalEnergy': 0.418138772249222, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2268850, 
+    'distortionContrEnergy': 0.0, 'externalWork': 150.690567016602, 
+    'kineticEnergy': 8.02215271988871e-09, 'wallTime': 129.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 78, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.790000259876251, 
+    'stableTimeIncrement': 3.28827297835232e-07, 
+    'internalEnergy': 152.462219238281, 'stepTime': 0.790000259876251, 
+    'totalEnergy': 0.417752176523209, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2296812, 
+    'distortionContrEnergy': 0.0, 'externalWork': 152.460006713867, 
+    'kineticEnergy': 8.16979905948756e-09, 'wallTime': 130.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 79, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.800000250339508, 
+    'stableTimeIncrement': 3.28591568177217e-07, 
+    'internalEnergy': 154.228134155273, 'stepTime': 0.800000250339508, 
+    'totalEnergy': 0.417441964149475, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2324774, 
+    'distortionContrEnergy': 0.0, 'externalWork': 154.225982666016, 
+    'kineticEnergy': 8.21407208917435e-09, 'wallTime': 132.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 80, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.810000240802765, 
+    'stableTimeIncrement': 3.28356094314586e-07, 
+    'internalEnergy': 155.990661621094, 'stepTime': 0.810000240802765, 
+    'totalEnergy': 0.417381167411804, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2352736, 
+    'distortionContrEnergy': 0.0, 'externalWork': 155.988494873047, 
+    'kineticEnergy': 7.60919149911388e-09, 'wallTime': 133.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 81, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.820000231266022, 
+    'stableTimeIncrement': 3.28120961512468e-07, 
+    'internalEnergy': 157.749740600586, 'stepTime': 0.820000231266022, 
+    'totalEnergy': 0.417403489351273, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2380698, 
+    'distortionContrEnergy': 0.0, 'externalWork': 157.747543334961, 
+    'kineticEnergy': 6.89599310987887e-09, 'wallTime': 135.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 82, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.830000221729279, 
+    'stableTimeIncrement': 3.27886141349154e-07, 
+    'internalEnergy': 159.505401611328, 'stepTime': 0.830000221729279, 
+    'totalEnergy': 0.417490392923355, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2408660, 
+    'distortionContrEnergy': 0.0, 'externalWork': 159.503173828125, 
+    'kineticEnergy': 7.10075953591627e-09, 'wallTime': 137.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 83, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.839999973773956, 'stableTimeIncrement': 3.2761690249572e-07, 
+    'internalEnergy': 161.517227172852, 'stepTime': 0.839999973773956, 
+    'totalEnergy': 0.417637705802917, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2440769, 
+    'distortionContrEnergy': 0.0, 'externalWork': 161.514953613281, 
+    'kineticEnergy': 8.2647542143377e-09, 'wallTime': 138.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 84, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.850000143051147, 'stableTimeIncrement': 3.27335953898e-07, 
+    'internalEnergy': 163.614776611328, 'stepTime': 0.850000143051147, 
+    'totalEnergy': 0.41746461391449, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2474324, 
+    'distortionContrEnergy': 0.0, 'externalWork': 163.612518310547, 
+    'kineticEnergy': 7.59191998156439e-09, 'wallTime': 140.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 85, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.860000014305115, 
+    'stableTimeIncrement': 3.27055460047632e-07, 
+    'internalEnergy': 165.707336425781, 'stepTime': 0.860000014305115, 
+    'totalEnergy': 0.417030066251755, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2507878, 
+    'distortionContrEnergy': 0.0, 'externalWork': 165.705078125, 
+    'kineticEnergy': 7.36858751793079e-09, 'wallTime': 142.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 86, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.870000183582306, 
+    'stableTimeIncrement': 3.26775420944614e-07, 
+    'internalEnergy': 167.794784545898, 'stepTime': 0.870000183582306, 
+    'totalEnergy': 0.416567832231522, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2541433, 
+    'distortionContrEnergy': 0.0, 'externalWork': 167.792587280273, 
+    'kineticEnergy': 7.16532788658242e-09, 'wallTime': 144.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 87, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.880000054836273, 
+    'stableTimeIncrement': 3.26495921854075e-07, 
+    'internalEnergy': 169.87712097168, 'stepTime': 0.880000054836273, 
+    'totalEnergy': 0.416224241256714, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2574987, 
+    'distortionContrEnergy': 0.0, 'externalWork': 169.874938964844, 
+    'kineticEnergy': 6.78977851720219e-09, 'wallTime': 146.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 88, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.890000224113464, 
+    'stableTimeIncrement': 3.26216877510888e-07, 
+    'internalEnergy': 171.954376220703, 'stepTime': 0.890000224113464, 
+    'totalEnergy': 0.415898680686951, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2608542, 
+    'distortionContrEnergy': 0.0, 'externalWork': 171.952285766602, 
+    'kineticEnergy': 7.02669300522984e-09, 'wallTime': 148.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 89, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.900000095367432, 'stableTimeIncrement': 3.2593831633676e-07, 
+    'internalEnergy': 174.026519775391, 'stepTime': 0.900000095367432, 
+    'totalEnergy': 0.415696412324905, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2642096, 
+    'distortionContrEnergy': 0.0, 'externalWork': 174.024505615234, 
+    'kineticEnergy': 8.22939050237892e-09, 'wallTime': 150.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 90, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.910000264644623, 
+    'stableTimeIncrement': 3.25660238331693e-07, 
+    'internalEnergy': 176.093719482422, 'stepTime': 0.910000264644623, 
+    'totalEnergy': 0.415600717067719, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2675651, 
+    'distortionContrEnergy': 0.0, 'externalWork': 176.091766357422, 
+    'kineticEnergy': 7.42577510592923e-09, 'wallTime': 152.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 91, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.92000013589859, 'stableTimeIncrement': 3.25382643495686e-07, 
+    'internalEnergy': 178.155990600586, 'stepTime': 0.92000013589859, 
+    'totalEnergy': 0.415568113327026, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2709205, 
+    'distortionContrEnergy': 0.0, 'externalWork': 178.153945922852, 
+    'kineticEnergy': 7.80190223537147e-09, 'wallTime': 153.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 92, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.930000007152557, 
+    'stableTimeIncrement': 3.25105617093868e-07, 
+    'internalEnergy': 180.213272094727, 'stepTime': 0.930000007152557, 
+    'totalEnergy': 0.415316998958588, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2742759, 
+    'distortionContrEnergy': 0.0, 'externalWork': 180.211151123047, 
+    'kineticEnergy': 7.48569473074667e-09, 'wallTime': 155.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 93, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.940000176429749, 
+    'stableTimeIncrement': 3.24829017017692e-07, 
+    'internalEnergy': 182.265518188477, 'stepTime': 0.940000176429749, 
+    'totalEnergy': 0.414968252182007, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2776314, 
+    'distortionContrEnergy': 0.0, 'externalWork': 182.263442993164, 
+    'kineticEnergy': 7.92046161990356e-09, 'wallTime': 157.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 94, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.950000047683716, 
+    'stableTimeIncrement': 3.24552956953994e-07, 
+    'internalEnergy': 184.312866210938, 'stepTime': 0.950000047683716, 
+    'totalEnergy': 0.41499599814415, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2809868, 
+    'distortionContrEnergy': 0.0, 'externalWork': 184.310729980469, 
+    'kineticEnergy': 7.00963287414424e-09, 'wallTime': 159.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 95, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.960000216960907, 
+    'stableTimeIncrement': 3.24277408481066e-07, 
+    'internalEnergy': 186.355285644531, 'stepTime': 0.960000216960907, 
+    'totalEnergy': 0.41515177488327, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2843423, 
+    'distortionContrEnergy': 0.0, 'externalWork': 186.353164672852, 
+    'kineticEnergy': 7.68568408915371e-09, 'wallTime': 161.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 96, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.970000088214874, 
+    'stableTimeIncrement': 3.24002371598908e-07, 
+    'internalEnergy': 188.392791748047, 'stepTime': 0.970000088214874, 
+    'totalEnergy': 0.415398269891739, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2876977, 
+    'distortionContrEnergy': 0.0, 'externalWork': 188.390640258789, 
+    'kineticEnergy': 7.52427808947687e-09, 'wallTime': 163.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 97, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.980000257492065, 
+    'stableTimeIncrement': 3.23727903150939e-07, 
+    'internalEnergy': 190.425476074219, 'stepTime': 0.980000257492065, 
+    'totalEnergy': 0.415703684091568, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2910532, 
+    'distortionContrEnergy': 0.0, 'externalWork': 190.423294067383, 
+    'kineticEnergy': 7.53902806849283e-09, 'wallTime': 165.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 98, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {
+    'totalTime': 0.990000128746033, 'stableTimeIncrement': 3.2345388945032e-07, 
+    'internalEnergy': 192.453262329102, 'stepTime': 0.990000128746033, 
+    'totalEnergy': 0.416083604097366, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2944086, 
+    'distortionContrEnergy': 0.0, 'externalWork': 192.451034545898, 
+    'kineticEnergy': 8.00688404467564e-09, 'wallTime': 167.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 99, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(STATUS, {'totalTime': 1.0, 
+    'stableTimeIncrement': 3.23171832405933e-07, 
+    'internalEnergy': 194.476196289062, 'stepTime': 1.0, 
+    'totalEnergy': 0.416547209024429, 
+    'jobName': 'vumat_cube_elastoplastic_solver', 'artificialEnergy': 0.0, 
+    'phase': EXPLICIT_PHASE, 'step': 1, 'increment': 2977640, 
+    'distortionContrEnergy': 0.0, 'externalWork': 194.473892211914, 
+    'kineticEnergy': 6.69173738643281e-09, 'wallTime': 168.0})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(ODB_FRAME, {
+    'phase': EXPLICIT_PHASE, 'step': 0, 'frame': 100, 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(COMPLETED, {
+    'phase': EXPLICIT_PHASE, 'message': 'Phase complete', 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.jobs['vumat_cube_elastoplastic_solver']._Message(JOB_COMPLETED, {
+    'time': 'Thu Nov  7 19:28:08 2024', 
+    'jobName': 'vumat_cube_elastoplastic_solver'})
+mdb.models['vumat_cube_elastoplastic_srt'].materials['steel'].depvar.setValues(
+    n=19)
+# Save by daglim1 on 2024_11_07-19.29.48; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

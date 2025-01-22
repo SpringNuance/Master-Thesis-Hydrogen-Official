@@ -1,0 +1,1379 @@
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models.changeKey(fromName='CH2', toName='Model-Truncated-One-Eighth-v1')
+mdb.models.changeKey(fromName='CH2_fine', toName=
+    'Model-Truncated-One-Eighth-v2')
+mdb.Model(modelType=STANDARD_EXPLICIT, name='Model-Full-Half-Thickness')
+mdb.Model(modelType=STANDARD_EXPLICIT, name='reference-Wu-Jiao-Jiao')
+# Save by nguyenb5 on 2024_06_04-14.15.24; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['reference-Wu-Jiao-Jiao']
+mdb.ModelFromInputFile(inputFileName=
+    'C:/LocalUserData/User-data/nguyenb5/CP1000 processed/CP1000 CHD2/CHD2Full_Fullfix_sv05.inp'
+    , name='CHD2Full_Fullfix_sv05')
+#* Number of intervals must be greater than zero.
+# Save by nguyenb5 on 2024_06_04-14.15.52; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models.changeKey(fromName='CHD2Full_Fullfix_sv05', toName=
+    'reference-Wu-Jiao-Jiao')
+mdb.models['Model-Full-Half-Thickness'].ConstrainedSketch(name='__profile__', 
+    sheetSize=0.5)
+del mdb.models['Model-Full-Half-Thickness'].sketches['__profile__']
+# Save by nguyenb5 on 2024_06_04-14.27.10; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_04-14.29.09; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].ConstrainedSketch(name='__profile__', 
+    sheetSize=200.0)
+del mdb.models['Model-Full-Half-Thickness'].sketches['__profile__']
+mdb.models['Model-Full-Half-Thickness'].ConstrainedSketch(name='__profile__', 
+    sheetSize=200.0)
+mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'].rectangle(
+    point1=(-0.0075, -0.125), point2=(0.0075, 0.125))
+mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'].delete(
+    objectList=(
+    mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'].geometry[2], 
+    mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'].geometry[3], 
+    mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'].geometry[4], 
+    mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'].geometry[5], 
+    mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'].constraints[18], 
+    mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'].constraints[19], 
+    mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'].constraints[20], 
+    mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'].constraints[21], 
+    mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'].constraints[22]))
+del mdb.models['Model-Full-Half-Thickness'].sketches['__profile__']
+mdb.models['Model-Full-Half-Thickness'].ConstrainedSketch(name='__profile__', 
+    sheetSize=0.5)
+mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'].rectangle(
+    point1=(-0.0075, -0.125), point2=(0.0075, 0.125))
+mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'].CircleByCenterPerimeter(
+    center=(0.0, 0.0), point1=(0.0, 0.00125))
+mdb.models['Model-Full-Half-Thickness'].Part(dimensionality=THREE_D, name=
+    'CHD2-m', type=DEFORMABLE_BODY)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].BaseSolidExtrude(depth=
+    0.0005, sketch=
+    mdb.models['Model-Full-Half-Thickness'].sketches['__profile__'])
+del mdb.models['Model-Full-Half-Thickness'].sketches['__profile__']
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].DatumPlaneByOffset(
+    flip=SIDE2, offset=0.025, plane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].faces[1])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].DatumPlaneByOffset(
+    flip=SIDE2, offset=0.12, plane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].faces[1])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].DatumPlaneByOffset(
+    flip=SIDE2, offset=0.1211, plane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].faces[1])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].DatumPlaneByOffset(
+    flip=SIDE2, offset=0.1222, plane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].faces[1])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].DatumPlaneByOffset(
+    flip=SIDE2, offset=0.125, plane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].faces[1])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].DatumPlaneByOffset(
+    flip=SIDE2, offset=0.1278, plane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].faces[1])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].DatumPlaneByOffset(
+    flip=SIDE2, offset=0.1289, plane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].faces[1])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].DatumPlaneByOffset(
+    flip=SIDE2, offset=0.13, plane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].faces[1])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].DatumPlaneByOffset(
+    flip=SIDE2, offset=0.225, plane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].faces[1])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), datumPlane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].datums[2])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), datumPlane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].datums[3])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), datumPlane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].datums[4])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), datumPlane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].datums[5])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), datumPlane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].datums[6])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), datumPlane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].datums[7])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ), datumPlane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].datums[8])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), datumPlane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].datums[9])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), datumPlane=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].datums[10])
+# Save by nguyenb5 on 2024_06_04-14.40.45; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_04-14.46.36; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].Material(name='CP1000-m')
+mdb.models['Model-Full-Half-Thickness'].materials['CP1000-m'].Density(table=((
+    7890.0, ), ))
+mdb.models['Model-Full-Half-Thickness'].materials['CP1000-m'].Elastic(table=((
+    210000000000.0, 0.3), ))
+mdb.models['Model-Full-Half-Thickness'].materials['CP1000-m'].Plastic(
+    scaleStress=None, table=((839646000.0, 0.0), (880025000.0, 0.0003), (
+    906975000.0, 0.0005), (926275000.0, 0.001), (926275000.0, 0.002), (
+    939393000.0, 0.003), (949756000.0, 0.004), (958495000.0, 0.005), (
+    966134000.0, 0.006), (972960000.0, 0.007), (979150000.0, 0.008), (
+    984823000.0, 0.009), (990061000.0, 0.01), (1027470000.0, 0.02), (
+    1049750000.0, 0.03), (1064310000.0, 0.04), (1074410000.0, 0.05), (
+    1081810000.0, 0.06), (1087490000.0, 0.07), (1092060000.0, 0.08), (
+    1095870000.0, 0.09), (1099140000.0, 0.1), (1111180000.0, 0.15), (
+    1119630000.0, 0.2), (1126250000.0, 0.25), (1131720000.0, 0.3), (
+    1136380000.0, 0.35), (1140440000.0, 0.4), (1144050000.0, 0.45), (
+    1147300000.0, 0.5), (1150250000.0, 0.55), (1152960000.0, 0.6), (
+    1155460000.0, 0.65), (1157790000.0, 0.7), (1159960000.0, 0.75), (
+    1162000000.0, 0.8), (1163920000.0, 0.85), (1165740000.0, 0.9), (
+    1167460000.0, 0.95), (1169110000.0, 1.0), (1170670000.0, 1.05), (
+    1172160000.0, 1.1), (1173600000.0, 1.15), (1174970000.0, 1.2), (
+    1176290000.0, 1.25), (1177560000.0, 1.3), (1178790000.0, 1.35), (
+    1179970000.0, 1.4), (1181120000.0, 1.45), (1182220000.0, 1.5), (
+    1183300000.0, 1.55), (1184340000.0, 1.6), (1185350000.0, 1.65), (
+    1186330000.0, 1.7), (1187280000.0, 1.75), (1188210000.0, 1.8), (
+    1189120000.0, 1.85), (1190000000.0, 1.9), (1190860000.0, 1.95), (
+    1191700000.0, 2.0), (1192520000.0, 2.05), (1193320000.0, 2.1), (
+    1194100000.0, 2.15), (1194870000.0, 2.2), (1195620000.0, 2.25), (
+    1196350000.0, 2.3), (1197070000.0, 2.35), (1197770000.0, 2.4), (
+    1198470000.0, 2.45), (1199140000.0, 2.5), (1199810000.0, 2.55), (
+    1200460000.0, 2.6), (1201100000.0, 2.65), (1201730000.0, 2.7), (
+    1202350000.0, 2.75), (1202960000.0, 2.8), (1203550000.0, 2.85), (
+    1204140000.0, 2.9), (1204720000.0, 2.95), (1205290000.0, 3.0)))
+# Save by nguyenb5 on 2024_06_04-21.34.16; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].HomogeneousSolidSection(material=
+    'CP1000-m', name='Section-1-CP1000-m', thickness=None)
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.DatumCsysByDefault(
+    CARTESIAN)
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.Instance(dependent=ON, 
+    name='CHD2-m-1', part=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'])
+mdb.models['Model-Full-Half-Thickness'].StaticStep(initialInc=0.5, maxNumInc=
+    2000, name='Step-1', nlgeom=ON, noStop=OFF, previous='Initial', 
+    timeIncrementationMethod=FIXED, timePeriod=1000.0)
+mdb.models['Model-Full-Half-Thickness'].TabularAmplitude(data=((0.0, 0.0), (
+    1000.0, 1.0)), name='Amp-1', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.Set(cells=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.instances['CHD2-m-1'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), edges=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.instances['CHD2-m-1'].edges.getSequenceFromMask(
+    ('[#230470 ]', ), ), faces=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.instances['CHD2-m-1'].faces.getSequenceFromMask(
+    ('[#14a #40000 ]', ), ), name='Set-1', vertices=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.instances['CHD2-m-1'].vertices.getSequenceFromMask(
+    ('[#820 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].EncastreBC(createStepName='Initial', 
+    localCsys=None, name='bottom_part_encastre', region=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.sets['Set-1'])
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.Set(edges=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.instances['CHD2-m-1'].edges.getSequenceFromMask(
+    ('[#0 #4000000 ]', ), ), faces=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.instances['CHD2-m-1'].faces.getSequenceFromMask(
+    ('[#20880a02 #202088 ]', ), ), name='Set-2')
+mdb.models['Model-Full-Half-Thickness'].ZsymmBC(createStepName='Initial', 
+    localCsys=None, name='zsymm', region=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.sets['Set-2'])
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.Set(cells=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.instances['CHD2-m-1'].cells.getSequenceFromMask(
+    ('[#100 ]', ), ), edges=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.instances['CHD2-m-1'].edges.getSequenceFromMask(
+    ('[#0:2 #1b700000 ]', ), ), faces=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.instances['CHD2-m-1'].faces.getSequenceFromMask(
+    ('[#0 #21c800 ]', ), ), name='Set-3', vertices=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.instances['CHD2-m-1'].vertices.getSequenceFromMask(
+    ('[#0 #14000 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Step-1', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    localCsys=None, name='top_part_constraint', region=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.sets['Set-3'], u1=0.0, 
+    u2=UNSET, u3=0.0, ur1=0.0, ur2=0.0, ur3=0.0)
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.Set(faces=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.instances['CHD2-m-1'].faces.getSequenceFromMask(
+    ('[#0 #10000 ]', ), ), name='Set-4')
+mdb.models['Model-Full-Half-Thickness'].DisplacementBC(amplitude='Amp-1', 
+    createStepName='Step-1', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    localCsys=None, name='top_surface_disp', region=
+    mdb.models['Model-Full-Half-Thickness'].rootAssembly.sets['Set-4'], u1=
+    UNSET, u2=0.0025, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+# Save by nguyenb5 on 2024_06_04-21.45.21; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_04-21.50.10; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].steps['Step-1'].suppress()
+mdb.models['Model-Full-Half-Thickness'].steps['Step-1'].resume()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setMeshControls(
+    algorithm=ADVANCING_FRONT, regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#e2 ]', ), ), technique=SWEEP)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0:2 #3f7fee10 ]', ), ), size=0.002)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#423ffff ]', ), ), size=0.002)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#5 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#300 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0:2 #6060000 ]', ), ), number=2)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#200 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#208905 ]', ), ), number=2)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+# Save by nguyenb5 on 2024_06_05-11.14.48; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#11000000 #104000 #1 ]', ), ), number=4)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#540000 #4 ]', ), ), number=4)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#1180000 #4 ]', ), ), number=5)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#b8000000 #47faffe9 #c0 ]', ), ), size=0.0001)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setMeshControls(
+    algorithm=MEDIAL_AXIS, regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setMeshControls(
+    algorithm=MEDIAL_AXIS, regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+# Save by nguyenb5 on 2024_06_05-11.23.20; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_05-11.24.26; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#14 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#2800000 #10000000 #4 ]', ), ), size=0.002)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #4900000 ]', ), ), size=0.0001)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#14 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#6b800000 #b8040000 #1005 ]', ), ), size=0.0001)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#18 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #10000000 #4 ]', ), ), size=0.002)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #a8000000 #1000 ]', ), ), number=5)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #4800000 ]', ), ), size=0.0001)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0:2 #800128 ]', ), ), number=4)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#200 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0:2 #a00 ]', ), ), number=2)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#200 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0:2 #800100 ]', ), ), number=5)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#100000 #4 ]', ), ), number=4)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#440000 ]', ), ), number=5)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#2806000 ]', ), ), size=0.002)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+# Save by nguyenb5 on 2024_06_05-11.41.29; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setMeshControls(
+    regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ), technique=STRUCTURED)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setMeshControls(
+    regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ), technique=SWEEP)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setSweepPath(edge=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges[76], region=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells[7], sense=
+    REVERSE)
+mdb.meshEditOptions.setValues(enableUndo=True, maxUndoCacheElements=0.5)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setSweepPath(edge=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges[76], region=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells[7], sense=
+    FORWARD)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setSeedConstraints(
+    constraint=FIXED, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #a8000000 #1000 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setMeshControls(
+    algorithm=MEDIAL_AXIS, minTransition=OFF, regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setMeshControls(
+    algorithm=ADVANCING_FRONT, regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setSweepPath(edge=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges[76], region=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells[7], sense=
+    REVERSE)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(
+    meshTechniqueOverride=ON, regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#2c0 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#200 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setMeshControls(
+    regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#c0 ]', ), ), sizeGrowthRate=1.05, technique=SWEEP)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+# Save by nguyenb5 on 2024_06_05-11.48.53; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+# Save by nguyenb5 on 2024_06_05-11.49.27; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setMeshControls(
+    allowMapped=True, regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setSweepPath(edge=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges[65], region=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells[7], sense=
+    REVERSE)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setSweepPath(edge=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges[19], region=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells[5], sense=
+    REVERSE)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+# Save by nguyenb5 on 2024_06_05-11.58.06; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_05-11.58.10; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_05-11.58.19; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.regenerate()
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.regenerate()
+# Save by nguyenb5 on 2024_06_05-11.58.40; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_05-11.58.46; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_05-13.17.02; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#28 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#80000000 #1 ]', ), ), size=0.0002)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#e8000000 #40001 ]', ), ), size=0.00015)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#b0 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#80000000 #47eaabe9 #c0 ]', ), ), size=0.00015)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#b8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#80000000 #47eaabe9 #c0 ]', ), ), size=0.00012)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+# Save by nguyenb5 on 2024_06_05-17.21.10; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.regenerate()
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.regenerate()
+# Save by nguyenb5 on 2024_06_05-17.21.22; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].steps['Step-1'].setValues(initialInc=
+    1.0, maxInc=1.0, maxNumInc=100000, minInc=1e-05, timeIncrementationMethod=
+    AUTOMATIC)
+# Save by nguyenb5 on 2024_06_06-14.09.37; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].boundaryConditions['top_surface_disp'].setValues(
+    u2=0.002)
+# Save by nguyenb5 on 2024_06_06-14.10.16; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.jobs['CH2F']
+del mdb.jobs['CH2']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-Full-Half-Thickness', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='Job-1', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, numThreadsPerMpiProcess=
+    1, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].Set(cells=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#3ff ]', ), ), name='Set-42')
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].sets['Set-42'], 
+    sectionName='Section-1-CP1000-m', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.regenerate()
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'L23-0203', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '55 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 4 at 351 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof4.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 5 at 351 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof5.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 6 at 351 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof6.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\LocalUserData\\User-data\\nguyenb5\\CP1000 processed\\CP1000 CHD2\\Job-1.odb', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'L23-0203', 'handle': 22476, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1', 'memory': 578.0})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 16017.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 111.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Thu Jun  6 14:11:57 2024', 
+    'jobName': 'Job-1'})
+# Save by nguyenb5 on 2024_06_06-14.19.06; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=200, variables=('U', 'RF'))
+# Save by nguyenb5 on 2024_06_06-14.27.41; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_06-14.30.46; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#100000 #4 ]', ), ), number=5)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#440000 ]', ), ), number=4)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#28000000 ]', ), ), number=4)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setSeedConstraints(
+    constraint=FIXED, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#28000000 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#40000000 #40000 ]', ), ), number=6)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setSeedConstraints(
+    constraint=FIXED, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#40000000 #40000 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].assignStackDirection(
+    cells=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ), referenceRegion=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].faces[13])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].assignStackDirection(
+    cells=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ), referenceRegion=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].faces[16])
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ), seedConstraintOverride=ON)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setSeedConstraints(
+    constraint=FIXED, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#28000000 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FIXED, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #88000000 ]', ), ), number=4)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FIXED, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #20000000 #1000 ]', ), ), number=6)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#18 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#300 ]', ), ))
+# Save by nguyenb5 on 2024_06_07-13.01.22; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_07-13.02.54; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.regenerate()
+# Save by nguyenb5 on 2024_06_07-13.03.31; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'L23-0203', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '35 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 4 at 351 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof4.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 5 at 351 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof5.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 6 at 351 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof6.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\LocalUserData\\User-data\\nguyenb5\\CP1000 processed\\CP1000 CHD2\\Job-1.odb', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'L23-0203', 'handle': 16668, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1', 'memory': 573.0})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 16017.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 111.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Fri Jun  7 13:03:57 2024', 
+    'jobName': 'Job-1'})
+# Save by nguyenb5 on 2024_06_07-13.06.22; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].steps['Step-1'].setValues(amplitude=
+    STEP, timePeriod=200.0)
+mdb.models['Model-Full-Half-Thickness'].amplitudes['Amp-1'].setValues(data=((
+    0.0, 0.0), (200.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['Model-Full-Half-Thickness'].boundaryConditions.changeKey(fromName=
+    'top_surface_disp', toName='top-surface-disp')
+mdb.models['Model-Full-Half-Thickness'].boundaryConditions.changeKey(fromName=
+    'top_part_constraint', toName='top-part-constraint')
+mdb.models['Model-Full-Half-Thickness'].boundaryConditions.changeKey(fromName=
+    'bottom_part_encastre', toName='bottom-part-encastre')
+# Save by nguyenb5 on 2024_06_07-17.47.24; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setElementType(
+    elemTypes=(ElemType(elemCode=C3D8, elemLibrary=STANDARD, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT), ElemType(
+    elemCode=C3D6, elemLibrary=STANDARD), ElemType(elemCode=C3D4, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#3ff ]', ), ), ))
+# Save by nguyenb5 on 2024_06_07-17.47.42; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.regenerate()
+# Save by nguyenb5 on 2024_06_07-17.56.58; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#fa ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#11080000 #115412 #3 ]', ), ), size=5e-05)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#b8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#80000000 #47eaabe9 #c0 ]', ), ), size=5e-05)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#b8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#80000000 #47eaabe9 #c0 ]', ), ), size=8e-05)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#b8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#80000000 #47eaabe9 #c0 ]', ), ), size=0.0001)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#fa ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#11080000 #115412 #3 ]', ), ), number=8)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#b8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#80000000 #47eaabe9 #c0 ]', ), ), size=8e-05)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#b8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#80000000 #44aaaae9 ]', ), ), size=9e-05)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#18 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #3400100 #c0 ]', ), ), size=5e-05)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#18 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #2a80 ]', ), ), size=8e-05)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#18 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #2a80 ]', ), ), size=9e-05)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#b8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#80000000 #4800001 ]', ), ), size=8e-05)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#a0 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#68000000 #a8040000 #1000 ]', ), ), size=10.0)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FIXED, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#68000000 #40000 ]', ), ), number=10)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FIXED, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #a8000000 #1000 ]', ), ), number=10)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#a0 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FIXED, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#68000000 #a8040000 #1000 ]', ), ), number=8)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+# Save by nguyenb5 on 2024_06_08-12.10.01; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.regenerate()
+mdb.models['Model-Full-Half-Thickness'].steps['Step-1'].setValues(initialInc=
+    5.0, maxInc=5.0, timePeriod=1000.0)
+mdb.models['Model-Full-Half-Thickness'].amplitudes['Amp-1'].setValues(data=((
+    0.0, 0.0), (1000.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+# Save by nguyenb5 on 2024_06_08-12.15.08; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_08-12.19.03; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].ConstrainedSketch(name='__edit__', 
+    objectToCopy=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].features['Solid extrude-1'].sketch)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Model-Full-Half-Thickness'].sketches['__edit__'], upToFeature=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].features['Solid extrude-1'])
+mdb.models['Model-Full-Half-Thickness'].sketches['__edit__'].autoTrimCurve(
+    curve1=
+    mdb.models['Model-Full-Half-Thickness'].sketches['__edit__'].geometry[6], 
+    point1=(-0.00114101753570139, 0.000629427144303918))
+mdb.models['Model-Full-Half-Thickness'].sketches['__edit__'].CircleByCenterPerimeter(
+    center=(0.0, 0.0), point1=(0.0, 0.0001))
+del mdb.models['Model-Full-Half-Thickness'].sketches['__edit__']
+mdb.models['Model-Full-Half-Thickness'].ConstrainedSketch(name='__edit__', 
+    objectToCopy=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].features['Solid extrude-1'].sketch)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Model-Full-Half-Thickness'].sketches['__edit__'], upToFeature=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].features['Solid extrude-1'])
+mdb.models['Model-Full-Half-Thickness'].sketches['__edit__'].CircleByCenterPerimeter(
+    center=(0.0, 0.0), point1=(0.0, 0.001))
+del mdb.models['Model-Full-Half-Thickness'].sketches['__edit__']
+mdb.models['Model-Full-Half-Thickness'].ConstrainedSketch(name='__edit__', 
+    objectToCopy=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].features['Solid extrude-1'].sketch)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['Model-Full-Half-Thickness'].sketches['__edit__'], upToFeature=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].features['Solid extrude-1'])
+mdb.models['Model-Full-Half-Thickness'].sketches['__edit__'].RadialDimension(
+    curve=
+    mdb.models['Model-Full-Half-Thickness'].sketches['__edit__'].geometry[6], 
+    radius=0.001, textPoint=(0.00201595667749643, 0.00122302793897688))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['Model-Full-Half-Thickness'].sketches['__edit__'])
+del mdb.models['Model-Full-Half-Thickness'].sketches['__edit__']
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].regenerate()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].regenerate()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+# Save by nguyenb5 on 2024_06_08-13.01.51; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#18 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #3400100 #c0 ]', ), ), size=6e-05)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#18 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #3400100 #c0 ]', ), ), size=7e-05)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+# Save by nguyenb5 on 2024_06_08-13.03.22; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_08-13.03.50; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.regenerate()
+# Save by nguyenb5 on 2024_06_08-13.10.30; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_08-13.11.57; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

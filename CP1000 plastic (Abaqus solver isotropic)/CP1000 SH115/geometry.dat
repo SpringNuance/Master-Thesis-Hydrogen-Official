@@ -1,0 +1,437 @@
+1
+
+   Abaqus 2023.HF4                                  Date 12-Jun-2024   Time 16:07:01
+   For use by AALTO UNIVERSITY under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes SIMULIA Corp.
+                           1301 Atwood Avenue, Suite 101W
+                              Johnston, RI 02919, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine L23-0203 
+                          you are authorized to run
+                          Abaqus/Standard until 20-Feb-2025
+
+                          Your site id is: 200000000014764 
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      https://www.3ds.com/products-services/simulia/services-support/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                     Abaqus 2023.HF4                     * 
+                *                                                         * 
+                *       BUILD ID: 2023_07_21-20.45.57 RELr425 183702      * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using                         * 
+                *  release Abaqus 2023.HF4 manuals                        * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *   This program may not be used for commercial purposes  * 
+                *           without payment of a commercial fee.          * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *Heading
+  *Element, type=C3D8
+  *Elset, elset=ASSEMBLY_SH115-M-1_SET-1
+  *Elset, elset=ASSEMBLY_SET-2
+  *Elset, elset=ASSEMBLY_SET-3
+  *Elset, elset=ASSEMBLY_SET-4
+  *Elset, elset=ASSEMBLY_SET-5
+  *material, name=CP1000-M
+  *density
+  *elastic
+  *plastic
+  *solidsection, elset=ASSEMBLY_SH115-M-1_SET-1, material=CP1000-M
+  *solidsection, elset=ASSEMBLY_SH115-M-1_SET-1, material=CP1000-M
+  *boundary
+  *boundary
+  *boundary
+  *boundary, amplitude=AMP-1
+  *boundary
+  *boundary
+  *boundary
+  *boundary, amplitude=AMP-1
+  *output, field, numberinterval=100
+  *output, history, variable=PRESELECT
+  *output, field, numberinterval=100
+  *output, history, variable=PRESELECT
+  *output, field, numberinterval=100
+  *output, history, variable=PRESELECT
+  
+                               E L E M E N T   Q U A L I T Y  C H E C K S        
+  
+  
+ ***NOTES: DISTORTED ISOPARAMETRIC ELEMENTS: ANGLE BETWEEN ISOPARAMETRIC LINES 
+           IS LESS THAN 45 DEGREES OR GREATER THAN 135 DEGREES.
+  
+           TETRAHEDRAL QUALITY MEASURE: VOLUME OF TETRAHEDRON DIVIDED BY THE 
+           VOLUME OF EQUILATERAL TETRAHEDRON WITH SAME CIRCUMSPHERE RADIUS; 
+           0 FOR DEGENERATE TETRAHEDRON AND 1 FOR EQUILATERIAL TETRAHEDRON. IT 
+           IS RECOMMENDED THAT THE TETRAHEDRAL QUALITY MEASURE BE GREATER THAN 
+           0.02, THE MIN INTERIOR (DIHEDRAL) ANGLE BE GREATER THAN 10 DEGREES, 
+           AND THE MAX INTERIOR (DIHEDRAL) ANGLE BE LESS THAN 160 DEGREES. 
+  
+           MODIFIED TETRAHEDRAL QUALITY MEASURE: ANGLES BETWEEN THE TWO LINE 
+           SEGMENTS ON EACH EDGE; THE EDGES OF MODIFIED TETRAHEDRAL SHOULD BE 
+           AS STRAIGHT AS POSSIBLE. IT IS RECOMMENDED THAT THE ANGLE BETWEEN 
+           THE TWO LINE SEGMENTS ON EACH EDGE IS BETWEEN 160 AND 180 DEGREES. 
+  
+           TRIANGULAR QUALITY MEASURE: AREA OF TRIANGLE DIVIDED BY THE AREA OF 
+           EQUILATERAL TRIANGLE WITH SAME CIRCUMCIRCLE RADIUS; 0 FOR DEGENERATE 
+           TRIANGLE AND 1 FOR EQUILATERAL TRIANGLE. IT IS RECOMMENDED THAT THE
+           TRIANGULAR QUALITY MEASURE BE GREATER THAN 0.01, THE MIN INTERIOR 
+           ANGLE BE GREATER THAN 10 DEGREES, AND THE MAX INTERIOR ANGLE BE LESS 
+           THAN 160 DEGREES. 
+  
+           NODAL ADJUSTMENTS ARISING FROM CONTACT INTERACTIONS AND/OR TIE 
+           CONSTRAINTS CAN CAUSE SEVERE ELEMENT DISTORTION. IT MAY BE NECESSARY 
+           TO REMESH IN ORDER TO REDUCE THE AMOUNT OF ADJUSTMENT. 
+
+ ***WARNING: 168 elements are distorted. Either the isoparametric angles are 
+             out of the suggested limits or the triangular or tetrahedral 
+             quality measure is bad. The elements have been identified in 
+             element set WarnElemDistorted.
+  
+ --------------------------------------------------------------------------------
+ Distorted isoparametric elements
+  
+       Element        Min/max angle   Adjusted nodes 
+ ------------------- ---------------- -------------- 
+      SH115-M-1.1793          34.4792       NO       
+      SH115-M-1.1795          35.0914       NO       
+      SH115-M-1.1796           27.627       NO       
+      SH115-M-1.1797          18.1857       NO       
+      SH115-M-1.1798          33.9537       NO       
+      SH115-M-1.1799          22.7719       NO       
+      SH115-M-1.1800          14.2073       NO       
+      SH115-M-1.1801          28.2755       NO       
+      SH115-M-1.1803          34.4792       NO       
+      SH115-M-1.1805          35.0914       NO       
+      SH115-M-1.1806           27.627       NO       
+      SH115-M-1.1807          18.1857       NO       
+      SH115-M-1.1808          33.9537       NO       
+      SH115-M-1.1809          22.7719       NO       
+      SH115-M-1.1810          14.2073       NO       
+      SH115-M-1.1811          28.2755       NO       
+      SH115-M-1.1813          34.4792       NO       
+      SH115-M-1.1815          35.0914       NO       
+      SH115-M-1.1816           27.627       NO       
+      SH115-M-1.1817          18.1857       NO       
+      SH115-M-1.1818          33.9537       NO       
+      SH115-M-1.1819          22.7719       NO       
+      SH115-M-1.1820          14.2073       NO       
+      SH115-M-1.1821          28.2755       NO       
+      SH115-M-1.1823          34.4792       NO       
+      SH115-M-1.1825          35.0914       NO       
+      SH115-M-1.1826           27.627       NO       
+      SH115-M-1.1827          18.1857       NO       
+      SH115-M-1.1828          33.9537       NO       
+      SH115-M-1.1829          22.7719       NO       
+      SH115-M-1.1830          14.2073       NO       
+      SH115-M-1.1831          28.2755       NO       
+      SH115-M-1.1833          34.4792       NO       
+      SH115-M-1.1835          35.0914       NO       
+      SH115-M-1.1836           27.627       NO       
+      SH115-M-1.1837          18.1857       NO       
+      SH115-M-1.1838          33.9537       NO       
+      SH115-M-1.1839          22.7719       NO       
+      SH115-M-1.1840          14.2073       NO       
+      SH115-M-1.1841          28.2755       NO       
+      SH115-M-1.1843          34.4792       NO       
+      SH115-M-1.1845          35.0914       NO       
+      SH115-M-1.1846           27.627       NO       
+      SH115-M-1.1847          18.1857       NO       
+      SH115-M-1.1848          33.9537       NO       
+      SH115-M-1.1849          22.7719       NO       
+      SH115-M-1.1850          14.2073       NO       
+      SH115-M-1.1851          28.2755       NO       
+      SH115-M-1.1853          34.4792       NO       
+      SH115-M-1.1855          35.0914       NO       
+      SH115-M-1.1856           27.627       NO       
+      SH115-M-1.1857          18.1857       NO       
+      SH115-M-1.1858          33.9537       NO       
+      SH115-M-1.1859          22.7719       NO       
+      SH115-M-1.1860          14.2073       NO       
+      SH115-M-1.1861          28.2755       NO       
+      SH115-M-1.1863          34.4792       NO       
+      SH115-M-1.1865          35.0914       NO       
+      SH115-M-1.1866           27.627       NO       
+      SH115-M-1.1867          18.1857       NO       
+      SH115-M-1.1868          33.9537       NO       
+      SH115-M-1.1869          22.7719       NO       
+      SH115-M-1.1870          14.2073       NO       
+      SH115-M-1.1871          28.2755       NO       
+      SH115-M-1.1873          35.0914       NO       
+      SH115-M-1.1874           27.627       NO       
+      SH115-M-1.1875          34.4792       NO       
+      SH115-M-1.1876          18.1857       NO       
+      SH115-M-1.1877          22.7719       NO       
+      SH115-M-1.1878          33.9537       NO       
+      SH115-M-1.1880          14.2073       NO       
+      SH115-M-1.1881          28.2755       NO       
+      SH115-M-1.1883          35.0914       NO       
+      SH115-M-1.1884           27.627       NO       
+      SH115-M-1.1885          34.4792       NO       
+      SH115-M-1.1886          18.1857       NO       
+      SH115-M-1.1887          22.7719       NO       
+      SH115-M-1.1888          33.9537       NO       
+      SH115-M-1.1890          14.2073       NO       
+      SH115-M-1.1891          28.2755       NO       
+      SH115-M-1.1893          35.0914       NO       
+      SH115-M-1.1894           27.627       NO       
+      SH115-M-1.1895          34.4792       NO       
+      SH115-M-1.1896          18.1857       NO       
+      SH115-M-1.1897          22.7719       NO       
+      SH115-M-1.1898          33.9537       NO       
+      SH115-M-1.1900          14.2073       NO       
+      SH115-M-1.1901          28.2755       NO       
+      SH115-M-1.1903          35.0914       NO       
+      SH115-M-1.1904           27.627       NO       
+      SH115-M-1.1905          34.4792       NO       
+      SH115-M-1.1906          18.1857       NO       
+      SH115-M-1.1907          22.7719       NO       
+      SH115-M-1.1908          33.9537       NO       
+      SH115-M-1.1910          14.2073       NO       
+      SH115-M-1.1911          28.2755       NO       
+      SH115-M-1.1913          35.0914       NO       
+      SH115-M-1.1914           27.627       NO       
+      SH115-M-1.1915          34.4792       NO       
+      SH115-M-1.1916          18.1857       NO       
+      SH115-M-1.1917          22.7719       NO       
+      SH115-M-1.1918          33.9537       NO       
+      SH115-M-1.1920          14.2073       NO       
+      SH115-M-1.1921          28.2755       NO       
+      SH115-M-1.1923          35.0914       NO       
+      SH115-M-1.1924           27.627       NO       
+      SH115-M-1.1925          34.4792       NO       
+      SH115-M-1.1926          18.1857       NO       
+      SH115-M-1.1927          22.7719       NO       
+      SH115-M-1.1928          33.9537       NO       
+      SH115-M-1.1930          14.2073       NO       
+      SH115-M-1.1931          28.2755       NO       
+      SH115-M-1.1933          35.0914       NO       
+      SH115-M-1.1934           27.627       NO       
+      SH115-M-1.1935          34.4792       NO       
+      SH115-M-1.1936          18.1857       NO       
+      SH115-M-1.1937          22.7719       NO       
+      SH115-M-1.1938          33.9537       NO       
+      SH115-M-1.1940          14.2073       NO       
+      SH115-M-1.1941          28.2755       NO       
+      SH115-M-1.1943          35.0914       NO       
+      SH115-M-1.1944           27.627       NO       
+      SH115-M-1.1945          34.4792       NO       
+      SH115-M-1.1946          18.1857       NO       
+      SH115-M-1.1947          22.7719       NO       
+      SH115-M-1.1948          33.9537       NO       
+      SH115-M-1.1950          14.2073       NO       
+      SH115-M-1.1951          28.2755       NO       
+     SH115-M-1.10725          41.9274       NO       
+     SH115-M-1.10814          36.4924       NO       
+     SH115-M-1.11094          41.6406       NO       
+     SH115-M-1.11106          35.4137       NO       
+     SH115-M-1.13133          41.9274       NO       
+     SH115-M-1.13222          36.4924       NO       
+     SH115-M-1.13502          41.6406       NO       
+     SH115-M-1.13514          35.4137       NO       
+     SH115-M-1.15541          41.9274       NO       
+     SH115-M-1.15630          36.4924       NO       
+     SH115-M-1.15910          41.6406       NO       
+     SH115-M-1.15922          35.4137       NO       
+     SH115-M-1.17949          41.9274       NO       
+     SH115-M-1.18038          36.4924       NO       
+     SH115-M-1.18318          41.6406       NO       
+     SH115-M-1.18330          35.4137       NO       
+     SH115-M-1.20357          41.9274       NO       
+     SH115-M-1.20446          36.4924       NO       
+     SH115-M-1.20726          41.6406       NO       
+     SH115-M-1.20738          35.4137       NO       
+     SH115-M-1.22763          41.8981       NO       
+     SH115-M-1.22852           36.108       NO       
+     SH115-M-1.23129          41.9525       NO       
+     SH115-M-1.23141          35.2052       NO       
+     SH115-M-1.25121          41.8981       NO       
+     SH115-M-1.25210           36.108       NO       
+     SH115-M-1.25487          41.9525       NO       
+     SH115-M-1.25499          35.2052       NO       
+     SH115-M-1.27479          41.8981       NO       
+     SH115-M-1.27568           36.108       NO       
+     SH115-M-1.27845          41.9525       NO       
+     SH115-M-1.27857          35.2052       NO       
+     SH115-M-1.29837          41.8981       NO       
+     SH115-M-1.29926           36.108       NO       
+     SH115-M-1.30203          41.9525       NO       
+     SH115-M-1.30215          35.2052       NO       
+     SH115-M-1.32195          41.8981       NO       
+     SH115-M-1.32284           36.108       NO       
+     SH115-M-1.32561          41.9525       NO       
+     SH115-M-1.32573          35.2052       NO       
+  
+  
+  *Step, name=Step-1, nlgeom=YES, amplitude=STEP, inc=100000
+  *output, field, numberinterval=100
+  *output, history, variable=PRESELECT
+  *Step, name=Step-1, nlgeom=YES, amplitude=STEP, inc=100000
+  *Step, name=Step-1, nlgeom=YES, amplitude=STEP, inc=100000
+  *static
+  *boundary
+  *boundary, amplitude=AMP-1
+  *output, field, numberinterval=100
+  *nodeoutput
+  *output, history, variable=PRESELECT
+  *endstep
+
+ ***WARNING: OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS 
+             STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, 
+             Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME 
+             INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF 
+             INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.
+  *boundary
+  *boundary
+  *Step, name=Step-1, nlgeom=YES, amplitude=STEP, inc=100000
+  *static
+  *boundary
+  *boundary, amplitude=AMP-1
+  *endstep
+
+ ***WARNING: Boundary conditions are specified on inactive dof 4 at 351 nodes. 
+             The nodes have been identified in node set WarnNodeBCInactiveDof4.
+
+ ***WARNING: Boundary conditions are specified on inactive dof 5 at 351 nodes. 
+             The nodes have been identified in node set WarnNodeBCInactiveDof5.
+
+ ***WARNING: Boundary conditions are specified on inactive dof 6 at 351 nodes. 
+             The nodes have been identified in node set WarnNodeBCInactiveDof6.
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                 34512
+          NUMBER OF NODES IS                                    43668
+          NUMBER OF NODES DEFINED BY THE USER                   43668
+          TOTAL NUMBER OF VARIABLES IN THE MODEL               131004
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =      1.3    
+       SYSTEM TIME (SEC)    =     0.20    
+       TOTAL CPU TIME (SEC) =      1.5    
+       WALLCLOCK TIME (SEC) =            2
+1
+
+   Abaqus 2023.HF4                                  Date 12-Jun-2024   Time 16:07:09
+   For use by AALTO UNIVERSITY under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    1  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        A N A L Y S I S    D A T A C H E C K
+
+
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          3.98E+10              110                538
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+
+
+
+                              ANALYSIS DATACHECK COMPLETE
+                              WITH      5 WARNING MESSAGES ON THE DAT FILE
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =      2.0    
+       SYSTEM TIME (SEC)    =     0.20    
+       TOTAL CPU TIME (SEC) =      2.2    
+       WALLCLOCK TIME (SEC) =            1

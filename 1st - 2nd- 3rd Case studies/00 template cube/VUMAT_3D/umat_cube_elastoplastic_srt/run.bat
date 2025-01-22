@@ -1,0 +1,1 @@
+abaqus job=umat_cube_elastoplastic_srt user=isotropic_von_Mises_UMAT cpus=1 verbose=1 output_precision=full interactive 

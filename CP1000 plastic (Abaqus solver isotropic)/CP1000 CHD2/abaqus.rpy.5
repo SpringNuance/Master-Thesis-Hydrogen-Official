@@ -1,0 +1,56 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Sat Jul 20 19:04:30 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=119.59375, 
+    height=135.591430664062)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('CHD2_geometry_42957_nodes.cae')
+#: The model database "C:\LocalUserData\User-data\nguyenb5\2nd CP1000 plastic (Abaqus solver isotropic)\CP1000 CHD2\CHD2_geometry_42957_nodes.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.454715, 
+    farPlane=0.630976, width=0.0682395, height=0.0308935, 
+    viewOffsetX=3.43197e-05, viewOffsetY=-0.00899936)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+#: 
+#: Point 1: -1.E-03, 0., 500.E-06  Point 2: 1.E-03, 0., 500.E-06
+#:    Distance: 2.E-03  Components: 2.E-03, 0., 0.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463218, 
+    farPlane=0.622474, width=0.0176547, height=0.00802137, 
+    viewOffsetX=0.00160253, viewOffsetY=-0.0103691)
+p1 = mdb.models['reference-Wu-Jiao-Jiao'].parts['PART-1-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+#: 
+#: Point 1: -1.004508, 0., 490.E-03  Point 2: 1.000751, -86.793E-03, 490.E-03
+#:    Distance: 2.007136  Components: 2.005259, -86.793E-03, 0.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=464.144, 
+    farPlane=621.422, width=13.9067, height=6.31848, viewOffsetX=-0.35345, 
+    viewOffsetY=-10.0596)
+p1 = mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+#: 
+#: Point 1: -996.E-06, 91.E-06, 500.E-06  Point 2: -1.E-03, 0., 500.E-06
+#:    Distance: 91.E-06  Components: -4.E-06, -91.E-06, 0.
+#: 
+#: Point 1: -1.E-03, 0., 500.E-06  Point 2: 1.E-03, 0., 500.E-06
+#:    Distance: 2.E-03  Components: 2.E-03, 0., 0.

@@ -1,0 +1,421 @@
+Abaqus/Explicit 2023.HF4                         DATE 02-Nov-2024  TIME 13:39:55
+-------------------------------------------------------------------------------
+ PREPROCESSOR WARNING MESSAGES
+-------------------------------------------------------------------------------
+
+
+***WARNING: There are 1 warning messages in the data (.dat) file.  Please
+            check the data file for possible errors in the input file.
+
+
+-------------------------------------------------------------------------------
+ MODEL INFORMATION (IN GLOBAL X-Y COORDINATES)
+-------------------------------------------------------------------------------
+
+   Total mass in model = 7.85000E-03
+   Center of mass of model = ( 5.000000E-03, 5.000000E-03, 5.000000E-03)
+
+    Moments of Inertia :
+                 About Center of Mass              About Origin
+      I(XX)          1.471875E-07                  5.396875E-07
+      I(YY)          1.471875E-07                  5.396875E-07
+      I(ZZ)          1.471875E-07                  5.396875E-07
+      I(XY)         -6.440497E-16                 -1.962500E-07
+      I(YZ)         -1.615495E-15                 -1.962500E-07
+      I(ZX)         -4.141252E-15                 -1.962500E-07
+
+-------------------------------------------------------------------------------
+ STABLE TIME INCREMENT INFORMATION
+-------------------------------------------------------------------------------
+
+
+  The stable time increment estimate for each element is based on
+  linearization about the initial state.
+
+
+   Initial time increment = 2.78542E-07
+
+   Statistics for all elements:
+      Mean = 2.78542E-07
+      Standard deviation = 3.49875E-10
+
+   Most critical elements:
+    Element number   Rank    Time increment   Increment ratio
+    (Instance name)
+   ----------------------------------------------------------
+           1          1       2.785422E-07      1.000000E+00
+    CUBE-1
+           2          2       2.785422E-07      1.000000E+00
+    CUBE-1
+           3          3       2.785422E-07      1.000000E+00
+    CUBE-1
+           4          4       2.785422E-07      1.000000E+00
+    CUBE-1
+           5          5       2.785422E-07      1.000000E+00
+    CUBE-1
+           6          6       2.785422E-07      1.000000E+00
+    CUBE-1
+           7          7       2.785422E-07      1.000000E+00
+    CUBE-1
+           8          8       2.785422E-07      1.000000E+00
+    CUBE-1
+           9          9       2.785422E-07      1.000000E+00
+    CUBE-1
+          10         10       2.785422E-07      1.000000E+00
+    CUBE-1
+
+
+  Instance name for the most critical element will be printed if the critical
+  element changes or at the beginning of a new page.
+
+
+
+Abaqus/Explicit 2023.HF4                         DATE 02-Nov-2024  TIME 13:39:59
+
+The single precision Abaqus/Explicit executable will be used in this analysis.
+
+
+-------------------------------------------------------------------------------
+ SOLUTION PROGRESS
+-------------------------------------------------------------------------------
+
+ STEP 1  ORIGIN 0.0000
+
+  Total memory used for step 1 is approximately 1.0 megabytes.
+  Global time estimation algorithm will be used.
+  Scaling factor:  1.0000
+              STEP     TOTAL      WALL      STABLE    CRITICAL    KINETIC      TOTAL
+INCREMENT     TIME      TIME      TIME   INCREMENT     ELEMENT     ENERGY     ENERGY
+        0  0.000E+00 0.000E+00  00:00:00 2.785E-07          10  1.963E-09  1.963E-09
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     0, of    100, at step time 0.000E+00
+
+***WARNING: THE ANALYSIS MAY NEED A LARGE NUMBER OF INCREMENTS (MORE THAN
+            300000), AND IT MAY BE AFFECTED BY ROUND-OFF ERRORS. RUNNING THE
+            DOUBLE PRECISION EXECUTABLE IS RECOMMENDED.
+
+    28674  1.000E-02 1.000E-02  00:00:02 3.487E-07          11  6.335E-09  1.582E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     1, of    100, at step time 1.000E-02
+    57383  2.000E-02 2.000E-02  00:00:03 3.485E-07          19  6.461E-09  1.549E-07
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     2, of    100, at step time 2.000E-02
+    86093  3.000E-02 3.000E-02  00:00:04 3.483E-07          14  8.155E-09 -7.183E-09
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     3, of    100, at step time 3.000E-02
+   114938  4.000E-02 4.000E-02  00:00:06 3.481E-07          40  7.958E-09 -1.154E-06
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     4, of    100, at step time 4.000E-02
+   143802  5.000E-02 5.000E-02  00:00:07 3.478E-07          14  7.852E-09 -1.684E-06
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     5, of    100, at step time 5.000E-02
+   172666  6.000E-02 6.000E-02  00:00:08 3.476E-07          58  7.911E-09 -5.497E-06
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     6, of    100, at step time 6.000E-02
+   201300  7.000E-02 7.000E-02  00:00:10 3.474E-07          18  7.919E-09 -6.273E-06
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     7, of    100, at step time 7.000E-02
+   229857  8.000E-02 8.000E-02  00:00:11 3.471E-07          63  7.937E-09 -8.187E-06
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     8, of    100, at step time 8.000E-02
+   258414  9.000E-02 9.000E-02  00:00:13 3.469E-07          50  8.014E-09 -7.147E-06
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     9, of    100, at step time 9.000E-02
+   286971  1.000E-01 1.000E-01  00:00:14 3.467E-07          15  8.007E-09 -6.125E-06
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    10, of    100, at step time 1.000E-01
+
+***WARNING: THE ANALYSIS REACHED A LARGE NUMBER OF INCREMENTS (300000), AND IT
+            MAY BE AFFECTED BY ROUND-OFF ERRORS. RUNNING THE DOUBLE PRECISION
+            EXECUTABLE IS RECOMMENDED.
+
+   315626  1.100E-01 1.100E-01  00:00:16 3.464E-07          46  8.177E-09 -9.268E-06
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    11, of    100, at step time 1.100E-01
+   344804  1.200E-01 1.200E-01  00:00:17 3.462E-07          30  7.964E-09 -8.189E-06
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    12, of    100, at step time 1.200E-01
+   373982  1.300E-01 1.300E-01  00:00:19 3.459E-07          46  7.872E-09 -6.842E-06
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    13, of    100, at step time 1.300E-01
+   403159  1.400E-01 1.400E-01  00:00:20 3.457E-07          60  8.120E-09 -1.033E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    14, of    100, at step time 1.400E-01
+   432337  1.500E-01 1.500E-01  00:00:22 3.454E-07          47  8.022E-09 -1.058E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    15, of    100, at step time 1.500E-01
+   461515  1.600E-01 1.600E-01  00:00:23 3.451E-07          63  8.104E-09 -1.366E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    16, of    100, at step time 1.600E-01
+   490693  1.700E-01 1.700E-01  00:00:24 3.449E-07          43  8.048E-09 -1.041E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    17, of    100, at step time 1.700E-01
+   519870  1.800E-01 1.800E-01  00:00:26 3.446E-07          15  7.842E-09 -1.666E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    18, of    100, at step time 1.800E-01
+   549048  1.900E-01 1.900E-01  00:00:27 3.444E-07          15  8.064E-09 -2.483E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    19, of    100, at step time 1.900E-01
+   578226  2.000E-01 2.000E-01  00:00:29 3.441E-07           3  7.940E-09 -1.872E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    20, of    100, at step time 2.000E-01
+   607404  2.100E-01 2.100E-01  00:00:30 3.439E-07           4  8.072E-09 -1.882E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    21, of    100, at step time 2.100E-01
+   636581  2.200E-01 2.200E-01  00:00:32 3.436E-07          30  8.009E-09 -3.642E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    22, of    100, at step time 2.200E-01
+   665759  2.300E-01 2.300E-01  00:00:33 3.433E-07           3  7.689E-09 -3.571E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    23, of    100, at step time 2.300E-01
+   694937  2.400E-01 2.400E-01  00:00:35 3.431E-07           7  8.075E-09 -3.581E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    24, of    100, at step time 2.400E-01
+   724115  2.500E-01 2.500E-01  00:00:36 3.428E-07           7  7.975E-09 -4.380E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    25, of    100, at step time 2.500E-01
+   753816  2.600E-01 2.600E-01  00:00:38 3.425E-07           7  7.866E-09 -4.558E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    26, of    100, at step time 2.600E-01
+   784320  2.700E-01 2.700E-01  00:00:39 3.422E-07           7  8.317E-09 -4.269E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    27, of    100, at step time 2.700E-01
+   814824  2.800E-01 2.800E-01  00:00:41 3.420E-07          36  7.849E-09 -4.049E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    28, of    100, at step time 2.800E-01
+   845328  2.900E-01 2.900E-01  00:00:42 3.417E-07          36  7.881E-09 -5.022E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    29, of    100, at step time 2.900E-01
+   875832  3.000E-01 3.000E-01  00:00:44 3.414E-07          20  7.828E-09 -5.002E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    30, of    100, at step time 3.000E-01
+   906336  3.100E-01 3.100E-01  00:00:45 3.411E-07          20  8.030E-09 -4.493E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    31, of    100, at step time 3.100E-01
+   936840  3.200E-01 3.200E-01  00:00:47 3.409E-07          36  7.877E-09 -4.102E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    32, of    100, at step time 3.200E-01
+   967344  3.300E-01 3.300E-01  00:00:48 3.406E-07          36  7.762E-09 -4.004E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    33, of    100, at step time 3.300E-01
+   997848  3.400E-01 3.400E-01  00:00:50 3.403E-07          36  7.663E-09 -4.490E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    34, of    100, at step time 3.400E-01
+  1028352  3.500E-01 3.500E-01  00:00:52 3.400E-07          36  7.590E-09 -1.265E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    35, of    100, at step time 3.500E-01
+  1058857  3.600E-01 3.600E-01  00:00:53 3.398E-07          36  7.626E-09  1.539E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    36, of    100, at step time 3.600E-01
+  1089361  3.700E-01 3.700E-01  00:00:55 3.395E-07          36  7.600E-09  2.366E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    37, of    100, at step time 3.700E-01
+  1119865  3.800E-01 3.800E-01  00:00:56 3.392E-07          36  7.587E-09  5.148E-05
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    38, of    100, at step time 3.800E-01
+  1150369  3.900E-01 3.900E-01  00:00:58 3.389E-07          36  7.542E-09  1.656E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    39, of    100, at step time 3.900E-01
+
+ STEP 1  ORIGIN 0.0000
+
+              STEP     TOTAL      WALL      STABLE    CRITICAL    KINETIC      TOTAL
+INCREMENT     TIME      TIME      TIME   INCREMENT     ELEMENT     ENERGY     ENERGY
+  1180873  4.000E-01 4.000E-01  00:00:59 3.387E-07          36  7.552E-09  1.722E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    40, of    100, at step time 4.000E-01
+  1211377  4.100E-01 4.100E-01  00:01:01 3.384E-07          36  7.531E-09  1.778E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    41, of    100, at step time 4.100E-01
+  1241881  4.200E-01 4.200E-01  00:01:02 3.381E-07          36  7.532E-09  1.913E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    42, of    100, at step time 4.200E-01
+  1272385  4.300E-01 4.300E-01  00:01:04 3.378E-07          36  7.517E-09  1.981E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    43, of    100, at step time 4.300E-01
+  1302889  4.400E-01 4.400E-01  00:01:06 3.376E-07          36  7.585E-09  2.019E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    44, of    100, at step time 4.400E-01
+  1333393  4.500E-01 4.500E-01  00:01:07 3.373E-07          36  7.547E-09  2.010E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    45, of    100, at step time 4.500E-01
+  1363897  4.600E-01 4.600E-01  00:01:09 3.370E-07          36  7.585E-09  2.018E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    46, of    100, at step time 4.600E-01
+  1394401  4.700E-01 4.700E-01  00:01:10 3.367E-07          36  7.574E-09  1.992E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    47, of    100, at step time 4.700E-01
+  1424905  4.800E-01 4.800E-01  00:01:12 3.364E-07          36  7.569E-09  2.003E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    48, of    100, at step time 4.800E-01
+  1455409  4.900E-01 4.900E-01  00:01:13 3.362E-07          36  7.642E-09  1.967E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    49, of    100, at step time 4.900E-01
+  1485913  5.000E-01 5.000E-01  00:01:15 3.359E-07          36  7.325E-09  1.967E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    50, of    100, at step time 5.000E-01
+  1513875  5.100E-01 5.100E-01  00:01:16 3.356E-07          36  8.064E-09  1.987E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    51, of    100, at step time 5.100E-01
+  1541837  5.200E-01 5.200E-01  00:01:18 3.353E-07          36  8.209E-09  1.982E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    52, of    100, at step time 5.200E-01
+  1569799  5.300E-01 5.300E-01  00:01:19 3.351E-07          11  7.889E-09  1.987E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    53, of    100, at step time 5.300E-01
+  1597761  5.400E-01 5.400E-01  00:01:21 3.348E-07          36  7.764E-09  1.990E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    54, of    100, at step time 5.400E-01
+  1625723  5.500E-01 5.500E-01  00:01:22 3.346E-07          11  8.235E-09  1.996E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    55, of    100, at step time 5.500E-01
+  1653685  5.600E-01 5.600E-01  00:01:23 3.343E-07          11  7.826E-09  2.011E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    56, of    100, at step time 5.600E-01
+  1681647  5.700E-01 5.700E-01  00:01:25 3.341E-07          11  8.052E-09  2.004E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    57, of    100, at step time 5.700E-01
+  1709609  5.800E-01 5.800E-01  00:01:26 3.338E-07          11  7.544E-09  2.005E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    58, of    100, at step time 5.800E-01
+  1737571  5.900E-01 5.900E-01  00:01:28 3.336E-07          11  7.203E-09  2.016E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    59, of    100, at step time 5.900E-01
+  1765533  6.000E-01 6.000E-01  00:01:29 3.334E-07          11  7.255E-09  2.016E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    60, of    100, at step time 6.000E-01
+  1793495  6.100E-01 6.100E-01  00:01:31 3.331E-07          11  7.873E-09  2.020E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    61, of    100, at step time 6.100E-01
+  1821457  6.200E-01 6.200E-01  00:01:32 3.329E-07          11  7.641E-09  2.008E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    62, of    100, at step time 6.200E-01
+  1849419  6.300E-01 6.300E-01  00:01:34 3.326E-07           2  7.188E-09  2.026E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    63, of    100, at step time 6.300E-01
+  1877381  6.400E-01 6.400E-01  00:01:35 3.324E-07          60  7.389E-09  2.008E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    64, of    100, at step time 6.400E-01
+  1905343  6.500E-01 6.500E-01  00:01:36 3.322E-07          60  8.066E-09  2.013E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    65, of    100, at step time 6.500E-01
+  1933305  6.600E-01 6.600E-01  00:01:38 3.319E-07          60  7.021E-09  2.029E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    66, of    100, at step time 6.600E-01
+  1961267  6.700E-01 6.700E-01  00:01:39 3.317E-07          60  7.909E-09  2.033E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    67, of    100, at step time 6.700E-01
+  1989229  6.800E-01 6.800E-01  00:01:41 3.314E-07          48  8.140E-09  2.041E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    68, of    100, at step time 6.800E-01
+  2017191  6.900E-01 6.900E-01  00:01:42 3.312E-07          60  7.063E-09  2.009E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    69, of    100, at step time 6.900E-01
+  2045153  7.000E-01 7.000E-01  00:01:44 3.310E-07          60  7.174E-09  2.073E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    70, of    100, at step time 7.000E-01
+  2073115  7.100E-01 7.100E-01  00:01:45 3.307E-07          60  7.226E-09  2.138E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    71, of    100, at step time 7.100E-01
+  2101078  7.200E-01 7.200E-01  00:01:47 3.305E-07           7  7.037E-09  2.157E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    72, of    100, at step time 7.200E-01
+  2129040  7.300E-01 7.300E-01  00:01:48 3.302E-07          60  7.832E-09  2.217E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    73, of    100, at step time 7.300E-01
+  2157002  7.400E-01 7.400E-01  00:01:49 3.300E-07           2  7.497E-09  2.202E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    74, of    100, at step time 7.400E-01
+  2184964  7.500E-01 7.500E-01  00:01:51 3.298E-07           2  7.889E-09  2.163E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    75, of    100, at step time 7.500E-01
+  2212926  7.600E-01 7.600E-01  00:01:52 3.295E-07           2  7.376E-09  2.192E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    76, of    100, at step time 7.600E-01
+  2240888  7.700E-01 7.700E-01  00:01:54 3.293E-07           7  7.872E-09  2.172E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    77, of    100, at step time 7.700E-01
+  2268850  7.800E-01 7.800E-01  00:01:55 3.291E-07          60  8.022E-09  2.192E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    78, of    100, at step time 7.800E-01
+  2296812  7.900E-01 7.900E-01  00:01:57 3.288E-07          60  8.170E-09  2.215E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    79, of    100, at step time 7.900E-01
+
+ STEP 1  ORIGIN 0.0000
+
+              STEP     TOTAL      WALL      STABLE    CRITICAL    KINETIC      TOTAL
+INCREMENT     TIME      TIME      TIME   INCREMENT     ELEMENT     ENERGY     ENERGY
+  2324774  8.000E-01 8.000E-01  00:01:58 3.286E-07          60  8.214E-09  2.154E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    80, of    100, at step time 8.000E-01
+  2352736  8.100E-01 8.100E-01  00:02:00 3.284E-07          60  7.609E-09  2.168E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    81, of    100, at step time 8.100E-01
+  2380698  8.200E-01 8.200E-01  00:02:01 3.281E-07          60  6.896E-09  2.199E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    82, of    100, at step time 8.200E-01
+  2408660  8.300E-01 8.300E-01  00:02:02 3.279E-07          60  7.101E-09  2.236E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    83, of    100, at step time 8.300E-01
+  2440769  8.400E-01 8.400E-01  00:02:04 3.276E-07          60  8.265E-09  2.276E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    84, of    100, at step time 8.400E-01
+  2474324  8.500E-01 8.500E-01  00:02:06 3.273E-07          60  7.592E-09  2.252E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    85, of    100, at step time 8.500E-01
+  2507878  8.600E-01 8.600E-01  00:02:08 3.271E-07          60  7.369E-09  2.260E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    86, of    100, at step time 8.600E-01
+  2541433  8.700E-01 8.700E-01  00:02:10 3.268E-07          60  7.165E-09  2.188E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    87, of    100, at step time 8.700E-01
+  2574987  8.800E-01 8.800E-01  00:02:11 3.265E-07          56  6.790E-09  2.173E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    88, of    100, at step time 8.800E-01
+  2608542  8.900E-01 8.900E-01  00:02:13 3.262E-07          60  7.027E-09  2.098E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    89, of    100, at step time 8.900E-01
+  2642096  9.000E-01 9.000E-01  00:02:15 3.259E-07          56  8.229E-09  2.019E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    90, of    100, at step time 9.000E-01
+  2675651  9.100E-01 9.100E-01  00:02:17 3.257E-07          56  7.426E-09  1.964E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    91, of    100, at step time 9.100E-01
+  2709205  9.200E-01 9.200E-01  00:02:19 3.254E-07          60  7.802E-09  2.050E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    92, of    100, at step time 9.200E-01
+  2742759  9.300E-01 9.300E-01  00:02:20 3.251E-07          56  7.486E-09  2.133E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    93, of    100, at step time 9.300E-01
+  2776314  9.400E-01 9.400E-01  00:02:22 3.248E-07          60  7.920E-09  2.084E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    94, of    100, at step time 9.400E-01
+  2809868  9.500E-01 9.500E-01  00:02:24 3.246E-07          60  7.010E-09  2.141E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    95, of    100, at step time 9.500E-01
+  2843423  9.600E-01 9.600E-01  00:02:26 3.243E-07          56  7.686E-09  2.126E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    96, of    100, at step time 9.600E-01
+  2876977  9.700E-01 9.700E-01  00:02:28 3.240E-07          11  7.524E-09  2.150E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    97, of    100, at step time 9.700E-01
+  2910532  9.800E-01 9.800E-01  00:02:30 3.237E-07           7  7.539E-09  2.179E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    98, of    100, at step time 9.800E-01
+  2944086  9.900E-01 9.900E-01  00:02:32 3.235E-07           7  8.007E-09  2.230E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    99, of    100, at step time 9.900E-01
+  2977640  1.000E+00 1.000E+00  00:02:33 3.232E-07          58  6.692E-09  2.309E-03
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Restart Number  1 at 1.0000
+Output Field Frame Number   100, of    100, at step time 1.000E+00
+  EXPLICIT EXECUTABLE TIME SUMMARY
+       USER TIME (SEC)      =   150.80
+       SYSTEM TIME (SEC)    =   1.0000
+       WALLCLOCK TIME (SEC) =          154
+              INIT (SEC) =          0
+              MAIN (SEC) =        154
+
+  THE ANALYSIS HAS COMPLETED SUCCESSFULLY
+

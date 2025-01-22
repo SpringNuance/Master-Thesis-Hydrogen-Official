@@ -1,0 +1,1 @@
+abaqus job=Job-1 input=Job-1.inp user=subroutine interactive cpus=4 double=both output_precision=full

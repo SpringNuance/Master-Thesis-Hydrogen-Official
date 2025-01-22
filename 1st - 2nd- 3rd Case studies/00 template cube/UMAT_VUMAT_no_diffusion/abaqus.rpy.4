@@ -1,0 +1,34 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by daglim1 on Sat Nov  2 12:41:58 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=275.996856689453, 
+    height=234.360015869141)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('umat_vumat_cube.cae')
+#: The model database "C:\LocalUserData\User-data\daglim1\COE_Group_7_Year_2024\UMAT_VUMAT_no_diffusion\umat_vumat_cube.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['umat_cube_elastoplastic_solver'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['vumat_cube_elastoplastic_srt'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, optimizationTasks=OFF, 
+    geometricRestrictions=OFF, stopConditions=OFF)

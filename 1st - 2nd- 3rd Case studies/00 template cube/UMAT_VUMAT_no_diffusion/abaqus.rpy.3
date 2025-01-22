@@ -1,0 +1,156 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by daglim1 on Sat Nov  2 12:18:37 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=275.996856689453, 
+    height=234.360015869141)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('umat_vumat_cube.cae')
+#: The model database "C:\LocalUserData\User-data\daglim1\COE_Group_7_Year_2024\UMAT_VUMAT_no_diffusion\umat_vumat_cube.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['umat_cube_elastoplastic_solver'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/daglim1/COE_Group_7_Year_2024/UMAT_VUMAT_no_diffusion/umat_cube_elastoplastic_solver/umat_cube_elastoplastic_solver.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/daglim1/COE_Group_7_Year_2024/UMAT_VUMAT_no_diffusion/umat_cube_elastoplastic_solver/umat_cube_elastoplastic_solver.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       6
+#: Number of Node Sets:          6
+#: Number of Steps:              1
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/daglim1/COE_Group_7_Year_2024/UMAT_VUMAT_no_diffusion/umat_cube_elastoplastic_srt/umat_cube_elastoplastic_srt.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/daglim1/COE_Group_7_Year_2024/UMAT_VUMAT_no_diffusion/umat_cube_elastoplastic_srt/umat_cube_elastoplastic_srt.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       6
+#: Number of Node Sets:          6
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0243755, 
+    farPlane=0.0486354, width=0.0366648, height=0.0227777, 
+    viewOffsetX=0.00156355, viewOffsetY=-0.000735279)
+session.Viewport(name='Viewport: 2', origin=(6.47499990463257, 
+    -7.83000040054321), width=329.415618896484, height=235.710006713867)
+session.viewports['Viewport: 2'].makeCurrent()
+session.viewports['Viewport: 2'].maximize()
+session.viewports['Viewport: 1'].restore()
+session.viewports['Viewport: 2'].restore()
+session.viewports['Viewport: 1'].setValues(origin=(0.0, -7.82998657226562), 
+    width=194.789581298828, height=242.190002441406)
+session.viewports['Viewport: 2'].setValues(origin=(194.789581298828, 
+    -7.82998657226562), width=194.789581298828, height=242.190002441406)
+session.viewports['Viewport: 1'].makeCurrent()
+odb = session.odbs['C:/LocalUserData/User-data/daglim1/COE_Group_7_Year_2024/UMAT_VUMAT_no_diffusion/umat_cube_elastoplastic_solver/umat_cube_elastoplastic_solver.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=odb)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0241762, 
+    farPlane=0.0489945, width=0.0199411, height=0.0242729, 
+    viewOffsetX=-0.00066462, viewOffsetY=-0.0016041)
+session. linkedViewportCommands.setValues(linkViewports=True)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='LE', outputPosition=INTEGRATION_POINT, refinement=(
+    INVARIANT, 'Max. Principal'), )
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(
+    plotState=CONTOURS_ON_DEF)
+#: Warning: Requested operation could not be performed for the following linked viewports: Viewport: 2
+session.viewports['Viewport: 1'].view.setValues(width=0.0208926, 
+    height=0.0254312, viewOffsetX=-0.000744347, viewOffsetY=-0.00172076)
+session.viewports['Viewport: 2'].view.setValues(width=0.0327926, 
+    height=0.0399162, viewOffsetX=0.00117358, viewOffsetY=-0.000839412)
+session.viewports['Viewport: 1'].view.setValues(width=0.02205, height=0.02684, 
+    viewOffsetX=-0.000833212, viewOffsetY=-0.00185589)
+session.viewports['Viewport: 2'].view.setValues(width=0.0361932, 
+    height=0.0440555, viewOffsetX=0.00106202, viewOffsetY=-0.00111506)
+session.viewports['Viewport: 1'].view.setValues(width=0.0232295, 
+    height=0.0282757, viewOffsetX=-0.00092495, viewOffsetY=-0.00199458)
+session.viewports['Viewport: 2'].view.setValues(width=0.0372819, 
+    height=0.0453807, viewOffsetX=0.000868097, viewOffsetY=-0.00133122)
+session.viewports['Viewport: 1'].view.setValues(width=0.0244651, 
+    height=0.0297797, viewOffsetX=-0.00102084, viewOffsetY=-0.00213969)
+session.viewports['Viewport: 2'].view.setValues(width=0.0392456, 
+    height=0.047771, viewOffsetX=0.000690324, viewOffsetY=-0.00158204)
+session.viewports['Viewport: 1'].view.setValues(width=0.0257513, 
+    height=0.0313453, viewOffsetX=-0.00112071, viewOffsetY=-0.00229079)
+session.viewports['Viewport: 2'].view.setValues(width=0.0409524, 
+    height=0.0498485, viewOffsetX=0.000501122, viewOffsetY=-0.00182808)
+session.viewports['Viewport: 1'].view.setValues(width=0.0239367, 
+    height=0.0291365, viewOffsetX=-0.00103528, viewOffsetY=-0.00214287)
+session.viewports['Viewport: 2'].view.setValues(width=0.037843, 
+    height=0.0460637, viewOffsetX=0.000607979, viewOffsetY=-0.00160359)
+session.viewports['Viewport: 1'].view.setValues(width=0.0228579, 
+    height=0.0278234, viewOffsetX=-0.000982048, viewOffsetY=-0.00206002)
+session.viewports['Viewport: 2'].view.setValues(width=0.0366893, 
+    height=0.0446594, viewOffsetX=0.000738899, viewOffsetY=-0.00146631)
+session.viewports['Viewport: 1'].view.setValues(width=0.0216862, 
+    height=0.0263971, viewOffsetX=-0.000925077, viewOffsetY=-0.00196827)
+session.viewports['Viewport: 2'].view.setValues(width=0.0348775, 
+    height=0.042454, viewOffsetX=0.000853553, viewOffsetY=-0.00130451)
+session.viewports['Viewport: 1'].view.setValues(width=0.0205889, 
+    height=0.0250615, viewOffsetX=-0.000871575, viewOffsetY=-0.00188267)
+session.viewports['Viewport: 2'].view.setValues(width=0.0333599, 
+    height=0.0406067, viewOffsetX=0.000970207, viewOffsetY=-0.00115679)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='S', outputPosition=INTEGRATION_POINT, refinement=(INVARIANT, 
+    'Mises'), )
+session.viewports['Viewport: 1'].view.setValues(width=0.0195331, 
+    height=0.0237763, viewOffsetX=-0.000918184, viewOffsetY=-0.00169684)
+session.viewports['Viewport: 2'].view.setValues(width=0.0318111, 
+    height=0.0387214, viewOffsetX=0.000921475, viewOffsetY=-0.000842427)
+session.viewports['Viewport: 1'].view.setValues(width=0.0185235, 
+    height=0.0225474, viewOffsetX=-0.000959515, viewOffsetY=-0.00153901)
+session.viewports['Viewport: 2'].view.setValues(width=0.0303367, 
+    height=0.0369268, viewOffsetX=0.000880467, viewOffsetY=-0.000571602)
+session.viewports['Viewport: 1'].view.setValues(session.views['Iso'])
+session.viewports['Viewport: 1'].view.setValues(width=0.0114882, 
+    height=0.0139838, viewOffsetX=-1.06492e-05, viewOffsetY=-0.000173425)
+session.viewports['Viewport: 2'].view.setValues(width=0.0114882, 
+    height=0.0139838, viewOffsetX=-1.06492e-05, viewOffsetY=-0.000173425)
+session.viewports['Viewport: 1'].view.setValues(width=0.0118542, 
+    height=0.0144292, viewOffsetX=-2.13175e-05, viewOffsetY=-0.000347162)
+session.viewports['Viewport: 2'].view.setValues(width=0.0118542, 
+    height=0.0144292, viewOffsetX=-2.13175e-05, viewOffsetY=-0.000347162)
+session.viewports['Viewport: 1'].view.setValues(width=0.012575, 
+    height=0.0153067, viewOffsetX=-3.29136e-05, viewOffsetY=-0.000536007)
+session.viewports['Viewport: 2'].view.setValues(width=0.012575, 
+    height=0.0153067, viewOffsetX=-3.29136e-05, viewOffsetY=-0.000536007)
+session.viewports['Viewport: 1'].view.setValues(width=0.0133026, 
+    height=0.0161924, viewOffsetX=-4.50601e-05, viewOffsetY=-0.000733816)
+session.viewports['Viewport: 2'].view.setValues(width=0.0133026, 
+    height=0.0161924, viewOffsetX=-4.50601e-05, viewOffsetY=-0.000733816)
+session.viewports['Viewport: 1'].view.setValues(width=0.0140711, 
+    height=0.0171278, viewOffsetX=-5.7847e-05, viewOffsetY=-0.000942054)
+session.viewports['Viewport: 2'].view.setValues(width=0.0140711, 
+    height=0.0171278, viewOffsetX=-5.7847e-05, viewOffsetY=-0.000942054)
+session.viewports['Viewport: 1'].view.setValues(width=0.0148788, 
+    height=0.0181109, viewOffsetX=-7.12893e-05, viewOffsetY=-0.00116097)
+session.viewports['Viewport: 2'].view.setValues(width=0.0148788, 
+    height=0.0181109, viewOffsetX=-7.12893e-05, viewOffsetY=-0.00116097)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='RF', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )

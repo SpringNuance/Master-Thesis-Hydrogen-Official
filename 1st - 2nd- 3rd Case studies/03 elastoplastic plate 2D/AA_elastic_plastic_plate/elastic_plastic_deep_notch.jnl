@@ -1,0 +1,146 @@
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['Material-1'].userMaterial.setValues(
+    mechanicalConstants=(200000000000.0, 0.3, 500000000.0, 0.2, 1.0, 3.0))
+mdb.models['Model-1'].materials['Material-1'].userMaterial.setValues(
+    thermalConstants=(8.31446261815324, 293.0, 2e-06, 3.8e-11))
+# Save by nguyenb5 on 2024_05_21-12.01.38; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(variables=(
+    'S', 'E', 'LE', 'U', 'RF', 'NT', 'TEMP', 'HFL', 'RFL', 'COORD', 'SDV'))
+del mdb.models['Model-1'].rootAssembly.sets['notch_root_path']
+mdb.models['Model-1'].rootAssembly.SetFromNodeLabels(name='notch_root_path', 
+    nodeLabels=(('elastic-plastic-plate-1', (6, 12304, 264, 11882, 265, 11800, 
+    266, 11797, 267, 10355, 268, 11878, 269, 11792, 270, 8995, 271, 11833, 272, 
+    11877, 273, 11786, 274, 11847, 275, 11876, 276, 11782, 277, 11850, 278, 
+    11875, 279, 11780, 280, 11776, 281, 11853, 282, 11870, 283, 11773, 284, 
+    11856, 285, 11869, 286, 11768, 287, 11859, 288, 11765, 289, 11764, 290, 
+    11760, 291, 11831, 292, 11756, 293, 11755, 294, 9481, 295, 11863, 296, 
+    9489, 297, 11838, 298, 11862, 299, 11750, 300, 11747, 301, 8991, 302, 
+    11742, 7)), ), unsorted=True)
+# Save by nguyenb5 on 2024_05_21-12.41.34; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.Set(name='notch_root', nodes=
+    mdb.models['Model-1'].rootAssembly.instances['elastic-plastic-plate-1'].nodes.getSequenceFromMask(
+    mask=('[#20 ]', ), ))
+# Save by nguyenb5 on 2024_05_21-12.42.42; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_05_21-12.50.40; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_05_21-12.50.58; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['Material-1'].userMaterial.setValues(
+    mechanicalConstants=(200000000000.0, 0.3, 500000000.0, 0.2, 2.0, 3.0))
+# Save by nguyenb5 on 2024_05_21-14.20.44; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].materials['Material-1'].userMaterial.setValues(
+    mechanicalConstants=(200000000000.0, 0.3, 500000000.0, 0.2, 3.0, 2.0))
+# Save by nguyenb5 on 2024_05_21-14.23.13; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['elastic-plastic-plate'].setElementType(elemTypes=(
+    ElemType(elemCode=CPE8HT, elemLibrary=STANDARD), ElemType(elemCode=CPE6MT, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['elastic-plastic-plate'].faces.getSequenceFromMask(
+    ('[#3 ]', ), ), ))
+# Save by nguyenb5 on 2024_05_21-14.23.53; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_05_21-14.24.50; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['elastic-plastic-plate'].regenerate()
+# Save by nguyenb5 on 2024_05_21-14.25.15; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_05_21-14.34.35; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+# Save by nguyenb5 on 2024_05_21-16.59.05; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

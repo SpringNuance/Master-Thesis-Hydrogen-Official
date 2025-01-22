@@ -1,0 +1,21 @@
+1, Eqplas, Eqplas
+2, Deqplas, Deqplas
+3, Sig_H, Sig_H
+4, Sig_vonMises, Sig_vonMises
+5, CL_R, CL_R
+6, KT, KT
+7, CL_bar, CL_bar
+8, SDV8, SDV8
+9, xNT, xNT
+10, xdNTdeps, xdNTdeps
+11, Dstar, Dstarx   
+12, dEnerTh, dEnerTh
+13, dEnerThDTemp, dEnerThDTemp
+14, xThetaT, xThetaT
+15, SDV15, SDV15
+16, SDV16, SDV16
+17, CL_mol
+18, C_trap_mol, C_trap_mol
+19, C_total, C_total
+20, CL/CL0, CL/CL0
+21, mu_bar, mu_bar

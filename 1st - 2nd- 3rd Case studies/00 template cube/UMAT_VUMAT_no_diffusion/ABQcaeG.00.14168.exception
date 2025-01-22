@@ -1,0 +1,56 @@
+<Description>
+   ABAQUS/ABQcaeG rank 0 received the ABORT signal
+
+</Description>
+
+<Context>
+   ABQcaeG
+</Context>
+
+<Callstack>
+  1)  ucrtbase.dll                abort                                   
+  2)  ucrtbase.dll                terminate                               
+  3)  VCRUNTIME140_1.dll          _NLG_Return2                            
+  4)  VCRUNTIME140_1.dll          _NLG_Return2                            
+  5)  VCRUNTIME140_1.dll          _NLG_Return2                            
+  6)  VCRUNTIME140_1.dll          _CxxFrameHandler4                       
+  7)  ntdll.dll                   RtlRaiseException                       
+  8)  ntdll.dll                   RtlRaiseException                       
+  9)  KERNELBASE.dll              RaiseException                          
+ 10)  VCRUNTIME140.dll            CxxThrowException                       
+ 11)  ABQSMAInbVwrIPC.dll         ipc_Socket::Close                       
+ 12)  ABQSMAInbVwrIPC.dll         ipc_Monitor::~ipc_Monitor               
+ 13)  ABQSMAInbVwrIPC.dll         SMAInbIpc_finalize                      
+ 14)  ABQSMAInbVwrIPC.dll         DllMain                                 
+ 15)  ABQSMAInbVwrIPC.dll         SMAInbVwrIPC_initializeC                
+ 16)  ntdll.dll                   RtlActivateActivationContextUnsafeFast  
+ 17)  ntdll.dll                   LdrShutdownProcess                      
+ 18)  ntdll.dll                   RtlExitUserProcess                      
+ 19)  KERNEL32.DLL                FatalExit                               
+ 20)  ucrtbase.dll                exit                                    
+</Callstack>
+
+<Memory>
+   <Current>            0 GB </Current>
+   <Resident>           0 GB </Resident>
+   <Physical>          15 GB </Physical>
+   <Limit>              0 GB </Limit>
+   <Accessible>        15 GB </Accessible>
+   <Available>          3 GB </Available>
+   <Allocator>            DL </Allocator>
+</Memory>
+
+<Swap>
+       <Size>          31 GB </Size>
+       <Used>          20 GB </Used>
+       <Free>          11 GB </Free>
+</Swap>
+
+<Directories>
+  <current> C:\Users\nguyenb5\OneDrive - Aalto University\2022 Binh Nguyen\COE project 2024\COE_Group_7_Year_2024\UMAT_VUMAT_no_diffusion </current> <free>     26 GB </free>   <used>    448 GB </used> 
+     <temp> C:\Users\nguyenb5\AppData\Local\Temp </temp>    <free>     26 GB </free>
+</Directories>
+
+<Installation>
+</Installation>
+

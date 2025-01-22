@@ -1,0 +1,16 @@
+1, AR1_eelas11, AR1_eelas11
+2, AR2_eelas22, AR2_eelas22
+3, AR3_eelas33, AR3_eelas33
+4, AR4_eelas12, AR4_eelas12
+5, AR5_eelas13, AR5_eplas13
+6, AR6_eelas23, AR6_eelas23
+7, AR7_eplas11, AR7_eelas11
+8, AR8_eplas22, AR8_eplas22
+9, AR9_eplas33, AR9_eplas33
+10, AR10_eplas12, AR10_eplas12
+11, AR11_eplas13, AR11_eplas13
+12, AR12_eplas23, AR12_eplas23
+13, AR13_eqplas, AR13_eqplas
+14, AR14_deqplas, AR14_deqplas
+15, AR15_sig_H, AR15_sig_H
+16, AR16_sig_vonMises, AR16_sig_vonMises

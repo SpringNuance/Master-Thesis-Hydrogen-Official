@@ -1,0 +1,1 @@
+abaqus job=vumat_cube_elastoplastic_solver cpus=1 verbose=1 output_precision=full interactive 

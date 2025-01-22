@@ -1,0 +1,33 @@
+********************************************************************************
+Probe Values Report, written on Mon Jul  1 19:56:35 2024
+
+Source
+-------
+
+   ODB: C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/2nd progress meeting - Modelling H2 diffusion (elastic plate)/AA_elastic_hole_plate_subroutine/result_CPE8HT/Job-1.odb
+   Step: Step-1
+   Frame: Increment   1002: Step Time =   1.0000E+06
+   Variable: SDV5
+
+Loc 1 : Integration point values
+
+Probe values reported at integration points
+
+  Part Instance  Element ID        Type  Attached nodes
+--------------------------------------------------------------------------------
+    PART-1-1          40      CPE8HT         188         531          76         249        1905        1906        1907        1908
+
+
+  Part Instance  Element ID        Type   Int. Pt.       SDV5
+--------------------------------------------------------------------------------
+    PART-1-1          40      CPE8HT          1   104.E+06
+    PART-1-1          40      CPE8HT          2   107.E+06
+    PART-1-1          40      CPE8HT          3   110.E+06
+    PART-1-1          40      CPE8HT          4    99.E+06
+    PART-1-1          40      CPE8HT          5   102.E+06
+    PART-1-1          40      CPE8HT          6   105.E+06
+    PART-1-1          40      CPE8HT          7    94.E+06
+    PART-1-1          40      CPE8HT          8    97.E+06
+    PART-1-1          40      CPE8HT          9   100.E+06
+
+

@@ -1,0 +1,137 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by daglim1 on Sat Nov  2 16:23:20 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=275.996856689453, 
+    height=234.360015869141)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('umat_vumat_cube.cae')
+#: The model database "C:\LocalUserData\User-data\daglim1\COE_Group_7_Year_2024\_CURRENT WORK MERT_\VUMAT_3D\umat_vumat_cube.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['umat_cube_elastoplastic_solver'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['umat_cube_elastoplastic_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+del mdb.models['vumat_cube_elastoplastic_srt'].steps['Step-1']
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+mdb.models['vumat_cube_elastoplastic_srt'].TempDisplacementDynamicsStep(
+    name='Step-1', previous='Initial', improvedDtMethod=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+a = mdb.models['vumat_cube_elastoplastic_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+a = mdb.models['vumat_cube_elastoplastic_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+region = a.sets['xsymm_side']
+mdb.models['vumat_cube_elastoplastic_srt'].DisplacementBC(name='xsymm', 
+    createStepName='Step-1', region=region, u1=0.0, u2=UNSET, u3=UNSET, 
+    ur1=UNSET, ur2=UNSET, ur3=UNSET, amplitude=UNSET, fixed=OFF, 
+    distributionType=UNIFORM, fieldName='', localCsys=None)
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+region = a.sets['ysymm_side']
+mdb.models['vumat_cube_elastoplastic_srt'].DisplacementBC(name='ysymm', 
+    createStepName='Step-1', region=region, u1=UNSET, u2=0.0, u3=UNSET, 
+    ur1=UNSET, ur2=UNSET, ur3=UNSET, amplitude=UNSET, fixed=OFF, 
+    distributionType=UNIFORM, fieldName='', localCsys=None)
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+region = a.sets['zsymm_side']
+mdb.models['vumat_cube_elastoplastic_srt'].DisplacementBC(name='zsymm', 
+    createStepName='Step-1', region=region, u1=UNSET, u2=UNSET, u3=0.0, 
+    ur1=UNSET, ur2=UNSET, ur3=UNSET, amplitude=UNSET, fixed=OFF, 
+    distributionType=UNIFORM, fieldName='', localCsys=None)
+a = mdb.models['vumat_cube_elastoplastic_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+a = mdb.models['vumat_cube_elastoplastic_solver'].rootAssembly
+f1 = a.instances['cube-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#4 ]', ), )
+a.Set(faces=faces1, name='hSurface')
+#: The set 'hSurface' has been created (1 face).
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Initial')
+a = mdb.models['vumat_cube_elastoplastic_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+del mdb.models['vumat_cube_elastoplastic_solver'].rootAssembly.sets['hSurface']
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+f1 = a.instances['cube-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#4 ]', ), )
+a.Set(faces=faces1, name='hSurface')
+#: The set 'hSurface' has been created (1 face).
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+region = a.sets['hSurface']
+mdb.models['vumat_cube_elastoplastic_srt'].TemperatureBC(
+    name='hydrogen_concentration', createStepName='Step-1', region=region, 
+    fixed=OFF, distributionType=UNIFORM, fieldName='', magnitude=1.0, 
+    amplitude=UNSET)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0255012, 
+    farPlane=0.0476695, width=0.0262469, height=0.0163057, 
+    viewOffsetX=-0.00641432, viewOffsetY=0.000141853)
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+region = a.sets['top_side']
+mdb.models['vumat_cube_elastoplastic_srt'].DisplacementBC(
+    name='top_displcement', createStepName='Step-1', region=region, u1=UNSET, 
+    u2=0.002, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET, amplitude='AMP-1', 
+    fixed=OFF, distributionType=UNIFORM, fieldName='', localCsys=None)
+a = mdb.models['vumat_cube_elastoplastic_solver'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0252307, 
+    farPlane=0.0479401, width=0.0260747, height=0.0161987, 
+    viewOffsetX=-0.00025348, viewOffsetY=-0.000901532)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p1 = mdb.models['vumat_cube_elastoplastic_srt'].parts['cube']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+mdb.models['vumat_cube_elastoplastic_srt'].materials['steel'].userMaterial.setValues(
+    type=THERMOMECHANICAL, thermalConstants=(0.0127, 2000.0, 8314.46262, 300.0, 
+    5.1e+20, 2084000000000.0, 28600000.0, -19576000.0, -60000000.0, 6.023e+23, 
+    1.0, 6.0))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0237737, 
+    farPlane=0.0493971, width=0.0403055, height=0.0250394, 
+    viewOffsetX=0.0057405, viewOffsetY=0.000942979)
+a = mdb.models['vumat_cube_elastoplastic_srt'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF, adaptiveMeshConstraints=ON)
+mdb.save()
+#: The model database has been saved to "C:\LocalUserData\User-data\daglim1\COE_Group_7_Year_2024\_CURRENT WORK MERT_\VUMAT_3D\umat_vumat_cube.cae".

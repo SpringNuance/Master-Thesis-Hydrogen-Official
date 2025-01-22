@@ -1,0 +1,1 @@
+abaqus job=round_notched_specimen user=isotropic_von_Mises_VUMAT_3D cpus=4 verbose=1 double output_precision=full interactive 

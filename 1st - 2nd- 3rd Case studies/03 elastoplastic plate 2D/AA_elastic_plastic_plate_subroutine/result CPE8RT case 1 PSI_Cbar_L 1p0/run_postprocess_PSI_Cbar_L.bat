@@ -1,0 +1,1 @@
+abaqus cae noGUI=postprocess_PSI_Cbar_L.py

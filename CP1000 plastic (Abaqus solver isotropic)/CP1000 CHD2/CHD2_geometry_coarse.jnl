@@ -1,0 +1,795 @@
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#fa ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FINER, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#11080000 #114012 #3 ]', ), ), number=5)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=AS_IS, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#e8000000 #ecaeaae9 #1000 ]', ), ), size=0.0001)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh()
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#fa ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].setSeedConstraints(
+    constraint=FIXED, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#11080000 #114012 #3 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #3400100 #c0 ]', ), ), size=0.0001)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#3d0 ]', ), ), seedConstraintOverride=ON)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#b0 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeByNumber(
+    constraint=FIXED, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#0 #1400 ]', ), ), number=5)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#a0 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#3c0 ]', ), ), seedConstraintOverride=ON)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#b8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FINER, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#80000000 #44aaaae9 ]', ), ), size=0.00012)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].deleteMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#a0 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].seedEdgeBySize(
+    constraint=FIXED, deviationFactor=0.1, edges=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].edges.getSequenceFromMask(
+    ('[#68000000 #a8040000 #1000 ]', ), ), size=0.00012)
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#80 ]', ), ))
+mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].generateMesh(regions=
+    mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+# Save by nguyenb5 on 2024_06_09-16.52.45; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-Full-Half-Thickness'].rootAssembly.regenerate()
+mdb.models['Model-Full-Half-Thickness'].steps['Step-1'].setValues(initialInc=
+    10.0, maxInc=10.0)
+mdb.models['Model-Full-Half-Thickness'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=100)
+mdb.models['Model-Full-Half-Thickness'].boundaryConditions['top-surface-disp'].setValues(
+    u2=0.0019)
+mdb.jobs.changeKey(fromName='Job-1', toName='geometry')
+mdb.jobs['geometry'].setValues(numCpus=8, numDomains=8, 
+    numThreadsPerMpiProcess=1)
+# Save by nguyenb5 on 2024_06_09-16.54.08; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by nguyenb5 on 2024_06_09-16.54.28; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['geometry'].submit(consistencyChecking=OFF)
+mdb.jobs['geometry']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'L23-0203', 'handle': 0, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '135 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 4 at 351 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof4.', 
+    'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 5 at 351 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof5.', 
+    'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'Boundary conditions are specified on inactive dof 6 at 351 nodes. The nodes have been identified in node set WarnNodeBCInactiveDof6.', 
+    'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\LocalUserData\\User-data\\nguyenb5\\CP1000 processed\\CP1000 CHD2\\geometry.odb', 
+    'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'L23-0203', 'handle': 21552, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'geometry', 'memory': 681.0})
+mdb.jobs['geometry']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 16017.0, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(MINIMUM_MEMORY, {'minimum_memory': 93.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 10.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 1, 'stepTime': 10.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 20.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 2, 'stepTime': 20.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 2, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 30.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 3, 'stepTime': 30.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 3, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 40.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 4, 'stepTime': 40.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 4, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 50.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 5, 'stepTime': 50.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 5, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 60.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 6, 'stepTime': 60.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 6, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 70.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 7, 'stepTime': 70.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 7, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 80.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 8, 'stepTime': 80.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 8, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 90.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 9, 'stepTime': 90.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 9, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 100.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 10, 'stepTime': 100.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 10, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 110.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 11, 'stepTime': 110.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 11, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 120.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 12, 'stepTime': 120.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 12, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 130.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 13, 'stepTime': 130.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 13, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 140.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 14, 'stepTime': 140.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 14, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 150.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 15, 'stepTime': 150.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 15, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 160.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 16, 'stepTime': 160.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 16, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 170.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 17, 'stepTime': 170.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 17, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 180.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 18, 'stepTime': 180.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 18, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 190.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 19, 'stepTime': 190.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 19, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 200.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 20, 'stepTime': 200.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 20, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 210.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 21, 'stepTime': 210.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 21, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 220.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 22, 'stepTime': 220.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 22, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 230.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 23, 'stepTime': 230.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 23, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 240.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 24, 'stepTime': 240.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 24, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 250.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 25, 'stepTime': 250.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 25, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 260.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 26, 'stepTime': 260.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 26, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 270.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 27, 'stepTime': 270.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 27, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 280.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 28, 'stepTime': 280.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 28, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 290.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 29, 'stepTime': 290.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 29, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 300.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 30, 'stepTime': 300.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 30, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 310.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 31, 'stepTime': 310.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 31, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 320.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 32, 'stepTime': 320.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 32, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 330.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 33, 'stepTime': 330.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 33, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 340.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 34, 'stepTime': 340.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 34, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 350.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 35, 'stepTime': 350.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 35, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 360.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 36, 'stepTime': 360.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 36, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 370.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 37, 'stepTime': 370.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 37, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 380.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 38, 'stepTime': 380.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 38, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 390.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 39, 'stepTime': 390.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 39, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 400.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 40, 'stepTime': 400.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 40, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 410.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 41, 'stepTime': 410.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 41, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 420.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 42, 'stepTime': 420.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 42, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 430.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 43, 'stepTime': 430.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 43, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 440.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 44, 'stepTime': 440.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 44, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 450.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 45, 'stepTime': 450.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 45, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 460.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 46, 'stepTime': 460.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 46, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 470.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 47, 'stepTime': 470.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 47, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 480.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 48, 'stepTime': 480.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 48, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 490.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 49, 'stepTime': 490.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 49, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 500.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 50, 'stepTime': 500.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 50, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 510.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 51, 'stepTime': 510.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 51, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 520.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 52, 'stepTime': 520.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 52, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 530.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 53, 'stepTime': 530.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 53, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 540.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 54, 'stepTime': 540.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 54, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 550.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 55, 'stepTime': 550.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 55, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 560.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 56, 'stepTime': 560.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 56, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 570.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 57, 'stepTime': 570.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 57, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 580.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 58, 'stepTime': 580.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 58, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 590.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 59, 'stepTime': 590.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 59, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 600.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 60, 'stepTime': 600.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 60, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 610.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 61, 'stepTime': 610.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 61, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 620.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 62, 'stepTime': 620.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 62, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 630.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 63, 'stepTime': 630.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 63, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 640.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 64, 'stepTime': 640.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 64, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 650.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 65, 'stepTime': 650.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 65, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 660.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 66, 'stepTime': 660.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 66, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 670.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 67, 'stepTime': 670.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 67, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 680.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 68, 'stepTime': 680.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 68, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 690.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 69, 'stepTime': 690.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 69, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 700.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 70, 'stepTime': 700.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 70, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 710.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 71, 'stepTime': 710.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 71, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 720.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 72, 'stepTime': 720.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 72, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 730.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 73, 'stepTime': 730.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 73, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 740.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 74, 'stepTime': 740.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 74, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 750.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 75, 'stepTime': 750.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 75, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 760.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 76, 'stepTime': 760.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 76, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 770.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 77, 'stepTime': 770.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 77, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 780.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 78, 'stepTime': 780.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 78, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 790.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 79, 'stepTime': 790.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 79, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 800.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 80, 'stepTime': 800.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 80, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 810.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 81, 'stepTime': 810.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 81, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 820.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 82, 'stepTime': 820.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 82, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 830.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 83, 'stepTime': 830.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 83, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 840.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 84, 'stepTime': 840.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 84, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 850.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 85, 'stepTime': 850.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 85, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 860.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 86, 'stepTime': 860.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 86, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 870.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 87, 'stepTime': 870.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 87, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 880.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 88, 'stepTime': 880.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 88, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 890.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 89, 'stepTime': 890.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 89, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 900.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 90, 'stepTime': 900.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 90, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 910.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 91, 'stepTime': 910.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 91, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 920.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 92, 'stepTime': 920.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 92, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 930.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 93, 'stepTime': 930.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 93, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 940.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 94, 'stepTime': 940.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 94, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 950.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 95, 'stepTime': 950.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 95, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 960.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 96, 'stepTime': 960.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 96, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 970.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 97, 'stepTime': 970.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 97, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 980.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 98, 'stepTime': 980.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 98, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 990.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 99, 'stepTime': 990.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 99, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 100, 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(STATUS, {'totalTime': 1000.0, 'attempts': 1, 
+    'timeIncrement': 10.0, 'increment': 100, 'stepTime': 1000.0, 'step': 1, 
+    'jobName': 'geometry', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['geometry']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'geometry'})
+mdb.jobs['geometry']._Message(JOB_COMPLETED, {
+    'time': 'Sun Jun  9 17:00:12 2024', 'jobName': 'geometry'})
+# Save by nguyenb5 on 2024_06_09-17.00.32; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

@@ -1,0 +1,437 @@
+Abaqus/Explicit 2023.HF4                         DATE 02-Nov-2024  TIME 16:00:45
+-------------------------------------------------------------------------------
+ PREPROCESSOR WARNING MESSAGES
+-------------------------------------------------------------------------------
+
+
+***WARNING: There are 1 warning messages in the data (.dat) file.  Please
+            check the data file for possible errors in the input file.
+
+
+-------------------------------------------------------------------------------
+           DOMAIN DECOMPOSITION INFORMATION
+-------------------------------------------------------------------------------
+
+
+     DOMAIN 1 HAS 4 ELEMENTS AND 9 NODES with WEIGHT 25.000
+
+     DOMAIN 2 HAS 4 ELEMENTS AND 9 NODES with WEIGHT 25.000
+
+     DOMAIN 3 HAS 4 ELEMENTS AND 9 NODES with WEIGHT 25.000
+
+     DOMAIN 4 HAS 4 ELEMENTS AND 9 NODES with WEIGHT 25.000
+
+
+-------------------------------------------------------------------------------
+  USER SUBROUTINE VUMAT
+-------------------------------------------------------------------------------
+
+
+***WARNING: A material defined in user subroutine VUMAT must be defined as
+            purely elastic (using the initial elastic modulus) at the
+            beginning of the analysis (stepTime=0). This is an informative
+            message. It does not necessarily indicate that user subroutine
+            VUMAT is incorrectly defined.
+
+
+-------------------------------------------------------------------------------
+ MODEL INFORMATION (IN GLOBAL X-Y COORDINATES)
+-------------------------------------------------------------------------------
+
+   Total mass in model = 0.78500
+   Center of mass of model = ( 5.000000E-03, 5.000000E-03)
+
+   Moments of Inertia :
+                 About Center of Mass              About Origin
+      I(XX)          7.359376E-06                  2.698437E-05
+      I(YY)          7.359376E-06                  2.698437E-05
+      I(XY)         -1.017501E-12                 -1.962500E-05
+      I(ZZ)          1.471875E-05                  5.396875E-05
+
+-------------------------------------------------------------------------------
+ STABLE TIME INCREMENT INFORMATION
+-------------------------------------------------------------------------------
+
+
+  The stable time increment estimate for each element is based on
+  linearization about the initial state.
+
+
+   Initial time increment = 2.63563E-07
+
+   Statistics for all elements:
+      Mean = 2.63563E-07
+      Standard deviation = 0.0000
+
+   Most critical elements:
+    Element number   Rank    Time increment   Increment ratio
+    (Instance name)
+   ----------------------------------------------------------
+           1          1       2.635630E-07      1.000000E+00
+    PLATE-1
+           2          2       2.635630E-07      1.000000E+00
+    PLATE-1
+           3          3       2.635630E-07      1.000000E+00
+    PLATE-1
+           4          4       2.635630E-07      1.000000E+00
+    PLATE-1
+           5          5       2.635630E-07      1.000000E+00
+    PLATE-1
+           6          6       2.635630E-07      1.000000E+00
+    PLATE-1
+           7          7       2.635630E-07      1.000000E+00
+    PLATE-1
+           8          8       2.635630E-07      1.000000E+00
+    PLATE-1
+           9          9       2.635630E-07      1.000000E+00
+    PLATE-1
+          10         10       2.635630E-07      1.000000E+00
+    PLATE-1
+
+
+  Instance name for the most critical element will be printed if the critical
+  element changes or at the beginning of a new page.
+
+
+
+Abaqus/Explicit 2023.HF4                         DATE 02-Nov-2024  TIME 16:00:51
+
+The double precision Abaqus/Explicit executable will be used in this analysis.
+
+The model has been decomposed into 4 domains.
+Domain level parallelization will be used with 4 processors each hosting an MPI rank.
+
+-------------------------------------------------------------------------------
+ SOLUTION PROGRESS
+-------------------------------------------------------------------------------
+
+ STEP 1  ORIGIN 0.0000
+
+  Total memory used for step 1 is approximately 918.4 kilobytes.
+  Global time estimation algorithm will be used.
+  Scaling factor:  1.0000
+              STEP     TOTAL      WALL      STABLE    CRITICAL    KINETIC      TOTAL
+INCREMENT     TIME      TIME      TIME   INCREMENT     ELEMENT     ENERGY     ENERGY
+        0  0.000E+00 0.000E+00  00:00:00 2.636E-07          14  1.963E-07  1.963E-07
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number     0, of    100, at step time 0.000E+00
+    28061  1.000E-02 1.000E-02  00:00:01 3.562E-07          12  6.415E-07  2.825E-07
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number     1, of    100, at step time 1.000E-02
+    56154  2.000E-02 2.000E-02  00:00:01 3.557E-07          16  6.368E-07  5.836E-07
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number     2, of    100, at step time 2.000E-02
+    84285  3.000E-02 3.000E-02  00:00:02 3.552E-07          14  9.820E-07  1.026E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number     3, of    100, at step time 3.000E-02
+   112462  4.000E-02 4.000E-02  00:00:03 3.546E-07          16  9.837E-07  1.491E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number     4, of    100, at step time 4.000E-02
+   140686  5.000E-02 5.000E-02  00:00:03 3.540E-07           4  1.005E-06  1.969E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number     5, of    100, at step time 5.000E-02
+   168958  6.000E-02 6.000E-02  00:00:04 3.534E-07           4  1.017E-06  2.454E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number     6, of    100, at step time 6.000E-02
+   197279  7.000E-02 7.000E-02  00:00:05 3.528E-07           2  1.027E-06  2.946E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number     7, of    100, at step time 7.000E-02
+   225649  8.000E-02 8.000E-02  00:00:05 3.522E-07           4  1.028E-06  3.441E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number     8, of    100, at step time 8.000E-02
+   254069  9.000E-02 9.000E-02  00:00:06 3.516E-07           4  1.027E-06  3.940E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number     9, of    100, at step time 9.000E-02
+   282538  1.000E-01 1.000E-01  00:00:07 3.509E-07           4  1.025E-06  4.442E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    10, of    100, at step time 1.000E-01
+   311058  1.100E-01 1.100E-01  00:00:07 3.503E-07           4  1.022E-06  4.947E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    11, of    100, at step time 1.100E-01
+   339628  1.200E-01 1.200E-01  00:00:08 3.497E-07           4  1.024E-06  5.455E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    12, of    100, at step time 1.200E-01
+   368249  1.300E-01 1.300E-01  00:00:09 3.491E-07           4  1.021E-06  5.965E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    13, of    100, at step time 1.300E-01
+   396920  1.400E-01 1.400E-01  00:00:09 3.485E-07           4  1.017E-06  6.476E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    14, of    100, at step time 1.400E-01
+   425643  1.500E-01 1.500E-01  00:00:10 3.478E-07           4  1.014E-06  6.989E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    15, of    100, at step time 1.500E-01
+   454417  1.600E-01 1.600E-01  00:00:11 3.472E-07           9  1.013E-06  7.503E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    16, of    100, at step time 1.600E-01
+   483242  1.700E-01 1.700E-01  00:00:11 3.466E-07           4  1.009E-06  8.018E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    17, of    100, at step time 1.700E-01
+   512118  1.800E-01 1.800E-01  00:00:12 3.460E-07           4  1.006E-06  8.533E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    18, of    100, at step time 1.800E-01
+   541047  1.900E-01 1.900E-01  00:00:13 3.454E-07           4  1.003E-06  9.049E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    19, of    100, at step time 1.900E-01
+   570027  2.000E-01 2.000E-01  00:00:13 3.448E-07           4  9.991E-07  9.566E-06
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    20, of    100, at step time 2.000E-01
+   599058  2.100E-01 2.100E-01  00:00:14 3.441E-07           4  9.970E-07  1.008E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    21, of    100, at step time 2.100E-01
+   628142  2.200E-01 2.200E-01  00:00:15 3.435E-07           4  9.936E-07  1.060E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    22, of    100, at step time 2.200E-01
+   657278  2.300E-01 2.300E-01  00:00:15 3.429E-07           4  9.902E-07  1.112E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    23, of    100, at step time 2.300E-01
+   686466  2.400E-01 2.400E-01  00:00:16 3.423E-07           4  9.868E-07  1.164E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    24, of    100, at step time 2.400E-01
+   715706  2.500E-01 2.500E-01  00:00:17 3.417E-07           4  9.834E-07  1.215E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    25, of    100, at step time 2.500E-01
+   744999  2.600E-01 2.600E-01  00:00:17 3.411E-07           4  9.809E-07  1.267E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    26, of    100, at step time 2.600E-01
+   774344  2.700E-01 2.700E-01  00:00:18 3.405E-07           4  9.776E-07  1.319E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    27, of    100, at step time 2.700E-01
+   803741  2.800E-01 2.800E-01  00:00:19 3.399E-07           4  9.743E-07  1.371E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    28, of    100, at step time 2.800E-01
+   833191  2.900E-01 2.900E-01  00:00:20 3.393E-07           4  9.710E-07  1.422E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    29, of    100, at step time 2.900E-01
+   862694  3.000E-01 3.000E-01  00:00:20 3.386E-07           4  9.683E-07  1.474E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    30, of    100, at step time 3.000E-01
+   892250  3.100E-01 3.100E-01  00:00:21 3.380E-07           4  9.651E-07  1.526E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    31, of    100, at step time 3.100E-01
+   921858  3.200E-01 3.200E-01  00:00:22 3.374E-07           4  9.619E-07  1.577E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    32, of    100, at step time 3.200E-01
+   951520  3.300E-01 3.300E-01  00:00:22 3.368E-07           4  9.588E-07  1.629E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    33, of    100, at step time 3.300E-01
+   981234  3.400E-01 3.400E-01  00:00:23 3.362E-07           4  9.557E-07  1.680E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    34, of    100, at step time 3.400E-01
+  1011001  3.500E-01 3.500E-01  00:00:24 3.356E-07           4  9.529E-07  1.732E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    35, of    100, at step time 3.500E-01
+  1040821  3.600E-01 3.600E-01  00:00:24 3.350E-07           4  9.498E-07  1.783E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    36, of    100, at step time 3.600E-01
+  1070695  3.700E-01 3.700E-01  00:00:25 3.344E-07           4  9.468E-07  1.834E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    37, of    100, at step time 3.700E-01
+  1100621  3.800E-01 3.800E-01  00:00:26 3.339E-07           4  9.438E-07  1.886E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    38, of    100, at step time 3.800E-01
+  1130601  3.900E-01 3.900E-01  00:00:27 3.333E-07           4  9.410E-07  1.937E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    39, of    100, at step time 3.900E-01
+
+ STEP 1  ORIGIN 0.0000
+
+              STEP     TOTAL      WALL      STABLE    CRITICAL    KINETIC      TOTAL
+INCREMENT     TIME      TIME      TIME   INCREMENT     ELEMENT     ENERGY     ENERGY
+  1160634  4.000E-01 4.000E-01  00:00:27 3.327E-07           4  9.381E-07  1.988E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    40, of    100, at step time 4.000E-01
+  1190720  4.100E-01 4.100E-01  00:00:28 3.321E-07           4  9.351E-07  2.039E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    41, of    100, at step time 4.100E-01
+  1220860  4.200E-01 4.200E-01  00:00:29 3.315E-07           4  9.322E-07  2.091E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    42, of    100, at step time 4.200E-01
+  1251053  4.300E-01 4.300E-01  00:00:29 3.309E-07           4  9.294E-07  2.142E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    43, of    100, at step time 4.300E-01
+  1281299  4.400E-01 4.400E-01  00:00:30 3.303E-07           4  9.266E-07  2.193E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    44, of    100, at step time 4.400E-01
+  1311599  4.500E-01 4.500E-01  00:00:31 3.297E-07           4  9.238E-07  2.244E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    45, of    100, at step time 4.500E-01
+  1341952  4.600E-01 4.600E-01  00:00:31 3.292E-07           4  9.210E-07  2.294E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    46, of    100, at step time 4.600E-01
+  1372359  4.700E-01 4.700E-01  00:00:32 3.286E-07           4  9.182E-07  2.345E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    47, of    100, at step time 4.700E-01
+  1402819  4.800E-01 4.800E-01  00:00:33 3.280E-07           4  9.155E-07  2.396E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    48, of    100, at step time 4.800E-01
+  1433333  4.900E-01 4.900E-01  00:00:34 3.274E-07           4  9.130E-07  2.447E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    49, of    100, at step time 4.900E-01
+  1463901  5.000E-01 5.000E-01  00:00:34 3.269E-07           4  9.103E-07  2.497E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    50, of    100, at step time 5.000E-01
+  1494522  5.100E-01 5.100E-01  00:00:35 3.263E-07           4  9.076E-07  2.548E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    51, of    100, at step time 5.100E-01
+  1525197  5.200E-01 5.200E-01  00:00:36 3.257E-07           4  9.050E-07  2.598E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    52, of    100, at step time 5.200E-01
+  1555926  5.300E-01 5.300E-01  00:00:36 3.251E-07           4  9.023E-07  2.649E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    53, of    100, at step time 5.300E-01
+  1586709  5.400E-01 5.400E-01  00:00:37 3.246E-07           4  8.997E-07  2.699E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    54, of    100, at step time 5.400E-01
+  1617545  5.500E-01 5.500E-01  00:00:38 3.240E-07           4  8.971E-07  2.749E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    55, of    100, at step time 5.500E-01
+  1648435  5.600E-01 5.600E-01  00:00:38 3.234E-07           4  8.946E-07  2.800E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    56, of    100, at step time 5.600E-01
+  1679379  5.700E-01 5.700E-01  00:00:39 3.229E-07           4  8.920E-07  2.850E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    57, of    100, at step time 5.700E-01
+  1710377  5.800E-01 5.800E-01  00:00:40 3.223E-07           4  8.895E-07  2.900E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    58, of    100, at step time 5.800E-01
+  1741429  5.900E-01 5.900E-01  00:00:41 3.218E-07           4  8.870E-07  2.950E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    59, of    100, at step time 5.900E-01
+  1772534  6.000E-01 6.000E-01  00:00:41 3.212E-07           4  8.845E-07  3.000E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    60, of    100, at step time 6.000E-01
+  1803694  6.100E-01 6.100E-01  00:00:42 3.207E-07           4  8.821E-07  3.050E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    61, of    100, at step time 6.100E-01
+  1834907  6.200E-01 6.200E-01  00:00:43 3.201E-07           4  8.797E-07  3.100E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    62, of    100, at step time 6.200E-01
+  1866174  6.300E-01 6.300E-01  00:00:43 3.195E-07           4  8.773E-07  3.149E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    63, of    100, at step time 6.300E-01
+  1897496  6.400E-01 6.400E-01  00:00:44 3.190E-07           4  8.749E-07  3.199E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    64, of    100, at step time 6.400E-01
+  1928871  6.500E-01 6.500E-01  00:00:45 3.184E-07           4  8.725E-07  3.249E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    65, of    100, at step time 6.500E-01
+  1960301  6.600E-01 6.600E-01  00:00:46 3.179E-07           4  8.702E-07  3.298E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    66, of    100, at step time 6.600E-01
+  1991784  6.700E-01 6.700E-01  00:00:46 3.174E-07           4  8.678E-07  3.348E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    67, of    100, at step time 6.700E-01
+  2023322  6.800E-01 6.800E-01  00:00:47 3.168E-07           4  8.655E-07  3.397E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    68, of    100, at step time 6.800E-01
+  2054913  6.900E-01 6.900E-01  00:00:48 3.163E-07           4  8.632E-07  3.446E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    69, of    100, at step time 6.900E-01
+  2086559  7.000E-01 7.000E-01  00:00:48 3.157E-07           4  8.610E-07  3.496E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    70, of    100, at step time 7.000E-01
+  2118259  7.100E-01 7.100E-01  00:00:49 3.152E-07           4  8.587E-07  3.545E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    71, of    100, at step time 7.100E-01
+  2150013  7.200E-01 7.200E-01  00:00:50 3.147E-07           4  8.565E-07  3.594E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    72, of    100, at step time 7.200E-01
+  2181821  7.300E-01 7.300E-01  00:00:51 3.141E-07           4  8.545E-07  3.643E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    73, of    100, at step time 7.300E-01
+  2213683  7.400E-01 7.400E-01  00:00:51 3.136E-07           4  8.523E-07  3.692E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    74, of    100, at step time 7.400E-01
+  2245600  7.500E-01 7.500E-01  00:00:52 3.131E-07           4  8.501E-07  3.741E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    75, of    100, at step time 7.500E-01
+  2277571  7.600E-01 7.600E-01  00:00:53 3.125E-07           4  8.480E-07  3.790E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    76, of    100, at step time 7.600E-01
+  2309596  7.700E-01 7.700E-01  00:00:54 3.120E-07           4  8.458E-07  3.839E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    77, of    100, at step time 7.700E-01
+  2341675  7.800E-01 7.800E-01  00:00:54 3.115E-07           4  8.437E-07  3.888E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    78, of    100, at step time 7.800E-01
+  2373808  7.900E-01 7.900E-01  00:00:55 3.109E-07           4  8.416E-07  3.936E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    79, of    100, at step time 7.900E-01
+
+ STEP 1  ORIGIN 0.0000
+
+              STEP     TOTAL      WALL      STABLE    CRITICAL    KINETIC      TOTAL
+INCREMENT     TIME      TIME      TIME   INCREMENT     ELEMENT     ENERGY     ENERGY
+  2405996  8.000E-01 8.000E-01  00:00:56 3.104E-07           4  8.396E-07  3.985E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    80, of    100, at step time 8.000E-01
+  2438238  8.100E-01 8.100E-01  00:00:57 3.099E-07           4  8.375E-07  4.034E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    81, of    100, at step time 8.100E-01
+  2470534  8.200E-01 8.200E-01  00:00:57 3.094E-07           4  8.355E-07  4.082E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    82, of    100, at step time 8.200E-01
+  2502885  8.300E-01 8.300E-01  00:00:58 3.089E-07           4  8.334E-07  4.130E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    83, of    100, at step time 8.300E-01
+  2535290  8.400E-01 8.400E-01  00:00:59 3.083E-07           4  8.314E-07  4.179E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    84, of    100, at step time 8.400E-01
+  2567749  8.500E-01 8.500E-01  00:00:59 3.078E-07           4  8.294E-07  4.227E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    85, of    100, at step time 8.500E-01
+  2600262  8.600E-01 8.600E-01  00:01:00 3.073E-07           4  8.275E-07  4.275E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    86, of    100, at step time 8.600E-01
+  2632830  8.700E-01 8.700E-01  00:01:01 3.068E-07           4  8.255E-07  4.323E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    87, of    100, at step time 8.700E-01
+  2665452  8.800E-01 8.800E-01  00:01:02 3.063E-07           4  8.236E-07  4.371E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    88, of    100, at step time 8.800E-01
+  2698129  8.900E-01 8.900E-01  00:01:02 3.058E-07           4  8.217E-07  4.419E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    89, of    100, at step time 8.900E-01
+  2730860  9.000E-01 9.000E-01  00:01:03 3.053E-07           4  8.198E-07  4.467E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    90, of    100, at step time 9.000E-01
+  2763646  9.100E-01 9.100E-01  00:01:04 3.048E-07           4  8.179E-07  4.515E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    91, of    100, at step time 9.100E-01
+  2796485  9.200E-01 9.200E-01  00:01:05 3.043E-07           4  8.160E-07  4.563E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    92, of    100, at step time 9.200E-01
+  2829380  9.300E-01 9.300E-01  00:01:05 3.038E-07           4  8.141E-07  4.611E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    93, of    100, at step time 9.300E-01
+  2862328  9.400E-01 9.400E-01  00:01:06 3.033E-07           4  8.123E-07  4.658E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    94, of    100, at step time 9.400E-01
+  2895331  9.500E-01 9.500E-01  00:01:07 3.028E-07           4  8.105E-07  4.706E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    95, of    100, at step time 9.500E-01
+  2928389  9.600E-01 9.600E-01  00:01:08 3.023E-07           4  8.086E-07  4.754E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    96, of    100, at step time 9.600E-01
+  2961501  9.700E-01 9.700E-01  00:01:08 3.018E-07           4  8.068E-07  4.801E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    97, of    100, at step time 9.700E-01
+  2994667  9.800E-01 9.800E-01  00:01:09 3.013E-07           4  8.051E-07  4.848E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    98, of    100, at step time 9.800E-01
+  3027888  9.900E-01 9.900E-01  00:01:10 3.008E-07           4  8.034E-07  4.896E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Output Field Frame Number    99, of    100, at step time 9.900E-01
+  3061164  1.000E+00 1.000E+00  00:01:11 3.003E-07           4  8.016E-07  4.943E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE-1
+Restart Number  1 at 1.0000
+Output Field Frame Number   100, of    100, at step time 1.000E+00
+  EXPLICIT EXECUTABLE TIME SUMMARY
+       USER TIME (SEC)      =   67.100
+       SYSTEM TIME (SEC)    =  0.80000
+       WALLCLOCK TIME (SEC) =           71
+              INIT (SEC) =          0
+              MAIN (SEC) =         71
+
+  THE ANALYSIS HAS COMPLETED SUCCESSFULLY
+

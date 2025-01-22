@@ -1,0 +1,399 @@
+# Save by daglim1 on 2024_11_08-14.29.26; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['plate_model_vumat_noH']
+del mdb.models['plate_model_vumat_noH_broken']
+del mdb.models['plate_model_umat']
+mdb.models['plate_model_vumat'].materials['Material-1'].userMaterial.setValues(
+    thermalConstants=(0.0127, 2000.0, 8314.46262, 300.0, 5.1e+20, 
+    2084000000000.0, 28600000.0, -19576000.0, -60000000.0))
+mdb.models['plate_model_vumat'].materials['Material-1'].userMaterial.setValues(
+    thermalConstants=(0.0127, 2000.0, 8314.46262, 300.0, 5.1e+20, 
+    2084000000000.0, 28600000.0, -19576000.0, 60000000.0))
+mdb.models['plate_model_vumat'].materials['Material-1'].userMaterial.setValues(
+    thermalConstants=(0.0127, 2000.0, 8314.46262, 300.0, 5.1e+20, 
+    2084000000000.0, 28600000.0, -19576000.0, -60000000.0))
+# Save by daglim1 on 2024_11_08-14.58.50; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.jobs['plate_model_vumat_noH']
+# Save by daglim1 on 2024_11_08-14.59.47; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['plate_model_vumat'].steps['Step-1'].setValues(improvedDtMethod=ON, 
+    timePeriod=130.0)
+mdb.models['plate_model_vumat'].materials['Material-1'].depvar.setValues(n=19)
+# Save by daglim1 on 2024_11_08-15.01.59; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by daglim1 on 2024_11_08-15.03.34; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['plate_model_vumat'].materials['Material-1'].density.setValues(
+    table=((0.0001, ), ))
+# Save by daglim1 on 2024_11_08-15.06.05; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['plate_model_vumat'].materials['Material-1'].depvar.setValues(n=21)
+# Save by daglim1 on 2024_11_08-15.28.28; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['round_notched_specimen_model'].Part(name=
+    'round_notched_specimen-failed', objectToCopy=
+    mdb.models['round_notched_specimen_model'].parts['round_notched_specimen'])
+mdb.models['round_notched_specimen_model'].parts['round_notched_specimen-failed'].Unlock(
+    reportWarnings=False)
+del mdb.models['round_notched_specimen_model'].parts['round_notched_specimen']
+mdb.models['round_notched_specimen_model'].parts.changeKey(fromName=
+    'round_notched_specimen-failed', toName='round_notched_specimen')
+mdb.models['round_notched_specimen_model'].rootAssembly.regenerate()
+mdb.models['round_notched_specimen_model'].Part(name=
+    'round_notched_specimen_mesh2-failed', objectToCopy=
+    mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_mesh2'])
+mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_mesh2-failed'].Unlock(
+    reportWarnings=False)
+del mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_mesh2']
+mdb.models['round_notched_specimen_model'].parts.changeKey(fromName=
+    'round_notched_specimen_mesh2-failed', toName=
+    'round_notched_specimen_mesh2')
+mdb.models['round_notched_specimen_model'].rootAssembly.regenerate()
+# Save by daglim1 on 2024_11_08-15.56.34; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_mesh2'].setElementType(
+    elemTypes=(ElemType(elemCode=C3D8T, elemLibrary=EXPLICIT, 
+    secondOrderAccuracy=OFF, distortionControl=DEFAULT), ElemType(
+    elemCode=C3D6T, elemLibrary=EXPLICIT), ElemType(elemCode=C3D4T, 
+    elemLibrary=EXPLICIT)), regions=(
+    mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_mesh2'].cells.getSequenceFromMask(
+    ('[#3 ]', ), ), ))
+mdb.models['round_notched_specimen_model'].parts.changeKey(fromName=
+    'round_notched_specimen_mesh2', toName='round_notched_specimen_test')
+mdb.models['round_notched_specimen_model'].Material(name='Material-1')
+mdb.models['round_notched_specimen_model'].materials['Material-1'].Density(
+    table=((0.001, ), ))
+mdb.models['round_notched_specimen_model'].materials['Material-1'].Depvar(n=21)
+mdb.models['round_notched_specimen_model'].materials['Material-1'].UserMaterial(
+    mechanicalConstants=(0.0, ))
+mdb.models['round_notched_specimen_model'].materials['Material-1'].userMaterial.setValues(
+    thermalConstants=(0.0127, 2000.0, 8314.46262, 300.0, 5.1e+20, 
+    2084000000000.0, 28600000.0, -19576000.0, -60000000.0), type=THERMAL)
+# Save by daglim1 on 2024_11_08-16.03.28; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['round_notched_specimen_model'].rootAssembly.DatumCsysByDefault(
+    CARTESIAN)
+mdb.models['round_notched_specimen_model'].rootAssembly.Instance(dependent=ON, 
+    name='round_notched_specimen_test-1', part=
+    mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'])
+mdb.models['round_notched_specimen_model'].HomogeneousSolidSection(material=
+    'Material-1', name='Section-1', thickness=None)
+mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].Set(
+    cells=
+    mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].cells.getSequenceFromMask(
+    ('[#3 ]', ), ), name='whole_part')
+mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].SectionAssignment(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].sets['whole_part']
+    , sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['round_notched_specimen_model'].materials['Material-1'].userMaterial.setValues(
+    hybridFormulation=INCREMENTAL, mechanicalConstants=(207000.0, 0.3, 250.0, 
+    0.2), type=THERMOMECHANICAL)
+# Save by daglim1 on 2024_11_08-16.18.04; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].Set(
+    faces=
+    mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].faces.getSequenceFromMask(
+    ('[#102 ]', ), ), name='xsymm')
+mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].Set(
+    faces=
+    mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].faces.getSequenceFromMask(
+    ('[#204 ]', ), ), name='zsymm')
+mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].Set(
+    faces=
+    mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].faces.getSequenceFromMask(
+    ('[#70 ]', ), ), name='Outer Surface')
+mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].Set(
+    faces=
+    mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].faces.getSequenceFromMask(
+    ('[#f0 ]', ), ), name='Outer Surface')
+mdb.models['round_notched_specimen_model'].rootAssembly.regenerate()
+mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].Set(
+    faces=
+    mdb.models['round_notched_specimen_model'].parts['round_notched_specimen_test'].faces.getSequenceFromMask(
+    ('[#8 ]', ), ), name='top')
+mdb.models['round_notched_specimen_model'].rootAssembly.regenerate()
+mdb.models['round_notched_specimen_model'].TempDisplacementDynamicsStep(
+    improvedDtMethod=ON, name='Step-1', previous='Initial', timePeriod=1.3)
+mdb.models['round_notched_specimen_model'].XsymmBC(createStepName='Step-1', 
+    localCsys=None, name='xsymm', region=
+    mdb.models['round_notched_specimen_model'].rootAssembly.instances['round_notched_specimen_test-1'].sets['xsymm'])
+mdb.models['round_notched_specimen_model'].ZsymmBC(createStepName='Step-1', 
+    localCsys=None, name='zsymm', region=
+    mdb.models['round_notched_specimen_model'].rootAssembly.instances['round_notched_specimen_test-1'].sets['zsymm'])
+mdb.models['round_notched_specimen_model'].rootAssembly.Set(faces=
+    mdb.models['round_notched_specimen_model'].rootAssembly.instances['round_notched_specimen_test-1'].faces.getSequenceFromMask(
+    ('[#80 ]', ), ), name='Bottom')
+mdb.models['round_notched_specimen_model'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Step-1', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    localCsys=None, name='bottom_pinned', region=
+    mdb.models['round_notched_specimen_model'].rootAssembly.sets['Bottom'], u1=
+    UNSET, u2=0.0, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['round_notched_specimen_model'].TabularAmplitude(data=((0.0, 0.0), (
+    1.3, 1.0)), name='Amp-1', smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['round_notched_specimen_model'].DisplacementBC(amplitude='Amp-1', 
+    createStepName='Step-1', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    localCsys=None, name='top_disp', region=
+    mdb.models['round_notched_specimen_model'].rootAssembly.instances['round_notched_specimen_test-1'].sets['top']
+    , u1=UNSET, u2=0.002, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['round_notched_specimen_model'].TemperatureBC(amplitude=UNSET, 
+    createStepName='Step-1', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    magnitude=1.0, name='Whole Model', region=
+    mdb.models['round_notched_specimen_model'].rootAssembly.instances['round_notched_specimen_test-1'].sets['whole_part'])
+mdb.models['round_notched_specimen_model'].TemperatureBC(amplitude=UNSET, 
+    createStepName='Step-1', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    magnitude=1.0, name='outer_charge', region=
+    mdb.models['round_notched_specimen_model'].rootAssembly.instances['round_notched_specimen_test-1'].sets['Outer Surface'])
+# Save by daglim1 on 2024_11_08-16.43.18; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['round_notched_specimen_model'].materials['Material-1'].userMaterial.setValues(
+    mechanicalConstants=(207000000000.0, 0.3, 250000000.0, 0.2), 
+    thermalConstants=(1.27e-08, 2000.0, 8314.46262, 300.0, 5.1e+29, 2.084e+21, 
+    28600.0, -19576.0, -60000.0))
+# Save by daglim1 on 2024_11_08-16.49.39; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['plate_model_vumat'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('E', 'HFL', 'LE', 'NT', 'RF', 'RFL', 'S', 'SDV', 'TEMP', 'U'))
+mdb.models['round_notched_specimen_model'].fieldOutputRequests['F-Output-1'].setValues(
+    numIntervals=100, variables=('E', 'HFL', 'LE', 'NT', 'RF', 'RFL', 'S', 
+    'SDV', 'TEMP', 'U'))
+del mdb.models['round_notched_specimen_model'].historyOutputRequests['H-Output-1']
+mdb.Job(activateLoadBalancing=False, atTime=None, contactPrint=OFF, 
+    description='', echoPrint=OFF, explicitPrecision=SINGLE, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='round_notched_specimen_model', 
+    modelPrint=OFF, multiprocessingMode=DEFAULT, name='round_notched_specimen', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numDomains=1, 
+    numThreadsPerMpiProcess=1, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+del mdb.models['round_notched_specimen_model'].boundaryConditions['outer_charge']
+del mdb.models['round_notched_specimen_model'].boundaryConditions['Whole Model']
+mdb.models['round_notched_specimen_model'].Temperature(createStepName='Initial'
+    , crossSectionDistribution=CONSTANT_THROUGH_THICKNESS, distributionType=
+    UNIFORM, magnitudes=(1.0, ), name='Predefined Field-1', region=
+    mdb.models['round_notched_specimen_model'].rootAssembly.instances['round_notched_specimen_test-1'].sets['whole_part'])
+mdb.models['round_notched_specimen_model'].TemperatureBC(amplitude=UNSET, 
+    createStepName='Step-1', distributionType=UNIFORM, fieldName='', fixed=OFF, 
+    magnitude=1.0, name='bottom_charge', region=
+    mdb.models['round_notched_specimen_model'].rootAssembly.sets['Bottom'])
+# Save by daglim1 on 2024_11_08-16.54.33; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['round_notched_specimen_model'].parts['round_notched_specimen'].Lock(
+    )
+mdb.models['round_notched_specimen_model'].parts.changeKey(fromName=
+    'round_notched_specimen', toName='round_notched_specimen_test2')
+mdb.models['round_notched_specimen_model'].parts.changeKey(fromName=
+    'round_notched_specimen_test', toName='round_notched_specimen')
+mdb.models['round_notched_specimen_model'].rootAssembly.regenerate()
+mdb.models['round_notched_specimen_model'].rootAssembly.features.changeKey(
+    fromName='round_notched_specimen_test-1', toName=
+    'round_notched_specimen-1')
+del mdb.models['round_notched_specimen_model'].steps['Step-1']
+mdb.models['round_notched_specimen_model'].CoupledTempDisplacementStep(deltmx=
+    1000.0, initialInc=1.3, maxInc=1.3, maxNumInc=100000, minInc=0.0013, name=
+    'Step-1', nlgeom=ON, previous='Initial', timePeriod=130.0)
+del mdb.models['round_notched_specimen_model'].historyOutputRequests['H-Output-1']
+mdb.models['round_notched_specimen_model'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'NT', 'HFL', 
+    'RFL'))
+mdb.models['round_notched_specimen_model'].fieldOutputRequests['F-Output-1'].setValues(
+    variables=('HFL', 'LE', 'NT', 'PE', 'PEEQ', 'PEMAG', 'RF', 'RFL', 'S', 'U', 
+    'TEMP', 'SDV'))
+# Save by daglim1 on 2024_11_16-13.28.21; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['round_notched_specimen_model'].amplitudes['Amp-1'].setValues(data=(
+    (0.0, 0.0), (130.0, 1.0)), smooth=SOLVER_DEFAULT, timeSpan=STEP)
+mdb.models['round_notched_specimen_model'].amplitudes.changeKey(fromName=
+    'Amp-1', toName='ramp')
+# Save by daglim1 on 2024_11_16-13.28.40; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['round_notched_specimen_model'].predefinedFields['Predefined Field-1'].setValues(
+    region=
+    mdb.models['round_notched_specimen_model'].rootAssembly.instances['round_notched_specimen-1'].sets['whole_part'])
+# Save by daglim1 on 2024_11_16-13.40.56; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+# Save by daglim1 on 2024_11_16-13.41.45; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['round_notched_specimen_model'].materials['Material-1'].density.setValues(
+    table=((1.0, ), ))
+mdb.models['round_notched_specimen_model'].materials['Material-1'].depvar.setValues(
+    n=50)
+# Save by daglim1 on 2024_11_16-13.42.00; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

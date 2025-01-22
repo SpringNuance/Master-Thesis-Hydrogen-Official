@@ -1,0 +1,106 @@
+Analysis initiated from SIMULIA established products
+Abaqus JOB Job-1
+Abaqus 2023.HF4
+Abaqus License Manager checked out the following licenses:
+Abaqus/Standard checked out 5 tokens from Flexnet server lic-abaqus.aalto.fi.
+<37 out of 100 licenses remain available>.
+Begin Compiling Abaqus/Standard User Subroutines
+2024-05-10 5:48:38 PM
+Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.11.1 Build 20231117_000000
+Copyright (C) 1985-2023 Intel Corporation.  All rights reserved.
+
+ifort: remark #10448: Intel(R) Fortran Compiler Classic (ifort) is now deprecated and will be discontinued late 2024. Intel recommends that customers transition now to using the LLVM-based Intel(R) Fortran Compiler (ifx) for continued Windows* and Linux* support, new language support, new language features, and optimizations. Use '/Qdiag-disable:10448' to disable this message.
+subroutine_CPE8RT.for(6): error #5149: Illegal character in statement label field  [m]
+module common_blockplicit
+^
+subroutine_CPE8RT.for(6): error #5149: Illegal character in statement label field  [o]
+module common_blockplicit
+-^
+subroutine_CPE8RT.for(6): error #5149: Illegal character in statement label field  [d]
+module common_blockplicit
+--^
+subroutine_CPE8RT.for(6): error #5149: Illegal character in statement label field  [u]
+module common_blockplicit
+---^
+subroutine_CPE8RT.for(6): error #5149: Illegal character in statement label field  [l]
+module common_blockplicit
+----^
+subroutine_CPE8RT.for(6): error #5118: First statement in file must not be continued
+module common_blockplicit
+-----^
+subroutine_CPE8RT.for(7): error #5149: Illegal character in statement label field  [i]
+    im noneal
+----^
+subroutine_CPE8RT.for(9): error #5149: Illegal character in statement label field  [r]
+    re*8 :: common_coords(50000, 4, 2)
+----^
+subroutine_CPE8RT.for(10): error #5149: Illegal character in statement label field  [r]
+    real*8 :: grad_sigma_hydrostatic(50000, 4, 2)
+----^
+subroutine_CPE8RT.for(11): error #5149: Illegal character in statement label field  [r]
+    real*8 :: sigma_hydrostatic(50000, 4)
+----^
+subroutine_CPE8RT.for(13): error #5149: Illegal character in statement label field  [s]
+    save 
+----^
+subroutine_CPE8RT.for(17): error #5149: Illegal character in statement label field  [e]
+end module   
+^
+subroutine_CPE8RT.for(17): error #5149: Illegal character in statement label field  [n]
+end module   
+-^
+subroutine_CPE8RT.for(17): error #5149: Illegal character in statement label field  [d]
+end module   
+--^
+subroutine_CPE8RT.for(17): error #5149: Illegal character in statement label field  [m]
+end module   
+----^
+subroutine_CPE8RT.for(21): error #5149: Illegal character in statement label field  [s]
+subroutine UEXTERNALDB(lop,lrestart,time,dtime,kstep,kinc)
+^
+subroutine_CPE8RT.for(21): error #5149: Illegal character in statement label field  [u]
+subroutine UEXTERNALDB(lop,lrestart,time,dtime,kstep,kinc)
+-^
+subroutine_CPE8RT.for(21): error #5149: Illegal character in statement label field  [b]
+subroutine UEXTERNALDB(lop,lrestart,time,dtime,kstep,kinc)
+--^
+subroutine_CPE8RT.for(21): error #5149: Illegal character in statement label field  [r]
+subroutine UEXTERNALDB(lop,lrestart,time,dtime,kstep,kinc)
+---^
+subroutine_CPE8RT.for(21): error #5149: Illegal character in statement label field  [o]
+subroutine UEXTERNALDB(lop,lrestart,time,dtime,kstep,kinc)
+----^
+subroutine_CPE8RT.for(23): error #5149: Illegal character in statement label field  [u]
+    use common_blockclude
+----^
+subroutine_CPE8RT.for(24): error #5149: Illegal character in statement label field  [i]
+    in 'aba_param.inc' 
+----^
+subroutine_CPE8RT.for(25): error #5149: Illegal character in statement label field  [d]
+    dimension time(2)
+----^
+subroutine_CPE8RT.for(25): error #5144: Invalid character_kind_parameter. No underscore
+    dimension time(2)
+------^
+subroutine_CPE8RT.for(28): error #5149: Illegal character in statement label field  [i]
+    if (lop == 0) then 
+----^
+subroutine_CPE8RT.for(6): error #5192: Lead underscore not allowed
+module common_blockplicit
+-------------^
+subroutine_CPE8RT.for(9): error #5082: Syntax error, found '*' when expecting one of: ( , <END-OF-STATEMENT> ; [ / //
+    re*8 :: common_coords(50000, 4, 2)
+------^
+subroutine_CPE8RT.for(32): error #5149: Illegal character in statement label field  [e]
+    en if
+----^
+subroutine_CPE8RT.for(35): error #5149: Illegal character in statement label field  [e]
+end   
+^
+subroutine_CPE8RT.for(35): error #5149: Illegal character in statement label field  [n]
+end   
+-^
+C:\Users\nguyenb5\AppData\Local\Temp\1325624.i(37): catastrophic error: Too many errors, exiting
+compilation aborted for subroutine_CPE8RT.for (code 1)
+Abaqus Error: Problem during compilation - C:\LocalUserData\User-data\nguyenb5\AA_elastic_plastic_notched_plate_subroutine\subroutine_CPE8RT.for
+Abaqus/Analysis exited with errors

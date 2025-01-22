@@ -1,0 +1,122 @@
+<Description>
+   ABAQUS/Diagnostic exited with exception
+
+</Description>
+
+<Details>
+   *** Error: Write failed (utl_File: WriteFile)
+error: Insufficient quota to complete the requested service.
+
+file: C:\Users\nguyenb5\OneDrive - Aalto University\2022 Binh Nguyen\Master-Thesis-Hydrogen-Official\1st progress meeting - Modelling H2 diffusion (1 dimensional)\test_one_dim_bar_no_srt\Job-1.odb
+</Details>
+
+<PriorErrors>
+1) Requested Allocation: 1048624 bytes
+2) *** Error: An out-of-memory error occurred. If you have access to a machine with more physical memory, you can try running the application there.
+
+Current footprint: 1139 MB
+Current callstack:
+  1)  ABQSMABasAlloc.dll        unknown                                 
+
+</PriorErrors>
+
+<Context>
+   ELEMENT LOOP
+</Context>
+
+<Phase>
+   Increment | Attempt | Iteration | Elgen | Elgene | Elgene_regular
+</Phase>
+
+
+<Memory>
+   <Current>            1 GB </Current>
+   <Resident>           0 GB </Resident>
+   <Physical>          15 GB </Physical>
+   <Limit>             14 GB </Limit>
+   <Accessible>        15 GB </Accessible>
+   <Available>          0 GB </Available>
+   <Allocator>            DL </Allocator>
+</Memory>
+
+<Swap>
+       <Size>          63 GB </Size>
+       <Used>          63 GB </Used>
+       <Free>           0 GB </Free>
+</Swap>
+
+<Directories>
+  <current> C:\Users\nguyenb5\AppData\Local\Temp\nguyenb5_Job-1_13668 </current> <free>     41 GB </free>   <used>    434 GB </used> 
+    <indir> C:\Users\nguyenb5\OneDrive - Aalto University\2022 Binh Nguyen\Master-Thesis-Hydrogen-Official\1st progress meeting - Modelling H2 diffusion (1 dimensional)\test_one_dim_bar_no_srt </indir>   <free>     41 GB </free>  
+   <outdir> C:\Users\nguyenb5\OneDrive - Aalto University\2022 Binh Nguyen\Master-Thesis-Hydrogen-Official\1st progress meeting - Modelling H2 diffusion (1 dimensional)\test_one_dim_bar_no_srt </outdir>  <free>     41 GB </free> 
+   <tmpdir> C:\Users\nguyenb5\AppData\Local\Temp\nguyenb5_Job-1_13668 </tmpdir>  <free>     41 GB </free> 
+     <temp> C:\Users\nguyenb5\AppData\Local\Temp </temp>    <free>     41 GB </free>
+</Directories>
+
+<Installation>
+     <Version> 2023.HF4 6.23-5 </Version>
+       <Build> 2023_07_21-20.45.57 RELr425 183702 </Build>
+  <Executable> C:\SIMULIA\EstProducts\2023\win_b64\code\bin\standard.exe </Executable>
+</Installation>
+
+<Callstack>
+  1)  ABQSMABasAlloc.dll        unknown                                 
+</Callstack>
+
+<Description>
+   standard.exe / rank 0 / thread 0  encountered an unhandled exception
+
+</Description>
+
+<PriorErrors>
+1) Requested Allocation: 1048624 bytes
+2) *** Error: An out-of-memory error occurred. If you have access to a machine with more physical memory, you can try running the application there.
+
+Current footprint: 1139 MB
+Current callstack:
+  1)  ABQSMABasAlloc.dll        unknown                                 
+
+</PriorErrors>
+
+<Context>
+   ELEMENT LOOP
+</Context>
+
+<Phase>
+   Increment | Attempt | Iteration | Elgen | Elgene | Elgene_regular
+</Phase>
+
+<Callstack>
+  1)  KERNELBASE.dll            unknown                                 
+</Callstack>
+
+<Memory>
+   <Current>            1 GB </Current>
+   <Resident>           0 GB </Resident>
+   <Physical>          15 GB </Physical>
+   <Limit>             14 GB </Limit>
+   <Accessible>        15 GB </Accessible>
+   <Available>          0 GB </Available>
+   <Allocator>            DL </Allocator>
+</Memory>
+
+<Swap>
+       <Size>          63 GB </Size>
+       <Used>          63 GB </Used>
+       <Free>           0 GB </Free>
+</Swap>
+
+<Directories>
+  <current> C:\Users\nguyenb5\AppData\Local\Temp\nguyenb5_Job-1_13668 </current> <free>     41 GB </free>   <used>    434 GB </used> 
+    <indir> C:\Users\nguyenb5\OneDrive - Aalto University\2022 Binh Nguyen\Master-Thesis-Hydrogen-Official\1st progress meeting - Modelling H2 diffusion (1 dimensional)\test_one_dim_bar_no_srt </indir>   <free>     41 GB </free>  
+   <outdir> C:\Users\nguyenb5\OneDrive - Aalto University\2022 Binh Nguyen\Master-Thesis-Hydrogen-Official\1st progress meeting - Modelling H2 diffusion (1 dimensional)\test_one_dim_bar_no_srt </outdir>  <free>     41 GB </free> 
+   <tmpdir> C:\Users\nguyenb5\AppData\Local\Temp\nguyenb5_Job-1_13668 </tmpdir>  <free>     41 GB </free> 
+     <temp> C:\Users\nguyenb5\AppData\Local\Temp </temp>    <free>     41 GB </free>
+</Directories>
+
+<Installation>
+     <Version> 2023.HF4 6.23-5 </Version>
+       <Build> 2023_07_21-20.45.57 RELr425 183702 </Build>
+  <Executable> C:\SIMULIA\EstProducts\2023\win_b64\code\bin\standard.exe </Executable>
+</Installation>
+

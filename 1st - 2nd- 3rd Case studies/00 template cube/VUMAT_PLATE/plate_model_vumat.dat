@@ -1,0 +1,209 @@
+1
+
+   Abaqus 2023.HF4                                  Date 08-Nov-2024   Time 15:35:51
+   For use by AALTO UNIVERSITY under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes SIMULIA Corp.
+                           1301 Atwood Avenue, Suite 101W
+                              Johnston, RI 02919, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine D23-0234 
+                          you are authorized to run
+                          Abaqus/Explicit until 20-Feb-2025
+
+                          Your site id is: 200000000014764 
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      https://www.3ds.com/products-services/simulia/services-support/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                     Abaqus 2023.HF4                     * 
+                *                                                         * 
+                *       BUILD ID: 2023_07_21-20.45.57 RELr425 183702      * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using                         * 
+                *  release Abaqus 2023.HF4 manuals                        * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *   This program may not be used for commercial purposes  * 
+                *           without payment of a commercial fee.          * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *Heading
+  *Element, type=CPE4RT
+  *Elset, elset=ASSEMBLY_PLATE_MODEL_2D-1_SET-1
+  *Elset, elset=ASSEMBLY_BOTTOM_ENCASTRE
+  *Elset, elset=ASSEMBLY_HYDROGEN_CHARGED_EDGE
+  *Elset, elset=ASSEMBLY_WHOLE_PLATE
+  *material, name=MATERIAL-1
+  *density
+  *depvar
+  *usermaterial, constants=9, type=THERMAL
+  *usermaterial, constants=4, type=MECHANICAL
+  *solidsection, elset=ASSEMBLY_PLATE_MODEL_2D-1_SET-1, controls=EC-1, material=MATERIAL-1
+  *sectioncontrols, name=EC-1, hourglass=STIFFNESS
+
+ ***WARNING: THE PARAMETER HOURGLASS ON THE *SECTION CONTROLS OPTION IS 
+             RELEVANT FOR SOLID, MEMBRANE, AND SHELL ELEMENTS WITH REDUCED 
+             INTEGRATION WHEREVER APPLICABLE. THIS WARNING CAN BE IGNORED IF 
+             THE FEATURE IS APPLIED TO THESE ELEMENT TYPES ONLY.
+  *solidsection, elset=ASSEMBLY_PLATE_MODEL_2D-1_SET-1, controls=EC-1, material=MATERIAL-1
+  *boundary, amplitude=AMP-1, user
+  *boundary
+  *boundary
+  *solidsection, elset=ASSEMBLY_PLATE_MODEL_2D-1_SET-1, controls=EC-1, material=MATERIAL-1
+  *initialconditions, type=TEMPERATURE
+  *initialconditions, type=TEMPERATURE
+  *elementoutput, directions=YES
+
+ ***WARNING: VUMATHT SHOULD NOT BE USED WITH REDUCED INTEGRATED OR MODIFIED 
+             ELEMENTS IF THE MECHANICAL AND THERMAL FIELD ARE COUPLED THROUGH 
+             PLASTIC DISSIPATION. IT IS RECOMMENDED THAT YOU USE FULLY 
+             INTEGRATED ELEMENTS INSTEAD.
+  
+                               E L E M E N T   Q U A L I T Y  C H E C K S        
+  
+  
+ ***NOTES: DISTORTED ISOPARAMETRIC ELEMENTS: ANGLE BETWEEN ISOPARAMETRIC LINES 
+           IS LESS THAN 45 DEGREES OR GREATER THAN 135 DEGREES.
+  
+           TETRAHEDRAL QUALITY MEASURE: VOLUME OF TETRAHEDRON DIVIDED BY THE 
+           VOLUME OF EQUILATERAL TETRAHEDRON WITH SAME CIRCUMSPHERE RADIUS; 
+           0 FOR DEGENERATE TETRAHEDRON AND 1 FOR EQUILATERIAL TETRAHEDRON. IT 
+           IS RECOMMENDED THAT THE TETRAHEDRAL QUALITY MEASURE BE GREATER THAN 
+           0.02, THE MIN INTERIOR (DIHEDRAL) ANGLE BE GREATER THAN 10 DEGREES, 
+           AND THE MAX INTERIOR (DIHEDRAL) ANGLE BE LESS THAN 160 DEGREES. 
+  
+           MODIFIED TETRAHEDRAL QUALITY MEASURE: ANGLES BETWEEN THE TWO LINE 
+           SEGMENTS ON EACH EDGE; THE EDGES OF MODIFIED TETRAHEDRAL SHOULD BE 
+           AS STRAIGHT AS POSSIBLE. IT IS RECOMMENDED THAT THE ANGLE BETWEEN 
+           THE TWO LINE SEGMENTS ON EACH EDGE IS BETWEEN 160 AND 180 DEGREES. 
+  
+           TRIANGULAR QUALITY MEASURE: AREA OF TRIANGLE DIVIDED BY THE AREA OF 
+           EQUILATERAL TRIANGLE WITH SAME CIRCUMCIRCLE RADIUS; 0 FOR DEGENERATE 
+           TRIANGLE AND 1 FOR EQUILATERAL TRIANGLE. IT IS RECOMMENDED THAT THE
+           TRIANGULAR QUALITY MEASURE BE GREATER THAN 0.01, THE MIN INTERIOR 
+           ANGLE BE GREATER THAN 10 DEGREES, AND THE MAX INTERIOR ANGLE BE LESS 
+           THAN 160 DEGREES. 
+  
+           NODAL ADJUSTMENTS ARISING FROM CONTACT INTERACTIONS AND/OR TIE 
+           CONSTRAINTS CAN CAUSE SEVERE ELEMENT DISTORTION. IT MAY BE NECESSARY 
+           TO REMESH IN ORDER TO REDUCE THE AMOUNT OF ADJUSTMENT. 
+
+ ***WARNING: 5 elements are distorted. Either the isoparametric angles are out 
+             of the suggested limits or the triangular or tetrahedral quality 
+             measure is bad. The elements have been identified in element set 
+             WarnElemDistorted.
+  
+ --------------------------------------------------------------------------------
+ Distorted isoparametric elements
+  
+          Element            Min/max angle   Adjusted nodes 
+ -------------------------- ---------------- -------------- 
+      PLATE_MODEL_2D-1.4301          44.2017       NO       
+      PLATE_MODEL_2D-1.4302          36.6361       NO       
+      PLATE_MODEL_2D-1.4304          40.1391       NO       
+      PLATE_MODEL_2D-1.5437          43.6787       NO       
+      PLATE_MODEL_2D-1.5438          38.5565       NO       
+  
+  
+  *output, field, numberinterval=100
+  *output, history, frequency=0
+  *Step, name=Step-1, nlgeom=YES
+  *Step, name=Step-1, nlgeom=YES
+  *dynamictemperature-displacement, explicit
+  *boundary, amplitude=AMP-1, user
+  *boundary
+  *boundary
+  *output, field, numberinterval=100
+  *nodeoutput
+  *elementoutput, directions=YES
+  *output, history, frequency=0
+  *endstep
+
+ ***WARNING: OUTPUT REQUEST E IS NOT AVAILABLE IN A NONLINEAR STEP -- LE (LOG 
+             STRAIN) WILL BE OUTPUT INSTEAD.
+  *Step, name=Step-1, nlgeom=YES
+  *dynamictemperature-displacement, explicit
+  *boundary, amplitude=AMP-1, user
+
+ ***WARNING: THE OPTION *BOUNDARY,TYPE=DISPLACEMENT HAS BEEN USED; CHECK STATUS 
+             FILE BETWEEN STEPS FOR WARNINGS ON ANY JUMPS PRESCRIBED ACROSS THE 
+             STEPS IN DISPLACEMENT VALUES OF TRANSLATIONAL DOF. FOR ROTATIONAL 
+             DOF MAKE SURE THAT THERE ARE NO SUCH JUMPS. ALL JUMPS IN 
+             DISPLACEMENTS ACROSS STEPS ARE IGNORED
+  *boundary
+  *boundary
+  *endstep
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                  6776
+          NUMBER OF NODES IS                                     6949
+          NUMBER OF NODES DEFINED BY THE USER                    6949
+          TOTAL NUMBER OF VARIABLES IN THE MODEL                20847
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =     0.10    
+       SYSTEM TIME (SEC)    =      0.0    
+       TOTAL CPU TIME (SEC) =     0.10    
+       WALLCLOCK TIME (SEC) =            0

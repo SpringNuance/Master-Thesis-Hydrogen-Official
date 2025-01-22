@@ -1,0 +1,1 @@
+abaqus job=plate_model_vumat user=isotropic_von_Mises_VUMAT_2D cpus=4 verbose=1 double output_precision=full interactive 

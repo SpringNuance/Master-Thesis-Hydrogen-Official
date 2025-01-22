@@ -1,0 +1,131 @@
+Abaqus/Explicit 2023.HF4                         DATE 08-Nov-2024  TIME 15:35:56
+-------------------------------------------------------------------------------
+ PREPROCESSOR WARNING MESSAGES
+-------------------------------------------------------------------------------
+
+
+***WARNING: There are 5 warning messages in the data (.dat) file.  Please
+            check the data file for possible errors in the input file.
+
+
+-------------------------------------------------------------------------------
+           DOMAIN DECOMPOSITION INFORMATION
+-------------------------------------------------------------------------------
+
+
+     DOMAIN 1 HAS 1694 ELEMENTS AND 1789 NODES with WEIGHT 25.000
+
+     DOMAIN 2 HAS 1694 ELEMENTS AND 1815 NODES with WEIGHT 25.000
+
+     DOMAIN 3 HAS 1694 ELEMENTS AND 1822 NODES with WEIGHT 25.000
+
+     DOMAIN 4 HAS 1694 ELEMENTS AND 1789 NODES with WEIGHT 25.000
+
+
+-------------------------------------------------------------------------------
+  USER SUBROUTINE VUMAT
+-------------------------------------------------------------------------------
+
+
+***WARNING: A material defined in user subroutine VUMAT must be defined as
+            purely elastic (using the initial elastic modulus) at the
+            beginning of the analysis (stepTime=0). This is an informative
+            message. It does not necessarily indicate that user subroutine
+            VUMAT is incorrectly defined.
+
+
+-------------------------------------------------------------------------------
+ MODEL INFORMATION (IN GLOBAL X-Y COORDINATES)
+-------------------------------------------------------------------------------
+
+   Total mass in model = 0.27646
+   Total capacitance in model = 2688.3
+   Center of mass of model = ( 2.052041E-04, 1.780096E+01)
+
+   Moments of Inertia :
+                 About Center of Mass              About Origin
+      I(XX)          3.444062E+01                  1.220446E+02
+      I(YY)          1.221790E+02                  1.221790E+02
+      I(XY)         -4.324415E-04                  5.774303E-04
+      I(ZZ)          1.566196E+02                  2.442236E+02
+
+-------------------------------------------------------------------------------
+ STABLE TIME INCREMENT INFORMATION
+-------------------------------------------------------------------------------
+
+
+  The stable time increment estimate for each element is based on
+  linearization about the initial state.
+
+
+   Initial time increment = 1.66212E-10
+
+   Statistics for all elements:
+      Mean = 2.25968E-06
+      Standard deviation = 7.01366E-06
+
+   Most critical elements:
+    Element number   Rank    Time increment   Increment ratio
+    (Instance name)
+   ----------------------------------------------------------
+        6572          1       1.662122E-10      1.000000E+00
+    PLATE_MODEL_2D-1
+        6416          2       1.662776E-10      9.996061E-01
+    PLATE_MODEL_2D-1
+        6404          3       1.663483E-10      9.991816E-01
+    PLATE_MODEL_2D-1
+        6356          4       1.663640E-10      9.990870E-01
+    PLATE_MODEL_2D-1
+        6524          5       1.663803E-10      9.989892E-01
+    PLATE_MODEL_2D-1
+        6476          6       1.663962E-10      9.988940E-01
+    PLATE_MODEL_2D-1
+        6512          7       1.664625E-10      9.984963E-01
+    PLATE_MODEL_2D-1
+        6500          8       1.664661E-10      9.984742E-01
+    PLATE_MODEL_2D-1
+        6560          9       1.664690E-10      9.984573E-01
+    PLATE_MODEL_2D-1
+        6464         10       1.665426E-10      9.980160E-01
+    PLATE_MODEL_2D-1
+
+
+  Instance name for the most critical element will be printed if the critical
+  element changes or at the beginning of a new page.
+
+
+
+Abaqus/Explicit 2023.HF4                         DATE 08-Nov-2024  TIME 15:36:02
+
+The double precision Abaqus/Explicit executable will be used in this analysis.
+
+The model has been decomposed into 4 domains.
+Domain level parallelization will be used with 4 processors each hosting an MPI rank.
+
+-------------------------------------------------------------------------------
+ SOLUTION PROGRESS
+-------------------------------------------------------------------------------
+
+ STEP 1  ORIGIN 0.0000
+
+  Total memory used for step 1 is approximately 21.3 megabytes.
+  Global time estimation algorithm will be used.
+  Scaling factor:  1.0000
+              STEP     TOTAL      WALL      STABLE    CRITICAL    KINETIC      TOTAL
+INCREMENT     TIME      TIME      TIME   INCREMENT     ELEMENT     ENERGY     ENERGY
+        0  0.000E+00 0.000E+00  00:00:00 3.215E-10        6572  0.000E+00 -1.389E-05
+INSTANCE WITH CRITICAL ELEMENT: PLATE_MODEL_2D-1
+Output Field Frame Number     0, of    100, at step time 0.000E+00
+
+***WARNING: THE ANALYSIS NEEDS AN EXTREMELY LARGE NUMBER OF INCREMENTS (MORE
+            THAN 2,000,000). CHECK THE PROPERTIES OF THE MOST CRITICAL
+            ELEMENTS AND THE DATA FILE FOR WARNING MESSAGES.
+
+   287807  1.223E-04 1.223E-04  00:02:02 4.248E-10        6572  1.771E-05  1.015E+00
+INSTANCE WITH CRITICAL ELEMENT: PLATE_MODEL_2D-1
+   577842  2.455E-04 2.455E-04  00:04:04 4.248E-10        6572  4.179E-05  1.019E+00
+INSTANCE WITH CRITICAL ELEMENT: PLATE_MODEL_2D-1
+   872743  3.708E-04 3.708E-04  00:06:06 4.248E-10        6572  6.868E-05  1.017E+00
+INSTANCE WITH CRITICAL ELEMENT: PLATE_MODEL_2D-1
+  1166989  4.958E-04 4.958E-04  00:08:07 4.248E-10        6572  9.338E-05  1.015E+00
+INSTANCE WITH CRITICAL ELEMENT: PLATE_MODEL_2D-1

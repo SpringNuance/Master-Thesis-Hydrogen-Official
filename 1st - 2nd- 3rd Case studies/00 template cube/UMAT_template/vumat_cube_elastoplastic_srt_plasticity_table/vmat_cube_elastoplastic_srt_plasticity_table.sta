@@ -1,0 +1,195 @@
+Abaqus/Explicit 2023.HF4                         DATE 02-Nov-2024  TIME 12:38:50
+-------------------------------------------------------------------------------
+ PREPROCESSOR WARNING MESSAGES
+-------------------------------------------------------------------------------
+
+
+***WARNING: There are 2 warning messages in the data (.dat) file.  Please
+            check the data file for possible errors in the input file.
+
+
+-------------------------------------------------------------------------------
+           DOMAIN DECOMPOSITION INFORMATION
+-------------------------------------------------------------------------------
+
+
+     DOMAIN 1 HAS 2 ELEMENTS AND 12 NODES with WEIGHT 25.000
+
+     DOMAIN 2 HAS 2 ELEMENTS AND 12 NODES with WEIGHT 25.000
+
+     DOMAIN 3 HAS 2 ELEMENTS AND 12 NODES with WEIGHT 25.000
+
+     DOMAIN 4 HAS 2 ELEMENTS AND 12 NODES with WEIGHT 25.000
+
+
+-------------------------------------------------------------------------------
+  USER SUBROUTINE VUMAT
+-------------------------------------------------------------------------------
+
+
+***WARNING: A material defined in user subroutine VUMAT must be defined as
+            purely elastic (using the initial elastic modulus) at the
+            beginning of the analysis (stepTime=0). This is an informative
+            message. It does not necessarily indicate that user subroutine
+            VUMAT is incorrectly defined.
+
+
+-------------------------------------------------------------------------------
+ MODEL INFORMATION (IN GLOBAL X-Y COORDINATES)
+-------------------------------------------------------------------------------
+
+   Total mass in model = 7.90000E-03
+   Center of mass of model = ( 5.000000E-03, 5.000000E-03, 5.000000E-03)
+
+    Moments of Inertia :
+                 About Center of Mass              About Origin
+      I(XX)          1.975000E-07                  5.924999E-07
+      I(YY)          1.975000E-07                  5.925000E-07
+      I(ZZ)          1.975000E-07                  5.925000E-07
+      I(XY)         -4.508838E-15                 -1.975000E-07
+      I(YZ)         -4.064748E-15                 -1.975000E-07
+      I(ZX)         -4.508838E-15                 -1.975000E-07
+
+-------------------------------------------------------------------------------
+ STABLE TIME INCREMENT INFORMATION
+-------------------------------------------------------------------------------
+
+
+  The stable time increment estimate for each element is based on
+  linearization about the initial state.
+
+
+   Initial time increment = 5.30913E-07
+
+   Statistics for all elements:
+      Mean = 5.30913E-07
+      Standard deviation = 8.73061E-11
+
+   Most critical elements:
+    Element number   Rank    Time increment   Increment ratio
+    (Instance name)
+   ----------------------------------------------------------
+           2          1       5.309130E-07      1.000000E+00
+    CUBE-1
+           3          2       5.309130E-07      1.000000E+00
+    CUBE-1
+           4          3       5.309130E-07      1.000000E+00
+    CUBE-1
+           6          4       5.309130E-07      1.000000E+00
+    CUBE-1
+           7          5       5.309130E-07      1.000000E+00
+    CUBE-1
+           8          6       5.309130E-07      1.000000E+00
+    CUBE-1
+           5          7       5.309130E-07      1.000000E+00
+    CUBE-1
+           1          8       5.309130E-07      1.000000E+00
+    CUBE-1
+
+
+  Instance name for the most critical element will be printed if the critical
+  element changes or at the beginning of a new page.
+
+
+
+Abaqus/Explicit 2023.HF4                         DATE 02-Nov-2024  TIME 12:38:57
+
+The single precision Abaqus/Explicit executable will be used in this analysis.
+
+The model has been decomposed into 4 domains.
+Domain level parallelization will be used with 4 processors each hosting an MPI rank.
+
+-------------------------------------------------------------------------------
+ SOLUTION PROGRESS
+-------------------------------------------------------------------------------
+
+ STEP 1  ORIGIN 0.0000
+
+  Total memory used for step 1 is approximately 1.0 megabytes.
+  Global time estimation algorithm will be used.
+  Scaling factor:  1.0000
+              STEP     TOTAL      WALL      STABLE    CRITICAL    KINETIC      TOTAL
+INCREMENT     TIME      TIME      TIME   INCREMENT     ELEMENT     ENERGY     ENERGY
+        0  0.000E+00 0.000E+00  00:00:01 5.309E-07           5  2.469E-08  2.469E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     0, of     20, at step time 0.000E+00
+
+***WARNING: THE ANALYSIS MAY NEED A LARGE NUMBER OF INCREMENTS (MORE THAN
+            300000), AND IT MAY BE AFFECTED BY ROUND-OFF ERRORS. RUNNING THE
+            DOUBLE PRECISION EXECUTABLE IS RECOMMENDED.
+
+    74146  5.000E-02 5.000E-02  00:00:03 6.709E-07           5  4.932E-08  2.431E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     1, of     20, at step time 5.000E-02
+   149071  1.000E-01 1.000E-01  00:00:06 6.637E-07           3  4.772E-08  2.431E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     2, of     20, at step time 1.000E-01
+   224902  1.500E-01 1.500E-01  00:00:09 6.565E-07           3  4.630E-08  2.430E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     3, of     20, at step time 1.500E-01
+
+***WARNING: THE ANALYSIS REACHED A LARGE NUMBER OF INCREMENTS (300000), AND IT
+            MAY BE AFFECTED BY ROUND-OFF ERRORS. RUNNING THE DOUBLE PRECISION
+            EXECUTABLE IS RECOMMENDED.
+
+   301162  2.000E-01 2.000E-01  00:00:12 6.483E-07           5  4.505E-08  2.430E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     4, of     20, at step time 2.000E-01
+   379182  2.500E-01 2.500E-01  00:00:15 6.399E-07           5  4.396E-08  2.430E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     5, of     20, at step time 2.500E-01
+   459074  3.000E-01 3.000E-01  00:00:19 6.316E-07           5  4.302E-08  2.429E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     6, of     20, at step time 3.000E-01
+   538965  3.500E-01 3.500E-01  00:00:22 6.238E-07           5  4.225E-08  2.429E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     7, of     20, at step time 3.500E-01
+   618857  4.000E-01 4.000E-01  00:00:24 6.163E-07           5  4.163E-08  2.428E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     8, of     20, at step time 4.000E-01
+   699552  4.500E-01 4.500E-01  00:00:27 6.096E-07           3  4.116E-08  2.427E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number     9, of     20, at step time 4.500E-01
+   783438  5.000E-01 5.000E-01  00:00:30 6.030E-07           3  4.079E-08  2.426E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    10, of     20, at step time 5.000E-01
+   867324  5.500E-01 5.500E-01  00:00:33 5.970E-07           3  4.052E-08  2.425E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    11, of     20, at step time 5.500E-01
+   951211  6.000E-01 6.000E-01  00:00:36 5.915E-07           3  4.034E-08  2.424E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    12, of     20, at step time 6.000E-01
+  1035097  6.500E-01 6.500E-01  00:00:39 5.866E-07           3  4.024E-08  2.422E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    13, of     20, at step time 6.500E-01
+  1118983  7.000E-01 7.000E-01  00:00:42 5.820E-07           3  4.019E-08  2.420E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    14, of     20, at step time 7.000E-01
+  1202869  7.500E-01 7.500E-01  00:00:45 5.778E-07           5  4.020E-08  2.418E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    15, of     20, at step time 7.500E-01
+  1286755  8.000E-01 8.000E-01  00:00:48 5.740E-07           5  4.024E-08  2.415E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    16, of     20, at step time 8.000E-01
+  1370641  8.500E-01 8.500E-01  00:00:52 5.704E-07           3  4.032E-08  2.413E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    17, of     20, at step time 8.500E-01
+  1454527  9.000E-01 9.000E-01  00:00:54 5.668E-07           3  4.041E-08  2.413E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    18, of     20, at step time 9.000E-01
+  1546224  9.500E-01 9.500E-01  00:00:58 5.627E-07           3  4.055E-08  2.414E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Output Field Frame Number    19, of     20, at step time 9.500E-01
+  1639431  1.000E+00 1.000E+00  00:01:01 5.581E-07           3  4.072E-08  2.415E-08
+INSTANCE WITH CRITICAL ELEMENT: CUBE-1
+Restart Number  1 at 1.0000
+Output Field Frame Number    20, of     20, at step time 1.000E+00
+  EXPLICIT EXECUTABLE TIME SUMMARY
+       USER TIME (SEC)      =   58.500
+       SYSTEM TIME (SEC)    =  0.60000
+       WALLCLOCK TIME (SEC) =           61
+              INIT (SEC) =          1
+              MAIN (SEC) =         60
+
+  THE ANALYSIS HAS COMPLETED SUCCESSFULLY
+

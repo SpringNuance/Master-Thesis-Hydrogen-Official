@@ -1,0 +1,24 @@
+Analysis initiated from SIMULIA established products
+Abaqus JOB vumat_cube_elastoplastic_solver
+Abaqus 2023.HF4
+USING MEMORY DOUG-LEA ALLOCATOR
+Abaqus License Manager checked out the following licenses:
+Abaqus/Explicit checked out 5 tokens from Flexnet server lic-abaqus.aalto.fi.
+<85 out of 100 licenses remain available>.
+Begin Analysis Input File Processor
+2.11.2024 15.37.57
+Run pre.exe
+2.11.2024 15.38.03
+End Analysis Input File Processor
+Begin Abaqus/Explicit Packager
+2.11.2024 15.38.03
+PAC_NUM_THREADS VALUE: 1
+Run package.exe
+2.11.2024 15.38.09
+End Abaqus/Explicit Packager
+Begin Abaqus/Explicit Analysis
+2.11.2024 15.38.09
+Run explicit.exe
+2.11.2024 15.38.50
+End Abaqus/Explicit Analysis
+Abaqus JOB vumat_cube_elastoplastic_solver COMPLETED

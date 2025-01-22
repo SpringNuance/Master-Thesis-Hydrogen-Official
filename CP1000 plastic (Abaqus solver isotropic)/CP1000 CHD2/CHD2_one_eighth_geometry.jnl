@@ -1,0 +1,58 @@
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['CH8']
+del mdb.models['CH6']
+del mdb.models['CH4_fine']
+del mdb.models['CH4']
+del mdb.models['CH3']
+del mdb.models['CH1']
+del mdb.models['CH05']
+mdb.models['CH2'].Part(name='Part-1-failed', objectToCopy=
+    mdb.models['CH2'].parts['Part-1'])
+mdb.models['CH2'].parts['Part-1-failed'].Unlock(reportWarnings=False)
+del mdb.models['CH2'].parts['Part-1']
+mdb.models['CH2'].parts.changeKey(fromName='Part-1-failed', toName='Part-1')
+mdb.models['CH2'].rootAssembly.regenerate()
+#* FeatureError: The assembly is locked and cannot be regenerated.
+mdb.models['CH2'].rootAssembly.unlock()
+# Save by nguyenb5 on 2024_05_30-20.25.22; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['CH2_fine'].Part(name='Part-1-failed', objectToCopy=
+    mdb.models['CH2_fine'].parts['Part-1'])
+mdb.models['CH2_fine'].parts['Part-1-failed'].Unlock(reportWarnings=False)
+del mdb.models['CH2_fine'].parts['Part-1']
+mdb.models['CH2_fine'].parts.changeKey(fromName='Part-1-failed', toName=
+    'Part-1')
+mdb.models['CH2_fine'].rootAssembly.regenerate()
+#* FeatureError: The assembly is locked and cannot be regenerated.
+del mdb.jobs['CH8']
+del mdb.jobs['CH6']
+del mdb.jobs['CH4F']
+del mdb.jobs['CH4']
+del mdb.jobs['CH3']
+del mdb.jobs['CH05']
+del mdb.jobs['CH1']
+# Save by nguyenb5 on 2024_05_30-20.28.07; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

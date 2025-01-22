@@ -1,0 +1,355 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2023.HF4 replay file
+# Internal Version: 2023_07_21-20.45.57 RELr425 183702
+# Run by nguyenb5 on Sat Jun 15 18:10:42 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=119.81770324707, 
+    height=113.030090332031)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('CHD2_geometry_42957_nodes.cae')
+#: The model database "C:\LocalUserData\User-data\nguyenb5\CP1000 plastic (Abaqus solver isotropic)\CP1000 CHD2\CHD2_geometry_42957_nodes.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-Full-Half-Thickness'].parts['CHD2-m']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT coupled temp-disp)/CP1000 CHD2/geometry.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT coupled temp-disp)/CP1000 CHD2/geometry.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       10
+#: Number of Node Sets:          12
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+#* There is no valid step data available on the database. If the analysis is 
+#* running, the database must be closed and reopened once the results have been 
+#* initialized. The requested operation has been cancelled.
+session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (UMAT coupled temp-disp)/CP1000 CHD2/geometry.odb'].close(
+    )
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/CHD2.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/CHD2.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       7
+#: Number of Node Sets:          9
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.423312, 
+    farPlane=0.661167, width=0.25906, height=0.105159, viewOffsetX=0.00958688, 
+    viewOffsetY=0.0403245)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.457277, 
+    farPlane=0.627202, width=0.0474779, height=0.0192725, 
+    viewOffsetX=0.00830178, viewOffsetY=-0.0108999)
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/CHD4.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/CHD4.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       11
+#: Number of Node Sets:          13
+#: Number of Steps:              1
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR15.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR15.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       7
+#: Number of Node Sets:          9
+#: Number of Steps:              1
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR2p5.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR2p5.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       7
+#: Number of Node Sets:          9
+#: Number of Steps:              1
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR40.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR40.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       8
+#: Number of Node Sets:          10
+#: Number of Steps:              1
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR6.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR6.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       7
+#: Number of Node Sets:          9
+#: Number of Steps:              1
+o1 = session.openOdb(
+    name='C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/SH115.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/SH115.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       21
+#: Number of Node Sets:          23
+#: Number of Steps:              1
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/CHD2.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.460504, 
+    farPlane=0.623975, width=0.0275087, height=0.0152404, 
+    viewOffsetX=0.00207429, viewOffsetY=-0.0108514)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.460766, 
+    farPlane=0.623713, width=0.0275244, height=0.0152491, 
+    viewOffsetX=0.00187851, viewOffsetY=-0.0112259)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.460499, 
+    farPlane=0.62398, width=0.0311322, height=0.0172479, 
+    viewOffsetX=0.00237982, viewOffsetY=-0.0112501)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.460217, 
+    farPlane=0.624262, width=0.0311132, height=0.0172374, 
+    viewOffsetX=0.00243403, viewOffsetY=-0.011271)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/CHD4.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.460578, 
+    farPlane=0.624066, width=0.0285138, height=0.0157972, 
+    viewOffsetX=0.00111021, viewOffsetY=-0.0110949)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/SH115.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.457984, 
+    farPlane=0.626345, width=0.0467037, height=0.0258748, 
+    viewOffsetX=0.000185196, viewOffsetY=-0.010541)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR2p5.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.460717, 
+    farPlane=0.62404, width=0.0285224, height=0.015802, 
+    viewOffsetX=-0.000274875, viewOffsetY=-0.0111384)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR6.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.460369, 
+    farPlane=0.624333, width=0.03032, height=0.0167979, 
+    viewOffsetX=0.000656992, viewOffsetY=-0.0115146)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR15.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.458011, 
+    farPlane=0.626516, width=0.0494854, height=0.0274159, 
+    viewOffsetX=0.000891558, viewOffsetY=-0.0108653)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR40.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.455738, 
+    farPlane=0.628595, width=0.0557263, height=0.0308735, 
+    viewOffsetX=0.0037094, viewOffsetY=-0.0110644)
+session.viewports['Viewport: 1'].odbDisplay.contourOptions.setValues(
+    maxAutoCompute=OFF, maxValue=0.0021, minAutoCompute=OFF, minValue=0)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/CHD2.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.459904, 
+    farPlane=0.624575, width=0.0312193, height=0.0172961, 
+    viewOffsetX=0.00208302, viewOffsetY=-0.0120087)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=9 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=10 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].view.setValues(session.views['Iso'])
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.463128, 
+    farPlane=0.623344, width=0.0210417, height=0.0116575, 
+    viewOffsetX=0.000225468, viewOffsetY=-0.0118387)
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=100 )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.462628, 
+    farPlane=0.622878, width=0.0198387, height=0.0109911, 
+    viewOffsetX=0.000168215, viewOffsetY=-0.0117659)
+session.viewports['Viewport: 1'].odbDisplay.contourOptions.setValues(
+    maxAutoCompute=ON, minAutoCompute=ON)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].odbDisplay.contourOptions.setValues(
+    maxAutoCompute=OFF, maxValue=0.0021, minAutoCompute=OFF, minValue=0)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.459855, 
+    farPlane=0.625651, width=0.0346975, height=0.0192231, 
+    viewOffsetX=0.000227888, viewOffsetY=-0.0110358)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/CHD4.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(
+    plotState=CONTOURS_ON_DEF)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.459641, 
+    farPlane=0.625003, width=0.0387731, height=0.0214811, 
+    viewOffsetX=0.00187427, viewOffsetY=-0.0105064)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/SH115.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.contourOptions.setValues(
+    maxValue=0.0022)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.460044, 
+    farPlane=0.624285, width=0.0285972, height=0.0158434, 
+    viewOffsetX=0.00208436, viewOffsetY=-0.0102406)
+session.viewports['Viewport: 1'].odbDisplay.contourOptions.setValues(
+    maxValue=0.0021)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.459112, 
+    farPlane=0.625216, width=0.0343605, height=0.0190364, 
+    viewOffsetX=0.00147703, viewOffsetY=-0.0110758)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR2p5.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.45978, 
+    farPlane=0.624977, width=0.0387848, height=0.0214876, 
+    viewOffsetX=-0.000121784, viewOffsetY=-0.00996571)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.457797, 
+    farPlane=0.62696, width=0.0526194, height=0.0291523, 
+    viewOffsetX=-0.00102063, viewOffsetY=-0.0113625)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR6.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.459731, 
+    farPlane=0.624971, width=0.0387807, height=0.0214853, 
+    viewOffsetX=0.000852207, viewOffsetY=-0.010856)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.455666, 
+    farPlane=0.629035, width=0.0592739, height=0.032839, 
+    viewOffsetX=-0.000111411, viewOffsetY=-0.0111888)
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR15.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
+o7 = session.odbs['C:/LocalUserData/User-data/nguyenb5/CP1000 plastic (Abaqus solver isotropic)/NDBR40.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U2'), )
