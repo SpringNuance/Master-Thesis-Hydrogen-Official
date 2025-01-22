@@ -1,0 +1,109 @@
+*HEADING
+ IMPORT ROLLING TIRE
+*PARAMETER
+** enter the step number from which to import
+step_num = 2
+** enter the step time
+t_step = 1.4e-3
+** enter the friction coefficient
+fric = 0.5
+** enter the z-position of the road
+z_position = -289.443
+** enter omega for the rim
+omega = 74.04528
+** enter the speed of the tire
+speed_km = 80 #km/hr
+speed = speed_km*1.e6/3600. #mm/sec
+** enter the surface name for the application of internal pressure
+p_surf = "carcass-1_pressure"
+** enter the pressure magnitude
+pmag = 0.241
+** enter the rim load
+rim_load = -3300.0
+** enter the element set for the embedded section
+embedded_set = "plies-1_embeddedPlies"
+** enter the tie node set for the RB constraint
+tie_nset = "carcass-1_rigid"
+** enter the element sets for the sections to be imported
+section_sets = "carcass-1_rubber, carcass-1_tread, carcass-1_beltShort, carcass-1_beltLong, plies-1_ply1, plies-1_ply2"
+**
+*PREPRINT,MODEL=NO,ECHO=YES,CONTACT=NO,HIST=YES
+*IMPORT,STEP=<step_num>,STATE=YES,UPDATE=NO
+<section_sets>,
+*IMPORT NSET
+<tie_nset>,
+*IMPORT ELSET
+<embedded_set>,
+** enter the element sets for the pressure surface
+_carcass-1_pressure_S2, 
+_carcass-1_pressure_S4,
+*SURFACE, TYPE=ELEMENT, NAME=<p_surf>
+** enter the data lines for the pressure surface
+_carcass-1_pressure_S2, S4
+_carcass-1_pressure_S4, S6
+**
+*NODE,NSET=ROAD
+99999,   0.0,   0.0, -300.0
+*RIGID BODY,REF NODE=99999,ANALYTICAL SURFACE=ROAD_SURF
+*SURFACE,NAME=ROAD_SURF, TYPE=CYLINDER, FILLET RADIUS=5.0
+0.0,0.0,<z_position>, 1.0,0.0,<z_position>,
+0.0,1.0,<z_position>
+START, -100.0,0.0
+LINE, 250.0,0.0
+LINE, 250.0,12.5
+LINE, 1550.0,12.5
+*NODE, NSET=RIM
+2000000, 0., 0., 0.
+*RIGID BODY, REF NODE=RIM, TIE NSET=<tie_nset>
+*ELEMENT,TYPE=MASS,ELSET=MRIM
+500001,2000000
+*ELEMENT,TYPE=ROTARYI,ELSET=IRIM
+500002,2000000
+*MASS,ELSET=MRIM
+1.E-2,
+*ROTARY INERTIA,ELSET=IRIM
+1.E2,1.E2,1.E2,
+*EMBEDDED ELEMENT,ROUNDOFF TOL=1.E-3
+<embedded_set>,
+*INITIAL CONDITIONS,TYPE=VELOCITY
+RIM,5,<omega>
+*AMPLITUDE,NAME=TFSTEP
+0.0, 1.0, <t_step>, 1.0
+*SURFACE INTERACTION,NAME=SRIGID
+*FRICTION
+<fric>,
+*CONTACT
+*CONTACT INCLUSIONS, ALL EXTERIOR
+*CONTACT PROPERTY ASSIGNMENT
+ ,  , SRIGID
+******************************************
+*STEP
+TRANSIENT ROLLING
+*DYNAMIC,EXPLICIT
+  , <t_step>
+*DSLOAD,OP=NEW
+<p_surf>, P, <pmag>
+*CLOAD, OP=NEW
+RIM,3,<rim_load>
+*BOUNDARY,OP=NEW,AMP=TFSTEP,TYPE=VELOCITY
+RIM,1, ,<speed>
+RIM,2,
+RIM,4,
+RIM,6,
+ROAD,1,6
+*OUTPUT,FIELD,NUMBER INTERVAL=20
+*ELEMENT OUTPUT
+S,LE
+*ELEMENT OUTPUT,REBAR
+S,LE
+*NODE OUTPUT
+U,V,A
+*CONTACT OUTPUT
+CSTRESS,FSLIP,FSLIPR
+*OUTPUT,HISTORY,TIME INTERVAL=1.E-5
+*NODE OUTPUT,NSET=RIM
+U,V,RF,RM1,RM2,RM3,UR1,UR2,UR3
+*NODE OUTPUT,NSET=ROAD
+U,V,RF,RM1,RM2,RM3,UR1,UR2,UR3
+*ENERGY OUTPUT,VAR=PRE
+*END STEP

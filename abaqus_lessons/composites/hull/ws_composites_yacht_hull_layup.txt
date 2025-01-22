@@ -1,0 +1,108 @@
+DECK_FWD_OS_1, DECK_FWD, Glass-Epoxy, 0.75, <Layup>, 0, 3
+DECK_FWD_OS_2, DECK_FWD, Glass-Epoxy, 0.75, <Layup>, 45, 3
+DECK_FWD_OS_3, DECK_FWD, Glass-Epoxy, 0.75, <Layup>, -45, 3
+DECK_FWD_OS_4, DECK_FWD, Glass-Epoxy, 0.75, <Layup>, 90, 3
+DECK_FWD_CORE, DECK_FWD, Core, 25, <Layup>, 0, 3
+DECK_FWD_IS_1, DECK_FWD, Glass-Epoxy, 0.75, <Layup>, 90, 3
+DECK_FWD_IS_2, DECK_FWD, Glass-Epoxy, 0.75, <Layup>, -45, 3
+DECK_FWD_IS_3, DECK_FWD, Glass-Epoxy, 0.75, <Layup>, 45, 3
+DECK_FWD_IS_4, DECK_FWD, Glass-Epoxy, 0.75, <Layup>, 0, 3
+L1_IS_1, L1, Glass-Epoxy, 0.125, Datum csys-1.3, 0, 3
+L1_IS_2, L1, Glass-Epoxy, 0.125, Datum csys-1.3, 45, 3
+L1_IS_3, L1, Glass-Epoxy, 0.125, Datum csys-1.3, -45, 3
+L1_IS_4, L1, Glass-Epoxy, 0.125, Datum csys-1.3, 90, 3
+L1_Core, L1, Core, 8, Datum csys-1.3, 0, 3
+L1_OS_1, L1, Glass-Epoxy, 0.125, Datum csys-1.3, 90, 3
+L1_OS_2, L1, Glass-Epoxy, 0.125, Datum csys-1.3, -45, 3
+L1_OS_3, L1, Glass-Epoxy, 0.125, Datum csys-1.3, 45, 3
+L1_OS_4, L1, Glass-Epoxy, 0.125, Datum csys-1.3, 0, 3
+L2_IS_1, L2, Glass-Epoxy, 0.25, Datum csys-1.3, 0, 3
+L2_IS_2, L2, Glass-Epoxy, 0.25, Datum csys-1.3, 45, 3
+L2_IS_3, L2, Glass-Epoxy, 0.25, Datum csys-1.3, -45, 3
+L2_IS_4, L2, Glass-Epoxy, 0.25, Datum csys-1.3, 90, 3
+L2_Core, L2, Core, 15, Datum csys-1.3, 0, 3
+L2_OS_1, L2, Glass-Epoxy, 0.25, Datum csys-1.3, 90, 3
+L2_OS_2, L2, Glass-Epoxy, 0.25, Datum csys-1.3, -45, 3
+L2_OS_3, L2, Glass-Epoxy, 0.25, Datum csys-1.3, 45, 3
+L2_OS_4, L2, Glass-Epoxy, 0.25, Datum csys-1.3, 0, 3
+L3_IS_1, L3, Glass-Epoxy, 0.25, Datum csys-1.3, 0, 3
+L3_IS_2, L3, Glass-Epoxy, 0.25, Datum csys-1.3, 45, 3
+L3_IS_3, L3, Glass-Epoxy, 0.25, Datum csys-1.3, -45, 3
+L3_IS_4, L3, Glass-Epoxy, 0.25, Datum csys-1.3, 90, 3
+L3_Core, L3, Core, 15, Datum csys-1.3, 0, 3
+L3_OS_1, L3, Glass-Epoxy, 0.25, Datum csys-1.3, 90, 3
+L3_OS_2, L3, Glass-Epoxy, 0.25, Datum csys-1.3, -45, 3
+L3_OS_3, L3, Glass-Epoxy, 0.25, Datum csys-1.3, 45, 3
+L3_OS_4, L3, Glass-Epoxy, 0.25, Datum csys-1.3, 0, 3
+L4_IS_1, L4, Glass-Epoxy, 0.125, Datum csys-1.3, 0, 3
+L4_IS_2, L4, Glass-Epoxy, 0.125, Datum csys-1.3, 45, 3
+L4_IS_3, L4, Glass-Epoxy, 0.125, Datum csys-1.3, -45, 3
+L4_IS_4, L4, Glass-Epoxy, 0.125, Datum csys-1.3, 90, 3
+L4_Core, L4, Core, 15, Datum csys-1.3, 0, 3
+L4_OS_1, L4, Glass-Epoxy, 0.125, Datum csys-1.3, 90, 3
+L4_OS_2, L4, Glass-Epoxy, 0.125, Datum csys-1.3, -45, 3
+L4_OS_3, L4, Glass-Epoxy, 0.125, Datum csys-1.3, 45, 3
+L4_OS_4, L4, Glass-Epoxy, 0.125, Datum csys-1.3, 0, 3
+L5_IS_1, L5, Glass-Epoxy, 0.25, Datum csys-1.3, 0, 3
+L5_IS_2, L5, Glass-Epoxy, 0.25, Datum csys-1.3, 30, 3
+L5_IS_3, L5, Glass-Epoxy, 0.25, Datum csys-1.3, -30, 3
+L5_IS_4, L5, Glass-Epoxy, 0.25, Datum csys-1.3, 90, 3
+L5_Core, L5, Core, 8, Datum csys-1.3, 0, 3
+L5_OS_1, L5, Glass-Epoxy, 0.25, Datum csys-1.3, 90, 3
+L5_OS_2, L5, Glass-Epoxy, 0.25, Datum csys-1.3, -30, 3
+L5_OS_3, L5, Glass-Epoxy, 0.25, Datum csys-1.3, 30, 3
+L5_OS_4, L5, Glass-Epoxy, 0.25, Datum csys-1.3, 0, 3
+KEEL_LOCAL_PATCH-OS_1, KEEL_LOCAL, Glass-Epoxy, 7.5, <Layup>, 45, 3
+KEEL_LOCAL_PATCH-OS_2, KEEL_LOCAL, Glass-Epoxy, 7.5, <Layup>, -45, 3
+KEEL_LOCAL_PATCH, KEEL_LOCAL, Glass-Epoxy, 7.5, <Layup>, 0, 3
+KEEL_LOCAL_PATCH_IS-1, KEEL_LOCAL, Glass-Epoxy, 7.5, <Layup>, -45, 3
+KEEL_LOCAL_PATCH_IS-2, KEEL_LOCAL, Glass-Epoxy, 7.5, <Layup>, 45, 3
+HULL_BOTTOM_IS_1, HULL_BOTTOM, Glass-Epoxy, 1, <Layup>, 0, 3
+HULL_BOTTOM_IS_2, HULL_BOTTOM, Glass-Epoxy, 1, <Layup>, 45, 3
+HULL_BOTTOM_IS_3, HULL_BOTTOM, Glass-Epoxy, 1, <Layup>, -45, 3
+HULL_BOTTOM_IS_4, HULL_BOTTOM, Glass-Epoxy, 1.25, <Layup>, 90, 3
+HULL_BOTTOM_CORE, HULL_BOTTOM, Core, 40, <Layup>, 0, 3
+HULL_BOTTOM_OS_1, HULL_BOTTOM, Glass-Epoxy, 1.25, <Layup>, 90, 3
+HULL_BOTTOM_OS_2, HULL_BOTTOM, Glass-Epoxy, 1, <Layup>, -45, 3
+HULL_BOTTOM_OS_3, HULL_BOTTOM, Glass-Epoxy, 1, <Layup>, 45, 3
+HULL_BOTTOM_OS_4, HULL_BOTTOM, Glass-Epoxy, 1, <Layup>, 0, 3
+HULL_TOP_IS_1, HULL_TOP, Glass-Epoxy, 1, <Layup>, 0, 3
+HULL_TOP_IS_2, HULL_TOP, Glass-Epoxy, 1.25, <Layup>, 45, 3
+HULL_TOP_IS_3, HULL_TOP, Glass-Epoxy, 1.25, <Layup>, -45, 3
+HULL_TOP_IS_4, HULL_TOP, Glass-Epoxy, 1, <Layup>, 90, 3
+HULL_TOP_CORE, HULL_TOP, Core, 35, <Layup>, 0, 3
+HULL_TOP_OS_1, HULL_TOP, Glass-Epoxy, 1, <Layup>, 90, 3
+HULL_TOP_OS_2, HULL_TOP, Glass-Epoxy, 1.25, <Layup>, -45, 3
+HULL_TOP_OS_3, HULL_TOP, Glass-Epoxy, 1.25, <Layup>, 45, 3
+HULL_TOP_OS_4, HULL_TOP, Glass-Epoxy, 1, <Layup>, 0, 3
+HULL_TURN_IS_1, HULL_TURN, Glass-Epoxy, 0.75, <Layup>, 0, 3
+HULL_TURN_IS_2, HULL_TURN, Glass-Epoxy, 1.75, <Layup>, 45, 3
+HULL_TURN_IS_3, HULL_TURN, Glass-Epoxy, 1.75, <Layup>, -45, 3
+HULL_TURN_IS_4, HULL_TURN, Glass-Epoxy, 1, <Layup>, 90, 3
+HULL_TURN_CORE, HULL_TURN, Core, 40, <Layup>, 0, 3
+HULL_TURN_OS_1, HULL_TURN, Glass-Epoxy, 0.75, <Layup>, 90, 3
+HULL_TURN_OS_2, HULL_TURN, Glass-Epoxy, 1.75, <Layup>, -45, 3
+HULL_TURN_OS_3, HULL_TURN, Glass-Epoxy, 1.75, <Layup>, 45, 3
+HULL_TURN_OS_4, HULL_TURN, Glass-Epoxy, 0.75, <Layup>, 0, 3
+COCKPIT_PATCH_FWD_IS_1, COCKPIT_PATCH_FWD, Glass-Epoxy, 1, <Layup>, 0, 3
+COCKPIT_PATCH_AFT_IS_1, COCKPIT_PATCH_AFT, Glass-Epoxy, 1, <Layup>, 0, 3
+COCKPIT_IS_1, COCKPIT, Glass-Epoxy, 1.25, <Layup>, 0, 3
+COCKPIT_IS_2, COCKPIT, Glass-Epoxy, 0.5, <Layup>, 45, 3
+COCKPIT_IS_3, COCKPIT, Glass-Epoxy, 0.5, <Layup>, -45, 3
+COCKPIT_IS_4, COCKPIT, Glass-Epoxy, 0.5, <Layup>, 90, 3
+COCKPIT_CORE, COCKPIT, Core, 8, <Layup>, 0, 3
+COCKPIT_OS_1, COCKPIT, Glass-Epoxy, 0.5, <Layup>, 90, 3
+COCKPIT_OS_2, COCKPIT, Glass-Epoxy, 0.5, <Layup>, -45, 3
+COCKPIT_OS_3, COCKPIT, Glass-Epoxy, 0.5, <Layup>, 45, 3
+COCKPIT_OS_4, COCKPIT, Glass-Epoxy, 1.25, <Layup>, 0, 3
+COCKPIT_PATCH_FWD_OS_1, COCKPIT_PATCH_FWD, Glass-Epoxy, 1, <Layup>, 0, 3
+COCKPIT_PATCH_AFT_OS_1, COCKPIT_PATCH_AFT, Glass-Epoxy, 1, <Layup>, 0, 3
+AFT_IS_1, AFT, Glass-Epoxy, 1.25, <Layup>, 0, 3
+AFT_IS_2, AFT, Glass-Epoxy, 1.25, <Layup>, 45, 3
+AFT_IS_3, AFT, Glass-Epoxy, 1.25, <Layup>, -45, 3
+AFT_IS_4, AFT, Glass-Epoxy, 1.25, <Layup>, 90, 3
+AFT_CORE, AFT, Core, 25, <Layup>, 0, 3
+AFT_OS_1, AFT, Glass-Epoxy, 1.25, <Layup>, 90, 3
+AFT_OS_2, AFT, Glass-Epoxy, 1.25, <Layup>, -45, 3
+AFT_OS_3, AFT, Glass-Epoxy, 1.25, <Layup>, 45, 3
+AFT_OS_4, AFT, Glass-Epoxy, 1.25, <Layup>, 0, 3

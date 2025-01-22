@@ -1,0 +1,65 @@
+*HEADING
+Substructuring Workshop, part 1 task 2.
+Generate substructure for column.
+** This file is to be used in conjuction with the Superelements or 
+** Substructuring Lecture Series Workshop Problem
+**
+** Nodes
+**
+*NODE
+1, 0.,0.
+11,0.,2.4
+*NGEN
+1,11   
+**
+** Elements
+**
+*ELEMENT,TYPE=B21,ELSET=COLUMN
+1,1,2
+*ELGEN,ELSET=COLUMN
+1,10
+**
+** Element and material properties
+**
+*BEAM SECTION,SECTION=RECT,MATERIAL=STEEL,ELSET=COLUMN
+0.1 , 0.1
+*MATERIAL,NAME=STEEL
+*ELASTIC
+2.1E11 , 0.3
+*DENSITY
+7200.     ,   
+**
+** Calculate the mode shapes
+**
+*STEP
+*FREQUENCY, EIGENSOLVER=LANCZOS
+2, ,
+**
+** constrain degrees of freedom retained for the substructure
+**
+*BOUNDARY
+1, 1,2
+1, 6,6
+11,1,2
+11,6,6
+**
+*NODE PRINT,FREQUENCY=0
+*EL PRINT,FREQUENCY=0
+*END STEP
+**
+** substructure generation step
+**
+*STEP
+*SUBSTRUCTURE GENERATE,NAME=column,MASS MATRIX=YES,OVERWRITE
+**
+** Retained degrees of freedom
+**
+*RETAINED NODAL DOFS, SORTED=YES
+1, 1,2
+1, 6,6
+11,1,2
+11,6,6
+**
+*SELECT EIGENMODES
+1,2
+*END STEP

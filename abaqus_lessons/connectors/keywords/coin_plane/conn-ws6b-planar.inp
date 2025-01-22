@@ -1,0 +1,101 @@
+*HEADING
+*PREPRINT, ECHO=NO, HISTORY=NO, MODEL=NO, CONTACT=NO
+** ----------------------------------------------------------------
+** PART INSTANCE: PLANE-1
+**
+*NODE
+21, 0, -25, 25
+22, 0, 25, 25
+23, -5, -25, 25
+24, -5, 25, 25
+25, 0, -25, -25
+26, 0, 25, -25
+27, -5, -25, -25
+28, -5, 25, -25
+*ELEMENT, TYPE=C3D8R
+6, 25, 26, 28, 27, 21, 22, 24, 23
+*NSET, NSET=PLANE_NSET
+21, 22, 23, 24, 25, 26, 27, 28
+*ELSET, ELSET=PLANE_ELSET
+6
+*SOLIDSECTION, ELSET=PLANE_ELSET, MATERIAL=DUMMY
+, 
+** ----------------------------------------------------------------
+** PART INSTANCE: COIN-1
+**
+*NODE
+3, 0, -3.53553391, -3.53553391
+4, 0, 0, -5
+5, 0, 3.53553391, -3.53553391
+6, 0, 5, 0
+7, 0, 3.53553391, 3.53553391
+8, 0, 0, 5
+9, 0, -3.53553391, 3.53553391
+10, 0, -5, 0
+11, 0, 0, 0
+12, 2, -3.53553391, -3.53553391
+13, 2, 0, -5
+14, 2, 3.53553391, -3.53553391
+15, 2, 5, 0
+16, 2, 3.53553391, 3.53553391
+17, 2, 0, 5
+18, 2, -3.53553391, 3.53553391
+19, 2, -5, 0
+20, 2, 0, 0
+*ELEMENT, TYPE=C3D8R
+2, 20, 12, 19, 18, 11, 3, 10, 9
+3, 13, 12, 20, 14, 4, 3, 11, 5
+4, 20, 18, 17, 16, 11, 9, 8, 7
+5, 15, 14, 20, 16, 6, 5, 11, 7
+*NSET, NSET=COIN_NSET
+3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+19, 20
+*ELSET, ELSET=COIN_ELSET
+2, 3, 4, 5
+*SOLIDSECTION, ELSET=COIN_ELSET, MATERIAL=DUMMY
+,
+*NSET, NSET=PLANE-REFPT
+1
+*NSET, NSET=COIN-REFPT
+2 
+*RIGIDBODY, REFNODE=PLANE-REFPT, ELSET=PLANE_ELSET
+*RIGIDBODY, REFNODE=COIN-REFPT, ELSET=COIN_ELSET
+*NODE
+1, 0, 3.061617E-16, 0
+2, 0, 3.061617E-16, 0
+**
+**************************************************
+**Add Connector element definitions and Orientation
+**definiton here
+***************************************************
+**
+**
+**************************************************
+**Add Connector Behavior, including Elasticity,
+**Friction, Potential and Derived components here
+**************************************************
+**
+**
+**************************************************
+**Add Amplitude defintion here
+**************************************************
+*MATERIAL, NAME=DUMMY
+*DENSITY
+7800., 
+*ELASTIC
+2.06E+11, 0.3
+**
+**
+*STEP, NAME=TOSS, INC=200
+*STATIC
+0.001, 1., 1E-05, 0.01
+**************************************************
+**Add Boundary Conditions here
+**************************************************
+*RESTART, WRITE, FREQUENCY=0
+*OUTPUT, FIELD, VARIABLE=PRESELECT
+***************************************************
+**Add History Output requests here
+***************************************************
+*OUTPUT, HISTORY, VARIABLE=PRESELECT
+*ENDSTEP

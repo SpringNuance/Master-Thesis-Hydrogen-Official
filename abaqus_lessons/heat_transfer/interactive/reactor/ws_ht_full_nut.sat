@@ -1,0 +1,169 @@
+1200 0 1 0           
+36 Abaqus, Inc. - ABAQUS 6.6-DEV - 1405 14 ACIS 14.0.5 NT 24 Mon Aug 29 10:37:32 2005 
+1 9.9999999999999995e-007 1e-010 
+-0 body $1 -1 -1 $-1 $2 $-1 $3 F #
+-1 string_attrib-name_attrib-gen-attrib $-1 -1 $-1 $-1 $0 keep keep_kept ignore copy @13 HKS_PART_NAME @10 full_nut01 #
+-2 lump $4 -1 -1 $-1 $-1 $5 $0 F #
+-3 transform $-1 -1 1 0 0 0 1 0 0 0 1 0 0 0 1 no_rotate no_reflect no_shear #
+-4 cell_ptr-ct-attrib $-1 -1 $-1 $-1 $2 $6 $-1 auto #
+-5 shell $-1 -1 -1 $-1 $-1 $-1 $7 $-1 $2 F #
+-6 cell3d-cell $-1 -1 $8 $2 $-1 1 $9 #
+-7 face $10 -1 -1 $-1 $11 $12 $5 $-1 $13 forward double in F F #
+-8 cell3d-cell $-1 -1 $-1 $2 $-1 1 $14 #
+-9 cshell $-1 -1 $-1 $15 $6 #
+-10 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $7 $16 $17 #
+-11 face $18 -1 -1 $-1 $19 $20 $5 $-1 $13 forward double in F F #
+-12 loop $-1 -1 -1 $-1 $-1 $21 $7 F unknown #
+-13 plane-surface $-1 -1 -1 $-1 4 0 0 0 0 1 1 0 0 forward_v I I I I #
+-14 cshell $-1 -1 $-1 $22 $8 #
+-15 cface $-1 -1 $23 $9 $19 0 #
+-16 cface $-1 -1 $24 $9 $7 1 #
+-17 cface $-1 -1 $25 $14 $7 0 #
+-18 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $11 $26 $27 #
+-19 face $28 -1 -1 $-1 $29 $30 $5 $-1 $31 forward single F F #
+-20 loop $-1 -1 -1 $-1 $-1 $32 $11 F unknown #
+-21 coedge $-1 -1 -1 $-1 $33 $34 $35 $36 reversed $12 $-1 #
+-22 cface $-1 -1 $37 $14 $38 0 #
+-23 cface $-1 -1 $16 $9 $39 0 #
+-24 cface $-1 -1 $26 $9 $40 0 #
+-25 cface $-1 -1 $27 $14 $41 0 #
+-26 cface $-1 -1 $42 $9 $11 1 #
+-27 cface $-1 -1 $43 $14 $11 0 #
+-28 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $19 $-1 $15 #
+-29 face $44 -1 -1 $-1 $39 $45 $5 $-1 $46 forward single F F #
+-30 loop $-1 -1 -1 $-1 $-1 $47 $19 F unknown #
+-31 cone-surface $-1 -1 -1 $-1 0 6 0 0 -1 0 4 0 0 1 I I 0 1 4 forward I I I I #
+-32 coedge $-1 -1 -1 $-1 $48 $49 $50 $51 forward $20 $-1 #
+-33 coedge $-1 -1 -1 $-1 $52 $21 $53 $54 reversed $12 $-1 #
+-34 coedge $-1 -1 -1 $-1 $21 $52 $55 $56 reversed $12 $-1 #
+-35 coedge $-1 -1 -1 $-1 $57 $58 $59 $36 forward $60 $-1 #
+-36 edge $61 -1 -1 $-1 $62 0 $63 12 $35 $64 forward @7 unknown F #
+-37 cface $-1 -1 $17 $14 $29 0 #
+-38 face $65 -1 -1 $-1 $41 $66 $5 $-1 $31 forward single F F #
+-39 face $67 -1 -1 $-1 $68 $69 $5 $-1 $70 forward single F F #
+-40 face $71 -1 -1 $-1 $38 $72 $5 $-1 $46 forward single F F #
+-41 face $73 -1 -1 $-1 $-1 $74 $5 $-1 $70 forward single F F #
+-42 cface $-1 -1 $-1 $9 $75 0 #
+-43 cface $-1 -1 $-1 $14 $68 0 #
+-44 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $29 $-1 $37 #
+-45 loop $-1 -1 -1 $-1 $-1 $76 $29 F unknown #
+-46 plane-surface $-1 -1 -1 $-1 3.4375 12 0 0 1 0 -1 0 0 forward_v I I I I #
+-47 coedge $-1 -1 -1 $-1 $77 $78 $79 $80 forward $30 $-1 #
+-48 coedge $-1 -1 -1 $-1 $81 $32 $82 $83 forward $20 $-1 #
+-49 coedge $-1 -1 -1 $-1 $32 $81 $84 $85 forward $20 $-1 #
+-50 coedge $-1 -1 -1 $-1 $86 $87 $88 $51 forward $89 $-1 #
+-51 edge $90 -1 -1 $-1 $91 -6 $92 6 $50 $93 forward @7 unknown F #
+-52 coedge $-1 -1 -1 $-1 $34 $33 $94 $95 reversed $12 $-1 #
+-53 coedge $-1 -1 -1 $-1 $96 $97 $98 $54 forward $74 $-1 #
+-54 edge $99 -1 -1 $-1 $100 0 $62 1.125 $53 $101 forward @7 unknown F #
+-55 coedge $-1 -1 -1 $-1 $102 $103 $104 $56 forward $45 $-1 #
+-56 edge $105 -1 -1 $-1 $63 0 $106 1.125 $55 $107 forward @7 unknown F #
+-57 coedge $-1 -1 -1 $-1 $88 $35 $103 $108 reversed $60 $-1 #
+-58 coedge $-1 -1 -1 $-1 $35 $88 $96 $109 forward $60 $-1 #
+-59 coedge $-1 -1 -1 $-1 $87 $86 $21 $36 reversed $89 $-1 #
+-60 loop $-1 -1 -1 $-1 $-1 $88 $68 F unknown #
+-61 ptlist-eye-attrib $-1 -1 $-1 $-1 $36 #
+-62 vertex $110 -1 -1 $-1 $54 $111 #
+-63 vertex $112 -1 -1 $-1 $56 $113 #
+-64 straight-curve $-1 -1 -1 $-1 2.875 0 0 0 1 0 I I #
+-65 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $38 $-1 $22 #
+-66 loop $-1 -1 -1 $-1 $-1 $79 $38 F unknown #
+-67 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $39 $-1 $23 #
+-68 face $114 -1 -1 $-1 $75 $60 $5 $-1 $115 forward single F F #
+-69 loop $-1 -1 -1 $-1 $-1 $84 $39 F unknown #
+-70 plane-surface $-1 -1 -1 $-1 3.4375 0 0 0 -1 0 1 0 0 forward_v I I I I #
+-71 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $40 $-1 $24 #
+-72 loop $-1 -1 -1 $-1 $-1 $82 $40 F unknown #
+-73 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $41 $-1 $25 #
+-74 loop $-1 -1 -1 $-1 $-1 $116 $41 F unknown #
+-75 face $117 -1 -1 $-1 $40 $89 $5 $-1 $115 forward single F F #
+-76 coedge $-1 -1 -1 $-1 $103 $102 $48 $83 reversed $45 $-1 #
+-77 coedge $-1 -1 -1 $-1 $118 $47 $119 $120 reversed $30 $-1 #
+-78 coedge $-1 -1 -1 $-1 $47 $118 $121 $122 forward $30 $-1 #
+-79 coedge $-1 -1 -1 $-1 $123 $124 $81 $80 reversed $66 $-1 #
+-80 edge $125 -1 -1 $-1 $126 -6 $127 6 $47 $128 forward @7 unknown F #
+-81 coedge $-1 -1 -1 $-1 $49 $48 $47 $80 forward $20 $-1 #
+-82 coedge $-1 -1 -1 $-1 $121 $129 $76 $83 forward $72 $-1 #
+-83 edge $130 -1 -1 $-1 $92 6.59375 $126 7.71875 $82 $131 forward @7 unknown F #
+-84 coedge $-1 -1 -1 $-1 $132 $119 $116 $85 forward $69 $-1 #
+-85 edge $133 -1 -1 $-1 $127 -7.71875 $91 -6.59375 $84 $134 forward @7 unknown F #
+-86 coedge $-1 -1 -1 $-1 $59 $50 $129 $135 reversed $89 $-1 #
+-87 coedge $-1 -1 -1 $-1 $50 $59 $132 $136 forward $89 $-1 #
+-88 coedge $-1 -1 -1 $-1 $58 $57 $32 $51 reversed $60 $-1 #
+-89 loop $-1 -1 -1 $-1 $-1 $50 $75 F unknown #
+-90 ptlist-eye-attrib $-1 -1 $-1 $-1 $51 #
+-91 vertex $137 -1 -1 $-1 $109 $138 #
+-92 vertex $139 -1 -1 $-1 $108 $140 #
+-93 straight-curve $-1 -1 -1 $-1 -2.875 6 0 0 1 0 I I #
+-94 coedge $-1 -1 -1 $-1 $124 $123 $118 $95 forward $66 $-1 #
+-95 edge $141 -1 -1 $-1 $106 0 $100 12 $94 $142 forward @7 unknown F #
+-96 coedge $-1 -1 -1 $-1 $116 $53 $58 $109 reversed $74 $-1 #
+-97 coedge $-1 -1 -1 $-1 $53 $116 $124 $143 forward $74 $-1 #
+-98 coedge $-1 -1 -1 $-1 $119 $132 $33 $54 reversed $69 $-1 #
+-99 ptlist-eye-attrib $-1 -1 $-1 $-1 $54 #
+-100 vertex $144 -1 -1 $-1 $54 $145 #
+-101 straight-curve $-1 -1 -1 $-1 4 0 0 -1 0 0 I I #
+-102 coedge $-1 -1 -1 $-1 $76 $55 $123 $146 reversed $45 $-1 #
+-103 coedge $-1 -1 -1 $-1 $55 $76 $57 $108 forward $45 $-1 #
+-104 coedge $-1 -1 -1 $-1 $129 $121 $34 $56 reversed $72 $-1 #
+-105 ptlist-eye-attrib $-1 -1 $-1 $-1 $56 #
+-106 vertex $147 -1 -1 $-1 $95 $148 #
+-107 straight-curve $-1 -1 -1 $-1 2.875 12 0 1 0 0 I I #
+-108 edge $149 -1 -1 $-1 $92 3.1415926535897931 $63 6.2831853071795862 $103 $150 forward @7 unknown F #
+-109 edge $151 -1 -1 $-1 $91 3.1415926535897931 $62 6.2831853071795862 $58 $152 forward @7 unknown F #
+-110 ptlist-eye-attrib $-1 -1 $-1 $-1 $62 #
+-111 point $-1 -1 -1 $-1 2.875 0 0 #
+-112 ptlist-eye-attrib $-1 -1 $-1 $-1 $63 #
+-113 point $-1 -1 -1 $-1 2.875 12 0 #
+-114 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $68 $-1 $43 #
+-115 cone-surface $-1 -1 -1 $-1 0 6 0 0 -1 0 2.875 0 0 1 I I 0 -1 2.875 forward I I I I #
+-116 coedge $-1 -1 -1 $-1 $97 $96 $49 $85 reversed $74 $-1 #
+-117 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $75 $-1 $42 #
+-118 coedge $-1 -1 -1 $-1 $78 $77 $52 $95 reversed $30 $-1 #
+-119 coedge $-1 -1 -1 $-1 $84 $98 $77 $120 forward $69 $-1 #
+-120 edge $153 -1 -1 $-1 $100 0 $127 3.1415926535897931 $119 $154 forward @7 unknown F #
+-121 coedge $-1 -1 -1 $-1 $104 $82 $78 $122 reversed $72 $-1 #
+-122 edge $155 -1 -1 $-1 $106 0 $126 3.1415926535897931 $78 $156 forward @7 unknown F #
+-123 coedge $-1 -1 -1 $-1 $94 $79 $102 $146 forward $66 $-1 #
+-124 coedge $-1 -1 -1 $-1 $79 $94 $97 $143 reversed $66 $-1 #
+-125 ptlist-eye-attrib $-1 -1 $-1 $-1 $80 #
+-126 vertex $157 -1 -1 $-1 $146 $158 #
+-127 vertex $159 -1 -1 $-1 $143 $160 #
+-128 straight-curve $-1 -1 -1 $-1 -4 6 0 0 -1 0 I I #
+-129 coedge $-1 -1 -1 $-1 $82 $104 $86 $135 forward $72 $-1 #
+-130 ptlist-eye-attrib $-1 -1 $-1 $-1 $83 #
+-131 straight-curve $-1 -1 -1 $-1 3.71875 12 0 -1 0 0 I I #
+-132 coedge $-1 -1 -1 $-1 $98 $84 $87 $136 reversed $69 $-1 #
+-133 ptlist-eye-attrib $-1 -1 $-1 $-1 $85 #
+-134 straight-curve $-1 -1 -1 $-1 3.71875 0 0 1 0 0 I I #
+-135 edge $161 -1 -1 $-1 $63 0 $92 3.1415926535897931 $129 $150 forward @7 unknown F #
+-136 edge $162 -1 -1 $-1 $62 0 $91 3.1415926535897931 $87 $152 forward @7 unknown F #
+-137 ptlist-eye-attrib $-1 -1 $-1 $-1 $91 #
+-138 point $-1 -1 -1 $-1 -2.875 0 0 #
+-139 ptlist-eye-attrib $-1 -1 $-1 $-1 $92 #
+-140 point $-1 -1 -1 $-1 -2.875 12 0 #
+-141 ptlist-eye-attrib $-1 -1 $-1 $-1 $95 #
+-142 straight-curve $-1 -1 -1 $-1 4 12 0 0 -1 0 I I #
+-143 edge $163 -1 -1 $-1 $127 3.1415926535897931 $100 6.2831853071795862 $97 $154 forward @7 unknown F #
+-144 ptlist-eye-attrib $-1 -1 $-1 $-1 $100 #
+-145 point $-1 -1 -1 $-1 4 0 0 #
+-146 edge $164 -1 -1 $-1 $126 3.1415926535897931 $106 6.2831853071795862 $123 $156 forward @7 unknown F #
+-147 ptlist-eye-attrib $-1 -1 $-1 $-1 $106 #
+-148 point $-1 -1 -1 $-1 4 12 0 #
+-149 ptlist-eye-attrib $-1 -1 $-1 $-1 $108 #
+-150 ellipse-curve $-1 -1 -1 $-1 0 12 0 0 -1 0 2.875 0 0 1 I I #
+-151 ptlist-eye-attrib $-1 -1 $-1 $-1 $109 #
+-152 ellipse-curve $-1 -1 -1 $-1 0 0 0 0 -1 0 2.875 0 0 1 I I #
+-153 ptlist-eye-attrib $-1 -1 $-1 $-1 $120 #
+-154 ellipse-curve $-1 -1 -1 $-1 0 0 0 0 -1 0 4 0 0 1 I I #
+-155 ptlist-eye-attrib $-1 -1 $-1 $-1 $122 #
+-156 ellipse-curve $-1 -1 -1 $-1 0 12 0 0 -1 0 4 0 0 1 I I #
+-157 ptlist-eye-attrib $-1 -1 $-1 $-1 $126 #
+-158 point $-1 -1 -1 $-1 -4 12 0 #
+-159 ptlist-eye-attrib $-1 -1 $-1 $-1 $127 #
+-160 point $-1 -1 -1 $-1 -4 0 0 #
+-161 ptlist-eye-attrib $-1 -1 $-1 $-1 $135 #
+-162 ptlist-eye-attrib $-1 -1 $-1 $-1 $136 #
+-163 ptlist-eye-attrib $-1 -1 $-1 $-1 $143 #
+-164 ptlist-eye-attrib $-1 -1 $-1 $-1 $146 #
+End-of-ACIS-data 

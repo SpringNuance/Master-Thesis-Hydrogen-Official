@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='cse_config_transform.xsl'?>
+<CoupledMultiphysicsSimulation>
+   <header>
+      <SchemaVersion>1.1</SchemaVersion>
+   </header>
+   <components>
+      <component name="...">
+         <bottomUpImplementation>
+            <codeName>...</codeName>
+         </bottomUpImplementation>
+      </component>
+      <component name="...">
+         <topDownImplementation></topDownImplementation>
+      </component>
+   </components>
+   <componentInstances>
+      <componentInstance modelIdentifier="..." name="...">
+         <component>...</component>
+      </componentInstance>
+      <componentInstance modelIdentifier="..." name="...">
+         <component>...</component>
+      </componentInstance>
+   </componentInstances>
+   <connectors>
+      <connector name="...">
+         <componentInstance>...</componentInstance>
+         <variables>
+            <input>
+               <variable>...</variable>
+               ...
+            </input>
+            <output>
+               <variable>...</variable>
+               ...
+            </output>
+         </variables>
+      </connector>
+      <connector name="...">
+         <componentInstance>...</componentInstance>
+         <variables>
+            <input>
+               <variable>...</variable>
+               ...
+            </input>
+            <output>
+               <variable>...</variable>
+               ...
+            </output>
+         </variables>
+      </connector>
+   </connectors>
+   <connectionSets>
+      <connectionSet name="...">
+         <connection>
+            <connector>...</connector>
+            ...
+         </connection>
+      </connectionSet>
+   </connectionSets>
+   <execution>
+      <compositeActors>
+         <compositeActor name="ContinuousTime">
+            <actors>
+               <atomicActor>...</atomicActor>
+               ...
+            </actors>
+            <modelOfComputation>
+               <continuousTime>
+                  <algorithm>...</algorithm>
+                  <negotiationMethod>...</negotiationMethod>
+                  <constantDt>...</constantDt>
+               </continuousTime>
+            </modelOfComputation>
+         </compositeActor>
+      </compositeActors>
+      <connectionGroups>
+         <connectionCategory name="Parameters">
+            <connectionSet>...</connectionSet>
+         </connectionCategory>
+         <connectionCategory name="CouplingStep">
+            <connectionSet>...</connectionSet>
+         </connectionCategory>
+      </connectionGroups>
+      <scenario>
+         <duration>...</duration>
+      </scenario>
+   </execution>
+</CoupledMultiphysicsSimulation>

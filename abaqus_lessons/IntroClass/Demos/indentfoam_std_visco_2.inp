@@ -1,0 +1,197 @@
+*HEADING
+ DYNAMIC LOADING OF AN ELASTOMERIC, VISCOELASTIC 
+ FOAM BLOCK
+**************************************************
+** Step 1: Apply a gravity load on the point mass 
+   of the punch in a visco step and let the foam 
+   relax fully.
+** Step 2: Apply a sinusoidal half-wave force on 
+   the punch and measure the displacement, velocity
+   and acceleration response in a dynamic step.
+** Step 3: After removing the force, continue 
+   measuring the dynamic response.
+** (Units: N, mm, sec)
+**************************************************
+*PREPRINT,MODEL=YES,HISTORY=NO
+*RESTART,WRITE
+*NODE
+  1,    0., 300.
+ 19,    0.,   0.
+ 481, 300., 300.
+ 499, 300.,   0.
+ 601, 600., 300.
+ 619, 600.,   0.
+*NSET,NSET=N1
+ 1, 
+*NSET,NSET=N19
+ 19, 
+*NSET,NSET=N481
+ 481, 
+*NSET,NSET=N499
+ 499, 
+*NFILL,NSET=TOP,BIAS=.85
+ N1,N481,12,40
+*NGEN,NSET=TOP
+ 481,601,40
+*NFILL,NSET=BOT,BIAS=.85
+ N19,N499,12,40
+*NGEN,NSET=BOT
+ 499,619,40
+*NFILL,NSET=ALLN,BIAS=.9
+ TOP,BOT,9,2
+*NSET,NSET=CENTER,GENERATE
+ 1,19
+*ELEMENT,TYPE=CAX4
+ 1,3,43,41,1
+*ELGEN,ELSET=FOAM
+ 1,15,40,10,9,2,1
+*ELSET,ELSET=CENT,GENERATE
+ 1,141,10
+ 61,69
+*ELSET,ELSET=ETOP,GENERATE
+ 1,101,10
+*ELSET,ELSET=UPPER,GEN
+ 1,141,10
+*NODE,NSET=PUNCH
+ 1000,0.,500.
+*ELEMENT,TYPE=MASS,ELSET=PMASS
+ 1001,1000
+*MASS,ELSET=PMASS
+ 0.2, 
+*SOLID SECTION,ELSET=FOAM,MATERIAL=FOAM,
+ORIENTATION=RECT
+*ORIENTATION,NAME=RECT,SYSTEM=RECTANGULAR
+ 1.,0.,0., 0.,1.,0.
+ 3,0.
+******************************************
+*MATERIAL,NAME=FOAM
+*HYPERFOAM,N=2,TEST DATA INPUT,POISSON=0.0,
+MODULI=INSTANTANEOUS
+*UNIAXIAL TEST DATA
+ -.0217,   -.05
+ -.0317,   -.10
+ -.0367,   -.15
+ -.0402,   -.20                              
+ -.0433,   -.25
+ -.0467,   -.30
+ -.0504,   -.35
+ -.0542,   -.40
+ -.0604,   -.45
+ -.0668,   -.50
+ -.0759,   -.55
+ -.0909,   -.60
+ -.1083,   -.65
+ -.1410,   -.70
+ -.1933,   -.75
+ -.2896,   -.80
+*SIMPLE SHEAR TEST DATA      
+  .0140, .08, .0046
+  .0334, .16, .0166
+  .0533, .24, .0366
+  .0853, .32, .0573
+  .1280, .40, .0817
+  .1653, .48, .1098
+  .2080, .56, .1394
+  .2560, .64, .1666
+  .2987, .72, .1904
+*VISCOELASTIC,TIME=RELAXATION TEST DATA
+*SHEAR TEST DATA,SHRINF=0.5000
+ 1.0000, 0.0001
+ 0.9695, 0.001
+ 0.9417, 0.002
+ 0.8722, 0.005
+ 0.7913, 0.010
+ 0.7043, 0.020
+ 0.6233, 0.050
+ 0.5736, 0.100
+ 0.5271, 0.200
+ 0.5013, 0.500
+ 0.5000, 1.000
+*DENSITY
+ 1.E-11, 
+*********************************************
+*BOUNDARY
+ BOT,1,2     
+ CENTER,1
+ 1000,1
+ 1000,6
+*********************************************
+*SURFACE,TYPE=SEGMENTS,NAME=IMPACTOR
+ START,141.42,641.42
+ CIRCL,-1.,300.,0.,500.
+*SURFACE,TYPE=ELEMENT,NAME=TARGET
+ ETOP,S3
+*RIGID BODY,REF NODE=1000,
+ANALYTICAL SURFACE=IMPACTOR
+*CONTACT PAIR,INTERACTION=ROUGH
+ TARGET,IMPACTOR
+*SURFACE INTERACTION,NAME=ROUGH
+*FRICTION
+ 0.8,
+*********************************************
+*AMPLITUDE,NAME=RAMP,VALUE=RELATIVE
+** Ramp to full load in 2 sec
+ 0.,0., 2.,1., 10.,1.
+*AMPLITUDE,NAME=SINE,DEFINITION=PERIODIC,
+VALUE=ABSOLUTE
+** Force amplitude=5000 N of a half-sine wave
+** for a 1 sec period
+ 1,3.1416,0.,0.
+ 0.,-5000.
+*********************************************
+*STEP,NLGEOM,INC=100,UNSYMM=YES
+ Apply gravity force.
+*VISCO,CETOL=0.01
+.01,5.
+*DLOAD,AMPLITUDE=RAMP
+ PMASS,GRAV,9810.,0.,-1.,0.
+*OUTPUT,FIELD,FREQUENCY=10
+*CONTACT OUTPUT,SECONDARY=TARGET,MAIN=IMPACTOR,
+VARIABLE=PRESELECT
+*NODE OUTPUT
+ U,V,A,RF
+*ELEMENT OUTPUT,ELSET=FOAM
+ S,LE
+*OUTPUT,HISTORY,FREQUENCY=1
+*NODE OUTPUT,NSET=PUNCH
+ U,V,A,RF
+*ELEMENT OUTPUT,ELSET=CENT
+ MISES,LE22,S22
+*PRINT,CONTACT=YES
+*ENERGY PRINT,FREQUENCY=5
+*ENERGY PRINT,ELSET=FOAM,FREQ=5
+*ENERGY PRINT,ELSET=CENT,FREQ=5
+*CONTACT PRINT,SECONDARY=TARGET
+**CONTACT FILE,SECONDARY=TARGET,FREQUENCY=10
+*EL PRINT,FREQUENCY=20,ELSET=CENT                                          
+ S, 
+ SINV, 
+ LE, 
+ EE, 
+ CE, 
+ LOADS, 
+*NODE PRINT,FREQUENCY=20
+ U, 
+ CF,RF
+*END STEP
+********************************************
+*STEP,NLGEOM,INC=200,UNSYMM=YES
+ Apply dynamic load.
+*DYNAMIC,HAFTOL=4000. 
+ .01,1.
+*DLOAD
+ PMASS,GRAV,9810.,0.,-1.,0.
+*CLOAD,AMPLITUDE=SINE
+ 1000,2
+*END STEP
+********************************************
+*STEP,NLGEOM,INC=300,UNSYMM=YES
+ Remove load.
+*DYNAMIC,HAFTOL=4000.,INITIAL=NO
+ .01,10.
+*DLOAD
+ PMASS,GRAV,9810.,0.,-1.,0.
+*CLOAD,OP=NEW
+*END STEP
+
+

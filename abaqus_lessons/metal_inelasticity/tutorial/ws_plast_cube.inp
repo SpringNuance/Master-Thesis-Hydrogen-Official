@@ -1,0 +1,41 @@
+*heading
+  plasticity tutorial stress state verification
+  uniaxial compression
+*node
+1,0.,0.,0.
+2,1.,0.,0.
+3,1.,1.,0.
+4,0.,1.,0.
+5,0.,0.,1.
+6,1.,0.,1.
+7,1.,1.,1.
+8,0.,1.,1.
+*nset,nset=back
+1,2,3,4
+*nset,nset=front
+5,6,7,8
+*nset,nset=left
+1,4,5,8
+*nset,nset=right
+2,3,6,7
+*nset,nset=bottom
+1,2,5,6
+*nset,nset=top
+3,4,7,8
+*element,type=c3d8r,elset=one
+1,1,2,3,4,5,6,7,8
+*solid section,elset=one,material=mat1
+*material,name=mat1
+*elastic
+2.e11,0.3
+*boundary
+left,xsymm
+bottom,ysymm
+back,zsymm
+**
+*step,nlgeom
+*static
+1.,1.
+*dload
+1,p2,1.e4
+*end step

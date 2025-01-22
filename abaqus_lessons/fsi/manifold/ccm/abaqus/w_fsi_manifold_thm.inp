@@ -1,0 +1,79 @@
+*Heading
+**
+** PARTS
+**
+*Part, name=manifold
+*Node, input=w_fsi_manifold_node.inp
+*Element, type=DC3D4, elset=eall, input=w_fsi_manifold_elem.inp
+*Solid Section, elset=eall, material="GRAY CAST IRON"
+*End Part
+**  
+**
+** ASSEMBLY
+**
+*Assembly, name=Assembly
+**  
+*Instance, name=manifold-1, part=manifold
+*End Instance
+**  
+*Include, input=w_fsi_manifold_sets.inp
+*End Assembly
+** 
+** MATERIALS
+** 
+*Material, name="GRAY CAST IRON"
+*Conductivity
+ 55.,
+*Density
+ 7817.,
+*Elastic
+ 1.38e+11, 0.283
+*Expansion
+ 1.38e-05,
+*Plastic
+   3.25e+08,        0.,      293.
+   3.75e+08,  0.000192,      293.
+      4e+08,  0.000351,      293.
+   4.25e+08,   0.00092,      293.
+  4.375e+08,    0.0018,      293.
+  2.625e+08,        0.,      573.
+      3e+08,   7.6e-05,      573.
+   3.25e+08,  0.000395,      573.
+    3.5e+08,    0.0019,      573.
+   2.25e+08,        0.,      773.
+    2.5e+08,  0.000188,      773.
+  2.625e+08, 0.0005978,      773.
+   2.75e+08,  0.001257,      773.
+ 2.8125e+08,   0.00196,      773.
+    2.5e+07,        0.,      973.
+   3.75e+07,  0.000478,      973.
+      5e+07, 0.0011376,      973.
+   5.15e+07,  0.003627,      973.
+   1.25e+07,        0.,     1173.
+  1.875e+07, 0.0004889,     1173.
+    2.5e+07,   0.00082,     1173.
+  3.125e+07,   0.00177,     1173.
+*Specific Heat
+ 446.,
+** 
+*Initial Conditions, type=TEMPERATURE
+ ALL, 300.
+** ----------------------------------------------------------------
+** 
+** STEP: Coupled
+** 
+*Step, name=Coupled, amplitude=STEP
+Steady-state analysis of exhaust gases in the manifold
+*Heat Transfer, steady state
+ 0.1, 1., 0.1, 0.1, 
+** 
+*Boundary
+ INLET, 11, 11, 500.
+** 
+*Sfilm
+ EXTERIOR, F, 300., 6.
+** 
+*Restart, write, frequency=0
+*Output, field, variable=PRESELECT
+*Output, history, frequency=0
+*End Step

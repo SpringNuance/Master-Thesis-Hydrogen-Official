@@ -1,0 +1,69 @@
+*HEADING
+BUILDING A HINGE CONNECTION
+***********************************
+**
+** VIEW GEOMETRY DEFINITION
+**
+***********************************
+*NODE
+1,0.,0.,0.
+2,10.,0.,0.
+3,10.,0.,10.
+4,0.,0.,10.
+1000,5.,0.,5.
+11,0.,0.,0.
+12,0.,0.,10.
+13,0.,10.,10.
+14,0.,10.,0.
+2000,0.,5.,5.
+*ELEMENT,TYPE=S4R,ELSET=XZSURF
+1,1,2,3,4
+*ELEMENT,TYPE=S4R,ELSET=YZSURF
+2,11,12,13,14
+*SHELL SECTION,ELSET=XZSURF,MATERIAL=DUMMY
+1.,
+*SHELL SECTION,ELSET=YZSURF,MATERIAL=DUMMY
+1.,
+*MATERIAL,NAME=DUMMY
+*ELASTIC
+1.,0.
+*RIGID BODY,ELSET=XZSURF,REF NODE=1000
+*RIGID BODY,ELSET=YZSURF,REF NODE=2000
+************************************
+**
+** HINGE CONNECTOR ELEMENT DEFINITION
+**
+************************************
+**
+**
+** ADD ORIENTATION AND CONNECTOR DEFINITIONS HERE
+**
+**
+************************************
+**
+*************************************
+**
+** ADD BOUNDARY CONDITIONS FOR
+** INITIAL STEP
+**
+*************************************
+** STEP DEFINITIONS
+**
+************************************
+*STEP,NLGEOM,INC=100
+APPLY X-DISPLACEMENT TO RIGID BODY REF NODE 2000
+*STATIC
+0.1,1.0,,0.1
+*************************************
+**
+** ADD BOUNDARY CONDITIONS FOR 
+** FIRST STEP
+**
+*************************************
+*************************************
+**
+** ADD CONNECTOR OUTPUT TO ODB 
+** FOR VISUALIZATION
+**
+*************************************
+*END STEP

@@ -1,0 +1,77 @@
+*INCLUDE, INPUT=w_storage-rack-data.inp
+**
+**
+**  ------------------------  Model Data ----------------------------
+**
+**  Enter a heading (title) for the simulation 
+**
+*HEADING
+**
+** 
+** MATERIALS
+** 
+**  UNITS:
+**  mass = metric tonne  = 1000Kg
+**  length = millimeter = 1/1000 meter
+**  time = seconds
+**  force = newton = mass * acceleration
+**  Stress = MPa  = 1e6 Pascals
+**  STIFFNESS = n/mm
+** 
+*MATERIAL, NAME=DUMMY
+*DENSITY
+ 1E-20,
+*ELASTIC
+1., 0.3
+**
+**
+*MATERIAL, NAME=STEEL
+*DENSITY
+ 7.77E-09,
+*ELASTIC
+200000., 0.3
+**
+**
+**   ******************  Add Spectrum Definiiton ********************
+**
+*Spectrum,
+**
+** 
+**  ------------------------- HISTORY DATA -----------------------------
+** 
+**  FREQUENCY STEP
+** 
+*STEP, NAME=STEP-1, NLGEOM=NO, PERTURBATION
+FIXED BASE FREQUENCIES OF A STORAGE RACK SYSTEM
+*FREQUENCY, EIGENSOLVER=LANCZOS, SIM, ACOUSTIC COUPLING=PROJECTION, NORMALIZATION=MASS
+, , 40., , , 
+** 
+*RESTART, WRITE, FREQUENCY=0
+** 
+*OUTPUT, FIELD
+*ELEMENT OUTPUT, DIRECTIONS=YES
+S, 
+** 
+*NODE OUTPUT
+U,
+*END STEP
+**
+** ------------------- RESPONSE SPECTRUM STEP 1 ---------------------------------------------
+**
+**
+*STEP, NAME=HORIZONTAL-X, NLGEOM=NO, PERTURBATION
+Add Description
+*RESPONSE SPECTRUM, 
+** 
+** 
+*OUTPUT, FIELD
+*NODE OUTPUT
+U, 
+*ELEMENT OUTPUT, DIRECTIONS=YES
+S, 
+** 
+** 
+*OUTPUT, HISTORY
+*MODAL OUTPUT
+GA, GU, GV, KE, SNE, T
+*END STEP

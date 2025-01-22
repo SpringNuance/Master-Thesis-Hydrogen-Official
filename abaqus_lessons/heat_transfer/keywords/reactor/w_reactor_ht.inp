@@ -1,0 +1,128 @@
+*Heading
+** Job name: reactor-ht Model name: thermal
+*Preprint, echo=NO, model=NO, history=NO, contact=NO
+**
+** PARTS
+**
+*Part, name=full_bolt
+*Include, input=w_reactor_ht_full_bolt.inp
+** ----------------------------------------------------------------
+** Add section to part full_bolt
+**
+*End Part
+**
+**
+**
+*Part, name=full_nut
+*Include, input=w_reactor_ht_full_nut.inp
+** ----------------------------------------------------------------
+** Add section to part full_nut
+**
+*End Part
+**
+**
+**
+*Part, name=half_bolt
+*Include, input=w_reactor_ht_half_bolt.inp
+** ----------------------------------------------------------------
+** Add section to part half_bolt
+**
+*End Part
+**
+**
+**
+*Part, name=half_nut
+*Include, input=w_reactor_ht_half_nut.inp
+** ----------------------------------------------------------------
+** Add section to part half_nut
+**
+*End Part
+**
+**
+**
+*Part, name=head
+*Include, input=w_reactor_ht_head.inp
+** ----------------------------------------------------------------
+** Add section to part head
+**
+*End Part
+**
+**
+**
+*Part, name=seal
+*Include, input=w_reactor_ht_seal.inp
+** ----------------------------------------------------------------
+** Add section to part seal
+**
+*End Part
+**
+**
+**
+*Part, name=vessel
+*Include, input=w_reactor_ht_vessel.inp
+** ----------------------------------------------------------------
+** Add section to part vessel
+**
+*End Part
+**
+**
+** ASSEMBLY
+**
+*Assembly, name=Assembly
+*include, input=w_reactor_ht_assembly.inp
+**
+** ----------------------------------------------------------------
+** Merge Surfaces
+**
+** Surface: inner-hot
+**
+** Surface: outerSurface
+**
+** Surface: top-nut-contact
+**
+** Surface: bot-nut-contact
+**
+** Surface: boltShanks
+**
+** Surface: nutsInner
+**
+** Surface: vessel-head-to-seal
+**
+** ----------------------------------------------------------------
+** Add tie contraint to tie the seal on the head and the vessel
+**
+**
+*End Assembly
+**
+** ----------------------------------------------------------------
+** Add material definitions -- steel (Type 1)
+**
+** ----------------------------------------------------------------
+** Add material definitions -- steel (Type 2)
+** 
+** ----------------------------------------------------------------
+** Add amplitude curves
+**
+** ----------------------------------------------------------------
+** Add interaction properties
+**
+** ----------------------------------------------------------------
+** Add interactions
+** 
+** ----------------------------------------------------------------
+** Add initial temperature
+**
+**
+** HISTORY DATA
+** ----------------------------------------------------------------
+** Add the first step definition
+** 
+** ----------------------------------------------------------------
+** Add surfce-based film conditions
+** 
+** ----------------------------------------------------------------
+** Add output request
+** 
+** ----------------------------------------------------------------
+** Add the second step definition
+** 

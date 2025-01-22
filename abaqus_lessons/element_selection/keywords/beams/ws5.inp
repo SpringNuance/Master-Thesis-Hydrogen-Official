@@ -1,0 +1,37 @@
+*HEADING
+UNIVERSAL BEAM MODEL
+Note: This file intended for use with the Element Selection Lecture Series
+*NODE
+1, 0.0, 0.0, 0.0
+11, 10.0E3, 0.0, 0.0
+*NGEN, NSET=ALL
+1,11
+**
+*ELEMENT, TYPE=     
+1, 1,2
+*ELGEN, ELSET=CANT
+1, 10,1,1
+**
+*MATERIAL, NAME=STEEL
+*DENSITY
+7.7E-09
+*ELASTIC
+207.0E3, 0.3
+**
+*BOUNDARY
+1, ENCASTRE
+**
+*AMPLITUDE, NAME=SMOOTH, DEFINITION=SMOOTH STEP
+0., 0., 0.9, 1.
+**
+** Bending load
+**
+*STEP, PERTURBATION
+*STATIC
+*CLOAD
+11,2,1E4
+*NODE PRINT
+U, 
+*EL PRINT
+SF, 
+*ENDSTEP

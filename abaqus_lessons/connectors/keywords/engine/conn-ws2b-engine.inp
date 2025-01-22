@@ -1,0 +1,184 @@
+*HEADING
+*PREPRINT, CONTACT=YES
+***************************************
+**
+** Include files for geometry and non-connector
+** definitions
+**
+***************************************
+*INCLUDE,INPUT=conn-ws2b-view_geom_nds.inp
+*INCLUDE,INPUT=conn-ws2b-view_geom_els.inp
+*INCLUDE,INPUT=conn-ws2b-surf_defs.inp
+*INCLUDE,INPUT=conn-ws2b-rigidbody_defs.inp
+***************************************
+**
+** Nodes for use in connector definitions
+**
+***************************************
+*NODE
+1, -5, 0, 40.0595
+2, 0, 0, 80
+3, -5, 0, -29.9405
+4, 5, 0, -29.9405
+5, -5, 0, 40.0595
+6, -5, 0, -29.9405
+7, -120, 0, -44.9405
+8, 5, 0, -29.9405
+9, 36, 0, -44.9405
+10, 35, 0, -14.9405
+11, 0, -7.5, 107
+12, 0, -7.5, 93
+13, 0, 7.5, 107
+14, 0, 7.5, 93
+15, 30.5, -7.5, 106
+16, 0, -7.5, 107
+17, 22.027, -7., 105.799
+18, 31.5, 7.5, 106
+19, 0, 7.5, 107
+20, 22.027, 7., 105.799
+21, 30.5, -7.5, 7.30213
+22, 31, 0, 6.30213
+23, 31.5, 7.5, 7.30213
+24, 32, 0, 6.30213
+25, 31.5, 7.5, 7.30213
+26, 31.5, 7.5, 106
+27, 30.5, -7.5, 7.30213
+28, 30.5, -7.5, 106
+29, 35, 0, -14.9405
+30, 0, 0, 80
+31, 22.027, -7., 105.799
+32, 22.027, 7., 105.799
+33, 31, 0, 6.30213
+34, 32, 0, 6.30213
+35, -120, 0, -44.9405
+**********************************
+**
+** Nsets
+**
+**********************************
+*NSET, NSET=CRANK_SHAFT1_GROUNDNODE
+35
+*NSET, NSET=CRANK_SHAFT1_TIENODES
+6, 7
+*NSET, NSET=CRANK_SHAFT2_GROUNDNODE
+9
+*NSET, NSET=CRANK_SHAFT2_TIENODES
+8
+*NSET, NSET=PIST_HEAD_GROUNDNODE
+30
+*NSET, NSET=PIST_HEAD_TIENODES
+1, 2
+*NSET, NSET=CON_ROD_TIENODES
+3, 4, 5
+*NSET, NSET=CAM_GROUNDNODE
+29
+*NSET, NSET=CAM_TIENODES
+10
+*NSET, NSET=CAM_FOLLOWER1_GROUNDNODE
+33
+*NSET, NSET=CAM_FOLLOWER1_TIENODES
+21, 22
+*NSET, NSET=CAM_FOLLOWER2_GROUNDNODE
+34
+*NSET, NSET=CAM_FOLLOWER2_TIENODES
+23, 24
+*NSET, NSET=TIEROD2_TIENODES
+25, 26
+*NSET, NSET=TIEROD1_TIENODES
+27, 28
+*NSET, NSET=VALVE1_GROUNDNODE
+12
+*NSET, NSET=VALVE1_TIENODES
+11
+*NSET, NSET=VALVE2_GROUNDNODE
+14
+*NSET, NSET=VALVE2_TIENODES
+13
+*NSET, NSET=VALVE_LIFT1_GROUNDNODE
+31
+*NSET, NSET=VALVE_LIFT1_TIENODES
+15, 16, 17
+*NSET, NSET=VALVE_LIFT2_GROUNDNODE
+32
+*NSET, NSET=VALVE_LIFT2_TIENODES
+18, 19, 20
+************************************
+**
+** Connector element definitions
+**
+************************************
+
+*******************************************
+**
+** Connector section definitions
+**
+*******************************************
+
+*****************************************
+**
+** Orientation definitions
+**
+*****************************************
+
+*****************************************
+**
+** Connector behavior definitions
+**
+*****************************************
+
+******************************************
+**
+** Fix dofs for ground nodes in connector definitions
+**
+******************************************
+*BOUNDARY
+VALVE1_GROUNDNODE, 1, 6
+VALVE2_GROUNDNODE, 1, 6
+CAM_GROUNDNODE, 1, 6
+PIST_HEAD_GROUNDNODE, 1, 6
+CRANK_SHAFT1_GROUNDNODE, 1, 6
+VALVE_LIFT1_GROUNDNODE, 1, 6
+VALVE_LIFT2_GROUNDNODE, 1, 6
+CAM_FOLLOWER1_GROUNDNODE, 1, 6
+CAM_FOLLOWER2_GROUNDNODE, 1, 6
+******************************************
+**
+** Step one is a dummy step that ensures the system is
+** in equilibrium at the start of the analysis
+**
+******************************************
+*STEP, NLGEOM, NAME=STEP-1, INC=10000
+*STATIC
+1.E-20, 1.E-20
+******************************************
+**
+** Connector motion definition
+**
+******************************************
+
+*END STEP
+******************************************
+**
+** Step two rotates the crankshaft 2 revolutions
+** showing the kinematics of the system
+**
+******************************************
+*STEP, NLGEOM, NAME=STEP-2, INC=10000
+*STATIC
+0.02, 1.,,0.02
+******************************************
+**
+** Modified connector motion definition
+**
+******************************************
+
+******************************************
+**
+** Connector output for post-processing
+**
+******************************************
+*OUTPUT, FIELD, VAR=PRESELECT, FREQ=1
+*OUTPUT, HISTORY, FREQ=1
+*ENERGY OUTPUT, VAR=PRESELECT
+
+*END STEP

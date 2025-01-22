@@ -1,0 +1,88 @@
+*HEADING
+ CREEP OF A LONG PIPE UNDER TENSION AND GRAVITY LOAD
+ Units: in, lbf, psi
+*NODE 
+1,  0., 0.
+31, 196.85, 0.
+*NGEN, NSET=PIPENODE
+1,31,1
+*ELEMENT,TYPE=PIPE21
+1,1,2
+*ELGEN,ELSET=EALL
+1,30,1,1
+*BEAM SECTION,SECTION=PIPE,ELSET=EALL,MATERIAL=MATEA
+1.9685, 0.15748
+*NODE, NSET=RIGHT
+99, 200.7874, 0.0
+*ELEMENT, TYPE=SPRINGA, ELSET=RIGHT
+99, 99, 31
+*SPRING, ELSET=RIGHT
+
+571.02,
+*MATERIAL,NAME=MATEA
+*DENSITY
+ 7.34e-4,
+*ELASTIC
+   29.7E+6,       0.304,        212.
+   29.0E+6,       0.310,        392.
+   27.5E+6,       0.316,        572.
+   26.8E+6,       0.322,        752.
+   25.4E+6,       0.323,        932.
+   23.2E+6,       0.319,       1112.
+**
+**
+*CREEP, LAW=TIME POWER LAW
+64861.63442,  4.0,  0.,  1.0
+*INITIAL CONDITIONS,TYPE=TEMPERATURE
+PIPENODE, 77.0
+*BOUNDARY
+1, ENCASTRE
+31, 2, 3
+31, 6,6
+RIGHT, 2, 3
+*NSET,NSET=LEFT
+1
+*********************************************************************************************
+*STEP, INC=500, NLGEOM
+ STATIC AXIAL LOAD AT IC 2248 lbf
+*STATIC
+ 1.0, 1.0
+*BOUNDARY
+RIGHT, 1 , 1, 1.1811
+*ENERGY FILE
+*NODE PRINT, FREQ=0
+*EL PRINT, FREQ=0
+*NODE FILE, FREQ=1
+U
+*NODE FILE, FREQ=1, NSET=LEFT
+RF
+*EL FILE, FREQ=1
+S, E, SINV
+*RESTART, WRITE, FREQ=100, OVERLAY
+**FILE FORMAT, ZERO INCREMENT
+*OUTPUT,HISTORY,OP=ADD
+*NODE OUTPUT, NSET=PIPENODE
+U
+*NODE OUTPUT, NSET=LEFT
+RF
+*END STEP
+*********************************************************************************************
+*STEP, INC=500
+ INCREASE TO OPERATIING TEMPERATURE (1022 F)
+*STATIC
+ 1.0, 1.0
+*TEMPERATURE
+ PIPENODE, 1022.0
+*DLOAD
+EALL, GRAV, 386.2, 0.0, -1.0,
+*END STEP
+*******************************************************************
+*STEP, INC=5000
+ CREEP CALCULATIONS FOR 1 YEAR (31.536E6)
+*VISCO, CETOL=1E-5
+7.2E3 ,  31.5360E6, 100.0
+*EL FILE, FREQ=1
+S, E, CE, SINV
+*END STEP
+*******************************************************************
+

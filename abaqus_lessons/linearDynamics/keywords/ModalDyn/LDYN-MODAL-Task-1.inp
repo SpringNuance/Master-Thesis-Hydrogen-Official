@@ -1,0 +1,67 @@
+*INCLUDE, INPUT=w_layered-bar.inp
+**
+**
+**  ------------------------  Model Data ----------------------------
+**
+**  Enter a heading (title) for the simulation 
+**
+*HEADING
+**
+**
+**
+** MATERIALS
+** 
+** 
+** UNITS:
+** mass = metric tonne  = 1000Kg
+** length = millimeter = 1/1000 meter
+** time = seconds
+** force = newton = mass * acceleration
+** Stress = MPa  = 1e6 Pascals
+** 
+**
+*MATERIAL, NAME=ALUMINUM
+*DENSITY
+ 2.77E-09,
+*ELASTIC
+70000., 0.33
+** 
+** 
+*MATERIAL, NAME=ELASTOMER
+*DENSITY
+ 9E-10,
+*ELASTIC, TYPE=TRACTION
+750., 0.8, 0.8
+** 
+**
+**       *********** Add base motion amplitude curve at this location   **************
+**
+*AMPLITUDE,
+**
+** 
+**  ------------------------- Frequency Extraction Step -----------------------------
+** 
+**  FREQUENCY STEP
+**
+*STEP, NAME=FREQ-TRAD, NLGEOM=NO, PERTURBATION
+Frequency Extraction to 400 Hz (Lanczos Traditional)
+*FREQUENCY, EIGENSOLVER=LANCZOS, SIM=NO, NORMALIZATION=MASS
+, , 400., , , 
+** 
+** 
+*Restart, write, frequency=0
+** 
+** 
+*Output, field
+*NODE OUTPUT
+U,
+*End Step
+**
+**
+**   ------------------------- Modal Dynamic Step ---------------------------------------
+** 
+*STEP, NAME=NO-DAMP, PERTURBATION
+**
+**  add step definition data block keywords and data lines.
+**
+*END STEP

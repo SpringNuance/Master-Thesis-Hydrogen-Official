@@ -1,0 +1,74 @@
+*HEADING
+Substructuring Workshop, part 1 task 1. Beam Substructure
+** This file is to be used in conjuction with the Superelements or 
+** Substructuring Lecture Series Workshop Problem
+**
+** Nodes
+**
+*NODE
+1, 0.
+11, 8.
+*NGEN
+1,11
+**
+** Elements
+**
+*ELEMENT,TYPE=B21,ELSET=BEAM
+1,1,2
+*ELGEN,ELSET=BEAM
+1,10
+**
+** Element and material properties
+**
+*BEAM SECTION,SECTION=RECT,MATERIAL=STEEL,ELSET=BEAM
+0.1 , 0.1
+*MATERIAL,NAME=STEEL
+*ELASTIC
+2.1E11 , 0.3
+*DENSITY 
+7200., 
+**
+** Eigenvalue extraction
+**
+*STEP
+*FREQUENCY, EIGENSOLVER=LANCZOS
+2, , 
+**
+** constrain degrees of freedom retained for the substructure
+**
+*BOUNDARY
+1 ,1,2
+1 ,6,6
+11,1,2
+11,6,6
+**
+*NODE PRINT,FREQUENCY=0
+*EL PRINT,FREQUENCY=0
+*END STEP
+**
+**  substructure generation step
+**
+*STEP
+*SUBSTRUCTURE GENERATE,NAME=beam,MASS MATRIX=YES,OVERWRITE
+**
+** Retained degrees of freedom
+**
+*RETAINED NODAL DOFS, SORTED=YES
+1 ,1,2
+1 ,6,6
+11,1,2
+11,6,6
+**
+*SELECT EIGENMODES
+1,2
+**
+** Uniform load on beam
+**
+*SUBSTRUCTURE LOAD CASE, NAME=SNOW
+*DLOAD
+BEAM,PY , 1.
+**
+*SUBSTRUCTURE MATRIX OUTPUT,STIFFNESS=YES,MAS=YES,RECOVERY=YES,SLOAD=YES,
+OUTPUT FILE=USER DEFINED, FILE NAME=beam_se
+*END STEP
+

@@ -1,0 +1,42 @@
+*Heading
+** incomplete input file for the co-simulation workshop in the
+**   ABAQUS/Explicit: Advanced Topics,
+**   Substructures and Submodeling with Abaqus,
+**   and Crashworthiness Analysis with Abaqus seminars
+Beam Impact Co-simulation - Abaqus/Explicit only reference solution
+**
+**
+*Preprint, echo=NO, model=NO, history=NO, contact=NO
+**
+*Node, nset=subNodes
+   1,          0.5,          0.5,           0.
+   2,          0.5,           0.,           0.
+   3,          0.5,         -0.5,           0.
+   4,           0.,          0.5,           0.
+   5,           0.,           0.,           0.
+   6,           0.,         -0.5,           0.
+   7,         -0.5,          0.5,           0.
+   8,         -0.5,           0.,           0.
+   9,         -0.5,         -0.5,           0.
+**
+******************************************
+** ADD SUBSTRUTURE 
+**
+**
+**
+******************************************
+** ADD IMPLICIT DYNAMIC STEP 
+**
+**
+**
+******************************************
+** ADD CO-SIMULATION INPUT
+**
+**
+**
+******************************************
+** ADD OUTPUT REQUEST
+**
+**
+**
+*End Step

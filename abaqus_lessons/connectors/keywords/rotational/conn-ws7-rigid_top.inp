@@ -1,0 +1,70 @@
+*HEADING
+Forced Motion of a Rigid Top
+Using Connector Elements Type BEAM and EULER
+*PARAMETER
+theta=20.0
+L=1.0
+pi = 3.141592654
+thetaRad = theta*pi/180. 
+z2=L*cos(thetaRad)
+y2=-L*sin(thetaRad)
+y2p=-y2
+load=-20.0
+*NODE, NSET=FXPNT
+1,0.0,0.0,0.0
+*NODE, NSET=RBODYCM
+2,0.0,<y2>,<z2>
+******************************************************
+** Add surface and rigid body definition of the top **
+******************************************************
+
+******************************************************
+**          Add orientation definitions             **
+******************************************************
+
+******************************************************
+**     Add rotary inertia and mass elements         **
+******************************************************
+
+******************************************************
+**     Add BEAM connector to model the top          **
+******************************************************
+
+******************************************************
+**       Add extra node and Euler connector         **
+**            to measure angles directly            **
+******************************************************
+
+******************************************************
+*INITIAL CONDITIONS, TYPE=VELOCITY
+** Case 1
+1,4,0.5
+1,5,-17.101
+1,6,46.9846
+** Case 2
+**1,4,0.0
+**1,5,-17.101
+**1,6,46.9846
+*BOUNDARY
+1,1,3,0.0
+*NSET, NSET=NALL
+RBODYCM, FXPNT
+*STEP, INC=3000, NLGEOM, UNSYMM=YES
+*DYNAMIC, ALPHA=0., INITIAL=YES
+1e-3,3.0
+*CLOAD
+2,3,<load>
+*CONTROLS, PARAMETER=FIELD
+1.e-4,
+*OUTPUT, FIELD, VARIABLE=PRESELECT, FREQ=50
+*OUTPUT, HISTORY, FREQ=20
+*ENERGY OUTPUT, VARIABLE=ALL
+*NODE OUTPUT, NSET=RBODYCM
+U,V,COORD
+*PRINT, FREQUENCY=100
+******************************************************
+**       Request Output for elememt set EULER       **
+******************************************************
+
+******************************************************
+*END STEP

@@ -1,0 +1,11 @@
+*INCLUDE, INPUT=cboard.inp
+**
+**    -----  END OF MODEL DATA ---- 
+**
+**
+**   FREQUENCY ANALYSIS
+** 
+*STEP, NAME=FREQUENCY, PERTURBATION
+The Extraction of the First 30 Modes of the Circuit Board
+**
+*END STEP

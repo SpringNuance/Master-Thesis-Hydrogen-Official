@@ -1,0 +1,82 @@
+*Heading
+**
+** PARTS
+**
+*Part, name=Beam
+*Node
+      1,         -15.,           0.
+      2,         -12.,           0.
+      3,          -9.,           0.
+      4,          -6.,           0.
+      5,          -3.,           0.
+      6,           0.,           0.
+      7,           3.,           0.
+      8,           6.,           0.
+      9,           9.,           0.
+     10,          12.,           0.
+     11,          15.,           0.
+*Element, type=B21
+ 1,  1,  2
+ 2,  2,  3
+ 3,  3,  4
+ 4,  4,  5
+ 5,  5,  6
+ 6,  6,  7
+ 7,  7,  8
+ 8,  8,  9
+ 9,  9, 10
+10, 10, 11
+*Nset, nset=test, generate
+  1,  11,   1
+*Elset, elset=test, generate
+  1,  10,   1
+**
+*Beam Section, elset=test, material=steel, temperature=GRADIENTS, section=CIRC
+1.
+0.,0.,-1.
+*End Part
+**
+** ASSEMBLY
+**
+*Assembly, name=Assembly
+**  
+*Instance, name=Beam-1, part=Beam
+*End Instance
+**  
+*End Assembly
+** 
+** MATERIALS
+** 
+*Material, name=steel
+*Elastic
+ 3e+07, 0.3
+** 
+** BOUNDARY CONDITIONS
+** 
+*Boundary
+Assembly.Beam-1.1, 1, 6, 0.
+** ----------------------------------------------------------------
+** 
+** STEP: Step-1
+** 
+*Step, name=Step-1, nlgeom=YES
+*Static
+0.5, 1., 1e-05, 1.
+** 
+** BOUNDARY CONDITIONS
+** 
+*Boundary, user
+Beam-1.test, 2, 2
+** 
+** OUTPUT REQUESTS
+** 
+*Restart, write, frequency=0
+** 
+** FIELD OUTPUT: F-Output-1
+** 
+*Output, field, variable=PRESELECT
+** 
+** HISTORY OUTPUT: H-Output-1
+** 
+*Output, history, variable=PRESELECT
+*End Step

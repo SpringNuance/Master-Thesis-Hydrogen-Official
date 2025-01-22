@@ -1,0 +1,186 @@
+*Heading
+** Structural analysis of the reactor assembly
+*Preprint, echo=NO, model=NO, history=NO, contact=NO
+**
+** PARTS
+**
+*Include, input=w_reactor_str_parts.inp
+**
+** ASSEMBLY
+**
+*Assembly, name=Assembly
+*include, input=w_reactor_str_assembly.inp
+**
+** ----------------------------------------------------------------
+** Add assembly-level node sets
+**
+** Set: symm
+**
+** Set: axis
+**
+** Set: fix
+**
+** Combine part surfaces at assembly level
+**
+*Surface, combine=UNION, name=top-nut-contact
+full_nut-1.bottom, full_nut-2.bottom, full_nut-3.bottom, full_nut-4.bottom
+half_nut-1.bottom, half_nut-2.bottom
+*Surface, combine=UNION, name=bot-nut-contact
+full_nut-5.bottom, full_nut-6.bottom, full_nut-7.bottom, full_nut-8.bottom
+half_nut-3.bottom, half_nut-4.bottom
+*Surface, combine=UNION, name=boltShanks
+full_bolt-1.shank, full_bolt-2.shank, full_bolt-3.shank, full_bolt-4.shank
+half_bolt-1.shank, half_bolt-2.shank
+*Surface, combine=UNION, name=nutsInner
+full_nut-1.inner, full_nut-2.inner, full_nut-3.inner, full_nut-4.inner
+full_nut-5.inner, full_nut-6.inner, full_nut-7.inner, full_nut-8.inner
+half_nut-1.inner, half_nut-2.inner, half_nut-3.inner, half_nut-4.inner
+*Surface, combine=UNION, name=vessel-head-to-seal
+head-1.seal, vessel-1.seal
+*Surface, combine=UNION, name=outerSurface
+full_bolt-1.ends, full_bolt-1.shank, full_bolt-2.ends, full_bolt-2.shank
+full_bolt-3.ends, full_bolt-3.shank, full_bolt-4.ends, full_bolt-4.shank
+half_bolt-1.ends, half_bolt-1.shank, half_bolt-2.ends, half_bolt-2.shank
+full_nut-1.outer, full_nut-1.top, full_nut-2.outer, full_nut-2.top
+full_nut-3.outer, full_nut-3.top, full_nut-4.outer, full_nut-4.top
+full_nut-5.outer, full_nut-5.top, full_nut-6.outer, full_nut-6.top
+full_nut-7.outer, full_nut-7.top, full_nut-8.outer, full_nut-8.top
+half_nut-1.outer, half_nut-1.top, half_nut-2.outer, half_nut-2.top
+half_nut-3.outer, half_nut-3.top, half_nut-4.outer, half_nut-4.top
+head-1.outer, seal-1.outer, vessel-1.outer
+*Surface, combine=UNION, name=inner-hot
+head-1.inner-hot, seal-1.inner, vessel-1.inner-hot
+**
+** ----------------------------------------------------------------
+** Combine inner surfaces of the head and the vessel 
+**
+** ----------------------------------------------------------------
+** Add tie constraint: bolt-nuts
+**
+** Constraint: head - seal
+*Tie, name=head-seal, type=surface to surface
+seal-1.bot, vessel-head-to-seal
+**
+** ----------------------------------------------------------------
+** Add pre-tension sections for bolt loads
+**
+*End Assembly
+** 
+** MATERIALS
+** 
+*Material, name=Bolt_Steel
+** Bolt and Nuts
+*Conductivity
+ 0.0005189,-20.
+ 0.0005093, 70.
+ 0.0004954,200.
+ 0.0004699,400.
+ 0.0004514,600.
+ 0.0004398,700.
+*Density
+ 0.0007348,-20.
+  0.000733, 70.
+ 0.0007304,200.
+ 0.0007278,400.
+ 0.0007252,600.
+ 0.0007226,700.
+*Elastic
+ 3.01e+07, 0.3,-20.
+ 2.99e+07, 0.3, 70.
+ 2.96e+07, 0.3,200.
+ 2.82e+07, 0.3,400.
+ 2.63e+07, 0.3,600.
+  2.5e+07, 0.3,700.
+*Expansion, zero=70.
+ 6.03e-06,-20.
+  6.2e-06, 70.
+ 6.45e-06,200.
+ 6.81e-06,400.
+ 7.15e-06,600.
+  7.3e-06,700.
+*Specific Heat
+ 38.64,-20.
+ 41.31, 70.
+ 45.17,200.
+ 49.03,400.
+ 52.12,600.
+ 53.67,700.
+*Material, name=Vessel_Steel
+** Vessel, Head and Seal
+*Conductivity
+ 0.0005515,-20.
+  0.000537, 70.
+ 0.0005162,200.
+ 0.0005046,400.
+ 0.0004931,600.
+ 0.0004792,700.
+*Density
+ 0.0007348,-20.
+  0.000733, 70.
+ 0.0007304,200.
+ 0.0007278,400.
+ 0.0007252,600.
+ 0.0007226,700.
+*Elastic
+ 3.02e+07, 0.3,-20.
+ 2.99e+07, 0.3, 70.
+ 2.95e+07, 0.3,200.
+ 2.86e+07, 0.3,400.
+ 2.74e+07, 0.3,600.
+ 2.66e+07, 0.3,700.
+*Expansion, zero=70.
+ 6.33e-06,-20.
+  6.5e-06, 70.
+ 6.75e-06,200.
+ 7.11e-06,400.
+ 7.43e-06,600.
+ 7.58e-06,700.
+*Specific Heat
+ 38.64,-20.
+ 41.31, 70.
+ 45.17,200.
+ 49.03,400.
+ 52.12,600.
+ 53.67,700.
+**
+** ----------------------------------------------------------------
+** Add interaction properties: fric and noFric
+** 
+** PREDEFINED FIELDS: initial Temperature
+*Initial Conditions, type=TEMPERATURE
+ALL-nodes, 70.
+**
+** ----------------------------------------------------------------
+** Add interactions
+** 
+**
+** HISTORY DATA
+** ----------------------------------------------------------------
+** Add the first step definition
+** 
+** ----------------------------------------------------------------
+** Add boundary conditions
+** 
+** ----------------------------------------------------------------
+** Add bolt loads and internal pressure
+**
+** Bolt load
+**
+** Pressure
+** 
+** ----------------------------------------------------------------
+** Add predefined field in the first step
+** 
+** OUTPUT REQUESTS
+** 
+*Output, field, variable=PRESELECT
+*Output, history, variable=PRESELECT
+*End Step
+**
+** ----------------------------------------------------------------
+** Add the second step definition 
+** 
+** ----------------------------------------------------------------
+** Add predefined field in the second step
+**
+*End Step

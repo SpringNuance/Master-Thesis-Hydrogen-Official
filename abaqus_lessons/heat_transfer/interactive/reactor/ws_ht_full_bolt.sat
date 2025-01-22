@@ -1,0 +1,89 @@
+1200 0 1 0           
+36 Abaqus, Inc. - ABAQUS 6.6-DEV - 1405 14 ACIS 14.0.5 NT 24 Thu Sep 22 10:04:17 2005 
+1 9.9999999999999995e-007 1e-010 
+-0 body $1 -1 -1 $-1 $2 $-1 $3 F #
+-1 string_attrib-name_attrib-gen-attrib $-1 -1 $-1 $-1 $0 keep keep_kept ignore copy @13 HKS_PART_NAME @11 full_stud01 #
+-2 lump $4 -1 -1 $-1 $-1 $5 $0 F #
+-3 transform $-1 -1 1 0 0 0 1 0 0 0 1 0 0 0 1 no_rotate no_reflect no_shear #
+-4 cell_ptr-ct-attrib $-1 -1 $-1 $-1 $2 $6 $-1 auto #
+-5 shell $-1 -1 -1 $-1 $-1 $-1 $7 $-1 $2 F #
+-6 cell3d-cell $-1 -1 $8 $2 $-1 1 $9 #
+-7 face $10 -1 -1 $-1 $11 $12 $5 $-1 $13 forward double in F F #
+-8 cell3d-cell $-1 -1 $-1 $2 $-1 1 $14 #
+-9 cshell $-1 -1 $-1 $15 $6 #
+-10 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $7 $16 $17 #
+-11 face $18 -1 -1 $-1 $19 $20 $5 $-1 $21 reversed single F F #
+-12 loop $-1 -1 -1 $-1 $-1 $22 $7 F unknown #
+-13 plane-surface $-1 -1 -1 $-1 2.875 0 90 6.1230317691118863e-017 -1 0 0 0 -1 forward_v I I I I #
+-14 cshell $-1 -1 $-1 $23 $8 #
+-15 cface $-1 -1 $24 $9 $11 0 #
+-16 cface $-1 -1 $25 $14 $7 1 #
+-17 cface $-1 -1 $26 $9 $7 0 #
+-18 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $11 $-1 $15 #
+-19 face $27 -1 -1 $-1 $28 $29 $5 $-1 $30 forward single F F #
+-20 loop $-1 -1 -1 $-1 $-1 $31 $11 F unknown #
+-21 plane-surface $-1 -1 -1 $-1 0 0 0 0 0 1 1 0 0 forward_v I I I I #
+-22 coedge $-1 -1 -1 $-1 $32 $33 $34 $35 forward $12 $-1 #
+-23 cface $-1 -1 $36 $14 $37 0 #
+-24 cface $-1 -1 $17 $9 $38 0 #
+-25 cface $-1 -1 $-1 $14 $19 0 #
+-26 cface $-1 -1 $-1 $9 $39 0 #
+-27 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $19 $-1 $25 #
+-28 face $40 -1 -1 $-1 $38 $41 $5 $-1 $42 forward single F F #
+-29 loop $-1 -1 -1 $-1 $-1 $34 $19 F unknown #
+-30 plane-surface $-1 -1 -1 $-1 0 0 90 0 0 1 1 0 0 forward_v I I I I #
+-31 coedge $-1 -1 -1 $-1 $43 $43 $44 $45 reversed $20 $-1 #
+-32 coedge $-1 -1 -1 $-1 $44 $22 $46 $47 forward $12 $-1 #
+-33 coedge $-1 -1 -1 $-1 $22 $44 $48 $49 forward $12 $-1 #
+-34 coedge $-1 -1 -1 $-1 $50 $50 $51 $35 forward $29 $-1 #
+-35 edge $-1 -1 -1 $-1 $52 -1.4375 $53 4.3125 $34 $54 forward @7 unknown F #
+-36 cface $-1 -1 $16 $14 $28 0 #
+-37 face $55 -1 -1 $-1 $-1 $56 $5 $-1 $21 reversed single F F #
+-38 face $57 -1 -1 $-1 $39 $58 $5 $-1 $42 forward single F F #
+-39 face $59 -1 -1 $-1 $37 $60 $5 $-1 $30 forward single F F #
+-40 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $28 $-1 $36 #
+-41 loop $-1 -1 -1 $-1 $-1 $48 $28 F unknown #
+-42 cone-surface $-1 -1 -1 $-1 0 0 0 0 0 1 2.875 0 0 1 I I 0 1 2.875 forward I I I I #
+-43 coedge $-1 -1 -1 $-1 $31 $31 $61 $62 reversed $20 $-1 #
+-44 coedge $-1 -1 -1 $-1 $33 $32 $63 $45 forward $12 $-1 #
+-45 edge $-1 -1 -1 $-1 $64 -4.3125 $65 1.4375 $63 $66 forward @7 unknown F #
+-46 coedge $-1 -1 -1 $-1 $67 $68 $69 $47 forward $41 $-1 #
+-47 edge $-1 -1 -1 $-1 $53 -90 $64 0 $46 $70 forward @7 unknown F #
+-48 coedge $-1 -1 -1 $-1 $68 $67 $71 $49 forward $41 $-1 #
+-49 edge $-1 -1 -1 $-1 $65 0 $52 90 $48 $72 forward @7 unknown F #
+-50 coedge $-1 -1 -1 $-1 $34 $34 $68 $73 reversed $29 $-1 #
+-51 coedge $-1 -1 -1 $-1 $74 $74 $22 $35 reversed $60 $-1 #
+-52 vertex $-1 -1 -1 $-1 $75 $76 #
+-53 vertex $-1 -1 -1 $-1 $75 $77 #
+-54 straight-curve $-1 -1 -1 $-1 1.4375 -8.8018581680983365e-017 90 -1 -6.1230317691118863e-017 0 I I #
+-55 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $37 $-1 $23 #
+-56 loop $-1 -1 -1 $-1 $-1 $63 $37 F unknown #
+-57 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $38 $-1 $24 #
+-58 loop $-1 -1 -1 $-1 $-1 $71 $38 F unknown #
+-59 cface_ptr-ct-attrib $-1 -1 $-1 $-1 $39 $-1 $26 #
+-60 loop $-1 -1 -1 $-1 $-1 $51 $39 F unknown #
+-61 coedge $-1 -1 -1 $-1 $69 $71 $43 $62 forward $58 $-1 #
+-62 edge $-1 -1 -1 $-1 $65 0 $64 3.1415926535897931 $61 $78 forward @7 unknown F #
+-63 coedge $-1 -1 -1 $-1 $79 $79 $31 $45 forward $56 $-1 #
+-64 vertex $-1 -1 -1 $-1 $80 $81 #
+-65 vertex $-1 -1 -1 $-1 $80 $82 #
+-66 straight-curve $-1 -1 -1 $-1 1.4375 -8.8018581680983365e-017 0 1 6.1230317691118863e-017 0 I I #
+-67 coedge $-1 -1 -1 $-1 $48 $46 $79 $80 forward $41 $-1 #
+-68 coedge $-1 -1 -1 $-1 $46 $48 $50 $73 forward $41 $-1 #
+-69 coedge $-1 -1 -1 $-1 $83 $61 $32 $47 reversed $58 $-1 #
+-70 straight-curve $-1 -1 -1 $-1 -2.875 -3.5207432672393346e-016 0 0 0 -1 I I #
+-71 coedge $-1 -1 -1 $-1 $61 $83 $33 $49 reversed $58 $-1 #
+-72 straight-curve $-1 -1 -1 $-1 2.875 0 0 0 0 1 I I #
+-73 edge $-1 -1 -1 $-1 $52 0 $53 3.1415926535897931 $68 $84 forward @7 unknown F #
+-74 coedge $-1 -1 -1 $-1 $51 $51 $83 $75 reversed $60 $-1 #
+-75 edge $-1 -1 -1 $-1 $53 3.1415926535897931 $52 6.2831853071795862 $83 $84 forward @7 unknown F #
+-76 point $-1 -1 -1 $-1 2.875 0 90 #
+-77 point $-1 -1 -1 $-1 -2.875 -3.5207432672393346e-016 90 #
+-78 ellipse-curve $-1 -1 -1 $-1 0 0 0 0 0 1 2.875 0 0 1 I I #
+-79 coedge $-1 -1 -1 $-1 $63 $63 $67 $80 reversed $56 $-1 #
+-80 edge $-1 -1 -1 $-1 $64 3.1415926535897931 $65 6.2831853071795862 $67 $78 forward @7 unknown F #
+-81 point $-1 -1 -1 $-1 -2.875 -3.5207432672393346e-016 0 #
+-82 point $-1 -1 -1 $-1 2.875 0 0 #
+-83 coedge $-1 -1 -1 $-1 $71 $69 $74 $75 forward $58 $-1 #
+-84 ellipse-curve $-1 -1 -1 $-1 0 0 90 0 0 -1 2.875 0 0 1 I I #
+End-of-ACIS-data 

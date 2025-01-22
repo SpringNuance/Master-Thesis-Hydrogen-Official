@@ -1,0 +1,33 @@
+*heading
+  plasticity tutorial: rate independent mises plasticity
+  case 1: monotonic loading with isotropic hardening
+*node
+1,0.,0.
+2,1.,0.
+*nset,nset=fix
+1
+*nset,nset=load
+2
+*element,type=t3d2,elset=one
+1,1,2
+*solid section,elset=one,material=mat1
+1.0,
+*material,name=mat1
+*elastic
+2.e11,0.3
+*plastic,hardening=isotropic
+200e6, 0.0
+2.72112e+08 ,   3.09182e-03                        
+3.28674e+08 ,   6.18365e-03                        
+3.91878e+08 ,   1.08214e-02                        
+***plastic,hardening=kinematic
+**200e6, 0.0
+**2.72112e+08 ,   3.09182e-03                        
+*boundary
+fix,encastre
+*step, name="load"
+*static
+0.05,1,,.05
+*cload
+load,1,250.e6
+*end step

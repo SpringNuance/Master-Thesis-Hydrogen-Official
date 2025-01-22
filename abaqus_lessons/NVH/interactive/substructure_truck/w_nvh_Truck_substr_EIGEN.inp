@@ -1,0 +1,84 @@
+*HEADING
+Truck Frequency Extraction Using Substructures
+*NODE
+1,  1837.043, -677.3831,  610.7642
+2,  3051.698, -688.2029,  567.4470
+3,  4252.582, -530.4345,  550.0005
+4,  4244.229,  501.1763,  559.0517
+5,  3062.070,  677.7050,  562.6404
+6,  1837.352,  709.6037,  612.2332
+**
+11,  1830.106, -675.7662,  553.8455
+12,  3052.758, -684.8604,  509.8026
+13,  4250.875, -530.8553,  534.7689
+14,  4256.960,  507.1676,  549.4136
+15,  3059.366,  678.0805,  526.1638
+16,  1836.794,  699.4792,  574.6511
+**
+201, 275.5193, -872.36760,  362.4570
+202, 3640.260, -883.92050,  361.1830
+203, 3640.260,  883.92072,  361.1831
+204, 275.5193,  872.36760,  362.4570
+**
+**   Response Point for modal dynamic analysis
+301, 2.120537e+003,  1.009829e+000,  1.856938e+003
+401, -1.617878e+002,  1.358441e+002,  8.281198e+002
+**
+**--------------------------------------- 
+**
+**     ADD SUBSTRUCTURES
+**
+** 
+**---------------------------------------
+** 
+*Element, Type=CONN3D2, elset=BodyMount
+101, 1, 11
+102, 2, 12
+103, 3, 13
+104, 4, 14
+105, 5, 15
+106, 6, 16
+*Orientation, Name=Z_coord
+1,0,0,0,1,0,0,0,0
+1,0
+*Connector Section, elset=BodyMount, Behavior=MountBush
+Bushing,
+Z_coord
+*Connector Behavior, name=MountBush
+*Connector Elasticity, Component=1
+500.,
+*Connector Elasticity, Component=2
+500.,
+*Connector Elasticity, Component=3
+5000.,
+*Connector Elasticity, Component=4
+50000.,
+*Connector Elasticity, Component=5
+50000.,
+*Connector Elasticity, Component=6
+500000.,
+****
+*Nset,nset=Resp
+301, 401
+*nset,nset=wheel
+201,202,203,204
+**
+** Amplitudes for base motion in modal dynamic analysis
+*Amplitude, name=S1
+0,0, 0.1,1., 0.2,0., 1.,0.
+*Amplitude, name=S2
+0,0, 0.1,0., 0.2,1., 0.3,0.
+1.,0.
+*Amplitude, name=S0
+0,0, 0.2,0., 0.3,1., 0.4,0.
+1.,0.
+*Amplitude, name=S3
+0,0, 0.3,0., 0.4,1., 0.5,0.
+1.,0.
+****
+**--------------------------------------- 
+** 
+**     ADD FREQUENCY EXTRACTION STEP 
+** 
+** 
+**--------------------------------------- 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoupledMultiphysicsSimulation>
+   <template_em_std_export>
+      <EM_Job>rod_emag</EM_Job>
+      <HeatTransfer_Job>rod_heat</HeatTransfer_Job>
+      <duration>120</duration>
+   </template_em_std_export>
+</CoupledMultiphysicsSimulation>

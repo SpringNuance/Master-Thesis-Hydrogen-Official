@@ -1,0 +1,97 @@
+*HEADING
+MECHANISM ANALYSIS OF AN ADJUSTABLE PAIR
+OF PLIERS USING A SLOT CONNECTOR
+***************************************
+**
+** INCLUDE FILES FOR GEOMETRY AND
+** NON-CONNECTOR DEFINITIONS
+**
+***************************************
+*INCLUDE, INPUT=conn-pl-geom-nds.inp
+*INCLUDE, INPUT=conn-pl-geom-els.inp
+*INCLUDE, INPUT=conn-pl-rigid_body_defs.inp
+***************************************
+**
+** NODE SETS USED
+** IN CONNECTOR DEFINITIONS
+**
+***************************************
+**NODE:
+**      UPPER_JAW_CONN  = 4500
+**      LOWER_JAW_CONN  = 4501
+**     UPPER_JAW_REFPT  = 520
+**     LOWER_JAW_REFPT  = 939
+**
+**
+***************************************
+***************************************
+**
+** ORIENTATION DEFINITIONS
+**
+**---------------------------------------
+**
+** Add orientation definitions here
+**---------------------------------------
+**
+**
+** CONNECTOR ELEMENT DEFINITIONS
+**
+**---------------------------------------
+**
+** Add element definitions here
+**---------------------------------------
+***
+**
+** CONNECTOR SECTION DEFINITIONS
+**
+**
+**---------------------------------------
+** Add connector section definitions here
+**
+**---------------------------------------
+**
+** STEP: OPEN-JAW
+** 
+*Step, name=OPEN-JAW
+*Dynamic, Explicit, direct user control
+0.001, 1.
+*Bulk Viscosity
+0.06, 1.2
+**
+**----------------------------------------
+** AMPLITUDE
+**
+** Add Amplitude definiton here
+**-----------------------------------------
+** 
+**----------------------------------------
+** BOUNDARY CONDITIONS
+**
+** Add Boundary conditions here
+**-----------------------------------------
+** 
+** OUTPUT REQUESTS
+** 
+*Restart, write, number interval=1, time marks=NO
+** 
+** FIELD OUTPUT: F-Output-1
+** 
+*Output, field
+*Node Output
+U, 
+**
+**-------------------------------------------
+** HISTORY OUTPUT: H-Output-2
+**
+**Add History Output requests here
+**--------------------------------------------
+**
+** 
+** HISTORY OUTPUT: H-Output-1
+** 
+*Output, history, variable=PRESELECT
+*End Step
+
+
+
+

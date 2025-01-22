@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoupledMultiphysicsSimulation>
+   <template_em_std_force_oneway>
+      <EM_Job>tube_emag</EM_Job>
+      <Structural_Job>tube_disp</Structural_Job>
+      <duration>0.0003</duration>
+   </template_em_std_force_oneway>
+</CoupledMultiphysicsSimulation>

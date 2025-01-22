@@ -1,0 +1,179 @@
+*HEADING
+Flange Connection 4 therm cycles (25-250) Isotropic hardening plasticity
+**
+** Nodal coordinates
+**
+*NODE
+1, 0.03, 0.
+11, 0.13, 0.
+111, 0.03, 0.1
+121, 0.13, 0.1
+*NGEN, NSET=BOT
+1,11,1
+*NGEN, NSET=TOP
+111,121,1
+*NFILL, NSET=FLANGE1
+BOT,TOP,10,11
+*NCOPY, REFLECT=LINE, OLDSET=FLANGE1, NEWSET=FLANGE2, CHANGE=200
+0.,0.,0., 1.,0.,0.
+*NSET, NSET=NALL
+FLANGE1, FLANGE2
+**
+** Element connectivity
+**
+*ELEMENT, TYPE=CAX4I, ELSET=FLANGE1
+1,  1, 2,13,12
+21, 23,24,35,34
+*ELGEN, ELSET=FLANGE1
+1, 10,1,1, 2,11,10
+*ELGEN, ELSET=FLANGE1
+21, 2,1,1, 8,11,10
+*ELCOPY, ELEMENT SHIFT=100, OLDSET=FLANGE1, NEWSET=FLANGE2,
+SHIFT NODES=200, REFLECT
+*ELSET, ELSET=OUTP, GEN
+111, 120
+1,10
+12, 32, 10
+112, 132, 10
+**
+** Physical and material properties
+**
+*SOLID SECTION, ELSET=FLANGE1, MATERIAL=STEEL
+*SOLID SECTION, ELSET=FLANGE2, MATERIAL=STEEL
+*MATERIAL, NAME=STEEL
+*ELASTIC
+210.E+9, 0.3
+** ADD PLASTICITY MODEL HERE
+*EXPANSION
+20E-6,
+**
+** Multi-point constraints and constraint equations
+**
+*MPC
+TIE, 18, 218
+*EQUATION
+2,
+112,2,1.0, 111,2,-1.0
+2,
+113,2,1.0, 111,2,-1.0
+2,
+312,2,1.0, 311,2,-1.0
+2,
+313,2,1.0, 311,2,-1.0
+**
+** Contact Definition
+**
+*ELSET, ELSET=FLTOP, GENERATE
+1,10,1
+*surface, NAME=SURFTOP
+FLTOP,S1
+*ELSET, ELSET=FLBOT, GENERATE
+101,110,1
+*surface, NAME=SURFBOT
+FLBOT,
+*CONTACT PAIR, INTERACTION=FRIC, SMALL SLIDING
+SURFTOP, SURFBOT
+*SURFACE INTERACTION, NAME=FRIC
+*FRICTION
+0.1,
+**
+*INITIAL CONDITION, TYPE=TEMPERATURE
+NALL, 20
+** History Definition
+**
+*STEP, NLGEOM, INC=20,Convert Sdi=No
+APPLY DEAD LOAD OF PIPE WEIGHT
+*STATIC
+0.1, 1.0
+**
+** Loading
+**
+*CLOAD
+111, 2, 250.E3
+311, 2,-250.E3
+**
+** Boundary conditions
+**
+*BOUNDARY
+100, 2
+**
+** Output requests
+**
+*RESTART, WRITE, FREQUENCY=5, overlay
+*NODE PRINT, FREQUENCY=0
+RF,
+*EL FILE, ELSET=OUTP, FREQ=1
+S, E, SINV, PE
+*EL PRINT, FREQUENCY=0
+*CONTACT PRINT
+*PRINT, CONTACT=YES
+*OUTPUT,HISTORY,OP=ADD
+*ELEMENT OUTPUT, ELSET=OUTP
+S, E
+*END STEP
+*STEP, INC=100,Convert Sdi=No
+1 st heat up cycle
+*STATIC
+0.05, 1.0
+*BOUNDARY, OP=NEW
+*BOUNDARY, FIXED, OP=NEW
+111, 2, 2
+311, 2, 2
+*CLOAD, OP=NEW
+*TEMPERATURE
+NALL, 350.00
+*END STEP
+*STEP, INC=100,Convert Sdi=No
+1 COOLING  cycle
+*STATIC
+0.05, 1.0
+*TEMPERATURE
+NALL, 25.00
+*END STEP
+**
+*STEP, INC=100,Convert Sdi=No
+2nd  heat up cycle
+*STATIC
+0.05, 1.0
+*TEMPERATURE
+NALL, 350.00
+*END STEP
+*STEP, INC=100,Convert Sdi=No
+2nd  COOLING  cycle
+*STATIC
+0.05, 1.0
+*TEMPERATURE
+NALL, 25.00
+*END STEP
+**********************************************************************
+*STEP, INC=100,Convert Sdi=No
+3rd heat up cycle
+*STATIC
+0.05, 1.0
+*TEMPERATURE
+NALL, 350.00
+*END STEP
+*************
+*STEP, INC=100,Convert Sdi=No
+3rd COOLING  cycle
+*STATIC
+0.05, 1.0
+*TEMPERATURE
+NALL, 25.00
+*END STEP
+**********************************************************************
+*STEP, INC=100,Convert Sdi=No
+4th   heat up cycle
+*STATIC
+0.05, 1.0
+*TEMPERATURE
+NALL, 350.00
+*END STEP
+*************
+*STEP, INC=100,Convert Sdi=No
+4th  COOLING  cycle
+*STATIC
+0.05, 1.0
+*TEMPERATURE
+NALL, 25.00
+*END STEP

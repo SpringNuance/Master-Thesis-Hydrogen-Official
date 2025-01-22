@@ -1,0 +1,26 @@
+*HEADING
+Truck Underbody - Substructure Generation
+*include, input=w_nvh_UnderBody_Truck_FE.inp
+****
+*NSET,NSET=UnderBody_BM, unsorted
+23048, 22036, 58500, 58097, 22235, 23247,
+*NSET,NSET=UnderBody_WC, unsorted
+981097, 904881, 860250, 980097
+*NSET,NSET=Resp_bed, unsorted
+91379
+*NSET,NSET=UnderBody_retained_nodes, unsorted
+UnderBody_BM, UnderBody_WC, Resp_bed
+*NSET,NSET=Drive_RH_WC
+904881
+****
+** ------------------------------------------ 
+**
+**    ADD FREQUENCY EXTRACTION STEP
+**
+**
+**------------------------------------------ 
+** 
+**    ADD SUBSTRUCTURE GENERATION STEP
+**
+**
+**------------------------------------------

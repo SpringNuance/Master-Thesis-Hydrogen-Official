@@ -1,0 +1,58 @@
+** ASSEMBLY-LEVEL SURFACES THAT WILL BE CREATED IN Workshop 3:
+** SURFACE: outerSurface
+**
+*SURFACE, COMBINE=UNION, NAME=outerSurface
+full_bolt-1.ends, full_bolt-1.shank 
+full_bolt-2.ends, full_bolt-2.shank
+full_bolt-3.ends, full_bolt-3.shank
+full_bolt-4.ends, full_bolt-4.shank
+half_bolt-1.ends, half_bolt-1.shank
+half_bolt-2.ends, half_bolt-2.shank
+full_nut-1.outer, full_nut-1.top
+full_nut-2.outer, full_nut-2.top
+full_nut-3.outer, full_nut-3.top
+full_nut-4.outer, full_nut-4.top
+full_nut-5.outer, full_nut-5.top
+full_nut-6.outer, full_nut-6.top
+full_nut-7.outer, full_nut-7.top
+full_nut-8.outer, full_nut-8.top
+half_nut-1.outer, half_nut-1.top
+half_nut-2.outer, half_nut-2.top
+half_nut-3.outer, half_nut-3.top
+half_nut-4.outer, half_nut-4.top
+head-1.outer, 
+seal-1.outer, 
+vessel-1.outer
+**
+** ASSEMBLY-LEVEL SURFACES THAT WILL BE CREATED IN Workshop 4: 
+** SURFACE: top-nut-contact
+**
+*SURFACE, COMBINE=UNION, NAME=top-nut-contact
+full_nut-1.bottom, full_nut-2.bottom 
+full_nut-3.bottom, full_nut-4.bottom
+half_nut-1.bottom, half_nut-2.bottom
+**
+** SURFACE: bot-nut-contact
+**
+*SURFACE, COMBINE=UNION, NAME=bot-nut-contact
+full_nut-5.bottom, full_nut-6.bottom 
+full_nut-7.bottom, full_nut-8.bottom
+half_nut-3.bottom, half_nut-4.bottom
+**
+** SURFACE: boltShanks
+**
+*SURFACE, COMBINE=UNION, NAME=boltShanks
+full_bolt-1.shank, full_bolt-2.shank 
+full_bolt-3.shank, full_bolt-4.shank
+half_bolt-1.shank, half_bolt-2.shank
+**
+** SURFACE: nutsInner
+**
+*SURFACE, COMBINE=UNION, NAME=nutsInner
+full_nut-1.inner, full_nut-2.inner
+full_nut-3.inner, full_nut-4.inner
+full_nut-5.inner, full_nut-6.inner
+full_nut-7.inner, full_nut-8.inner
+half_nut-1.inner, half_nut-2.inner
+half_nut-3.inner, half_nut-4.inner
+

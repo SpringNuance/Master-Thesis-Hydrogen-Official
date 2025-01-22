@@ -1,0 +1,68 @@
+*Node, nset=refPt-fullBolt
+ 4,    2.47487378,   2.69936895,   2.47487378
+*Node, nset=refPt-halfBolt-1
+ 5,    0.0,          2.69936895,   3.5
+*Node, nset=refPt-halfBolt-2
+ 6,    3.5,          2.69936895,   0.0
+*Elset, elset=top-fullBolt_S1, instance=BOLT-1, generate
+ 703,  708,    1
+*Elset, elset=top-fullBolt_S2, instance=BOLT-1
+ 344, 345, 346, 347, 348, 349, 362, 363, 364, 365, 366, 367, 380, 381, 382, 383
+ 384,
+*Elset, elset=top-fullBolt_S3, instance=BOLT-1
+ 173, 174, 177, 179, 190, 192, 194, 530, 581, 583, 681
+*Elset, elset=top-fullBolt_S4, instance=BOLT-1
+ 172, 187, 189, 533, 535, 537, 539, 586, 588, 590, 684, 686, 688, 690
+*Elset, elset=top-fullBolt_S5, instance=BOLT-1
+ 202, 203, 204, 211, 212, 213, 564, 565, 566, 573, 574, 575
+*Elset, elset=top-fullBolt_S6, instance=BOLT-1, generate
+ 540,  555,    3
+*Surface, type=ELEMENT, name=top-fullBolt
+top-fullBolt_S1, S1
+top-fullBolt_S2, S2
+top-fullBolt_S3, S3
+top-fullBolt_S4, S4
+top-fullBolt_S5, S5
+top-fullBolt_S6, S6
+*Elset, elset=top-halfBolt-1_S1, instance=HALFBOLT-1, generate
+ 57,  60,   1
+*Elset, elset=top-halfBolt-1_S2, instance=HALFBOLT-1
+   1,   2,   3, 179, 180, 181, 363, 364, 365, 366, 367, 368
+*Elset, elset=top-halfBolt-1_S3, instance=HALFBOLT-1
+ 173, 175, 177, 276, 278, 286, 287, 292, 293
+*Elset, elset=top-halfBolt-1_S4, instance=HALFBOLT-1
+ 170, 172, 281, 283, 285
+*Elset, elset=top-halfBolt-1_S6, instance=HALFBOLT-1, generate
+ 188,  203,    3
+*Surface, type=ELEMENT, name=top-halfBolt-1
+top-halfBolt-1_S1, S1
+top-halfBolt-1_S2, S2
+top-halfBolt-1_S4, S4
+top-halfBolt-1_S6, S6
+top-halfBolt-1_S3, S3
+*Elset, elset=top-halfBolt-2_S1, instance=HALFBOLT-2, generate
+ 57,  60,   1
+*Elset, elset=top-halfBolt-2_S2, instance=HALFBOLT-2
+   1,   2,   3, 179, 180, 181, 363, 364, 365, 366, 367, 368
+*Elset, elset=top-halfBolt-2_S3, instance=HALFBOLT-2
+ 173, 175, 177, 276, 278, 286, 287, 292, 293
+*Elset, elset=top-halfBolt-2_S4, instance=HALFBOLT-2
+ 170, 172, 281, 283, 285
+*Elset, elset=top-halfBolt-2_S6, instance=HALFBOLT-2, generate
+ 188,  203,    3
+*Surface, type=ELEMENT, name=top-halfBolt-2
+top-halfBolt-2_S1, S1
+top-halfBolt-2_S2, S2
+top-halfBolt-2_S4, S4
+top-halfBolt-2_S6, S6
+top-halfBolt-2_S3, S3
+*Coupling, constraint name=coupling-fullBolt, ref node=refPt-fullBolt, surface=top-fullBolt
+*Distributing
+1, 3
+5, 5
+*Coupling, constraint name=coupling-halfBolt-1, ref node=refPt-halfBolt-1, surface=top-halfBolt-1
+*Distributing
+1, 3
+*Coupling, constraint name=coupling-halfBolt-2, ref node=refPt-halfBolt-2, surface=top-halfBolt-2
+*Distributing
+1, 3

@@ -1,0 +1,112 @@
+*HEADING
+SIMULATION OF A U-JOINT WITH INDIVIDUAL PARTS
+***************************************
+**
+** INCLUDE FILES FOR GEOMETRY AND
+** NON-CONNECTOR DEFINITIONS
+**
+***************************************
+*INCLUDE, INPUT=conn-uj-geom-nds.inp
+*INCLUDE, INPUT=conn-uj-geom-els.inp
+*INCLUDE, INPUT=conn-uj-rigid_body_defs.inp
+***************************************
+**
+** NODE & ELEMENT SETS USED
+** IN CONNECTOR DEFINITIONS
+**
+***************************************
+**NODE:
+**     CROSSPIN_CONN  = 213
+**    VERT_FORK_CONN  = 544
+**    INCL_FORK_CONN  = 875
+**    VERT_FORK_BASE  = 4500
+**    INCL_FORK_BASE  = 4501
+**        FORK_BASES  = 4500 & 4501
+**
+**ELEMENT:
+**           MEASURE  = 3000 & 3001
+**
+***************************************
+**
+** ORIENTATION DEFINITIONS
+**
+***************************************
+**
+**  Add orientation definitions here
+**
+***************************************
+**
+** CONNECTOR ELEMENT DEFINITIONS
+**
+***************************************
+**
+**  Add connector element definitions here
+**
+***************************************
+**
+** CONNECTOR SECTION DEFINITIONS
+**
+***************************************
+**
+**  Add connector section definitions here
+**
+***************************************
+**
+** INITIAL BOUNDARY CONDITIONS
+**
+***************************************
+*BOUNDARY
+INCL_FORK_BASE, 4, 5
+VERT_FORK_BASE, 1, 4
+VERT_FORK_BASE, 6, 6
+***************************************
+**
+** STEP DEFINITIONS
+**
+** "STEP-1" IS A DUMMY STEP TO ENSURE
+** THE SYSTEM IS IN EQUILIBRIUM AT
+** THE START OF THE ANALYSIS
+**
+***************************************
+*STEP, NLGEOM, NAME=STEP-1, INC=10000
+CHECK EQUILIBRIUM
+*STATIC
+1.E-20, 1.E-20
+*BOUNDARY
+VERT_FORK_BASE, 5, 5, 0.
+*END STEP
+***************************************
+**
+** VERTICAL FORK IS ROTATED 180 DEG.
+** ABOUT ITS AXIS IN STEP "ROTATE"
+**
+***************************************
+*STEP, NLGEOM, NAME=ROTATE, INC=1000
+ROTATE VERTICAL FORK
+*STATIC, DIRECT
+0.05, 1.
+*BOUNDARY
+VERT_FORK_BASE, 5, 5, 3.14
+***************************************
+**
+** REQUEST CONNECTOR AND FIELD OUTPUT
+**
+***************************************
+*OUTPUT, FIELD, VARIABLE=PRESELECT
+*OUTPUT, HISTORY, FREQUENCY=1
+*ELEMENT OUTPUT,ELSET=MEASURE
+CU
+*NODE PRINT, NSET=FORK_BASES, FREQUENCY=1
+U,
+*ENDSTEP
+
+
+
+
+
+
+
+
+
+
+

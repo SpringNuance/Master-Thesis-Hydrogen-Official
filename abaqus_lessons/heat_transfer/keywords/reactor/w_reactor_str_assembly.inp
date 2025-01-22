@@ -1,0 +1,259 @@
+*Instance, name=head-1, part=head
+ 1.94422088266358e-11,       300.75,  1.40755197786673e-14
+ 1.94422088266358e-11,       300.75,  1.40755197786673e-14,  1.94422088266358e-11,       301.75,  1.40755197786673e-14, 71.9999986772997
+*End Instance
+**  
+*Instance, name=vessel-1, part=vessel
+          0.,           0.,           0.
+          0.,           0.,           0.,           0.,           1.,           0., 9.00000060335714
+*End Instance
+**  
+*Instance, name=full_bolt-1, part=full_bolt
+-11.2538954149863,       345.75, -71.0542992224124
+-11.2538954149863,       345.75, -71.0542992224124, -10.2600323552777, 345.828218719214, -71.1325179416265, 90.3527019227804
+*End Instance
+**  
+*Instance, name=full_bolt-2, part=full_bolt
+-22.2306825753254,       345.75, -68.4190057822698
+-22.2306825753254,       345.75, -68.4190057822698, -21.2368195156168, 345.828218719214, -68.4972245014839, 90.3527019227804
+*End Instance
+**  
+*Instance, name=full_bolt-3, part=full_bolt
+-32.6600765512539,       345.75, -64.0990093501059
+-32.6600765512539,       345.75, -64.0990093501059, -31.6662134915453, 345.828218719214, -64.17722806932, 90.3527019227804
+*End Instance
+**  
+*Instance, name=full_bolt-4, part=full_bolt
+-42.2852710499105,       345.75, -58.2006825753269
+-42.2852710499105,       345.75, -58.2006825753269, -41.2914079902019, 345.828218719214, -58.278901294541, 90.3527019227804
+*End Instance
+**  
+*Instance, name=half_bolt-1, part=half_bolt
+ 1.17950094136177e-11,       345.75,       -71.94
+ 1.17950094136177e-11,       345.75,       -71.94, 0.577350279563837, 345.172649720448, -71.362649720448, 119.999999109416
+*End Instance
+**  
+*Instance, name=half_bolt-2, part=half_bolt
+-50.8692618385505,       345.75, -50.8692618385505
+-50.8692618385505,       345.75, -50.8692618385505, -51.1503464745293, 345.071401640822, -50.1906634793721, 211.399714625554
+*End Instance
+**  
+*Instance, name=full_nut-1, part=full_nut
+-11.2538954149863,       329.75, -71.0542992224124
+-11.2538954149863,       329.75, -71.0542992224124, -11.2538954149863,       330.75, -71.0542992224124, 9.00000060335714
+*End Instance
+**  
+*Instance, name=full_nut-2, part=full_nut
+-22.2306825753254,       329.75, -68.4190057822698
+-22.2306825753254,       329.75, -68.4190057822698, -22.2306825753254,       330.75, -68.4190057822698, 9.00000060335714
+*End Instance
+**  
+*Instance, name=full_nut-3, part=full_nut
+-32.6600765512539,       329.75, -64.0990093501059
+-32.6600765512539,       329.75, -64.0990093501059, -32.6600765512539,       330.75, -64.0990093501059, 9.00000060335714
+*End Instance
+**  
+*Instance, name=full_nut-4, part=full_nut
+-42.2852710499105,       329.75, -58.2006825753269
+-42.2852710499105,       329.75, -58.2006825753269, -42.2852710499105,       330.75, -58.2006825753269, 9.00000060335714
+*End Instance
+**  
+*Instance, name=half_nut-1, part=half_nut
+ 1.17950094136177e-11,       329.75,       -71.94
+ 1.17950094136177e-11,       329.75,       -71.94,  1.17950094136177e-11,       330.75,       -71.94,          90.
+*End Instance
+**  
+*Instance, name=half_nut-2, part=half_nut
+-50.8692618385505,       329.75, -50.8692618385505
+-50.8692618385505,       329.75, -50.8692618385505, -50.8692618385505,       328.75, -50.8692618385505, 45.0000005824897
+*End Instance
+**  
+*Instance, name=full_nut-5, part=full_nut
+-11.2538954149863,       271.75, -71.0542992224124
+-11.2538954149863,       271.75, -71.0542992224124, -11.9033434521338,       271.75, -70.2938932647135,         180.
+*End Instance
+**  
+*Instance, name=full_nut-6, part=full_nut
+-22.2306825753254,       271.75, -68.4190057822698
+-22.2306825753254,       271.75, -68.4190057822698, -22.8801306124729,       271.75, -67.6585998245709,         180.
+*End Instance
+**  
+*Instance, name=full_nut-7, part=full_nut
+-32.660076551254,       271.75, -64.0990093501059
+-32.660076551254,       271.75, -64.0990093501059, -33.3095245884015,       271.75, -63.3386033924071,         180.
+*End Instance
+**  
+*Instance, name=full_nut-8, part=full_nut
+-42.2852710499105,       271.75, -58.2006825753269
+-42.2852710499105,       271.75, -58.2006825753269, -42.934719087058,       271.75, -57.440276617628,         180.
+*End Instance
+**  
+*Instance, name=half_nut-3, part=half_nut
+ 1.18003384841359e-11,       271.75,       -71.94
+ 1.18003384841359e-11,       271.75,       -71.94, 0.707106811243581,       271.75, -71.2328931887682,         180.
+*End Instance
+**  
+*Instance, name=half_nut-4, part=half_nut
+-50.8692618385505,       271.75, -50.8692618385505
+-50.8692618385505,       271.75, -50.8692618385505, -51.2519452875019,       271.75, -49.9453822792792,         180.
+*End Instance
+**  
+*Instance, name=seal-1, part=seal
+ -6.32030017029391e-07,       303.25,  1.58960612552601e-06
+ -6.32030017029391e-07,       303.25,  1.58960612552601e-06,  -6.32030017029391e-07,       304.25,  1.58960612552601e-06, 207.000000007605
+*End Instance
+**  
+*Nset, nset=ALL-Nodes
+full_bolt-1.all-nodes, full_bolt-2.all-nodes, full_bolt-3.all-nodes, full_bolt-4.all-nodes
+half_bolt-1.all-nodes, half_bolt-2.all-nodes
+full_nut-1.all-nodes, full_nut-2.all-nodes, full_nut-3.all-nodes, full_nut-4.all-nodes
+full_nut-5.all-nodes, full_nut-6.all-nodes, full_nut-7.all-nodes, full_nut-8.all-nodes
+half_nut-1.all-nodes, half_nut-2.all-nodes, half_nut-3.all-nodes, half_nut-4.all-nodes
+head-1.all-nodes, seal-1.all-nodes, vessel-1.all-nodes
+**
+*Elset, elset=_full-preT_S1, internal, instance=full_bolt-1
+  97,  98,  99, 100, 101, 102, 145, 146, 147, 148, 149, 150
+*Elset, elset=_full-preT_S1, internal, instance=full_bolt-3
+  97,  98,  99, 100, 101, 102, 145, 146, 147, 148, 149, 150
+*Elset, elset=_full-preT_S1, internal, instance=full_bolt-2
+  97,  98,  99, 100, 101, 102, 145, 146, 147, 148, 149, 150
+*Elset, elset=_full-preT_S1, internal, instance=full_bolt-4
+  97,  98,  99, 100, 101, 102, 145, 146, 147, 148, 149, 150
+*Surface, type=ELEMENT, name=full-preT
+_full-preT_S1, S1
+*Elset, elset=_half-preT_S1, internal, instance=half_bolt-1, generate
+ 1,  6,  1
+*Elset, elset=_half-preT_S1, internal, instance=half_bolt-2, generate
+ 1,  6,  1
+*Surface, type=ELEMENT, name=half-preT
+_half-preT_S1, S1
+*Elset, elset=__T0_head-1_M_S6, internal, instance=head-1, generate
+ 1,  5,  2
+*Surface, type=ELEMENT, name=_T0_head-1_M, internal
+__T0_head-1_M_S6, S6
+*Elset, elset=__T0_head-1_S_S4, internal, instance=head-1
+  124, 1970
+*Elset, elset=__T0_head-1_S_S3, internal, instance=head-1
+ 1284, 1477
+*Elset, elset=__T0_head-1_S_S2, internal, instance=head-1
+ 1730,
+*Elset, elset=__T0_head-1_S_S1, internal, instance=head-1
+ 1143,
+*Surface, type=ELEMENT, name=_T0_head-1_S, internal
+__T0_head-1_S_S4, S4
+__T0_head-1_S_S3, S3
+__T0_head-1_S_S2, S2
+__T0_head-1_S_S1, S1
+*Tie, name=_T0_head-1, position tolerance=23.6116
+_T0_head-1_S, _T0_head-1_M
+*Elset, elset=__T1_head-1_M_S5, internal, instance=head-1, generate
+  8,  12,   2
+*Surface, type=ELEMENT, name=_T1_head-1_M, internal
+__T1_head-1_M_S5, S5
+*Elset, elset=__T1_head-1_S_S3, internal, instance=head-1
+ 1651, 1715, 1852, 1962, 2136
+*Elset, elset=__T1_head-1_S_S1, internal, instance=head-1
+ 597,
+*Surface, type=ELEMENT, name=_T1_head-1_S, internal
+__T1_head-1_S_S3, S3
+__T1_head-1_S_S1, S1
+*Tie, name=_T1_head-1, position tolerance=23.6116
+_T1_head-1_S, _T1_head-1_M
+*Elset, elset=__T2_head-1_M_S6, internal, instance=head-1, generate
+ 19,  23,   2
+*Surface, type=ELEMENT, name=_T2_head-1_M, internal
+__T2_head-1_M_S6, S6
+*Elset, elset=__T2_head-1_S_S3, internal, instance=head-1
+  880, 1315, 1476, 1750, 1908, 1922
+*Surface, type=ELEMENT, name=_T2_head-1_S, internal
+__T2_head-1_S_S3, S3
+*Tie, name=_T2_head-1, position tolerance=23.6116
+_T2_head-1_S, _T2_head-1_M
+*Elset, elset=__T3_head-1_M_S5, internal, instance=head-1, generate
+ 26,  30,   2
+*Surface, type=ELEMENT, name=_T3_head-1_M, internal
+__T3_head-1_M_S5, S5
+*Elset, elset=__T3_head-1_S_S3, internal, instance=head-1
+  482,  931, 1317, 1683, 1873, 1954
+*Surface, type=ELEMENT, name=_T3_head-1_S, internal
+__T3_head-1_S_S3, S3
+*Tie, name=_T3_head-1, position tolerance=23.6116
+_T3_head-1_S, _T3_head-1_M
+*Elset, elset=__T4_head-1_M_S5, internal, instance=head-1, generate
+ 32,  36,   2
+*Surface, type=ELEMENT, name=_T4_head-1_M, internal
+__T4_head-1_M_S5, S5
+*Elset, elset=__T4_head-1_S_S3, internal, instance=head-1
+  694, 1634, 1658, 2041
+*Elset, elset=__T4_head-1_S_S2, internal, instance=head-1
+  406, 1883
+*Surface, type=ELEMENT, name=_T4_head-1_S, internal
+__T4_head-1_S_S3, S3
+__T4_head-1_S_S2, S2
+*Tie, name=_T4_head-1, position tolerance=23.6116
+_T4_head-1_S, _T4_head-1_M
+*Elset, elset=__T5_head-1_M_S5, internal, instance=head-1, generate
+ 38,  42,   2
+*Surface, type=ELEMENT, name=_T5_head-1_M, internal
+__T5_head-1_M_S5, S5
+*Elset, elset=__T5_head-1_S_S3, internal, instance=head-1
+  339, 1044, 1265, 1310, 1881
+*Elset, elset=__T5_head-1_S_S1, internal, instance=head-1
+ 2150,
+*Surface, type=ELEMENT, name=_T5_head-1_S, internal
+__T5_head-1_S_S3, S3
+__T5_head-1_S_S1, S1
+*Tie, name=_T5_head-1, position tolerance=23.6116
+_T5_head-1_S, _T5_head-1_M
+*Elset, elset=__T6_head-1_M_S6, internal, instance=head-1, generate
+ 43,  47,   2
+*Surface, type=ELEMENT, name=_T6_head-1_M, internal
+__T6_head-1_M_S6, S6
+*Elset, elset=__T6_head-1_S_S3, internal, instance=head-1
+ 1038, 1105, 1264, 1302, 1792, 2147
+*Surface, type=ELEMENT, name=_T6_head-1_S, internal
+__T6_head-1_S_S3, S3
+*Tie, name=_T6_head-1, position tolerance=23.6116
+_T6_head-1_S, _T6_head-1_M
+*Elset, elset=__T7_head-1_M_S5, internal, instance=head-1, generate
+ 50,  54,   2
+*Surface, type=ELEMENT, name=_T7_head-1_M, internal
+__T7_head-1_M_S5, S5
+*Elset, elset=__T7_head-1_S_S3, internal, instance=head-1
+  940, 1745, 1766, 1770, 1889, 1938
+*Surface, type=ELEMENT, name=_T7_head-1_S, internal
+__T7_head-1_S_S3, S3
+*Tie, name=_T7_head-1, position tolerance=23.6116
+_T7_head-1_S, _T7_head-1_M
+*Elset, elset=__T8_head-1_M_S5, internal, instance=head-1, generate
+ 56,  60,   2
+*Surface, type=ELEMENT, name=_T8_head-1_M, internal
+__T8_head-1_M_S5, S5
+*Elset, elset=__T8_head-1_S_S3, internal, instance=head-1
+ 1934,
+*Elset, elset=__T8_head-1_S_S1, internal, instance=head-1
+ 1499, 1742, 1794
+*Elset, elset=__T8_head-1_S_S4, internal, instance=head-1
+ 1793,
+*Elset, elset=__T8_head-1_S_S2, internal, instance=head-1
+ 1497,
+*Surface, type=ELEMENT, name=_T8_head-1_S, internal
+__T8_head-1_S_S3, S3
+__T8_head-1_S_S1, S1
+__T8_head-1_S_S4, S4
+__T8_head-1_S_S2, S2
+*Tie, name=_T8_head-1, position tolerance=23.6116
+_T8_head-1_S, _T8_head-1_M
+*Elset, elset=__T9_head-1_M_S6, internal, instance=head-1, generate
+ 67,  71,   2
+*Surface, type=ELEMENT, name=_T9_head-1_M, internal
+__T9_head-1_M_S6, S6
+*Elset, elset=__T9_head-1_S_S4, internal, instance=head-1
+ 1703,
+*Elset, elset=__T9_head-1_S_S3, internal, instance=head-1
+  862,  864, 1061, 1535, 1977
+*Surface, type=ELEMENT, name=_T9_head-1_S, internal
+__T9_head-1_S_S4, S4
+__T9_head-1_S_S3, S3
+*Tie, name=_T9_head-1, position tolerance=23.6116
+_T9_head-1_S, _T9_head-1_M

@@ -1,0 +1,98 @@
+*Heading
+**
+** PARTS
+**
+*Include, input=w_disc_brake_disc.inc
+**  
+*Include, input=w_disc_brake_pad.inc
+**
+*Include, input=w_disc_brake_rib.inc  
+**
+** ASSEMBLY
+**
+*Assembly, name=Assembly
+**  
+*Instance, name=disc-1, part=disc
+*Surface, name=film
+ all,
+*End Instance
+**  
+*Include, input=w_disc_brake_pad_instances.inc
+**
+*Include, input=w_disc_brake_rib_instances.inc
+**  
+*Node, nset=refPoint
+      1,           0.,           0.,           0.
+*Nset, nset=rotor
+   rib-1.all,   rib-2.all,   rib-3.all,   rib-4.all,
+   rib-5.all,   rib-6.all,   rib-7.all,   rib-8.all,
+   rib-9.all,  rib-10.all,  rib-11.all,  rib-12.all,
+  rib-13.all,  rib-14.all,  rib-15.all,  rib-16.all,
+  rib-17.all,  rib-18.all,  rib-19.all,  rib-20.all,
+  rib-21.all,  rib-22.all,  rib-23.all,  rib-24.all,
+  rib-25.all,  rib-26.all,  rib-27.all,  rib-28.all,
+  rib-29.all,  rib-30.all,  rib-31.all,  rib-32.all,
+  rib-33.all,  rib-34.all,  rib-35.all,  disc-1.all,
+*Elset, elset=rotor
+   rib-1.all,   rib-2.all,   rib-3.all,   rib-4.all,
+   rib-5.all,   rib-6.all,   rib-7.all,   rib-8.all,
+   rib-9.all,  rib-10.all,  rib-11.all,  rib-12.all,
+  rib-13.all,  rib-14.all,  rib-15.all,  rib-16.all,
+  rib-17.all,  rib-18.all,  rib-19.all,  rib-20.all,
+  rib-21.all,  rib-22.all,  rib-23.all,  rib-24.all,
+  rib-25.all,  rib-26.all,  rib-27.all,  rib-28.all,
+  rib-29.all,  rib-30.all,  rib-31.all,  rib-32.all,
+  rib-33.all,  rib-34.all,  rib-35.all,  disc-1.all,
+*Nset, nset=all
+  rotor,
+  lining-1.all,
+  lining-2.all,
+*Elset, elset=all
+  rotor,
+  lining-1.all,
+  lining-2.all,
+*Surface, name=rotor-top
+ disc-1.top_S6, S6
+*Surface, name=rotor-bot
+ disc-1.bot_S3, S3
+*Surface,name=rib-top, combine=union
+  rib-1.top,  rib-2.top,  rib-3.top,  rib-4.top
+  rib-5.top,  rib-6.top,  rib-7.top,  rib-8.top
+  rib-9.top, rib-10.top, rib-11.top, rib-12.top
+ rib-13.top, rib-14.top, rib-15.top, rib-16.top
+ rib-17.top, rib-18.top, rib-19.top, rib-20.top
+ rib-21.top, rib-22.top, rib-23.top, rib-24.top
+ rib-25.top, rib-26.top, rib-27.top, rib-28.top
+ rib-29.top, rib-30.top, rib-31.top, rib-32.top
+ rib-33.top, rib-34.top, rib-35.top
+*Surface, name=rib-bot, combine=union
+  rib-1.bot,  rib-2.bot,  rib-3.bot,  rib-4.bot
+  rib-5.bot,  rib-6.bot,  rib-7.bot,  rib-8.bot
+  rib-9.bot, rib-10.bot, rib-11.bot, rib-12.bot
+ rib-13.bot, rib-14.bot, rib-15.bot, rib-16.bot
+ rib-17.bot, rib-18.bot, rib-19.bot, rib-20.bot
+ rib-21.bot, rib-22.bot, rib-23.bot, rib-24.bot
+ rib-25.bot, rib-26.bot, rib-27.bot, rib-28.bot
+ rib-29.bot, rib-30.bot, rib-31.bot, rib-32.bot
+ rib-33.bot, rib-34.bot, rib-35.bot
+*Surface, name=film, combine=union
+  rib-1.film,  rib-2.film,  rib-3.film,   rib-4.film
+  rib-5.film,  rib-6.film,  rib-7.film,   rib-8.film
+  rib-9.film, rib-10.film, rib-11.film,  rib-12.film
+ rib-13.film, rib-14.film, rib-15.film,  rib-16.film
+ rib-17.film, rib-18.film, rib-19.film,  rib-20.film
+ rib-21.film, rib-22.film, rib-23.film,  rib-24.film
+ rib-25.film, rib-26.film, rib-27.film,  rib-28.film
+ rib-29.film, rib-30.film, rib-31.film,  rib-32.film
+ rib-33.film, rib-34.film, rib-35.film,  disc-1.film
+*Tie, name=bot, adjust=yes
+rib-bot, rotor-bot
+*Tie, name=top, adjust=yes
+rib-top, rotor-top
+*Rigid Body, ref node=refPoint, elset=rotor
+*End Assembly
+** 
+** ELEMENT CONTROLS
+** 
+*Section Controls, name=EC-1, hourglass=ENHANCED, second order accuracy=YES
+1., 1., 1.

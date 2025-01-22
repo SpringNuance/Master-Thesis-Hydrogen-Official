@@ -1,0 +1,22 @@
+*HEADING
+Truck Upper Body - Substructure Generation
+*include, input=w_nvh_UpperBody_Truck_FE.inp
+****
+*NSET,NSET=UpperBody_BM, unsorted
+25056, 24104, 809012, 809048, 81575, 81642
+*Nset,nset=Resp_roof, unsorted
+18074
+*NSET,NSET=UpperBody_retained_nodes, unsorted
+UpperBody_BM, Resp_roof
+****
+** ------------------------------------------ 
+**
+**    ADD FREQUENCY EXTRACTION STEP
+**
+**
+**------------------------------------------ 
+** 
+**    ADD SUBSTRUCTURE GENERATION STEP
+**
+**
+**------------------------------------------

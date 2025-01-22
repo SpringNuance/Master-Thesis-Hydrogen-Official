@@ -1,0 +1,37 @@
+*HEADING
+Stretching of a nonlinear SPRINGA element
+*NODE
+1, 0.0, 0.0
+10, 1.0
+*ELEMENT, TYPE=SPRINGA, ELSET=SPRING
+10, 1, 10
+*SPRING, ELSET=SPRING, NONLINEAR
+** The first data line for a SPRINGA element is blank
+
+** Spring is initially unstretched and carries no force: u_x=0.0 f=0
+** The initial spring stiffness, K, is 100.
+** Between u_x=1.0 and u_x=2.0, K=50.   At u_x(1.0) f=100. At u_x(2.0) f=150
+** Between u_x=2.0 and u_x=3.0, K=25.   At u_x(3.0) f=175.
+** Between u_x=3.0 and u_x=4.0, K=12.5  At u_x(4.0) f=187.5
+** Between u_x=4.0 and u_x=5.0, K=6.25  At u_x(5.0) f=193.75
+** Between u_x=5.0 and u_x=6.0, K=3.125 At u_x(6.0) f=196.875
+**
+** Define the correct date for the *SPRING option.
+** Remember the data is in the form of force in the spring (f), u_x (stretch of spring)
+**
+**
+*BOUNDARY
+** Fix one end of spring
+1, encastre
+*STEP, INC=100
+*STATIC
+.4, 1.0
+*BOUNDARY, OP=NEW
+1, encastre
+** Apply 190 units of force to the free end of the spring
+** How far should the spring stretch.  Will the response be linear?
+*CLOAD
+10, 1, 190.0
+*RESTART, WRITE, FREQ=1
+*END STEP
+

@@ -1,0 +1,46 @@
+*INCLUDE, INPUT=cboard.inp
+**
+**
+** ---------------------- Random Response PSD Data ------------------------
+**
+**
+**  ###################################################
+**
+**  The PSD-DEFINITION data must be input as Model Data
+**
+**  ###################################################
+**
+*PSD-DEFINITION, NAME=VERTICAL, TYPE=BASE, G=386.4
+0.032, 0.0,    1.0
+0.032, 0.0, 2000.0
+**
+** --------------------------  END OF MODEL DATA ------------------------- 
+**
+**   FREQUENCY ANALYSIS
+** 
+*STEP, NAME=FREQUENCY, PERTURBATION
+The Extraction of the First 30 Modes of the Circuit Board
+**
+*FREQUENCY, EIGENSOLVER=LANCZOS, NORMALIZATION=MASS, SIM=NO
+30, , , , , 
+** 
+** OUTPUT REQUESTS
+** 
+*RESTART, WRITE, FREQUENCY=1
+** 
+** FIELD OUTPUT: F-OUTPUT-1
+** 
+*OUTPUT, FIELD
+*NODE OUTPUT
+RF, U
+*ELEMENT OUTPUT, DIRECTIONS=YES
+S, 
+**
+*BOUNDARY
+BASE-L-M, 1, 6
+BASE-R-M, 1, 6
+**
+*END STEP
+**
+**   ---------  ADD THE RANDOM RESPONSE ANALYSIS STEP DATA  ---------
+**

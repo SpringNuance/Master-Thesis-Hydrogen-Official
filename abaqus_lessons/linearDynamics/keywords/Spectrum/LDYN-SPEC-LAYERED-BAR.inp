@@ -1,0 +1,80 @@
+*INCLUDE, INPUT=w_layered-bar.inp
+**
+**
+**  ------------------------  Model Data ----------------------------
+**
+**  Enter a heading data line (title) for the simulation 
+**
+*HEADING
+**
+**
+**
+** MATERIALS
+** 
+** 
+** UNITS:
+** mass = metric tonne  = 1000Kg
+** length = millimeter = 1/1000 meter
+** time = seconds
+** force = newton = mass * acceleration
+** Stress = MPa  = 1e6 Pascals
+** 
+**
+*MATERIAL, NAME=ALUMINUM
+*DENSITY
+ 2.77E-09,
+*ELASTIC
+70000., 0.33
+** 
+** 
+*MATERIAL, NAME=ELASTOMER
+*DENSITY
+ 9E-10,
+*ELASTIC, TYPE=TRACTION
+750., 0.8, 0.8
+**
+**  ********************  Add the Spectrum Defintion **************************
+**
+*SPECTRUM,
+** 
+**  ------------------------- History Data -----------------------------
+** 
+**  FREQUENCY STEP
+** 
+*STEP, NAME=FREQ-SIM, NLGEOM=NO, PERTURBATION
+FREQUENCY EXTRACTION TO 400 HZ - SIM (NO DAMPING PROJECTION)
+*FREQUENCY, EIGENSOLVER=LANCZOS, SIM, DAMPING PROJECTION=OFF, ACOUSTIC COUPLING=ON, NORMALIZATION=MASS
+, , 400., , , 
+**
+**
+*COMPOSITE MODAL DAMPING
+ALL-ALUMINUM,	0.0005,	0.0005
+ALL-ELASTOMER,	0.3,		0.3
+**
+** 
+*Restart, write, frequency=0
+** 
+*Output, field, variable=PRESELECT
+*End Step
+**
+**
+**   ------------------------- RESPONSE SPECTRUM STEP 1 ---------------------------------------
+**
+** 
+*STEP, NAME=SPECTRUM-SRSS, NLGEOM=NO, PERTURBATION
+VERTICAL EXCITATION - SRSS
+**
+*RESPONSE SPECTRUM,
+**
+**
+*MODAL DAMPING,
+** 
+** 
+*OUTPUT, FIELD
+** 
+** 
+*OUTPUT, HISTORY
+*MODAL OUTPUT
+GA, GU, KE, SNE, T
+*END STEP
+**

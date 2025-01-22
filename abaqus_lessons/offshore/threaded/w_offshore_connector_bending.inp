@@ -1,0 +1,88 @@
+*Heading
+**
+*Parameter
+section_nodes = 2039
+** section_nodes - from 2D_axisym_model.dat file = total number of nodes in 2D file
+num_sections1 = 3
+num_sections2 = 3
+num_sections = num_sections1 + num_sections2
+symm_nodes_start = section_nodes*num_sections*2 + 1
+symm_nodes_end = section_nodes*num_sections*2 + section_nodes + 1
+**
+*Symmetric model generation, revolve
+0,0,0,0,1,0
+1,0,0
+90,<num_sections1>,0.5,cylindrical
+90,<num_sections2>,1.5,cylindrical
+**
+*Symmetric results transfer, step=2
+**
+**
+*Nset, nset=symm1, generate
+1,<section_nodes>,1
+*Nset, nset=symm2, generate
+<symm_nodes_start>,<symm_nodes_end>,1
+**
+** Constraint: Lower-coupling
+*Coupling, constraint name=Lower-coupling, ref node=BOT-REF, surface=BOX-BOT
+*Kinematic
+** Constraint: Upper-coupling
+*Coupling, constraint name=Upper-coupling, ref node=TOP-REF, surface=PIN-TOP
+*Kinematic
+**
+** Pre-Tension Section for Bolt Load: PRELOADING
+*Pre-tension Section, surface= PRELOAD, node=_PRELOADING_blrn_
+         -0.,          -1.,          -0.
+*Element, type=Spring1, elset=Springs/Dashpots-1-spring
+200000, 2038
+*Spring, elset=Springs/Dashpots-1-spring
+2
+1.         
+**
+** BOUNDARY CONDITIONS
+** 
+** Name: BC-1 Type: Displacement/Rotation
+*Boundary
+BOT-REF, 1, 6
+** Name: BC-2 Type: Displacement/Rotation
+*Boundary
+TOP-REF, 1, 1
+TOP-REF, 3, 6
+*Boundary
+symm1, ZSYMM
+symm2, ZSYMM 
+**
+** ----------------------------------------------------------------
+** 
+** STEP: Bending
+** 
+*Step, name=Bending, nlgeom=YES
+*Static
+0.2, 1., 1e-05, 0.2
+** 
+*Boundary, op=NEW
+BOT-REF, 1, 6
+TOP-REF, 1, 1
+TOP-REF, 3, 5
+symm1, ZSYMM
+symm2, ZSYMM
+**
+*Boundary, op=NEW
+TOP-REF, 6, 6, 0.0025
+**
+*Boundary, op=NEW, fixed
+_PRELOADING_blrn_, 1, 1
+**
+*Cload, op=NEW
+TOP-REF, 2, 0.5e+06
+**
+*Restart, write, overlay, frequency=1
+** 
+** FIELD OUTPUT: F-Output-1
+** 
+*Output, field, variable=PRESELECT
+** 
+** HISTORY OUTPUT: H-Output-1
+** 
+*Output, history, variable=PRESELECT
+*End Step

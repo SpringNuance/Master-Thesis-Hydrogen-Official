@@ -1,0 +1,35 @@
+*heading
+ axisymmetric pull test
+*node
+1, 0., 0.
+2, 1., 0.
+3, 1., 1.
+4, 0., 1.
+*element, type=cax4, elset=cyl
+1, 1, 2, 3, 4
+*solid section, elset=cyl, material=usr_mat
+*material, name=usr_mat
+*elastic
+30.e6, 0.3
+*plastic
+30000., 0.0
+50000., 0.2
+***********************************************
+*step, nlgeom
+*static
+.1, 1.
+*restart, write, freq=1
+*boundary
+1, 1, 2, 0.
+2, 2, 2, 0.
+4, 1, 1, 0.
+3, 2, 2, 0.1
+4, 2, 2, 0.1
+*el print, freq=1
+s, mises, peeq
+*OUTPUT,FIELD,FREQ=1
+*ELEMENT OUTPUT
+s,sinv,pe
+*node print, freq=1
+*monitor, node=3, dof=2
+*end step
