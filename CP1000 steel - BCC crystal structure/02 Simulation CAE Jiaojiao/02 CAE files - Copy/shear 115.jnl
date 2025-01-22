@@ -1,0 +1,7 @@
+# Save by nguyenb5 on 2024_06_04-11.51.14; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702
+from abaqus import *
+upgradeMdb(
+    'C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/CP1000_BCC/02 Sim/02 CAE files - Copy/shear 115-2017.cae'
+    , 
+    'C:/Users/nguyenb5/OneDrive - Aalto University/2022 Binh Nguyen/Master-Thesis-Hydrogen-Official/CP1000_BCC/02 Sim/02 CAE files - Copy/shear 115.cae')
+# Save by nguyenb5 on 2024_06_04-11.51.14; build 2023.HF4 2023_07_21-20.45.57 RELr425 183702

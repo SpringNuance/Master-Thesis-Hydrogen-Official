@@ -1,0 +1,3068 @@
+# Save by wliu on 2019_01_03-20.50.34; build 2017 2016_09_27-23.54.59 126836
+from abaqus import *
+upgradeMdb(
+    '//juno/gruppen/Werkstoffmechanik/02 Hiwis Studien- und Diplomarbeiter/30 Wenqing-Xinyang/00 Xingyang-Wenqing/04 QS simulations/02 CAE/NDB/CAE/NDB_R6/NDB_R6-coarse/NDB_R6_coarse-6.14-6.cae'
+    , 
+    '//juno/gruppen/Werkstoffmechanik/02 Hiwis Studien- und Diplomarbeiter/30 Wenqing-Xinyang/00 Xingyang-Wenqing/04 QS simulations/02 CAE/NDB/CAE/NDB_R6/NDB_R6-coarse/NDB_R6_coarse.cae')
+# Save by wliu on 2019_01_03-20.50.34; build 2017 2016_09_27-23.54.59 126836
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.jobs['NDB_R20']
+del mdb.jobs['NDB_R20-rough']
+del mdb.jobs['NDB_R20GeomModi']
+mdb.models['NDB_R6_coarse'].rootAssembly.unlock()
+del mdb.models['NDB_R6_coarse'].rootAssembly.features['Datum csys-1']
+del mdb.models['NDB_R6_coarse'].rootAssembly.features['Partition cell-1']
+del mdb.models['NDB_R6_coarse'].rootAssembly.features['Partition cell-7']
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].deleteSets(setNames=(
+    'Section 1', 'Set-29', 'Set-30', 'Set-31'))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].sets.changeKey(fromName=
+    'Whole specimen', toName='specimen')
+del mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].sectionAssignments[1]
+del mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].sectionAssignments[0]
+del mdb.models['NDB_R6_coarse'].materials['DP1000'].plastic
+del mdb.models['NDB_R6_coarse'].sections['Section-1']
+mdb.models['NDB_R6_coarse'].HomogeneousSolidSection(material='DP1000', name=
+    'Section-1', thickness=None)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].Set(cells=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), name='Sample')
+del mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].sets['specimen']
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].SectionAssignment(offset=0.0
+    , offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].sets['Sample'], 
+    sectionName='Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['NDB_R6_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R6_coarse'].rootAssembly.DatumPlaneByOffset(flip=SIDE1, offset=
+    13.5, plane=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].faces[21])
+mdb.models['NDB_R6_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R6_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R6_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R6_coarse'].rootAssembly.features['Datum plane-1'].setValues(
+    offset=-13.5)
+mdb.models['NDB_R6_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1a ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.PartitionCellByDatumPlane(cells=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ), datumPlane=
+    mdb.models['NDB_R6_coarse'].rootAssembly.datums[369])
+del mdb.models['NDB_R6_coarse'].rootAssembly.features['Partition cell-3']
+#* Regeneration Failed
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteFeatures(('Partition cell-4', 
+    'Partition cell-5'))
+del mdb.models['NDB_R6_coarse'].rootAssembly.features['Partition cell-2']
+#* Regeneration Failed
+mdb.models['NDB_R6_coarse'].rootAssembly.DatumPlaneByOffset(flip=SIDE2, offset=
+    2.0, plane=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].faces[4])
+mdb.models['NDB_R6_coarse'].rootAssembly.DatumPlaneByOffset(flip=SIDE1, offset=
+    1.0, plane=mdb.models['NDB_R6_coarse'].rootAssembly.datums[371])
+mdb.models['NDB_R6_coarse'].rootAssembly.DatumPlaneByOffset(flip=SIDE1, offset=
+    1.0, plane=mdb.models['NDB_R6_coarse'].rootAssembly.datums[369])
+mdb.models['NDB_R6_coarse'].rootAssembly.PartitionCellByDatumPlane(cells=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), datumPlane=
+    mdb.models['NDB_R6_coarse'].rootAssembly.datums[373])
+mdb.models['NDB_R6_coarse'].rootAssembly.PartitionCellByDatumPlane(cells=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), datumPlane=
+    mdb.models['NDB_R6_coarse'].rootAssembly.datums[369])
+mdb.models['NDB_R6_coarse'].rootAssembly.PartitionCellByDatumPlane(cells=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), datumPlane=
+    mdb.models['NDB_R6_coarse'].rootAssembly.datums[372])
+mdb.models['NDB_R6_coarse'].rootAssembly.PartitionCellByDatumPlane(cells=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), datumPlane=
+    mdb.models['NDB_R6_coarse'].rootAssembly.datums[371])
+mdb.models['NDB_R6_coarse'].rootAssembly.setMeshControls(algorithm=
+    ADVANCING_FRONT, regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#17 ]', ), ), technique=SWEEP)
+mdb.models['NDB_R6_coarse'].rootAssembly.setSweepPath(edge=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges[2], 
+    region=mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells[0]
+    , sense=FORWARD)
+mdb.models['NDB_R6_coarse'].rootAssembly.setSweepPath(edge=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges[2], 
+    region=mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells[1]
+    , sense=FORWARD)
+mdb.models['NDB_R6_coarse'].rootAssembly.setSweepPath(edge=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges[26], 
+    region=mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells[2]
+    , sense=REVERSE)
+mdb.models['NDB_R6_coarse'].rootAssembly.setSweepPath(edge=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges[25], 
+    region=mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells[4]
+    , sense=FORWARD)
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FIXED, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#1800000 #800 ]', ), ), minSizeFactor=0.1, size=0.1)
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FIXED, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#8 ]', ), ), minSizeFactor=0.1, size=0.1)
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FIXED, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#800 ]', ), ), minSizeFactor=0.1, size=0.5)
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FIXED, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#2000000 ]', ), ), minSizeFactor=0.1, size=1.0)
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FIXED, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#400000 ]', ), ), minSizeFactor=0.1, size=0.1)
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeByNumber(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #2 ]', ), ), number=3)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#200000 ]', ), ), size=0.5)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #4000 ]', ), ), size=1.5)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #4000 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #200 ]', ), ), size=1.5)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#17 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.setMeshControls(algorithm=MEDIAL_AXIS, 
+    regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#17 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeByNumber(constraint=FINER, 
+    edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#20000000 ]', ), ), number=3)
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #40 ]', ), ), size=1.5)
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#40000 ]', ), ), size=0.5)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.setMeshControls(algorithm=
+    ADVANCING_FRONT, regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.setMeshControls(algorithm=
+    ADVANCING_FRONT, regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), size=0.2)
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#400 ]', ), ), size=0.2)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #4 ]', ), ), size=0.5)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.setMeshControls(algorithm=
+    ADVANCING_FRONT, regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#c ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FIXED, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#2000000 ]', ), ), minSizeFactor=0.1, size=0.5)
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeBySize(constraint=FIXED, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #8 ]', ), ), minSizeFactor=0.1, size=1.0)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #1 ]', ), ), number=3, ratio=1.0)
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeByNumber(constraint=FINER, 
+    edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #20 ]', ), ), number=3)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+del mdb.models['NDB_R6_coarse'].rootAssembly.features['Partition cell-1']
+mdb.models['NDB_R6_coarse'].rootAssembly.rotate(angle=180.0, axisDirection=(
+    0.0, 2.5, 0.0), axisPoint=(18.75, 0.0, 0.75), instanceList=('model', ))
+mdb.models['NDB_R6_coarse'].rootAssembly.translate(instanceList=('model', ), 
+    vector=(-18.75, 0.0, -0.75))
+mdb.models['NDB_R6_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#400000 ]', ), ), name='Disp')
+mdb.models['NDB_R6_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#400000 ]', ), ), name='Force')
+del mdb.models['NDB_R6_coarse'].rootAssembly.sets['PoorElements-1']
+mdb.models['NDB_R6_coarse'].rootAssembly.Set(elements=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].elements.getSequenceFromMask(
+    mask=('[#0:31 #8000 ]', ), ), name='Cr-element')
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteSets(setNames=('Set-121', 
+    'Set-1', 'Set-19', 'Set-120'))
+mdb.models['NDB_R6_coarse'].rootAssembly.sets.changeKey(fromName='Set-122', 
+    toName='x_symm')
+mdb.models['NDB_R6_coarse'].rootAssembly.sets.changeKey(fromName='x-sym', 
+    toName='y_symm')
+mdb.models['NDB_R6_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#1000000 ]', ), ), name='y_symm')
+mdb.models['NDB_R6_coarse'].rootAssembly.sets.changeKey(fromName='Set-124', 
+    toName='z_symm')
+del mdb.models['NDB_R6_coarse'].rootAssembly.sets['z-sym']
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteSets(setNames=('Set-123', 
+    'Set-125', 'Set-126'))
+mdb.models['NDB_R6_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#2040842 ]', ), ), name='z_symm')
+mdb.models['NDB_R6_coarse'].boundaryConditions['x-Symmetrie'].setValues(region=
+    mdb.models['NDB_R6_coarse'].rootAssembly.sets['x_symm'])
+mdb.models['NDB_R6_coarse'].boundaryConditions['y-Symmetrie'].setValues(region=
+    mdb.models['NDB_R6_coarse'].rootAssembly.sets['y_symm'])
+mdb.models['NDB_R6_coarse'].boundaryConditions['z-Symmetrie'].setValues(region=
+    mdb.models['NDB_R6_coarse'].rootAssembly.sets['z_symm'])
+mdb.models['NDB_R6_coarse'].boundaryConditions['Zug'].setValues(region=
+    mdb.models['NDB_R6_coarse'].rootAssembly.sets['Disp'], u2=1.0)
+mdb.models['NDB_R6_coarse'].boundaryConditions['Zug'].setValues(amplitude=
+    'Amp-1')
+del mdb.models['NDB_R6_coarse'].amplitudes['Amp-2']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDB_R6_coarse', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='NDB_R6', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+# Save by wliu on 2019_01_03-21.16.34; build 2017 2016_09_27-23.54.59 126836
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDB_R6_coarse'].materials.changeKey(fromName='DP1000', toName=
+    'CP1000')
+mdb.models['NDB_R6_coarse'].Part(name='DogBone_Form1-failed', objectToCopy=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'])
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1-failed'].Unlock(
+    reportWarnings=False)
+del mdb.models['NDB_R6_coarse'].parts['DogBone_Form1']
+mdb.models['NDB_R6_coarse'].parts.changeKey(fromName='DogBone_Form1-failed', 
+    toName='DogBone_Form1')
+mdb.models['NDB_R6_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R6_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R6_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R6_coarse'].sketches['__edit__'].dimensions[22].setValues(
+    value=7.5)
+mdb.models['NDB_R6_coarse'].sketches['__edit__'].dimensions[11].setValues(
+    value=15)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['NDB_R6_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R6_coarse'].sketches['__edit__']
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].setValues(
+    depth=0.5)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R6_coarse'].sections['Section-1'].setValues(material='CP1000', 
+    thickness=None)
+mdb.models['NDB_R6_coarse'].rootAssembly.regenerate()
+#* FeatureError: Regeneration failed
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].DatumPlaneByOffset(flip=
+    SIDE2, offset=2.0, plane=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].faces[4])
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].DatumPlaneByOffset(flip=
+    SIDE2, offset=3.0, plane=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].faces[4])
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].DatumPlaneByOffset(flip=
+    SIDE2, offset=4.0, plane=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].faces[4])
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].DatumPlaneByOffset(flip=
+    SIDE2, offset=6.0, plane=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].faces[4])
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].DatumPlaneByOffset(flip=
+    SIDE2, offset=7.0, plane=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].faces[4])
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), datumPlane=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].datums[115])
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), datumPlane=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].datums[118])
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ), datumPlane=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].datums[117])
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), datumPlane=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].datums[119])
+mdb.models['NDB_R6_coarse'].rootAssembly.makeDependent(instances=(
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'], ))
+mdb.models['NDB_R6_coarse'].rootAssembly.makeIndependent(instances=(
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'], ))
+mdb.models['NDB_R6_coarse'].rootAssembly.makeDependent(instances=(
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'], ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].setMeshControls(algorithm=
+    ADVANCING_FRONT, regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#1b ]', ), ), technique=SWEEP)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].setSweepPath(edge=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges[1], region=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells[0], sense=REVERSE)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].setSweepPath(edge=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges[15], region=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells[1], sense=FORWARD)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].setSweepPath(edge=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges[36], region=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells[3], sense=REVERSE)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].setSweepPath(edge=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges[8], region=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells[4], sense=REVERSE)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeBySize(constraint=
+    FIXED, deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#0 #40 ]', ), ), size=0.1)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeBySize(constraint=
+    FIXED, deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#0 #400 ]', ), ), size=0.1)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#0 #20 ]', ), ), size=0.1)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#80000 ]', ), ), minSizeFactor=0.1, size=0.1)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeByBias(biasMethod=
+    SINGLE, constraint=FINER, end1Edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#40000 ]', ), ), maxSize=0.206667, minSize=0.1)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeByBias(biasMethod=
+    SINGLE, constraint=FINER, end1Edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#40000 ]', ), ), maxSize=0.15, minSize=0.1)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].setSeedConstraints(
+    constraint=FIXED, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#40000 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].setSeedConstraints(
+    constraint=FINER, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#40000 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeByBias(biasMethod=
+    SINGLE, constraint=FINER, end1Edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#100000 ]', ), ), maxSize=0.15, minSize=0.1)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#10000 ]', ), ), minSizeFactor=0.1, size=0.15)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#0 #1 ]', ), ), size=0.2)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#0 #1 ]', ), ), size=0.15)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#0 #2000 ]', ), ), minSizeFactor=0.1, size=0.15)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#2000 ]', ), ), minSizeFactor=0.1, size=0.15)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#2000 ]', ), ), minSizeFactor=0.1, size=0.5)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].setSeedConstraints(
+    constraint=FIXED, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#2000 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeBySize(constraint=
+    FIXED, deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#20000000 ]', ), ), minSizeFactor=0.1, size=0.1)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeByNumber(constraint=
+    FIXED, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#1 ]', ), ), number=3)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].setMeshControls(algorithm=
+    MEDIAL_AXIS, regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].setMeshControls(algorithm=
+    MEDIAL_AXIS, regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#1b ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#400 ]', ), ), size=0.5)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].seedEdgeBySize(constraint=
+    FINER, deviationFactor=0.1, edges=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].edges.getSequenceFromMask(
+    ('[#10 ]', ), ), size=0.5)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R6_coarse'].rootAssembly.Set(elements=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].elements.getSequenceFromMask(
+    mask=('[#0:28 #10000 ]', ), ), name='Cr-element')
+mdb.models['NDB_R6_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#881208 ]', ), ), name='x_symm')
+mdb.models['NDB_R6_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#2044102 ]', ), ), name='z_symm')
+mdb.models['NDB_R6_coarse'].rootAssembly.makeIndependent(instances=(
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'], ))
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeByNumber(constraint=FINER, 
+    edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #100 ]', ), ), number=5)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.seedEdgeByNumber(constraint=FINER, 
+    edges=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #100 ]', ), ), number=3)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.Set(elements=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].elements.getSequenceFromMask(
+    mask=('[#0:28 #10000 ]', ), ), name='Cr-element')
+mdb.jobs['NDB_R6'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['NDB_R6']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 0, 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '333 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR THE MATERIAL FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\liuw7\\OneDrive\\03 Studies\\17 HiBa\\02 CP1000_Macro\\NDB_R6.odb', 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 14012, 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'NDB_R6', 'memory': 185.0})
+mdb.jobs['NDB_R6']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32442.0, 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(MINIMUM_MEMORY, {'minimum_memory': 43.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(JOB_COMPLETED, {'time': 'Sat Feb 20 00:17:38 2021', 
+    'jobName': 'NDB_R6'})
+mdb.Model(name='NDB_R20_coarse', objectToCopy=mdb.models['NDB_R6_coarse'])
+mdb.models['NDB_R20_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R20_coarse'].sketches['__edit__'].move(objectList=(
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].geometry[6], 
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].geometry[7], 
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].geometry[21], 
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].geometry[41], 
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].geometry[42], 
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].vertices[48]), vector=(
+    -18.75, 0.0))
+mdb.models['NDB_R20_coarse'].sketches['__edit__'].Spot(point=(-25.0, 0.0))
+mdb.models['NDB_R20_coarse'].sketches['__edit__'].undo()
+mdb.models['NDB_R20_coarse'].sketches['__edit__'].redo()
+mdb.models['NDB_R20_coarse'].sketches['__edit__'].ArcByCenterEnds(center=(
+    -25.0, 0.0), direction=COUNTERCLOCKWISE, point1=(-5.0, 0.0), point2=(-12.5, 
+    11.25))
+mdb.models['NDB_R20_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].geometry[41], point1=(
+    -7.32145118713379, 6.55331325531006))
+mdb.models['NDB_R20_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].geometry[42], point1=(
+    -7.08560752868652, 4.50817775726318))
+mdb.models['NDB_R20_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].geometry[43], point1=(
+    -8.89375495910645, 10.8009004592896))
+mdb.models['NDB_R20_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].vertices[48], ))
+mdb.models['NDB_R20_coarse'].sketches['__edit__'].FixedConstraint(entity=
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].vertices[52])
+mdb.models['NDB_R20_coarse'].sketches['__edit__'].HorizontalDimension(
+    textPoint=(-11.6452903747559, -3.74630355834961), value=20.0, vertex1=
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].vertices[52], vertex2=
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].vertices[26])
+mdb.models['NDB_R20_coarse'].sketches['__edit__'].RadialDimension(curve=
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].geometry[45], radius=20.0
+    , textPoint=(-9.67991256713867, 6.95132637023926))
+mdb.models['NDB_R20_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'].dimensions[24], ))
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['NDB_R20_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R20_coarse'].sketches['__edit__']
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R6_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R6_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R6_coarse'].sketches['__edit__'].move(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__edit__'].geometry[6], 
+    mdb.models['NDB_R6_coarse'].sketches['__edit__'].geometry[7], 
+    mdb.models['NDB_R6_coarse'].sketches['__edit__'].geometry[21], 
+    mdb.models['NDB_R6_coarse'].sketches['__edit__'].geometry[41], 
+    mdb.models['NDB_R6_coarse'].sketches['__edit__'].geometry[42], 
+    mdb.models['NDB_R6_coarse'].sketches['__edit__'].vertices[48]), vector=(
+    -18.75, 0.0))
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['NDB_R6_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R6_coarse'].sketches['__edit__']
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R20_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R20_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+del mdb.models['NDB_R20_coarse'].sketches['__edit__']
+mdb.models['NDB_R20_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#e ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#f ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].features['Datum plane-2'].setValues(
+    offset=8.0)
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].PartitionCellByDatumPlane(
+    cells=
+    mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ), datumPlane=
+    mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].datums[116])
+mdb.models['NDB_R20_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].features['Datum plane-2'].setValues(
+    offset=12.0)
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].features['Datum plane-2'].setValues(
+    offset=11.0)
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R20_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R20_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R20_coarse'].rootAssembly.setMeshControls(algorithm=
+    ADVANCING_FRONT, regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ), technique=SWEEP)
+mdb.models['NDB_R20_coarse'].rootAssembly.setSweepPath(edge=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges[2], 
+    region=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells[5], 
+    sense=REVERSE)
+mdb.models['NDB_R20_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#6 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#8000 ]', ), ), minSizeFactor=0.1, size=0.2)
+mdb.models['NDB_R20_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#8000 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeBySize(constraint=FIXED, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ), minSizeFactor=0.1, size=0.5)
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#40000 ]', ), ), size=0.2)
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end2Edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#40000 ]', ), ), maxSize=0.3, minSize=0.2)
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#40000 ]', ), ), maxSize=0.3, minSize=0.2)
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#40000 ]', ), ), maxSize=0.4, minSize=0.2)
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#200 ]', ), ), maxSize=0.5, minSize=0.2)
+mdb.models['NDB_R20_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#8000000 ]', ), ), minSizeFactor=0.1, size=0.1)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#18 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1c ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1e ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#3e ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R20_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#6 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#8000 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeByNumber(edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#20000 ]', ), ), number=3)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#22 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#3e ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R20_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#26 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeBySize(constraint=FIXED, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#100000 ]', ), ), minSizeFactor=0.1, size=0.2)
+mdb.models['NDB_R20_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.setMeshControls(algorithm=
+    ADVANCING_FRONT, regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1e ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#22 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#10000 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), size=0.5)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#400 ]', ), ), size=0.5)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#1000 ]', ), ), size=0.2)
+mdb.models['NDB_R20_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #400 ]', ), ), size=0.4)
+mdb.models['NDB_R20_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R20_coarse'].rootAssembly.Set(elements=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].elements.getSequenceFromMask(
+    mask=('[#0:202 #8000 ]', ), ), name='Cr-element')
+mdb.models['NDB_R20_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#11011204 ]', ), ), name='x_symm')
+mdb.models['NDB_R20_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#40482040 ]', ), ), name='z_symm')
+mdb.models['NDB_R20_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R20_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#40824110 ]', ), ), name='z_symm')
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDB_R20_coarse', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='NDB_R20', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Model(name='NDB_R50_coarse', objectToCopy=mdb.models['NDB_R20_coarse'])
+mdb.models['NDB_R50_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R50_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R50_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R50_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].Spot(point=(-55.0, 0.0))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].Spot(point=(-45.0, 0.0))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].vertices[57], ))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].dimensions[23], ))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].constraints[151], ))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].constraints[147], ))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].vertices[52], ))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].ArcByCenterEnds(center=(
+    -45.0, 0.0), direction=COUNTERCLOCKWISE, point1=(-5.0, 0.0), point2=(-30.0, 
+    22.5))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].RadialDimension(curve=
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].geometry[46], radius=40.0
+    , textPoint=(-16.2949676513672, 4.16374969482422))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].FixedConstraint(entity=
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].vertices[58])
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].HorizontalDimension(
+    textPoint=(-15.7757682800293, -2.89943313598633), value=40.0, vertex1=
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].vertices[58], vertex2=
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].vertices[26])
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].geometry[44], point1=(
+    -7.54678344726563, 10.798246383667))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].geometry[45], point1=(
+    -7.1727409362793, 9.4509334564209))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].geometry[46], point1=(
+    -8.44449234008789, 15.8132419586182))
+del mdb.models['NDB_R50_coarse'].sketches['__edit__']
+mdb.models['NDB_R50_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R50_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R50_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R50_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].Spot(point=(-45.0, 0.0))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].ArcByCenterEnds(center=(
+    -45.0, 0.0), direction=COUNTERCLOCKWISE, point1=(-5.0, 0.0), point2=(-12.5, 
+    20.0))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].constraints[151], ))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].dimensions[23], ))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].constraints[147], ))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].vertices[52], ))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].FixedConstraint(entity=
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].vertices[57])
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].geometry[44], point1=(
+    -7.5926456451416, 11.1571865081787))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].geometry[45], point1=(
+    -6.82182884216309, 8.50066947937012))
+mdb.models['NDB_R50_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R50_coarse'].sketches['__edit__'].geometry[46], point1=(
+    -8.62040138244629, 16.384521484375))
+mdb.models['NDB_R50_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['NDB_R50_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R50_coarse'].sketches['__edit__']
+mdb.models['NDB_R50_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R50_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R50_coarse'].rootAssembly.setMeshControls(algorithm=
+    ADVANCING_FRONT, regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), technique=SWEEP)
+mdb.models['NDB_R50_coarse'].rootAssembly.setSweepPath(edge=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].edges[2], 
+    region=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells[0], 
+    sense=FORWARD)
+mdb.models['NDB_R50_coarse'].rootAssembly.seedEdgeBySize(constraint=FIXED, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ), size=0.5)
+mdb.models['NDB_R50_coarse'].rootAssembly.seedEdgeByNumber(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#40000 ]', ), ), number=3)
+mdb.models['NDB_R50_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#10 ]', ), ), size=0.5)
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#18 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#6 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.seedEdgeByNumber(constraint=FINER, 
+    edges=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #10000 ]', ), ), number=4)
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#1000 ]', ), ), minSizeFactor=0.1, size=0.5)
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#3f ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R50_coarse'].parts['DogBone_Form1'].deleteFeatures((
+    'Datum plane-2', 'Partition cell-5'))
+mdb.models['NDB_R50_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R50_coarse'].rootAssembly.setMeshControls(algorithm=
+    ADVANCING_FRONT, regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ), technique=SWEEP)
+mdb.models['NDB_R50_coarse'].rootAssembly.setSweepPath(edge=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].edges[45], 
+    region=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells[4], 
+    sense=REVERSE)
+mdb.models['NDB_R50_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#20000042 #3 ]', ), ), minSizeFactor=0.1, size=0.5)
+mdb.models['NDB_R50_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#20000042 #3 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1f ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R50_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.setSeedConstraints(constraint=FINER, 
+    edges=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.setSeedConstraints(constraint=FINER, 
+    edges=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #2 ]', ), ))
+mdb.models['NDB_R50_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R50_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models.changeKey(fromName='NDB_R50_coarse', toName='NDB_R40_coarse')
+mdb.models['NDB_R40_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R40_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#880890 ]', ), ), name='x_symm')
+mdb.models['NDB_R40_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R40_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#2041208 ]', ), ), name='z_symm')
+mdb.models['NDB_R40_coarse'].rootAssembly.Set(elements=
+    mdb.models['NDB_R40_coarse'].rootAssembly.instances['model'].elements.getSequenceFromMask(
+    mask=('[#0:342 #200000 ]', ), ), name='Cr-element')
+mdb.models['NDB_R6_coarse'].rootAssembly.regenerate()
+mdb.Model(name='NDB_R5_coarse', objectToCopy=mdb.models['NDB_R6_coarse'])
+mdb.models['NDB_R5_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R5_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R5_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R5_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R5_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R5_coarse'].sketches['__edit__'].Spot(point=(-10.0, 0.0))
+mdb.models['NDB_R5_coarse'].sketches['__edit__'].ArcByCenterEnds(center=(-10.0, 
+    0.0), direction=COUNTERCLOCKWISE, point1=(-5.0, 0.0), point2=(-8.75, 3.75))
+mdb.models['NDB_R5_coarse'].sketches['__edit__'].FixedConstraint(entity=
+    mdb.models['NDB_R5_coarse'].sketches['__edit__'].vertices[52])
+mdb.models['NDB_R5_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R5_coarse'].sketches['__edit__'].constraints[128], ))
+mdb.models['NDB_R5_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R5_coarse'].sketches['__edit__'].dimensions[21], ))
+mdb.models['NDB_R5_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R5_coarse'].sketches['__edit__'].geometry[42], ))
+mdb.models['NDB_R5_coarse'].sketches['__edit__'].trimExtendCurve(curve1=
+    mdb.models['NDB_R5_coarse'].sketches['__edit__'].geometry[41], curve2=
+    mdb.models['NDB_R5_coarse'].sketches['__edit__'].geometry[43], point1=(
+    -7.67130184173584, 6.96565198898315), point2=(-7.46028423309326, 
+    4.39683389663696))
+mdb.models['NDB_R5_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R5_coarse'].sketches['__edit__'].geometry[43], point1=(
+    -8.37469577789307, 4.71353769302368))
+mdb.models['NDB_R5_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R5_coarse'].sketches['__edit__'].vertices[48], ))
+mdb.models['NDB_R5_coarse'].sketches['__edit__'].HorizontalDimension(textPoint=
+    (-6.58104228973389, -1.69091558456421), value=5.0, vertex1=
+    mdb.models['NDB_R5_coarse'].sketches['__edit__'].vertices[52], vertex2=
+    mdb.models['NDB_R5_coarse'].sketches['__edit__'].vertices[26])
+mdb.models['NDB_R5_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['NDB_R5_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R5_coarse'].sketches['__edit__']
+mdb.models['NDB_R5_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R5_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R5_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R5_coarse'].rootAssembly.seedEdgeByNumber(constraint=FINER, 
+    edges=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#80 ]', ), ), number=3)
+mdb.models['NDB_R5_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R5_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#40000000 ]', ), ), minSizeFactor=0.1, size=0.5)
+mdb.models['NDB_R5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R5_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R5_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#40000000 ]', ), ))
+mdb.models['NDB_R5_coarse'].rootAssembly.seedEdgeBySize(constraint=FIXED, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ), size=0.5)
+mdb.models['NDB_R5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R5_coarse'].rootAssembly.Set(elements=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].elements.getSequenceFromMask(
+    mask=('[#0:33 #1000000 ]', ), ), name='Cr-element')
+mdb.models['NDB_R5_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R5_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#881208 ]', ), ), name='x_symm')
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDB_R5_coarse', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='NDB_R5', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDB_R40_coarse', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='NDB_R40', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['NDB_R5'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['NDB_R5']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 0, 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '160 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR THE MATERIAL FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\liuw7\\OneDrive\\03 Studies\\17 HiBa\\02 CP1000_Macro\\NDB_R5.odb', 
+    'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 17596, 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'NDB_R5', 'memory': 220.0})
+mdb.jobs['NDB_R5']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32442.0, 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(MINIMUM_MEMORY, {'minimum_memory': 49.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(JOB_COMPLETED, {'time': 'Sat Feb 20 00:53:44 2021', 
+    'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R6'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['NDB_R6']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 0, 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'in keyword *BOUNDARY, file "NDB_R6.inp", line 36: Unknown assembly node set X_SYMM', 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'in keyword *BOUNDARY, file "NDB_R6.inp", line 39: Unknown assembly node set Y_SYMM', 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'in keyword *BOUNDARY, file "NDB_R6.inp", line 42: Unknown assembly node set Z_SYMM', 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'in keyword *BOUNDARY, file "NDB_R6.inp", line 55: Unknown assembly node set DISP', 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THIS MODEL HAS EITHER INCORRECT OR NO ELEMENT DEFINITIONS.', 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error.', 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error.', 
+    'jobName': 'NDB_R6'})
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R6_coarse'].rootAssembly.Set(elements=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].elements.getSequenceFromMask(
+    mask=('[#0:31 #8000 ]', ), ), name='Cr-element')
+mdb.models['NDB_R6_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R6_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+del mdb.models['NDB_R6_coarse'].sketches['__edit__']
+mdb.models['NDB_R6_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R6_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+del mdb.models['NDB_R6_coarse'].sketches['__edit__']
+mdb.models['NDB_R6_coarse'].rootAssembly.translate(instanceList=('model', ), 
+    vector=(-18.75, 0.0, -0.25))
+mdb.models['NDB_R6_coarse'].rootAssembly.Set(elements=
+    mdb.models['NDB_R6_coarse'].rootAssembly.instances['model'].elements.getSequenceFromMask(
+    mask=('[#0:31 #8000 ]', ), ), name='Cr-element')
+mdb.jobs['NDB_R6'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['NDB_R6']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 0, 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '333 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR THE MATERIAL FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\liuw7\\OneDrive\\03 Studies\\17 HiBa\\02 CP1000_Macro\\NDB_R6.odb', 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 5960, 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'NDB_R6', 'memory': 208.0})
+mdb.jobs['NDB_R6']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32442.0, 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(MINIMUM_MEMORY, {'minimum_memory': 46.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R6']._Message(JOB_COMPLETED, {'time': 'Sat Feb 20 00:58:46 2021', 
+    'jobName': 'NDB_R6'})
+mdb.jobs['NDB_R20'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['NDB_R20']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 0, 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR THE MATERIAL FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\liuw7\\OneDrive\\03 Studies\\17 HiBa\\02 CP1000_Macro\\NDB_R20.odb', 
+    'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 19380, 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'NDB_R20', 'memory': 165.0})
+mdb.jobs['NDB_R20']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32442.0, 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(MINIMUM_MEMORY, {'minimum_memory': 40.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(JOB_COMPLETED, {
+    'time': 'Sat Feb 20 00:59:05 2021', 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R40'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['NDB_R40']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 0, 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '3 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR THE MATERIAL FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\liuw7\\OneDrive\\03 Studies\\17 HiBa\\02 CP1000_Macro\\NDB_R40.odb', 
+    'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 18268, 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'NDB_R40', 'memory': 261.0})
+mdb.jobs['NDB_R40']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32442.0, 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(MINIMUM_MEMORY, {'minimum_memory': 57.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(JOB_COMPLETED, {
+    'time': 'Sat Feb 20 01:00:13 2021', 'jobName': 'NDB_R40'})
+# Save by liuw7 on 2021_02_20-01.01.50; build 2017 2016_09_28-00.54.59 126836
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDB_R5_coarse'].rootAssembly.translate(instanceList=('model', ), 
+    vector=(-18.75, 0.0, -0.25))
+mdb.models['NDB_R20_coarse'].rootAssembly.translate(instanceList=('model', ), 
+    vector=(-18.75, 0.0, -0.25))
+mdb.models['NDB_R40_coarse'].rootAssembly.translate(instanceList=('model', ), 
+    vector=(-18.75, 0.0, -0.25))
+mdb.jobs['NDB_R5'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['NDB_R5']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 0, 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '160 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR THE MATERIAL FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\liuw7\\OneDrive\\03 Studies\\17 HiBa\\02 CP1000_Macro\\NDB_R5.odb', 
+    'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 10556, 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'NDB_R5', 'memory': 220.0})
+mdb.jobs['NDB_R5']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32442.0, 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(MINIMUM_MEMORY, {'minimum_memory': 49.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R5']._Message(JOB_COMPLETED, {'time': 'Sat Feb 20 17:53:20 2021', 
+    'jobName': 'NDB_R5'})
+mdb.jobs['NDB_R20'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['NDB_R20']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 0, 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR THE MATERIAL FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\liuw7\\OneDrive\\03 Studies\\17 HiBa\\02 CP1000_Macro\\NDB_R20.odb', 
+    'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 2152, 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'NDB_R20', 'memory': 165.0})
+mdb.jobs['NDB_R20']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32442.0, 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(MINIMUM_MEMORY, {'minimum_memory': 40.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R20']._Message(JOB_COMPLETED, {
+    'time': 'Sat Feb 20 17:56:42 2021', 'jobName': 'NDB_R20'})
+mdb.jobs['NDB_R40'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['NDB_R40']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 0, 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '3 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR THE MATERIAL FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\liuw7\\OneDrive\\03 Studies\\17 HiBa\\02 CP1000_Macro\\NDB_R40.odb', 
+    'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 23792, 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'NDB_R40', 'memory': 261.0})
+mdb.jobs['NDB_R40']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32442.0, 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(MINIMUM_MEMORY, {'minimum_memory': 57.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R40'})
+mdb.jobs['NDB_R40']._Message(JOB_COMPLETED, {
+    'time': 'Sat Feb 20 17:57:15 2021', 'jobName': 'NDB_R40'})
+mdb.Model(name='NDB_R2_coarse', objectToCopy=mdb.models['NDB_R5_coarse'])
+mdb.models['NDB_R2_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R2_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R2_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R2_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].Spot(point=(-7.0, 0.0))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].ArcByCenterEnds(center=(-7.0, 
+    0.0), direction=COUNTERCLOCKWISE, point1=(-5.0, 0.0), point2=(
+    -10.4699630737305, 2.45920991897583))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].trimExtendCurve(curve1=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].geometry[44], curve2=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].geometry[46], point1=(
+    -7.361243724823, 5.70946073532104), point2=(-7.15166711807251, 
+    1.86507844924927))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].geometry[46], point1=(
+    -8.19955062866211, 1.51558828353882))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].geometry[45], point1=(
+    -6.76744413375854, 3.47272920608521))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].Spot(point=(-7.5, 0.0))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].ArcByCenterEnds(center=(-7.5, 
+    0.0), direction=COUNTERCLOCKWISE, point1=(-5.0, 0.0), point2=(-7.5, 
+    2.56405687332153))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].vertices[64], entity2=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].geometry[48])
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].vertices[63], entity2=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].geometry[47])
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].ArcByCenterEnds(center=(-7.5, 
+    0.0), direction=COUNTERCLOCKWISE, point1=(-5.0, 0.0), point2=(-7.5, 2.5))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].geometry[48], ))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].vertices[57], ))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].constraints[145], ))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].vertices[52], ))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].FixedConstraint(entity=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].vertices[62])
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].geometry[47], point1=(
+    -7.39617395401001, 2.2145676612854))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].HorizontalDimension(textPoint=
+    (-6.38322019577026, -2.22394704818726), value=2.5, vertex1=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].vertices[62], vertex2=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].vertices[26])
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].ArcByCenterEnds(center=(-7.5, 
+    0.0), direction=COUNTERCLOCKWISE, point1=(-5.0, 0.0), point2=(-7.5, 2.5))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].geometry[49], ))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].geometry[50], ))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].geometry[52], ))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].ArcByCenterEnds(center=(-7.5, 
+    0.0), direction=COUNTERCLOCKWISE, point1=(-5.0, 0.0), point2=(
+    -8.03330230712891, 2.78500080108643))
+mdb.models['NDB_R2_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R2_coarse'].sketches['__edit__'].geometry[53], point1=(
+    -7.9818229675293, 2.55321407318115))
+mdb.models['NDB_R2_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['NDB_R2_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R2_coarse'].sketches['__edit__']
+mdb.models['NDB_R2_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R2_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models.changeKey(fromName='NDB_R2_coarse', toName='NDB_R2_5_coarse')
+mdb.models['NDB_R2_5_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1f ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R2_5_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.setMeshControls(algorithm=
+    MEDIAL_AXIS, regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #40 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1f ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R2_5_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.setSeedConstraints(constraint=FINER, 
+    edges=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#0 #40 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#12 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.setSeedConstraints(constraint=FINER, 
+    edges=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#10000 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#5 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#2000 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.setMeshControls(algorithm=
+    ADVANCING_FRONT, regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.setMeshControls(algorithm=
+    ADVANCING_FRONT, regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#12 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#10000 ]', ), ), minSizeFactor=0.1, size=0.1)
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.setMeshControls(algorithm=
+    MEDIAL_AXIS, regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R2_5_coarse'].rootAssembly.Set(elements=
+    mdb.models['NDB_R2_5_coarse'].rootAssembly.instances['model'].elements.getSequenceFromMask(
+    mask=('[#0:43 #8 ]', ), ), name='Cr-element')
+mdb.Model(name='NDB_R3_coarse', objectToCopy=mdb.models['NDB_R2_5_coarse'])
+mdb.models['NDB_R3_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R3_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R3_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R3_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R3_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R3_coarse'].sketches['__edit__'].Spot(point=(-8.0, 0.0))
+mdb.models['NDB_R3_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R3_coarse'].sketches['__edit__'].geometry[54], ))
+mdb.models['NDB_R3_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R3_coarse'].sketches['__edit__'].constraints[172], ))
+mdb.models['NDB_R3_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R3_coarse'].sketches['__edit__'].vertices[62], ))
+mdb.models['NDB_R3_coarse'].sketches['__edit__'].ArcByCenterEnds(center=(-8.0, 
+    0.0), direction=COUNTERCLOCKWISE, point1=(-5.0, 0.0), point2=(
+    -8.14083099365234, 3.01839303970337))
+mdb.models['NDB_R3_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R3_coarse'].sketches['__edit__'].geometry[55], point1=(
+    -8.03604316711426, 3.12323999404907))
+mdb.models['NDB_R3_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R3_coarse'].sketches['__edit__'].geometry[51], point1=(
+    -7.61688995361328, 2.70385313034058))
+mdb.models['NDB_R3_coarse'].sketches['__edit__'].FixedConstraint(entity=
+    mdb.models['NDB_R3_coarse'].sketches['__edit__'].vertices[70])
+mdb.models['NDB_R3_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['NDB_R3_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R3_coarse'].sketches['__edit__']
+mdb.models['NDB_R3_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R3_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R3_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R3_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R3_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R3_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R3_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R3_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R3_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1f ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R3_coarse'].rootAssembly.Set(elements=
+    mdb.models['NDB_R3_coarse'].rootAssembly.instances['model'].elements.getSequenceFromMask(
+    mask=('[#0:119 #400000 ]', ), ), name='Cr-element')
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDB_R3_coarse', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='NDB_R3', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDB_R2_5_coarse', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='NDB_R2_5', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['NDB_R2_5'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['NDB_R2_5']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 0, 'jobName': 'NDB_R2_5'})
+mdb.jobs['NDB_R2_5']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '120 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'NDB_R2_5'})
+mdb.jobs['NDB_R2_5']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR THE MATERIAL FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'NDB_R2_5'})
+mdb.jobs['NDB_R2_5']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\liuw7\\OneDrive\\03 Studies\\17 HiBa\\02 CP1000_Macro\\NDB_R2_5.odb', 
+    'jobName': 'NDB_R2_5'})
+mdb.jobs['NDB_R2_5']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R2_5'})
+mdb.jobs['NDB_R2_5']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 10320, 'jobName': 'NDB_R2_5'})
+mdb.jobs['NDB_R2_5']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'NDB_R2_5'})
+mdb.jobs['NDB_R2_5']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'NDB_R2_5'})
+mdb.jobs['NDB_R2_5']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'NDB_R2_5', 'memory': 248.0})
+mdb.jobs['NDB_R2_5']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32442.0, 'jobName': 'NDB_R2_5'})
+mdb.jobs['NDB_R2_5']._Message(MINIMUM_MEMORY, {'minimum_memory': 56.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NDB_R2_5'})
+mdb.jobs['NDB_R2_5']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R2_5'})
+mdb.jobs['NDB_R2_5']._Message(JOB_COMPLETED, {
+    'time': 'Sun Feb 21 17:37:53 2021', 'jobName': 'NDB_R2_5'})
+mdb.jobs['NDB_R3'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['NDB_R3']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 0, 'jobName': 'NDB_R3'})
+mdb.jobs['NDB_R3']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR THE MATERIAL FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'NDB_R3'})
+mdb.jobs['NDB_R3']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\liuw7\\OneDrive\\03 Studies\\17 HiBa\\02 CP1000_Macro\\NDB_R3.odb', 
+    'jobName': 'NDB_R3'})
+mdb.jobs['NDB_R3']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R3'})
+mdb.jobs['NDB_R3']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 9124, 'jobName': 'NDB_R3'})
+mdb.jobs['NDB_R3']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'NDB_R3'})
+mdb.jobs['NDB_R3']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'NDB_R3'})
+mdb.jobs['NDB_R3']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'NDB_R3', 'memory': 253.0})
+mdb.jobs['NDB_R3']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32442.0, 'jobName': 'NDB_R3'})
+mdb.jobs['NDB_R3']._Message(MINIMUM_MEMORY, {'minimum_memory': 56.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NDB_R3'})
+mdb.jobs['NDB_R3']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R3'})
+mdb.jobs['NDB_R3']._Message(JOB_COMPLETED, {'time': 'Sun Feb 21 17:38:10 2021', 
+    'jobName': 'NDB_R3'})
+mdb.Model(name='NDB_R10_coarse', objectToCopy=mdb.models['NDB_R20_coarse'])
+mdb.Model(name='NDB_R15_coarse', objectToCopy=mdb.models['NDB_R10_coarse'])
+mdb.models['NDB_R10_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R10_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R10_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R10_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R10_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R10_coarse'].sketches['__edit__'].Spot(point=(-15.0, 0.0))
+mdb.models['NDB_R10_coarse'].sketches['__edit__'].Spot(point=(-15.0, 0.0))
+mdb.models['NDB_R10_coarse'].sketches['__edit__'].FixedConstraint(entity=
+    mdb.models['NDB_R10_coarse'].sketches['__edit__'].vertices[57])
+mdb.models['NDB_R10_coarse'].sketches['__edit__'].ArcByCenterEnds(center=(
+    -15.0, 0.0), direction=COUNTERCLOCKWISE, point1=(-5.0, 0.0), point2=(
+    -15.3281803131104, 9.48394584655762))
+mdb.models['NDB_R10_coarse'].sketches['__edit__'].trimExtendCurve(curve1=
+    mdb.models['NDB_R10_coarse'].sketches['__edit__'].geometry[44], curve2=
+    mdb.models['NDB_R10_coarse'].sketches['__edit__'].geometry[46], point1=(
+    -7.67863368988037, 11.2313919067383), point2=(-7.4341287612915, 
+    6.37349081039429))
+mdb.models['NDB_R10_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R10_coarse'].sketches['__edit__'].geometry[46], point1=(
+    -10.2634134292603, 8.57527351379395))
+mdb.models['NDB_R10_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R10_coarse'].sketches['__edit__'].geometry[45], point1=(
+    -6.31638622283936, 7.59670400619507))
+mdb.models['NDB_R10_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R10_coarse'].sketches['__edit__'].constraints[151], ))
+mdb.models['NDB_R10_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R10_coarse'].sketches['__edit__'].vertices[52], ))
+mdb.models['NDB_R10_coarse'].sketches['__edit__'].HorizontalDimension(
+    textPoint=(-8.65665912628174, -4.0412917137146), value=10.0, vertex1=
+    mdb.models['NDB_R10_coarse'].sketches['__edit__'].vertices[57], vertex2=
+    mdb.models['NDB_R10_coarse'].sketches['__edit__'].vertices[26])
+mdb.models['NDB_R10_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['NDB_R10_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R10_coarse'].sketches['__edit__']
+mdb.models['NDB_R10_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R10_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#18 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R10_coarse'].rootAssembly.setMeshControls(algorithm=
+    ADVANCING_FRONT, regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ), technique=SWEEP)
+mdb.models['NDB_R10_coarse'].rootAssembly.setSweepPath(edge=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].edges[13], 
+    region=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells[5], 
+    sense=FORWARD)
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#3c ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R10_coarse'].parts['DogBone_Form1'].features['Datum plane-2'].setValues(
+    offset=8.0)
+mdb.models['NDB_R10_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R10_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R10_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R10_coarse'].rootAssembly.setMeshControls(algorithm=
+    ADVANCING_FRONT, regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), technique=SWEEP)
+mdb.models['NDB_R10_coarse'].rootAssembly.setSweepPath(edge=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].edges[1], 
+    region=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells[0], 
+    sense=REVERSE)
+mdb.models['NDB_R10_coarse'].rootAssembly.setMeshControls(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ), technique=STRUCTURED)
+mdb.models['NDB_R10_coarse'].rootAssembly.seedEdgeByNumber(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ), number=3)
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#3d ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R10_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.seedEdgeBySize(deviationFactor=0.1, 
+    edges=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#8000 ]', ), ), minSizeFactor=0.1, size=0.5)
+mdb.models['NDB_R10_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#80000 ]', ), ), minSizeFactor=0.1, size=0.15)
+mdb.models['NDB_R10_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#100000 ]', ), ), size=0.15)
+mdb.models['NDB_R10_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#100000 ]', ), ), size=0.2)
+mdb.models['NDB_R10_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#200000 ]', ), ), minSizeFactor=0.1, size=0.15)
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#400 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#10 ]', ), ), size=0.5)
+mdb.models['NDB_R10_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R10_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#11011202 ]', ), ), name='x_symm')
+mdb.models['NDB_R10_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#40824104 ]', ), ), name='z_symm')
+mdb.models['NDB_R10_coarse'].rootAssembly.Set(elements=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].elements.getSequenceFromMask(
+    mask=('[#0:224 #1000000 ]', ), ), name='Cr-element')
+mdb.models['NDB_R10_coarse'].rootAssembly.Set(faces=
+    mdb.models['NDB_R10_coarse'].rootAssembly.instances['model'].faces.getSequenceFromMask(
+    ('[#20000000 ]', ), ), name='y_symm')
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDB_R10_coarse', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='NDB_R10', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['NDB_R10'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['NDB_R10']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 0, 'jobName': 'NDB_R10'})
+mdb.jobs['NDB_R10']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '15 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'NDB_R10'})
+mdb.jobs['NDB_R10']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR THE MATERIAL FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'NDB_R10'})
+mdb.jobs['NDB_R10']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\liuw7\\OneDrive\\03 Studies\\17 HiBa\\02 CP1000_Macro\\NDB_R10.odb', 
+    'jobName': 'NDB_R10'})
+mdb.jobs['NDB_R10']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R10'})
+mdb.jobs['NDB_R10']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 26932, 'jobName': 'NDB_R10'})
+mdb.jobs['NDB_R10']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'NDB_R10'})
+mdb.jobs['NDB_R10']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'NDB_R10'})
+mdb.jobs['NDB_R10']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'NDB_R10', 'memory': 314.0})
+mdb.jobs['NDB_R10']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32442.0, 'jobName': 'NDB_R10'})
+mdb.jobs['NDB_R10']._Message(MINIMUM_MEMORY, {'minimum_memory': 65.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NDB_R10'})
+mdb.jobs['NDB_R10']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R10'})
+mdb.jobs['NDB_R10']._Message(JOB_COMPLETED, {
+    'time': 'Mon Feb 22 16:56:24 2021', 'jobName': 'NDB_R10'})
+mdb.models['NDB_R15_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].Spot(point=(-20.0, 0.0))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].Spot(point=(-20.0, 0.0))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].FixedConstraint(entity=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[57])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].constraints[151], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].constraints[147], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].dimensions[23], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[52], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].ArcByCenterEnds(center=(
+    -20.0, 0.0), direction=COUNTERCLOCKWISE, point1=(-5.0, 0.0), point2=(
+    -9.04088306427002, 9.13445663452148))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].trimExtendCurve(curve1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[44], curve2=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[46], point1=(
+    -7.50398731231689, 11.0216979980469), point2=(-7.50398731231689, 
+    8.19083404541016))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[46], point1=(
+    -8.16764736175537, 9.20435523986816))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[45], point1=(
+    -6.73553943634033, 8.12093734741211))
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['NDB_R15_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R15_coarse'].sketches['__edit__']
+mdb.models['NDB_R15_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].HorizontalDimension(
+    textPoint=(-8.88851261138916, -2.39869213104248), value=15.0, vertex1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[57], vertex2=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[26])
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['NDB_R15_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R15_coarse'].sketches['__edit__']
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].features['Datum plane-2'].setValues(
+    offset=9.0)
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].features['Datum plane-5'].setValues(
+    offset=8.0)
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].features['Datum plane-5'].setValues(
+    offset=7.0)
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].regenerate()
+mdb.models['NDB_R15_coarse'].rootAssembly.regenerate()
+mdb.models['NDB_R15_coarse'].rootAssembly.seedEdgeByNumber(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#20000 ]', ), ), number=3)
+mdb.models['NDB_R15_coarse'].rootAssembly.setSweepPath(edge=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].edges[2], 
+    region=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells[5], 
+    sense=FORWARD)
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#10 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#18 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1e ]', ), ), seedConstraintOverride=ON)
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R15_coarse'].rootAssembly.deleteMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#26 ]', ), ))
+mdb.models['NDB_R15_coarse'].rootAssembly.seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#8000 ]', ), ), minSizeFactor=0.1, size=0.15)
+mdb.models['NDB_R15_coarse'].rootAssembly.setSeedConstraints(constraint=FIXED, 
+    edges=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].edges.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['NDB_R15_coarse'].rootAssembly.generateMesh(regions=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['NDB_R15_coarse'].rootAssembly.Set(elements=
+    mdb.models['NDB_R15_coarse'].rootAssembly.instances['model'].elements.getSequenceFromMask(
+    mask=('[#0:204 #20000 ]', ), ), name='Cr-element')
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='NDB_R15_coarse', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='NDB_R15', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['NDB_R15'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['NDB_R15']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 0, 'jobName': 'NDB_R15'})
+mdb.jobs['NDB_R15']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR THE MATERIAL FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'NDB_R15'})
+mdb.jobs['NDB_R15']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\liuw7\\OneDrive\\03 Studies\\17 HiBa\\02 CP1000_Macro\\NDB_R15.odb', 
+    'jobName': 'NDB_R15'})
+mdb.jobs['NDB_R15']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R15'})
+mdb.jobs['NDB_R15']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'D19-0462', 'handle': 8884, 'jobName': 'NDB_R15'})
+mdb.jobs['NDB_R15']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'NDB_R15'})
+mdb.jobs['NDB_R15']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'NDB_R15'})
+mdb.jobs['NDB_R15']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'NDB_R15', 'memory': 299.0})
+mdb.jobs['NDB_R15']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 32442.0, 'jobName': 'NDB_R15'})
+mdb.jobs['NDB_R15']._Message(MINIMUM_MEMORY, {'minimum_memory': 63.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NDB_R15'})
+mdb.jobs['NDB_R15']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NDB_R15'})
+mdb.jobs['NDB_R15']._Message(JOB_COMPLETED, {
+    'time': 'Mon Feb 22 17:08:31 2021', 'jobName': 'NDB_R15'})
+# Save by liuw7 on 2021_02_22-17.09.58; build 2017 2016_09_28-00.54.59 126836
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDB_R2_5_coarse'].ConstrainedSketch(name='__profile__', sheetSize=
+    200.0)
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].rectangle(point1=(-15.0, 
+    -35.0), point2=(20.0, 43.75))
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].ObliqueDimension(
+    textPoint=(-6.12278747558594, -43.3446006774902), value=15.0, vertex1=
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[3], vertex2=
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[0])
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].ObliqueDimension(
+    textPoint=(31.9038391113281, -13.0792541503906), value=250.0, vertex1=
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[2], vertex2=
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[3])
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].undo()
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].undo()
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].undo()
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].undo()
+#* Nothing to undo.
+del mdb.models['NDB_R2_5_coarse'].sketches['__profile__']
+mdb.models['NDB_R2_5_coarse'].ConstrainedSketch(name='__profile__', sheetSize=
+    400.0)
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].rectangle(point1=(-40.0, 
+    -40.0), point2=(30.0, 40.0))
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].ObliqueDimension(
+    textPoint=(-13.4324951171875, 42.9599990844727), value=15.0, vertex1=
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[1], vertex2=
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[2])
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].ObliqueDimension(
+    textPoint=(37.8988342285156, 18.6399993896484), value=250.0, vertex1=
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[2], vertex2=
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[3])
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].move(objectList=(
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[2], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[3], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[4], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[5]), vector=
+    (-22.5, 87.5))
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].Spot(point=(0.0, 0.0))
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].DistanceDimension(
+    entity1=mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[4], 
+    entity2=mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[3], 
+    textPoint=(-48.8874320983887, 114.876258850098), value=125.0)
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].DistanceDimension(
+    entity1=mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[4], 
+    entity2=mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[2], 
+    textPoint=(-6.81418943405151, -130.68798828125), value=7.5)
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].move(objectList=(
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[2], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[3], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[4], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[5], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[4]), vector=
+    (0.0, -2.5))
+mdb.models['NDB_R2_5_coarse'].sketches.changeKey(fromName='__profile__', 
+    toName='Sketch-1')
+mdb.models['NDB_R2_5_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R2_5_coarse'].sketches['Sketch-1'])
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].Spot(point=(-5.0, 0.0))
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].Spot(point=(5.0, 0.0))
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].Spot(point=(-7.5, 0.0))
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].Spot(point=(7.5, 0.0))
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].CircleByCenterPerimeter(
+    center=(-7.5, 0.0), point1=(-5.0, 0.0))
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].CircleByCenterPerimeter(
+    center=(7.5, 0.0), point1=(5.0, 0.0))
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].geometry[6], point1=(
+    -9.74228000640869, 0.793740510940552))
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].geometry[2], point1=(
+    -7.40507030487061, 0.0481264591217041))
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].geometry[7], point1=(
+    9.80220699310303, -0.629703283309937))
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].geometry[4], point1=(
+    7.39725017547607, -0.426354169845581))
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].RadialDimension(curve=
+    mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].geometry[9], radius=2.5, 
+    textPoint=(-2.90040397644043, -5.2121787071228))
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].RadialDimension(curve=
+    mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].geometry[13], radius=2.5
+    , textPoint=(4.67478370666504, 5.01288652420044))
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].VerticalDimension(textPoint=
+    (-22.7856903076172, -65.9016342163086), value=122.5, vertex1=
+    mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].vertices[16], vertex2=
+    mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].vertices[0])
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].VerticalDimension(textPoint=
+    (10.7242565155029, 1.41771125793457), value=5.0, vertex1=
+    mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].vertices[20], vertex2=
+    mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].vertices[22])
+mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].HorizontalDimension(
+    textPoint=(0.00241327285766602, -11.87965965271), value=10.0, vertex1=
+    mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].vertices[5], vertex2=
+    mdb.models['NDB_R2_5_coarse'].sketches['__edit__'].vertices[6])
+# Save by liuw7 on 2021_03_09-16.51.07; build 2017 2016_09_28-00.54.59 126836
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDB_R2_5_coarse'].sketches.changeKey(fromName='__edit__', toName=
+    'Sketch-1')
+mdb.models['NDB_R2_5_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R2_5_coarse'].sketches['Sketch-1'])
+del mdb.models['NDB_R2_5_coarse'].sketches['__edit__']
+mdb.models['NDB_R2_5_coarse'].sketches['Sketch-1'].writeAcisFile(fileName=
+    'C:/Users/liuw7/OneDrive/03 Studies/17 HiBa/02 CP1000_Macro/GeometryDrawing/NDBR2_5.sat'
+    , version=24)
+# Save by liuw7 on 2021_03_09-16.54.00; build 2017 2016_09_28-00.54.59 126836
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDB_R2_5_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R2_5_coarse'].sketches['Sketch-1'])
+del mdb.models['NDB_R2_5_coarse'].sketches['__edit__']
+mdb.models['NDB_R2_5_coarse'].sketches['Sketch-1'].writeStepFile(fileName=
+    'C:/Users/liuw7/OneDrive/03 Studies/17 HiBa/02 CP1000_Macro/GeometryDrawing/NDBR2_5.stp')
+# Save by liuw7 on 2021_03_09-17.05.08; build 2017 2016_09_28-00.54.59 126836
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['NDB_R2_5_coarse'].ConstrainedSketch(name='__profile__', sheetSize=
+    200.0)
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].sketchOptions.setValues(
+    gridOrigin=(-16.7442989349366, 1.67683067492914))
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].retrieveSketch(sketch=
+    mdb.models['NDB_R2_5_coarse'].sketches['Sketch-1'])
+mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].move(objectList=(
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[4], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[5], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[6], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[7], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[8], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[9], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[10], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[11], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[12], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].geometry[13], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[4], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[5], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[6], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[7], 
+    mdb.models['NDB_R2_5_coarse'].sketches['__profile__'].vertices[8]), vector=
+    (-16.7442989349366, 1.67683067492914))
+mdb.models['NDB_R2_5_coarse'].Part(dimensionality=THREE_D, name='Part-2', type=
+    DEFORMABLE_BODY)
+mdb.models['NDB_R2_5_coarse'].parts['Part-2'].BaseSolidExtrude(depth=1.0, 
+    sketch=mdb.models['NDB_R2_5_coarse'].sketches['__profile__'])
+del mdb.models['NDB_R2_5_coarse'].sketches['__profile__']
+mdb.models['NDB_R2_5_coarse'].parts['Part-2'].writeStepFile(
+    'C:/Users/liuw7/OneDrive/03 Studies/17 HiBa/02 CP1000_Macro/GeometryDrawing/NDBR2_5.stp')
+mdb.models['NDB_R6_coarse'].ConstrainedSketch(name='__profile__', sheetSize=
+    200.0)
+del mdb.models['NDB_R6_coarse'].sketches['__profile__']
+mdb.models['NDB_R6_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R6_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R6_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R6_coarse'].ConstrainedSketch(name='Sketch-1', objectToCopy=
+    mdb.models['NDB_R6_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R6_coarse'].sketches['__edit__']
+mdb.models['NDB_R6_coarse'].ConstrainedSketch(name='__profile__', sheetSize=
+    200.0)
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].sketchOptions.setValues(
+    gridOrigin=(0.147465135378349, 4.70712089538575))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].retrieveSketch(sketch=
+    mdb.models['NDB_R6_coarse'].sketches['Sketch-1'])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].move(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[4], 
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[5], 
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[6], 
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[7], 
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[8], 
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[4]), vector=(
+    0.147465135378349, 4.70712089538575))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].Line(point1=(
+    0.147465135378349, 19.7071208953857), point2=(7.64746513540743, 
+    19.7071208953857))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[9])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[4], entity2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[9])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].Line(point1=(
+    7.64746513540743, 19.7071208953857), point2=(7.64746513537835, 
+    -120.292879104614))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[10])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[9], entity2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[10])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].Line(point1=(
+    7.64746513537835, -120.292879104614), point2=(-7.35253486462165, 
+    -120.292879104614))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[11])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[10], entity2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[11])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].Line(point1=(
+    -7.35253486462165, -120.292879104614), point2=(-7.35253486462165, 
+    6.07816314697266))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[12])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[11], entity2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[12])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].trimExtendCurve(curve1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[8], curve2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[12], point1=(
+    -4.82389831542969, 5.81557893753052), point2=(-7.72732162475586, 
+    0.0686440467834473))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[12], point1=(
+    -7.3742470741272, 4.09030389785767))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[6], ))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[4], ))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].undo()
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].Spot(point=(
+    11.1474651353783, 4.70712089538575))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].CircleByCenterPerimeter(
+    center=(11.1474651353783, 4.70712089538575), point1=(4.53082847595215, 
+    4.78496170043945))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[15], radius=
+    6.0, textPoint=(13.2857570648193, 5.62422370910645))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[10], point1=(
+    7.5190372467041, 4.05060386657715))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[15], point1=(
+    11.9227123260498, -1.29969966411591))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[13], radius=
+    6.0, textPoint=(-8.83746910095215, 3.00152587890625))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[4], ))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[18], ))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[19], point1=(
+    5.94629859924316, 6.98802947998047))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].undo()
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].trimExtendCurve(curve1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[19], curve2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[17], point1=(
+    6.26084327697754, 7.82728958129883), point2=(7.62388801574707, 
+    -0.145713686943054))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].trimExtendCurve(curve1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[20], curve2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[17], point1=(
+    5.05507850646973, 4.73250579833984), point2=(7.57146263122559, 
+    -0.0932596921920776))
+#* Cannot extend the curve.
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].CircleByCenterPerimeter(
+    center=(11.1474651353783, 4.70712089538575), point1=(7.6474651354033, 
+    -0.166276277036687))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[20], point1=(
+    15.1730442047119, 8.71900939941406))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[21], point1=(
+    16.7982120513916, 4.57514381408691))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[22], ))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[23], radius=
+    6.0, textPoint=(9.14420509338379, 3.89324188232422))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].undo()
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].undo()
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[5], ))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[9], ))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].Spot(point=(
+    7.64746513537835, 129.707120895386))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].Line(point1=(
+    7.64746513537835, 129.707120895386), point2=(-7.35253486462165, 
+    129.707120895386))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[24])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].trimExtendCurve(curve1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[16], curve2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[24], point1=(
+    7.35784149169922, 14.0119209289551), point2=(3.38587188720703, 
+    128.26985168457))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].trimExtendCurve(curve1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[7], curve2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[24], point1=(
+    -8.03354644775391, 14.0119209289551), point2=(-2.82033538818359, 
+    129.760177612305))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].constraints[80], ))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].constraints[76], ))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[27], ))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].VerticalDimension(
+    textPoint=(-42.5761260986328, 0.110565185546875), value=250.0, vertex1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[29], vertex2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[9])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].ObliqueDimension(textPoint=
+    (1.16018676757813, 167.273193359375), value=15.0, vertex1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[28], vertex2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[29])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].VerticalDimension(
+    textPoint=(-24.1928100585938, 76.5951232910156), value=120.126602827593, 
+    vertex1=mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[5], 
+    vertex2=mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[29])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].VerticalDimension(
+    textPoint=(-19.28076171875, 1.25291156768799), value=9.74679434481137, 
+    vertex1=mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[5], 
+    vertex2=mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[11])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].VerticalDimension(
+    textPoint=(17.4199981689453, -77.9518432617188), value=120.126602827577, 
+    vertex1=mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[17], 
+    vertex2=mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[8])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[22], ))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[23], ))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].ArcByCenterEnds(center=(
+    11.1474651353783, 4.70712089538575), direction=CLOCKWISE, point1=(
+    7.6474651354033, -0.166276277036686), point2=(7.64746513540533, 
+    9.58051806780964))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[27], radius=
+    6.0, textPoint=(8.29458618164063, 2.71595764160156))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].Spot(point=(
+    -4.85253486462165, 4.70712089538781))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[32], entity2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[13])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[11], entity2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[5], midpoint=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[32])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].Spot(point=(
+    5.1474651353783, 4.707120895387))
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[33], entity2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].geometry[27])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[17], entity2=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[16], midpoint=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[33])
+mdb.models['NDB_R6_coarse'].sketches['__profile__'].HorizontalDimension(
+    textPoint=(1.54917144775391, 23.2466506958008), value=9.99999999999995, 
+    vertex1=mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[32], 
+    vertex2=mdb.models['NDB_R6_coarse'].sketches['__profile__'].vertices[33])
+mdb.models['NDB_R6_coarse'].ConstrainedSketch(name='Sketch-2', objectToCopy=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'])
+mdb.models['NDB_R6_coarse'].Part(dimensionality=THREE_D, name='Part-2', type=
+    DEFORMABLE_BODY)
+mdb.models['NDB_R6_coarse'].parts['Part-2'].BaseSolidExtrude(depth=1.0, sketch=
+    mdb.models['NDB_R6_coarse'].sketches['__profile__'])
+del mdb.models['NDB_R6_coarse'].sketches['__profile__']
+mdb.models['NDB_R6_coarse'].parts['Part-2'].writeStepFile(
+    'C:/Users/liuw7/OneDrive/03 Studies/17 HiBa/02 CP1000_Macro/GeometryDrawing/NDBR6.stp')
+mdb.models['NDB_R15_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R15_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R15_coarse'].ConstrainedSketch(name='Sketch-1', objectToCopy=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R15_coarse'].sketches['__edit__']
+mdb.models['NDB_R15_coarse'].ConstrainedSketch(name='__profile__', sheetSize=
+    200.0)
+mdb.models['NDB_R15_coarse'].sketches['__profile__'].sketchOptions.setValues(
+    gridOrigin=(-4.31757644270203, 4.70712089538575))
+mdb.models['NDB_R15_coarse'].sketches['__profile__'].retrieveSketch(sketch=
+    mdb.models['NDB_R15_coarse'].sketches['Sketch-1'])
+mdb.models['NDB_R15_coarse'].sketches['__profile__'].move(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].geometry[4], 
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].geometry[5], 
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].geometry[6], 
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].geometry[7], 
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].geometry[8], 
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].vertices[4], 
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].vertices[5]), vector=(
+    -4.31757644270203, 4.70712089538575))
+mdb.models['NDB_R15_coarse'].sketches['__profile__'].mirror(mirrorLine=
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].geometry[4], 
+    objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].geometry[4], 
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].geometry[5], 
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].geometry[6], 
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].geometry[7], 
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].geometry[8], 
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].vertices[4], 
+    mdb.models['NDB_R15_coarse'].sketches['__profile__'].vertices[5]))
+mdb.models['NDB_R15_coarse'].sketches['__profile__'].undo()
+mdb.models['NDB_R15_coarse'].Part(dimensionality=THREE_D, name='Part-2', type=
+    DEFORMABLE_BODY)
+mdb.models['NDB_R15_coarse'].parts['Part-2'].BaseSolidExtrude(depth=1.0, 
+    sketch=mdb.models['NDB_R15_coarse'].sketches['__profile__'])
+del mdb.models['NDB_R15_coarse'].sketches['__profile__']
+mdb.models['NDB_R15_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R15_coarse'].parts['Part-2'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R15_coarse'].parts['Part-2'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R15_coarse'].parts['Part-2'].features['Solid extrude-1'])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].Spot(point=(3.18242355729797, 
+    129.707120895386))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].Spot(point=(-11.817576442702, 
+    129.707120895386))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].Line(point1=(
+    -11.817576442702, 129.707120895386), point2=(3.18242355729797, 
+    129.707120895386))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[9])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].Spot(point=(3.18242355729797, 
+    -120.292879104614))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].Spot(point=(-11.817576442702, 
+    -120.292879104614))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].Line(point1=(
+    -11.817576442702, -120.292879104614), point2=(3.18242355729797, 
+    -120.292879104614))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[10])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].Line(point1=(
+    3.18242355729797, -120.292879104614), point2=(3.18242355729797, 
+    129.707120895386))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[11])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[10], entity2=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[11])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].trimExtendCurve(curve1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[7], curve2=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[9], point1=(
+    -11.553825378418, 16.5512008666992), point2=(-12.4292526245117, 
+    129.835235595703))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].Line(point1=(
+    -11.817576442702, -120.292879104614), point2=(-11.817576442702, 
+    5.30072402954102))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[13])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].trimExtendCurve(curve1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[8], curve2=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[13], point1=(
+    -10.4034423828125, 7.84202194213867), point2=(-12.6633529663086, 
+    -10.3887004852295))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].Spot(point=(15.682423557298, 
+    4.70712089538575))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].CircleByCenterPerimeter(
+    center=(15.682423557298, 4.70712089538575), point1=(10.682423557298, 
+    4.70712089538575))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].RadialDimension(curve=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[15], radius=15.0
+    , textPoint=(8.08458709716797, 0.0434350967407227))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[11], point1=(
+    3.14246940612793, 9.52817535400391))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[15], point1=(
+    3.63580894470215, 13.4277286529541))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[4], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[6], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[5], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[13], point1=(
+    -11.9346046447754, 1.44027519226074))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].RadialDimension(curve=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[14], radius=15.0
+    , textPoint=(-21.4940414428711, 12.8648624420166))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].RadialDimension(curve=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[18], radius=15.0
+    , textPoint=(9.04304504394531, 3.5657787322998))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].ArcByCenterEnds(center=(
+    15.682423557298, 4.70712089538575), direction=COUNTERCLOCKWISE, point1=(
+    3.18242355729797, 12.9986828712742), point2=(3.18242355729797, 
+    -3.5844410805027))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[19], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[18], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].constraints[55], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].constraints[38], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].constraints[22], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[9], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[8], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[12], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].delete(objectList=(
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[13], ))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].Spot(point=(
+    -9.31757644270203, 4.70712089538575))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].Spot(point=(0.68242355729797, 
+    4.70712089538575))
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].HorizontalDimension(
+    textPoint=(-2.77117919921875, 25.8655624389648), value=10.0, vertex1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[35], vertex2=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[36])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].VerticalDimension(textPoint=(
+    -24.9201354980469, 95.0589447021484), value=116.70843802411, vertex1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[6], vertex2=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[10])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].VerticalDimension(textPoint=(
+    26.8552703857422, 4.59469985961914), value=16.5831239517769, vertex1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[28], vertex2=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[27])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].VerticalDimension(textPoint=(
+    55.8340454101563, -87.8025512695313), value=250.0, vertex1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[11], vertex2=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[15])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].VerticalDimension(textPoint=(
+    -26.4656677246094, -69.6323699951172), value=116.708438024111, vertex1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[21], vertex2=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[14])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].ObliqueDimension(textPoint=(
+    -5.65646362304688, 153.267456054688), value=15.0, vertex1=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[10], vertex2=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].vertices[11])
+mdb.models['NDB_R15_coarse'].sketches['__edit__'].RadialDimension(curve=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'].geometry[21], radius=15.0
+    , textPoint=(10.2502517700195, 4.23538970947266))
+mdb.models['NDB_R15_coarse'].ConstrainedSketch(name='Sketch-2', objectToCopy=
+    mdb.models['NDB_R15_coarse'].sketches['__edit__'])
+mdb.models['NDB_R15_coarse'].parts['Part-2'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['NDB_R15_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R15_coarse'].sketches['__edit__']
+mdb.models['NDB_R15_coarse'].parts['Part-2'].regenerate()
+mdb.models['NDB_R15_coarse'].parts['Part-2'].writeStepFile(
+    'C:/Users/liuw7/OneDrive/03 Studies/17 HiBa/02 CP1000_Macro/GeometryDrawing/NDBR15.stp')
+mdb.models['NDB_R40_coarse'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['NDB_R40_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'].sketch)
+mdb.models['NDB_R40_coarse'].parts['DogBone_Form1'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=
+    mdb.models['NDB_R40_coarse'].sketches['__edit__'], upToFeature=
+    mdb.models['NDB_R40_coarse'].parts['DogBone_Form1'].features['Solid extrude-1'])
+mdb.models['NDB_R40_coarse'].ConstrainedSketch(name='Sketch-1', objectToCopy=
+    mdb.models['NDB_R40_coarse'].sketches['__edit__'])
+del mdb.models['NDB_R40_coarse'].sketches['__edit__']
+mdb.models['NDB_R40_coarse'].ConstrainedSketch(name='__profile__', sheetSize=
+    200.0)
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].sketchOptions.setValues(
+    gridOrigin=(-16.817576442702, 4.70712089538575))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].retrieveSketch(sketch=
+    mdb.models['NDB_R40_coarse'].sketches['Sketch-1'])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].move(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[4], 
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[5], 
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[6], 
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[7], 
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[8], 
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[4]), vector=(
+    -16.817576442702, 4.70712089538575))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].Spot(point=(
+    -9.317576442702, 129.707120895386))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].Spot(point=(
+    -24.317576442702, 129.707120895386))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].Spot(point=(
+    -9.317576442702, -120.292879104614))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].Spot(point=(
+    -24.317576442702, -120.292879104614))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].Line(point1=(
+    -24.317576442702, -120.292879104614), point2=(-9.317576442702, 
+    -120.292879104614))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[9])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].Line(point1=(
+    -9.317576442702, -120.292879104614), point2=(-9.317576442702, 
+    129.707120895386))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[10])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[9], entity2=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[10])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].Line(point1=(
+    -9.317576442702, 129.707120895386), point2=(-24.317576442702, 
+    129.707120895386))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[11])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[10], entity2=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[11])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].Line(point1=(
+    -24.317576442702, -120.292879104614), point2=(-24.317576442702, 
+    12.1743850708008))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].VerticalConstraint(
+    addUndoState=False, entity=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[12])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].trimExtendCurve(curve1=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[8], curve2=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[12], point1=(
+    -21.9006462097168, 5.86679363250732), point2=(-24.3631935119629, 
+    0.528298377990723))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].trimExtendCurve(curve1=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[7], curve2=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[11], point1=(
+    -24.3658676147461, 19.3145751953125), point2=(-18.2423095703125, 
+    130.634292602539))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].Spot(point=(
+    28.182423557298, 4.70712089538575))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].ArcByCenterEnds(center=(
+    28.182423557298, 4.70712089538575), direction=COUNTERCLOCKWISE, point1=(
+    -6.817576442702, 25.9571208953857), point2=(-3.067576442702, 
+    -20.2928791046143))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[15], radius=
+    40.0, textPoint=(1.68206024169922, -8.68280410766602))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[12], point1=(
+    -24.396167755127, 2.45234298706055))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[10], point1=(
+    -9.11465835571289, 1.62136459350586))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[15], point1=(
+    -6.62311172485352, -15.330638885498))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[19], point1=(
+    -7.61973190307617, 23.559253692627))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].constraints[13], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].constraints[14], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[4], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[6], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].dimensions[2], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].constraints[7], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[5], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[13], radius=
+    40.0, textPoint=(-39.1793632507324, 0.457988739013672))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].geometry[20], radius=
+    40.0, textPoint=(3.67529678344727, -0.705387115478516))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[10], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].constraints[57], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[9], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].constraints[60], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].constraints[33], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[7], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].delete(objectList=(
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[8], ))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].VerticalDimension(
+    textPoint=(-39.8101348876953, 66.2702331542969), value=111.080589092932, 
+    vertex1=mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[16], 
+    vertex2=mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[5])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].VerticalDimension(
+    textPoint=(48.92236328125, -4.5233154296875), value=27.8388218141502, 
+    vertex1=mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[29], 
+    vertex2=mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[28])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].VerticalDimension(
+    textPoint=(-43.2898406982422, -71.2548980712891), value=111.080589092925, 
+    vertex1=mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[19], 
+    vertex2=mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[11])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].VerticalDimension(
+    textPoint=(86.6191711425781, -92.7250518798828), value=250.0, vertex1=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[15], vertex2=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[12])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].ObliqueDimension(
+    textPoint=(-14.2922973632813, 156.212829589844), value=15.0, vertex1=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[15], vertex2=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[16])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].ObliqueDimension(
+    textPoint=(-16.0321502685547, -139.147033691406), value=15.0, vertex1=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[11], vertex2=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[12])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].Spot(point=(
+    -11.817576442702, 4.70712089538575))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].Spot(point=(
+    -21.817576442702, 4.70712089538575))
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].HorizontalDimension(
+    textPoint=(-15.9137268066406, 22.0689430236816), value=10.0, vertex1=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[35], vertex2=
+    mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[34])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].VerticalDimension(
+    textPoint=(-77.0726776123047, 12.437933921814), value=27.838821814143, 
+    vertex1=mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[5], 
+    vertex2=mdb.models['NDB_R40_coarse'].sketches['__profile__'].vertices[19])
+mdb.models['NDB_R40_coarse'].sketches['__profile__'].undo()
+mdb.models['NDB_R40_coarse'].Part(dimensionality=THREE_D, name='Part-2', type=
+    DEFORMABLE_BODY)
+mdb.models['NDB_R40_coarse'].parts['Part-2'].BaseSolidExtrude(depth=1.0, 
+    sketch=mdb.models['NDB_R40_coarse'].sketches['__profile__'])
+del mdb.models['NDB_R40_coarse'].sketches['__profile__']
+mdb.models['NDB_R40_coarse'].parts['Part-2'].writeStepFile(
+    'C:/Users/liuw7/OneDrive/03 Studies/17 HiBa/02 CP1000_Macro/GeometryDrawing/NDBR40.stp')
+# Save by liuw7 on 2021_03_09-17.55.10; build 2017 2016_09_28-00.54.59 126836
