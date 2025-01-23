@@ -1,0 +1,17 @@
+Turn on NlGeom 
+
+Then, switch to second elastic case and fix it. 
+
+plane strain conditions => we have 3 principal stress and strain, 
+and 1 shear stress and strain
+
+enHill+MWB (implicit manner) model show newtop raphson to PEEQ and dPEEQ
+
+Note: from professor Yoon
+
+Point out the problems in the current literature model, and tell the novelty (why choose this model)
+
+Justify the use of Machine Learning model when we have a solid mechanic model?
+
+Use the original source sequence (force)
+
